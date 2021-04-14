@@ -13,11 +13,11 @@ A működése a következőképpen képzelhető el.
 1.
 2.  A kedves emberünk megadja a születési adatait, ez alapján a program készít 3 horoszkópot és ezeknek az összevetéséből lesz egy elég összetett kép az illetőről. 
 a) Mire lesz képes?
--képes lesz következtetőrendszer alapján megtalálni a megfelelő analógiát, amivel a legjobb irányt veheti az ember sorsa
--személyiségi jegyeit felismeri
--részletes elemzés az élete minden területéről
--születési idő pontosítása(ez csak sokára lesz meg mert bonyolult) 
--sok más
+- képes lesz következtetőrendszer alapján megtalálni a megfelelő analógiát, amivel a legjobb irányt veheti az ember sorsa
+- személyiségi jegyeit felismeri
+- részletes elemzés az élete minden területéről
+- születési idő pontosítása(ez csak sokára lesz meg mert bonyolult) 
+- sok más
 
 b)Háttérműkodése:
 Ez az egész egy személyiségi modellre fog rákerülni. 
@@ -34,7 +34,7 @@ A program feltenne kérdéseket a személyiségi modellnek megfelelően.
 -Egy Példa leegyszerűsitve:
   Kos tipus agresszivabb, akkor neki lehet nyomatni erősebb kerdeseket. 
   Ha halak akkor szépen kell feltenni a kerdest, vagy udvarian. 
--és a kiolvasott sorsnak megfelelően tenné fel magát a kérdést. 
+- A kiolvasott sorsnak megfelelően tenné fel magát a kérdést. 
 
 A kérdések nem véletlenszerűek, de minden ember más kérdést fog kapni más sorrendben, erről egy optimalizálási algoritmus fog gondoskodni, ami
 megtalálja a megfelelő kérdést. Persze ehhez rengeteg kérdést kell majd írnom. 
@@ -47,7 +47,7 @@ Az optimalizálás megvalósítása a következőképpen zajlik majd:
        if(van): akkor a megoldást felkínáni 
        else: terelje olyan irányba ami könnyebbé teheti elfogadni a helyzetét
 
--A személyiségmodellben egyes analógia csoportkörök(amik valószínűleg jegyek lesznek) pont értéket fognak kapni amelyik itt a legmagasabb az alapján lesz feltéve a kérdés hogyanja.
+- A személyiségmodellben egyes analógia csoportkörök(amik valószínűleg jegyek lesznek) pont értéket fognak kapni amelyik itt a legmagasabb az alapján lesz feltéve a kérdés hogyanja.
 
 
 3.
