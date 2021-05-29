@@ -17,7 +17,6 @@ public interface Elemzes {
 
     boolean vanhazur = false;
 
-
     //személyiség
     static void evszakiFelosztas(Bolygo[] bolygok) {
     int tavasz = 0, tel = 0, nyar = 0, osz = 0;
@@ -241,6 +240,12 @@ public interface Elemzes {
     static void sorsfeladat(Bolygo[] bolygok) {
         Bolygo szaturn = bolygok[6];
         Bolygo jupi = bolygok[5];
+
+        System.out.println(
+                "Középső szinten kell élnie a jupiterét a "+jupi.getBolygoHaza().getHazszam()+" házban.\n"+
+                "Felső szinten kell élnie a szaturnuszát a "+szaturn.getBolygoJegye().getJegyNev()+" jegybén."
+
+        );
 
     }
 

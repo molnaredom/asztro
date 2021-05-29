@@ -47,6 +47,8 @@ public class Radix extends Horoszkop {
 
         Elemzes.dekadok(bolygok);
 
+        Elemzes.sorsfeladat(bolygok);
+
 
 
 

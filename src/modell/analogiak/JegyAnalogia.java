@@ -283,7 +283,7 @@ public interface JegyAnalogia {
                             {  //felso
                                     "nincsenek véletlenek"},
                             {  //kozepso
-                                    "mésokkal küzd magáért", "domináló"},
+                                    ""},
                             {   //also
                                     "mások küzdenek érte", "másokkal agressszív"}
                     },
@@ -315,7 +315,7 @@ public interface JegyAnalogia {
                             {  //felso
                                     "mások céljai az én céljaim is"},
                             {  //kozepso
-                                    "mésokkal küzd magáért", "domináló"},
+                                    "saját céljaiért küzd"},
                             {   //also
                                     "mások küzdenek érte", "másokkal agressszív"}
                     },
@@ -347,7 +347,7 @@ public interface JegyAnalogia {
                             {  //felso
                                     "mindig azt teszem ami a másiknak jó, ha rossz ha jó az nekem"},
                             {  //kozepso
-                                    "mésokkal küzd magáért", "domináló"},
+                                    "másság"},
                             {   //also
                                     "mások küzdenek érte", "másokkal agressszív"}
                     },
