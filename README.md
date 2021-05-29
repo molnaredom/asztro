@@ -60,6 +60,10 @@ Bármi kritikát, észrevételt, tanácsot szívesen fogadok.
 Talán, hogy miért működik az asztrológia azt egy könyvben is rövid lenne leírni. 
 
 
-Hálás köszönet a ha elolvastad ha tudsz segíteni, van ötleted írj nyugodtan, molnaradam8466@gmail.com 
+Hálás köszönet a ha elolvastad ha tudsz segíteni, van ötleted írj nyugodtan, molnaradam8466@gmail.com
+
+
+
+1.0 marc.30
 
 Molnár Ádám
