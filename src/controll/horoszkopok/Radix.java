@@ -37,13 +37,16 @@ public class Radix extends Horoszkop {
 
         Elemzes.hazUraMelyikHazban(kilences,bolygok);
         System.out.println();
-
         Elemzes.asztrocikcakk(bolygok);
         System.out.println();
+
 
         Elemzes.hyleg(bolygok);
 
         Elemzes.napHoldPluszosMinuszos(bolygok,ferfi);
+
+        Elemzes.dekadok(bolygok);
+
 
 
 

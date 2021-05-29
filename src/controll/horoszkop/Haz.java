@@ -34,19 +34,19 @@ public class Haz {
 
 
     public String hazUralkodoBolygoja() {
-        if (hazJegye.getNev().equals("kos") || hazJegye.getNev().equals("skorpio")) {
+        if (hazJegye.getJegyNev().equals("kos") || hazJegye.getJegyNev().equals("skorpio")) {
             return "mars";
-        } else if (hazJegye.getNev().equals("bika") || hazJegye.getNev().equals("merleg")) {
+        } else if (hazJegye.getJegyNev().equals("bika") || hazJegye.getJegyNev().equals("merleg")) {
             return "venusz";
-        } else if (hazJegye.getNev().equals("ikrek") || hazJegye.getNev().equals("szuz")) {
+        } else if (hazJegye.getJegyNev().equals("ikrek") || hazJegye.getJegyNev().equals("szuz")) {
             return "merkur";
-        } else if (hazJegye.getNev().equals("nyilas") || hazJegye.getNev().equals("halak")) {
+        } else if (hazJegye.getJegyNev().equals("nyilas") || hazJegye.getJegyNev().equals("halak")) {
             return "jupiter";
-        } else if (hazJegye.getNev().equals("bak") || hazJegye.getNev().equals("vizonto")) {
+        } else if (hazJegye.getJegyNev().equals("bak") || hazJegye.getJegyNev().equals("vizonto")) {
             return "szaturnusz";
-        } else if (hazJegye.getNev().equals("oroszlan")) {
+        } else if (hazJegye.getJegyNev().equals("oroszlan")) {
             return "nap";
-        } else if (hazJegye.getNev().equals("rak")) {
+        } else if (hazJegye.getJegyNev().equals("rak")) {
             return "hold";
         } else {
             System.err.println("nincs hazura problem");

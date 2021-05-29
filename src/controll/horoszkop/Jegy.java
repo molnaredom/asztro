@@ -1,143 +1,163 @@
 package controll.horoszkop;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 
 public class Jegy {
-    private final String nev;
+    private final String jegyNev;
+    /**
+     * a jegynek megfelelo szam
+     */
+    private int jegySzama;
     private String elem;  //tuz viz fold levego
     private String minoseg;
     private String evszak;
     private boolean pozitiv;
-    private float fokszam;
     private String opposit;
     //trigon kvadrat szeytil kbinkunksz  0. a jobb oldali 1. a bal oldali
-    private String[] trigon;
+    private final String[] dekadJegyek = new String[3];
     private String[] kvadrat;
     private String[] szextil;
     private String[] kvinkunksz;
-    private int dekad; //1-3 kozti szam
+    Map<Integer,String> jegyekMap = new HashMap<>();
+
+
+    private void setJegySzama() {
+        switch (jegyNev) {
+            case "kos" -> this.jegySzama = 1;
+            case "bika" -> this.jegySzama = 2;
+            case "ikrek" -> this.jegySzama = 3;
+            case "rak" -> this.jegySzama = 4;
+            case "oroszlan" -> this.jegySzama = 5;
+            case "szuz" -> this.jegySzama = 6;
+            case "merleg" -> this.jegySzama = 7;
+            case "skorpio" -> this.jegySzama = 8;
+            case "nyilas" -> this.jegySzama = 9;
+            case "bak" -> this.jegySzama = 10;
+            case "vizonto" -> this.jegySzama =11;
+            case "halak" -> this.jegySzama = 12;
+        }
+    }
+
+    private void setJegyekMap() {
+
+        jegyekMap.put(1,"kos");
+        jegyekMap.put(2,"bika");
+        jegyekMap.put(3,"ikrek");
+        jegyekMap.put(4,"rak");
+        jegyekMap.put(5,"oroszlan");
+        jegyekMap.put(6,"szuz");
+        jegyekMap.put(7,"merleg");
+        jegyekMap.put(8,"skorpio");
+        jegyekMap.put(9,"nyilas");
+        jegyekMap.put(10,"bak");
+        jegyekMap.put(11,"vizonto");
+        jegyekMap.put(12,"halak");
+    }
+
+
 
     /** konstruktorok*/
     public Jegy(String nev) {
-        this.nev = nev;
+        this.jegyNev = nev;
+        setJegySzama();
+        setJegyekMap();
         setMinoseg();
         setElem();
         setEvszak();
         setPozitiv();
         setOpposit();
+        dekadSzerintrendezes();
     }
 
-    public Jegy(String nev, float fokszam) {
-        this(nev);
-        this.fokszam = fokszam;
-    }
+
+
 
 
     /**setterek*/
-    public void setTrigon() {
-        switch (nev) {
-            case "kos" : {
-                this.trigon[0] = "oroszlan";
-                this.trigon[1] = "nyilas";
-            }
-            case "bika" : {
-                this.trigon[0] = "szuz";
-                this.trigon[1] = "bak";
-            }
-            case "ikrek" : {
-                this.trigon[0] = "merleg";
-                this.trigon[1] = "vizonto";
-            }
-            case "rak" : {
-                this.trigon[0] = "skorpio";
-                this.trigon[1] = "halak";
-            }
-            case "oroszlan" : {
-                this.trigon[0] = "nyilas";
-                this.trigon[1] = "kos";
-            }
-            case "szuz" : {
-                this.trigon[0] = "bak";
-                this.trigon[1] = "bika";
-            }
-            case "merleg" : {
-                this.trigon[0] = "vizonto";
-                this.trigon[1] = "ikrek";
-            }
-            case "skorpio" : {
-                this.trigon[0] = "halak";
-                this.trigon[1] = "rak";
-            }
-            case "nyilas" : {
-                this.trigon[0] = "kos";
-                this.trigon[1] = "oroszlan";
-            }
-            case "bak" : {
-                this.trigon[0] = "bika";
-                this.trigon[1] = "szuz";
-            }
-            case "vizonto" : {
-                this.trigon[0] = "ikrek";
-                this.trigon[1] = "merleg";
-            }
-            case "halak" : {
-                this.trigon[0] = "rak";
-                this.trigon[1] = "skorpio";
+    private void dekadSzerintrendezes() {
+        int maradek =(jegySzama-1)%4;//0-11
+        int eltolas = (jegySzama-1)/4; //ennyivel lesz eltolva BALRA pl 1 tolas {4,8,12}--> {8,12,4}
+        List<Integer> eredmeny = new ArrayList<>();
+        System.out.println();
+
+        /**azokat a szamokat teszi bele a listaba amelyek megfelelo maradekuak, vagyis trigonalisan megfelelo jegyben vannak
+        //de ez minden esetben pl 0-3 mal kezdődik pl 3 7 11 nincs kiigazitva*/
+        for (int i = 0; i <= 11; i++) {
+            if ( (i%4)==maradek) {
+                eredmeny.add(i);
             }
         }
+
+        /**sorrend koorigalas
+        //ahanyszor iteral annyiszor eltoljuk balra a tombot 1 el pl 0 4 8 bol 4 8 0 legyen
+        ezzel ki lesz igazitva es ehhez képest lehet nezni dekadnak megfeleloan hanyat lepjunk*/
+        for (int i = 0; i < eltolas; i++) {
+            eredmeny.add(0,eredmeny.get(2));//2.indexu elemet az elejere szurjuk
+            eredmeny.add(0,eredmeny.get(1+1));//eredeti1. indexu elemet az elejere szurjuk
+
+            eredmeny.remove(3);//az utolso ket elemet kitoroljuk nem alljon feleslegesen
+            eredmeny.remove(3);
+        }
+
+
+        /**
+         * String tömbbe rendezi a jegyeket már igazított formában pl 0 4 8 -> 1 5 9 -> kos oroszlan nyilas*/
+        dekadJegyek[0] = jegyekMap.get(eredmeny.get(0)+1);//Map(List(szam))
+        dekadJegyek[1] = jegyekMap.get(eredmeny.get(1)+1);
+        dekadJegyek[2] = jegyekMap.get(eredmeny.get(2)+1);
+
     }
 
-    public void setKvadrat() {
-        switch (nev) {
+    private void setKvadrat() {
+        switch (jegyNev) {
             case "kos" : {
-                this.trigon[0] = "rak";
-                this.trigon[1] = "bak";
+                this.dekadJegyek[0] = "rak";
+                this.dekadJegyek[1] = "bak";
             }
             case "bika" : {
-                this.trigon[0] = "oroszlan";
-                this.trigon[1] = "vizonto";
+                this.dekadJegyek[0] = "oroszlan";
+                this.dekadJegyek[1] = "vizonto";
             }
             case "ikrek" : {
-                this.trigon[0] = "szuz";
-                this.trigon[1] = "halak";
+                this.dekadJegyek[0] = "szuz";
+                this.dekadJegyek[1] = "halak";
             }
             case "rak" : {
-                this.trigon[0] = "merleg";
-                this.trigon[1] = "kos";
+                this.dekadJegyek[0] = "merleg";
+                this.dekadJegyek[1] = "kos";
             }
             case "oroszlan" : {
-                this.trigon[0] = "skorpio";
-                this.trigon[1] = "bika";
+                this.dekadJegyek[0] = "skorpio";
+                this.dekadJegyek[1] = "bika";
             }
             case "szuz" : {
-                this.trigon[0] = "nyilas";
-                this.trigon[1] = "ikrek";
+                this.dekadJegyek[0] = "nyilas";
+                this.dekadJegyek[1] = "ikrek";
             }
             case "merleg" : {
-                this.trigon[0] = "bak";
-                this.trigon[1] = "rak";
+                this.dekadJegyek[0] = "bak";
+                this.dekadJegyek[1] = "rak";
             }
             case "skorpio" : {
-                this.trigon[0] = "vizonto";
-                this.trigon[1] = "oroszlan";
+                this.dekadJegyek[0] = "vizonto";
+                this.dekadJegyek[1] = "oroszlan";
             }
             case "nyilas" : {
-                this.trigon[0] = "halak";
-                this.trigon[1] = "szuz";
+                this.dekadJegyek[0] = "halak";
+                this.dekadJegyek[1] = "szuz";
             }
             case "bak" : {
-                this.trigon[0] = "kos";
-                this.trigon[1] = "merleg";
+                this.dekadJegyek[0] = "kos";
+                this.dekadJegyek[1] = "merleg";
             }
             case "vizonto" : {
-                this.trigon[0] = "bika";
-                this.trigon[1] = "skorpio";
+                this.dekadJegyek[0] = "bika";
+                this.dekadJegyek[1] = "skorpio";
             }
             case "halak" : {
-                this.trigon[0] = "ikrek";
-                this.trigon[1] = "nyilas";
+                this.dekadJegyek[0] = "ikrek";
+                this.dekadJegyek[1] = "nyilas";
             }
         }
     }
@@ -150,17 +170,6 @@ public class Jegy {
         this.kvinkunksz = kvinkunksz;
     }
 
-    public void setDekad() {
-        if (fokszam<0 || fokszam>30)
-            System.err.println("fok rosszul van megadva max 30 min 0");
-        else if (fokszam<10){
-            this.dekad = 1;
-        }else  if (fokszam<20){
-            this.dekad = 2;
-        } else if (fokszam<30){
-            this.dekad =3;
-        }
-    }
 
     public void setMinoseg() {
 
@@ -169,21 +178,21 @@ public class Jegy {
         ArrayList<String> valtozo = new ArrayList<>(Arrays.asList("ikrek","szuz","nyilas","halak"));
 
 
-        if (kardinalis.contains(nev)){
+        if (kardinalis.contains(jegyNev)){
             this.minoseg = "kardinalis";
-        }  else if (szilard.contains(nev)) {
+        }  else if (szilard.contains(jegyNev)) {
             this.minoseg = "szilard";
-        }  else if (valtozo.contains(nev)) {
+        }  else if (valtozo.contains(jegyNev)) {
             this.minoseg = "valtozo";
         } else {
-            System.out.println("hibas jegymegadas setminoseg  "+nev);
+            System.out.println("hibas jegymegadas setminoseg  "+ jegyNev);
             this.minoseg = "";
         }
 
     }
 
     private void setOpposit() {
-        switch (nev) {
+        switch (jegyNev) {
             case "kos" -> this.opposit = "merleg";
             case "bika" -> this.opposit = "skorpio";
             case "ikrek" -> this.opposit = "nyilas";
@@ -208,16 +217,16 @@ public class Jegy {
         ArrayList<String> levego = new ArrayList<>(Arrays.asList("ikrek","merleg","vizonto"));
         ArrayList<String> viz = new ArrayList<>(Arrays.asList("rak","skorpio","halak"));
 
-        if (tuz.contains(nev)){
+        if (tuz.contains(jegyNev)){
             this.elem = "tuz";
-        }  else if (fold.contains(nev)) {
+        }  else if (fold.contains(jegyNev)) {
             this.elem = "fold";
-        }  else if (levego.contains(nev)) {
+        }  else if (levego.contains(jegyNev)) {
             this.elem = "levego";
-        } else if (viz.contains(nev)) {
+        } else if (viz.contains(jegyNev)) {
             this.elem = "viz";
         } else {
-            System.out.println("hibas jegymegadas setminoseg  "+nev);
+            System.out.println("hibas jegymegadas setminoseg  "+ jegyNev);
             this.elem = "";
         }
     }
@@ -228,13 +237,13 @@ public class Jegy {
         ArrayList<String> osz = new ArrayList<>(Arrays.asList("merleg","skorpio","nyilas"));
         ArrayList<String> tel = new ArrayList<>(Arrays.asList("bak","vizonto","halak"));
 
-        if (tavasz.contains(nev)){
+        if (tavasz.contains(jegyNev)){
             this.evszak = "tavasz";
-        }  else if (nyar.contains(nev)) {
+        }  else if (nyar.contains(jegyNev)) {
             this.evszak = "nyar";
-        }  else if (osz.contains(nev)) {
+        }  else if (osz.contains(jegyNev)) {
             this.evszak = "osz";
-        } else if (tel.contains(nev)) {
+        } else if (tel.contains(jegyNev)) {
             this.evszak = "tel";
         } else {
             System.err.println("hibas jegymegadas setevszak");
@@ -247,12 +256,12 @@ public class Jegy {
         ArrayList<String> poz = new ArrayList<>(Arrays.asList("kos","ikrek","oroszlan","merleg","nyilas","vizonto"));
         ArrayList<String> neg = new ArrayList<>(Arrays.asList("bika","rak","szuz","skorpio","bak","halak"));
 
-        if (poz.contains(nev.toLowerCase())){
+        if (poz.contains(jegyNev.toLowerCase())){
             this.pozitiv = true;
-        }  else if (neg.contains(nev.toLowerCase())) {
+        }  else if (neg.contains(jegyNev.toLowerCase())) {
             this.pozitiv = false;
         }else {
-            System.out.println("hibas jegymegadas setpozitiv  "+nev);
+            System.out.println("hibas jegymegadas setpozitiv  "+ jegyNev);
             this.pozitiv = true;
         }
 
@@ -282,12 +291,12 @@ public class Jegy {
         return minoseg;
     }
 
-    public String[] getTrigon() {
-        return trigon;
+    public String[] getDekadJegyek() {
+        return dekadJegyek;
     }
 
-    public String getNev() {
-        return nev;
+    public String getJegyNev() {
+        return jegyNev;
     }
 
 
@@ -303,12 +312,5 @@ public class Jegy {
         return pozitiv;
     }
 
-    public float getFokszam() {
-        return fokszam;
-    }
-
-    public int getDekad() {
-        return dekad;
-    }
 }
 

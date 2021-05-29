@@ -35,6 +35,18 @@ public interface Elemzes {
     System.out.printf("tavasz:%d\nnyar:%d\nosz:%d\ntel:%d%n",tavasz,nyar,osz,tel);
 }
 
+    static void dekadok(Bolygo[] bolygok) {
+
+
+
+        for (Bolygo b : bolygok) {
+            System.out.println("bolygo: "+b.getNev() +" fokszam: "+b.getFokszam() + " dekadszam: "+b.getDekadSzam() );
+            System.out.println("||-->> "+b.getDekadJegy());
+
+        }
+
+    }
+
 
     static void minosegSzerintiFelosztas(Bolygo[] bolygos, Haz asc) {
 
@@ -102,9 +114,9 @@ public interface Elemzes {
                 }
             }
         }
-        parositas.put("szaturnusz",bolygok[6].getBolygoJegye().getNev());
-        parositas.put("uranusz",bolygok[7].getBolygoJegye().getNev());
-        parositas.put("nap",bolygok[0].getBolygoJegye().getNev());
+        parositas.put("szaturnusz",bolygok[6].getBolygoJegye().getJegyNev());
+        parositas.put("uranusz",bolygok[7].getBolygoJegye().getJegyNev());
+        parositas.put("nap",bolygok[0].getBolygoJegye().getJegyNev());
 
         System.out.printf("""
                 %s szaturnusz  ------->  neptun a %s. házban
@@ -152,8 +164,8 @@ public interface Elemzes {
         int halak =0;
 
         for (Bolygo b : pontoteroBolygok) {
-            if (b.getBolygoJegye().getNev().equals("vizonto")) vizonto+= b.getPont();
-            else if (b.getBolygoJegye().getNev().equals("halak")) halak+= b.getPont();
+            if (b.getBolygoJegye().getJegyNev().equals("vizonto")) vizonto+= b.getPont();
+            else if (b.getBolygoJegye().getJegyNev().equals("halak")) halak+= b.getPont();
         }
 
 
@@ -313,7 +325,7 @@ public interface Elemzes {
         if (!vanHazur) {
             System.out.println("Nincs házúr: "+haz.getHazszam());
             System.out.printf("Tagadni fogja a %s jegy analógiáit %d ház területén, úgy hogy megtartsa a %s analógiákat.\n",
-                    haz.getHazJegye().getOpposit(),haz.getHazszam(),haz.getHazJegye().getNev());
+                    haz.getHazJegye().getOpposit(),haz.getHazszam(),haz.getHazJegye().getJegyNev());
 
         }
 

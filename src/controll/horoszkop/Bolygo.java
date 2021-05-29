@@ -10,8 +10,10 @@ public class Bolygo {
     private int pont;
     private double fokszam;
 
-    private Jegy BolygoJegye;
-    private Haz BolygoHaza;
+    private Jegy bolygoJegye;
+    private Haz bolygoHaza;
+    private String dekadJegy;
+    private int dekadSzam;
 
     public int getPont() {
         return pont;
@@ -22,18 +24,38 @@ public class Bolygo {
         this.nev = nev;
         setPont();
         setSzint();
-        BolygoJegye = bolygoJegye;
+        this.bolygoJegye = bolygoJegye;
     }
 
-    public Bolygo(String nev, Jegy bolygoJegye, Haz bolygoHaza) {
+    public Bolygo(String nev, Jegy bolygoJegye, Haz bolygoHaza, double fokszam) {
         this(nev, bolygoJegye);
-        BolygoHaza = bolygoHaza;
+        this.fokszam = fokszam;
+        this.bolygoHaza = bolygoHaza;
+        setDekadSzam();
+        setDekadJegy();
+
+
+
     }
 
-    public Bolygo(String nev, Jegy bolygoJegye, Haz bolygoHaza,double fokszam) {
-        this(nev, bolygoJegye);
-        BolygoHaza = bolygoHaza;
+    public void setDekadSzam() {
+        if (0.0<=fokszam && 10.0>fokszam) {
+            this.dekadSzam =1;
+        } else if (10.0<=fokszam && 20.0>fokszam) {
+            this.dekadSzam =2;
+        }else if (20.0<=fokszam && 30.0>fokszam) {
+            this.dekadSzam =3;
+        }
     }
+
+    public double getFokszam() {
+        return fokszam;
+    }
+
+    public void setDekadJegy() {
+        dekadJegy = bolygoJegye.getDekadJegyek()[dekadSzam-1];
+    }
+
 
     public void setPont() {
 
@@ -51,17 +73,23 @@ public class Bolygo {
     }
 
     public Jegy getBolygoJegye() {
-        return BolygoJegye;
+        return bolygoJegye;
     }
 
     public Haz getBolygoHaza() {
-        return BolygoHaza;
+        return bolygoHaza;
     }
     public String getSzint() {
         return szint;
     }
     public String getNev() {
         return nev;
+    }
+    public int getDekadSzam() {
+        return dekadSzam;
+    }
+    public String getDekadJegy() {
+        return dekadJegy;
     }
 
     private void setSzint() {
