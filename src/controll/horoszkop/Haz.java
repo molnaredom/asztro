@@ -1,7 +1,4 @@
-package controll.hazak;
-
-import controll.bolygok.Bolygo;
-import controll.jegyek.Jegy;
+package controll.horoszkop;
 
 public class Haz {
 
@@ -9,7 +6,7 @@ public class Haz {
     private String[] analogiai;
     private String haztipus;
 
-    private Jegy jegyHazban;
+    private Jegy hazJegye;
     private Bolygo hazraHatoBolygo;
     private Bolygo[] hazraHatoBolygok;
 
@@ -20,36 +17,36 @@ public class Haz {
 
     public Haz(int hazszam, Jegy jegyHazban) {
         this(hazszam);
-        this.jegyHazban = jegyHazban;
+        this.hazJegye = jegyHazban;
     }
 
     public Haz(int hazszam, Jegy jegyHazban, Bolygo hazraHatoBolygo) {
         this(hazszam);
-        this.jegyHazban = jegyHazban;
+        this.hazJegye = jegyHazban;
         this.hazraHatoBolygo = hazraHatoBolygo;
     }
 
     public Haz(int hazszam, Jegy jegyHazban, Bolygo[] hazraHatoBolygok) {
         this(hazszam);
-        this.jegyHazban = jegyHazban;
+        this.hazJegye = jegyHazban;
         this.hazraHatoBolygok = hazraHatoBolygok;
     }
 
 
-    public String hazUra() {
-        if (jegyHazban.getNev().equals("kos") || jegyHazban.getNev().equals("skorpio")) {
+    public String hazUralkodoBolygoja() {
+        if (hazJegye.getNev().equals("kos") || hazJegye.getNev().equals("skorpio")) {
             return "mars";
-        } else if (jegyHazban.getNev().equals("bika") || jegyHazban.getNev().equals("merleg")) {
+        } else if (hazJegye.getNev().equals("bika") || hazJegye.getNev().equals("merleg")) {
             return "venusz";
-        } else if (jegyHazban.getNev().equals("ikrek") || jegyHazban.getNev().equals("szuz")) {
+        } else if (hazJegye.getNev().equals("ikrek") || hazJegye.getNev().equals("szuz")) {
             return "merkur";
-        } else if (jegyHazban.getNev().equals("nyilas") || jegyHazban.getNev().equals("halak")) {
+        } else if (hazJegye.getNev().equals("nyilas") || hazJegye.getNev().equals("halak")) {
             return "jupiter";
-        } else if (jegyHazban.getNev().equals("bak") || jegyHazban.getNev().equals("vizonto")) {
+        } else if (hazJegye.getNev().equals("bak") || hazJegye.getNev().equals("vizonto")) {
             return "szaturnusz";
-        } else if (jegyHazban.getNev().equals("oroszlan")) {
+        } else if (hazJegye.getNev().equals("oroszlan")) {
             return "nap";
-        } else if (jegyHazban.getNev().equals("rak")) {
+        } else if (hazJegye.getNev().equals("rak")) {
             return "hold";
         } else {
             System.err.println("nincs hazura problem");
@@ -77,8 +74,8 @@ public class Haz {
         return haztipus;
     }
 
-    public Jegy getJegyHazban() {
-        return jegyHazban;
+    public Jegy getHazJegye() {
+        return hazJegye;
     }
 
     public Bolygo getHazraHatoBolygo() {

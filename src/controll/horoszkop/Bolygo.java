@@ -1,7 +1,5 @@
-package controll.bolygok;
+package controll.horoszkop;
 
-import controll.hazak.Haz;
-import controll.jegyek.Jegy;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -10,6 +8,7 @@ public class Bolygo {
     private final String nev;
     private String szint;
     private int pont;
+    private double fokszam;
 
     private Jegy BolygoJegye;
     private Haz BolygoHaza;
@@ -19,18 +18,19 @@ public class Bolygo {
     }
 
     /** konstruktorok*/
-    public Bolygo(String nev) {
+    public Bolygo(String nev, Jegy bolygoJegye) {
         this.nev = nev;
         setPont();
         setSzint();
-    }
-
-    public Bolygo(String nev, Jegy bolygoJegye) {
-        this(nev);
         BolygoJegye = bolygoJegye;
     }
 
     public Bolygo(String nev, Jegy bolygoJegye, Haz bolygoHaza) {
+        this(nev, bolygoJegye);
+        BolygoHaza = bolygoHaza;
+    }
+
+    public Bolygo(String nev, Jegy bolygoJegye, Haz bolygoHaza,double fokszam) {
         this(nev, bolygoJegye);
         BolygoHaza = bolygoHaza;
     }

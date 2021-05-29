@@ -1,4 +1,4 @@
-package controll.jegyek;
+package controll.horoszkop;
 
 import java.util.ArrayList;
 import java.util.Arrays;

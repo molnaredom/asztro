@@ -1,8 +1,8 @@
 package controll.horoszkopok;
 
-import controll.bolygok.Bolygo;
-import controll.hazak.Haz;
-import controll.jegyek.Jegy;
+import controll.horoszkop.Bolygo;
+import controll.horoszkop.Haz;
+import controll.horoszkop.Jegy;
 
 import java.util.Date;
 

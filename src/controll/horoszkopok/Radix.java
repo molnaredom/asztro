@@ -1,7 +1,7 @@
 package controll.horoszkopok;
 
-import controll.bolygok.Bolygo;
-import controll.hazak.Haz;
+import controll.horoszkop.Bolygo;
+import controll.horoszkop.Haz;
 import modell.analogiak.JegyAnalogia;
 
 import java.util.Arrays;

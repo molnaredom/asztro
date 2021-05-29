@@ -1,7 +1,7 @@
 package controll.horoszkopok;
 
-import controll.bolygok.Bolygo;
-import controll.hazak.Haz;
+import controll.horoszkop.Bolygo;
+import controll.horoszkop.Haz;
 import modell.analogiak.HazAnalogia;
 
 import java.util.ArrayList;
@@ -14,6 +14,9 @@ public interface Elemzes {
     //todo lesz egy összetett adattipus ami kulonbozo ertekeket tarol int pl (1,10,32,21,24)
     //todo es ez minden elemzes interfaceban levo fuggbeny visszateresi ertek lesz
     // majd a visszateritett ertekeket  a horoszlkoposszesito classban kiértékeli és egy összetett szemelyiseget alkot majd
+
+    boolean vanhazur = false;
+
 
     //személyiség
     static void evszakiFelosztas(Bolygo[] bolygok) {
@@ -46,7 +49,7 @@ public interface Elemzes {
                 case "valtozo" -> valtozo += b.getPont();
             }
         }
-        switch (asc.getJegyHazban().getMinoseg()) {
+        switch (asc.getHazJegye().getMinoseg()) {
             case "kardinalis" -> kardinalis += 2;
             case "szilard" -> szilard += 2;
             case "valtozo" -> valtozo += 2;
@@ -70,7 +73,7 @@ public interface Elemzes {
                 case "viz" -> viz += b.getPont();
             }
         }
-        switch (asc.getJegyHazban().getElem()) {
+        switch (asc.getHazJegye().getElem()) {
             case "tuz" -> tuz += 2;
             case "fold" -> fold += 2;
             case "levego" -> levego += 2;
@@ -227,9 +230,8 @@ public interface Elemzes {
         Bolygo szaturn = bolygok[6];
         Bolygo jupi = bolygok[5];
 
-
-
     }
+
 
 
 
@@ -253,16 +255,53 @@ public interface Elemzes {
     }
 
 
+    static void megvalVcelkij(Bolygo[] bolygok, Haz[] hazak) {
+        int cel =0;
+        int megv =0;
+
+        if (vaneHazur(hazak[0],bolygok)) megv++;
+        if (vaneHazur(hazak[9],bolygok)) cel++;
+
+        //if (tamadva)
+        //todo megnezni tamadja e az mct vagy za asct kvadrat vagy oppozicio ez alapjan pontot adni
+
+        if (megv==cel) {
+            //todo megvizsgalni a marsot tamadjak e es eldonteni veglegesen
+        }
+        //todo eldonteni celk, vagy megvalosito e?
+
+    }
+
+    static boolean vaneHazur(Haz haz, Bolygo[] bolygok) {
+
+        boolean vanHazur = false;
+
+        for (Bolygo b : bolygok) {
+            if( b.getNev().equals(haz.hazUralkodoBolygoja()) ) {
+
+                if (b.getBolygoJegye().isPozitiv() == haz.getHazJegye().isPozitiv()
+                    //||
+                    //          b.getBolygoJegye().isPozitiv() != haz.getJegyHazban().isPozitiv() && b.
+                ) {
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
+
+
     static void hazUraMelyikHazban(Haz haz, Bolygo[] bolygok) {
 
         boolean vanHazur = false;
 
         for (Bolygo b : bolygok) {
-            if( b.getNev().equals(haz.hazUra()) ) {
+            if( b.getNev().equals(haz.hazUralkodoBolygoja()) ) {
 
-                if (b.getBolygoJegye().isPozitiv() == haz.getJegyHazban().isPozitiv()
+                if (b.getBolygoJegye().isPozitiv() == haz.getHazJegye().isPozitiv()
                         //||
-                    //                        b.getBolygoJegye().isPozitiv() != haz.getJegyHazban().isPozitiv() && b.
+                    //          b.getBolygoJegye().isPozitiv() != haz.getJegyHazban().isPozitiv() && b.
                 ) {
                     vanHazur=true;
                     System.out.printf("%d-s ura a %d-sben\n",haz.getHazszam(), b.getBolygoHaza().getHazszam());
@@ -274,7 +313,7 @@ public interface Elemzes {
         if (!vanHazur) {
             System.out.println("Nincs házúr: "+haz.getHazszam());
             System.out.printf("Tagadni fogja a %s jegy analógiáit %d ház területén, úgy hogy megtartsa a %s analógiákat.\n",
-                    haz.getJegyHazban().getOpposit(),haz.getHazszam(),haz.getJegyHazban().getNev());
+                    haz.getHazJegye().getOpposit(),haz.getHazszam(),haz.getHazJegye().getNev());
 
         }
 
