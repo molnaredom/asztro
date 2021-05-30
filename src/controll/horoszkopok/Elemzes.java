@@ -249,7 +249,14 @@ public interface Elemzes {
 
     }
 
-
+    static void bolygokfenyszögei(Bolygo[] bolygok){
+        //todo bug nem irjak ki a nap fenyszogeit csak az osszes többit
+        for (Bolygo b : bolygok) {
+           for (String[] k :  b.getFenyszogKapcsoaltok()) {
+               System.out.println(b.getNev()+"-"+k[0]+"-"+k[1]);
+           }
+        }
+    }
 
 
 

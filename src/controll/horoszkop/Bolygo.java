@@ -2,6 +2,7 @@ package controll.horoszkop;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Bolygo {
@@ -10,14 +11,14 @@ public class Bolygo {
     private int pont;
     private double fokszam;
 
-    private Jegy bolygoJegye;
+    private final Jegy bolygoJegye;
     private Haz bolygoHaza;
     private String dekadJegy;
     private int dekadSzam;
+    //string 0 eleme a fenyszog neve , 1 eleme a bolygo amivel kapcsolatban áll
+    private List<String[]> fenyszogKapcsoaltok = new ArrayList<>();
 
-    public int getPont() {
-        return pont;
-    }
+
 
     /** konstruktorok*/
     public Bolygo(String nev, Jegy bolygoJegye) {
@@ -34,9 +35,26 @@ public class Bolygo {
         setDekadSzam();
         setDekadJegy();
 
-
-
     }
+
+    public void fenyszogKapcsHozzaad(String fenyszog, String bolygo) {
+        fenyszogKapcsoaltok.add(new String[] {fenyszog,bolygo});
+    }
+
+    public void setFenyszogKapcsoaltok(List<String[]> fenyszogKapcsoaltok) {
+        this.fenyszogKapcsoaltok = new ArrayList<>();
+    }
+
+
+
+    public List<String[]> getFenyszogKapcsoaltok() {
+        return fenyszogKapcsoaltok;
+    }
+
+
+
+    /**setterek*/
+
 
     public void setDekadSzam() {
         if (0.0<=fokszam && 10.0>fokszam) {
@@ -46,50 +64,6 @@ public class Bolygo {
         }else if (20.0<=fokszam && 30.0>fokszam) {
             this.dekadSzam =3;
         }
-    }
-
-    public double getFokszam() {
-        return fokszam;
-    }
-
-    public void setDekadJegy() {
-        dekadJegy = bolygoJegye.getDekadJegyek()[dekadSzam-1];
-    }
-
-
-    public void setPont() {
-
-        ArrayList<String> ketpont = new ArrayList<>(Arrays.asList("nap", "hold", "merkur"));
-        ArrayList<String> egypont = new ArrayList<>(Arrays.asList("jupiter","neptun","pluto","mars","venusz","szaturnusz","uranusz"));
-
-        if (ketpont.contains(nev)){
-            this.pont = 2;
-        }  else if (egypont.contains(nev)) {
-            this.pont = 1;
-        } else {
-            System.err.println("hibas setPont:"+nev );
-            this.pont = 0;
-        }
-    }
-
-    public Jegy getBolygoJegye() {
-        return bolygoJegye;
-    }
-
-    public Haz getBolygoHaza() {
-        return bolygoHaza;
-    }
-    public String getSzint() {
-        return szint;
-    }
-    public String getNev() {
-        return nev;
-    }
-    public int getDekadSzam() {
-        return dekadSzam;
-    }
-    public String getDekadJegy() {
-        return dekadJegy;
     }
 
     private void setSzint() {
@@ -112,4 +86,53 @@ public class Bolygo {
             this.szint = "";
         }
     }
+
+    public void setPont() {
+
+        ArrayList<String> ketpont = new ArrayList<>(Arrays.asList("nap", "hold", "merkur"));
+        ArrayList<String> egypont = new ArrayList<>(Arrays.asList("jupiter","neptun","pluto","mars","venusz","szaturnusz","uranusz"));
+
+        if (ketpont.contains(nev)){
+            this.pont = 2;
+        }  else if (egypont.contains(nev)) {
+            this.pont = 1;
+        } else {
+            System.err.println("hibas setPont:"+nev );
+            this.pont = 0;
+        }
+    }
+
+    public void setDekadJegy() {
+        dekadJegy = bolygoJegye.getDekadJegyek()[dekadSzam-1];
+    }
+
+
+    /**getterek*/
+
+    public Jegy getBolygoJegye() {
+        return bolygoJegye;
+    }
+    public double getFokszam() {
+        return fokszam;
+    }
+    public Haz getBolygoHaza() {
+        return bolygoHaza;
+    }
+    public String getSzint() {
+        return szint;
+    }
+    public String getNev() {
+        return nev;
+    }
+    public int getPont() {
+        return pont;
+    }
+    public int getDekadSzam() {
+        return dekadSzam;
+    }
+    public String getDekadJegy() {
+        return dekadJegy;
+    }
+
+
 }

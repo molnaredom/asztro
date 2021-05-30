@@ -42,7 +42,10 @@ public class HoroszkopokOsszevetes {
     );
 
     public void szovegesertekeles() {
+        radix.fenyszogKapcsLetrehozas();
         radix.elemzes();
+
+
 
     }
 

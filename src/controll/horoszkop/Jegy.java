@@ -14,6 +14,7 @@ public class Jegy {
     private String evszak;
     private boolean pozitiv;
     private String opposit;
+    private String[] mellette = new String[2]; // 2 mellette lévő jegy neve
     //trigon kvadrat szeytil kbinkunksz  0. a jobb oldali 1. a bal oldali
     private final String[] dekadJegyek = new String[3];
     private String[] kvadrat;
@@ -55,7 +56,15 @@ public class Jegy {
         jegyekMap.put(12,"halak");
     }
 
+    public void setMellette() {
+        //jobbra levő a 0. elem , balra levo az 1. elem pl ha kos akkor halak a 0. és bika  az 1.
+        if (jegySzama!= 1)mellette[0] = jegyekMap.get(jegySzama-1);
+        else mellette[0]= "halak";
 
+        if (jegySzama!=12)mellette[1] = jegyekMap.get(jegySzama+1);
+        else mellette[1] = "kos";
+
+    }
 
     /** konstruktorok*/
     public Jegy(String nev) {
@@ -68,6 +77,7 @@ public class Jegy {
         setPozitiv();
         setOpposit();
         dekadSzerintrendezes();
+        setMellette();
     }
 
 
@@ -110,6 +120,7 @@ public class Jegy {
     }
 
     private void setKvadrat() {
+        //todo moduloval megcsinalni + ne a drakadot valtoztassa
         switch (jegyNev) {
             case "kos" : {
                 this.dekadJegyek[0] = "rak";
@@ -312,5 +323,8 @@ public class Jegy {
         return pozitiv;
     }
 
+    public String[] getMellette() {
+        return mellette;
+    }
 }
 
