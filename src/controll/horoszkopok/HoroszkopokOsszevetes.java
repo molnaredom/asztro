@@ -8,7 +8,6 @@ import java.util.Date;
 
 public class HoroszkopokOsszevetes {
 
-    boolean ferfi;
 
 
     //todo  fokszam decimalisan van kerektive viszont a fokszamok 60as szamrendszerben vannak

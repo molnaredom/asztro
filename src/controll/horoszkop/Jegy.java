@@ -14,7 +14,7 @@ public class Jegy {
     private String evszak;
     private boolean pozitiv;
     private String opposit;
-    private String[] mellette = new String[2]; // 2 mellette lévő jegy neve
+    private final String[] mellette = new String[2]; // 2 mellette lévő jegy neve
     //trigon kvadrat szeytil kbinkunksz  0. a jobb oldali 1. a bal oldali
     private final String[] dekadJegyek = new String[3];
     private String[] kvadrat;
@@ -79,6 +79,7 @@ public class Jegy {
         dekadSzerintrendezes();
         setMellette();
     }
+
 
 
 
@@ -217,7 +218,6 @@ public class Jegy {
             case "vizonto" -> this.opposit = "oroszlan";
             case "halak" -> this.opposit = "szuz";
         }
-
 
     }
 

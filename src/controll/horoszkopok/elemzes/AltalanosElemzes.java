@@ -1,4 +1,4 @@
-package controll.horoszkopok;
+package controll.horoszkopok.elemzes;
 
 import controll.horoszkop.Bolygo;
 import controll.horoszkop.Haz;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public interface Elemzes {
+public interface AltalanosElemzes {
 
 
     //todo lesz egy összetett adattipus ami kulonbozo ertekeket tarol int pl (1,10,32,21,24)
@@ -252,6 +252,7 @@ public interface Elemzes {
     static void bolygokfenyszögei(Bolygo[] bolygok){
         //todo bug nem irjak ki a nap fenyszogeit csak az osszes többit
         for (Bolygo b : bolygok) {
+            System.out.println();
            for (String[] k :  b.getFenyszogKapcsoaltok()) {
                System.out.println(b.getNev()+"-"+k[0]+"-"+k[1]);
            }
