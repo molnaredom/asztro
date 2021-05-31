@@ -82,9 +82,6 @@ public class Jegy {
 
 
 
-
-
-
     /**setterek*/
     private void dekadSzerintrendezes() {
         int maradek =(jegySzama-1)%4;//0-11
