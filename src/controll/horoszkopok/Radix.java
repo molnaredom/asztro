@@ -3,9 +3,6 @@ package controll.horoszkopok;
 import controll.horoszkop.Bolygo;
 import controll.horoszkop.Haz;
 import controll.horoszkopok.elemzes.AltalanosElemzes;
-import modell.analogiak.JegyAnalogia;
-
-import java.util.Arrays;
 
 public class Radix extends Horoszkop {
 
@@ -47,208 +44,233 @@ public class Radix extends Horoszkop {
         AltalanosElemzes.bolygokfenyszögei(bolygok);
     }
 
+    /**segedfuggveny bolygot vár aminek visszza adja a jegynevét*/
+    private String altjegynevU(Bolygo bolygo, String fenyszog, int melyik) {
+        if (fenyszog.equals("konjukcio") && melyik==0)  return bolygo.getBolygoJegye().getJegyNev();
+        else if (fenyszog.equals("konjukcio")&& melyik ==1) return bolygo.getBolygoJegye().getMellette()[0];
+        else if (fenyszog.equals("konjukcio")&& melyik ==2) return bolygo.getBolygoJegye().getMellette()[1];
+
+        else if (fenyszog.equals("oppozicio") && melyik==0) return opposit( bolygo.getBolygoJegye().getJegyNev());
+        else if (fenyszog.equals("oppozicio") && melyik==1) return opposit(bolygo.getBolygoJegye().getMellette()[0]);
+        else if (fenyszog.equals("oppozicio") && melyik==2) return opposit(bolygo.getBolygoJegye().getMellette()[1]);
+        else return null;
+
+    }
+
+    private String altjegynevB(Bolygo bolygo, String fenyszog, int melyik) {
+         if (fenyszog.equals("kvadrat")&& melyik ==0) return kvad( jegynev(bolygo))[0];
+        else if (fenyszog.equals("kvadrat")&& melyik ==1) return kvad( jegynev(bolygo))[1];
+        else if (fenyszog.equals("kvadrat")&& melyik ==2) return kvad(bolygo.getBolygoJegye().getMellette()[0])[0];
+        else if (fenyszog.equals("kvadrat")&& melyik ==3) return kvad(bolygo.getBolygoJegye().getMellette()[0])[1];
+        else if (fenyszog.equals("kvadrat")&& melyik ==4) return kvad(bolygo.getBolygoJegye().getMellette()[1])[0];
+        else if (fenyszog.equals("kvadrat")&& melyik ==5) return kvad(bolygo.getBolygoJegye().getMellette()[1])[1];
+
+        else if (fenyszog.equals("trigon")&& melyik ==0) return trig( jegynev(bolygo))[0];
+        else if (fenyszog.equals("trigon")&& melyik ==1) return trig( jegynev(bolygo))[1];
+        else if (fenyszog.equals("trigon")&& melyik ==2) return trig(bolygo.getBolygoJegye().getMellette()[0])[0];
+        else if (fenyszog.equals("trigon")&& melyik ==3) return trig(bolygo.getBolygoJegye().getMellette()[0])[1];
+        else if (fenyszog.equals("trigon")&& melyik ==4) return trig(bolygo.getBolygoJegye().getMellette()[1])[0];
+        else if (fenyszog.equals("trigon")&& melyik ==5) return trig(bolygo.getBolygoJegye().getMellette()[1])[1];
+
+         /*else if (fenyszog.equals("szextil")&& melyik ==0) return szex( jegynev(bolygo))[0];
+         else if (fenyszog.equals("szextil")&& melyik ==1) return szex( jegynev(bolygo))[1];
+         else if (fenyszog.equals("szextil")&& melyik ==2) return szex(bolygo.getBolygoJegye().getMellette()[0])[0];
+         else if (fenyszog.equals("szextil")&& melyik ==3) return szex(bolygo.getBolygoJegye().getMellette()[0])[1];
+         else if (fenyszog.equals("szextil")&& melyik ==4) return szex(bolygo.getBolygoJegye().getMellette()[1])[0];
+         else if (fenyszog.equals("szextil")&& melyik ==5) return szex(bolygo.getBolygoJegye().getMellette()[1])[1];
+*/
+
+
+
+         else return null;
+
+    }
+
+
+
     public void fenyszogKapcsLetrehozas(){
         for (Bolygo b : bolygok) {
 
             for (Bolygo keres :bolygok) {
 
-                //konjukciovizsgálat
-                konjukcio(b,keres,"konjukcio");
-                oppozicio(b,keres,"oppozicio");
-                kvadrat(b,keres,"kvadrat");
+                altFenyszogUnaris(b,keres,"konjukcio");
+                altFenyszogUnaris(b,keres,"oppozicio");
+                altFenyszogBinaris(b,keres,"kvadrat");
+                altFenyszogBinaris(b,keres, "trigon");
+                altFenyszogBinaris(b,keres, "szextil");
 
             }
         }
     }
 
-    /**segedfuggveny bolygot vár aminek visszza adja a jegynevét*/
-    private String jegynev(Bolygo bolygo) {
-        return bolygo.getBolygoJegye().getJegyNev();
-    }
 
 
-
-    public void konjukcio(Bolygo b, Bolygo keres, String fenyszogNev) {
-
+    private void altFenyszogUnaris(Bolygo b, Bolygo keres, String fenyszogNev) {
         double bolygoFok = b.getFokszam();
 
 
-        if (keres.getBolygoJegye().getJegyNev().equals(b.getBolygoJegye().getJegyNev()) &&
-                Math.abs( bolygoFok-keres.getFokszam())<=10&&
-                keres!=b //a ket bolyg nem ugyanaz
-        ) {
-
-            b.fenyszogKapcsHozzaad(fenyszogNev,keres.getNev());
-
-            //elottel levo jegy utolso 10 fokanak vizsgalata
-        } else if (keres.getBolygoJegye().getJegyNev().equals(b.getBolygoJegye().getMellette()[0]) &&
-                keres.getFokszam()>=20 &&
-                (30-keres.getFokszam()+bolygoFok)<=10) {
-
-            b.fenyszogKapcsHozzaad(fenyszogNev,keres.getNev());
-
-            //utana levo jegy elso 10 fokanak vizsgalata
-        } else if (keres.getBolygoJegye().getJegyNev().equals(b.getBolygoJegye().getMellette()[1]) &&
-                keres.getFokszam()<=10 &&
-                (keres.getFokszam()+30-bolygoFok)<=10) {
-
-            b.fenyszogKapcsHozzaad(fenyszogNev,keres.getNev());
-
-        }
-    }
-
-    public void oppozicio(Bolygo b, Bolygo keres, String fenyszogNev) {
-
-        double bolygoFok = b.getFokszam();
-
-
-        if (keres.getBolygoJegye().getJegyNev().equals(opposit( b.getBolygoJegye().getJegyNev())) &&
+        if (keres.getBolygoJegye().getJegyNev().equals(altjegynevU(b,fenyszogNev,0)) &&
                 Math.abs( bolygoFok-keres.getFokszam())<=10&&
                 keres!=b //a ket bolyg nem ugyanaz
         ) { b.fenyszogKapcsHozzaad(fenyszogNev,keres.getNev());}
 
         //elottel levo jegy utolso 10 fokanak vizsgalata
-        else if (keres.getBolygoJegye().getJegyNev().equals(opposit(b.getBolygoJegye().getMellette()[0])) &&
+        else if (keres.getBolygoJegye().getJegyNev().equals(altjegynevU(b,fenyszogNev,1)) &&
                 keres.getFokszam()>=20 &&
                 (30-keres.getFokszam()+bolygoFok)<=10
         ) { b.fenyszogKapcsHozzaad(fenyszogNev,keres.getNev()); }
 
         //utana levo jegy elso 10 fokanak vizsgalata
-        else if (keres.getBolygoJegye().getJegyNev().equals(opposit(b.getBolygoJegye().getMellette()[1])) &&
+        else if (keres.getBolygoJegye().getJegyNev().equals(altjegynevU(b,fenyszogNev,2)) &&
                 keres.getFokszam()<=10 &&
                 (keres.getFokszam()+30-bolygoFok)<=10
         ) { b.fenyszogKapcsHozzaad(fenyszogNev,keres.getNev()); }
     }
 
-    public void kvadrat(Bolygo b1, Bolygo b2, String fenyszogNev) {
-
+    private void altFenyszogBinaris(Bolygo b1, Bolygo b2, String fenyszogNev) {
 
         double bolygoFok = b1.getFokszam();
 
         //bal kvadrat
-        if (jegynev(b1).equals(kvad( jegynev(b2))[0]) &&
+        if (jegynev(b1).equals(altjegynevB(b2,fenyszogNev,0)) &&
                 Math.abs( bolygoFok-b2.getFokszam())<=10&&
                 b2!=b1
         ) { b1.fenyszogKapcsHozzaad(fenyszogNev,b2.getNev()); }
 
         //JOBB KVADRAT
-        else if (jegynev(b1).equals(kvad( jegynev(b2))[1])&&
+        else if (jegynev(b1).equals(altjegynevB(b2,fenyszogNev,1))&&
                 Math.abs( bolygoFok-b2.getFokszam())<=10&&
                 b2!=b1)
         {
-           // System.out.println(kvad(jegynev(b2))[1]);
+            // System.out.println(kvad(jegynev(b2))[1]);
             b1.fenyszogKapcsHozzaad(fenyszogNev,b2.getNev()); }
 
-        //elottel levo jegy utolso 10 fokanak vizsgalata
-        //bal kvadrat - balra jegy
-        else if (jegynev(b1).equals(kvad(b2.getBolygoJegye().getMellette()[0])[0]) &&
+        //elottel levo jegy utolso 10 fokanak vizsgalata----bal kvadrat - balra jegy
+        else if (jegynev(b1).equals(altjegynevB(b2,fenyszogNev,2)) &&
                 b2.getFokszam()>=20 &&
                 (30-b2.getFokszam()+bolygoFok)<=10&&
                 b2!=b1
         ) { b1.fenyszogKapcsHozzaad(fenyszogNev,b2.getNev());}
 
         //jobb kvadrat - balra jegy
-        else if (jegynev(b1).equals(kvad(b2.getBolygoJegye().getMellette()[0])[1]) &&
+        else if (jegynev(b1).equals(altjegynevB(b2,fenyszogNev,3)) &&
                 b2.getFokszam()>=20 &&
                 (30-b2.getFokszam()+bolygoFok)<=10&&
                 b2!=b1
         ) { b1.fenyszogKapcsHozzaad(fenyszogNev,b2.getNev());}
 
-        //utana levo jegy elso 10 foka
-        //bal kvadrat jobbra jegy
-        else if (jegynev(b1).equals(kvad(b2.getBolygoJegye().getMellette()[1])[0]) &&
+        //utana levo jegy elso 10 foka----bal kvadrat jobbra jegy
+        else if (jegynev(b1).equals(altjegynevB(b2,fenyszogNev,4)) &&
                 b2.getFokszam()<=10 &&
                 (b2.getFokszam()+30-bolygoFok)<=10&&
                 b2!=b1
         ) { b1.fenyszogKapcsHozzaad(fenyszogNev,b2.getNev()); }
 
         //bal kvadrat jobbra jegy
-        else if (jegynev(b1).equals(kvad(b2.getBolygoJegye().getMellette()[1])[1]) &&
+        else if (jegynev(b1).equals(altjegynevB(b2,fenyszogNev,5)) &&
                 b2.getFokszam()<=10 &&
                 (b2.getFokszam()+30-bolygoFok)<=10&&
                 b2!=b1
         ) { b1.fenyszogKapcsHozzaad(fenyszogNev,b2.getNev()); }
+
     }
 
 
 
+    private String jegynev(Bolygo bolygo){
+        return bolygo.getBolygoJegye().getJegyNev();
+    }
+
+
+    /**
+     * a megfelelő jegyhez a megfelelő számot társítja
+     */
+    private String szamotJegyre(int szam) {
+        return switch (szam) {
+            case 1 -> "kos";
+            case 2 -> "bika";
+            case 3 -> "ikrek";
+            case 4 -> "rak";
+            case 5 -> "oroszlan";
+            case 6 -> "szuz";
+            case 7 -> "merleg";
+            case 8 -> "skorpio";
+            case 9 -> "nyilas";
+            case 10 -> "bak";
+            case 11 -> "vizonto";
+            case 12 -> "halak";
+            default -> "";
+        };
+    }
+    /**
+     * a megfelelő számhoz a megfelelő jegyet társítja
+     */
+    private int jegyetSzamra(String jegyNev) {
+        return switch (jegyNev) {
+            case "kos" -> 1;
+            case "bika" -> 2;
+            case "ikrek" -> 3;
+            case "rak" -> 4;
+            case "oroszlan" -> 5;
+            case "szuz" -> 6;
+            case "merleg" -> 7;
+            case "skorpio" -> 8;
+            case "nyilas" -> 9;
+            case "bak" -> 10;
+            case "vizonto" -> 11;
+            case "halak" -> 12;
+            default -> 0;
+        };
+    }
+
+
+    /**
+     * kisegítő fgv-ek
+     */
 
     public String opposit(String atforditandoJegy){
-        switch (atforditandoJegy) {
-            case "kos" -> { return "merleg"; }
-            case "bika" -> { return "skorpio"; }
-            case "ikrek" -> { return "nyilas"; }
-            case "rak" -> { return "bak"; }
-            case "oroszlan" -> { return "vizonto"; }
-            case "szuz" -> { return "halak"; }
-            case "merleg" -> { return "kos"; }
-            case "skorpio" -> { return "bika"; }
-            case "nyilas" -> { return "ikrek"; }
-            case "bak" -> {return "rak";}
-            case "vizonto" -> { return "oroszlan"; }
-            case "halak" -> { return "szuz"; }
-        }
-        return null;
+        return switch (atforditandoJegy) {
+            case "kos" -> "merleg";
+            case "bika" -> "skorpio";
+            case "ikrek" -> "nyilas";
+            case "rak" -> "bak";
+            case "oroszlan" -> "vizonto";
+            case "szuz" -> "halak";
+            case "merleg" -> "kos";
+            case "skorpio" -> "bika";
+            case "nyilas" -> "ikrek";
+            case "bak" -> "rak";
+            case "vizonto" -> "oroszlan";
+            case "halak" -> "szuz";
+            default -> null;
+        };
     }
 
     public String[] kvad(String atforditandoJegy) {
-        String[] visszater = new String[2];
+        int forditndojegySzama = jegyetSzamra(atforditandoJegy);
 
-        switch (atforditandoJegy) {
-            case "kos" : {
-                visszater[0] = "rak";
-                visszater[1] = "bak";return visszater;
-
-            }
-            case "bika" : {
-                visszater[0] = "oroszlan";
-                visszater[1] = "vizonto";return visszater;
-            }
-            case "ikrek" : {
-                visszater[0] = "szuz";
-                visszater[1] = "halak";return visszater;
-            }
-            case "rak" : {
-                visszater[0] = "merleg";
-                visszater[1] = "kos";return visszater;
-            }
-            case "szuz" : {
-                visszater[0] = "nyilas";
-                visszater[1] = "ikrek";return visszater;
-            }
-            case "oroszlan" : {
-                visszater[0] = "skorpio";
-                visszater[1] = "bika";
-                return visszater;
-            }
-            case "merleg" : {
-                visszater[0] = "bak";
-                visszater[1] = "rak";return visszater;
-            }
-            case "skorpio" : {
-                visszater[0] = "vizonto";
-                visszater[1] = "oroszlan";return visszater;
-            }
-            case "nyilas" : {
-                visszater[0] = "halak";
-                visszater[1] = "szuz";return visszater;
-            }
-            case "bak" : {
-                visszater[0] = "kos";
-                visszater[1] = "merleg";return visszater;
-            }
-            case "vizonto" : {
-                visszater[0] = "bika";
-                visszater[1] = "skorpio";return visszater;
-            }
-            case "halak" : {
-                visszater[0] = "ikrek";
-                visszater[1] = "nyilas";return visszater;
-            }
-        }
-        return visszater;
+        return new String[] {
+                szamotJegyre(((forditndojegySzama-1 + 3*1)%12)+1), //a jegy utan következő első trigonális jegy
+                szamotJegyre(((forditndojegySzama-1 + 3*3)%12)+1)  //a jegy utan másodiknak következő trig jegy
+        };
     }
 
+    public String[] trig(String atforditandoJegy) {
+        int forditndojegySzama = jegyetSzamra(atforditandoJegy);
 
+        return new String[] {
+                szamotJegyre(((forditndojegySzama-1 + 4*1)%12)+1), //a jegy utan következő első trigonális jegy
+                szamotJegyre(((forditndojegySzama-1 + 4*2)%12)+1)  //a jegy utan másodiknak következő trig jegy
+        };
+    }
+    //todo szextil bug - akkor is kiierja amikor nem kene, neha jo is de sokszor rosszul
+    /*public String[] szex(String atforditandoJegy) {
+        int forditndojegySzama = jegyetSzamra(atforditandoJegy);
+
+        return new String[] {
+                szamotJegyre(((forditndojegySzama-1 + 2*1)%12)+1), //a jegy utan következő első trigonális jegy
+                szamotJegyre(((forditndojegySzama-1 + 2*5)%12)+1)  //a jegy utan másodiknak következő trig jegy
+        };
+    }*/
 
 }
