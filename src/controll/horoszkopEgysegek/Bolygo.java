@@ -1,44 +1,47 @@
-package controll.horoszkop;
+package controll.horoszkopEgysegek;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 
-public class Bolygo {
-    private final String nev;
+public class Bolygo extends HoroszkopEgyseg {
     private String szint;
     private int pont;
-    private double fokszam;
 
-    private final Jegy bolygoJegye;
-    private Haz bolygoHaza;
+    private int bolygoHazSzama;
     private String dekadJegy;
     private int dekadSzam;
+    private double osszFokszam;
     //string 0 eleme a fenyszog neve , 1 eleme a bolygo amivel kapcsolatban áll
     private List<String[]> fenyszogKapcsoaltok = new ArrayList<>();
 
 
-
     /** konstruktorok*/
-    public Bolygo(String nev, Jegy bolygoJegye) {
-        this.nev = nev;
+    public Bolygo(String nev, Jegy bolygoJegye, double fokszam) {
+        super(nev,bolygoJegye,fokszam);
         setPont();
         setSzint();
-        this.bolygoJegye = bolygoJegye;
-    }
-
-    public Bolygo(String nev, Jegy bolygoJegye, Haz bolygoHaza, double fokszam) {
-        this(nev, bolygoJegye);
-        this.fokszam = fokszam;
-        this.bolygoHaza = bolygoHaza;
         setDekadSzam();
         setDekadJegy();
+    }
 
+
+    public double getOsszFokszam() {
+        return osszFokszam;
+    }
+
+    public void setOsszFokszam(double osszFokszam) {
+        this.osszFokszam = osszFokszam;
+    }
+
+    public void setBolygoHazSzama(int hazszam) {
+        bolygoHazSzama= hazszam;
     }
 
     public void fenyszogKapcsHozzaad(String fenyszog, String bolygo) {
         fenyszogKapcsoaltok.add(new String[] {fenyszog,bolygo});
+
     }
 
     public void setFenyszogKapcsoaltok(List<String[]> fenyszogKapcsoaltok) {
@@ -103,20 +106,20 @@ public class Bolygo {
     }
 
     public void setDekadJegy() {
-        dekadJegy = bolygoJegye.getDekadJegyek()[dekadSzam-1];
+        dekadJegy = jegy.getDekadJegyek()[dekadSzam-1];
     }
 
 
     /**getterek*/
 
-    public Jegy getBolygoJegye() {
-        return bolygoJegye;
+    public Jegy getJegy() {
+        return jegy;
     }
     public double getFokszam() {
         return fokszam;
     }
-    public Haz getBolygoHaza() {
-        return bolygoHaza;
+    public int getBolygoHazSzama() {
+        return bolygoHazSzama;
     }
     public String getSzint() {
         return szint;

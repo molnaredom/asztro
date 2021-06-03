@@ -1,7 +1,7 @@
-package controll.horoszkopok.elemzes;
+package controll.elemzes;
 
-import controll.horoszkop.Bolygo;
-import controll.horoszkop.Haz;
+import controll.horoszkopEgysegek.Bolygo;
+import controll.horoszkopEgysegek.Haz;
 import modell.analogiak.HazAnalogia;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public interface AltalanosElemzes {
 
 
     for (Bolygo k : bolygok) {
-        switch (k.getBolygoJegye().getEvszak()) {
+        switch (k.getJegy().getEvszak()) {
             case "tavasz" -> tavasz += k.getPont();
             case "nyar" -> nyar += k.getPont();
             case "osz" -> osz += k.getPont();
@@ -54,7 +54,7 @@ public interface AltalanosElemzes {
 
         for (Bolygo b : bolygos) {
 
-            switch (b.getBolygoJegye().getMinoseg()) {
+            switch (b.getJegy().getMinoseg()) {
                 case "kardinalis" -> kardinalis += b.getPont();
                 case "szilard" -> szilard += b.getPont();
                 case "valtozo" -> valtozo += b.getPont();
@@ -77,7 +77,7 @@ public interface AltalanosElemzes {
 
         for (Bolygo b : bolygos) {
 
-            switch (b.getBolygoJegye().getElem()) {
+            switch (b.getJegy().getElem()) {
                 case "tuz" -> tuz += b.getPont();
                 case "fold" -> fold += b.getPont();
                 case "levego" -> levego += b.getPont();
@@ -109,13 +109,13 @@ public interface AltalanosElemzes {
         for (String hazbanEltBolygo : hazbanEles) {
             for (Bolygo b : bolygok) {
                 if (b.getNev().equals(hazbanEltBolygo)) {
-                    parositas.put(b.getNev(),String.valueOf(b.getBolygoHaza().getHazszam()));
+                    parositas.put(b.getNev(),String.valueOf(b.getBolygoHazSzama()));
                 }
             }
         }
-        parositas.put("szaturnusz",bolygok[6].getBolygoJegye().getJegyNev());
-        parositas.put("uranusz",bolygok[7].getBolygoJegye().getJegyNev());
-        parositas.put("nap",bolygok[0].getBolygoJegye().getJegyNev());
+        parositas.put("szaturnusz",bolygok[6].getJegy().getJegyNev());
+        parositas.put("uranusz",bolygok[7].getJegy().getJegyNev());
+        parositas.put("nap",bolygok[0].getJegy().getJegyNev());
 
         System.out.printf("""
                 %s szaturnusz  ------->  neptun a %s. házban
@@ -141,10 +141,10 @@ public interface AltalanosElemzes {
 
         boolean onfelaldozo = false; //ha false akkor kiszolgaltatott
 
-        int uranuszHazszam = bolygok[7].getBolygoHaza().getHazszam();
-        int neptunHazszam = bolygok[8].getBolygoHaza().getHazszam();
-        int jupiterHazszam = bolygok[5].getBolygoHaza().getHazszam();
-        int szaturnHazszam = bolygok[6].getBolygoHaza().getHazszam();
+        int uranuszHazszam = bolygok[7].getBolygoHazSzama();
+        int neptunHazszam = bolygok[8].getBolygoHazSzama();
+        int jupiterHazszam = bolygok[5].getBolygoHazSzama();
+        int szaturnHazszam = bolygok[6].getBolygoHazSzama();
 
         //nap hold...venusz +pluto
         Bolygo[] pontoteroBolygok = Arrays.copyOfRange(bolygok,0,6);//elso 6 bolygot veszi
@@ -155,16 +155,16 @@ public interface AltalanosElemzes {
         int p11 =0;
 
         for (Bolygo b : pontoteroBolygok) {
-            if (b.getBolygoHaza().getHazszam()==12) p12+=b.getPont();
-            else if (b.getBolygoHaza().getHazszam()==11) p11+= b.getPont();
+            if (b.getBolygoHazSzama()==12) p12+=b.getPont();
+            else if (b.getBolygoHazSzama()==11) p11+= b.getPont();
         }
 
         int vizonto=0;
         int halak =0;
 
         for (Bolygo b : pontoteroBolygok) {
-            if (b.getBolygoJegye().getJegyNev().equals("vizonto")) vizonto+= b.getPont();
-            else if (b.getBolygoJegye().getJegyNev().equals("halak")) halak+= b.getPont();
+            if (b.getJegy().getJegyNev().equals("vizonto")) vizonto+= b.getPont();
+            else if (b.getJegy().getJegyNev().equals("halak")) halak+= b.getPont();
         }
 
 
@@ -242,15 +242,14 @@ public interface AltalanosElemzes {
         Bolygo jupi = bolygok[5];
 
         System.out.println(
-                "Középső szinten kell élnie a jupiterét a "+jupi.getBolygoHaza().getHazszam()+" házban.\n"+
-                "Felső szinten kell élnie a szaturnuszát a "+szaturn.getBolygoJegye().getJegyNev()+" jegybén."
+                "Középső szinten kell élnie a jupiterét a "+jupi.getBolygoHazSzama()+" házban.\n"+
+                "Felső szinten kell élnie a szaturnuszát a "+szaturn.getJegy().getJegyNev()+" jegybén."
 
         );
 
     }
 
     static void bolygokfenyszögei(Bolygo[] bolygok){
-        //todo bug nem irjak ki a nap fenyszogeit csak az osszes többit
         for (Bolygo b : bolygok) {
             System.out.println();
            for (String[] k :  b.getFenyszogKapcsoaltok()) {
@@ -263,8 +262,8 @@ public interface AltalanosElemzes {
 
     // egyéb
     static void hyleg(Bolygo[] bolygok) {
-        int napHaza = bolygok[0].getBolygoHaza().getHazszam();
-        int holdHaza = bolygok[1].getBolygoHaza().getHazszam();
+        int napHaza = bolygok[0].getBolygoHazSzama();
+        int holdHaza = bolygok[1].getBolygoHazSzama();
         ArrayList<Integer> kiemeltHazak = new ArrayList<>(Arrays.asList(7,9,10,11));
 
         if(kiemeltHazak.contains(napHaza) ){
@@ -297,14 +296,14 @@ public interface AltalanosElemzes {
 
     }
 
-    static boolean vaneHazur(Haz haz, Bolygo[] bolygok) {
+    private static boolean vaneHazur(Haz haz, Bolygo[] bolygok) {
 
         boolean vanHazur = false;
 
         for (Bolygo b : bolygok) {
             if( b.getNev().equals(haz.hazUralkodoBolygoja()) ) {
 
-                if (b.getBolygoJegye().isPozitiv() == haz.getHazJegye().isPozitiv()
+                if (b.getJegy().isPozitiv() == haz.getHazJegye().isPozitiv()
                     //||
                     //          b.getBolygoJegye().isPozitiv() != haz.getJegyHazban().isPozitiv() && b.
                 ) {
@@ -324,12 +323,12 @@ public interface AltalanosElemzes {
         for (Bolygo b : bolygok) {
             if( b.getNev().equals(haz.hazUralkodoBolygoja()) ) {
 
-                if (b.getBolygoJegye().isPozitiv() == haz.getHazJegye().isPozitiv()
+                if (b.getJegy().isPozitiv() == haz.getHazJegye().isPozitiv()
                         //||
                     //          b.getBolygoJegye().isPozitiv() != haz.getJegyHazban().isPozitiv() && b.
                 ) {
                     vanHazur=true;
-                    System.out.printf("%d-s ura a %d-sben\n",haz.getHazszam(), b.getBolygoHaza().getHazszam());
+                    System.out.printf("%d-s ura a %d-sben\n",haz.getHazszam(), b.getBolygoHazSzama());
                 }
 
             }
@@ -346,8 +345,8 @@ public interface AltalanosElemzes {
 
 
     static void napHoldPluszosMinuszos(Bolygo[] bolygok, boolean ferfi) {
-        int napHaza = bolygok[0].getBolygoHaza().getHazszam();
-        int holdHaza = bolygok[1].getBolygoHaza().getHazszam();
+        int napHaza = bolygok[0].getBolygoHazSzama();
+        int holdHaza = bolygok[1].getBolygoHazSzama();
 
         ArrayList<Integer> kiemeltVilagosHazak = new ArrayList<>(Arrays.asList(1,5,9,10,11));
         ArrayList<Integer> kiemeltSotetHazak = new ArrayList<>(Arrays.asList(4,8,12));

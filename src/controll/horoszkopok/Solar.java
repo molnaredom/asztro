@@ -1,7 +1,7 @@
 package controll.horoszkopok;
 
-import controll.horoszkop.Bolygo;
-import controll.horoszkop.Haz;
+import controll.horoszkopEgysegek.Bolygo;
+import controll.horoszkopEgysegek.Haz;
 
 public class Solar extends Horoszkop{
 

@@ -1,4 +1,4 @@
-package controll.horoszkop;
+package controll.horoszkopEgysegek;
 
 import java.util.*;
 

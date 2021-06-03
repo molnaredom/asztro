@@ -1,4 +1,4 @@
-package controll.horoszkopok;
+package controll.elemzes;
 
 public interface OsszehasonlitoElemzes {
 }
