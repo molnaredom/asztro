@@ -12,8 +12,8 @@ Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Másk�
 Filozófiailag akkor elfogadható az asztrológia, ha elismerjük,hogy nincsenek véletlenek.
 
 A kiértékelt eredmények a következő területeken segíthetnek:
-- [] Pályaválasztás
-- [] Általános önismeret
+- [ ] Pályaválasztás
+- [ ] Általános önismeret
 
 
 Működési vázlat:
