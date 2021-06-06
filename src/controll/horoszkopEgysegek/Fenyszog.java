@@ -1,4 +1,4 @@
-package controll.horoszkopok;
+package controll.horoszkopEgysegek;
 
 import controll.horoszkopEgysegek.Bolygo;
 import controll.horoszkopEgysegek.Haz;
@@ -28,6 +28,10 @@ public class Fenyszog{
         }
         for (int i = 0; i <10 ; i++) { //bolygo
             for (int j = 1; j <= 12; j++) {  //haz
+
+                
+
+
                 double bolyFok = bolygok[i].getOsszFokszam();
                 if(j==12) {
                     if (bolyFok + 5 > 360) {

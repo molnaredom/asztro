@@ -1,6 +1,7 @@
 package controll.horoszkopok;
 
 import controll.horoszkopEgysegek.Bolygo;
+import controll.horoszkopEgysegek.Fenyszog;
 import controll.horoszkopEgysegek.Haz;
 import controll.elemzes.AltalanosElemzes;
 import modell.analogiak.JegyAnalogia;

@@ -4,6 +4,23 @@ public interface Gondolatok {
 
 
     String[] gondolatok = new String[] {
+
+            //2 1
+            "a kozeledo fenyszogek az elet elso feleben, a tavolodo fenyszogek az elet masodik feleben valtodnak ki",
+            "egyetlen olyan dontest se hozol az eletedben amirol ne lehetne tudni mi fele visz",
+            "minden embernek a sajat elete a sajat felelosege, es nem az van h fogadd el a sorsod ez van",
+            "a nyugati ember nem azert imadkozik h az tortenjen amit Isten akar hanem h az tortenjen amit o akar-> forditottan vagyunk bekotve",
+            " azt mondjak a regiek mennyivel tobbet tudtek, de ez nem igaz, csupan konnyebben elfogadtak feltetel nelkul azt a keveset ami volt nekik",
+            "mindenki azt kerdezi azasztrolggustol alapvetoen amire vagyik, viszont 10/9 szer a vagy ellentmond a feladatnak",
+            "amit egobol meg tudsz csinalni ahhoz nem kell sors, a sors ellenmond az egonak, ne az ego szamara teritunk meg hanem a sorsera",
+            "ugy gondoljuk minden problemat meg kell oldani, ez teves-> abban a pillanatban h a problema letrejott mar a kepletedben van a megoldas",
+            "ha olyan elethelyzetbe kerulsz ahol nem te dontesz , fogadd el ",
+            "a gyerekazt tanulja meg gyerekkorban h mit kell tennie felnottkent",
+            "nem tudhatjuk magunkrol h mennyire sugarozzuk magunkbol h mennyire vagyunk megbizhatoak,",
+            "ha akarsz venni valamit te vagy az alarendelt, ha nem akkor az eladó",
+
+
+
             //34
             "Ha nem éled a nap szerepet a mars analógiák felerősödnek",
             "nagy trigon: maguktól jönnek létere az események",
@@ -50,7 +67,12 @@ public interface Gondolatok {
             "akkor változtass amikor jól érzed magad",
             "*olyan embverekkel vedd körül magad , akiknek fontos az amit te el akarsz érni",
 
+            //2/2
 
+            "skorpio: en nem erezehetem azt amit a a masik-> tehat ha valakinek nem tetszik az amit csinalok akkor az legyen az o problemaja ,mievel ugy sem erezheti azt amit én",
+            "minden amit te gondolsz, te teszel te erzel, az szol rolad es nem az amit a masik mond rolad",
+            " ha valamit mar csakazert is csinalsz nem azet jelenti h nem torodsz vele, hanem h igenis törődsz evele mit mondanak és erre reakcióként teszed ezt(kb egorol mondatod oket len ittt is skorpio",
+            "skorpio nap, merleg hold: az h engem mindenki elfogadjon es szeressen az lehetetlen-> jobban jarszha magadat szereted, miintha azzal torodnel mit mondanak masok"
 
     };
 }
