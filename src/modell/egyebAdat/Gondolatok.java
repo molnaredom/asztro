@@ -4,6 +4,19 @@ public interface Gondolatok {
 
 
     String[] gondolatok = new String[] {
+            //2 7
+            "attol hogy nem tudsz valamit nem konnyebb az elet",
+            "pontositas: van 4-5 eletesemeny, az ",
+            "ház ura mindi egó",
+            "4 es ura a 8 asban  , le tud mondani a családról",
+            "1 es nepun ego letiiltva: celkijelolo nem lehetsz megvalosito, te kijelolod a celt valaki megvaloditja csak nem ugy ahogy te akarod ",
+            "6 os ura a 3masban, otthon dolgozom, alarendelodom a kozvetken kornyezetemnek",
+            "7 es ura a 10esben: ",
+            "10 es ura a 12 esben eltitkolja a celjait",
+            "ha megjelenik egy vagyad , akkor az tuti h a valami fele visz a mi felkerdezes lesz",
+            "az asztrologiaban tanulni csak a hibból lehet-> nagyon nehez pozitiv nalogiabol tanulni",
+            "",
+
 
             //2 1
             "a kozeledo fenyszogek az elet elso feleben, a tavolodo fenyszogek az elet masodik feleben valtodnak ki",

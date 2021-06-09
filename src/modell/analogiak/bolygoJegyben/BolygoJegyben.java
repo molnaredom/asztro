@@ -349,52 +349,84 @@ public interface BolygoJegyben {
                     },
                     //rák hold
                     {
-                            //általános
+                            //általános -érzelmei
                             {
+                                "odaadó",
+                                    "negyon erős érzelmei vannak, erős kötődés",
+                                    "nagyon féltékeny",
 
                             },
                             //ösztönei
                             {
-
+                                    "jók az intuíciós képességei",
+                                    "megérzi átérzi, erős az empátiája",
+                                    "jól teremt kapcsolatot a tudatalattival/tudattalannal",
+                                    "tele van állandóan szorongással és aggodalommal"
                             },
                             //tehetsége
                             {
+                                "erős a művészi tehetsége",
+                                    "minden tarületen ami családhoz, otthonhoz tartozik",
 
                             },
                             //anya
                             {
-
+                                  "ősanya típus",
+                                    "ha 1 gyereke van nagyon csak hozzá kötődik, ha több akkor megoszlik a szeretet",
+                                    "nagyon odaadó a gyereke iránt",
+                                    "aggódik és szorong a gyereke miatt",
+                                    "nem gyenge ,de érzelmileg kötődik"
                             },
                             //gyerek
                             {
-
+                                "nagyon erős kötősések",
+                                    "az otthonban találja mae a biztonságot, nyugalmat",
+                                    "nem szeret változtani kockáztatni",
+                                    "nagyon érzékeny",
+                                    "jó művészi épességű"
                             },
                             //feleség
                             {
-
+                                "jó háziasszony",
+                                    "élvezi a feleség szerepet",
+                                    "mindent a család felől közelít meg",
+                                    "érzékeny és érzelmekben kiáradó párkapcsolat",
                             },
                             // férfi
                             {
-
+                                    "a nőt a termékenysége miatt választja",
+                                    "érzékenysége, romantikája miatt választja a nőt",
+                                    "a nőt azért választja mert szereti ha a ő söt főz takarít",
+                                    "gyereket, családot szeretne a nőtől"
                             },
                             //alárendeltsége
                             {
-
+                                "ahol érzelmileg érintett ott tökéletesen alá tud rendelődkni",
+                                    "ahol ő nélkülözhetetlen ott alá tud rendlődni"
                             },
                             //befogadása
                             {
-
+                                "tökéletes befogadó",
+                                    "a gyerek a befogadás számára",
+                                    "gyereket csak az akarhat nála aki megtermékenyíti"
                             }
                     },
                     //oroszlán hold
                     {
-                            //általános
+                            //általános-érzelmei
                             {
-
+                                    "nagyon ritkán mutatja a valódi önmagát",
+                                    "ritkán ismerhetőek meg a valódi érzései",
+                                    "ne várd, hogy előbb valljon szerelmet mint te(mert ha lapátra tennéd nem bírná az egója)",
+                                    "ne várj tőle lángolást, odaadást",
+                                    "büszke, tartással rendelkező"
                             },
                             //ösztönei
                             {
-
+                                    "gyáva: kerüli a megalázó vagy alárendelt helyzeteket",
+                                    "bátor: ahol érzi, hogy vagyok valaki, előjön az uralkodó hajlama",
+                                    "nagylelkű,odaaoás,büszkeség",
+                                    "lusta: azért nem tesz valamit, hogy más megtegye és általa átélhesse a fensőbbséget"
                             },
                             //tehetsége
                             {
@@ -523,43 +555,62 @@ public interface BolygoJegyben {
                             }
                     },
                     //skorpió hold
-                    //bika hold
+                    //vizonto hold
                     {
                             //általános
                             {
-
+                                "a kötődései átmenetiek- ha ős zerelmes én nem ha én akkor ő nem",
+                                    "repülő és a reptér- tudni akarja h van valaki aki engem szeret, de ne korlátozzon"
                             },
                             //ösztönei
                             {
-
+                                    "keresi a szabadságot, kreatív",
+                                    "vonzódik a különleges helyzetekhez dolgokhoz",
+                                    "keresi a másságot",
+                                    "az a dolga hogy kiegészítse a világot amivel a másságot képviseli"
                             },
                             //tehetsége
                             {
-
+                                "kreativitas, sok utazas, sok valtozatossag ahol csak a kiindulópont adott"
                             },
                             //anya
                             {
-
+                                "házasságon kívüli anya",
+                                    "örökbe fogad",
+                                    "nevelőszülőség",
+                                    "külföldi pár(akár szinesbőrű)",
+                                    "császárral szülés",
+                                    "jó anya tud lenni, de az hogy őt a gyerek korlátozza az lehetetlen"
                             },
                             //gyerek
                             {
-
+                                "kettősség: ragaszkodik az anyához nagyon 2. szabadghyerek akit fogni kell",
+                                    "azt érzi az én anyám szabad akart lenni mellettem",
+                                    "anya tanítja: mindent érted teszek, egyedül nevelés"
                             },
                             //feleség
                             {
-
+                                "nem neki való",
+                                 "olyan párra van szüksége aki korlátozza, ha nem tudja elfogadni menekülni fog",
+                                    "olyan párra vágyik ahol egyenrangú a kapcsolat,kivesszük a közös jót",
+                                    "olyan férfit talál aki a független nőt keresi"
                             },
                             // férfi
                             {
-
+                                "menekül minden kötöttségtől",
+                                    "legjobb ha kiszolgáltatott neki a nő",
+                                    "azért választja a nőt mert különleges más mint a többi, érdekes",
+                                    "vagy csak szabad akar lenni es egyilyen lany mellett tud leginkabb az lenni",
+                                    "legjobb szerető típus"
                             },
                             //alárendeltsége
                             {
-
+                                "nem szeret alárendelődni",
+                                    "inkább a melléreendeltség az övé"
                             },
                             //befogadása
                             {
-
+                                "gyerekvállalásban is kell valami különleges, eltérő a hagyományostól"
                             }
                     }
             }
