@@ -44,10 +44,6 @@ public class Bolygo extends HoroszkopEgyseg {
 
     }
 
-    public void setFenyszogKapcsoaltok(List<String[]> fenyszogKapcsoaltok) {
-        this.fenyszogKapcsoaltok = new ArrayList<>();
-    }
-
 
 
     public List<String[]> getFenyszogKapcsoaltok() {

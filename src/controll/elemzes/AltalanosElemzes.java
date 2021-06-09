@@ -7,6 +7,7 @@ import modell.analogiak.HazAnalogia;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public interface AltalanosElemzes {
 
@@ -259,7 +260,6 @@ public interface AltalanosElemzes {
     }
 
 
-
     // egyéb
     static void hyleg(Bolygo[] bolygok) {
         int napHaza = bolygok[0].getBolygoHazSzama();
@@ -316,16 +316,28 @@ public interface AltalanosElemzes {
     }
 
 
+    static List<String> kikkelAllegyuttAbolygo(Bolygo melyik){
+
+        List<String> kivelAllEgyutt = new ArrayList<>();
+
+            for (String[] fenyszog :melyik.getFenyszogKapcsoaltok()){
+                if (fenyszog[0].equals("konjukcio")){
+                    kivelAllEgyutt.add(fenyszog[1]);
+                }
+            }
+        return kivelAllEgyutt;
+    }
+
     static void hazUraMelyikHazban(Haz haz, Bolygo[] bolygok) {
 
+        // haz argumentum-> a keresett haz
         boolean vanHazur = false;
 
         for (Bolygo b : bolygok) {
             if( b.getNev().equals(haz.hazUralkodoBolygoja()) ) {
 
-                if (b.getJegy().isPozitiv() == haz.getHazJegye().isPozitiv()
-                        //||
-                    //          b.getBolygoJegye().isPozitiv() != haz.getJegyHazban().isPozitiv() && b.
+                if (b.getJegy().isPozitiv() == haz.getHazJegye().isPozitiv() && //jegyek előjele megegyezik
+                        kikkelAllegyuttAbolygo(b).size()==0 //nincs együttállása
                 ) {
                     vanHazur=true;
                     System.out.printf("%d-s ura a %d-sben\n",haz.getHazszam(), b.getBolygoHazSzama());
