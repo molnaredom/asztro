@@ -329,28 +329,52 @@ public interface AltalanosElemzes {
     }
 
     static void hazUraMelyikHazban(Haz haz, Bolygo[] bolygok) {
-
-        // haz argumentum-> a keresett haz
         boolean vanHazur = false;
-
+        System.out.println();
         for (Bolygo b : bolygok) {
-            if( b.getNev().equals(haz.hazUralkodoBolygoja()) ) {
 
-                if (b.getJegy().isPozitiv() == haz.getHazJegye().isPozitiv() && //jegyek előjele megegyezik
-                        kikkelAllegyuttAbolygo(b).size()==0 //nincs együttállása
-                ) {
-                    vanHazur=true;
-                    System.out.printf("%d-s ura a %d-sben\n",haz.getHazszam(), b.getBolygoHazSzama());
+            if( b.getNev().equals(haz.hazUralkodoBolygoja()) ) {
+                //nap es a hold mindenkepp hazurak (ok kivetelt kepeznek)
+                if (b.getNev().equals("nap")||b.getNev().equals("hold")){
+                    System.out.printf("%d-s ura a %d -sben\n", haz.getHazszam(), b.getBolygoHazSzama());
+                    System.out.println(b.getNev());
+                    continue;
+                }
+                if (b.getJegy().isPozitiv() == haz.getHazJegye().isPozitiv()) {  //jegyek előjele megegyezik
+
+                    if (kikkelAllegyuttAbolygo(b).size() == 0) {  //nincs együttállása
+                        vanHazur = true;
+                        System.out.printf("%d-s ura a %d-sben\n", haz.getHazszam(), b.getBolygoHazSzama());
+                    }else if (kikkelAllegyuttAbolygo(b).size() > 2 && //tobb min 3 bolygo all egyutt
+                            (kikkelAllegyuttAbolygo(b).contains("neptun")|| //és  tartalmaz transzcendens bolygot
+                            kikkelAllegyuttAbolygo(b).contains("uranusz")||
+                            kikkelAllegyuttAbolygo(b).contains("pluto"))
+                    ) {
+                        vanHazur = true;
+                        System.out.printf("%d-s ura a %d-sben\n", haz.getHazszam(), b.getBolygoHazSzama());
+                    }
                 }
 
+                else { //a vizsgalt haz es az lehetseges hazur ház ellentétes jegy előjelű
+                    if (kikkelAllegyuttAbolygo(b).size() == 2) {  //nincs együttállása
+                        vanHazur = true;
+                        System.out.printf("%d-s ura a %d-sben\n", haz.getHazszam(), b.getBolygoHazSzama());
+                    } else if (kikkelAllegyuttAbolygo(b).size() > 2&&
+                            !kikkelAllegyuttAbolygo(b).contains("neptun")&&  //és nem tartalmaz transzcendens bolygot
+                            !kikkelAllegyuttAbolygo(b).contains("uranusz")&&
+                            !kikkelAllegyuttAbolygo(b).contains("pluto")
+                    ){
+                        vanHazur = true;
+                        System.out.printf("%d-s ura a %d-sben\n", haz.getHazszam(), b.getBolygoHazSzama());
+                    }
+                }
             }
-
         }
         if (!vanHazur) {
-            System.out.println("Nincs házúr: "+haz.getHazszam());
-            System.out.printf("Tagadni fogja a %s jegy analógiáit %d ház területén, úgy hogy megtartsa a %s analógiákat.\n",
+            System.out.println(haz.getHazszam()+"-nak nincs házura , ezért:");
+            System.out.printf("Tagadni fogja a %s jegy analógiáit %d ház területén, úgy hogy közben megtartja a %s analógiákat.\n",
                     haz.getHazJegye().getOpposit(),haz.getHazszam(),haz.getHazJegye().getJegyNev());
-
+            //todo kvinkunkszok beirasa
         }
 
     }
