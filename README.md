@@ -1,4 +1,4 @@
-Asztroprogram 1.1.1
+Asztroprogram 1.1.2
 
 Pár szó magamról: 
 -2.féléves programtervező infóra járok
@@ -6,6 +6,7 @@ Pár szó magamról:
 
 A projektemben szeretnék az asztrológia eszközével egy olyan programot készíteni, ami emberek életében segít megfelelő döntéseket hozni az különböző horoszkópok összevetett kiértékelésének  függvényében. 
 - [x] horoszkóp szerkezetének implementálása
+- [ ] adatbázis feltöltése megfelelő analógiákkal
 
 Mi az asztrológia?
 Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Másképpen mondva: Egy időpillanat elemzése a felállított szimbolikus bolygóhelyzetek alapján.
@@ -13,7 +14,8 @@ Filozófiailag akkor elfogadható az asztrológia, ha elismerjük,hogy nincsenek
 
 A kiértékelt eredmények a következő területeken segíthetnek:
 - [ ] Pályaválasztás
-- [ ] Általános önismeret
+- [x] Általános önismeret
+- [ ] Párkapcsolati elemzés
 
 
 Működési vázlat:
@@ -46,4 +48,5 @@ A tulajdonságok közt súlyozott gráfokkal döntjük el a szinonima, ellentett
 
 1.0 2021 marc.30
 1.1 2021 maj.31
-1.1.1 2020. jun 2.
+1.1.1 2021. jun 2.
+1.1.2 2021 jun 6.
