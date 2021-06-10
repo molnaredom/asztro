@@ -515,46 +515,141 @@ public interface BolygoJegyben {
                             }
                     },
                     //mérleg hold
-                    //bika hold
                     {
-                            //általános
+                            //általános-érzelmei
                             {
-
+                                "mindig érzelmeket vár, és szeretné ha viszonoznák az övét",
+                                    "ott nem tud érzelmileg megnyílni ahol az érzelmeit nem viszonozzák",
                             },
                             //ösztönei
                             {
-
+                                    "keresi a harmóniát, egyenssúlyt békességet",
+                                    "keresi a pozitív visszajelzéseket",
+                                    "kompromisszumkedvelő, nem szeret másokkal szembeszállni ha nem muszáj",
+                                    "döntőképesságe nem túl erős",
+                                    "jó a diplomáciaérzéke",
+                                    "nem önérvényesítő típus, mindig a külvilágot figyeli",
+                                    "szeretne másoknak megfelelni"
                             },
                             //tehetsége
                             {
+                                    "az emberi kapcsolatokban",
+                                    "olyan élethelyzetekben ahol átéli az egyensúlyt és elfogadást kap",
+                                    "jól megérzi hogy lehet a másik emberhez közel kerülni",
+                                    "jó a művészetekben, színészeti dolgokban",
+                                    "jó nyilvános szereplő"
+                            },
+                            //anya
+                            {
+                                    "jó kacsolatot próbál kialakítani a gyerekkel",
+                                    "fontos neki mit mondanak a gyerekéről, ez befolyásolja a nevelésben",
+                                    "a külvilág megfelelésének mgefelelően neveli a gyerekét",
+                                    "a gyerek szülő fejére nőhet, és már ő irányít a kapcsolatban",
+                                    "a párkapcsolat fontosabb mint a gyerek"
+                            },
+                            //gyerek
+                            {
+                                    "minden határt megpróbál átlépni/elérni",
+                                    "nagyon hisztis, folyton azt tezsteli vajon szeretik-e szülei ",
+                                    "harmonikusan éli meg a gyerekkort",
+                                    "láthatja, hogy az anya folyton szerepet játszik",
+                                    "láthatja hogy az anyja kétszínű",
+                                    "látja az anyja kompromisszumkötő készségét",
+                                    "látja hogy az anyja nagyon nőies"
+                            },
+                            //feleség
+                            {
+                                    "fontos neki a párkapcsolaat és szeretné ha tökéletes lenne",
+                                    "nem a tipikus háziasszony, ő továbbra is nő szeretne lenni",
+                                    "a páron keresztül kell kiteljesednie, nem önállóan"
+                            },
+                            // férfi
+                            {
+                                "szép nőt keres, aki nőies",
+                                    "fontos neki hogy a nő adjon magára",
+                                    "szereti ha a nő engedelmes,alárendelt és azt teszi amit mond",
+                                    "szeretne büszke lenni a párjára, és hogy elismerjék őt"
+                            },
+                            //alárendeltsége
+                            {
+                                    "akkor tud ha fontos neki a párja",
+                            },
+                            //befogadása
+                            {
+                                    "ha fontos neki a párja akkor befogadó",
+                                    "ha meg akarja szerezni a másikat akkor igen",
+                                    "ha nem tetszik a másik nem eljátszik egy szerepet"
+                            }
+                    },
+                    //skorpió hold
+                    {
+                            //általános -érzelemi
+                            {
+                                    "szélsőséges, vagy mindent vagy semmit",
+                                    "vagy óriási szenvedélyek, vagy teljes hidegség",
+                                    "átmenetiek,nehezen észlelhetőek",
+                                    "visszaigazolást vár arra,vajon szeretnek-e engem",
+                            },
+                            //ösztönei
+                            {
+                                    "igazi öszönember, jók a megérzései, érzéekenyen reagál mindenre",
+                                    "erős empátiakészség, azt hiszi hogy másokban is nagy aztán nagyot csalódik",
+                                    "féltékeny, mást tapasztal mint amit szeretne",
+                                    "halállal, elmúlással, tudattalannal való kapcsolat",
+                                    "fél a veszteségtől, öszönösen próbálja ezt kikerülni",
+                            },
+                            //tehetsége
+                            {
+                                    "ahol a tudattalannal, elmúlással,halállal foglakozhat",
+                                    "művészetben",
+                                    "mások értékének megőrzése: pénz, anyagiak, emberi élet",
+
+
 
                             },
                             //anya
                             {
-
+                                    "nagyon jó anya, de van amikor hárítják, és nem akarnaka zok lenni"
                             },
                             //gyerek
                             {
-
+                                   "magányosan éli a gyermekkorát",
+                                   "érzelmileg kicsit zárkózott, nehezen nyílik meg nehezen  barátkozik" ,
+                                    "panaszkodik a szülőre, hogy nem szeretik nme úgy szeretik",
+                                    "figyeli hogy mit csinál a szülő, mit csinál az anya",
                             },
                             //feleség
                             {
-
+                                    "lelki társat keres, de ez nem fog sikerülni",
+                                    "a másik nem érezheti amit ő, így nem is létezik lelki társ",
+                                    "nagyon sok érzelmet lehet tőle kapni, ha pont azt szeretné",
+                                    "nagyon tud szeretni, nagyon tud gyűlölni",
+                                    "ha keresztbetettél neki, ne számíts megbocsájtásra",
+                                    "ha szeret magától szeret, nem lehet kényszeríteni"
                             },
                             // férfi
                             {
-
+                                " a szexuális kisugárzása alapján választja a párt",
+                                "azért válaszztja a nőt hogy jókat harcolhasson vele"
                             },
                             //alárendeltsége
                             {
-
+                                "semilyen módon nem rendelősik alá, csak ha ő akarja, de akkor sem érzed h így lenne"
                             },
                             //befogadása
                             {
-
+                                    "legkevésbé befogadó jegy"
+                            },
+                            //munka:
+                            {
+                                    "tűzoltó","banki trezort őrző","testőr","mentős"
                             }
+
                     },
-                    //skorpió hold
+
+
+
+
                     //vizonto hold
                     {
                             //általános
