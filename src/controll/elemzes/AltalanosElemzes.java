@@ -280,6 +280,11 @@ public interface AltalanosElemzes {
 
 
     static void megvalVcelkij(Bolygo[] bolygok, Haz[] hazak) {
+
+        
+        
+
+
         int cel =0;
         int megv =0;
 

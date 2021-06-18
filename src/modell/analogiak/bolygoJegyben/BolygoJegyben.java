@@ -186,13 +186,13 @@ public interface BolygoJegyben {
                             },
                             // férfi
                             {
-                                    "ha gondoskodhat a családjáról, fófej  jó pasi",
+                                    "ha gondoskodhat a családjáról, jófej  jó pasi",
                                     "önmagában nem tud erőslenni, kell mögé egy nő aki ezt az erőt képviseli",
                                     "papucsságra hasjlamos, mos ,mosogat, átcsúszhat női szerepekbe",
                             },
                             // nő
                             {
-                                    "soksor átveszi a nap szerepet és ő irányít",
+                                    "sokszor átveszi a nap szerepet és ő irányít",
                                     "ő az erősebb, ő határoz, ő dönt a párkapcsolatban, övé a felelősség",
                                     "olyan pasit választ akinek fontos a gyerek, a család",
                                     "olyan férfit választ aki tele van érzelemmel, romantikus, odafigyel az érzéseire",
@@ -708,6 +708,303 @@ public interface BolygoJegyben {
                                 "gyerekvállalásban is kell valami különleges, eltérő a hagyományostól"
                             }
                     }
+            },
+
+
+            {//merkur
+                    {//kos
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                                    "tele van versenyszellemmel",
+                                    "fontos neki a gyozelem",
+                                    "mindenkivel versenyezni akar, le akar győzni",
+                                    "nehezen fogja fel ha valaki ellenáll neki",
+                                    "nagyon erősen meg akar győzni az igazáról",
+                                    "gyorsak a reakciói",
+                                    "jól vág az esze csak előbb cselekszik mint gondolkozik",
+                                    "türelmetlen, nem tud semmit kivárni",
+                            },
+                            {//kapcsolatteremtés
+                                    "agresszívan teremt kapcsolatot",
+                                    "mindent gyorsan akar megszerezni"
+                            },
+                            {//kommunikacio
+                                    "azt hiszi az az erősebb aki hangosabb",
+                                    "szeretné hogy társaságben odafigyeljenek rá",
+                            },
+                            {//mozgékonyság
+                                    "\"beveszi a várat aztán megy tovább, nem aar várban lakni\"",
+                                    "sokszor olyanon vitatkozik aminek semmi értelme nincs",
+                            },
+                            {//gyermekkora
+                                    "olyan nevelést kap és olyan élethelyzetekbe kerül, ahol akaratát érvényesíteni tudja",
+                                    "sokszor harcolnia kell a testvérrel",
+                                    "sokszor sportioskolába jár, vagy olyan helyre ahol edzenie kell, pörög az élet",
+                            },
+                            {//tanulása
+                                    "ami érdekli azért mindent megtesz",
+                                    "amiben ott van a lehetőség hogy győzzön ott tenni is fog érte",
+                                    "állandóan veresenyhelyzetben kell tartani",
+                                    "olyan dolgokat tanuljon ahol mindig igaza lehet"
+                            },
+                            {//elfogadása
+                                    "mindent elfogad, amit akar, de semmi mást nem",
+                                    "ha mondják neki hogy el kellene fogadni ,annál kisebb esélye lesz hogy tényleg elfogadja",
+                                    "ha ő nem akarja nem fog menni"
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                                    "lassú, megfontolt",
+                                    "anyagias",
+                                    "alapos, sokszor átrágja a dolgokat",
+                                    "tiszta paraszti észjárás",
+                                    "birtoklás és az anyagiak motiválják",
+                                    },
+                            {//kapcsolatteremtés
+                                    "nem teremt könnyen kapcsolatot, inkább a begtartásra törekszik",
+                                    "Olyan kapcsolatokra törekszik amit meg is tud tartani",
+                                    "nem szeret hitelt felvenni, mert abban nincs benne a biztonság"
+                                    },
+                            {//kommunikacio
+                                    "lassan kommunikál",
+                                    "előnyösebb ha írásban kommunikálhat, mert ott jobban át tudja goldolni mit írjon",
+                                    "nem túl jó a problébamegoldó képessége",
+                                    "egy egy problémány napokig rágódik",
+                                    },
+                            {//mozgékonyság
+                                    "híresen lusta",
+                                    "kényelem, nyubalom , biztonság motiválja",
+                                    "nem szeret változtatni, ragaszkodik a helyzetekhez",
+                                    },
+                            {//gyermekkora
+                                    "nyugalomban békességben stabilitásban telik",
+                                    "szülők anyagilag motiválják",
+                                    },
+                            {//tanulása
+                                    "nem gyors de alapos",
+                                    "amit megtanul azt tudja is, jó az emlékezőképessége, mély a tudása",
+                                    },
+                            {//elfogadása
+                                    "anyag szinten fogad el",
+                                    "aki nem sérti a nyugalmát és nem akar elvenni tőle semmit, azt elfogadja",
+                                    "ha kibillentik a biztonságból azt nem tudja elfogadni"
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
+                    {//bika
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                            },
+                            {//kapcsolatteremtés
+                            },
+                            {//kommunikacio
+                            },
+                            {//mozgékonyság
+                            },
+                            {//gyermekkora
+                            },
+                            {//tanulása
+                            },
+                            {//elfogadása
+                            }
+                    },
             }
 
     };

@@ -10,6 +10,7 @@ public class HoroszkopokOsszevetes {
 
 
 
+
     //todo  fokszam decimalisan van kerektive viszont a fokszamok 60as szamrendszerben vannak
     Radix radix = new Radix(
             true,
@@ -47,6 +48,7 @@ public class HoroszkopokOsszevetes {
     public void szovegesertekeles() {
         radix.alapbeallitasok();
         radix.elemzes();
+
 
     }
 
