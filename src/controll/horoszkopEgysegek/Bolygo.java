@@ -8,16 +8,16 @@ import java.util.List;
 public class Bolygo extends HoroszkopEgyseg {
     private String szint;
     private int pont;
-
     private int bolygoHazSzama;
     private String dekadJegy;
     private int dekadSzam;
     private double osszFokszam;
+
     //string 0 eleme a fenyszog neve , 1 eleme a bolygo amivel kapcsolatban áll
     private List<String[]> fenyszogKapcsoaltok = new ArrayList<>();
 
 
-    /** konstruktorok*/
+    /** konstruktor*/
     public Bolygo(String nev, Jegy bolygoJegye, double fokszam) {
         super(nev,bolygoJegye,fokszam);
         setPont();
@@ -26,34 +26,13 @@ public class Bolygo extends HoroszkopEgyseg {
         setDekadJegy();
     }
 
-
-    public double getOsszFokszam() {
-        return osszFokszam;
-    }
-
-    public void setOsszFokszam(double osszFokszam) {
-        this.osszFokszam = osszFokszam;
-    }
-
-    public void setBolygoHazSzama(int hazszam) {
-        bolygoHazSzama= hazszam;
-    }
-
+    /** műveletek */
     public void fenyszogKapcsHozzaad(String fenyszog, String bolygo) {
         fenyszogKapcsoaltok.add(new String[] {fenyszog,bolygo});
-
     }
-
-
-
-    public List<String[]> getFenyszogKapcsoaltok() {
-        return fenyszogKapcsoaltok;
-    }
-
 
 
     /**setterek*/
-
 
     public void setDekadSzam() {
         if (0.0<=fokszam && 10.0>fokszam) {
@@ -105,6 +84,13 @@ public class Bolygo extends HoroszkopEgyseg {
         dekadJegy = jegy.getDekadJegyek()[dekadSzam-1];
     }
 
+    public void setOsszFokszam(double osszFokszam) {
+        this.osszFokszam = osszFokszam;
+    }
+
+    public void setBolygoHazSzama(int hazszam) {
+        bolygoHazSzama= hazszam;
+    }
 
     /**getterek*/
 
@@ -132,6 +118,10 @@ public class Bolygo extends HoroszkopEgyseg {
     public String getDekadJegy() {
         return dekadJegy;
     }
-
-
+    public List<String[]> getFenyszogKapcsoaltok() {
+        return fenyszogKapcsoaltok;
+    }
+    public double getOsszFokszam() {
+        return osszFokszam;
+    }
 }

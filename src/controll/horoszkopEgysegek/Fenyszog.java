@@ -1,19 +1,16 @@
 package controll.horoszkopEgysegek;
 
-import controll.horoszkopEgysegek.Bolygo;
-import controll.horoszkopEgysegek.Haz;
-
 public class Fenyszog{
 
-
     public void beallitBolygonakHazat(Haz[] hazak, Bolygo[] bolygok) {
+
         //kiindulasi fokszam
         double ascfok = hazak[0].getFokszam();
         String ascjegye = hazak[0].getHazJegye().getJegyNev();
+
         for (int i = 1; i < 12; i++) {
 
             String aktjegy = hazak[i].getHazJegye().getJegyNev();
-
 
             hazak[i].setOsszFokszam(hanyadikjegyASCtol(ascjegye, aktjegy) * 30 - ascfok + hazak[i].getFokszam());
             //System.out.println( hazak[i].getHazszam()+" "+ascjegye+" "+aktjegy+" "+" "+ hanyadikjegyASCtol(ascjegye, aktjegy)+" "+hazak[i].getOsszFokszam());
@@ -28,9 +25,6 @@ public class Fenyszog{
         }
         for (int i = 0; i <10 ; i++) { //bolygo
             for (int j = 1; j <= 12; j++) {  //haz
-
-                
-
 
                 double bolyFok = bolygok[i].getOsszFokszam();
                 if(j==12) {

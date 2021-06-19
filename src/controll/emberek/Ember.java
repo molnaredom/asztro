@@ -1,22 +1,23 @@
-package controll.horoszkopok;
+package controll.emberek;
 
-import controll.emberek.Ember;
 import controll.horoszkopEgysegek.Bolygo;
 import controll.horoszkopEgysegek.Haz;
 import controll.horoszkopEgysegek.Jegy;
+import controll.horoszkopok.Radix;
 
 import java.util.Date;
+import java.util.Scanner;
 
-public class HoroszkopokOsszevetes extends Ember {
+public class Ember {
 
+    Date szuletes = new Date();
 
+    Scanner sc = new Scanner(System.in);
 
-
-    //todo  fokszam decimalisan van kerektive viszont a fokszamok 60as szamrendszerben vannak
     Radix radix = new Radix(
             true,
             //todo read bolygok from file
-            new Bolygo("nap", new Jegy("oroszlan"),26.4128),
+            new Bolygo(sc.next(), new Jegy("oroszlan"),26.4128),
             new Bolygo("hold", new Jegy("szuz"),3.4952),
             new Bolygo("merkur", new Jegy("szuz"),9.5313),
             new Bolygo("mars", new Jegy("nyilas"),21.06),
@@ -46,10 +47,7 @@ public class HoroszkopokOsszevetes extends Ember {
 
     );
 
-    public void szovegesertekeles() {
-        radix.alapbeallitasok();
-        radix.elemzes();
 
-    }
+
 
 }

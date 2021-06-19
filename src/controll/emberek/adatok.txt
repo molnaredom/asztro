@@ -1,0 +1,11 @@
+Molnár Ádám;2001.08.19.;16:53;
+nap;oroszlan;26.4128
+hold;szuz;3.4952
+merkur;szuz;9.5313
+mars;nyilas;21.06
+venusz;rak;21.03
+jupiter;rak;7.46
+szaturnusz;ikrek;13.40
+uranusz;vizonto;22.41
+neptun;vizonto;6.50
+pluto;nyilas;12.32
