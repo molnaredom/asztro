@@ -7,7 +7,7 @@ import controll.horoszkopEgysegek.Jegy;
 
 import java.util.Date;
 
-public class HoroszkopokOsszevetes extends Ember {
+public class HoroszkopokOsszevetes {
 
 
 
@@ -46,10 +46,10 @@ public class HoroszkopokOsszevetes extends Ember {
 
     );
 
-    public void szovegesertekeles() {
+    /*public void szovegesertekeles() {
         radix.alapbeallitasok();
         radix.elemzes();
 
-    }
+    }*/
 
 }

@@ -1,17 +1,24 @@
 import controll.emberek.Beolvas;
+import controll.emberek.Ember;
+import controll.emberek.Emberek;
 import controll.horoszkopok.HoroszkopokOsszevetes;
 
 
 public class Main {
 
+
     public static void main(String[] args) {
 
 
-        //HoroszkopokOsszevetes ember = new HoroszkopokOsszevetes();
+        Emberek embik = new Emberek();
+        embik.teddmeg();
 
-        //ember.szovegesertekeles();
-
-        Beolvas.beolv();
+          /*for ( String[] k :Beolvas.beolv("Molnár Ádám")) {
+              System.out.println();
+              for (String i: k){
+                  System.out.print(i+"   ");
+              }
+          }*/
 
     }
 

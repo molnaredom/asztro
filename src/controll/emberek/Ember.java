@@ -5,49 +5,65 @@ import controll.horoszkopEgysegek.Haz;
 import controll.horoszkopEgysegek.Jegy;
 import controll.horoszkopok.Radix;
 
-import java.util.Date;
-import java.util.Scanner;
+import java.util.List;
 
 public class Ember {
 
-    Date szuletes = new Date();
 
-    Scanner sc = new Scanner(System.in);
+    List<String[]> adatok;
 
-    Radix radix = new Radix(
-            true,
-            //todo read bolygok from file
-            new Bolygo(sc.next(), new Jegy("oroszlan"),26.4128),
-            new Bolygo("hold", new Jegy("szuz"),3.4952),
-            new Bolygo("merkur", new Jegy("szuz"),9.5313),
-            new Bolygo("mars", new Jegy("nyilas"),21.06),
-            new Bolygo("venusz", new Jegy("rak"),21.03),
-            new Bolygo("jupiter", new Jegy("rak"),7.46),
-            new Bolygo("szaturnusz", new Jegy("ikrek"),13.40),
-            new Bolygo("uranusz", new Jegy("vizonto"),22.41),
-            new Bolygo("neptun", new Jegy("vizonto"),6.50),
-            new Bolygo("pluto", new Jegy("nyilas"), 12.32),
-
-            //new Bolygo("ASC", new Jegy("bak"), new Haz(1),3.19),
-            //new Bolygo("MC", new Jegy("skorpio"), new Haz(10),3.42),
-
-            new Haz("1", new Jegy("bak"),3.3812),
-            new Haz("2", new Jegy("vizonto"),17.4210),
-            new Haz("3", new Jegy("kos"),2.17),
-            new Haz("4", new Jegy("bika"),4.01),
-            new Haz("5", new Jegy("bika"),26.37),
-            new Haz("6", new Jegy("ikrek"),15.13),
-            new Haz("7", new Jegy("rak"),3.3812),
-            new Haz("8", new Jegy("oroszlan"),17.4210),
-            new Haz("9", new Jegy("merleg"),2.17),
-            new Haz("10", new Jegy("skorpio"),4.01),
-            new Haz("11", new Jegy("skorpio"),26.37),
-            new Haz("12", new Jegy("nyilas"),15.13)
+    public Ember(String nev) {
+        this.adatok = Beolvas.beolv(nev);
+    }
 
 
-    );
 
 
+    public void szovegesertekeles() {
+
+        try {
+            Radix radix = new Radix(
+                    true,
+                    //todo read bolygok from file
+                    new Bolygo("nap", new Jegy(adatok.get(0)[0]), Double.parseDouble(adatok.get(0)[1])),
+                    new Bolygo("hold", new Jegy(adatok.get(1)[0]), Double.parseDouble(adatok.get(1)[1])),
+                    new Bolygo("merkur", new Jegy(adatok.get(2)[0]), Double.parseDouble(adatok.get(2)[1])),
+                    new Bolygo("mars", new Jegy(adatok.get(3)[0]), Double.parseDouble(adatok.get(3)[1])),
+                    new Bolygo("venusz", new Jegy(adatok.get(4)[0]), Double.parseDouble(adatok.get(4)[1])),
+                    new Bolygo("jupiter", new Jegy(adatok.get(5)[0]), Double.parseDouble(adatok.get(5)[1])),
+                    new Bolygo("szaturnusz", new Jegy(adatok.get(6)[0]), Double.parseDouble(adatok.get(6)[1])),
+                    new Bolygo("uranusz", new Jegy(adatok.get(7)[0]), Double.parseDouble(adatok.get(7)[1])),
+                    new Bolygo("neptun", new Jegy(adatok.get(8)[0]), Double.parseDouble(adatok.get(8)[1])),
+                    new Bolygo("pluto", new Jegy(adatok.get(9)[0]), Double.parseDouble(adatok.get(9)[1])),
+
+                    new Haz("1", new Jegy(adatok.get(10)[0]), Double.parseDouble(adatok.get(10)[1])),
+                    new Haz("2", new Jegy(adatok.get(11)[0]), Double.parseDouble(adatok.get(11)[1])),
+                    new Haz("3", new Jegy(adatok.get(12)[0]), Double.parseDouble(adatok.get(12)[1])),
+                    new Haz("4", new Jegy(adatok.get(13)[0]), Double.parseDouble(adatok.get(10)[1])),
+                    new Haz("5", new Jegy(adatok.get(14)[0]), Double.parseDouble(adatok.get(11)[1])),
+                    new Haz("6", new Jegy(adatok.get(15)[0]), Double.parseDouble(adatok.get(12)[1])),
+                    new Haz("7", new Jegy(adatok.get(16)[0]), Double.parseDouble(adatok.get(10)[1])),
+                    new Haz("8", new Jegy(adatok.get(17)[0]), Double.parseDouble(adatok.get(11)[1])),
+                    new Haz("9", new Jegy(adatok.get(18)[0]), Double.parseDouble(adatok.get(12)[1])),
+                    new Haz("1", new Jegy(adatok.get(19)[0]), Double.parseDouble(adatok.get(10)[1])),
+                    new Haz("1", new Jegy(adatok.get(20)[0]), Double.parseDouble(adatok.get(11)[1])),
+                    new Haz("1", new Jegy(adatok.get(21)[0]), Double.parseDouble(adatok.get(12)[1]))
+            );
+
+
+            radix.alapbeallitasok();
+            radix.elemzes();
+
+
+
+        } catch (IndexOutOfBoundsException ie) {
+            System.err.println("Kevés adatot vittél be");
+        } catch (NumberFormatException ne) {
+            System.err.println("Szám helyett valami más adatot adtál meg");
+        }
+
+
+    }
 
 
 }
