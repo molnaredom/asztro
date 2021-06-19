@@ -796,23 +796,47 @@ public interface BolygoJegyben {
                                     "ha kibillentik a biztonságból azt nem tudja elfogadni"
                             }
                     },
-                    {//bika
+                    {//ikrek
                             {//altlanos
 
                             },
                             {//gondolkodasa
+                                    "furfangos, ravasz",
+                                    "jó eszű, jó reakciójú",
+                                    "mindenre tud megoldást találni",
+                                    "kíváncsi, információt szeretne adni és kapni",
+                                    "nem kíván elköteleződni semmi mellett"
                             },
                             {//kapcsolatteremtés
+                                    "könnyen teremt kapcsolatot emberekkel tárgyakkal",
+                                    "a kapcsolatainak többsége nem túl mély",
+                                    "nagyon sok ismerőse van",
+                                    "jól tudja alkalmazni kapcsolatait a hétköznapokban"
                             },
                             {//kommunikacio
+                                    "jól kommunikál",
+                                    "idegennyelvekhez is jó adottsága van",
+                                    ""
                             },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
+                                    "bármikor tud változtatni",
+                                    "vagy éppen jön valahonnan, vagy éppen megy valahova",
+                                    "nem szabad beleragadnia helyzetekbe, mert neki fontos a változás"
                             },
                             {//gyermekkora
+                                    "nagyon változatos",
+                                    "gyakran elválnak a szülők, vagy iskolát vált, vagy költöznek sok változás a környezetében",
+                                    "mindig van mit tanulni, mindig van információ amire szert tehet",
                             },
                             {//tanulása
+                                    "legjobb rövid távú tanuló, vizsgákra pl nagyon jól fel tud készülni, aztán elfelejti",
+                                    "nagyon jó memória, hallásból látásból is minden megmarad",
                             },
                             {//elfogadása
+                                    "könnyen fogad el helyzeteket, főleg ha nem fontos számára",
+                                    "egyszer valami nagyon fontos neki, nemsokára már annyira mégse lesz fontos",
+                                    "könnyebben túllép dolgokon",
+                                    "ha őt megcsalják, a másik azt hiszi mekkora problémát okoz ezzel, de valójában a megcsaló jobban megsínyli",
                             }
                     },
                     {//bika
