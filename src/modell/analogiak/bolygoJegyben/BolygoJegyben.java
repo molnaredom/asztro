@@ -836,10 +836,50 @@ public interface BolygoJegyben {
                                     "könnyen fogad el helyzeteket, főleg ha nem fontos számára",
                                     "egyszer valami nagyon fontos neki, nemsokára már annyira mégse lesz fontos",
                                     "könnyebben túllép dolgokon",
-                                    "ha őt megcsalják, a másik azt hiszi mekkora problémát okoz ezzel, de valójában a megcsaló jobban megsínyli",
+                                    "ha őt megcsalják, a másik azt hiszi mekkora problémát okoz ezzel, de valójában a megcsaló jobban megsínyli"
                             }
                     },
-                    {//bika
+                    {//rak
+                            {//altlanos
+
+                            },
+                            {//gondolkodasa
+                                    "érzelmileg dönt, mindent így közelít meg",
+                                    "fontos a múlt és a család",
+                                    "intuitív döntései vannak, ehhez jó érzéke van",
+                                    "nem vesz tudomást azokról a folgokról amik sértik ez érzelmeit",
+                                    "ha azt mondja 'úgy érzem', akkor racionális alapon nem tudod lebeszélni, neki az úgy van és kész",
+                            },
+                            {//kapcsolatteremtés
+                                    "érzelem alapáján hoz létre kapcsolatot emberekkel és tárgyakkal is",
+                                    "neki a szimpátia érzelem alapú, ha nem vagy szimpatikus neki nem lesz jó kapcsolat",
+                                    "őrizget régi tárgyakat, főleg ha családtól, vagy régi emlékből van",
+                                    "szereti a romantikát, hogy valami érzéki is legyen"
+                            },
+                            {//kommunikacio
+                                    "olyat szeretne mondani amire mindenki kíváncsi(itt jön a pletyka)",
+                                    "ha valaki tud valamit akkor ő biztos, lehet hozzá fordulni bármivel",
+                                    "szeretne nélkülözhetetlen lenni kapcsolataiban",
+                                    "az érzelmeket sokkal jobban le tudja írni mint szóban kimondani",
+                            },
+                            {//mozgékonyság-változtatasi kepesseg
+                                    "amig szeret nem változtat, amikor már nem akkor változtat",
+                                    "ha kötődik nem változtat, ha nem akkor vált"
+                            },
+                            {//gyermekkora
+                                    "fontos neki a család, és hogy tudjon velük beszélni",
+                                    "gyakran úgy érzi elvesztette az édesannyát, ha testvére születik",
+                            },
+                            {//tanulása
+                                    "érzelmi alapon tanul, kötődik a tanárhoz , tantárgyhoz is, vagy pont nem akkor utálja",
+                                    "nem képes racionálisan tanulni"
+                            },
+                            {//elfogadása
+                                    "amihez érzelmileg kötődnek azt korlátlanul elfogadják",
+                                    "olyan dolgokat is elfogad pl gyerekekben amit nem kellene, néha túl megengedő"
+                            }
+                    },
+                    {//oroszlan
                             {//altlanos
 
                             },
@@ -849,7 +889,7 @@ public interface BolygoJegyben {
                             },
                             {//kommunikacio
                             },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
                             },
                             {//gyermekkora
                             },
@@ -868,7 +908,7 @@ public interface BolygoJegyben {
                             },
                             {//kommunikacio
                             },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
                             },
                             {//gyermekkora
                             },
@@ -887,7 +927,7 @@ public interface BolygoJegyben {
                             },
                             {//kommunikacio
                             },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
                             },
                             {//gyermekkora
                             },
@@ -906,7 +946,7 @@ public interface BolygoJegyben {
                             },
                             {//kommunikacio
                             },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
                             },
                             {//gyermekkora
                             },
@@ -925,7 +965,7 @@ public interface BolygoJegyben {
                             },
                             {//kommunikacio
                             },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
                             },
                             {//gyermekkora
                             },
@@ -944,7 +984,7 @@ public interface BolygoJegyben {
                             },
                             {//kommunikacio
                             },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
                             },
                             {//gyermekkora
                             },
@@ -963,7 +1003,7 @@ public interface BolygoJegyben {
                             },
                             {//kommunikacio
                             },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
                             },
                             {//gyermekkora
                             },
@@ -982,7 +1022,7 @@ public interface BolygoJegyben {
                             },
                             {//kommunikacio
                             },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
                             },
                             {//gyermekkora
                             },
@@ -1001,26 +1041,7 @@ public interface BolygoJegyben {
                             },
                             {//kommunikacio
                             },
-                            {//mozgékonyság
-                            },
-                            {//gyermekkora
-                            },
-                            {//tanulása
-                            },
-                            {//elfogadása
-                            }
-                    },
-                    {//bika
-                            {//altlanos
-
-                            },
-                            {//gondolkodasa
-                            },
-                            {//kapcsolatteremtés
-                            },
-                            {//kommunikacio
-                            },
-                            {//mozgékonyság
+                            {//mozgékonyság-változtatasi kepesseg
                             },
                             {//gyermekkora
                             },

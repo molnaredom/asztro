@@ -4,6 +4,10 @@ public interface Gondolatok {
 
 
     String[] gondolatok = new String[] {
+
+            //2/10
+            "ha valaki azt mondja ő úgy érzi akkor racionalis alapon nem lehet lebeszélni az igazéról, az neki úgy van és kész",
+
             //2 7
             "attol hogy nem tudsz valamit nem konnyebb az elet",
             "pontositas: van 4-5 eletesemeny, az ",
