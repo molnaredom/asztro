@@ -123,7 +123,7 @@ public interface BolygoJegyben {
                                     "nem tud kötődni hosszútávon, rövid távon igen",
                                     "mindenhova elviszi a gyerekét, mindig történjen valami",
                                     "nem beszél komoly támákról a gyerekével, meghitten",
-                                    "elvárja a gyerektől, hogy önáló legyen",
+                                    "elvárja a gyerektől, hogy önálló legyen",
 
 
                             },
@@ -204,6 +204,57 @@ public interface BolygoJegyben {
                                     "hisztis: hullámzik érzelmileg, hangulatilag",
                                     "döntéseket érzelmi alapon hoz, nem tartják jó főnöknek"
 
+                            }
+
+                    },
+
+                    {  //oroszlan nap
+                            //altalnos
+                            {
+                                  "vagyok valaki",
+                                    "felnéznek rám mert bíznak bennem",
+
+
+                            },
+                            //apa
+                            {
+                                    "szeretne büszke lenni a fiára, elvárja hogy a gyerek agy is viselkedjen",
+                                    "mepgpróbálja anyagi szinten oroszlánná tenni a fiát ezzel mutatva, hogy az ő fia értékes",
+                                    "nem egy korlátozó típus, ráhagyja az anyára",
+
+
+                                    },
+                            //gyerek
+                            {
+                                    "azt hiszi neki minden jár ,pusztán attól hogy létezik",
+                                    "lehet azt látja, hogy az apát tisztelik elismerik",
+                                    "lehet azt látja, az apa szerepet játszik mert szeretné kivívni a fensőbbséget",
+                                    "lehet azt látja, az apa lenyomja a körülötte lévőket",
+                                    "láthatja a bátorságot a lustaságot, vagy a gyávaságot is az apjában",
+                                    "vigyázni kell rá nehogy eltörják a gernincét , az önbecsülését nem szabad ledegradálni",
+
+                            },
+                            // férfi
+                            {
+                                   "elvárja a kényeztetést, hogy becsüljék tiszteljék, felnézzenek rá",
+                                    "csak olyan nője lehet aki alárandelődik neki",
+                                    "egyfajta koronaékszerként bányik a nővel",
+                                    "fontos neki a nő, nem akárki az én feleségem",
+                                    "a nő nem kérdőjelezheti meg, el kell fogadnia a férfi fensőbbségét",
+                                    "nem szabad neki beszólni, és a nő ne hozza kellemetlen helyzetbe, kritizálni mások előtt",
+                            },
+                            // nő
+                            {
+                                    "mindig erősebb mint a férfi",
+                                    "a nőn múlik a pasiból tud-e napot faragni vagy sem",
+                                    "tudja mit akar és hogyan",
+                                    "nehezen kerül olyan helyzetbe hogy fel tudjon nézni egy férfira",
+
+                                     },
+                            //főnök
+                            {
+                                    "csak felsővezetőnek jó, hogy ne kelljen senkinek alárendelődnie",
+                                    "könnyen bedől a hízelgésnek, ilyenkor nem látja a valódi értéket"
                             }
 
                     },
