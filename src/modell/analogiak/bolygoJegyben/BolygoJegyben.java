@@ -1225,7 +1225,54 @@ public interface BolygoJegyben {
                                     "elfogadhatatlannak tartják a megalázó helyzeteket"
                             }
                     },
-                    {//bika
+                    {//szuz
+                            {//altlanos
+                                "saját jegyében nagyon jellemző lesz rá a merkúriság",
+                                    "olyan helyzetekbe kell kerülnie, ahol a tapasztalás fog eldönteni mindent",
+                                    "nagyon lényeges szerepe van a tudásának",
+                                    "tudás amikor az ismereteidet beépíted az életedbe"
+                            },
+                            {//gondolkodasa
+                                "ő gondolkodik a legpraktikusabban, tudja mit mire lehet használni",
+                                    "mindent próbál előre megtervezni, előre látni , hogy ne érje meglepetés",
+                                    "nehezen tud bármit kezdeni váratlan dolgokkal",
+                                    "ha valami nem úgy alakul ahogy gondolja, újratervez",
+                                    "nagyon számító, ritkán van benne érzelmileg helyzetekben"
+                            },
+                            {//kapcsolatteremtés
+                                "akkor teremt kapcsolatot, ha úgy érzi, hogy neki erre szüksége van",
+                                    "feleslgesen nem szereti, használja a tárgyakat",
+                                    "nem rendmániás, csak szereti a rendszert a dolgokban",
+                                    "nagyon megfontolja, kivel kerül kapcsolatba",
+                                    "csak akkor változtat, ha úgy érzi ,hogy meg érett a kapcsolat arra hogy nem érdemes tovább folytatni"
+                            },
+                            {//kommunikacio
+                                "akkor szeret beszélni amikor értelme van",
+                                    "nagyon kioktató tud lenni, úgy beszél mintha ő tudná az igazságot"
+                            },
+                            {//mozgékonyság-változtatasi kepesseg
+                                "csak akkor változtat ,ha szerinte megéri, feleslegesen nem",
+                                    "tökéletességre törekszik, addig nem változtat, a saját útját tökéletesnek látja",
+                                    "ragaszkodik a helyzetekhez ráció alapján, tehát megfontoltság viszonyításra alapoz mindent"
+                            },
+                            {//gyermekkora
+                                "kis tudós, nagy elvárások a szülőktől",
+                                    "hajlamosak a lécet túl alacsonyra helyezni, hogy ne várjanak el tőlük túl sokat",
+                                    "szeretnek tanulni, szeretnek érteni, tudni valamit",
+                                    "a megfelelés folyamatosan jelen van, de ezt jól fel tudják használni a fejlődéshez",
+
+                            },
+                            {//tanulása
+                                "nagyon jól tanulnak, de csak akkor van értelme ha azt használni is tudják a hétköznapokban",
+                                },
+                            {//elfogadása
+                                "csak azokat a dolgokat fogadja el, amit racionálisan is el lehet fogadni",
+                                    "mindenben keresi a valóságot, a tapasztalhatóságot",
+                                    "hihetetlenül nehéz neki megfelelni, pontosan látja minden hibádat, ezt nem kellene senkinek se mondania",
+
+                            }
+                    },
+                    {//merleg
                             {//altlanos
 
                             },
@@ -1244,7 +1291,7 @@ public interface BolygoJegyben {
                             {//elfogadása
                             }
                     },
-                    {//bika
+                    {//skorpio
                             {//altlanos
 
                             },
@@ -1263,7 +1310,7 @@ public interface BolygoJegyben {
                             {//elfogadása
                             }
                     },
-                    {//bika
+                    {//nyilas
                             {//altlanos
 
                             },
@@ -1282,7 +1329,7 @@ public interface BolygoJegyben {
                             {//elfogadása
                             }
                     },
-                    {//bika
+                    {//bak
                             {//altlanos
 
                             },
@@ -1301,7 +1348,7 @@ public interface BolygoJegyben {
                             {//elfogadása
                             }
                     },
-                    {//bika
+                    {//vizonto
                             {//altlanos
 
                             },
@@ -1320,7 +1367,7 @@ public interface BolygoJegyben {
                             {//elfogadása
                             }
                     },
-                    {//bika
+                    {//halak
                             {//altlanos
 
                             },
@@ -1339,44 +1386,7 @@ public interface BolygoJegyben {
                             {//elfogadása
                             }
                     },
-                    {//bika
-                            {//altlanos
 
-                            },
-                            {//gondolkodasa
-                            },
-                            {//kapcsolatteremtés
-                            },
-                            {//kommunikacio
-                            },
-                            {//mozgékonyság-változtatasi kepesseg
-                            },
-                            {//gyermekkora
-                            },
-                            {//tanulása
-                            },
-                            {//elfogadása
-                            }
-                    },
-                    {//bika
-                            {//altlanos
-
-                            },
-                            {//gondolkodasa
-                            },
-                            {//kapcsolatteremtés
-                            },
-                            {//kommunikacio
-                            },
-                            {//mozgékonyság-változtatasi kepesseg
-                            },
-                            {//gyermekkora
-                            },
-                            {//tanulása
-                            },
-                            {//elfogadása
-                            }
-                    },
             }
 
     };
