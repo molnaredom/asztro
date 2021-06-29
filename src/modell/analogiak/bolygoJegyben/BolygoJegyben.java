@@ -203,7 +203,6 @@ public interface BolygoJegyben {
                                     "meg lehet vele csináltatni a munkát",
                                     "hisztis: hullámzik érzelmileg, hangulatilag",
                                     "döntéseket érzelmi alapon hoz, nem tartják jó főnöknek"
-
                             }
 
                     },
@@ -258,6 +257,94 @@ public interface BolygoJegyben {
                             }
 
                     },
+                    {  //szuz nap
+                            //altalnos
+                            {
+                                  "meg kell tanulnia ,hogy minden tökéltetes",
+                                    "ha mindent elfogad azt mondják passzív vagy így nehezen lesz nap",
+                                    ""
+
+
+                            },
+                            //apa
+                            {
+                                    "elvárásokat támaszt gyerekével szemben",
+                                    "fontos neki ,hogy a gyereke tudással bírjon",
+                                    "frusztrálja ,ha a gyerek tehetségtelen, elvárja hogy szorgalmes legyen",
+                                    "vigyáznia kell a maximalizmussal , ne mással szembel legyen elvárs, max magunkkal szemben",
+                                    "racionális , nem nagyon engedi közel magához a gyereket",
+                                    },
+                            //gyerek
+                            {
+                                    "tudóscsemete, jó tanuló, meg akar felelni az elvárásoknak",
+                                    "ha nem tud jól teljesíteni nagyon leteszi a lécet, nehogy ne feleljen meg",
+                                    "sokszor betegséget kreál, hogy az elvárások megszűnjenek",
+                                    "maximalista apát lát, aki mindig dolgozik, és semmi sem elég jó neki",
+
+                            },
+                            // férfi
+                            {
+                                "negyon erős elvárások",
+                                    "nem elég ha megcsinálod amit elvár, úgy is kell gondolnod(persze nem tudhatod mit gondol)",
+                                    "ha azt érzi ,hogy nem néznek fel rá, megpróbálja a másikat lenyomni",
+                                    "önbizalomhiányos, ritkán hiszi , hogy felnéznek rá",
+                                    "olyan feleséget választ , hogy neki is fontos legyen az ő szűzsége",
+                            },
+                            // nő
+                            {
+                                    "ha nő éli a napot sokkal intenzívebb mint egy férfinél éa ez rettenetes",
+                                    "kötözködő, munkamániás, maximalista, ez nem jó, át kellene adnia a nap szerepet",
+                                    "lehet hogy szeteri , ha lenyomják, és ezért választ olyan férfit akinek semmi sem jó",
+
+                                     },
+                            //főnök
+                            {
+                                    "nem való vezetőnek, nem tud pozitív oldalról erősíteni, csak a hibát veszi észre",
+                                    "nem akarja átadni a munkát, mer tudja ,úgyis csak ő tudja tökéletesen megcsinálni"
+
+                            }
+
+                    },{  //merleg nap
+                            //altalnos
+                            {
+
+
+                            },
+                            //apa
+                            {
+                                "jó szülő, bár nem tud nevelni",
+                                    "nem tud korlátozni nem tud nemet mondani",
+                                    "nagyon manipulálható, befolyásolható",
+                                    "nem szabad ütköznie a gyerekkel, az apa jelölö ki a korlátokat, de az anya tartassa be",
+                                    "lehetnek elvárásea, zsarolásai a gyerekkel szemben"
+                                    },
+                            //gyerek
+                            {
+                                    "nagyon meg akar felelni , nem szereti, ha kritizálják",
+                                    "kettős: 1. megpróbál visszahúzódni, nehogy valamiben ne feleljen meg vagy 2. mindig felhívja magára a figyelmet, hogy észrevegyék",
+                                    "kisfiú -> hogyan kell férfivá fejlődni? az apa tanítsa meg: felvállalni önmagát ",
+
+                            },
+                            // férfi
+                            {
+                                "semmiben sem dönt, felelőséget se nagyon vállal",
+                                    "a nő tuti hogy 1000* erősebb lesz",
+                                    "a karrierista pasik többsége mérleg",
+                                    "könnyebb a külvilágban lennie valakinek mint a magánéletben, nem jár neki kockázattal",
+                                },
+                            // nő
+                            {
+
+                                     },
+                            //főnök
+                            {
+
+
+                            }
+
+                    },
+
+
             },
             //hold
             {
@@ -317,7 +404,7 @@ public interface BolygoJegyben {
                             },
                             //befogadása
                             {
-                                "gyereket akar(viszont a ygereket nem akarni kell)"
+                                "gyereket akar(viszont a gyereket nem akarni kell)"
                             }
                     },
                     //bika hold
@@ -481,31 +568,43 @@ public interface BolygoJegyben {
                             },
                             //tehetsége
                             {
-
+                                    "mindenhol, ahol luxust, fensőbbséget hatalmat, gazdagságot képviseli",
+                                    "adottságok: vezetés irányítás, uralkodás, alkotás, teremtés, kreativitás",
                             },
                             //anya
                             {
-
+                                "általában nagyon jó anya",
+                                    "szeret büszkének lenni a gyerekére",
+                                    "nevelni a gyereket nem nagyon tudja, nem megy bele a kis játékokba",
+                                    "neki égkő a gyerek, mint egy ékszer, így is bánik vele"
                             },
                             //gyerek
                             {
+                                "anya uralkodik, imádja a környezetét vezetni",
+                                    "az anya lusta, vagy hedonista, vagy uralkodó típus,(vagy más oroszlan analógiák",
 
                             },
                             //feleség
                             {
-
+                                "büszke ved, nemes vad. a férfi legyen rá büszke",
+                                    "nem egy konyhatündér",
+                                    "first lady",
+                                    "olyan férfit választ akinek olyan ahivatása, hogy nyílvánosság előtt szerepel, hogy megélhesse az oroszlánságot"
                             },
                             // férfi
                             {
-
+                                "oroszlánná teszi a nőt aki mellette van(ezt úgy érdemes ,hogy ha ő a királynő akkor én a király)"
                             },
                             //alárendeltsége
                             {
+                                "csak egy embernek",
+                                    "olyan pozíciókat kell neki keresni, ahol max 1 embernek kell alárendelődni(másképp nem tud)"
 
                             },
                             //befogadása
                             {
-
+                                "csak ,ha ő akarja",
+                                    "csak ,ha teremteni akar, ehyébként nem"
                             }
                     },
                     //szűz hold
@@ -932,21 +1031,45 @@ public interface BolygoJegyben {
                     },
                     {//oroszlan
                             {//altlanos
+                                "Kulcsmondata: Ha hallgattál volna, bölcs maradtál volna.",
+                                    "Nem szabad versenyeztetni, olyan hely kell neki , ahol tudása kommunikációja, MEGKÉRDŐJELEZHETETLEN",
 
                             },
                             {//gondolkodasa
+                                "fensőbbségtudat: én aztán vagyok valaki",
+                                    "nagyvonalú tud lenni",
+                                    "könnyen befolyásolhatóak, nagyon hiúak, könnyen bedőlnek a szép szavaknak"
                             },
                             {//kapcsolatteremtés
+                                "felülről teremt kapcsolatot: ami értékes , ami különleges az jöhet, ami nem érdekes azzal nem foglalkozik kizárja",
+                                    "párkapcsolatban fontos, hogy büszkel lehessen a kapcsolatra",
+
                             },
                             {//kommunikacio
+                                "nem megy bele olyan kommunikációba, ahol alul maradhat",
+                                    "ha nincs versenyhelyzet nagyra van magával , egyébként meg nyuszi",
+                                    "nem szereti ha megkérdőjelezik amit ő mond, nem szeret vitatkozni",
+                                    "szeret fensőbbséggel beszélni",
+                                    "szeret kioktato lenni",
+                                    "szereti önmagát megkoronázni"
                             },
                             {//mozgékonyság-változtatasi kepesseg
+                                "az alattvalókat nem szívesen cseréli le",
+                                    "ha olyan helyzetben van ahol nem érzi, hogy vagyok valaki, képes változtatni",
                             },
                             {//gyermekkora
+                                "kettősség: vagy tenyerén hordja a szülő, mindent megadnak neki, támogatják esgítik, hogy kiteljesüljön" +
+                                        "vagy olyan közegből jön, ahol mindig lenyomták lehúzták ezért be akarja bizonyítani, hogy én is érek annyit mint más",
+                                    "sokszor olyanok a testvérei ,akik közt ő lehet a király",
+                                    "vigyázni kell vele, nehogy megtörjék a gerincét, az egóját"
                             },
                             {//tanulása
+                                "ha tudod motiválni, nagyon jó tanuló tud lenni(látnia kell mi lesz az eredménye",
+
                             },
                             {//elfogadása
+                                "a dícséretet igen, a főhajtást igen, a kritikát nem",
+                                    "elfogadhatatlannak tartják a megalázó helyzeteket"
                             }
                     },
                     {//bika
