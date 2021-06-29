@@ -343,6 +343,159 @@ public interface BolygoJegyben {
                             }
 
                     },
+                    {  //skorpió nap
+                            //altalnos
+                            {
+
+
+                            },
+                            //apa
+                            {
+
+                                    },
+                            //gyerek
+                            {
+                                   },
+                            // férfi
+                            {
+                                },
+                            // nő
+                            {
+
+                                     },
+                            //főnök
+                            {
+
+
+                            }
+
+                    },{  //nyilas nap
+                            //altalnos
+                            {
+
+
+                            },
+                            //apa
+                            {
+
+                                    },
+                            //gyerek
+                            {
+                                   },
+                            // férfi
+                            {
+                                },
+                            // nő
+                            {
+
+                                     },
+                            //főnök
+                            {
+
+
+                            }
+
+                    },{  //bak nap
+                            //altalnos
+                            {
+
+
+                            },
+                            //apa
+                            {
+
+                                    },
+                            //gyerek
+                            {
+                                   },
+                            // férfi
+                            {
+                                },
+                            // nő
+                            {
+
+                                     },
+                            //főnök
+                            {
+
+
+                            }
+
+                    },{  //vízöntő nap
+                            //altalnos
+                            {
+
+
+                            },
+                            //apa
+                            {
+                                "vasárnapi apuka(elvált)",
+                                    "nevelő szülő, örökbe fogadó szülő, olyan mintha apa lenne",
+                                    "sokat utazik, sokat van távol",
+                                    "nem egy nevelő típus inkább függetlenségre szabadságra , önállóságra neveli a gyerekét",
+                                    "megadja a gyereknek a kellő szabadságot"
+                                    },
+                            //gyerek
+                            {
+                                "vagy kötődik, hogy eltold magadtól, vagy szökik, hogy te korlátozd",
+                                    "vagy nagyon kötődik az apához vagy teljesen leválik",
+                                    "nehezen nevelhetőek, folyamatosan lázadnak, nehéz a szülőknek is",
+                                    "hárítják azokat a dolgokat ,amik \" hétköznapiak\"",
+                                    "vagy valamilyen \"disz\"-es vagy allergiás vagy valamiben különbözik a többiektől",
+                                    "lehet viszelkedészavaros, lehet hiperaktív, lehet antiszociális",
+                                    "a szülőnek nem szabad érzelmeket behoznia, amikor a gyerek hidztizik, ha hisztizik hagy hisztizzen",
+                                    "apában láthatja ,hogy neki minden fontos csak ő nem, apa mindenkinek segít, az apa más mint a többiek"
+                                   },
+                            // férfi
+                            {
+                                "nem lehet \"megfogni\", helyette szeret visszajönni, \"háromszor válik 4 szer házasodik\"",
+                                "nem szereti az alá-felé rendeltséget, csak a mellérendeltség elfogadható",
+                                "nem tud felelősséget vállalni(nem bírja ha rátolják)",
+                                    "magától sok mindent megtesz, de nem lehet korlátozni",
+                                    "ritka hogy egy házasságban le tudná élni az életét"
+                                },
+                            // nő
+                            {
+                                "szeretne független lenni, motorozás, tetoválás tipik vizontő lányok",
+                                    "jó dolog beosztani a feladatokat: kinek mi a dolga párkapcsolatban",
+                                    "jó ha ő vízöntő pasit választ, ők legalább nem unalmasak, mindig van bennük valami különleges",
+                                    ""
+                                     },
+                            //főnök
+                            {
+                                "nem jó főnök, nem szeret együttműködi a kollégákkal",
+                                    "olyan szerepekben jó ,ahol egyenrangú fél",
+                                    "az ötleteit, megpróbálja keresztülvinni bármin, ami már hajmeresztő"
+
+                            }
+
+                    },{  //halak nap
+                            //altalnos
+                            {
+
+
+                            },
+                            //apa
+                            {
+
+                                    },
+                            //gyerek
+                            {
+                                   },
+                            // férfi
+                            {
+                                },
+                            // nő
+                            {
+
+                                     },
+                            //főnök
+                            {
+
+
+                            }
+
+                    },
 
 
             },
