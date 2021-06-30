@@ -601,41 +601,66 @@ public interface BolygoJegyben {
                     },
                     // ikrek hold
                     {
-                            //általános
+                            //érzelmei
                             {
-
+                                "olyan élethelyzetbe kerüljön, ahol nincsenek érzelmi kötődések",
+                                    "nem tud igazán kötődni",
+                                    "az érzelmek felületesek, de ez nem azt jelenti, hogy ne tudna szeretni",
+                                    "ne várd tőle, hogy kényeztesse, vagy hogy kötődjön",
+                                    "az érzelmek kimutatása a ráción alapul",
+                                    "pillanat analógiája, egyikben ezt éli, következőben már nem",
+                                    "soha, nem tudhatod, amit mind ,amit ír, amit csekejszik, valóban érzelmi alapú-e"
                             },
                             //ösztönei
                             {
-
+                                "kíváncsi, minden érdekli",
+                                    "közvetítés, kommunikáció minden formája",
+                                    "rövidtávú kapcsolódások a legpozitívabbak számára",
+                                    "ikrek beszél , szűz ír, sző elszáll írás megmarad",
+                                    "jó szerepjátékos, minden helyzethez elő tudja adni magát, ezzel alkalmazkodva"
                             },
                             //tehetsége
                             {
-
+                                "minden terület ahol kapcsolatokat építhet, ápolhat, vagy hozhat létre",
+                                    "jó minden területen ahol változtatni kell",
+                                    "közvetítői területen jó: tanítástól kereskedelemen át, információáramláson át minden terület",
                             },
                             //anya
                             {
-
+                                "gyerek lehet az élete része, de célja nem",
+                                    "mindig viszi jobbra balra a gyerekét, rászoktatja az emberi kapcsolatokra",
+                                    "nem lesz ideje a gyerekre csak futtában fogja felnevelni",
+                                    "mindig tanítja a gyereket , felkelti a kíváncsiságát ,érdeklődését"
                             },
                             //gyerek
                             {
-
+                                "érdeklődik a világ iránt",
+                                    "nem tud egy dolog mellett leragadni",
+                                    "állandóan szemmel kell tartani, mert folyton mozgolódik",
+                                    "azt látja  az anya midnig mással foglalkozik"
                             },
                             //feleség
                             {
-
+                                "nem tud kötődni",
+                                    "általában intelektuális partnert keres",
+                                    "nem egy tipikus háziasszony",
+                                    "férfinak a nő mellett nem szabad unalmassá válnia"
                             },
                             // férfi
                             {
-
+                                "kíváncsi természetű nőt választ, aki okos",
+                                    "vanaki azért választ nőt, hogy ne kelljen érzelmileg belemennie a kapcsolatba",
+                                    "van aki a szélhámos nőkre bukik van aki jó üzlettársat keres"
                             },
                             //alárendeltsége
                             {
-
+                                "sose tudod alárendelt-e (vevő vagy az eladó az alárendelt)"
                             },
                             //befogadása
                             {
-
+                                "racionálisan tud befogadó lenni, egyébként nem is gondol rá",
+                                    "nem tudatosan teszi amit tesz, mert nem gondol rá",
+                                    "útközben evés jövök-megyek"
                             }
                     },
                     //rák hold
