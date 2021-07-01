@@ -1,6 +1,6 @@
 package modell.analogiak.egyszeresenOsszetettAnalogiak.bolygoJegyben;
 
-public interface Hold {
+interface Hold {
 
     String[][][] hold = new String[][][]{
 

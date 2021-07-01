@@ -1,6 +1,6 @@
 package modell.analogiak.egyszeresenOsszetettAnalogiak.bolygoJegyben;
 
-public interface Merkur {
+interface Merkur {
 
     String[][][] merkur = new String[][][]{
             {//kos

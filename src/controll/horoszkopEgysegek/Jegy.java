@@ -87,7 +87,6 @@ public class Jegy {
         int maradek =(jegySzama-1)%4;//0-11
         int eltolas = (jegySzama-1)/4; //ennyivel lesz eltolva BALRA pl 1 tolas {4,8,12}--> {8,12,4}
         List<Integer> eredmeny = new ArrayList<>();
-        System.out.println();
 
         /**azokat a szamokat teszi bele a listaba amelyek megfelelo maradekuak, vagyis trigonalisan megfelelo jegyben vannak
         //de ez minden esetben pl 0-3 mal kezdődik pl 3 7 11 nincs kiigazitva*/
@@ -194,7 +193,7 @@ public class Jegy {
         }  else if (valtozo.contains(jegyNev)) {
             this.minoseg = "valtozo";
         } else {
-            System.out.println("hibas jegymegadas setminoseg  "+ jegyNev);
+            System.err.println("hibas jegymegadas setminoseg JEGYBEN  "+ jegyNev);
             this.minoseg = "";
         }
 
@@ -234,7 +233,7 @@ public class Jegy {
         } else if (viz.contains(jegyNev)) {
             this.elem = "viz";
         } else {
-            System.out.println("hibas jegymegadas setminoseg  "+ jegyNev);
+            System.err.println("hibas jegymegadas setminoseg  "+ jegyNev);
             this.elem = "";
         }
     }

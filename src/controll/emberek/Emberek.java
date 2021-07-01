@@ -6,8 +6,9 @@ public class Emberek {
     Ember apa = new Ember("Molnár Imre");
 
     public void teddmeg() {
+
         adam.szovegesertekeles();
-        //apa.szovegesertekeles();
+        apa.szovegesertekeles();
     }
 
 

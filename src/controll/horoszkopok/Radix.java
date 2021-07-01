@@ -23,39 +23,25 @@ public class Radix extends Horoszkop {
 
     public void osszefuggesElemzes() {
 
-        for (Bolygo b : bolygok){
+        Osszefugges_elemzes oszfgelemz = new Osszefugges_elemzes(bolygok,hazak,ferfi);
+
+        /*for (Bolygo b : bolygok){
             System.out.println(b.getNev()+" : "+b.getFokszam()+" :  "+b.getJegy().getJegyNev()+" : " +b.getBolygoHazSzama());
-        }
+        }*/
         //hazurak kiirasa:
-        Arrays.stream(hazak).forEach(e -> Osszefugges_elemzes.hazUraMelyikHazban(e,bolygok));
+        Arrays.stream(hazak).forEach(oszfgelemz::hazUraMelyikHazban);
         System.out.println();
 
-        JegyAnalogia.randomAnalogia("kos");
-        System.out.println();
-
-        Osszefugges_elemzes.minosegSzerintiFelosztas(bolygok,egyes);
-
-        Osszefugges_elemzes.elemekSzerintiFelosztas(bolygok,egyes);
-        System.out.println();
-
-        Osszefugges_elemzes.sorstipus(bolygok,hazak);
-        System.out.println();
-
-        Osszefugges_elemzes.hazUraMelyikHazban(kilences,bolygok);
-        System.out.println();
-        Osszefugges_elemzes.asztrocikcakk(bolygok);
-        System.out.println();
-
-
-        Osszefugges_elemzes.hyleg(bolygok);
-
-        Osszefugges_elemzes.napHoldPluszosMinuszos(bolygok,ferfi);
-
-        Osszefugges_elemzes.dekadok(bolygok);
-
-        Osszefugges_elemzes.sorsfeladat(bolygok);
-
-        Osszefugges_elemzes.bolygokfenyszögei(bolygok);
+        JegyAnalogia.randomAnalogia("kos");  System.out.println("\n");
+        oszfgelemz.minosegSzerintiFelosztas();          System.out.println("\n");
+        oszfgelemz.elemekSzerintiFelosztas();           System.out.println("\n");
+        oszfgelemz.sorstipus();                         System.out.println("\n");
+        oszfgelemz.asztrocikcakk();                     System.out.println("\n");
+        oszfgelemz.hyleg();                             System.out.println("\n");
+        oszfgelemz.napHoldPluszosMinuszos();            System.out.println("\n");
+        oszfgelemz.dekadok();                           System.out.println("\n");
+        oszfgelemz.sorsfeladat();                       System.out.println("\n");
+        oszfgelemz.bolygokfenyszögei();                 System.out.println("\n");
     }
 
     public void bolygoJegybenElemzes() {

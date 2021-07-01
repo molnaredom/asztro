@@ -1,6 +1,6 @@
 package modell.analogiak.egyszeresenOsszetettAnalogiak.bolygoJegyben;
 
-public interface Nap {
+interface Nap {
 
     String[][][] nap = new String[][][]{
             //kos

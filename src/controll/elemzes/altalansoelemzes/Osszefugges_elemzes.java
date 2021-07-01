@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public interface Osszefugges_elemzes {
+public class Osszefugges_elemzes {
 
 
     //todo lesz egy összetett adattipus ami kulonbozo ertekeket tarol int pl (1,10,32,21,24)
@@ -17,6 +17,16 @@ public interface Osszefugges_elemzes {
     // majd a visszateritett ertekeket  a horoszlkoposszesito classban kiértékeli és egy összetett szemelyiseget alkot majd
 
     boolean vanhazur = false;
+
+    Bolygo[] bolygok;
+    Haz[] hazak;
+    boolean ferfi;
+
+    public Osszefugges_elemzes(Bolygo[] bolygok, Haz[] hazak, boolean ferfi) {
+        this.bolygok = bolygok;
+        this.hazak = hazak;
+        this.ferfi = ferfi;
+    }
 
     //személyiség
     static void evszakiFelosztas(Bolygo[] bolygok) {
@@ -35,9 +45,7 @@ public interface Osszefugges_elemzes {
     System.out.printf("tavasz:%d\nnyar:%d\nosz:%d\ntel:%d%n",tavasz,nyar,osz,tel);
 }
 
-    static void dekadok(Bolygo[] bolygok) {
-
-
+     public  void dekadok() {
 
         for (Bolygo b : bolygok) {
             System.out.println("bolygo: "+b.getNev() +" fokszam: "+b.getFokszam() + " dekadszam: "+b.getDekadSzam() );
@@ -48,12 +56,11 @@ public interface Osszefugges_elemzes {
     }
 
 
-    static void minosegSzerintiFelosztas(Bolygo[] bolygos, Haz asc) {
+    public void minosegSzerintiFelosztas() {
 
         int kardinalis=0, szilard=0, valtozo=0;
 
-
-        for (Bolygo b : bolygos) {
+        for (Bolygo b : bolygok) {
 
             switch (b.getJegy().getMinoseg()) {
                 case "kardinalis" -> kardinalis += b.getPont();
@@ -61,22 +68,21 @@ public interface Osszefugges_elemzes {
                 case "valtozo" -> valtozo += b.getPont();
             }
         }
-        switch (asc.getHazJegye().getMinoseg()) {
+        switch (hazak[0].getHazJegye().getMinoseg()) {
             case "kardinalis" -> kardinalis += 2;
             case "szilard" -> szilard += 2;
             case "valtozo" -> valtozo += 2;
         }
 
-
         System.out.printf("kardinalis:%d\nszilard:%d\nvaltozo:%d\n",kardinalis,szilard,valtozo);
     }
 
 
-    static void elemekSzerintiFelosztas(Bolygo[] bolygos, Haz asc) {
+    public void elemekSzerintiFelosztas() {
 
         int tuz=0, viz=0, fold=0, levego=0;
 
-        for (Bolygo b : bolygos) {
+        for (Bolygo b : bolygok) {
 
             switch (b.getJegy().getElem()) {
                 case "tuz" -> tuz += b.getPont();
@@ -85,7 +91,7 @@ public interface Osszefugges_elemzes {
                 case "viz" -> viz += b.getPont();
             }
         }
-        switch (asc.getHazJegye().getElem()) {
+        switch (hazak[0].getHazJegye().getElem()) {
             case "tuz" -> tuz += 2;
             case "fold" -> fold += 2;
             case "levego" -> levego += 2;
@@ -100,7 +106,7 @@ public interface Osszefugges_elemzes {
 
 
     //sors
-    static void asztrocikcakk(Bolygo[] bolygok) {
+    public void asztrocikcakk() {
         //ArrayList<String> jegybenEles = new ArrayList<>(Arrays.asList("szaturnusz","uranusz","nap"));
         ArrayList<String> hazbanEles = new ArrayList<>(Arrays.asList("neptun","jupiter","pluto"));
 
@@ -136,7 +142,7 @@ public interface Osszefugges_elemzes {
     }
 
 
-    static void sorstipus(Bolygo[] bolygok, Haz[] hazak){
+   public void sorstipus(){
 
         ArrayList<Integer> kiemeltHazak = new ArrayList<>(Arrays.asList(1,5,9,10,11));
 
@@ -238,7 +244,7 @@ public interface Osszefugges_elemzes {
     }
 
 
-    static void sorsfeladat(Bolygo[] bolygok) {
+    public void sorsfeladat() {
         Bolygo szaturn = bolygok[6];
         Bolygo jupi = bolygok[5];
 
@@ -250,7 +256,7 @@ public interface Osszefugges_elemzes {
 
     }
 
-    static void bolygokfenyszögei(Bolygo[] bolygok){
+    public void bolygokfenyszögei(){
         for (Bolygo b : bolygok) {
             System.out.println();
            for (String[] k :  b.getFenyszogKapcsoaltok()) {
@@ -261,7 +267,7 @@ public interface Osszefugges_elemzes {
 
 
     // egyéb
-    static void hyleg(Bolygo[] bolygok) {
+    public void hyleg() {
         int napHaza = bolygok[0].getBolygoHazSzama();
         int holdHaza = bolygok[1].getBolygoHazSzama();
         ArrayList<Integer> kiemeltHazak = new ArrayList<>(Arrays.asList(7,9,10,11));
@@ -279,7 +285,7 @@ public interface Osszefugges_elemzes {
     }
 
 
-    static void megvalVcelkij(Bolygo[] bolygok, Haz[] hazak) {
+    public void megvalVcelkij() {
 
         
         
@@ -333,7 +339,7 @@ public interface Osszefugges_elemzes {
         return kivelAllEgyutt;
     }
 
-    static void hazUraMelyikHazban(Haz haz, Bolygo[] bolygok) {
+    public void hazUraMelyikHazban(Haz haz) {
         boolean vanHazur = false;
         System.out.println();
         for (Bolygo b : bolygok) {
@@ -385,7 +391,7 @@ public interface Osszefugges_elemzes {
     }
 
 
-    static void napHoldPluszosMinuszos(Bolygo[] bolygok, boolean ferfi) {
+    public void napHoldPluszosMinuszos() {
         int napHaza = bolygok[0].getBolygoHazSzama();
         int holdHaza = bolygok[1].getBolygoHazSzama();
 

@@ -50,10 +50,9 @@ public class Ember {
                     new Haz("1", new Jegy(adatok.get(21)[0]), Double.parseDouble(adatok.get(12)[1]))
             );
 
-
             radix.alapbeallitasok();
             radix.osszefuggesElemzes();
-            radix.bolygoJegybenElemzes();
+            //radix.bolygoJegybenElemzes();
 
 
 

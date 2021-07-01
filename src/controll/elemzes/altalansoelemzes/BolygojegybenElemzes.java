@@ -2,8 +2,6 @@ package controll.elemzes.altalansoelemzes;
 
 import controll.horoszkopEgysegek.Bolygo;
 import modell.analogiak.egyszeresenOsszetettAnalogiak.bolygoJegyben.OsszesBolyoJegyben;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Arrays;
 
 public interface BolygojegybenElemzes {
@@ -24,7 +22,7 @@ public interface BolygojegybenElemzes {
             } catch (IndexOutOfBoundsException ie) {
                 System.err.println(ie);
             } catch (Exception e) {
-                System.err.println("egyebb ex");
+                System.err.println("egyebb ex BolygojegybenElemzes -ben");
             }
             i++;
 
