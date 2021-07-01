@@ -1,10 +1,11 @@
 package controll.horoszkopok;
 
+import controll.elemzes.altalansoelemzes.BolygojegybenElemzes;
 import controll.horoszkopEgysegek.Bolygo;
 import controll.horoszkopEgysegek.Fenyszog;
 import controll.horoszkopEgysegek.Haz;
-import controll.elemzes.AltalanosElemzes;
-import modell.analogiak.JegyAnalogia;
+import controll.elemzes.altalansoelemzes.Osszefugges_elemzes;
+import modell.analogiak.alapAnalogiak.JegyAnalogia;
 
 import java.util.Arrays;
 
@@ -20,41 +21,47 @@ public class Radix extends Horoszkop {
         fenyszog.beallitBolygonakHazat(hazak,bolygok);
     }
 
-    public void elemzes() {
+    public void osszefuggesElemzes() {
 
         for (Bolygo b : bolygok){
             System.out.println(b.getNev()+" : "+b.getFokszam()+" :  "+b.getJegy().getJegyNev()+" : " +b.getBolygoHazSzama());
         }
         //hazurak kiirasa:
-        Arrays.stream(hazak).forEach(e -> AltalanosElemzes.hazUraMelyikHazban(e,bolygok));
+        Arrays.stream(hazak).forEach(e -> Osszefugges_elemzes.hazUraMelyikHazban(e,bolygok));
         System.out.println();
 
         JegyAnalogia.randomAnalogia("kos");
         System.out.println();
 
-        AltalanosElemzes.minosegSzerintiFelosztas(bolygok,egyes);
+        Osszefugges_elemzes.minosegSzerintiFelosztas(bolygok,egyes);
 
-        AltalanosElemzes.elemekSzerintiFelosztas(bolygok,egyes);
+        Osszefugges_elemzes.elemekSzerintiFelosztas(bolygok,egyes);
         System.out.println();
 
-        AltalanosElemzes.sorstipus(bolygok,hazak);
+        Osszefugges_elemzes.sorstipus(bolygok,hazak);
         System.out.println();
 
-        AltalanosElemzes.hazUraMelyikHazban(kilences,bolygok);
+        Osszefugges_elemzes.hazUraMelyikHazban(kilences,bolygok);
         System.out.println();
-        AltalanosElemzes.asztrocikcakk(bolygok);
+        Osszefugges_elemzes.asztrocikcakk(bolygok);
         System.out.println();
 
 
-        AltalanosElemzes.hyleg(bolygok);
+        Osszefugges_elemzes.hyleg(bolygok);
 
-        AltalanosElemzes.napHoldPluszosMinuszos(bolygok,ferfi);
+        Osszefugges_elemzes.napHoldPluszosMinuszos(bolygok,ferfi);
 
-        AltalanosElemzes.dekadok(bolygok);
+        Osszefugges_elemzes.dekadok(bolygok);
 
-        AltalanosElemzes.sorsfeladat(bolygok);
+        Osszefugges_elemzes.sorsfeladat(bolygok);
 
-        AltalanosElemzes.bolygokfenyszögei(bolygok);
+        Osszefugges_elemzes.bolygokfenyszögei(bolygok);
+    }
+
+    public void bolygoJegybenElemzes() {
+
+        BolygojegybenElemzes.bolygoJegybenElemzesKiirat(bolygok);
+
     }
 
 

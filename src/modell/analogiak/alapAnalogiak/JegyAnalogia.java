@@ -1,4 +1,4 @@
-package modell.analogiak;
+package modell.analogiak.alapAnalogiak;
 
 import java.util.Random;
 

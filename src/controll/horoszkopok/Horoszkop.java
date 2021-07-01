@@ -72,7 +72,7 @@ public abstract class Horoszkop {
         this.bolygok = new Bolygo[]{nap, hold, merkur, mars, venusz, jupiter, szaturnusz, uranusz, neptun, pluto};;
     }
 
-    public abstract void elemzes();
+    public abstract void osszefuggesElemzes();
 
     public void setHazak() {
 

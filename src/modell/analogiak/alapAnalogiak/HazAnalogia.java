@@ -1,4 +1,4 @@
-package modell.analogiak;
+package modell.analogiak.alapAnalogiak;
 
 public interface HazAnalogia {
 

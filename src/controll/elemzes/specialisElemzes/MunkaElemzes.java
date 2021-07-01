@@ -1,4 +1,4 @@
-package controll.elemzes;
+package controll.elemzes.specialisElemzes;
 
 public interface MunkaElemzes {
     //általános analógiakeresés

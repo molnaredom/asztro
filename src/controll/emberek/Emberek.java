@@ -7,7 +7,7 @@ public class Emberek {
 
     public void teddmeg() {
         adam.szovegesertekeles();
-        apa.szovegesertekeles();
+        //apa.szovegesertekeles();
     }
 
 

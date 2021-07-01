@@ -12,7 +12,7 @@ public class Lunar extends Horoszkop{
 
 
     @Override
-    public void elemzes() {
+    public void osszefuggesElemzes() {
 
     }
 }

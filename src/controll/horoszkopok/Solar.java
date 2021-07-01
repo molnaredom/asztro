@@ -10,7 +10,7 @@ public class Solar extends Horoszkop{
     }
 
     @Override
-    public void elemzes() {
+    public void osszefuggesElemzes() {
 
     }
 }

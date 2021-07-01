@@ -1,4 +1,4 @@
-package modell.analogiak;
+package modell.analogiak.egyszeresenOsszetettAnalogiak.bolygoHazban;
 
 public interface BolygoHazban {
 

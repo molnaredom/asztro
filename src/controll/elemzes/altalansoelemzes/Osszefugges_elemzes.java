@@ -1,15 +1,15 @@
-package controll.elemzes;
+package controll.elemzes.altalansoelemzes;
 
 import controll.horoszkopEgysegek.Bolygo;
 import controll.horoszkopEgysegek.Haz;
-import modell.analogiak.HazAnalogia;
+import modell.analogiak.alapAnalogiak.HazAnalogia;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public interface AltalanosElemzes {
+public interface Osszefugges_elemzes {
 
 
     //todo lesz egy összetett adattipus ami kulonbozo ertekeket tarol int pl (1,10,32,21,24)

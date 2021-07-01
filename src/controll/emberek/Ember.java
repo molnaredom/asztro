@@ -52,7 +52,8 @@ public class Ember {
 
 
             radix.alapbeallitasok();
-            radix.elemzes();
+            radix.osszefuggesElemzes();
+            radix.bolygoJegybenElemzes();
 
 
 

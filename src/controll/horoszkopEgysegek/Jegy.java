@@ -323,5 +323,9 @@ public class Jegy {
     public String[] getMellette() {
         return mellette;
     }
+
+    public int getJegySzama() {
+        return jegySzama;
+    }
 }
 
