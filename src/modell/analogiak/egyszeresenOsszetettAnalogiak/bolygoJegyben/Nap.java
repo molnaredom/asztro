@@ -327,12 +327,13 @@ interface Nap {
             },
             // nő
             {
-
+                "kölvilág elismerésére való törekvés, tetszeni akar a világnak, hogy elismerjék szeressék",
+                    "feladata: a pasit tolni előre beállni mögé, neki kell támogatni erősítani a férfit"
             },
             //főnök
             {
-
-
+                "felső vezetőnek jó, középvezetőnek szörnyű, mert az alkalmazottaknak és a felette lévőknek is meg akar felelni",
+                    "nem válallja fel a veszteséggel járó kockázatot"
             }
 
     },
@@ -370,21 +371,34 @@ interface Nap {
             },
             //apa
             {
+                "a gyerekek általában szeretik, nem egy korlátozó típtus",
+                    "inkább barát mint szülő, jókedélyű,szabadságra neveli, szeret játszani vele",
+                    "a a felelősséget nem szereti, ha a gyereknek szüksége van rá , nem biztos, hogy oda tu állni",
 
             },
             //gyerek
             {
+                "jó kedvű, jó kedélyű, szeret szerepelni",
+                    "gyorsan fel tud pörögni",
+                    "milyen az apa? - van hite, erkölcsileg vállalja?, megjátsza magát?, szélhámos és mellébeszél?"
             },
             // férfi
             {
+                "kezdetben nagyon szeretik a nők, mert szerelmes típusok(könnyen fellángolnak legalábbis)",
+                    "rajongnak a nőkért, érzi a nő, hogy mindent megtesznek érte",
+                    "a férfiban az jön elő,hogy a nő nem tudja belevonni a felleősségbe, pl lehet h nem akar gyerekret",
+                    "ha nem vállal felelősséget, a nő azt érzi a férfi nem megbízható"
             },
             // nő
             {
-
+                "tele van lelekesedéssel optimizmussal, borzasztó erővel megy előre fele",
+                    "a férfiban keresi a nyilasságot: legyen ite a férfinak, jól szeretne szórakozni a férfi mellett",
+                    "legjobb szabadidő partner a nyilas"
             },
             //főnök
             {
-
+                "egyik legjobb főnök, mindig olyan munkatársakat vesz maga mellé aki dolgozik, mert ő nem akar",
+                    "legkönnyebben átverhető és befolyásolható főnök"
 
             }
 
@@ -396,22 +410,33 @@ interface Nap {
             },
             //apa
             {
-
+                "nagyon kekmény, nagyon rideg",
+                    "szigorú számonkérések, beosztás, következmények",
+                    "munkára nevel, hideg, korlátozó(úgy korlátoz hogy nem visz bele érzelmet)",
+                    "büntető mechanizmus, neveleésben ezt eszköznek tekinti"
             },
             //gyerek
             {
+                "csendes visszahúzódó magának való",
+                    "azt látja ,hogy a szülő, szigorú, következetes,, vagy rideg, vagy nem mutat érzelmet",
             },
-            // férfi
-            {
+            {// férfi
+                "nehezen vonható be egy csaláf hétköznapjaiba, maguknak valóak, félrvonulnak",
+                    "mindenben lehet rájuk számítani, bármi feladatot teljesíteni tud, megbízható",
+                    "mindig támasza a családnak és a párkapcsolatnak",
+                    "túl soka gyengeségre nem lehet náluk számítani, nem mutatnak érzelmeket",
+                    "nem szeretik az alárendelt szerepet, általában mellérendeltségre törekszik"
             },
             // nő
             {
-
+                "keresi a férfiban  a határozottságot, keménységet ,olyan férfit aki célokat valósít meg",
+                    "olyat keres aki támasz lesz ellette, akire szmíthat, akivel nem kell sokat beszélgetni",
+                    "de ha a nő éli a gakságot, nem lehet alárendelté tenni"
             },
             //főnök
             {
-
-
+                "nem való főnöknek, mert nem rugalmas, nem kreatív, nem tud alkalmazkodni",
+                    "akkor is kitart amikor már nem kellene, nagyon szabálykövető"
             }
 
     }, {  //vízöntő nap
