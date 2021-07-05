@@ -193,59 +193,90 @@ public interface Venusz {
                     }
             },{//oroszlán
                     {//altalanos
-
+                        "hisz magában , tudja magáról ,hogy jó nő és a nőiességével igenis elismerést válthat ki",
+                            "a külvilágnak nagyon zavaró lehet, főleg akiknek problémája van az önelfogadással",
+                            "ezt kell megtanulnia, hogy ő királylány, azért kapta, hogy átélje , hogy én vagyo valaki"
                     },
                     {//anyaghoz valo viszonya
-
+                        "nagyon hivalkodó tud lenni, szereti kiemelni, ogy ő kicsoda",
+                            "azzal próbál elsimerést szerezni, hogy mim van nekem",
+                            "minden olyan dolog ami emeli az ő tekintélyét nagyon fontos lesz neki anyagként is",
+                            "ami őt emeli, arra mindig nagyon büszke, az mindig látványos, ami nem emeli, azt megpróbálja elrejteni"
                     },
                     {//biztonsagvagya
-
+                        "akkor érzi magát biztonságban, ha van olyan életterület ahol lehet valaki, ahhoz nagyon ragaszkodik",
+                            "akkor érzi, hogy a helyén van, ha látja, hogy mások becsülik, tisztelik, elfogadják",
+                            "ragaszkodik az alattvalókhoz, nehezen mond le olyanokról, akik őt emelik"
                     },
                     {//stabilitas igenye
-
+                        "szilard jegy, eros a stabilitas igenye, főleg hogy átélhesse, hogy vagyok valaki",
+                            "ha állandóan vááltozik a körülmény elbizonytalanodik, hogy elég-e az a helyzet, amiben uralkodom"
                     },
                     {//szepseghez valo visizonya
-
+                        "nem feltétlenül szépek, de mindenképpen van tartásuk",
+                            "inkább az elegancia, a magára való adás az övé",
+                            "márkafüggő, neki fontos hogy látszódjon, meg vannak nála a státusz szimbólumok"
                     },
                     {// nőiessége
-
+                        "nem feltétlenül divatkövető, max akkor, ha ez őt emeli",
                     },
                     {// szexualitasa
-
+                        "mindig ott, van egyfajta visszafogottság, nehezen adja ki magát",
+                            "fél attól ,hogy kihasználják",
+                            "nagyon ritkán kezdeményez, mert fél a visszautasítástól",
+                            "sokszor új és új kapcsolatot keres , ezzel bizonyítva a világnak, hogy ő mennyire kelendő"
                     },
                     {//művészete
-
+                        "inkább műgyűjtő, mint művész",
+                            "azt hogy más ítélja meg , amit én teremtek azt  nehezen éli meg",
                     },
                     {//önelfogadása
-
+                        "külvilág függő, nehéz az önelfogadás",
+                            "mindig fontos, hogy megőrizze a méltóságát",
+                            "egy pasi örüljön, ha megkaphat engem",
+                            "a tartás mindig maradjon meg, ha őt megalázzák egy kapcsoatban, akkor már vége is"
                     }
-            },{//bika
+            },{//szűz
                     {//altalanos
-
+                        "praktikussági oldalról kell megközelíteni ezt a dolgot, neki ez a legfontosabb, praktikussag, hasznosság",
+                            "minfig a tapasztalatai alapján fog közelíteni"
                     },
                     {//anyaghoz valo viszonya
-
+                        "legfontosabb neki az egyszerűség, a használhatóság és a praktikusság",
+                            "a pénzkezelése is nagyon praktikus, nagyon kkszámítható",
+                            "ha vlamiről jó tapasztalata van az egy plusz pont"
                     },
                     {//biztonsagvagya
-
+                        "a biztonságot, a tervezhetőség és a kiszámíthatóság adja",
+                            "ha valami nem úgy a hogy azt elképzelte, akkor újratervez",
+                            "tervezés nélkül nem érzi megát bizonságban"
                     },
                     {//stabilitas igenye
-
+                        "nincs szüksége igazán nagy stabilitásra, állandó változásokra kész, a körülménynek megfelelően",
+                            "állandóan viszonyít, ennek megfelelően változtat ha kell",
+                            "stabilitását is a viszonyítás határzozza meg",
+                            "mihhez képest? -> ezért döntenek nehezen ha nincs viszonyítási alap"
                     },
                     {//szepseghez valo visizonya
-
+                        "szimmetria az övé, de ez nem feltétlenül jelent szépet, mert az egyedi az asszimtrikus folgok a szépek",
+                            "egyhangú, unalmas, nem divatkövető",
+                            "az sem igaz hogy elveti a divatot, mert ha az a praktikus, akkor éppen követi"
                     },
                     {// nőiessége
-
+                        "érintetlenség, visszafogottság szimbóluma",
+                            "azt akarja mutatni valójában, ha valami nem látszik, még attól is lehet szép",
                     },
                     {// szexualitasa
+                        "erősen kezdők , de gyorsan tanulnak ",
+                            "legkönnyebben válnak unalmasssá, kreativitás nem sok vn bennük",
+                            "jó tanuló , jó szerető is válhat belőle",
 
                     },
                     {//művészete
-
+                        "másolás: szimbolikusan, ha valami tökéletes, annál nem lehet szebbet csinálni ezért inkább másol",
                     },
                     {//önelfogadása
-
+                        "önbizalomhiányos, mert mindig viszonyít valalkihez, valamiez"
                     }
             },{//bika
                     {//altalanos
