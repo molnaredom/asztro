@@ -340,26 +340,49 @@ interface Nap {
             {  //skorpió nap
                     //altalnos
                     {
-
-
+                        "egy dolgot biztosan nem érezhet, azt hogy ő nap)érzékelhetetlen nap analógiát kell megéélni)"
                     },
                     //apa
                     {
-
+                        "szigorú kemény, határozott, az érzelmek gyengévé tesznek, megpróbálja elfolytani ez érzéseit",
+                            "úgy neveli a gyereket mintha nem lennének érései, hideg korlátozó szülő, de mindent megtesz a gyerekért",
+                            "elvárások a gyerekkel szemben, nem mondhat ellent a szülőnek, totálisan alá kell rendelődnie"
                     },
                     //gyerek
                     {
+                        "a nagy bújkálósak, fonos neki mennyire figyelnek rá, mennyire fontosak másoknak(ösztönösen)",
+                            "fél, hogy nem kap érzelmeket(engem nem szeret senki, én nem vagyok fontos senkiek) fél, hogy nem kell",
+                            "szégyenlős, kezelhetetlen szélsőséges",
+                            "szüleitől tudja: bármit megtennének érte, vagy nem fontos nekik ",
+                            "önbüntető, ezáltal bünteti környezetét is",
+                            "midnig figyeli a szülőt mennyire fogadják el",
+                            "fél a vesztéstől a szülőbe is figyeli képes e veszíteni",
+                            "nem azt kell megtanulni, hogy a vesztés jó, hanem ,hogy a vesztés része az életnek",
+                            "lehet a szenvedélyeket, komiszságot, polgárpukksztóságot tanulja meg a szülőtől",
+                            "van olyan aki teljesen visszahúződő, magányos, befelé forduló"
                     },
                     // férfi
                     {
+                        "nem nagyon tudja kimutatni az érzelmeket, szívesen viszonozza, de mindig a másiknak kell megtenni az érzelmi megnyilatkozást",
+                            "elvárja az alárendeltséget a nőtől, nagyon kötősik, nagyon ragaszkodik hozzá",
+                            "szenvedélyes szerelem(kezdetben mindenképpen), de a legnagyobb veszély az elhidegülés",
+                            "tesztel, hogy mennyire vagy fontos a párjának, akkor is ha nem veszed észre",
+                            "elvár olyan dolgokat amik lehetetlenek--> tesztel",
+                            "ilyen férfi mellett szémítania kell a nőnek a magányra",
+                            "szereti az olyan sportot ahol tök egyedül van(pl horgászat, vadászat)"
                     },
                     // nő
                     {
-
+                        "hihetetlenül eros és kemény makacs önfejű, ha ő hordozza",
+                            "a pasiban ráválaszthat a szenvedélyre, a szexre, az anyagiakra, vagy ogy lenyomják őt és valakinek alá tudjon rendelődni ",
+                            "de hajlamosak gyengébb pasit is választani, akiben művészi hajlam ven érzékeny és tele van érzelemmel"
                     },
                     //főnök
                     {
-
+                        "következetes, nagyon kemény, durva nagyon, nem tekinti embernek a beosztottját, azt gondolja bátmit megtehet",
+                            "fantasztikusan csinálja amit csinál és ezt mástól is elvárja, erős a büntetésre vaaló késztetése",
+                            "ha vezető mindent meg fog tenni, nem ismer lehetelent,de a végére teljesen egyedül marad",
+                            " fantasztikus vezető a cég érdekeit mindenek elé helyezi"
 
                     }
 
@@ -442,8 +465,6 @@ interface Nap {
     }, {  //vízöntő nap
             //altalnos
             {
-
-
             },
             //apa
             {
@@ -495,22 +516,36 @@ interface Nap {
             },
             //apa
             {
-
+             "nem lehet erős, nem erős apa, gyerekek a férfi fejére nőnek",
+                    "nem tud nemet mondani, ha a férfi ütközik tuti ,hogy a gyerek győz",
+                    "inkább nem vesz tudomást a problémáról, homokba dugja a fejét, minthogy a konfligtust vállalja",
+                    "lehet alkoholista vagy genge, vagy nem vállal felelősséget"
             },
             //gyerek
             {
+                "próbál megfoghatatlanná válni, probléma a felelősség vállalása",
+                    "mindig kell mellé valaki aki a felelősséget vállalja"
+
             },
             // férfi
             {
+                "biztos hogy a nő erősebb lesz nála, és ő fog irányítani",
+                    "a férfinak azt kell megélni, hogy közös célokat valósítsanak meg(egység), amiben a nő tolja előre",
+                    "nem mer ellenállást kifejteni nem mer harcolni",
+                    "a férja vagy becsajozik, vagy elválnak, vagy alkoholista lesz , vagy munkamánisás, vagy választ egy" +
+                            " olyan hobbit ahol világgá megy(horgászat, vadászat), vagy belebetegszik",
+
+
             },
             // nő
             {
-
+                "ha jól csinálja átadja a nap szerepet a férfinek és felismeri ,hogy neki támogatni kell a férfit",
+                    "hajlmos, hogy illúziókba ringassa magát pl művészeteket választ"
             },
             //főnök
             {
-
-
+                "nagyon egnedékenyek, sértődősek, ha nem azt csinálja a beosztott amit kér",
+                    "összefog egy csapatot akik érte küzednek"
             }
 
     }
