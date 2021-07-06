@@ -319,49 +319,93 @@ interface Merkur {
             },
             {//bak
                     {//altlanos
-
+                            "célszerű gondolkodás , nagyon racionális, nagyon céltudatos",
+                            "makacs és következetes, képtelen rugalmasan alkalmazkodni, ha valamit fejükbe vesznek azt elérik"
                     },
                     {//gondolkodasa
+                            "puritán, egyszerű, egyszerűsített, nem veszi figyelembe a lehetőségeket, csak megy előre a cél felé",
+                            "tipikusan a legrövidebb út az egyenes valami eléréséhez, ennek szellemében él, csak ez nem mindig van így",
+                            "makacs, merev, gondolkodásmódja kiismerhető, kiszámítható, szabályozott gondolkodás"
                     },
                     {//kapcsolatteremtés
+                            "nem teremt könnyen, nem is nagyon keres kapcsoaltokat, de lehetőségeket se",
+                            "ha céljainak megfelel hogy kapcsolatot teremtsen akkor fog is, hasonlóan tárgyakat se használ feleselgesen",
+                            "mindent a lehtő legletisztultabban leghasznosabban próbál kialakítani, pl minimál stílus",
                     },
                     {//kommunikacio
+                            "ha nem muszáj nem beszél, mindent 10* megfontol mielőtt bármit is mond, nem fog órákat csevegni",
+                            "neki a lényeg a fontos, mit szeretne, hogy szeretné, legrosszabb neki ha nem történik semmi, nincs mit csinálni"
                     },
                     {//mozgékonyság-változtatasi kepesseg
+                            "\"járt utat járatlanért el ne hagyd\", nem változtat ha nem muszáj, nem is kutat új megoldások után",
+                            "neki ha valami minél kiszámíthatóbb, minél egyszerűbb, minél sablonosabb, annál jobb",
                     },
                     {//gyermekkora
+                            "nem túl fényes, korán feladatokat, felelősséget kapnak, segíteni kell",
+                            "azorgalom kitartás, már gyermekkorban is, őt mindig terhelni kell neki ez a jó",
+                            "nem szabad elvenni tőle a feladatokat, felelősséget, mert különben céltalannak érzi majd magát"
                     },
                     {//tanulása
+                            "kitartó szorgalmas, ő ki tudja járni végig az iskloát, képes fegyelmezetten magolni",
+                            "nem túl kreatív ezért ez egyszer elsajátított módszerek, utak tanulmányok a legjobbak neki",
                     },
                     {//elfogadása
+                            "nem egy elfogadó típus, legfeljesbb érdektelen valamiben",
+                            " akkor fogad el bárkit ,ha valamilyen szinten analóg a céljaival és érdeke fűződik hozzá, támogatja az előre jutását",
+                            "a karrierista szimbóluma, de jó nevelő és jó tanár is mert képes a szabályokat betartatni, kereteket kijelölni",
+                            "a szabály az szabály, mindig tudja hol vannak a határok, elfogadás csak kereteken belül",
                     }
             },
             {//vizonto
                     {//altlanos
-
+                            "miért jó valakinek?.. még folynak a kutatások, neki jó, másnak halálosan idegesítő",
+                            "ő mindig mást gondol mint te, teljesen mindegy ,hogy te mit akarsz",
+                            "olyan élethelyzetben kell kerülnie, ahol midig más és más, új és új gondolatok, elképzelések, kapcsolatok akulnak ki"
                     },
                     {//gondolkodasa
+                            "zseniális és őrült egyszerre, különleges gondolkodás, és sok kérdést vet fel",
+                            "nem nagyon képes hétköznapi gondolkodásra, a begyakorolt sémák nem az ő asztala",
+                            "kell neki viszonyítási pont akihez képest változtathat, pl iskolán belül ő más módszerekkel tanul",
+                            "pár analógia: idegen nylev, tolmács, külföldi élet(és onnan hazjönni), mozgássérült anya"
                     },
                     {//kapcsolatteremtés
+                            "jól teremt kapcsolatokat, csak olyan ne legyen ahol őt korlátozzák",
+                            "fontosak neki a baráti kapcsolatai, a haveri kör és az ezekkel járó szabadság ",
+                            "nem egy emberhez kötődik, hanem sokhoz,\"leugrom  haverokhoz\"",
+                            "mindig benne van kicsit a személytelenség, nem akar kötődni nagyon erősen egy kapcsolathoz se",
+                            "bérlés, van is meg nem is elv kapcsolatokban",
+                            "szeret mindig visszajönni, ha birtokolni akarod biztos hogy elmegy, hagyni kell ha menni akar úgyis visszajön",
                     },
                     {//kommunikacio
+                            "idegennyelv a kommunkációjának része, internet, telfon, olyan mintha kommunikáció lenne",
+                            "több diploma több idegennyelv"
                     },
                     {//mozgékonyság-változtatasi kepesseg
+                            "semmit nem szeret véglegesen megváltoztatni, mindig a kiinduló ponthoz képest képes csak változtatni",
                     },
                     {//gyermekkora
+                            "nagyon színes tud lenni, lehet , hogy külföldön jár iskolába, mert ott laknak, vagy sokat utaznak",
+                            "lehet, hogy nem teljes családban nő fel, vagy elvált szülők gyereke, vagy nagymama neveli, vagy intézteben lakik",
+                            "hihetetlenül nehezen korlátozhatóak, annyira nem tűrik a korlátokat"
                     },
                     {//tanulása
+                            "zseni és az őrültség határán, hihetetlen képesség lehet, de lehet diszes gyerek is, diszlekszia diszgráfia,stb",
+                            "a gyerekkel kell kijelöltetni a korlátot,de azt aztán be is kell tartani"
                     },
                     {//elfogadása
+                            "simán el tudja fogadni a másságot, ő mondhatja valakire hogy más, de te nem mondhatod rá"
                     }
             },
             {//halak
                     {//altlanos
-
+                            "megajándékozza a sors a felejtés tudományával, azért jó miert mindenen túl tud lépni könnyedén",
+                            ""
                     },
                     {//gondolkodasa
+                            "tele van illúzióval, abszolút nem racionális, sokkal inkább a megérzésekre, hamgulatra támaszkodik"
                     },
                     {//kapcsolatteremtés
+                            ""
                     },
                     {//kommunikacio
                     },
