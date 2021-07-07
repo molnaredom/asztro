@@ -418,6 +418,21 @@ interface Merkur {
                     {//elfogadása
                     }
             },
+            {//osszefoglalo
+                    {
+                            "általános",
+                            "gondolkodása",
+                            "kapcsolatteremtése",
+                            "kommunikációja",
+                            "mozgékonyság-változtatasi kepesseg",
+                            "gyermekkora",
+                            "tanulása",
+                            "elfogadása",
+                    },
+                    {
+                            "merkur"
+                    }
+            }
 
 
     };

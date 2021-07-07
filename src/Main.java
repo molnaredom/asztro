@@ -1,7 +1,4 @@
-import controll.emberek.Beolvas;
-import controll.emberek.Ember;
-import controll.emberek.Emberek;
-import controll.horoszkopok.HoroszkopokOsszevetes;
+import controll.belsoJatekok.GyakorloBolygoJegyben;
 
 
 public class Main {
@@ -10,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Emberek embik = new Emberek();
-        embik.teddmeg();
+        /*Emberek embik = new Emberek();
+        embik.teddmeg();*/
 
           /*for ( String[] k :Beolvas.beolv("Molnár Ádám")) {
               System.out.println();
@@ -19,6 +16,9 @@ public class Main {
                   System.out.print(i+"   ");
               }
           }*/
+
+        GyakorloBolygoJegyben jatek = new GyakorloBolygoJegyben();
+        jatek.play();
 
     }
 

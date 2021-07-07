@@ -447,6 +447,22 @@ public interface Venusz {
 
                     }
             },
+            {//osszefoglalo
+                    {
+                            "általános",
+                            "anyaghoz való viszonya",
+                            "biztonságvágya",
+                            "stabilitás igénye",
+                            "szépséghez való viszonya",
+                            "nőiessége",
+                            "szexualitása",
+                            "művészete",
+                            "önelfogadása"
+                    },
+                    {
+                            "venusz"
+                    }
+            }
 
     };
 

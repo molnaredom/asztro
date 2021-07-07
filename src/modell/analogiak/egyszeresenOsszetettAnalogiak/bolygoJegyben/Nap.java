@@ -327,12 +327,12 @@ interface Nap {
             },
             // nő
             {
-                "kölvilág elismerésére való törekvés, tetszeni akar a világnak, hogy elismerjék szeressék",
+                    "kölvilág elismerésére való törekvés, tetszeni akar a világnak, hogy elismerjék szeressék",
                     "feladata: a pasit tolni előre beállni mögé, neki kell támogatni erősítani a férfit"
             },
             //főnök
             {
-                "felső vezetőnek jó, középvezetőnek szörnyű, mert az alkalmazottaknak és a felette lévőknek is meg akar felelni",
+                    "felső vezetőnek jó, középvezetőnek szörnyű, mert az alkalmazottaknak és a felette lévőknek is meg akar felelni",
                     "nem válallja fel a veszteséggel járó kockázatot"
             }
 
@@ -340,17 +340,17 @@ interface Nap {
             {  //skorpió nap
                     //altalnos
                     {
-                        "egy dolgot biztosan nem érezhet, azt hogy ő nap)érzékelhetetlen nap analógiát kell megéélni)"
+                            "egy dolgot biztosan nem érezhet, azt hogy ő nap)érzékelhetetlen nap analógiát kell megéélni)"
                     },
                     //apa
                     {
-                        "szigorú kemény, határozott, az érzelmek gyengévé tesznek, megpróbálja elfolytani ez érzéseit",
+                            "szigorú kemény, határozott, az érzelmek gyengévé tesznek, megpróbálja elfolytani ez érzéseit",
                             "úgy neveli a gyereket mintha nem lennének érései, hideg korlátozó szülő, de mindent megtesz a gyerekért",
                             "elvárások a gyerekkel szemben, nem mondhat ellent a szülőnek, totálisan alá kell rendelődnie"
                     },
                     //gyerek
                     {
-                        "a nagy bújkálósak, fonos neki mennyire figyelnek rá, mennyire fontosak másoknak(ösztönösen)",
+                            "a nagy bújkálósak, fonos neki mennyire figyelnek rá, mennyire fontosak másoknak(ösztönösen)",
                             "fél, hogy nem kap érzelmeket(engem nem szeret senki, én nem vagyok fontos senkiek) fél, hogy nem kell",
                             "szégyenlős, kezelhetetlen szélsőséges",
                             "szüleitől tudja: bármit megtennének érte, vagy nem fontos nekik ",
@@ -363,7 +363,7 @@ interface Nap {
                     },
                     // férfi
                     {
-                        "nem nagyon tudja kimutatni az érzelmeket, szívesen viszonozza, de mindig a másiknak kell megtenni az érzelmi megnyilatkozást",
+                            "nem nagyon tudja kimutatni az érzelmeket, szívesen viszonozza, de mindig a másiknak kell megtenni az érzelmi megnyilatkozást",
                             "elvárja az alárendeltséget a nőtől, nagyon kötősik, nagyon ragaszkodik hozzá",
                             "szenvedélyes szerelem(kezdetben mindenképpen), de a legnagyobb veszély az elhidegülés",
                             "tesztel, hogy mennyire vagy fontos a párjának, akkor is ha nem veszed észre",
@@ -373,13 +373,13 @@ interface Nap {
                     },
                     // nő
                     {
-                        "hihetetlenül eros és kemény makacs önfejű, ha ő hordozza",
+                            "hihetetlenül eros és kemény makacs önfejű, ha ő hordozza",
                             "a pasiban ráválaszthat a szenvedélyre, a szexre, az anyagiakra, vagy ogy lenyomják őt és valakinek alá tudjon rendelődni ",
                             "de hajlamosak gyengébb pasit is választani, akiben művészi hajlam ven érzékeny és tele van érzelemmel"
                     },
                     //főnök
                     {
-                        "következetes, nagyon kemény, durva nagyon, nem tekinti embernek a beosztottját, azt gondolja bátmit megtehet",
+                            "következetes, nagyon kemény, durva nagyon, nem tekinti embernek a beosztottját, azt gondolja bátmit megtehet",
                             "fantasztikusan csinálja amit csinál és ezt mástól is elvárja, erős a büntetésre vaaló késztetése",
                             "ha vezető mindent meg fog tenni, nem ismer lehetelent,de a végére teljesen egyedül marad",
                             " fantasztikus vezető a cég érdekeit mindenek elé helyezi"
@@ -394,33 +394,33 @@ interface Nap {
             },
             //apa
             {
-                "a gyerekek általában szeretik, nem egy korlátozó típtus",
+                    "a gyerekek általában szeretik, nem egy korlátozó típtus",
                     "inkább barát mint szülő, jókedélyű,szabadságra neveli, szeret játszani vele",
                     "a a felelősséget nem szereti, ha a gyereknek szüksége van rá , nem biztos, hogy oda tu állni",
 
             },
             //gyerek
             {
-                "jó kedvű, jó kedélyű, szeret szerepelni",
+                    "jó kedvű, jó kedélyű, szeret szerepelni",
                     "gyorsan fel tud pörögni",
                     "milyen az apa? - van hite, erkölcsileg vállalja?, megjátsza magát?, szélhámos és mellébeszél?"
             },
             // férfi
             {
-                "kezdetben nagyon szeretik a nők, mert szerelmes típusok(könnyen fellángolnak legalábbis)",
+                    "kezdetben nagyon szeretik a nők, mert szerelmes típusok(könnyen fellángolnak legalábbis)",
                     "rajongnak a nőkért, érzi a nő, hogy mindent megtesznek érte",
                     "a férfiban az jön elő,hogy a nő nem tudja belevonni a felleősségbe, pl lehet h nem akar gyerekret",
                     "ha nem vállal felelősséget, a nő azt érzi a férfi nem megbízható"
             },
             // nő
             {
-                "tele van lelekesedéssel optimizmussal, borzasztó erővel megy előre fele",
+                    "tele van lelekesedéssel optimizmussal, borzasztó erővel megy előre fele",
                     "a férfiban keresi a nyilasságot: legyen ite a férfinak, jól szeretne szórakozni a férfi mellett",
                     "legjobb szabadidő partner a nyilas"
             },
             //főnök
             {
-                "egyik legjobb főnök, mindig olyan munkatársakat vesz maga mellé aki dolgozik, mert ő nem akar",
+                    "egyik legjobb főnök, mindig olyan munkatársakat vesz maga mellé aki dolgozik, mert ő nem akar",
                     "legkönnyebben átverhető és befolyásolható főnök"
 
             }
@@ -433,18 +433,18 @@ interface Nap {
             },
             //apa
             {
-                "nagyon kekmény, nagyon rideg",
+                    "nagyon kekmény, nagyon rideg",
                     "szigorú számonkérések, beosztás, következmények",
                     "munkára nevel, hideg, korlátozó(úgy korlátoz hogy nem visz bele érzelmet)",
                     "büntető mechanizmus, neveleésben ezt eszköznek tekinti"
             },
             //gyerek
             {
-                "csendes visszahúzódó magának való",
+                    "csendes visszahúzódó magának való",
                     "azt látja ,hogy a szülő, szigorú, következetes,, vagy rideg, vagy nem mutat érzelmet",
             },
             {// férfi
-                "nehezen vonható be egy csaláf hétköznapjaiba, maguknak valóak, félrvonulnak",
+                    "nehezen vonható be egy csaláf hétköznapjaiba, maguknak valóak, félrvonulnak",
                     "mindenben lehet rájuk számítani, bármi feladatot teljesíteni tud, megbízható",
                     "mindig támasza a családnak és a párkapcsolatnak",
                     "túl soka gyengeségre nem lehet náluk számítani, nem mutatnak érzelmeket",
@@ -452,13 +452,13 @@ interface Nap {
             },
             // nő
             {
-                "keresi a férfiban  a határozottságot, keménységet ,olyan férfit aki célokat valósít meg",
+                    "keresi a férfiban  a határozottságot, keménységet ,olyan férfit aki célokat valósít meg",
                     "olyat keres aki támasz lesz ellette, akire szmíthat, akivel nem kell sokat beszélgetni",
                     "de ha a nő éli a gakságot, nem lehet alárendelté tenni"
             },
             //főnök
             {
-                "nem való főnöknek, mert nem rugalmas, nem kreatív, nem tud alkalmazkodni",
+                    "nem való főnöknek, mert nem rugalmas, nem kreatív, nem tud alkalmazkodni",
                     "akkor is kitart amikor már nem kellene, nagyon szabálykövető"
             }
 
@@ -516,20 +516,20 @@ interface Nap {
             },
             //apa
             {
-             "nem lehet erős, nem erős apa, gyerekek a férfi fejére nőnek",
+                    "nem lehet erős, nem erős apa, gyerekek a férfi fejére nőnek",
                     "nem tud nemet mondani, ha a férfi ütközik tuti ,hogy a gyerek győz",
                     "inkább nem vesz tudomást a problémáról, homokba dugja a fejét, minthogy a konfligtust vállalja",
                     "lehet alkoholista vagy genge, vagy nem vállal felelősséget"
             },
             //gyerek
             {
-                "próbál megfoghatatlanná válni, probléma a felelősség vállalása",
+                    "próbál megfoghatatlanná válni, probléma a felelősség vállalása",
                     "mindig kell mellé valaki aki a felelősséget vállalja"
 
             },
             // férfi
             {
-                "biztos hogy a nő erősebb lesz nála, és ő fog irányítani",
+                    "biztos hogy a nő erősebb lesz nála, és ő fog irányítani",
                     "a férfinak azt kell megélni, hogy közös célokat valósítsanak meg(egység), amiben a nő tolja előre",
                     "nem mer ellenállást kifejteni nem mer harcolni",
                     "a férja vagy becsajozik, vagy elválnak, vagy alkoholista lesz , vagy munkamánisás, vagy választ egy" +
@@ -539,15 +539,28 @@ interface Nap {
             },
             // nő
             {
-                "ha jól csinálja átadja a nap szerepet a férfinek és felismeri ,hogy neki támogatni kell a férfit",
+                    "ha jól csinálja átadja a nap szerepet a férfinek és felismeri ,hogy neki támogatni kell a férfit",
                     "hajlmos, hogy illúziókba ringassa magát pl művészeteket választ"
             },
             //főnök
             {
-                "nagyon egnedékenyek, sértődősek, ha nem azt csinálja a beosztott amit kér",
+                    "nagyon egnedékenyek, sértődősek, ha nem azt csinálja a beosztott amit kér",
                     "összefog egy csapatot akik érte küzednek"
             }
 
+    },
+            {//osszefoglalo
+            {
+                    "általános",
+                    "apa",
+                    "gyerek",
+                    "férfi",
+                    "nő",
+                    "főnök",
+            },
+            {
+                    "nap"
+            }
     }
 
 

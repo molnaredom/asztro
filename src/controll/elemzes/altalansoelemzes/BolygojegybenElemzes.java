@@ -10,7 +10,7 @@ public interface BolygojegybenElemzes {
     static void bolygoJegybenElemzesKiirat(Bolygo[] bolygok) {
 
         int i = 0;
-        for (String[][][] jegy : OsszesBolyoJegyben.Osszbolygo) { //bolygok
+        for (String[][][] jegy : OsszesBolyoJegyben.osszbolygo) { //bolygok
             try {
                 System.out.println("\n---------------"+bolygok[i].getJegy().getJegyNev() +" "+bolygok[i].getNev()+"-----------------\n");
                 for (String[] s : jegy[bolygok[i].getJegy().getJegySzama()-1]) {//jegy-analogia
