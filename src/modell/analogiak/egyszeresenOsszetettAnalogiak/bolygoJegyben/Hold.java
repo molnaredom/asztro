@@ -7,7 +7,7 @@ interface Hold {
             //kos hold
             {
                     {//általános
-                            "kos hold"
+
                     },
                     {//ösztönei
                             "állandóan keresi a kihívásokat",
@@ -24,8 +24,7 @@ interface Hold {
                             "ahol sok energiát kell belefektetni egy feladatba",
                     },
                     {//anya
-                            "erős anyatigris",
-                            "hirtelen módon képes küzdeni a gyerekért",
+                            "hirtelen módon képes küzdeni a gyerekért, erős anyatigris",
                             "a gyerek azt csinálhatja amit ő, nem veszi figyelembe az ő akaratát"
                     },
                     //gyerek
@@ -44,8 +43,7 @@ interface Hold {
                     },
                     // férfi
                     {
-                            "erős nőt választ maga mellé",
-                            "imád harcolni a párjával",
+                            "erős nőt választ maga mellé, így imád harcolni a párjával",
                             "nem szeret felelősséget vállalni",
                             "kell neki egy olyan nő aki őt segíti"
                     },
@@ -474,36 +472,63 @@ interface Hold {
             },//nyilas hold
             {
                     {//általános
+                            "hihetetlenül idealista személyiség, aki maga a leghetőségből is a történést látja",
+                            "nagyon erős az optimizmusa és a pozitív gondolkodása, ez nagyban segíti",
+                    },
+                    {//érzelmei
+                            "szerelem(fellángolás) az övé, nagyon gyorsan lángra kap nagyon gyorsan elhamvad",
+                            "hihetetlenül el tud köteleződni, rövid időn belül "
                     },
                     //ösztönei
                     {
-
+                            "ösztönösen optimista és lelkes, ősbizalom van benne mindenki felé","" +
+                            "vallás , misztikus dolgok iránti vágy, szeretne hinni valamiben",
+                            "erős a hite, így kevésbé van szüksége a realitásra"
                     },
                     //tehetsége
                     {
-
+                            "ahol a lelkesedésére, buzdítására szükség van",
+                            " de ez lehet a ploitikai elfogultság is neki",
+                            "jó tanítói képességek"
                     },
                     //anya
                     {
-
+                        "nagyon jó a kapcsolata a gyerekkel, része leet az életének, de célja nem, nem ősanya típus",
+                            "nagyon barátian próbálja nevelni a gyerkét, mindent bizalomra épít, jó az elv de nehéz tanítani",
+                            "nevelésben inkább \"kampányszerű\", nem akar nagyon erős kötődéseket kiépíteni"
                     },
                     //gyerek
                     {
-
+                        "nehezen lehet lekorlátozni, szabad szellemű, szülő mellett a bizalmat tanulja meg ",
+                            "az anya mindenre odafigyel csak rá nem, ezt érzi, néha nevelik néha nem",
+                            "látja sok mindent megígér a szülő, de nem biztos ,hogy betartja"
                     },
                     //feleség
                     {
-
+                        "legjobb társak közé tartozik, elvárja a bizalmat, nem hajlandó alárendelődni",
+                            "egyenrangú párkapcsolatben tud lenni csak, nem egy konyhatündér, nem is lehet leláncolni",
+                            "fontos hogy olyan legyen a párkapcsolat, hogy együtt tudjanak működni",
+                            "a nő adja a célt, a férfi valósítsa meg",
+                            "a hűség és az állandóság kérdése felmerül, de próbál szabad is lenni",
+                            "nem e legtermékenyebb nő, mindig rájö, hogy nem most van ennek az ideje"
                     },
                     // férfi
                     {
-
+                        "könnyedség, lazaság, nemtörődömség",
+                            "nyitottság, nyitott házasság, ami akár válással végződhet mert nem bírják",
+                            "a nő feltétel nélkül bízik benne(ha benne éli)",
                     },
                     //alárendeltsége
                     {
+                            "sosem tudod, hogy alárendelődik vagy sem, ha igen magától teszi, de akkor se tudod",
+                            "elég nehéz egy alárendelt szerepben lévő alkalmazottban megbízni",
+                            "megbízhatatlan, vagy megteszi vagy nem, ebből se tudod eldőnteni, hogy alárendelt e",
+                            "hárítja a rációt, teljesen kiszámíthatatlan"
                     },
                     //befogadása
                     {
+                            "ha fontos neki, ha hisz benne,akkor igen, egyébként nem",
+
                     }
             },
             //bak hold
