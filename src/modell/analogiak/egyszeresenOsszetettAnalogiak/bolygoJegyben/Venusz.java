@@ -278,7 +278,7 @@ public interface Venusz {
                     {//önelfogadása
                         "önbizalomhiányos, mert mindig viszonyít valalkihez, valamiez"
                     }
-            },{//bika
+            },{//merleg
                     {//altalanos
 
                     },
@@ -306,63 +306,88 @@ public interface Venusz {
                     {//önelfogadása
 
                     }
-            },{//bika
+            },{//skorpio
                     {//altalanos
-
+                            "egyik legerősebb, mégis az egyik legtöbb problémával jár együtt, legyen képes lemondani a vénuszról, képes legyen másban megélni"
                     },
                     {//anyaghoz valo viszonya
-
+                            "szélaőaéges, vagy nagyon küzd az anyagiakért és mindent megtsz,vagy teljesen tagadja az anyagra törekvőséget",
+                            "hajlamos minden anyagot megtagadni magától, vagy éppen szenvedélyesen belefolyni a pénzügyi dolgokba"
                     },
                     {//biztonsagvagya
-
+                            "nagyon fontos neki a biztonság, mégis hajlamos mindent kockára tenni",
+                            "ha gy nő haragszik egy férfira, bármit képes megtenni hogy vénusszal böntessen",
+                            "keményen elfolyt,mindent kockára tesz, nem érdekli a biztonság, semmi"
                     },
                     {//stabilitas igenye
-
+                        "ha valamiihez kötődik, nagy a stabilitás igénye, de ha már nem működik, megtagad magától minden stabilitást"
                     },
                     {//szepseghez valo visizonya
-
+                        "nagyo kettős: vagy nagyon törekszik a szépségre, vagy semennyire",
+                            "neki a külsőség nem mond semmit, mégis övék a szépészeti műtétek",
+                            "nem foglalkozik a szépséggel, mondja is tudja is, de mégis szép és ad is magára",
+                            "tagadja a divatot, már szinte támadja, támad minden külvilágnak való megfelelést",
+                            "általában nem vénusziak(gömbölyűek), tehát főleg vékonyabbak, marsikusak",
+                            "neki nem a szépség a fontos, hanem hogy mit érzékelsz, hogyan éled át a dolgokat"
                     },
                     {// nőiessége
-
+                            "nagyon vonzóak, nagyon erős szexuális kiszugárzásúak, viszont van aki teljesen megtagadja a nőiességet",
                     },
                     {// szexualitasa
+                        "övék a legjobb szexualitás(már ha van ,mert lehet hogy egyáltalán nincs)",
+                            "a szex megvonásával büntet, ha nem úgy nem azt csinálod, akkor no szex,ők kibírják"
+                    },
+                    {//művészete
+                        "igazi művészet az övé, teljesen beleélik maguk szélsőségesen, fájdalom, szerelem, halál, csalódás ",
+                                "mindent szenvedélyesen élnek meg, drogtól kezdve minden tott van körülöttük"
+                    },
+                    {//önelfogadása
+                        "ezzel foglalkozik a legkevesebbet, egyszerűen nem érdekli, ha elfogadják elfogadják, ha nem, akkor  nem",
+                            "ha nem fogadod el akkor max az ellensége lettél, de ez nem hatotta meg",
+                            "állandóan teszteli a környezetét valyon elfogadnak-e így"
+                    }
+            },{//nyilas
+                    {//altalanos
+                            "új és új anyagi célok megjelenése olyan feladatok,jönnek, ha belaragad azanyagba nem tudja megoldani, muszáj változnia"
+                    },
+                    {//anyaghoz valo viszonya
+                            "folyamatosan változtat, nem tud ragaszkodni semmihez, sokkal lazább mint más jegyek",
+                            "mindenből képes továbblépni, még az anyagi veszteségeket is jól viseli, nem is panaszkodik",
+                            "amikor valami anyagi cél választ nagyon be tud lelkesedni, de ha problémát lát inkább kikerülné",
+                            "sokszor a környezetét beviszi az erdőbe, mert lelkesen elkezd valamit, és a másiknek kell befejeznie",
+                            "tárgyakhoz sem kötősik,mindig azzal kezd valamit ami éppen van, pillanatban akar lenni, nem gondol bele hogy holnap ez mivel jár"
+                    },
+                    {//biztonsagvagya
+                            "kevésbé törekszik biztonságra, inkább kalandozik helyette",
+                            "a biztonság is nála esetleges, abban a pillanatban ahol él fontos neki, de nem előre meghatározott"
+                    },
+                    {//stabilitas igenye
+                            "kockázatvállaló, az alapján, ogy ppen akkor mit érez, mit tesz a kedvén múlik",
+                            "ha valami tetszik ,egy, ha nem akkor nem megy, aktuális célért bármit képes kockára tenni"
+                    },
+                    {//szepseghez valo visizonya
+                            "legkevésbé szeretne alkalmazkodni az aktuális szépség ideához, neki az önelfogadás alap analógia",
+                            "bárhogyan képes magát elfogadni, mindenből is tud ruhát csinálni, tudják hordani magukat",
+                            "van egy kellemes kiáradó kisugárzásuk, ami vonzza a környezetet, nem fontos neki az effektív szépség",
+                            "könnyedsége, lazasága vonzza az embereket"
+                    },
+                    {// nőiessége
+                            "nagyon nőiesek tudnak lenni, nem híresek a vékonyságukról,inkábba  kiterjedés szimbóluma van velük",
+                            "hízásra hajlamosak, de ezzel vonzzák be a férfiakat, szimbolikusan vonzóak",
+                            "sportosan elegáns,megaja mindennek a módját, miközben laza"
+                    },
+                    {// szexualitasa
+                            "legjobb szeretők, jó a szexualitása, vonzó a férfiak számára, játéknak veszi a szexet",
+                            "nincs gátlásossága, de akár a vallásosság is megjelenhet nála(házasság után van szex csak), csak csak kapcsolatban"
 
                     },
                     {//művészete
-
+                            "monumentális, freskók, zenében orgona, képzőművészetben pl Feszti körkép"
                     },
                     {//önelfogadása
-
+                        "önbizalom, önelfogadás az övé , neki van a legjobb adottsága ehhez"
                     }
-            },{//bika
-                    {//altalanos
-
-                    },
-                    {//anyaghoz valo viszonya
-
-                    },
-                    {//biztonsagvagya
-
-                    },
-                    {//stabilitas igenye
-
-                    },
-                    {//szepseghez valo visizonya
-
-                    },
-                    {// nőiessége
-
-                    },
-                    {// szexualitasa
-
-                    },
-                    {//művészete
-
-                    },
-                    {//önelfogadása
-
-                    }
-            },{//bika
+            },{//bak
                     {//altalanos
 
                     },
