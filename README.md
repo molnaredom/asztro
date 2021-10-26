@@ -1,13 +1,13 @@
 Asztroprogram 2.0.0
 
 Pár szó magamról: 
--3.féléves programtervező infóra járok
--Szegeden a TTIK-n a Szoftverfejlesztő tanszéken dolgozok. Itt adatok kinyerésével és feldolgozásával foglalkozunk.
--régebb óta érdekelnek spirituális, pszichológiai dolgok, köztük gyereknevelés, oktatás, absztrakt/elvont gondolkodásmódok, lelki segítségnyújtás, tanulási technikák, tudatalatti, tudatosság. És még ezen kívül sok más. 
+- 3.féléves programtervező infóra járok
+- Szegeden a TTIK-n a Szoftverfejlesztő tanszéken dolgozok. Itt adatok kinyerésével és feldolgozásával foglalkozunk.
+- Régebb óta érdekelnek spirituális, pszichológiai dolgok, köztük gyereknevelés, oktatás, absztrakt/elvont gondolkodásmódok, lelki segítségnyújtás, tanulási technikák, tudatalatti, tudatosság. És még ezen kívül sok más. 
 
-- Mi az asztrológia?
-Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, emire különböző szimbólumoket helyezve, különböző következtetésekre juthatunk.
-A következő képlet, az égbolt vázlatos rajza egy adott pillanatban, ebből tudunk adatokat kinyerni.
+Mi az asztrológia?
+- Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, emire különböző szimbólumoket helyezve, különböző következtetésekre juthatunk.
+- A következő képlet, az égbolt vázlatos rajza egy adott pillanatban, ebből tudunk adatokat kinyerni.
 ![kép](https://user-images.githubusercontent.com/77636185/138847759-e8614944-8984-4bd0-b738-eafbf976cd1e.png)
 
 - Cél
