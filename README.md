@@ -12,9 +12,9 @@ Mi az asztrológia?
 
 Cél:
 - A projektemben szeretnék az informatika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a használó életét, legfőképpen életvezetési tanácsadás szempontjából.
-- Mivel az asztrológiában rengeteg különböző csoportot tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolgyók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is(amik megfigyelséek alapján különböző életterületek megoldására utalnak, mutatnak) ,így a mesterséges intelligencia ezen belül is a neuronhálók eszközét könnyen eszközül vehetjük. 
+- Mivel az asztrológiában rengeteg különböző csoportot tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolygók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is(amik megfigyelsések alapján különböző életterületek megoldására utalnak, mutatnak) ,így a mesterséges intelligencia ezen belül is a neuronhálók eszközét könnyen eszközül vehetjük. 
 Az asztrológiában sok adat van , sok megfigyelési szempont, egy ember nehezen képes egyszerre ilyen sok szempontot figyelembevenni és objektíven(úgy hogy ne csak a szempontok egy kisebb részhalmaza alapján döntsön) választ adni egy kérdésre.
-Cél lenne, hogy felmutassunk hogy mennyire tuja jól megjósolni a program az illető leendő munhahelyének valósínűségeit. Van-e erős korrelácó?
+Cél lenne, hogy felmutassuk hogy mennyire tudja jól megjósolni a program az illető leendő munhahelyének valószínűségeit. Van-e erős korrelácó?
 
 
 Mérföldkövek alap implementációkban
@@ -46,7 +46,7 @@ Mély neuronháló alkalmazásával dolgozunk.
 - (túl bonyolult, először jussunk el 3.a-ig)
 
 3.c Önismereti fejlesztés
-- Általános adatok kiítása(ebben nincs semmi matematika, de mégis személyreszabott, az asztrológia eszköze miatt)
+- Általános adatok kiíratása(ebben nincs semmi matematika, de mégis személyreszabott, az asztrológia eszköze miatt)
 
 
 Érdeklődni: 
