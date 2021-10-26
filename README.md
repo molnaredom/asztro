@@ -10,9 +10,9 @@ Mi az asztrológia?
 - A következő képlet, az égbolt vázlatos rajza egy adott pillanatban, ebből tudunk adatokat kinyerni.
 ![kép](https://user-images.githubusercontent.com/77636185/138847759-e8614944-8984-4bd0-b738-eafbf976cd1e.png)
 
-- Cél
-A projektemben szeretnék az informatika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a használó életét, legfőképpen életvezetési tanácsadás szempontjából.
-Mivel az asztrológiában rengeteg különböző csoportot tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolgyók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is(amik megfigyelséek alapján különböző életterületek megoldására utalnak, mutatnak) ,így a mesterséges intelligencia ezen belül is a neuronhálók eszközét könnyen eszközül vehetjük. 
+Cél:
+- A projektemben szeretnék az informatika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a használó életét, legfőképpen életvezetési tanácsadás szempontjából.
+- Mivel az asztrológiában rengeteg különböző csoportot tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolgyók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is(amik megfigyelséek alapján különböző életterületek megoldására utalnak, mutatnak) ,így a mesterséges intelligencia ezen belül is a neuronhálók eszközét könnyen eszközül vehetjük. 
 Az asztrológiában sok adat van , sok megfigyelési szempont, egy ember nehezen képes egyszerre ilyen sok szempontot figyelembevenni és objektíven(úgy hogy ne csak a szempontok egy kisebb részhalmaza alapján döntsön) választ adni egy kérdésre.
 Cél lenne, hogy felmutassunk hogy mennyire tuja jól megjósolni a program az illető leendő munhahelyének valósínűségeit. Van-e erős korrelácó?
 
@@ -64,7 +64,7 @@ korábbi ötletek(NEM RELEVÁNS MÁR)
 - A személyiségmodellben egyes analógia csoportkörök pont értéket fognak kapni. A megkapott értékek alapján egy optimális küszöbindexet határozunk meg.
 Amelyik tulajdonság átlépi a küszöbindexet, belekerül az eredményhalmazba.
 
--A tulajdonságok közt súlyozott gráfokkal döntjük el a szinonima, ellentettszavak kapcsolatát.(ezek előre definináltak, az alaphalmaz elemei)
+- A tulajdonságok közt súlyozott gráfokkal döntjük el a szinonima, ellentettszavak kapcsolatát.(ezek előre definináltak, az alaphalmaz elemei)
 
 
 
