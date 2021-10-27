@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Home Template</h1>
+
+<div>
+
+    <div>
+        {% for room in rooms %}
+            <div>
+                 <h5>{{room.id}} --<a href="/room/{{room.id}}"> {{room.name}}</a></h5>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+{% endblock content %}
+</body>
+</html>
