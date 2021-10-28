@@ -10,7 +10,9 @@ urlpatterns = [
     path("update-room/<str:pk>/", views.updateRoom, name= "update-room"),
     path("delete-room/<str:pk>/", views.deleteRoom, name= "delete-room"),
 
-    path("analogia_adatbazis/", views.analogia_adatbazis, name= "analogia_adatbazis")
+    path("analogia_adatbazis/", views.analogia_adatbazis, name= "analogia_adatbazis"),  # ~home
+    path("analogia/<str:nevID>/", views.analogia, name="analogia"),  # ~room
+    path("create-analogia/", views.createAnalogia, name= "create-analogia"),
 
 
 

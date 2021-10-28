@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q
-from .models import Room, Topic
-from .forms import RoomForm
+from .models import Room, Topic, Analogiaa
+from .forms import RoomForm, AnalogiaForm
+
 # rooms = [
 #
 #     {'id': 1 , "name":"Edgár"},
@@ -29,9 +30,7 @@ def home(request):
 
 def room(request, pk):
     room = Room.objects.get(id=pk)
-    # for i in rooms:
-    #     if i["id"] == int(pk):
-    #          room = i
+
     context = {"room": room}
     return render(request, "base/room.html",context)
 
@@ -67,11 +66,53 @@ def deleteRoom(request, pk):
         return redirect("home")
     return render(request, "base/delete.html", {"obj":room})
 
+def analogia(request,nevID):
+    analogia = Analogiaa.objects.get(nevID=nevID)
+    context = {"analogia": analogia} # ez egy objektum
+
+    return render(request,"base/analogia.html", context )
+
+# def updateAnalogia(request, nevID):
+#     analogia = Analogia.objects.get(id=nevID)
+#     form = AnalogiaForm(instance=analogia)
+#
+#     if request.method == 'POST':
+#         form = RoomForm(request.POST, instance=room)
+#         if form.is_valid():
+#             form.save()
+#             return redirect("home") #todo ne homrea terjen vissza
+#
+#     context = {'form': form}
+#     return render(request, "base/room_form.html", context)
+def createAnalogia(request):
+    form = AnalogiaForm()
+
+    if request.method == "POST":
+        form = AnalogiaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("analogia_form")
+
+    context = {'form': form}
+    return render(request, "base/analogia_form.html", context)
+
 def analogia_adatbazis(request):
-    context = {}
-    return render(request,"base/analogia_adatbazis.html", context )
+    # q = request.GET.get('q') if request.GET.get('q') != None else ''
 
+    adatok = Analogiaa.objects.all()
 
+    #     .filter(
+    #     #Q(topic__name__icontains=q) |
+    #     Q(name__icontains=q) |
+    #     Q(discription__icontains=q)
+    #
+    # )
+
+    # topics = Topic.objects.all()
+    # room_count = rooms.count()
+
+    context = {'adatok': adatok} #
+    return render(request, 'base/analogia_adatbazis.html', context )
 
 
 
