@@ -1,11 +1,16 @@
 <a href="/">
     <h1>Home</h1>
 
+</a>
+
+<a href="{% url 'analogia_adatbazis' %}">
+
+    <h1>Analógia adatbázis</h1>
 
 </a>
 
 <form method="GET" action="{% url 'home' %}">
-    <input type="text" name="q" placeholder="Keresés a szobákba" >
+    <input type="text" name="q" placeholder="Keresés a szobákba">
 
 </form>
 

@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.db.models import Q
 from .models import Room, Topic
 from .forms import RoomForm
-from django.http import HttpResponse
 # rooms = [
 #
 #     {'id': 1 , "name":"Edgár"},
@@ -67,6 +66,12 @@ def deleteRoom(request, pk):
         room.delete()
         return redirect("home")
     return render(request, "base/delete.html", {"obj":room})
+
+def analogia_adatbazis(request):
+    context = {}
+    return render(request,"base/analogia_adatbazis.html", context )
+
+
 
 
 
