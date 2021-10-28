@@ -18,6 +18,8 @@ class Room(models.Model):
     updated = models.DateTimeField(auto_now=True)# tobbszor is lefut
     created = models.DateTimeField(auto_now_add=True) # ez csak egyszer fut le amikor belepsz eloszor a zsobaba
 
+    class Meta:
+        ordering = ['-updated', "-created"]
 
     def __str__(self):
         return self.name
