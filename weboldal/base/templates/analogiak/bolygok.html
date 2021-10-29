@@ -15,6 +15,8 @@
 <div class = "analogia_adatbazis-container">
 
 
+
+
         {% for adat in adatok %}
             <div>
                 <a href="{% url 'analogia_adatbazis' %}">{{adat}}</a>
@@ -29,7 +31,15 @@
         <a href="{% url 'create-bolygok' %}">Készíts Bolygó analógiát</a>
 
     </div>
+        <div>
+            {% for adat in adatok %}
+                <div>
 
+                    <a href="{% url 'delete-bolygo' adat.nevID %}" >Delete {{adat.nevID}}</a>
+
+                </div>
+            {% endfor %}
+        </div>
 </div>
 
 

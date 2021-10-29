@@ -190,6 +190,27 @@ def createHazak(request):
     return render(request, "analogiak/hazak_form.html", context)
 
 
+def deleteBolygo(request, nevID):
+    bolygo = Bolygo1.objects.get(nevID=nevID)
+    if request.method == "POST":
+        bolygo.delete()
+        return redirect("bolygok")
+    return render(request, "base/delete.html", {"obj":bolygo})
+
+def deleteJegy(request, nevID):
+    jegy = Jegy1.objects.get(nevID=nevID)
+    if request.method == "POST":
+        jegy.delete()
+        return redirect("jegyek")
+    return render(request, "base/delete.html", {"obj":jegy})
+
+def deleteHaz(request,nevID):
+    haz = Haz1.objects.get(nevID=nevID)
+    if request.method == "POST":
+        haz.delete()
+        return redirect("hazak")
+    return render(request, "base/delete.html", {"obj":haz})
+
 
 
 

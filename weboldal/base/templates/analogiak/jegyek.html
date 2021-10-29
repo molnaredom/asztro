@@ -22,6 +22,17 @@
 
             </div>
         {% endfor %}
+
+        <div>
+            {% for adat in adatok %}
+                <div>
+
+                    <a href="{% url 'delete-jegy' adat.nevID %}" >Delete {{adat.nevID}}</a>
+
+                </div>
+            {% endfor %}
+        </div>
+
     </div>
 
     <div>

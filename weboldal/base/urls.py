@@ -26,5 +26,12 @@ urlpatterns = [
     path("haz/<str:nevID>/", views.haz, name="haz"),  # ~room
     path("bolygo/<str:nevID>/", views.bolygo, name="bolygo"),  # ~room
 
+    path("delete-jegy/<str:nevID>/", views.deleteJegy, name= "delete-jegy"),
+    path("delete-haz/<str:nevID>/", views.deleteHaz, name= "delete-haz"),
+    path("delete-bolygo/<str:nevID>/", views.deleteBolygo, name= "delete-bolygo"),
 
     ]
+
+
+
+
