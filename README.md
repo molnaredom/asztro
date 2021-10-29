@@ -1,4 +1,4 @@
-Asztroprogram 2.0.0
+Asztroprogram 2.0.1
 
 Pár szó magamról: 
 - 3.féléves programtervező infóra járok
@@ -48,6 +48,9 @@ Mély neuronháló alkalmazásával dolgozunk.
 3.c Önismereti fejlesztés
 - Általános adatok kiíratása(ebben nincs semmi matematika, de mégis személyreszabott, az asztrológia eszköze miatt)
 
+Hosszútávú tervek:
+- Szövegfeldolgozással kinyerni az analógiáknak az értelmét mesterséges intelligenciával, ezáltal kérdéseket feltenni élethelyzet pontosításhoz.
+- SZámítógép grafikával létrehozni 3d- képlet modelleket a könyebb értelmezhetőség érdekében
 
 Érdeklődni: 
 - Molnár Ádám 
@@ -58,7 +61,11 @@ A terv fejlődési pontjai:
 - 1.1.0 2021 maj.31
 - 1.1.1 2021. jun 2.
 - 1.1.2 2021 jun 6.
-- 2.0.0 2021 okt. 26
+- 2.0.0 2021 okt. 26.
+- 2.0.1 2021 okt.28.
+
+
+
 
 korábbi ötletek(NEM RELEVÁNS MÁR)
 - A személyiségmodellben egyes analógia csoportkörök pont értéket fognak kapni. A megkapott értékek alapján egy optimális küszöbindexet határozunk meg.
