@@ -1,7 +1,8 @@
 <a href="/">
     <h1>Home</h1>
-
 </a>
+
+
 
 <a href="{% url 'analogia_adatbazis' %}">
 
@@ -14,4 +15,9 @@
 
 </form>
 
+{% if request.user.is_authenticated %}
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
 <hr>

@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Add meg a felhasználóneved" />
+
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Add meg a jelszavad"/>
+
+        <input type="submit" name="Login">
+    </form>
+
+</div>
+
+
+
+
+
+
+{% endblock content %}
+
+

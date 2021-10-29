@@ -41,6 +41,8 @@ class Message(models.Model):
 
 
 
+
+
 class Analogia1(models.Model):
     nevID = models.CharField(max_length=20)
     analogia_tipus = models.CharField(max_length=20)
