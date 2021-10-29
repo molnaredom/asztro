@@ -4,4 +4,21 @@
 {% block content %}
 <h1>{{room.name}}</h1>
 
+<p>{{room.description}}</p>
+
+<div class="comment-wrapper">
+    <h3>Beszélgetés</h3>
+    <hr>
+
+    {% for message in messages %}
+    <div>
+
+        <small>@{{message.user}}  {{message.created|timesince}}-el ezelőtt </small>
+        <p> {{message.body}}</p>
+
+    </div>
+
+    {% endfor %}
+</div>
+
 {% endblock content %}

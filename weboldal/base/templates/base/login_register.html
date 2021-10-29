@@ -2,26 +2,39 @@
 
 {% block content %}
 
-
+{% if page == 'login' %}
 <div>
-    <form method="POST" action="">
-        {% csrf_token %}
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
 
-        <label>Username:</label>
-        <input type="text" name="username" placeholder="Add meg a felhasználóneved" />
 
-        <label>Password:</label>
-        <input type="password" name="password" placeholder="Add meg a jelszavad"/>
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Add meg a felhasználóneved"/>
 
-        <input type="submit" name="Login">
-    </form>
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Add meg a jelszavad"/>
+
+            <input type="submit" name="Login">
+        </form>
+        <p>Még nem vagy regisztrálva?</p>
+        <a href="{% url 'register' %}">Regisztráció</a>
+    </div>
+
+{% else %}
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" name="Register">
+        </form>
+        <p>Már be vagy regisztrálva?</p>
+        <a href="{% url 'login' %}">Belépés</a>
+    </div>
+
 
 </div>
-
-
-
-
-
+{% endif %}
 
 {% endblock content %}
 
