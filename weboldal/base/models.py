@@ -41,23 +41,27 @@ class Message(models.Model):
 
 
 
-class Analogiaa(models.Model):
+class Analogia1(models.Model):
     nevID = models.CharField(max_length=20)
     analogia_tipus = models.CharField(max_length=20)
     leiras = models.TextField(null=True, blank=True)
 
+    class Meta:
+        abstract= True
 
-class Jegy(models.Model):
+
+class Jegy1(Analogia1):
     elem = models.CharField(max_length=6)
     minoseg = models.CharField(max_length=10)
     dekadjegy = models.CharField(max_length=8)
     paritas = models.CharField(max_length=7)
     evszak = models.CharField(max_length=6)
+
     def __str__(self):
-        return self.nev
+        return self.nevID
 
 
-class Bolygo(models.Model):
+class Bolygo1(Analogia1):
     tipusa = models.CharField(max_length=20)
     pontertek = models.IntegerField()
     jegyfokszam = models.FloatField()
@@ -67,7 +71,7 @@ class Bolygo(models.Model):
         return self.nevID
 
 
-class Haz(models.Model):
+class Haz1(Analogia1):
     haztipus = models.CharField(max_length=20)
     jegyfokszam = models.FloatField()
     oszfokszam = models.FloatField()
@@ -77,8 +81,8 @@ class Haz(models.Model):
 
 
 class BolygoJegyben(models.Model):
-    bolygo = models.ForeignKey(Bolygo, on_delete=models.CASCADE)
-    jegy = models.ForeignKey(Jegy, on_delete=models.CASCADE)
+    bolygo = models.ForeignKey(Bolygo1, on_delete=models.CASCADE)
+    jegy = models.ForeignKey(Jegy1, on_delete=models.CASCADE)
 
     @property
     def bolygo_nev(self):
@@ -128,8 +132,8 @@ class BolygoJegyben(models.Model):
 
 
 class HazJegyben(models.Model):
-    hazid = models.ForeignKey(Haz, on_delete=models.CASCADE)
-    jegyid = models.ForeignKey(Jegy, on_delete=models.CASCADE)
+    hazid = models.ForeignKey(Haz1, on_delete=models.CASCADE)
+    jegyid = models.ForeignKey(Jegy1, on_delete=models.CASCADE)
     tulajdonsagok = models.CharField(max_length=200)
 
     def __str__(self):
@@ -137,8 +141,8 @@ class HazJegyben(models.Model):
 
 
 class BolygoHazban(models.Model):
-    bolygoid = models.ForeignKey(Bolygo, on_delete=models.CASCADE)
-    hazid = models.ForeignKey(Haz, on_delete=models.CASCADE)
+    bolygoid = models.ForeignKey(Bolygo1, on_delete=models.CASCADE)
+    hazid = models.ForeignKey(Haz1, on_delete=models.CASCADE)
 
     venu_onelfogadas = models.CharField(max_length=200)
 

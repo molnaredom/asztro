@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q
-from .models import Room, Topic, Analogiaa
-from .forms import RoomForm, AnalogiaForm
+from .models import Room, Topic, Jegy1, Bolygo1, Haz1, Analogia1
+from .forms import RoomForm, AnalogiaForm, JegyekForm, BolygokForm, HazakForm
 
 # rooms = [
 #
@@ -66,11 +66,135 @@ def deleteRoom(request, pk):
         return redirect("home")
     return render(request, "base/delete.html", {"obj":room})
 
+
+
+
+
+
+
 def analogia(request,nevID):
-    analogia = Analogiaa.objects.get(nevID=nevID)
+    analogia = Jegy1.objects.get(nevID=nevID)
+
     context = {"analogia": analogia} # ez egy objektum
 
-    return render(request,"base/analogia.html", context )
+    return render(request,"analogiak/analogia.html", context )
+
+
+def createAnalogia(request):
+    form = AnalogiaForm()
+
+    if request.method == "POST":
+        form = AnalogiaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("analogia_adatbazis")
+
+    context = {'form': form}
+    return render(request, "analogiak/analogia_form.html", context)
+
+def analogia_adatbazis(request):
+
+
+    context = {}
+    return render(request, 'analogiak/analogia_adatbazis.html', context )
+
+
+
+
+def jegy(request,nevID):
+    analogia = Jegy1.objects.get(nevID=nevID)
+
+    context = {"analogia": analogia}  # ez egy objektum
+
+    return render(request, "analogiak/jegy.html", context)
+
+def bolygo(request,nevID):
+    analogia = Bolygo1.objects.get(nevID=nevID)
+
+    context = {"analogia": analogia}  # ez egy objektum
+
+    return render(request, "analogiak/bolygo.html", context)
+
+def haz(request,nevID):
+    analogia = Haz1.objects.get(nevID=nevID)
+
+    context = {"analogia": analogia}  # ez egy objektum
+
+    return render(request, "analogiak/haz.html", context)
+
+
+
+
+def jegyek_oldal(request):
+
+    jegyek = Jegy1.objects.all()
+
+    context = {'adatok': jegyek}
+    return render(request, 'analogiak/jegyek.html', context )
+
+
+def bolygok_oldal(request):
+
+    bolygok = Bolygo1.objects.all()
+
+    context = {'adatok': bolygok}
+    return render(request, 'analogiak/bolygok.html', context )
+
+
+def hazak_oldal(request):
+
+    hazak = Haz1.objects.all()
+
+    context = {'adatok': hazak}
+    return render(request, 'analogiak/hazak.html', context )
+
+
+
+
+def createJegyek(request):
+    form = JegyekForm()
+
+    if request.method == "POST":
+        form = JegyekForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("jegyek")
+
+    context = {'form': form}
+    return render(request, "analogiak/jegyek_form.html", context)
+
+
+def createBolygok(request):
+    form = BolygokForm()
+
+    if request.method == "POST":
+        form = BolygokForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("bolygok")
+
+    context = {'form': form}
+    return render(request, "analogiak/bolygok_form.html", context)
+
+
+def createHazak(request):
+    form = HazakForm()
+
+    if request.method == "POST":
+        form = HazakForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("hazak")
+
+    context = {'form': form}
+    return render(request, "analogiak/hazak_form.html", context)
+
+
+
+
+
+
+
 
 # def updateAnalogia(request, nevID):
 #     analogia = Analogia.objects.get(id=nevID)
@@ -84,35 +208,3 @@ def analogia(request,nevID):
 #
 #     context = {'form': form}
 #     return render(request, "base/room_form.html", context)
-def createAnalogia(request):
-    form = AnalogiaForm()
-
-    if request.method == "POST":
-        form = AnalogiaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("analogia_form")
-
-    context = {'form': form}
-    return render(request, "base/analogia_form.html", context)
-
-def analogia_adatbazis(request):
-    # q = request.GET.get('q') if request.GET.get('q') != None else ''
-
-    adatok = Analogiaa.objects.all()
-
-    #     .filter(
-    #     #Q(topic__name__icontains=q) |
-    #     Q(name__icontains=q) |
-    #     Q(discription__icontains=q)
-    #
-    # )
-
-    # topics = Topic.objects.all()
-    # room_count = rooms.count()
-
-    context = {'adatok': adatok} #
-    return render(request, 'base/analogia_adatbazis.html', context )
-
-
-

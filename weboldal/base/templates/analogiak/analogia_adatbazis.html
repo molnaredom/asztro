@@ -1,0 +1,47 @@
+
+{% extends 'analogia_db_base.html' %}
+
+{% block content %}
+
+<style>
+    .analogia_adatbazis-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr; /* 1 fraction and 3 frections, how many fraction does a webside contains*/
+
+    }
+
+</style>
+
+<div>
+    <a href="{% url 'jegyek' %}">Jegyek</a>
+    <a href="{% url 'bolygok' %}">Bolygok</a>
+    <a href="{% url 'hazak' %}">Hazak</a>
+</div>
+
+
+
+
+
+
+<div class = "analogia_adatbazis-container">
+
+
+        {% for adat in adatok %}
+            <div>
+                <a href="{% url 'analogia_adatbazis' %}">{{adat}}</a>
+                <h5>{{adat.nevID}} --<a href="{% url 'analogia' adat.nevID %}"> {{adat.leiras}}</a></h5>
+
+            </div>
+        {% endfor %}
+    </div>
+
+    <div>
+
+        <a href="{% url 'create-analogia' %}">Készíts analógiát</a>
+
+    </div>
+
+</div>
+
+
+{% endblock content %}

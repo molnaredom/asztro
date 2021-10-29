@@ -14,7 +14,17 @@ urlpatterns = [
     path("analogia/<str:nevID>/", views.analogia, name="analogia"),  # ~room
     path("create-analogia/", views.createAnalogia, name= "create-analogia"),
 
+    path("jegyek/", views.jegyek_oldal, name= "jegyek"),
+    path("hazak/", views.hazak_oldal, name= "hazak"),
+    path("bolygok/", views.bolygok_oldal, name= "bolygok"),
 
+    path("create-jegyek/", views.createJegyek, name= "create-jegyek"),
+    path("create-hazak/", views.createHazak, name= "create-hazak"),
+    path("create-bolygok/", views.createBolygok, name= "create-bolygok"),
+
+    path("jegy/<str:nevID>/", views.jegy, name="jegy"),  # ~room
+    path("haz/<str:nevID>/", views.haz, name="haz"),  # ~room
+    path("bolygo/<str:nevID>/", views.bolygo, name="bolygo"),  # ~room
 
 
     ]
