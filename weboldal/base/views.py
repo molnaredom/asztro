@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room, Topic, Jegy1, Bolygo1, Haz1, Analogia1
+from .models import Room, Topic, Jegy1, Bolygo1, Haz1, Analogia1, Message
 from .forms import RoomForm, AnalogiaForm, JegyekForm, BolygokForm, HazakForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -34,12 +34,36 @@ def home(request):
     context = {'rooms': rooms, "topics":topics, "room_count":room_count}
     return render(request, 'base/home.html', context )
 
+
 def room(request, pk):
     room = Room.objects.get(id=pk)
     room_messages = room.message_set.all().order_by('-created') # give us a set of messages that are related specific rooms
+    participants = room.participants.all()
+    print(len(room_messages))
+    if request.method == 'POST':
+        message = Message.objects.create(
+            user = request.user,
+            room = room,
+            body = request.POST.get("body"),
+        )
+        room.participants.add(request.user)
 
-    context = {"room": room, "messages": room_messages}
+        return redirect('room', pk=room.id)
+
+    context = {"room": room, "messages": room_messages, 'participants': participants}
     return render(request, "base/room.html",context)
+
+@login_required(login_url="login")
+def deleteMessage(request, pk):
+    message = Message.objects.get(id=pk)
+
+    if request.user != message.user:
+        return HttpResponse("Nem engedélyezett művelet, amíg nem vagy bejelentkezve")
+
+    if request.method == "POST":
+        message.delete()
+        return redirect("home")
+    return render(request, "base/delete.html", {"obj":message})
 
 @login_required(login_url="login")
 def createroom(request):
@@ -53,6 +77,7 @@ def createroom(request):
 
     context = {'form': form}
     return render(request, "base/room_form.html", context)
+
 
 @login_required(login_url="login")
 def updateRoom( request, pk):
@@ -71,6 +96,7 @@ def updateRoom( request, pk):
     context = {'form': form}
     return render(request, "base/room_form.html", context)
 
+
 @login_required(login_url="login")
 def deleteRoom(request, pk):
     room = Room.objects.get(id=pk)
@@ -82,6 +108,7 @@ def deleteRoom(request, pk):
         room.delete()
         return redirect("home")
     return render(request, "base/delete.html", {"obj":room})
+
 
 
 def loginPage(request):
@@ -110,9 +137,11 @@ def loginPage(request):
     context = {"page": page}
     return render(request, 'base/login_register.html', context)
 
+
 def logoutUser(request):
     logout(request)
     return redirect('home')
+
 
 def registerPage(request):
     form = UserCreationForm()
@@ -155,6 +184,7 @@ def createAnalogia(request):
     context = {'form': form}
     return render(request, "analogiak/analogia_form.html", context)
 
+
 def analogia_adatbazis(request):
 
 
@@ -171,12 +201,14 @@ def jegy(request,nevID):
 
     return render(request, "analogiak/jegy.html", context)
 
+
 def bolygo(request,nevID):
     analogia = Bolygo1.objects.get(nevID=nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
     return render(request, "analogiak/bolygo.html", context)
+
 
 def haz(request,nevID):
     analogia = Haz1.objects.get(nevID=nevID)
@@ -260,12 +292,14 @@ def deleteBolygo(request, nevID):
         return redirect("bolygok")
     return render(request, "base/delete.html", {"obj":bolygo})
 
+
 def deleteJegy(request, nevID):
     jegy = Jegy1.objects.get(nevID=nevID)
     if request.method == "POST":
         jegy.delete()
         return redirect("jegyek")
     return render(request, "base/delete.html", {"obj":jegy})
+
 
 def deleteHaz(request,nevID):
     haz = Haz1.objects.get(nevID=nevID)

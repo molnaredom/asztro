@@ -16,7 +16,7 @@ class Room(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200)
     discription = models.TextField(null=True, blank=True)# null - can be blank
-    #participants =
+    participants = models.ManyToManyField(User, related_name='participants', blank=True)
     updated = models.DateTimeField(auto_now=True)# tobbszor is lefut
     created = models.DateTimeField(auto_now_add=True) # ez csak egyszer fut le amikor belepsz eloszor a zsobaba
 
