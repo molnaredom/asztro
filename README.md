@@ -1,11 +1,11 @@
 # Asztroprogram 2.0.1
 
-##Pár szó magamról: 
+## Pár szó magamról: 
 - 3.féléves programtervező infóra járok
 - Szegeden a TTIK-n a Szoftverfejlesztő tanszéken dolgozok. Itt adatok kinyerésével és feldolgozásával foglalkozunk.
 - Régebb óta érdekelnek spirituális, pszichológiai dolgok, köztük gyereknevelés, oktatás, absztrakt/elvont gondolkodásmódok, lelki segítségnyújtás, tanulási technikák, tudatalatti, tudatosság. És még ezen kívül sok más. 
 
-##Mi az asztrológia?
+## Mi az asztrológia?
 - Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, emire különböző szimbólumoket helyezve, különböző következtetésekre juthatunk.
 - A következő képlet, az égbolt vázlatos rajza egy adott pillanatban, ebből tudunk adatokat kinyerni. 
 
@@ -13,26 +13,26 @@
   <img src="https://user-images.githubusercontent.com/77636185/138847759-e8614944-8984-4bd0-b738-eafbf976cd1e.png"/>
 </p>
 
-##Cél:
+## Cél:
 - A projektemben szeretnék az informatika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a használó életét, legfőképpen életvezetési tanácsadás szempontjából.
 - Mivel az asztrológiában rengeteg különböző csoportot tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolygók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is(amik megfigyelsések alapján különböző életterületek megoldására utalnak, mutatnak) ,így a mesterséges intelligencia ezen belül is a neuronhálók eszközét könnyen eszközül vehetjük. 
 Az asztrológiában sok adat van , sok megfigyelési szempont, egy ember nehezen képes egyszerre ilyen sok szempontot figyelembevenni és objektíven(úgy hogy ne csak a szempontok egy kisebb részhalmaza alapján döntsön) választ adni egy kérdésre.
 Cél lenne, hogy felmutassuk hogy mennyire tudja jól megjósolni a program az illető leendő munhahelyének valószínűségeit. Van-e erős korrelácó?
 
 
-##Mérföldkövek alap implementációkban
+## Mérföldkövek alap implementációkban
 - [x] horoszkóp szerkezetének implementálása(javíításra szorul)
 - [ ] adatbázis feltöltése megfelelő analógiákkal(folyamatban...)
 - [ ] weboldal létrehozása ahonnan elérhetőek az információk(folyamatban..)
 
 
-##Mérföldkövek a konkrét elérendő cél tekintetében
+## Mérföldkövek a konkrét elérendő cél tekintetében
 - [ ] Pályaválasztás(munka, életút)
 - [x] Általános önismeret(javításra szorul)
 - [ ] Párkapcsolati elemzés
 
 
-##Működési vázlat:
+## Működési vázlat:
 1.a A kedves emberünk megadja az adatait(neme, szül.hely, szül.idő(év,hónap, nap, óra, perc)). Pontos adatok hiányában nem működik a program.
 
 1.b (opcionális). A program feltesz kérdéseket, amivel a kedves emberünk élethelyzetét pontosítjuk.
@@ -50,15 +50,15 @@ Mély neuronháló alkalmazásával dolgozunk.
 3.c Önismereti fejlesztés
 - Általános adatok kiíratása(ebben nincs semmi matematika, de mégis személyreszabott, az asztrológia eszköze miatt)
 
-###Hosszútávú tervek:
+### Hosszútávú tervek:
 - Szövegfeldolgozással kinyerni az analógiáknak az értelmét mesterséges intelligenciával, ezáltal kérdéseket feltenni élethelyzet pontosításhoz.
 - SZámítógép grafikával létrehozni 3d- képlet modelleket a könyebb értelmezhetőség érdekében
 
-###Érdeklődni: 
+### Érdeklődni: 
 - Molnár Ádám 
 - molnaradam8466@gmail.com 
 
-###A terv fejlődési pontjai:
+### A terv fejlődési pontjai:
 - 1.0.0 2021 marc.30
 - 1.1.0 2021 maj.31
 - 1.1.1 2021. jun 2.
@@ -69,12 +69,9 @@ Mély neuronháló alkalmazásával dolgozunk.
 
 
 
-####*korábbi ötletek(NEM RELEVÁNS MÁR)*
+#### *korábbi ötletek(NEM RELEVÁNS MÁR)*
 - A személyiségmodellben egyes analógia csoportkörök pont értéket fognak kapni. A megkapott értékek alapján egy optimális küszöbindexet határozunk meg.
 Amelyik tulajdonság átlépi a küszöbindexet, belekerül az eredményhalmazba.
 
 - A tulajdonságok közt súlyozott gráfokkal döntjük el a szinonima, ellentettszavak kapcsolatát.(ezek előre definináltak, az alaphalmaz elemei)
-
-
-
 
