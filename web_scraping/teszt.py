@@ -1,6 +1,5 @@
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 import requests
-import urllib.request
 from selenium import webdriver
 
 from selenium.webdriver.support.ui import Select
@@ -79,36 +78,12 @@ bolygok = {
 
 
 def get_datas():
-    create_bolygo("Nap", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td[5]")
 
-    create_bolygo("Hold", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[3]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[3]/td[5]")
-
-    create_bolygo("Merkur", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[4]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[4]/td[5]")
-
-    create_bolygo("Vénusz", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[5]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[5]/td[5]")
-
-    create_bolygo("Mars", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[6]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[6]/td[5]")
-
-    create_bolygo("Jupiter", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[7]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[7]/td[5]")
-
-    create_bolygo("Szaturnusz", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[8]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[8]/td[5]")
-
-    create_bolygo("Uránusz", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[9]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[9]/td[5]")
-
-    create_bolygo("Neptun", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[9]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[9]/td[5]")
-
-    create_bolygo("Pluto", "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[9]/td[4]",
-                  "/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[9]/td[5]")
-
+    for i in zip(range(2,12),["Nap", "Hold", "Merkur","Vénusz","Mars" ,"Jupiter","Szaturnusz","Uránusz","Neptun","Pluto"]):
+        bolygonev = i[1]
+        akt_cellaszam = i[0]
+        create_bolygo(bolygonev, f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{akt_cellaszam}]/td[4]",
+                      f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{akt_cellaszam}]/td[5]")
 
 
 def create_bolygo(bolygonev, jegy_xpath, fokszam_xpath):
@@ -121,7 +96,14 @@ def get_text(xpath):
 
 
 if __name__ == '__main__':
-    web = webdriver.Firefox()
+
+    rendszer ="win10"
+    web = ""
+    if rendszer == "win10":
+        web = webdriver.Firefox(executable_path=r'geckodriver.exe')
+    else:
+        web = webdriver.Firefox()
+
     web.get('https://astro.cafeastrology.com/natal.php')
 
     szuletesi_adatok = {
