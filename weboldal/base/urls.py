@@ -40,6 +40,10 @@ urlpatterns = [
     path("delete-haz/<str:nevID>/", views.deleteHaz, name= "delete-haz"),
     path("delete-bolygo/<str:nevID>/", views.deleteBolygo, name= "delete-bolygo"),
 
+
+
+    path("titkos-szoba/", views.titkosSzoba, name= "titkos-szoba"),
+
     ]
 
 

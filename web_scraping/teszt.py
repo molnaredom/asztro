@@ -76,14 +76,43 @@ bolygok = {
     "Pluto": [],
 }
 
+hazak = {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+    6: [],
+    7: [],
+    8: [],
+    9: [],
+    10: [],
+    11: [],
+    12: []
+}
+
 
 def get_datas():
+    get_bolygok()
+    # get_hazak()
 
-    for i in zip(range(2,12),["Nap", "Hold", "Merkur","Vénusz","Mars" ,"Jupiter","Szaturnusz","Uránusz","Neptun","Pluto"]):
+
+
+def get_bolygok():
+    for i in zip(range(2, 12),
+                 ["Nap", "Hold", "Merkur", "Vénusz", "Mars", "Jupiter", "Szaturnusz", "Uránusz", "Neptun", "Pluto"]):
         bolygonev = i[1]
         akt_cellaszam = i[0]
         create_bolygo(bolygonev, f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{akt_cellaszam}]/td[4]",
                       f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{akt_cellaszam}]/td[5]")
+
+
+def get_hazak():
+    for i in range(1,13):
+        hazszam = i
+        akt_cellaszam = i+1
+        create_bolygo(hazszam, f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{akt_cellaszam}]/td[10]",
+                      f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{akt_cellaszam}]/td[11]")
 
 
 def create_bolygo(bolygonev, jegy_xpath, fokszam_xpath):
@@ -122,6 +151,12 @@ if __name__ == '__main__':
 
     print(bolygok)
 
-    for k,i in bolygok.items():
+    for k, i in bolygok.items():
+        print(k)
+        print(i)
+
+    print(hazak)
+
+    for k,i in hazak.items():
         print(k)
         print(i)

@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-(xyj-rlf*-!8wb8w9u4os0*ir0jod4pwo08tafkqm*gr)89xu9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+
+    'asztroldal.azurewebsites.net'
+
+]
 
 
 # Application definition
@@ -83,6 +87,16 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': "asztro_db",
+    #     "USER": "root",
+    #     "PASSWORD": "root",
+    #     "HOST": 'localhost',
+    #     "PORT": "3306"
+    #
+    # }
+
 }
 
 
@@ -118,6 +132,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
+#STATIC_ROOT =
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

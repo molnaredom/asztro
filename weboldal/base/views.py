@@ -72,7 +72,8 @@ def createroom(request):
     if request.method == "POST":
         form = RoomForm(request.POST)
         if form.is_valid():
-            form.save()
+            room = form.save(commit=False)
+            room.host = request.user
             return redirect("home")
 
     context = {'form': form}
@@ -272,6 +273,8 @@ def createBolygok(request):
     return render(request, "analogiak/bolygok_form.html", context)
 
 
+ #job lib
+
 def createHazak(request):
     form = HazakForm()
 
@@ -309,7 +312,8 @@ def deleteHaz(request,nevID):
     return render(request, "base/delete.html", {"obj":haz})
 
 
-
+def titkosSzoba(request):
+    return render(request, "analogiak/titkosSzoba.html", {})
 
 
 
