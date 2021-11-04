@@ -46,16 +46,21 @@ class Message(models.Model):
 
 
 
-class Analogia1(models.Model):
-    nevID = models.CharField(max_length=20)
-    analogia_tipus = models.CharField(max_length=20)
+class Analogia_1(models.Model):
+    nevID = models.CharField(max_length=30)
     leiras = models.TextField(null=True, blank=True)
 
     class Meta:
         abstract= True
 
+class OsszetettAnalogia_1(models.Model):
+    osszetett_nevID = models.CharField(max_length=30)
 
-class Jegy1(Analogia1):
+    class Meta:
+        abstract= True
+
+
+class Jegy_1(Analogia_1):
     elem = models.CharField(max_length=6)
     minoseg = models.CharField(max_length=10)
     dekadjegy = models.CharField(max_length=8)
@@ -66,7 +71,7 @@ class Jegy1(Analogia1):
         return self.nevID
 
 
-class Bolygo1(Analogia1):
+class Bolygo_1(Analogia_1):
     tipusa = models.CharField(max_length=20)
     pontertek = models.IntegerField()
     jegyfokszam = models.FloatField()
@@ -76,7 +81,7 @@ class Bolygo1(Analogia1):
         return self.nevID
 
 
-class Haz1(Analogia1):
+class Haz_1(Analogia_1):
     haztipus = models.CharField(max_length=20)
     jegyfokszam = models.FloatField()
     oszfokszam = models.FloatField()
@@ -85,18 +90,9 @@ class Haz1(Analogia1):
         return str(self.nevID)
 
 
-class BolygoJegyben(models.Model):
-    bolygo = models.ForeignKey(Bolygo1, on_delete=models.CASCADE)
-    jegy = models.ForeignKey(Jegy1, on_delete=models.CASCADE)
-
-    @property
-    def bolygo_nev(self):
-        return self.bolygo.name
-
-
-    @property
-    def jegy_nev(self):
-        return self.jegy.name
+class BolygoJegyben_1(OsszetettAnalogia_1):
+    bolygo = models.ForeignKey(Bolygo_1, on_delete=models.CASCADE)
+    jegy = models.ForeignKey(Jegy_1, on_delete=models.CASCADE)
 
 
     altalanos_tul = models.CharField(max_length=300, blank=True)
@@ -132,25 +128,25 @@ class BolygoJegyben(models.Model):
     venu_muveszet = models.CharField(max_length=200)
     venu_onelfogadas = models.CharField(max_length=200)
 
-    def __str__(self):
-        return str(self.jegy) + "-" + str(self.bolygo)
+    # def __str__(self):
+    #     return str(self.jegy) + "-" + str(self.bolygo)
 
 
-class HazJegyben(models.Model):
-    hazid = models.ForeignKey(Haz1, on_delete=models.CASCADE)
-    jegyid = models.ForeignKey(Jegy1, on_delete=models.CASCADE)
+class HazJegyben_1(OsszetettAnalogia_1):
+    hazid = models.ForeignKey(Haz_1, on_delete=models.CASCADE)
+    jegyid = models.ForeignKey(Jegy_1, on_delete=models.CASCADE)
     tulajdonsagok = models.CharField(max_length=200)
 
-    def __str__(self):
-        return str(self.jegyid) + "-" + str(self.hazid)
+    # def __str__(self):
+    #     return str(self.jegyid) + "-" + str(self.hazid)
 
 
-class BolygoHazban(models.Model):
-    bolygoid = models.ForeignKey(Bolygo1, on_delete=models.CASCADE)
-    hazid = models.ForeignKey(Haz1, on_delete=models.CASCADE)
+class BolygoHazban_1(OsszetettAnalogia_1):
+    bolygoid = models.ForeignKey(Bolygo_1, on_delete=models.CASCADE)
+    hazid = models.ForeignKey(Haz_1, on_delete=models.CASCADE)
 
     venu_onelfogadas = models.CharField(max_length=200)
 
 
-    def __str__(self):
-        return str(self.hazid) + "-" + str(self.bolygoid)
+    # def __str__(self):
+    #     return str(self.hazid) + "-" + str(self.bolygoid)

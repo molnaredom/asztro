@@ -4,8 +4,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room, Topic, Jegy1, Bolygo1, Haz1, Analogia1, Message
-from .forms import RoomForm, AnalogiaForm, JegyekForm, BolygokForm, HazakForm
+from .models import Room, Topic, Jegy_1, Bolygo_1, Haz_1, Message ,BolygoHazban_1, BolygoJegyben_1, HazJegyben_1
+from .forms import RoomForm, AnalogiaForm, JegyekForm, BolygokForm, HazakForm , BolygoJegybenForm, HazJegybenForm, BolygoHazbanForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
@@ -166,7 +166,7 @@ def registerPage(request):
 
 
 def analogia(request,nevID):
-    analogia = Jegy1.objects.get(nevID=nevID)
+    analogia = Jegy_1.objects.get(nevID=nevID)
 
     context = {"analogia": analogia} # ez egy objektum
 
@@ -195,8 +195,9 @@ def analogia_adatbazis(request):
 
 
 
+# konkrét oldalak( a fa levelei)
 def jegy(request,nevID):
-    analogia = Jegy1.objects.get(nevID=nevID)
+    analogia = Jegy_1.objects.get(nevID=nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -204,7 +205,7 @@ def jegy(request,nevID):
 
 
 def bolygo(request,nevID):
-    analogia = Bolygo1.objects.get(nevID=nevID)
+    analogia = Bolygo_1.objects.get(nevID=nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -212,18 +213,45 @@ def bolygo(request,nevID):
 
 
 def haz(request,nevID):
-    analogia = Haz1.objects.get(nevID=nevID)
+    analogia = Haz_1.objects.get(nevID=nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
     return render(request, "analogiak/haz.html", context)
 
 
+def bolygoJegyben(request,osszetett_nevID):
+    analogia = BolygoJegyben_1.objects.get(osszetett_nevID=osszetett_nevID)
+
+    context = {"analogia": analogia}  # ez egy objektum
+
+    return render(request, "osszetettAnalogiak/bolygoJegyben.html", context)
 
 
+def bolygoHazban(request,osszetett_nevID):
+    analogia = BolygoHazban_1.objects.get(osszetett_nevID=osszetett_nevID)
+
+    context = {"analogia": analogia}  # ez egy objektum
+
+    return render(request, "osszetettAnalogiak/bolygoHazban.html", context)
+
+
+def hazJegyben(request,osszetett_nevID):
+    analogia = HazJegyben_1.objects.get(osszetett_nevID=osszetett_nevID)
+
+    context = {"analogia": analogia}  # ez egy objektum
+
+    return render(request, "osszetettAnalogiak/hazJegyben.html", context)
+
+
+
+
+
+
+# több oldalt tartalmazo,analógiatároló felület
 def jegyek_oldal(request):
 
-    jegyek = Jegy1.objects.all()
+    jegyek = Jegy_1.objects.all()
 
     context = {'adatok': jegyek}
     return render(request, 'analogiak/jegyek.html', context )
@@ -231,7 +259,7 @@ def jegyek_oldal(request):
 
 def bolygok_oldal(request):
 
-    bolygok = Bolygo1.objects.all()
+    bolygok = Bolygo_1.objects.all()
 
     context = {'adatok': bolygok}
     return render(request, 'analogiak/bolygok.html', context )
@@ -239,14 +267,40 @@ def bolygok_oldal(request):
 
 def hazak_oldal(request):
 
-    hazak = Haz1.objects.all()
+    hazak = Haz_1.objects.all()
 
     context = {'adatok': hazak}
     return render(request, 'analogiak/hazak.html', context )
 
 
+def bolygokJegyekben(request):
+
+    jegyek = BolygoJegyben_1.objects.all()
+
+    context = {'adatok': jegyek}
+    return render(request, 'osszetettAnalogiak/bolygokJegyekben.html', context )
 
 
+def bolygokHazakban(request):
+
+    bolygok = BolygoHazban_1.objects.all()
+
+    context = {'adatok': bolygok}
+    return render(request, 'osszetettAnalogiak/bolygokHazakban.html', context )
+
+
+def hazakJegyekben(request):
+
+    hazak = HazJegyben_1.objects.all()
+    print("----------",hazak)
+    context = {'adatok': hazak}
+    return render(request, 'osszetettAnalogiak/hazakJegyekben.html', context )
+
+
+
+
+
+#createrek
 def createJegyek(request):
     form = JegyekForm()
 
@@ -288,8 +342,51 @@ def createHazak(request):
     return render(request, "analogiak/hazak_form.html", context)
 
 
+def createBolygoJegyben(request):
+    form = BolygoJegybenForm()
+
+    if request.method == "POST":
+        form = BolygoJegybenForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("bolygokJegyekben")
+
+    context = {'form': form}
+    return render(request, "osszetettAnalogiak/bolygoJegyben_form.html", context)
+
+
+def createBolygoHazban(request):
+    form = BolygoHazbanForm()
+
+    if request.method == "POST":
+        form = BolygoHazbanForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("bolygokHazakban")
+
+    context = {'form': form}
+    return render(request, "osszetettAnalogiak/bolygoHazban_form.html", context)
+
+
+ #job lib
+
+def createHazJegyben(request):
+    form = HazJegybenForm()
+
+    if request.method == "POST":
+        form = HazJegybenForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("hazakJegyekben")
+
+    context = {'form': form}
+    return render(request, "osszetettAnalogiak/hazJegyben_form.html", context)
+
+
+
+#deleterek
 def deleteBolygo(request, nevID):
-    bolygo = Bolygo1.objects.get(nevID=nevID)
+    bolygo = Bolygo_1.objects.get(nevID=nevID)
     if request.method == "POST":
         bolygo.delete()
         return redirect("bolygok")
@@ -297,7 +394,7 @@ def deleteBolygo(request, nevID):
 
 
 def deleteJegy(request, nevID):
-    jegy = Jegy1.objects.get(nevID=nevID)
+    jegy = Jegy_1.objects.get(nevID=nevID)
     if request.method == "POST":
         jegy.delete()
         return redirect("jegyek")
@@ -305,11 +402,39 @@ def deleteJegy(request, nevID):
 
 
 def deleteHaz(request,nevID):
-    haz = Haz1.objects.get(nevID=nevID)
+    haz = Haz_1.objects.get(nevID=nevID)
     if request.method == "POST":
         haz.delete()
         return redirect("hazak")
     return render(request, "base/delete.html", {"obj":haz})
+
+
+def deleteBolygoJegyben(request, nevID):
+    bolygo = BolygoJegyben_1.objects.get(nevID=nevID)
+    if request.method == "POST":
+        bolygo.delete()
+        return redirect("bolygokJegyekben")
+    return render(request, "base/delete.html", {"obj":bolygo})
+
+
+def deleteBolygoHazban(request, nevID):
+    jegy = BolygoHazban_1.objects.get(nevID=nevID)
+    if request.method == "POST":
+        jegy.delete()
+        return redirect("bolygokHazakban")
+    return render(request, "base/delete.html", {"obj":jegy})
+
+
+def deleteHazJegyben(request,nevID):
+    haz = HazJegyben_1.objects.get(nevID=nevID)
+    if request.method == "POST":
+        haz.delete()
+        return redirect("hazakJegyekben")
+    return render(request, "base/delete.html", {"obj":haz})
+
+
+
+
 
 
 def titkosSzoba(request):

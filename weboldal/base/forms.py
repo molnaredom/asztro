@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Room, Jegy1, Haz1, Bolygo1
+from .models import Room, Jegy_1, Haz_1, Bolygo_1, BolygoJegyben_1, HazJegyben_1, BolygoHazban_1
 
 class RoomForm(ModelForm):
     class Meta:
@@ -9,24 +9,42 @@ class RoomForm(ModelForm):
 
 class AnalogiaForm(ModelForm):
     class Meta:
-        model = Jegy1
+        model = Jegy_1
         fields = "__all__"
 
 
 class JegyekForm(ModelForm):
     class Meta:
-        model = Jegy1
+        model = Jegy_1
         fields = "__all__"
 
 
 class HazakForm(ModelForm):
     class Meta:
-        model = Haz1
+        model = Haz_1
         fields = "__all__"
 
 
 class BolygokForm(ModelForm):
     class Meta:
-        model = Bolygo1
+        model = Bolygo_1
+        fields = "__all__"
+
+
+class BolygoJegybenForm(ModelForm):
+    class Meta:
+        model = BolygoJegyben_1
+        fields = "__all__"
+
+
+class BolygoHazbanForm(ModelForm):
+    class Meta:
+        model = BolygoHazban_1
+        fields = "__all__"
+
+
+class HazJegybenForm(ModelForm):
+    class Meta:
+        model = HazJegyben_1
         fields = "__all__"
 

@@ -41,6 +41,23 @@ urlpatterns = [
     path("delete-bolygo/<str:nevID>/", views.deleteBolygo, name= "delete-bolygo"),
 
 
+    path("bolygokJegyekben/", views.bolygokJegyekben, name= "bolygokJegyekben"),
+    path("bolygokHazakban/", views.bolygokHazakban, name= "bolygokHazakban"),
+    path("hazakJegyekben/", views.hazakJegyekben, name= "hazakJegyekben"),
+
+    path("create-bolygoJegyben/", views.createBolygoJegyben, name= "create-bolygoJegyben"),
+    path("create-bolygoHazban/", views.createBolygoHazban, name= "create-bolygoHazban"),
+    path("create-hazJegyben/", views.createHazJegyben, name= "create-hazJegyben"),
+
+    path("bolygoJegyben/<str:osszetett_nevID>/", views.bolygoJegyben, name="bolygoJegyben"),  # ~room
+    path("bolygoHazban/<str:osszetett_nevID>/", views.bolygoHazban, name="bolygoHazban"),  # ~room
+    path("hazJegyben/<str:osszetett_nevID>/", views.hazJegyben, name="hazJegyben"),  # ~room
+
+    path("delete-bolygoJegyben/<str:osszetett_nevID>/", views.deleteBolygoJegyben, name= "delete-bolygoJegyben"),
+    path("delete-hazJegyben/<str:osszetett_nevID>/", views.deleteHazJegyben, name= "delete-hazJegyben"),
+    path("delete-bolygoHazban/<str:osszetett_nevID>/", views.deleteBolygoHazban, name= "delete-bolygoHazban"),
+
+
 
     path("titkos-szoba/", views.titkosSzoba, name= "titkos-szoba"),
 

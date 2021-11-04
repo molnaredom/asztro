@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
 
-    'asztroldal.azurewebsites.net'
+    'asztroldal.azurewebsites.net',
+    '127.0.0.1'
 
 ]
 
