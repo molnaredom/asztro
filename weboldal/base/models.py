@@ -46,21 +46,21 @@ class Message(models.Model):
 
 
 
-class Analogia_1(models.Model):
+class Analogia(models.Model):
     nevID = models.CharField(max_length=30)
     leiras = models.TextField(null=True, blank=True)
 
     class Meta:
         abstract= True
 
-class OsszetettAnalogia_1(models.Model):
+class OsszetettAnalogia(models.Model):
     osszetett_nevID = models.CharField(max_length=30)
 
     class Meta:
         abstract= True
 
 
-class Jegy_1(Analogia_1):
+class Jegy(Analogia):
     elem = models.CharField(max_length=6)
     minoseg = models.CharField(max_length=10)
     dekadjegy = models.CharField(max_length=8)
@@ -71,7 +71,7 @@ class Jegy_1(Analogia_1):
         return self.nevID
 
 
-class Bolygo_1(Analogia_1):
+class Bolygo(Analogia):
     tipusa = models.CharField(max_length=20)
     pontertek = models.IntegerField()
     jegyfokszam = models.FloatField()
@@ -81,71 +81,77 @@ class Bolygo_1(Analogia_1):
         return self.nevID
 
 
-class Haz_1(Analogia_1):
+class Haz(Analogia):
     haztipus = models.CharField(max_length=20)
-    jegyfokszam = models.FloatField()
-    oszfokszam = models.FloatField()
+    jegyfokszam = models.FloatField(blank=True)
+    oszfokszam = models.FloatField( blank=True)
+
+    ura = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return str(self.nevID)
 
 
-class BolygoJegyben_1(OsszetettAnalogia_1):
-    bolygo = models.ForeignKey(Bolygo_1, on_delete=models.CASCADE)
-    jegy = models.ForeignKey(Jegy_1, on_delete=models.CASCADE)
+class BolygoJegyben(OsszetettAnalogia):
+    bolygo = models.ForeignKey(Bolygo, on_delete=models.CASCADE)
+    jegy = models.ForeignKey(Jegy, on_delete=models.CASCADE)
 
 
     altalanos_tul = models.CharField(max_length=300, blank=True)
     jellemzo_erosseg = models.FloatField()
 
-    ferfi = models.CharField(max_length=200)  # nap(ferfi) hold(no_pár) venusz mars
-    no = models.CharField(max_length=200)  # nap() hold(anya, feleseg) venusz mars
-    gyerek = models.CharField(max_length=200)  # nap hold merkur
-    szulo = models.CharField(max_length=200)  # nap(apa
+    ferfi = models.CharField(max_length=200, blank=True)  # nap(ferfi) hold(no_pár) venusz mars
+    no = models.CharField(max_length=200, blank=True)  # nap() hold(anya, feleseg) venusz mars
+    gyerek = models.CharField(max_length=200, blank=True)  # nap hold merkur
+    szulo = models.CharField(max_length=200, blank=True)  # nap(apa
 
 
-    hold_erzelmek = models.CharField(max_length=200)
-    hold_tehetseg = models.CharField(max_length=200)
-    hold_alarendeltseg = models.CharField(max_length=200)
-    hold_befogadas = models.CharField(max_length=200)
+    hold_erzelmek = models.CharField(max_length=200, blank=True)
+    hold_tehetseg = models.CharField(max_length=200, blank=True)
+    hold_alarendeltseg = models.CharField(max_length=200, blank=True)
+    hold_befogadas = models.CharField(max_length=200, blank=True)
 
     # merkur
-    merk_gondolkodas = models.CharField(max_length=200)
-    merk_kapcsolatteremtes = models.CharField(max_length=200)
-    merk_kommunkacio = models.CharField(max_length=200)
-    mozgekonysag_valtoztatas = models.CharField(max_length=200)
-    gyermekkora = models.CharField(max_length=200)
-    tanulasa = models.CharField(max_length=200)
-    elfogadasa = models.CharField(max_length=200)
+    merk_gondolkodas = models.CharField(max_length=200, blank=True)
+    merk_kapcsolatteremtes = models.CharField(max_length=200, blank=True)
+    merk_kommunkacio = models.CharField(max_length=200, blank=True)
+    mozgekonysag_valtoztatas = models.CharField(max_length=200, blank=True)
+    gyermekkora = models.CharField(max_length=200, blank=True)
+    tanulasa = models.CharField(max_length=200, blank=True)
+    elfogadasa = models.CharField(max_length=200, blank=True)
 
     # venusz
-    venu_anyahoz_valo_viszony = models.CharField(max_length=200)
-    venu_biztonsagvagy = models.CharField(max_length=200)
-    venu_stabilitas_igeny = models.CharField(max_length=200)
-    venu_szepseghez_valo_viszony = models.CharField(max_length=200)
-    venu_noiesseg = models.CharField(max_length=200)
-    venu_szexualitas = models.CharField(max_length=200)
-    venu_muveszet = models.CharField(max_length=200)
-    venu_onelfogadas = models.CharField(max_length=200)
+    venu_anyahoz_valo_viszony = models.CharField(max_length=200, blank=True)
+    venu_biztonsagvagy = models.CharField(max_length=200, blank=True)
+    venu_stabilitas_igeny = models.CharField(max_length=200, blank=True)
+    venu_szepseghez_valo_viszony = models.CharField(max_length=200, blank=True)
+    venu_noiesseg = models.CharField(max_length=200, blank=True)
+    venu_szexualitas = models.CharField(max_length=200, blank=True)
+    venu_muveszet = models.CharField(max_length=200, blank=True)
+    venu_onelfogadas = models.CharField(max_length=200, blank=True)
 
     # def __str__(self):
     #     return str(self.jegy) + "-" + str(self.bolygo)
 
 
-class HazJegyben_1(OsszetettAnalogia_1):
-    hazid = models.ForeignKey(Haz_1, on_delete=models.CASCADE)
-    jegyid = models.ForeignKey(Jegy_1, on_delete=models.CASCADE)
-    tulajdonsagok = models.CharField(max_length=200)
+class HazJegyben(OsszetettAnalogia):
+    haz = models.ForeignKey(Haz, on_delete=models.CASCADE)
+    jegy = models.ForeignKey(Jegy, on_delete=models.CASCADE)
+
+    tulajdonsagok = models.JSONField(blank=True)
 
     # def __str__(self):
     #     return str(self.jegyid) + "-" + str(self.hazid)
 
 
-class BolygoHazban_1(OsszetettAnalogia_1):
-    bolygoid = models.ForeignKey(Bolygo_1, on_delete=models.CASCADE)
-    hazid = models.ForeignKey(Haz_1, on_delete=models.CASCADE)
+class BolygoHazban(OsszetettAnalogia):
+    bolygo = models.ForeignKey(Bolygo, on_delete=models.CASCADE)
+    haz = models.ForeignKey(Haz, on_delete=models.CASCADE)
 
-    venu_onelfogadas = models.CharField(max_length=200)
+    tulajdonsagok = models.JSONField(blank=True)
+
+
+
 
 
     # def __str__(self):

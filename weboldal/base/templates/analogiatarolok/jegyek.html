@@ -17,7 +17,7 @@
 
         {% for adat in adatok %}
             <div>
-                <a href="{% url 'analogia_adatbazis' %}">{{adat}}</a>
+
                 <h5>{{adat.nevID}} --<a href="{% url 'jegy' adat.nevID %}"> {{adat.leiras}}</a></h5>
 
             </div>

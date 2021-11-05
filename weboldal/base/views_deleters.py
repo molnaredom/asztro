@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 
 from django.shortcuts import render, redirect
-from .models import Jegy_1, Bolygo_1, Haz_1, BolygoHazban_1, BolygoJegyben_1, HazJegyben_1, Message,Room
+from .models import Jegy, Bolygo, Haz, BolygoHazban, BolygoJegyben, HazJegyben, Message,Room
 
 
 
@@ -37,7 +37,7 @@ def deleteRoom(request, pk):
 
 #deleterek
 def deleteBolygo(request, nevID):
-    bolygo = Bolygo_1.objects.get(nevID=nevID)
+    bolygo = Bolygo.objects.get(nevID=nevID)
     if request.method == "POST":
         bolygo.delete()
         return redirect("bolygok")
@@ -45,7 +45,7 @@ def deleteBolygo(request, nevID):
 
 
 def deleteJegy(request, nevID):
-    jegy = Jegy_1.objects.get(nevID=nevID)
+    jegy = Jegy.objects.get(nevID=nevID)
     if request.method == "POST":
         jegy.delete()
         return redirect("jegyek")
@@ -53,7 +53,7 @@ def deleteJegy(request, nevID):
 
 
 def deleteHaz(request,nevID):
-    haz = Haz_1.objects.get(nevID=nevID)
+    haz = Haz.objects.get(nevID=nevID)
     if request.method == "POST":
         haz.delete()
         return redirect("hazak")
@@ -61,7 +61,7 @@ def deleteHaz(request,nevID):
 
 
 def deleteBolygoJegyben(request, nevID):
-    bolygo = BolygoJegyben_1.objects.get(nevID=nevID)
+    bolygo = BolygoJegyben.objects.get(nevID=nevID)
     if request.method == "POST":
         bolygo.delete()
         return redirect("bolygokJegyekben")
@@ -69,7 +69,7 @@ def deleteBolygoJegyben(request, nevID):
 
 
 def deleteBolygoHazban(request, nevID):
-    jegy = BolygoHazban_1.objects.get(nevID=nevID)
+    jegy = BolygoHazban.objects.get(nevID=nevID)
     if request.method == "POST":
         jegy.delete()
         return redirect("bolygokHazakban")
@@ -77,7 +77,7 @@ def deleteBolygoHazban(request, nevID):
 
 
 def deleteHazJegyben(request,nevID):
-    haz = HazJegyben_1.objects.get(nevID=nevID)
+    haz = HazJegyben.objects.get(nevID=nevID)
     if request.method == "POST":
         haz.delete()
         return redirect("hazakJegyekben")

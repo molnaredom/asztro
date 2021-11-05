@@ -1,11 +1,11 @@
 
 from django.shortcuts import render
-from .models import Jegy_1, Bolygo_1, Haz_1,BolygoHazban_1, BolygoJegyben_1, HazJegyben_1
+from .models import Jegy, Bolygo, Haz,BolygoHazban, BolygoJegyben, HazJegyben
 
 # több oldalt tartalmazo,analógiatároló felület
 def jegyek_oldal(request):
 
-    jegyek = Jegy_1.objects.all()
+    jegyek = Jegy.objects.all()
 
     context = {'adatok': jegyek}
     return render(request, 'analogiatarolok/jegyek.html', context )
@@ -13,7 +13,7 @@ def jegyek_oldal(request):
 
 def bolygok_oldal(request):
 
-    bolygok = Bolygo_1.objects.all()
+    bolygok = Bolygo.objects.all()
 
     context = {'adatok': bolygok}
     return render(request, 'analogiatarolok/bolygok.html', context )
@@ -21,31 +21,30 @@ def bolygok_oldal(request):
 
 def hazak_oldal(request):
 
-    hazak = Haz_1.objects.all()
+    hazak = Haz.objects.all()
 
     context = {'adatok': hazak}
-    return render(request, 'analogiatarolokk/hazak.html', context )
+    return render(request, 'analogiatarolok/hazak.html', context )
 
 
 def bolygokJegyekben(request):
 
-    jegyek = BolygoJegyben_1.objects.all()
-
+    jegyek = BolygoJegyben.objects.all()
     context = {'adatok': jegyek}
     return render(request, 'analogiatarolok/bolygokJegyekben.html', context )
 
 
 def bolygokHazakban(request):
 
-    bolygok = BolygoHazban_1.objects.all()
+    bolygokhazban = BolygoHazban.objects.all()
 
-    context = {'adatok': bolygok}
+    context = {'adatok': bolygokhazban}
     return render(request, 'analogiatarolok/bolygokHazakban.html', context )
 
 
 def hazakJegyekben(request):
 
-    hazak = HazJegyben_1.objects.all()
-    context = {'adatok': hazak}
+    hazjegyben = HazJegyben.objects.all()
+    context = {'adatok': hazjegyben}
     return render(request, 'analogiatarolok/hazakJegyekben.html', context )
 

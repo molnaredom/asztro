@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Room, Topic, Jegy_1, Bolygo_1, Haz_1, Message ,BolygoHazban_1, BolygoJegyben_1, HazJegyben_1
+from .models import Room, Topic, Jegy, Bolygo, Haz, Message ,BolygoHazban, BolygoJegyben, HazJegyben
 
 
 # konkrét oldalak( a fa levelei)
 def jegy(request,nevID):
-    analogia = Jegy_1.objects.get(nevID=nevID)
+    analogia = Jegy.objects.get(nevID=nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -12,7 +12,7 @@ def jegy(request,nevID):
 
 
 def bolygo(request,nevID):
-    analogia = Bolygo_1.objects.get(nevID=nevID)
+    analogia = Bolygo.objects.get(nevID=nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -20,7 +20,7 @@ def bolygo(request,nevID):
 
 
 def haz(request,nevID):
-    analogia = Haz_1.objects.get(nevID=nevID)
+    analogia = Haz.objects.get(nevID=nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -28,7 +28,7 @@ def haz(request,nevID):
 
 
 def bolygoJegyben(request,osszetett_nevID):
-    analogia = BolygoJegyben_1.objects.get(osszetett_nevID=osszetett_nevID)
+    analogia = BolygoJegyben.objects.get(osszetett_nevID=osszetett_nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -36,7 +36,7 @@ def bolygoJegyben(request,osszetett_nevID):
 
 
 def bolygoHazban(request,osszetett_nevID):
-    analogia = BolygoHazban_1.objects.get(osszetett_nevID=osszetett_nevID)
+    analogia = BolygoHazban.objects.get(osszetett_nevID=osszetett_nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -44,7 +44,7 @@ def bolygoHazban(request,osszetett_nevID):
 
 
 def hazJegyben(request,osszetett_nevID):
-    analogia = HazJegyben_1.objects.get(osszetett_nevID=osszetett_nevID)
+    analogia = HazJegyben.objects.get(osszetett_nevID=osszetett_nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 

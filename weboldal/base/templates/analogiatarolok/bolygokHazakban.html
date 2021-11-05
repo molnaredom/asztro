@@ -17,8 +17,8 @@
 
         {% for adat in adatok %}
             <div>
-                <a href="{% url 'analogia_adatbazis' %}">{{adat}}</a>
-                <h5>{{adat.nevID}} --<a href="{% url 'bolygoHazban' adat.osszetett_nevID %}"> {{adat.leiras}}</a></h5>
+
+                <h5><a href="{% url 'bolygoHazban' adat.osszetett_nevID %}"> {{adat.haz}}-{{adat.bolygo}}</a></h5>
 
             </div>
         {% endfor %}
@@ -37,7 +37,7 @@
 
     <div>
 
-        <a href="{% url 'create-bolygoHazban' %}">Készíts Jegy analógiát</a>
+        <a href="{% url 'create-bolygoHazban' %}">Készíts Bolygó a Házban analógiát</a>
 
     </div>
 

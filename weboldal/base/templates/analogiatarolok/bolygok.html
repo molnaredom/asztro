@@ -1,4 +1,3 @@
-
 {% extends 'analogia_db_base.html' %}
 
 {% block content %}
@@ -12,34 +11,34 @@
 
 </style>
 
-<div class = "analogia_adatbazis-container">
+<div class="analogia_adatbazis-container">
 
 
+</div>
+{% for adat in adatok %}
+<div>
+
+    <h5><a href="{% url 'bolygo' adat.nevID %}">{{adat.nevID}}</a></h5>
+
+</div>
+{% endfor %}
 
 
-        {% for adat in adatok %}
-            <div>
-                <a href="{% url 'analogia_adatbazis' %}">{{adat}}</a>
-                <h5>{{adat.nevID}} --<a href="{% url 'bolygo' adat.nevID %}"> {{adat.leiras}}</a></h5>
+<div>
 
-            </div>
-        {% endfor %}
-    </div>
+    <a href="{% url 'create-bolygok' %}">Készíts Bolygó analógiát</a>
 
+</div>
+
+
+<div>
+    {% for adat in adatok %}
     <div>
 
-        <a href="{% url 'create-bolygok' %}">Készíts Bolygó analógiát</a>
+        <a href="{% url 'delete-bolygo' adat.nevID %}">Delete {{adat.nevID}}</a>
 
     </div>
-        <div>
-            {% for adat in adatok %}
-                <div>
-
-                    <a href="{% url 'delete-bolygo' adat.nevID %}" >Delete {{adat.nevID}}</a>
-
-                </div>
-            {% endfor %}
-        </div>
+    {% endfor %}
 </div>
 
 
