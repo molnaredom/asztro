@@ -94,7 +94,7 @@ hazak = {
 
 def get_datas():
     get_bolygok()
-    # get_hazak()
+    get_hazak()
 
 
 
@@ -111,7 +111,7 @@ def get_hazak():
     for i in range(1,13):
         hazszam = i
         akt_cellaszam = i+1
-        create_bolygo(hazszam, f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{akt_cellaszam}]/td[10]",
+        create_haz(hazszam, f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{akt_cellaszam}]/td[10]",
                       f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{akt_cellaszam}]/td[11]")
 
 
@@ -119,6 +119,9 @@ def create_bolygo(bolygonev, jegy_xpath, fokszam_xpath):
     bolygok[bolygonev].append(get_text(jegy_xpath))
     bolygok[bolygonev].append( get_text(fokszam_xpath))
 
+def create_haz(hazszam, jegy_xpath, fokszam_xpath):
+    hazak[hazszam].append(get_text(jegy_xpath))
+    hazak[hazszam].append(get_text(fokszam_xpath))
 
 def get_text(xpath):
     return web.find_element_by_xpath(xpath).text
@@ -126,7 +129,8 @@ def get_text(xpath):
 
 if __name__ == '__main__':
 
-    rendszer ="win10"
+    #rendszer ="win10"
+    rendszer = "linux"
     web = ""
     if rendszer == "win10":
         web = webdriver.Firefox(executable_path=r'geckodriver.exe')
