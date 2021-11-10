@@ -1,0 +1,45 @@
+{% extends 'analogia_db_base.html' %}
+
+{% block content %}
+
+<style>
+    .analogia_adatbazis-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr; /* 1 fraction and 3 frections, how many fraction does a webside contains*/
+
+    }
+
+</style>
+
+<div class="analogia_adatbazis-container">
+
+
+</div>
+{% for adat in adatok %}
+<div>
+
+    <h5><a href="{% url 'horoszkop' adat.nevID %}">{{adat.nevID}}</a></h5>
+
+</div>
+{% endfor %}
+
+
+<div>
+
+    <a href="{% url 'create-horoszkop' %}">Készíts Horoszkópot</a>
+
+</div>
+
+
+<div>
+    {% for adat in adatok %}
+    <div>
+
+        <a href="{% url 'delete-horoszkop' adat.nevID %}">Delete Horoszkóp: {{adat.nevID}}</a>
+
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}
