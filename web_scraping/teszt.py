@@ -140,12 +140,12 @@ if __name__ == '__main__':
     web.get('https://astro.cafeastrology.com/natal.php')
 
     szuletesi_adatok = {
-        "nev": "adam",
-        "ev": 2001,
-        "honap": 8,
-        "nap": 19,
-        "ora": 16,
-        "perc": 53,
+        "nev": "mamo",
+        "ev": 1945,
+        "honap": 3,
+        "nap": 5,
+        "ora": 12,
+        "perc": 12,
         "hely": "Szolnok"
     }
 

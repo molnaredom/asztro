@@ -128,19 +128,3 @@ def analogia_adatbazis(request):
 
 def titkosSzoba(request):
     return render(request, "base/titkosSzoba.html", {})
-
-
-
-
-# def updateAnalogia(request, nevID):
-#     analogia = Analogia.objects.get(id=nevID)
-#     form = AnalogiaForm(instance=analogia)
-#
-#     if request.method == 'POST':
-#         form = RoomForm(request.POST, instance=room)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("home") #todo ne homrea terjen vissza
-#
-#     context = {'form': form}
-#     return render(request, "base/room_form.html", context)

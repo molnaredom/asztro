@@ -2,7 +2,7 @@
 from django.urls import path
 
 
-from . import views, views_creators, views_deleters, views_analogiatarolok,views_konkret_analogia
+from . import views, views_creators, views_deleters, views_analogiatarolok,views_konkret_analogia, views_updaters
 
 urlpatterns = [
     path("", views.home, name = "home"),
@@ -58,10 +58,20 @@ urlpatterns = [
     path("horoszkop_gyujtemeny/", views_analogiatarolok.horoszkop_gyujtemeny, name="horoszkop_gyujtemeny"),
     path("create-horoszkop/", views_creators.createHoroszkop, name= "create-horoszkop"),
     path("delete-horoszop/<str:nevID>/", views_deleters.deleteHoroszkop, name= "delete-horoszkop"),
+
     path("horoszkop/<str:nevID>/", views_konkret_analogia.horoszkop, name="horoszkop"),
 
 
-    path("titkos-szoba/", views.titkosSzoba, name= "titkos-szoba"),
+    path("update-jegy/<str:nevID>/", views_updaters.updateJegy, name= "update-jegy"),
+    path("update-bolygo/<str:nevID>/", views_updaters.updateBolygo, name= "update-bolygo"),
+    path("update-haz/<str:nevID>/", views_updaters.updateHaz, name= "update-haz"),
+    path("update-horoszkop/<str:nevID>/", views_updaters.updateHoroszkop, name= "update-horoszkop"),
+    path("update-bolygoJegyben/<str:osszetettNevID>/", views_updaters.updateBolygoJegyben, name= "update-bolygoJegyben"),
+    path("update-hazJegyben/<str:osszetettNevID>/", views_updaters.updateHazJegyben, name= "update-hazJegyben"),
+    path("update-bolygoHazban/<str:osszetettNevID>/", views_updaters.updateBolygoHazban, name= "update-bolygoHazban"),
+
+    path("titkos-szoba/", views.titkosSzoba, name="titkos-szoba"),
+
 
 
 

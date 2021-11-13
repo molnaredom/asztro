@@ -1,47 +1,27 @@
-
 {% extends 'analogia_db_base.html' %}
 
 {% block content %}
 
-<style>
-    .analogia_adatbazis-container {
-        display: grid;
-        grid-template-columns: 1fr 3fr; /* 1 fraction and 3 frections, how many fraction does a webside contains*/
+<a id="create" href="{% url 'create-bolygoHazban' %}">Készíts {{adat.osszetettNevID}} analogiat</a>
+<hr>
+<hr>
 
-    }
+{% for adat in adatok %}
+<div id="exact">
 
-</style>
-
-<div class = "analogia_adatbazis-container">
-
-
-        {% for adat in adatok %}
-            <div>
-
-                <h5><a href="{% url 'bolygoHazban' adat.osszetett_nevID %}"> {{adat.haz}}-{{adat.bolygo}}</a></h5>
-
-            </div>
-        {% endfor %}
-
-        <div>
-            {% for adat in adatok %}
-                <div>
-
-                    <a href="{% url 'delete-bolygoHazban' adat.osszetett_nevID %}" >Delete {{adat.nevID}}</a>
-
-                </div>
-            {% endfor %}
-        </div>
-
-    </div>
-
-    <div>
-
-        <a href="{% url 'create-bolygoHazban' %}">Készíts Bolygó a Házban analógiát</a>
-
-    </div>
-
+    <h6> <a href="{% url 'bolygoHazban' adat.osszetett_nevID %}"> {{adat.osszetett_nevID}}</a> </h6>
 </div>
 
+<div id="delete">
+    <a href="{% url 'delete-bolygoHazban' adat.osszetett_nevID %}">Delete</a>
+</div>
 
+<div id="update">
+
+    <a href="{% url 'update-bolygoHazban' adat.osszetett_nevID %}">Vátoztatás</a>
+
+</div>
+<hr>
+{% endfor %}
+<hr>
 {% endblock content %}
