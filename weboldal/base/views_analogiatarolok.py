@@ -6,41 +6,50 @@ from .models import Jegy4, Bolygo4, Haz4,BolygoHazban4, BolygoJegyben4, HazJegyb
 def jegyek_oldal(request):
 
     jegyek = Jegy4.objects.all()
-    minoseg_jegyek = {}
+    jegy_minoseg_lekerdezes = {}
     if request.method == "POST":
         minoseg_neve = request.POST.get('minoseg')
-        print("--",minoseg_neve, type(minoseg_neve))
-        minoseg_jegyek = Jegy4.objects.filter(minoseg=minoseg_neve)
+        jegy_minoseg_lekerdezes = Jegy4.objects.filter(minoseg=minoseg_neve)
 
-    tuzes = Jegy4.objects.filter(elem="tűz")
-    vizes = Jegy4.objects.filter(elem="tűz")
-    foldes = Jegy4.objects.filter(elem="tűz")
-    levegos = Jegy4.objects.filter(elem="tűz")
 
-    context = {'adatok': jegyek ,"tuzes": tuzes, "vizes": vizes, "foldes" :foldes, "levegos": levegos, "minoseg_jegyek": minoseg_jegyek}
+    context = {'adatok': jegyek , "jegy_minoseg_lekerdezes": jegy_minoseg_lekerdezes}
     return render(request, 'analogiatarolok/jegyek.html', context )
 
 
 def bolygok_oldal(request):
 
     bolygok = Bolygo4.objects.all()
+    bolygotipus_lekerdezes = {}
+    if request.method == "POST":
+        tipusnev = request.POST.get('bolygotipus')
+        bolygotipus_lekerdezes = Bolygo4.objects.filter(tipusa=tipusnev)
 
-    context = {'adatok': bolygok}
+
+    context = {'adatok': bolygok , "bolygotipus_lekerdezes": bolygotipus_lekerdezes}
     return render(request, 'analogiatarolok/bolygok.html', context )
 
 
 def hazak_oldal(request):
 
     hazak = Haz4.objects.all()
+    haztipus_lekerdezes = {}
+    if request.method == "POST":
+        haztipus_lekerdezes = Haz4.objects.filter(haztipus=request.POST.get('haztipus'))
 
-    context = {'adatok': hazak}
+
+    context = {'adatok': hazak , "haztipus_lekerdezes": haztipus_lekerdezes}
     return render(request, 'analogiatarolok/hazak.html', context )
 
 
 def bolygokJegyekben(request):
+    jegy_alapjan_lekeres = {}
+    if request.method == "POST":
+        jegyNev = request.POST.get('jegyNev')
+        jegy_alapjan_lekeres = BolygoJegyben4.objects.filter(jegy__nevID=jegyNev)
+        print(jegy_alapjan_lekeres)
 
     jegyek = BolygoJegyben4.objects.all()
-    context = {'adatok': jegyek}
+    context = {'adatok': jegyek, "jegy_alapjan_lekeres": jegy_alapjan_lekeres }
     return render(request, 'analogiatarolok/bolygokJegyekben.html', context )
 
 

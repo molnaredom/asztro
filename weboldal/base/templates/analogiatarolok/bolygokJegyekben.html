@@ -3,6 +3,23 @@
 {% block content %}
 
 <a id="create" href="{% url 'create-bolygoJegyben' %}">Készíts {{adat.osszetettNevID}} analogiat</a>
+
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label for="fname">Add meg egy jegy minőségét a kilistázáshoz:</label><br>
+            <input type="text" id="fname" name="jegyNev" value="kos"><br>
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+
+    <div>
+        {% for adat in jegy_alapjan_lekeres %}
+        <a href="{% url 'bolygoJegyben' adat.osszetett_nevID %}">{{adat}}</a>
+        {% endfor %}
+    </div>
+
 <hr>
 <hr>
 

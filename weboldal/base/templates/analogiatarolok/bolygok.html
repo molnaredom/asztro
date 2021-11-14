@@ -1,27 +1,54 @@
 {% extends 'analogia_db_base.html' %}
 
 {% block content %}
+<!-- Side navigation -->
+<div class="sidenav">
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label> Válassz egy bolygótípust a listázáshoz: </label><br>
 
-<a id="create" href="{% url 'create-bolygok' %}">Készíts Bolygó analógiát</a>
-<hr>
-<hr>
+            <label>
+                <select name="bolygotipus">
+                    <option value="személylyjelölő">személylyjelölő</option>
+                    <option value="transzcendens">transzcendens</option>
+                </select>
+            </label>
+            <input type="submit" value="Listázás">
+        </form>
 
-{% for adat in adatok %}
-<div id="exact">
+    </div>
 
-    <h6> <a href="{% url 'bolygo' adat.nevID %}">{{adat.nevID}}</a> </h6>
+    <div>
+        {% for adat in bolygotipus_lekerdezes %}
+        <a href="{% url 'bolygo' adat.nevID %}">{{adat.nevID}}</a>
+        {% endfor %}
+    </div>
 </div>
 
-<div id="delete">
-    <a href="{% url 'delete-bolygo' adat.nevID %}">Delete {{adat.nevID}}</a>
+
+<div class="main">   <!--main-->
+    <a id="create" href="{% url 'create-bolygok' %}">Készíts Bolygó analógiát</a>
+    <hr>
+    <hr>
+
+    {% for adat in adatok %}
+    <div id="exact">
+
+        <h6><a href="{% url 'bolygo' adat.nevID %}">{{adat.nevID}}</a></h6>
+    </div>
+
+    <div id="delete">
+        <a href="{% url 'delete-bolygo' adat.nevID %}">Delete {{adat.nevID}}</a>
+    </div>
+
+    <div id="update">
+
+        <a href="{% url 'update-bolygo' adat.nevID %}">Vátoztasd meg analógiát</a>
+
+    </div>
+    <hr>
+    {% endfor %}
+    <hr>
 </div>
-
-<div id="update">
-
-    <a href="{% url 'update-bolygo' adat.nevID %}">Vátoztasd meg analógiát</a>
-
-</div>
-<hr>
-{% endfor %}
-<hr>
 {% endblock content %}

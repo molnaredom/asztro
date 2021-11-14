@@ -70,7 +70,7 @@ class Jegy4(Analogia4):
 
 class Bolygo4(Analogia4):
     tipusa = models.CharField(max_length=20,blank=True)
-    pontertek = models.IntegerField(blank=True)
+    #pontertek = models.IntegerField(blank=True)
 
     def __str__(self):
         return self.nevID
@@ -90,7 +90,6 @@ class BolygoJegyben4(OsszetettAnalogia4):
     jegy = models.ForeignKey(Jegy4, on_delete=models.CASCADE)
 
     altalanos_tul = models.CharField(max_length=300, blank=True)
-    jellemzo_erosseg = models.FloatField()
 
     ferfi = models.CharField(max_length=200, blank=True)  # nap(ferfi) hold(no_pár) venusz mars
     no = models.CharField(max_length=200, blank=True)  # nap() hold(anya, feleseg) venusz mars

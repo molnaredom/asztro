@@ -371,3 +371,4 @@ console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkErr
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
 1636883455177	geckodriver	INFO	Listening on 127.0.0.1:51413
+1636895090614	geckodriver	INFO	Listening on 127.0.0.1:53885

@@ -1,27 +1,52 @@
 {% extends 'analogia_db_base.html' %}
-
 {% block content %}
+<!-- Side navigation -->
+<div class="sidenav">
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label> Válassz egy háztípust a listázáshoz: </label><br>
 
-<a id="create" href="{% url 'create-hazak' %}">Készíts Bolygó analógiát</a>
-<hr>
-<hr>
+            <select name="haztipus">
+              <option value="sarok">sarok</option>
+              <option value="követő">követő</option>
+              <option value="hanyatló">hanyatló</option>
+            </select>
+            <input type="submit" value="Listázás">
+        </form>
 
-{% for adat in adatok %}
-<div id="exact">
+    </div>
 
-    <h6> <a href="{% url 'haz' adat.nevID %}">{{adat.nevID}}</a> </h6>
+    <div>
+        {% for adat in haztipus_lekerdezes %}
+        <a href="{% url 'haz' adat.nevID %}">{{adat.nevID}}</a>
+        {% endfor %}
+    </div>
 </div>
 
-<div id="delete">
-    <a href="{% url 'delete-haz' adat.nevID %}">Delete {{adat.nevID}}</a>
+
+<div class="main">   <!--main-->
+    <a id="create" href="{% url 'create-hazak' %}">Készíts Ház analógiát</a>
+    <hr>
+    <hr>
+
+    {% for adat in adatok %}
+    <div id="exact">
+
+        <h6><a href="{% url 'haz' adat.nevID %}">{{adat.nevID}}</a></h6>
+    </div>
+
+    <div id="delete">
+        <a href="{% url 'delete-haz' adat.nevID %}">Delete {{adat.nevID}}</a>
+    </div>
+
+    <div id="update">
+
+        <a href="{% url 'update-haz' adat.nevID %}">Vátoztasd meg analógiát</a>
+
+    </div>
+    <hr>
+    {% endfor %}
+    <hr>
 </div>
-
-<div id="update">
-
-    <a href="{% url 'update-haz' adat.nevID %}">Vátoztasd meg analógiát</a>
-
-</div>
-<hr>
-{% endfor %}
-<hr>
 {% endblock content %}
