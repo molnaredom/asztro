@@ -6,8 +6,18 @@ from .models import Jegy4, Bolygo4, Haz4,BolygoHazban4, BolygoJegyben4, HazJegyb
 def jegyek_oldal(request):
 
     jegyek = Jegy4.objects.all()
+    minoseg_jegyek = {}
+    if request.method == "POST":
+        minoseg_neve = request.POST.get('minoseg')
+        print("--",minoseg_neve, type(minoseg_neve))
+        minoseg_jegyek = Jegy4.objects.filter(minoseg=minoseg_neve)
 
-    context = {'adatok': jegyek}
+    tuzes = Jegy4.objects.filter(elem="tűz")
+    vizes = Jegy4.objects.filter(elem="tűz")
+    foldes = Jegy4.objects.filter(elem="tűz")
+    levegos = Jegy4.objects.filter(elem="tűz")
+
+    context = {'adatok': jegyek ,"tuzes": tuzes, "vizes": vizes, "foldes" :foldes, "levegos": levegos, "minoseg_jegyek": minoseg_jegyek}
     return render(request, 'analogiatarolok/jegyek.html', context )
 
 

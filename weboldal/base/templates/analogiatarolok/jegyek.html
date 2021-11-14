@@ -1,27 +1,70 @@
 {% extends 'analogia_db_base.html' %}
 
+<head>
+</head>
+<body>
+
 {% block content %}
 
-<a id="create" href="{% url 'create-jegyek' %}">Készíts Bolygó analógiát</a>
-<hr>
-<hr>
 
-{% for adat in adatok %}
-<div id="exact">
 
-    <h6> <a href="{% url 'jegy' adat.nevID %}">{{adat.nevID}}</a> </h6>
+
+<!-- Side navigation -->
+<div class="sidenav">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
 </div>
+<div class="main">
 
-<div id="delete">
-    <a href="{% url 'delete-jegy' adat.nevID %}">Delete {{adat.nevID}}</a>
-</div>
+    <a id="create" href="{% url 'create-jegyek' %}">Készíts Jegy analógiát</a>
 
-<div id="update">
-
-    <a href="{% url 'update-jegy' adat.nevID %}">Vátoztasd meg analógiát</a>
-
-</div>
+    <hr>
 <hr>
-{% endfor %}
-<hr>
-{% endblock content %}
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label for="fname">Add meg egy jegy minőségét a kilistázáshoz:</label><br>
+            <input type="text" id="fname" name="minoseg" value="kardinális"><br>
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+
+    <div>
+        {% for adat in minoseg_jegyek %}
+        <a href="{% url 'jegy' adat.nevID %}">{{adat.nevID}}</a>
+        {% endfor %}
+    </div>
+
+    {% for adat in adatok %}
+    <div id="exact">
+
+        <h6><a href="{% url 'jegy' adat.nevID %}">{{adat.nevID}}</a></h6>
+    </div>
+
+    <div id="delete">
+        <a href="{% url 'delete-jegy' adat.nevID %}">Delete {{adat.nevID}}</a>
+    </div>
+
+    <div id="update">
+
+        <a href="{% url 'update-jegy' adat.nevID %}">Vátoztasd meg analógiát</a>
+
+    </div>
+    <hr>
+    {% endfor %}
+    <div>
+        <p>Tüzes jegyek </p>
+        {% for jegy in tuzes %}
+        {{jegy.nevID}}
+        {% endfor %}}
+    </div>
+
+
+    <hr>
+    {% endblock content %}
+
+</div>
+</body>

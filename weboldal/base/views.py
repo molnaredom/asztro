@@ -33,7 +33,7 @@ def room(request, pk):
     room = Room4.objects.get(id=pk)
     room_messages = room.message_set.all().order_by('-created') # give us a set of messages that are related specific rooms
     participants = room.participants.all()
-    print(len(room_messages))
+
     if request.method == 'POST':
         message = Message4.objects.create(
             user = request.user,

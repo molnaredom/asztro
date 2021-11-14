@@ -329,8 +329,9 @@ JavaScript warning: https://pagead2.googlesyndication.com/bg/Ydwwnsiz0RrvfpNl89r
 JavaScript warning: https://pagead2.googlesyndication.com/bg/Ydwwnsiz0RrvfpNl89rQqoBRiFg6eVxNIdbgsmjvwYM.js line 1 > eval line 3513 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 console.log: WebExtensions: reset-default-search: starting.
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
-ile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileRTTLHW\\search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:60016/devtools/browser/8aa519f3-49a1-4596-b2db-3bf9770a5895
+1636785053663	Marionette	INFO	Stopped listening on port 59956
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+st:60016/devtools/browser/8aa519f3-49a1-4596-b2db-3bf9770a5895
 1636733665053	Marionette	INFO	Listening on port 60021
 1636733665581	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 1636733685111	Marionette	INFO	Stopped listening on port 60021
@@ -348,12 +349,16 @@ DevTools listening on ws://localhost:54630/devtools/browser/b89cd787-7316-46ad-b
 1636781904988	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript warning: https://pagead2.googlesyndication.com/bg/W74_wbIuhH6bObXj0uCjode8PwiBrxgOKnAqo6ShAmY.js line 1 > eval line 6484 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://pagead2.googlesyndication.com/bg/W74_wbIuhH6bObXj0uCjode8PwiBrxgOKnAqo6ShAmY.js line 1 > eval line 1233 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-1636781962540	geckodriver	INFO	Listening on 127.0.0.1:54719
-1636781965610	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54720" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofile1dF3iK"
-1636781967152	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofile1dF3iK\\search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:54720/devtools/browser/78a84ccc-b832-4bb9-98b2-d19aa61815b1
-1636781974973	Marionette	INFO	Listening on port 54727
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: , line 0: NotFoundError: Could not move source file(C:\Users\fuji\AppData\Local\Temp\rust_mozprofileBgfiIv\bookmarkbackups\bookmarks-2021-11-13_11_XCcK1MpkJKCtmUX4pF1xvw==.jsonlz4) because it does not exist
+1636880729825	Marionette	INFO	Stopped listening on port 54635
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+t 54727
 1636781975304	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript warning: https://pagead2.googlesyndication.com/bg/W74_wbIuhH6bObXj0uCjode8PwiBrxgOKnAqo6ShAmY.js line 1 > eval line 3313 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://pagead2.googlesyndication.com/bg/W74_wbIuhH6bObXj0uCjode8PwiBrxgOKnAqo6ShAmY.js line 1 > eval line 3108 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
@@ -365,3 +370,4 @@ console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkErr
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1636883455177	geckodriver	INFO	Listening on 127.0.0.1:51413
