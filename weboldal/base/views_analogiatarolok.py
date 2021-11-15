@@ -1,6 +1,7 @@
 
 from django.shortcuts import render
 from .models import Jegy, Bolygo, Haz,BolygoHazban, BolygoJegyben, HazJegyben, Horoszkop1
+from .forms import Horoszkop_Csillagjegyszures
 
 # több oldalt tartalmazo,analógiatároló felület
 def jegyek_oldal(request):
@@ -68,9 +69,36 @@ def hazakJegyekben(request):
 
 
 def horoszkop_gyujtemeny(request):
+    jegy_alapjan_lekeres = {}
+
+    if request.method == "POST":
+        jegyNev = request.POST.get('jegyNev')
+
+        bolygoNev = request.POST.get('bolygoNev')
+        if bolygoNev== "nap":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(nap__jegy__nevID=jegyNev )
+        elif bolygoNev== "hold":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(hold__jegy__nevID=jegyNev )
+        elif bolygoNev== "merkur":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(merkur__jegy__nevID=jegyNev )
+        elif bolygoNev== "mars":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(mars__jegy__nevID=jegyNev )
+        elif bolygoNev== "vénusz":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(venusz__jegy__nevID=jegyNev )
+        elif bolygoNev== "jupiter":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(jupiter__jegy__nevID=jegyNev )
+        elif bolygoNev== "szaturnusz":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(szaturnusz__jegy__nevID=jegyNev )
+        elif bolygoNev== "uránusz":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(uranusz__jegy__nevID=jegyNev )
+        elif bolygoNev== "neptun":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(neptun__jegy__nevID=jegyNev )
+        elif bolygoNev== "plúto":
+            jegy_alapjan_lekeres = Horoszkop1.objects.filter(pluto__jegy__nevID=jegyNev )
+
 
     hp = Horoszkop1.objects.all()
-    context = {'adatok': hp}
+    context = {'adatok': hp, "jegy_alapjan_lekeres" : jegy_alapjan_lekeres, }
     return render(request, 'analogiatarolok/horoszkop_gyujtemeny.html', context )
 
 

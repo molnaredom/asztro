@@ -1,7 +1,10 @@
 {% extends 'konkret_analogia.html' %}
 {% block content %}
 
-<h1>{{analogia.nevID}}</h1>
-<p>{{analogia.leiras}}</p>
+<h1>Horoszkóp: {{analogia}}</h1>
+<p>leírás: {{analogia.leiras}}</p>
+<p>tulajdonos neve: {{analogia.tulajdonos_neve}}</p>
+<p>napja: {{analogia.nap}}</p>
+<p>holdja: {{analogia.hold}}</p>
 <!--!!!! kiegeszitendo-->
 {% endblock content %}
