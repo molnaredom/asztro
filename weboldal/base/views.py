@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room4, Topic4, Jegy4, Bolygo4, Haz4, Message4 ,BolygoHazban4, BolygoJegyben4, HazJegyben4
+from .models import Room, Topic, Jegy, Bolygo, Haz, Message ,BolygoHazban, BolygoJegyben, HazJegyben
 from django.contrib.auth.models import User
 from .forms import RoomForm, AnalogiaForm
 from django.contrib.auth import authenticate, login, logout
@@ -15,14 +15,14 @@ from django.contrib.auth import authenticate, login, logout
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
 
-    rooms = Room4.objects.filter(
+    rooms = Room.objects.filter(
         Q(topic__name__icontains=q) |
         Q(name__icontains=q) |
         Q(discription__icontains=q)
 
     )
 
-    topics = Topic4.objects.all()
+    topics = Topic.objects.all()
     room_count = rooms.count()
 
     context = {'rooms': rooms, "topics":topics, "room_count":room_count}
@@ -30,12 +30,12 @@ def home(request):
 
 
 def room(request, pk):
-    room = Room4.objects.get(id=pk)
+    room = Room.objects.get(id=pk)
     room_messages = room.message_set.all().order_by('-created') # give us a set of messages that are related specific rooms
     participants = room.participants.all()
 
     if request.method == 'POST':
-        message = Message4.objects.create(
+        message = Message.objects.create(
             user = request.user,
             room = room,
             body = request.POST.get("body"),
@@ -51,7 +51,7 @@ def room(request, pk):
 
 @login_required(login_url="login")
 def updateRoom( request, pk):
-    room = Room4.objects.get(id= pk)
+    room = Room.objects.get(id= pk)
     form = RoomForm(instance=room)
 
     if request.user != room.host:

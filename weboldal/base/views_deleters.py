@@ -4,13 +4,13 @@ from django.contrib.auth.decorators import login_required
 
 
 from django.shortcuts import render, redirect
-from .models import Jegy4, Bolygo4, Haz4, BolygoHazban4, BolygoJegyben4, HazJegyben4, Message4,Room4, Horoszkop4
+from .models import Jegy, Bolygo, Haz, BolygoHazban, BolygoJegyben, HazJegyben, Message,Room, Horoszkop1
 
 
 
 @login_required(login_url="login")
 def deleteMessage(request, pk):
-    message = Message4.objects.get(id=pk)
+    message = Message.objects.get(id=pk)
 
     if request.user != message.user:
         return HttpResponse("Nem engedélyezett művelet, amíg nem vagy bejelentkezve")
@@ -23,7 +23,7 @@ def deleteMessage(request, pk):
 
 @login_required(login_url="login")
 def deleteRoom(request, pk):
-    room = Room4.objects.get(id=pk)
+    room = Room.objects.get(id=pk)
 
     if request.user != room.host:
         return HttpResponse("Nem engedélyezett művelet, amíg nem vagy bejelentkezve")
@@ -34,10 +34,17 @@ def deleteRoom(request, pk):
     return render(request, "base/delete.html", {"obj":room})
 
 
+def _delete_altalanos_by_id(request,pk, objetum,ide_ter_vissza:str):
+    analoga_objetum = objetum.objects.get(id=pk)
+    if request.method == "POST":
+        analoga_objetum.delete()
+        return redirect(ide_ter_vissza)
+    return render(request, "base/delete.html", {"obj":analoga_objetum})
+
 
 #deleterek
 def deleteBolygo(request, nevID):
-    bolygo = Bolygo4.objects.get(nevID=nevID)
+    bolygo = Bolygo.objects.get(nevID=nevID)
     if request.method == "POST":
         bolygo.delete()
         return redirect("bolygok")
@@ -45,7 +52,7 @@ def deleteBolygo(request, nevID):
 
 
 def deleteJegy(request, nevID):
-    jegy = Jegy4.objects.get(nevID=nevID)
+    jegy = Jegy.objects.get(nevID=nevID)
     if request.method == "POST":
         jegy.delete()
         return redirect("jegyek")
@@ -53,43 +60,27 @@ def deleteJegy(request, nevID):
 
 
 def deleteHaz(request,nevID):
-    haz = Haz4.objects.get(nevID=nevID)
+    haz = Haz.objects.get(nevID=nevID)
     if request.method == "POST":
         haz.delete()
         return redirect("hazak")
     return render(request, "base/delete.html", {"obj":haz})
 
 
-def deleteBolygoJegyben(request, nevID):
-    bolygo = BolygoJegyben4.objects.get(nevID=nevID)
-    if request.method == "POST":
-        bolygo.delete()
-        return redirect("bolygokJegyekben")
-    return render(request, "base/delete.html", {"obj":bolygo})
+def deleteBolygoJegyben(request, id):
+    return _delete_altalanos_by_id(request, id, BolygoJegyben,"bolygokJegyekben" )
 
 
-def deleteBolygoHazban(request, nevID):
-    jegy = BolygoHazban4.objects.get(nevID=nevID)
-    if request.method == "POST":
-        jegy.delete()
-        return redirect("bolygokHazakban")
-    return render(request, "base/delete.html", {"obj":jegy})
+def deleteBolygoHazban(request, id):
+    return _delete_altalanos_by_id(request, id, BolygoHazban,"bolygokHazakban" )
 
 
-def deleteHazJegyben(request,nevID):
-    haz = HazJegyben4.objects.get(nevID=nevID)
-    if request.method == "POST":
-        haz.delete()
-        return redirect("hazakJegyekben")
-    return render(request, "base/delete.html", {"obj":haz})
+def deleteHazJegyben(request,id):
+    return _delete_altalanos_by_id(request, id, HazJegyben,"hazakJegyekben" )
 
 
-def deleteHoroszkop(request,nevID):
-    h = Horoszkop4.objects.get(nevID=nevID)
-    if request.method == "POST":
-        h.delete()
-        return redirect("horoszkop_gyujtemeny")
-    return render(request, "base/delete.html", {"obj":h})
+def deleteHoroszkop(request,id):
+    return _delete_altalanos_by_id(request, id, BolygoHazban, "horoszkop_gyujtemeny")
 
 
 

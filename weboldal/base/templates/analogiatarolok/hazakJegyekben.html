@@ -2,23 +2,23 @@
 
 {% block content %}
 
-<a id="create" href="{% url 'create-hazJegyben' %}">Készíts {{adat.osszetettNevID}} analogiat</a>
+<a id="create" href="{% url 'create-hazJegyben' %}">Készíts {{adat}} analogiat</a>
 <hr>
 <hr>
 
 {% for adat in adatok %}
 <div id="exact">
 
-    <h6> <a href="{% url 'hazJegyben' adat.osszetett_nevID %}"> {{adat.osszetett_nevID}}</a> </h6>
+    <h6> <a href="{% url 'hazJegyben' adat.id %}"> {{adat}}</a> </h6>
 </div>
 
 <div id="delete">
-    <a href="{% url 'delete-hazJegyben' adat.osszetett_nevID %}">Delete</a>
+    <a href="{% url 'delete-hazJegyben' adat.id %}">Delete</a>
 </div>
 
 <div id="update">
 
-    <a href="{% url 'update-hazJegyben' adat.osszetett_nevID %}">Vátoztatás</a>
+    <a href="{% url 'update-hazJegyben' adat.id %}">Vátoztatás</a>
 
 </div>
 <hr>

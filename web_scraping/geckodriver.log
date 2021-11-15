@@ -372,3 +372,13 @@ console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkErr
 
 1636883455177	geckodriver	INFO	Listening on 127.0.0.1:51413
 1636895090614	geckodriver	INFO	Listening on 127.0.0.1:53885
+1636914028309	geckodriver	INFO	Listening on 127.0.0.1:52964
+1636914031395	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52965" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilexR4qcZ"
+1636914031786	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilexR4qcZ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52965/devtools/browser/5d83c4b9-e216-4f59-a8f0-34c05da97ec4
+1636914034304	Marionette	INFO	Listening on port 52970
+1636914034557	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1636914038485	Marionette	INFO	Stopped listening on port 52970
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]

@@ -47,28 +47,28 @@ urlpatterns = [
     path("create-bolygoHazban/", views_creators.createBolygoHazban, name= "create-bolygoHazban"),
     path("create-hazJegyben/", views_creators.createHazJegyben, name= "create-hazJegyben"),
 
-    path("bolygoJegyben/<str:osszetett_nevID>/", views_konkret_analogia.bolygoJegyben, name="bolygoJegyben"),  # ~room
-    path("bolygoHazban/<str:osszetett_nevID>/", views_konkret_analogia.bolygoHazban, name="bolygoHazban"),  # ~room
-    path("hazJegyben/<str:osszetett_nevID>/", views_konkret_analogia.hazJegyben, name="hazJegyben"),  # ~room
+    path("bolygoJegyben/<str:id>/", views_konkret_analogia.bolygoJegyben, name="bolygoJegyben"),  # ~room
+    path("bolygoHazban/<str:id>/", views_konkret_analogia.bolygoHazban, name="bolygoHazban"),  # ~room
+    path("hazJegyben/<str:id>/", views_konkret_analogia.hazJegyben, name="hazJegyben"),  # ~room
 
-    path("delete-bolygoJegyben/<str:osszetett_nevID>/", views_deleters.deleteBolygoJegyben, name= "delete-bolygoJegyben"),
-    path("delete-hazJegyben/<str:osszetett_nevID>/", views_deleters.deleteHazJegyben, name= "delete-hazJegyben"),
-    path("delete-bolygoHazban/<str:osszetett_nevID>/", views_deleters.deleteBolygoHazban, name= "delete-bolygoHazban"),
+    path("delete-bolygoJegyben/<str:id>/", views_deleters.deleteBolygoJegyben, name= "delete-bolygoJegyben"),
+    path("delete-hazJegyben/<str:id>/", views_deleters.deleteHazJegyben, name= "delete-hazJegyben"),
+    path("delete-bolygoHazban/<str:id>/", views_deleters.deleteBolygoHazban, name= "delete-bolygoHazban"),
 
     path("horoszkop_gyujtemeny/", views_analogiatarolok.horoszkop_gyujtemeny, name="horoszkop_gyujtemeny"),
     path("create-horoszkop/", views_creators.createHoroszkop, name= "create-horoszkop"),
-    path("delete-horoszop/<str:nevID>/", views_deleters.deleteHoroszkop, name= "delete-horoszkop"),
+    path("delete-horoszop/<str:id>/", views_deleters.deleteHoroszkop, name= "delete-horoszkop"),
 
-    path("horoszkop/<str:nevID>/", views_konkret_analogia.horoszkop, name="horoszkop"),
+    path("horoszkop/<str:id>/", views_konkret_analogia.horoszkop, name="horoszkop"),
 
 
     path("update-jegy/<str:nevID>/", views_updaters.updateJegy, name= "update-jegy"),
     path("update-bolygo/<str:nevID>/", views_updaters.updateBolygo, name= "update-bolygo"),
     path("update-haz/<str:nevID>/", views_updaters.updateHaz, name= "update-haz"),
-    path("update-horoszkop/<str:nevID>/", views_updaters.updateHoroszkop, name= "update-horoszkop"),
-    path("update-bolygoJegyben/<str:osszetettNevID>/", views_updaters.updateBolygoJegyben, name= "update-bolygoJegyben"),
-    path("update-hazJegyben/<str:osszetettNevID>/", views_updaters.updateHazJegyben, name= "update-hazJegyben"),
-    path("update-bolygoHazban/<str:osszetettNevID>/", views_updaters.updateBolygoHazban, name= "update-bolygoHazban"),
+    path("update-horoszkop/<str:id>/", views_updaters.updateHoroszkop, name= "update-horoszkop"),
+    path("update-bolygoJegyben/<str:id>/", views_updaters.updateBolygoJegyben, name= "update-bolygoJegyben"),
+    path("update-hazJegyben/<str:id>/", views_updaters.updateHazJegyben, name= "update-hazJegyben"),
+    path("update-bolygoHazban/<str:id>/", views_updaters.updateBolygoHazban, name= "update-bolygoHazban"),
 
     path("titkos-szoba/", views.titkosSzoba, name="titkos-szoba"),
 

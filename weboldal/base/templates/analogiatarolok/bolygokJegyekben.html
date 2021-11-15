@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<a id="create" href="{% url 'create-bolygoJegyben' %}">Készíts {{adat.osszetettNevID}} analogiat</a>
+<a id="create" href="{% url 'create-bolygoJegyben' %}">Készíts {{adat}} analogiat</a>
 
     <div>
         <form method="POST" action="">
@@ -16,7 +16,7 @@
 
     <div>
         {% for adat in jegy_alapjan_lekeres %}
-        <a href="{% url 'bolygoJegyben' adat.osszetett_nevID %}">{{adat}}</a>
+        <a href="{% url 'bolygoJegyben' adat.id %}">{{adat}}</a>
         {% endfor %}
     </div>
 
@@ -26,16 +26,16 @@
 {% for adat in adatok %}
 <div id="exact">
 
-    <h6> <a href="{% url 'bolygoJegyben' adat.osszetett_nevID %}"> {{adat.osszetett_nevID}}</a> </h6>
+    <h6> <a href="{% url 'bolygoJegyben' adat.id %}"> {{adat}}</a> </h6>
 </div>
 
 <div id="delete">
-    <a href="{% url 'delete-bolygoJegyben' adat.osszetett_nevID %}">Delete</a>
+    <a href="{% url 'delete-bolygoJegyben' adat.id %}">Delete</a>
 </div>
 
 <div id="update">
 
-    <a href="{% url 'update-bolygoJegyben' adat.osszetett_nevID %}">Vátoztatás</a>
+    <a href="{% url 'update-bolygoJegyben' adat.id %}">Vátoztatás</a>
 
 </div>
 <hr>
