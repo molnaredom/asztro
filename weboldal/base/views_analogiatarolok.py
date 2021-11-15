@@ -42,14 +42,13 @@ def hazak_oldal(request):
 
 
 def bolygokJegyekben(request):
-    # jegy_alapjan_lekeres = {}
-    # if request.method == "POST":
-    #     jegyNev = request.POST.get('jegyNev')
-    #     jegy_alapjan_lekeres = BolygoJegyben.objects.filter(jegy__nevID=jegyNev)
-    #     print(jegy_alapjan_lekeres)
+    jegy_alapjan_lekeres = {}
+    if request.method == "POST":
+        jegyNev = request.POST.get('jegyNev')
+        jegy_alapjan_lekeres = BolygoJegyben.objects.filter(jegy__nevID=jegyNev)
 
     jegyek = BolygoJegyben.objects.all()
-    context = {'adatok': jegyek, }
+    context = {'adatok': jegyek, "jegy_alapjan_lekeres": jegy_alapjan_lekeres }
     return render(request, 'analogiatarolok/bolygokJegyekben.html', context )
 
 
