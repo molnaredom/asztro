@@ -143,14 +143,14 @@ if __name__ == '__main__':
     web.get('https://astro.cafeastrology.com/natal.php')
 
     szuletesi_adatok = {
-        "nev": "mamo",
+        "nev": "Kapi Laura",
         "horoszkoptipus": "radix",
-        "ev": 1945,
-        "honap": 3,
-        "nap": 5,
-        "ora": 12,
-        "perc": 12,
-        "hely": "Szolnok"
+        "ev": 2001,
+        "honap": 6,
+        "nap": 6,
+        "ora": 22,
+        "perc": 58,
+        "hely": "Budapest"
     }
 
     fill_form(web, szuletesi_adatok)
@@ -173,6 +173,10 @@ if __name__ == '__main__':
 
     horoszkop_adatok["tulajdonos_neve"] = szuletesi_adatok["nev"]
     horoszkop_adatok["tipus"] = szuletesi_adatok["horoszkoptipus"]
+    horoszkop_adatok["hely"] = szuletesi_adatok["hely"]
+    horoszkop_adatok["tipus"] = szuletesi_adatok["horoszkoptipus"]
+
+
     print(horoszkop_adatok["tulajdonos_neve"])
     for k, v in bolygok.items():
         horoszkop_adatok[ekezetnelkul(k.lower())] = [ekezetnelkul( v[0].lower()) ,v[1]]

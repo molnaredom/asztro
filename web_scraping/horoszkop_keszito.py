@@ -98,6 +98,11 @@ def kitoltese(horoszkop_adatok, web):
     hely_xpath = web.find_element_by_xpath('//*[@id="id_tipus"]')
     hely_xpath.send_keys(horoszkop_adatok["tipus"])
 
+    hely_xpath = web.find_element_by_xpath('//*[@id="id_hely"]')
+    hely_xpath.send_keys(horoszkop_adatok["hely"])
+
+
+
 
 
 
