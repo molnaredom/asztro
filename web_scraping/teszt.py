@@ -1,6 +1,8 @@
-#from bs4 import BeautifulSoup
+
+
 import requests
 from selenium import webdriver
+import horoszkop_keszito
 
 from selenium.webdriver.support.ui import Select
 
@@ -126,8 +128,9 @@ def create_haz(hazszam, jegy_xpath, fokszam_xpath):
 def get_text(xpath):
     return web.find_element_by_xpath(xpath).text
 
-
 if __name__ == '__main__':
+
+
 
     rendszer ="win10"
     #rendszer = "linux"
@@ -141,6 +144,7 @@ if __name__ == '__main__':
 
     szuletesi_adatok = {
         "nev": "mamo",
+        "horoszkoptipus": "radix",
         "ev": 1945,
         "honap": 3,
         "nap": 5,
@@ -153,14 +157,37 @@ if __name__ == '__main__':
 
     get_datas()
 
-    print(bolygok)
 
-    for k, i in bolygok.items():
-        print(k)
-        print(i)
+    def ekezetnelkul(szo: str):
+        szo =szo.replace("á", "a")
+        szo =szo.replace("ű", "u")
+        szo =szo.replace("ú", "u")
+        szo =szo.replace("ó", "o")
+        szo =szo.replace("ö", "o")
+        szo =szo.replace("ő", "o")
+        szo =szo.replace("é", "e")
 
-    print(hazak)
+        return szo.replace("á", "a")
 
-    for k,i in hazak.items():
-        print(k)
-        print(i)
+    horoszkop_adatok= {}
+
+    horoszkop_adatok["tulajdonos_neve"] = szuletesi_adatok["nev"]
+    horoszkop_adatok["tipus"] = szuletesi_adatok["horoszkoptipus"]
+    print(horoszkop_adatok["tulajdonos_neve"])
+    for k, v in bolygok.items():
+        horoszkop_adatok[ekezetnelkul(k.lower())] = [ekezetnelkul( v[0].lower()) ,v[1]]
+
+
+    for k,v in hazak.items():
+        horoszkop_adatok[str(k)] = [ekezetnelkul( v[0].lower()) ,v[1]]
+
+
+    print(horoszkop_adatok)
+
+
+    horoszkop_keszito.horoszkop_kitoltes(horoszkop_adatok)
+
+
+
+
+
