@@ -73,6 +73,14 @@ def horoszkop_gyujtemeny(request):
             jegyNev = request.POST.get('jegyNev')
             hazNev = request.POST.get('hazNev')
             haz_alapjan_adatok = haz_alapjan_lekeres(hazNev, jegyNev)
+        elif "1" in request.POST:
+            jegyNev = request.POST.get('jegyNev')
+            bolygoNev = request.POST.get('bolygoNev')
+            lekeres1 = Horoszkop1.objects.filter(jupiter__jegy__elem="tűz")
+        elif "2" in request.POST:
+            jegyNev = request.POST.get('jegyNev')
+            bolygoNev = request.POST.get('bolygoNev')
+            lekeres1 = Horoszkop1.objects.filter(jupiter__jegy__elem="tűz")
 
 
 

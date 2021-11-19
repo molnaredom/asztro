@@ -68,6 +68,7 @@ def createBolygoJegyben(request):
         form = BolygoJegybenForm(request.POST)
         if form.is_valid():
             form.save()
+            # return redirect("bolygokJegyekben")
             return redirect("bolygokJegyekben")
 
     context = {'form': form}
@@ -96,7 +97,7 @@ def createHazJegyben(request):
         form = HazJegybenForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("hazakJegyekben")
+            return redirect("create-hazJegyben")
 
     context = {'form': form}
     return render(request, "create_templates/hazJegyben_form.html", context)
