@@ -3,14 +3,57 @@
 {% block content %}
 
 <a id="create" href="{% url 'create-horoszkop' %}">Készíts Bolygó analógiát</a>
-<hr>
-<hr>
 
+<div class="sidenav">
 
-        <form method="POST">
-            {% csrf_token %}
-            <label> Válassz egy jegyet és egy bolygót a listázáshoz: </label><br>
+    <form method="POST">
+        {% csrf_token %}
+        <label> Válassz egy jegyet és egy bolygót a listázáshoz: </label><br>
 
+        <label>
+            <select name="jegyNev">
+                <option value="kos">kos</option>
+                <option value="bika">bika</option>
+                <option value="ikrek">ikrek</option>
+                <option value="rák">rák</option>
+                <option value="oroszlán">oroszlán</option>
+                <option value="szűz">szűz</option>
+                <option value="mérleg">mérleg</option>
+                <option value="skorpió">skorpió</option>
+                <option value="nyilas">nyilas</option>
+                <option value="bak">bak</option>
+                <option value="vízöntő">vízöntő</option>
+                <option value="halak">halak</option>
+            </select>
+        </label>
+        <label>
+            <select name="bolygoNev">
+                <option value="nap">nap</option>
+                <option value="hold">hold</option>
+                <option value="merkúr">merkúr</option>
+                <option value="mars">mars</option>
+                <option value="vénusz">vénusz</option>
+                <option value="jupiter">jupiter</option>
+                <option value="szaturnusz">szaturnusz</option>
+                <option value="uránusz">uránusz</option>
+                <option value="neptun">neptun</option>
+                <option value="plúto">plúto</option>
+            </select>
+        </label>
+        <input type="submit" value="Listázás" name="bolygo_es_jegy_lekerdezes">
+    </form>
+    <hr>
+    {% for adat in jegy_alapjan_lekeres %}
+    <h6><a href="{% url 'horoszkop' adat.id %}">{{adat}}</a></h6>
+
+    {% endfor %}
+    <hr>
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        <label> Válassz egy házat és jegyet a listázáshoz: </label><br>
+
+        <label>
             <label>
                 <select name="jegyNev">
                     <option value="kos">kos</option>
@@ -21,46 +64,64 @@
                     <option value="szűz">szűz</option>
                     <option value="mérleg">mérleg</option>
                     <option value="skorpió">skorpió</option>
+                    <option value="nyilas">nyilas</option>
+                    <option value="bak">bak</option>
+                    <option value="vízöntő">vízöntő</option>
+                    <option value="halak">halak</option>
                 </select>
             </label>
-            <label>
-                <select name="bolygoNev">
-                    <option value="nap">nap</option>
-                    <option value="hold">hold</option>
-                    <option value="merkúr">merkúr</option>
-                    <option value="mars">mars</option>
-                    <option value="vénusz">vénusz</option>
-                    <option value="jupiter">jupiter</option>
-                    <option value="szaturnusz">szaturnusz</option>
-                    <option value="uránusz">uránusz</option>
-                    <option value="neptun">neptun</option>
-                    <option value="plúto">plúto</option>
-                </select>
-            </label>
-            <input type="submit" value="Listázás">
-        </form>
-{% for adat in jegy_alapjan_lekeres %}
-<h6> <a href="{% url 'horoszkop' adat.id %}">{{adat}}</a> </h6>
+        </label>
+        <label>
+            <select name="hazNev">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </label>
+        <input type="submit" value="Listázás" name="haz_es_jegy_lekerdezes">
+    </form>
 
-{% endfor %}
-<hr>
-<hr>
-{% for adat in adatok %}
-<div id="exact">
+    <hr>
+    {% for adat in haz_alapjan_adatok %}
+    <h6><a href="{% url 'horoszkop' adat.id %}">{{adat}}</a></h6>
+    {% endfor %}
+    <hr>
+    <hr>
 
-    <h6> <a href="{% url 'horoszkop' adat.id %}">{{adat}}</a> </h6>
-</div>
-
-<div id="delete">
-    <a href="{% url 'delete-horoszkop' adat.id %}">Delete {{adat}}</a>
-</div>
-
-<div id="update">
-
-    <a href="{% url 'update-horoszkop' adat.id %}">Vátoztasd meg analógiát</a>
 
 </div>
-<hr>
-{% endfor %}
-<hr>
+
+<div class="main">
+
+
+    <hr>
+    <hr>
+    {% for adat in adatok %}
+    <div id="exact">
+
+        <h6><a href="{% url 'horoszkop' adat.id %}">{{adat}}</a></h6>
+    </div>
+
+    <div id="delete">
+        <a href="{% url 'delete-horoszkop' adat.id %}">Delete {{adat}}</a>
+    </div>
+
+    <div id="update">
+
+        <a href="{% url 'update-horoszkop' adat.id %}">Vátoztasd meg analógiát</a>
+
+    </div>
+    <hr>
+    {% endfor %}
+    <hr>
+</div>
 {% endblock content %}

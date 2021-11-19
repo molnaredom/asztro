@@ -1,10 +1,8 @@
 {% extends 'analogia_db_base.html' %}
 
 {% block content %}
-
-<a id="create" href="{% url 'create-bolygoJegyben' %}">Készíts {{adat}} analogiat</a>
-
-    <div>
+<div class="sidenav">
+   <div>
         <form method="POST" action="">
             {% csrf_token %}
             <label for="fname">Add meg egy jegy minőségét a kilistázáshoz:</label><br>
@@ -13,32 +11,40 @@
         </form>
 
     </div>
-
     <div>
         {% for adat in jegy_alapjan_lekeres %}
         <a href="{% url 'bolygoJegyben' adat.id %}">{{adat}}</a>
         {% endfor %}
     </div>
-
-<hr>
-<hr>
-
-{% for adat in adatok %}
-<div id="exact">
-
-    <h6> <a href="{% url 'bolygoJegyben' adat.id %}"> {{adat}}</a> </h6>
 </div>
 
-<div id="delete">
-    <a href="{% url 'delete-bolygoJegyben' adat.id %}">Törlés</a>
+<div class="main">
+    <a id="create" href="{% url 'create-bolygoJegyben' %}">Készíts {{adat}} analogiat</a>
+
+
+
+
+
+    <hr>
+    <hr>
+
+    {% for adat in adatok %}
+    <div id="exact">
+
+        <h6><a href="{% url 'bolygoJegyben' adat.id %}"> {{adat}}</a></h6>
+    </div>
+
+    <div id="delete">
+        <a href="{% url 'delete-bolygoJegyben' adat.id %}">Törlés</a>
+    </div>
+
+    <div id="update">
+
+        <a href="{% url 'update-bolygoJegyben' adat.id %}">Vátoztatás</a>
+
+    </div>
+    <hr>
+    {% endfor %}
+    <hr>
+    {% endblock content %}
 </div>
-
-<div id="update">
-
-    <a href="{% url 'update-bolygoJegyben' adat.id %}">Vátoztatás</a>
-
-</div>
-<hr>
-{% endfor %}
-<hr>
-{% endblock content %}

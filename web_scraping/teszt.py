@@ -129,8 +129,8 @@ def get_text(xpath):
 
 if __name__ == '__main__':
 
-    #rendszer ="win10"
-    rendszer = "linux"
+    rendszer ="win10"
+    #rendszer = "linux"
     web = ""
     if rendszer == "win10":
         web = webdriver.Firefox(executable_path=r'geckodriver.exe')
