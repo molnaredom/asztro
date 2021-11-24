@@ -1,7 +1,7 @@
 # Asztroprogram 2.0.1
 
 ## Pár szó magamról: 
-- 3.féléves programtervező infóra járok
+- 3.féléves programtervező informatikus szakra járok.
 - Szegeden a TTIK-n a Szoftverfejlesztő tanszéken dolgozok. Itt adatok kinyerésével és feldolgozásával foglalkozunk.
 - Régebb óta érdekelnek spirituális, pszichológiai dolgok, köztük gyereknevelés, oktatás, absztrakt/elvont gondolkodásmódok, lelki segítségnyújtás, tanulási technikák, tudatalatti, tudatosság. És még ezen kívül sok más. 
 
@@ -14,6 +14,7 @@
 </p>
 
 ## Cél:
+-A program főképpen python nyelven íródik.
 - A projektemben szeretnék az informatika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a használó életét, legfőképpen életvezetési tanácsadás szempontjából.
 - Mivel az asztrológiában rengeteg különböző csoportot tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolygók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is(amik megfigyelsések alapján különböző életterületek megoldására utalnak, mutatnak) ,így a mesterséges intelligencia ezen belül is a neuronhálók eszközét könnyen eszközül vehetjük. 
 Az asztrológiában sok adat van , sok megfigyelési szempont, egy ember nehezen képes egyszerre ilyen sok szempontot figyelembevenni és objektíven(úgy hogy ne csak a szempontok egy kisebb részhalmaza alapján döntsön) választ adni egy kérdésre.
