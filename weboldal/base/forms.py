@@ -54,6 +54,7 @@ class HoroszkopForm(ModelForm):
         model = Horoszkop1
         fields = "__all__"
 
+
 class Horoszkop_Csillagjegyszures(ModelForm):
     class Meta:
         model = Horoszkop1

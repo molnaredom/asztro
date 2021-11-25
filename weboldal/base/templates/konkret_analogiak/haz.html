@@ -2,7 +2,8 @@
 {% extends 'konkret_analogia.html' %}
 {% block content %}
 
-<h1>{{analogia.nevID}}</h1>
-<p>{{analogia.leiras}}</p>
+<h1>{{analogia.nevID}} ház</h1>
+<p>Típus: {{analogia.tipus}}</p>
+<p>Mundán jegye: <a href="{% url 'jegy' analogia.mundan_jegye %}">{{analogia.mundan_jegye}}</a></p>
 
 {% endblock content %}

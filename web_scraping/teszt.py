@@ -143,13 +143,13 @@ if __name__ == '__main__':
     web.get('https://astro.cafeastrology.com/natal.php')
 
     szuletesi_adatok = {
-        "nev": "Kapi Laura",
-        "horoszkoptipus": "radix",
-        "ev": 2001,
-        "honap": 6,
-        "nap": 6,
-        "ora": 22,
-        "perc": 58,
+        "nev": "teszt",
+        "horoszkoptipus": "solar",
+        "ev": 1977,
+        "honap": 5 ,
+        "nap": 29,
+        "ora": 10,
+        "perc":  31,
         "hely": "Budapest"
     }
 

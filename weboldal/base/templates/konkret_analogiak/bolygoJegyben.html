@@ -1,11 +1,9 @@
-
 {% extends 'konkret_analogia.html' %}
 {% block content %}
 
+<h1><a href="{% url 'jegy' analogia.jegy.nevID %}">{{analogia.jegy}}</a>
+<a href="{% url 'bolygo' analogia.bolygo.nevID %}">{{analogia.bolygo}}</a></h1>
 
-<h1>{{analogia.bolygo}}</h1>
-<h1>{{analogia.jegy}}</h1>
-
-
+<p>{{analogia.leiras}}</p>
 
 {% endblock content %}

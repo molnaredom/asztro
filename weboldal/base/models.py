@@ -37,6 +37,7 @@ class Message(models.Model):
     body = models.TextField()
     updated = models.DateTimeField(auto_now=True)  # tobbszor is lefut
     created = models.DateTimeField(auto_now_add=True)  # ez csak egyszer fut le amikor belepsz eloszor a zsobaba
+    created2 = models.DateTimeField(auto_now_add=True)  # ez csak egyszer fut le amikor belepsz eloszor a zsobaba
 
     class Meta:
         ordering = ['-updated', '-created']
@@ -46,7 +47,8 @@ class Message(models.Model):
 
 
 class Analogia(models.Model):
-    nevID = models.CharField(max_length=30)
+    nevID = models.CharField(max_length=30, unique=True)
+    leiras = models.TextField(max_length=30, blank=True)
 
     class Meta:
         abstract = True

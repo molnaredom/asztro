@@ -14,9 +14,10 @@
             background: #f1f1f1;
         }
 
-        .halvany{
+        .halvany {
             color: #8b8b8b;
         }
+
         /* Header/Blog Title */
         .header {
             padding: 30px;
@@ -44,6 +45,7 @@
             padding: 14px 16px;
             text-decoration: none;
         }
+
         .rightcolumn {
             float: left;
             width: 25%;
@@ -59,7 +61,29 @@
             padding: 14px 16px;
             text-decoration: none;
         }
+
         .rightcolumn a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .leftcolumn {
+            float: left;
+            width: 100%;
+            background-color: #f1f1f1;
+            padding-right: 20px;
+            text-align: center;
+        }
+
+        .leftcolumn a {
+            display: block;
+            color: #3f4156;
+
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .leftcolumn a:hover {
             background-color: #ddd;
             color: black;
         }
@@ -72,7 +96,7 @@
 
         /* Create two unequal columns that floats next to each other */
         /* Left column */
-        .leftcolumn {
+        .leftcolumnsmall {
             float: left;
             width: 75%;
         }
@@ -131,7 +155,7 @@
 
 <div class="header">
     <h1>{{analogia}}</h1>
-    <div class="halvany"> <p>horoszkóp adatok</p></div>
+    <div class="halvany"><p>horoszkóp adatok</p></div>
 </div>
 
 <div class="topnav">
@@ -142,7 +166,7 @@
 </div>
 
 <div class="row">
-    <div class="leftcolumn">
+    <div class="leftcolumnsmall">
         <div class="card">
             <h2>Horoszkóp leírás</h2>
             <h5>Létrehozás ideje: {{analogia.idopont}}</h5>
@@ -152,15 +176,15 @@
             <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
 
         </div>
-<!--        <div class="card">-->
-<!--            <h2>TITLE HEADING</h2>-->
-<!--            <h5>Title description, Sep 2, 2017</h5>-->
-<!--            <div class="fakeimg" style="height:200px;">Image</div>-->
-<!--            <p>Some text..</p>-->
-<!--            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod-->
-<!--                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation-->
-<!--                ullamco.</p>-->
-<!--        </div>-->
+        <!--        <div class="card">-->
+        <!--            <h2>TITLE HEADING</h2>-->
+        <!--            <h5>Title description, Sep 2, 2017</h5>-->
+        <!--            <div class="fakeimg" style="height:200px;">Image</div>-->
+        <!--            <p>Some text..</p>-->
+        <!--            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod-->
+        <!--                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation-->
+        <!--                ullamco.</p>-->
+        <!--        </div>-->
     </div>
 
     <div class="rightcolumn">
@@ -180,22 +204,24 @@
             <hr>
         </div>
 
-        <div class="card">
-            <h2>Házak Jegyekben</h2>
-            <hr>
-            <p>{{analogia.haz_1}}</p>
-            <p>{{analogia.haz_2}}</p>
-            <p>{{analogia.haz_3}}</p>
-            <p>{{analogia.haz_4}}</p>
-            <p>{{analogia.haz_5}}</p>
-            <p>{{analogia.haz_6}}</p>
-            <p>{{analogia.haz_7}}</p>
-            <p>{{analogia.haz_8}}</p>
-            <p>{{analogia.haz_9}}</p>
-            <p>{{analogia.haz_10}}</p>
-            <p>{{analogia.haz_11}}</p>
-            <p>{{analogia.haz_12}}</p>
-            <hr>
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>Házak Jegyekben</h2>
+                <hr>
+                <p><a href="{% url 'hazJegyben' analogia.haz_1.id %}">{{analogia.haz_1}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_2.id %}">{{analogia.haz_2}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_3.id %}">{{analogia.haz_3}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_4.id %}">{{analogia.haz_4}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_5.id %}">{{analogia.haz_5}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_6.id %}">{{analogia.haz_6}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_7.id %}">{{analogia.haz_7}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_8.id %}">{{analogia.haz_8}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_9.id %}">{{analogia.haz_9}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_10.id %}">{{analogia.haz_10}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_11.id %}">{{analogia.haz_11}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_12.id %}">{{analogia.haz_12}}</a></p>
+                <hr>
+            </div>
         </div>
     </div>
 </div>

@@ -2,8 +2,8 @@
 {% block content %}
 
 
-<h1>{{analogia.haz}}</h1>
-<h1>{{analogia.jegy}}</h1>
+<h1><a href="{% url 'haz' analogia.haz.nevID %}">{{analogia.haz}}</a>
+<a href="{% url 'jegy' analogia.jegy.nevID %}">{{analogia.jegy}}</a></h1>
 
 
 

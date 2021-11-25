@@ -27,7 +27,7 @@ interface Nap {
                     },
                     // férfi
                     {
-                            "ideális ha olyan párt kap aki képes alárendelődni",
+                            "",
                             "a párja felnéz rá",
                             "a párja azt éli, hogy erős férfi van mellette",
                             "tevékenyen részt vesz az életben",

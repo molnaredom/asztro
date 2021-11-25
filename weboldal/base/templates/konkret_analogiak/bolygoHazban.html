@@ -2,8 +2,8 @@
 {% block content %}
 
 
-<h1>{{analogia.haz}}</h1>
-<h1>{{analogia.bolygo}}</h1>
+<h1><a href="{% url 'haz' analogia.haz.nevID %}">{{analogia.haz}}</a>
+<a href="{% url 'bolygo' analogia.bolygo.nevID %}">{{analogia.bolygo}}</a></h1>
 
 
 {% endblock content %}

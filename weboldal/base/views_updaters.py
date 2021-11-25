@@ -68,7 +68,7 @@ def updateJegy(request, nevID):
 
 
 def updateHaz(request, nevID):
-    return updateAltalanos(request, nevID, Haz, HazakForm, "bolygok", "hazak_form.html")
+    return updateAltalanos(request, nevID, Haz, HazakForm, "hazak", "hazak_form.html")
 
 
 def updateBolygoJegyben(request, id):

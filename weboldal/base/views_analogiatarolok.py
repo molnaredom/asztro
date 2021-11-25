@@ -68,6 +68,7 @@ def horoszkop_gyujtemeny(request):
         if 'bolygo_es_jegy_lekerdezes' in request.POST:
             jegyNev = request.POST.get('jegyNev')
             bolygoNev = request.POST.get('bolygoNev')
+
             jegy_alapjan_lekeres = bolygo_alapjan_lekeres(bolygoNev, jegyNev)
         elif "haz_es_jegy_lekerdezes" in request.POST:
             jegyNev = request.POST.get('jegyNev')
@@ -77,6 +78,7 @@ def horoszkop_gyujtemeny(request):
             jegyNev = request.POST.get('jegyNev')
             bolygoNev = request.POST.get('bolygoNev')
             lekeres1 = Horoszkop1.objects.filter(jupiter__jegy__elem="tűz")
+
         elif "2" in request.POST:
             jegyNev = request.POST.get('jegyNev')
             bolygoNev = request.POST.get('bolygoNev')
@@ -90,6 +92,7 @@ def horoszkop_gyujtemeny(request):
 
 
 def bolygo_alapjan_lekeres(bolygoNev, jegyNev):
+    print(Horoszkop1.objects.filter(nap__jegy__nevID=jegyNev).query)
     jegy_alapjan_lekeres = None
     if bolygoNev == "nap":
         jegy_alapjan_lekeres = Horoszkop1.objects.filter(nap__jegy__nevID=jegyNev)
