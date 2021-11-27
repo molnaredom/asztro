@@ -21,7 +21,7 @@ def bolygojegyben_beallit(web, bolygo, jegy, xpath):
 
 
     def szama(keresett_bolygo, keresett_jegy):
-        szam = 22
+        szam = 1
         for akt_bolygo in ["nap", "hold", "merkur", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun",
                            "plúto"]:
             for akt_jegy in ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
@@ -66,44 +66,50 @@ def hazjegyben_beallit(web, haz, jegy, xpath):
 
 
 
-def horoszkop_kitoltes(horoszkop_adatok):
-    rendszer = "win10"
-    # rendszer = "linux"
-    web = ""
-    if rendszer == "win10":
-        web = webdriver.Firefox(executable_path=r'geckodriver.exe')
-    else:
-        web = webdriver.Firefox()
+def sajat_horoszkopform_kitoltes(horoszkop_adatok, web):
+    sajat_web_inditasa(web)
 
+    sajat_weboldal_kitoltes(horoszkop_adatok, web)
+
+
+
+
+def sajat_web_inditasa(web):
+    # rendszer = "win10"
+    # # rendszer = "linux"
+    # if rendszer == "win10":
+    #     web = webdriver.Firefox(executable_path=r'../adat_tarolas/geckodriver.exe')
+    # else:
+    #     web = webdriver.Firefox()
     web.get('http://127.0.0.1:8000/create-horoszkop/')
-    time.sleep(5)
+    time.sleep(2)
 
 
-    kitoltese(horoszkop_adatok, web)
+def sajat_weboldal_kitoltes(horoszkop_adatok, web):
+    egyeb_tulajdonosi_adat_feltoltes(horoszkop_adatok, web)
+    bolygo_jegyben_feltoltes(horoszkop_adatok, web)
+    haz_jegyben_feltoltes(horoszkop_adatok, web)
 
     press_submit_button(web)
 
 
-def kitoltese(horoszkop_adatok, web):
+def egyeb_tulajdonosi_adat_feltoltes(horoszkop_adatok, web):
+
+    for adat_nev in ["tulajdonos_neve","tipus","hely"]:
+        hely_xpath = web.find_element_by_xpath(f'//*[@id="id_{adat_nev}"]')
+        hely_xpath.send_keys(horoszkop_adatok[f"{adat_nev}"])
+
+
+def haz_jegyben_feltoltes(horoszkop_adatok, web):
+    for haz in range(1, 13):
+        hazjegyben_beallit(web, str(haz), horoszkop_adatok[str(haz)][0],
+                           f'//*[@id="id_haz_{str(haz)}"]')
+
+
+def bolygo_jegyben_feltoltes(horoszkop_adatok, web):
     for bolygo in ["nap", "hold", "merkur", "venusz", "mars", "jupiter", "szaturnusz", "uranusz", "neptun", "pluto"]:
         bolygojegyben_beallit(web, bolygo, horoszkop_adatok[bolygo][0],
                               f'//*[@id="id_{bolygo}"]')
-    for haz in range(1,13):
-        hazjegyben_beallit(web, str(haz), horoszkop_adatok[str(haz)][0],
-                              f'//*[@id="id_haz_{str(haz)}"]')
-
-    hely_xpath = web.find_element_by_xpath('//*[@id="id_tulajdonos_neve"]')
-    hely_xpath.send_keys(horoszkop_adatok["tulajdonos_neve"])
-
-    hely_xpath = web.find_element_by_xpath('//*[@id="id_tipus"]')
-    hely_xpath.send_keys(horoszkop_adatok["tipus"])
-
-    hely_xpath = web.find_element_by_xpath('//*[@id="id_hely"]')
-    hely_xpath.send_keys(horoszkop_adatok["hely"])
-
-
-
-
 
 
 def press_submit_button(web):
