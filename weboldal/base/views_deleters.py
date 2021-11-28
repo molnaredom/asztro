@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 
 from django.shortcuts import render, redirect
-from .models import Jegy, Bolygo, Haz, BolygoHazban, BolygoJegyben, HazJegyben, Message,Room, Horoszkop1
+from .models import Jegy, Bolygo, Haz, BolygoHazban, BolygoJegyben2, HazJegyben, Message,Room, Horoszkop1
 
 
 
@@ -68,7 +68,7 @@ def deleteHaz(request,nevID):
 
 
 def deleteBolygoJegyben(request, id):
-    return _delete_altalanos_by_id(request, id, BolygoJegyben,"bolygokJegyekben" )
+    return _delete_altalanos_by_id(request, id, BolygoJegyben2, "bolygokJegyekben")
 
 
 def deleteBolygoHazban(request, id):
@@ -80,7 +80,7 @@ def deleteHazJegyben(request,id):
 
 
 def deleteHoroszkop(request,id):
-    return _delete_altalanos_by_id(request, id, BolygoHazban, "horoszkop_gyujtemeny")
+    return _delete_altalanos_by_id(request, id,Horoszkop1, "horoszkop_gyujtemeny")
 
 
 

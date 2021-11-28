@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Jegy, Bolygo, Haz, BolygoHazban, BolygoJegyben, HazJegyben, Horoszkop1
+from .models import Jegy, Bolygo, Haz, BolygoHazban, BolygoJegyben2, HazJegyben, Horoszkop1
 from .forms import Horoszkop_Csillagjegyszures
 
 
@@ -40,9 +40,9 @@ def bolygokJegyekben(request):
     jegy_alapjan_lekeres = {}
     if request.method == "POST":
         jegyNev = request.POST.get('jegyNev')
-        jegy_alapjan_lekeres = BolygoJegyben.objects.filter(jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = BolygoJegyben2.objects.filter(jegy__nevID=jegyNev)
 
-    jegyek = BolygoJegyben.objects.all()
+    jegyek = BolygoJegyben2.objects.all()
     context = {'adatok': jegyek, "jegy_alapjan_lekeres": jegy_alapjan_lekeres}
     return render(request, 'analogiatarolok/bolygokJegyekben.html', context)
 

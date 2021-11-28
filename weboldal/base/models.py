@@ -87,38 +87,38 @@ class Haz(Analogia):
         return str(self.nevID)
 
 
-class BolygoJegyben(OsszetettAnalogia):
+class BolygoJegyben2(OsszetettAnalogia):
     bolygo = models.ForeignKey(Bolygo, on_delete=models.CASCADE)
     jegy = models.ForeignKey(Jegy, on_delete=models.CASCADE)
 
-    ferfi = models.TextField(max_length=200, blank=True, null=True)  # nap(ferfi) hold(no_pár) venusz mars
-    no = models.TextField(max_length=200, blank=True, null=True)  # nap() hold(anya, feleseg) venusz mars
-    gyerek = models.TextField(max_length=200, blank=True, null=True)  # nap hold merkur
-    szulo = models.TextField(max_length=200, blank=True, null=True)  # nap(apa
-
-    hold_erzelmek = models.TextField(max_length=200, blank=True, null=True)
-    hold_tehetseg = models.TextField(max_length=200, blank=True, null=True)
-    hold_alarendeltseg = models.TextField(max_length=200, blank=True, null=True)
-    hold_befogadas = models.TextField(max_length=200, blank=True, null=True)
-
-    # merkur
-    merk_gondolkodas = models.TextField(max_length=200, blank=True, null=True)
-    merk_kapcsolatteremtes = models.TextField(max_length=200, blank=True, null=True)
-    merk_kommunkacio = models.TextField(max_length=200, blank=True, null=True)
-    mozgekonysag_valtoztatas = models.TextField(max_length=200, blank=True, null=True)
-    gyermekkora = models.TextField(max_length=200, blank=True, null=True)
-    tanulasa = models.TextField(max_length=200, blank=True, null=True)
-    elfogadasa = models.TextField(max_length=200, blank=True, null=True)
-
-    # venusz
-    venu_anyahoz_valo_viszony = models.TextField(max_length=200, blank=True, null=True)
-    venu_biztonsagvagy = models.TextField(max_length=200, blank=True, null=True)
-    venu_stabilitas_igeny = models.TextField(max_length=200, blank=True, null=True)
-    venu_szepseghez_valo_viszony = models.TextField(max_length=200, blank=True, null=True)
-    venu_noiesseg = models.TextField(max_length=200, blank=True, null=True)
-    venu_szexualitas = models.TextField(max_length=200, blank=True, null=True)
-    venu_muveszet = models.TextField(max_length=200, blank=True, null=True)
-    venu_onelfogadas = models.TextField(max_length=200, blank=True, null=True)
+    # ferfi = models.TextField(max_length=200, blank=True, null=True)  # nap(ferfi) hold(no_pár) venusz mars
+    # no = models.TextField(max_length=200, blank=True, null=True)  # nap() hold(anya, feleseg) venusz mars
+    # gyerek = models.TextField(max_length=200, blank=True, null=True)  # nap hold merkur
+    # szulo = models.TextField(max_length=200, blank=True, null=True)  # nap(apa
+    #
+    # hold_erzelmek = models.TextField(max_length=200, blank=True, null=True)
+    # hold_tehetseg = models.TextField(max_length=200, blank=True, null=True)
+    # hold_alarendeltseg = models.TextField(max_length=200, blank=True, null=True)
+    # hold_befogadas = models.TextField(max_length=200, blank=True, null=True)
+    #
+    # # merkur
+    # merk_gondolkodas = models.TextField(max_length=200, blank=True, null=True)
+    # merk_kapcsolatteremtes = models.TextField(max_length=200, blank=True, null=True)
+    # merk_kommunkacio = models.TextField(max_length=200, blank=True, null=True)
+    # mozgekonysag_valtoztatas = models.TextField(max_length=200, blank=True, null=True)
+    # gyermekkora = models.TextField(max_length=200, blank=True, null=True)
+    # tanulasa = models.TextField(max_length=200, blank=True, null=True)
+    # elfogadasa = models.TextField(max_length=200, blank=True, null=True)
+    #
+    # # venusz
+    # venu_anyahoz_valo_viszony = models.TextField(max_length=200, blank=True, null=True)
+    # venu_biztonsagvagy = models.TextField(max_length=200, blank=True, null=True)
+    # venu_stabilitas_igeny = models.TextField(max_length=200, blank=True, null=True)
+    # venu_szepseghez_valo_viszony = models.TextField(max_length=200, blank=True, null=True)
+    # venu_noiesseg = models.TextField(max_length=200, blank=True, null=True)
+    # venu_szexualitas = models.TextField(max_length=200, blank=True, null=True)
+    # venu_muveszet = models.TextField(max_length=200, blank=True, null=True)
+    # venu_onelfogadas = models.TextField(max_length=200, blank=True, null=True)
 
     def __str__(self):
         return str(self.jegy) + "-" + str(self.bolygo)
@@ -162,16 +162,16 @@ class Horoszkop1(models.Model):
     hely = models.CharField(max_length=80, blank=True)
     tipus = models.CharField(max_length=30, blank=True)
 
-    nap = models.ForeignKey(BolygoJegyben, related_name='nap+', on_delete=models.CASCADE)
-    hold = models.ForeignKey(BolygoJegyben, related_name='hold+', on_delete=models.CASCADE)
-    merkur = models.ForeignKey(BolygoJegyben, related_name='merkur+', on_delete=models.CASCADE)
-    venusz = models.ForeignKey(BolygoJegyben, related_name='venusz+', on_delete=models.CASCADE)
-    mars = models.ForeignKey(BolygoJegyben, related_name='mars+', on_delete=models.CASCADE)
-    jupiter = models.ForeignKey(BolygoJegyben, related_name='jupiter+', on_delete=models.CASCADE)
-    szaturnusz = models.ForeignKey(BolygoJegyben, related_name='szaturnusz+', on_delete=models.CASCADE)
-    uranusz = models.ForeignKey(BolygoJegyben, related_name='uranusz+', on_delete=models.CASCADE)
-    neptun = models.ForeignKey(BolygoJegyben, related_name='neptun+', on_delete=models.CASCADE)
-    pluto = models.ForeignKey(BolygoJegyben, related_name='pluto+', on_delete=models.CASCADE)
+    nap = models.ForeignKey(BolygoJegyben2, related_name='nap+', on_delete=models.CASCADE)
+    hold = models.ForeignKey(BolygoJegyben2, related_name='hold+', on_delete=models.CASCADE)
+    merkur = models.ForeignKey(BolygoJegyben2, related_name='merkur+', on_delete=models.CASCADE)
+    venusz = models.ForeignKey(BolygoJegyben2, related_name='venusz+', on_delete=models.CASCADE)
+    mars = models.ForeignKey(BolygoJegyben2, related_name='mars+', on_delete=models.CASCADE)
+    jupiter = models.ForeignKey(BolygoJegyben2, related_name='jupiter+', on_delete=models.CASCADE)
+    szaturnusz = models.ForeignKey(BolygoJegyben2, related_name='szaturnusz+', on_delete=models.CASCADE)
+    uranusz = models.ForeignKey(BolygoJegyben2, related_name='uranusz+', on_delete=models.CASCADE)
+    neptun = models.ForeignKey(BolygoJegyben2, related_name='neptun+', on_delete=models.CASCADE)
+    pluto = models.ForeignKey(BolygoJegyben2, related_name='pluto+', on_delete=models.CASCADE)
 
     haz_1 = models.ForeignKey(HazJegyben, related_name='1+', on_delete=models.CASCADE)
     haz_2 = models.ForeignKey(HazJegyben, related_name='2+', on_delete=models.CASCADE)

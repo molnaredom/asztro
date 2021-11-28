@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Room, Topic, Message,  Bolygo, BolygoJegyben, BolygoHazban, Jegy, HazJegyben, Haz, \
+from .models import Room, Topic, Message,  Bolygo, BolygoJegyben2, BolygoHazban, Jegy, HazJegyben, Haz, \
         Horoszkop1
 
 admin.site.register(Room)
@@ -10,7 +10,7 @@ admin.site.register(Message)
 
 admin.site.register(Bolygo)
 admin.site.register(BolygoHazban)
-admin.site.register(BolygoJegyben)
+admin.site.register(BolygoJegyben2)
 admin.site.register(Jegy)
 admin.site.register(HazJegyben)
 admin.site.register(Haz)

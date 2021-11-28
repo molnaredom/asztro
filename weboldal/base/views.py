@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room, Topic, Jegy, Bolygo, Haz, Message ,BolygoHazban, BolygoJegyben, HazJegyben
+from .models import Room, Topic, Jegy, Bolygo, Haz, Message ,BolygoHazban, BolygoJegyben2, HazJegyben
 from django.contrib.auth.models import User
 from .forms import RoomForm, AnalogiaForm
 from django.contrib.auth import authenticate, login, logout

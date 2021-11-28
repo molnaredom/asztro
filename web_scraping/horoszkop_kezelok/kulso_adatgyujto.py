@@ -92,8 +92,7 @@ def create_bolygo_dict(szam_xpathoz,web):
 
 def create_haz_dict(szam_xpathhoz,web):
     return {"jegy": get_text(f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{szam_xpathhoz}]/td[10]",web),
-            "fokszam": get_text(f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{szam_xpathhoz}]/td[10]",web)}
-
+            "fokszam": get_text(f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{szam_xpathhoz}]/td[11]",web)}
 
 def get_text(xpath, web):
     return web.find_element_by_xpath(xpath).text

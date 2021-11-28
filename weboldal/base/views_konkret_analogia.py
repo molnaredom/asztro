@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Room, Topic, Jegy, Bolygo, Haz, Message ,BolygoHazban, BolygoJegyben, HazJegyben, Horoszkop1
+from .models import Room, Topic, Jegy, Bolygo, Haz, Message ,BolygoHazban, BolygoJegyben2, HazJegyben, Horoszkop1
 
 
 # konkrét oldalak( a fa levelei)
@@ -28,7 +28,7 @@ def haz(request,nevID):
 
 
 def bolygoJegyben(request,id):
-    analogia = BolygoJegyben.objects.get(id=id)
+    analogia = BolygoJegyben2.objects.get(id=id)
 
     context = {"analogia": analogia}  # ez egy objektum
 
