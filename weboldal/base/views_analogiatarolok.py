@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Count, Max
 from .models import Jegy, Bolygo, Haz, BolygoHazban, BolygoJegyben2, HazJegyben, Horoszkop1
 from .forms import Horoszkop_Csillagjegyszures
 
@@ -61,33 +62,53 @@ def hazakJegyekben(request):
 
 
 def horoszkop_gyujtemeny(request):
-    jegy_alapjan_lekeres, haz_alapjan_adatok = {}, {}
+    jegy_alapjan_lekeres, haz_alapjan_adatok, leker_1, leker_2, leker_3 = {},{},{},{},{}
 
     if request.method == "POST":
 
         if 'bolygo_es_jegy_lekerdezes' in request.POST:
             jegyNev = request.POST.get('jegyNev')
             bolygoNev = request.POST.get('bolygoNev')
-
             jegy_alapjan_lekeres = bolygo_alapjan_lekeres(bolygoNev, jegyNev)
+
         elif "haz_es_jegy_lekerdezes" in request.POST:
             jegyNev = request.POST.get('jegyNev')
             hazNev = request.POST.get('hazNev')
             haz_alapjan_adatok = haz_alapjan_lekeres(hazNev, jegyNev)
-        elif "1" in request.POST:
-            jegyNev = request.POST.get('jegyNev')
-            bolygoNev = request.POST.get('bolygoNev')
-            lekeres1 = Horoszkop1.objects.filter(jupiter__jegy__elem="tűz")
 
-        elif "2" in request.POST:
-            jegyNev = request.POST.get('jegyNev')
-            bolygoNev = request.POST.get('bolygoNev')
-            lekeres1 = Horoszkop1.objects.filter(jupiter__jegy__elem="tűz")
+        elif "leker_1" in request.POST:
+            leker_1 = Horoszkop1.objects.filter(jupiter__jegy__elem="levegő")
 
+        elif "leker_2" in request.POST:
 
+            leker_2 = Horoszkop1.objects.raw("""
+            select *, COUNT(tulajdonos_neve) as evszak_szam
+            from base_horoszkop1
+            inner join base_bolygojegyben bj on base_horoszkop1.nap_id = bj.id
+            inner join  base_jegy jegy on bj.jegy_id = jegy.id
+            group by jegy.evszak""")
+
+        elif "leker_3" in request.POST:
+
+            leker_3 = Horoszkop1.objects.raw("""
+            select *,haz.tipus as haztipus, COUNT(tulajdonos_neve) as haztipus_szam
+            from base_horoszkop1
+            inner join base_hazjegyben as hj on base_horoszkop1.haz_1_id = hj.id
+            inner join  base_haz as haz on hj.id = haz.id
+            inner join base_bolygojegyben bj on base_horoszkop1.hold_id = bj.id
+            where bj.leiras = ''
+            group by haz.tipus
+                                                """)
 
     hp = Horoszkop1.objects.all()
-    context = {'adatok': hp, "jegy_alapjan_lekeres": jegy_alapjan_lekeres,"haz_alapjan_adatok":haz_alapjan_adatok }
+
+    context = {'adatok': hp,
+               "jegy_alapjan_lekeres": jegy_alapjan_lekeres,
+               "haz_alapjan_adatok":haz_alapjan_adatok ,
+               "leker_1" : leker_1,
+               "leker_2" : leker_2,
+               "leker_3" : leker_3
+               }
     return render(request, 'analogiatarolok/horoszkop_gyujtemeny.html', context)
 
 
