@@ -1,24 +1,54 @@
 {% extends 'analogia_db_base.html' %}
 
 {% block content %}
-
 <style>
-        sidenav a{
+    sidenav a {
 
-            background-color:#3f4156;
-            color: #dddddd;
-        }
+        background-color: #3f4156;
+        color: #dddddd;
+    }
 
-       a:hover {
-            background-color: #ddd;
-            color: black;
-        }
+    a:hover {
+        background-color: #ddd;
+        color: black;
+    }
 
 </style>
 
 <a id="create" href="{% url 'create-horoszkop' %}">Készíts Horoszkóp analógiát</a>
 
+
 <div class="sidenav">
+
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <p><input type="submit"
+                  value="Horoszkóp a tulajdonosok a neve ahol a horoszkőptípus radix és a jupiter bolygó levegő jegyben áll"
+                  name="leker_1"></p>
+        <p><input type="submit"
+                  value="Csoportosítsuk évszak szerint hány horoszkópunk van"
+                  name="leker_2"></p>
+        <p><input type="submit"
+                  value="Csoportosítsuk a hazak tipsua szerint a Horoszkópokat és írjuk ki számukat, ahol az adott horoszkópok hold jegyének még nem lett elkészítve a részletes leírása"
+                  name="leker_3"></p>
+
+            {% for adat in leker_1 %}
+        <p> {{adat}} </p>
+        {% endfor %}
+
+        {% for adat in leker_2 %}
+        <p> {{adat.evszak}}: {{adat.evszak_szam}} </p>
+        {% endfor %}
+
+        {% for adat in leker_3 %}
+        <p> {{adat.haztipus}}: {{adat.haztipus_szam}} </p>
+        {% endfor %}
+
+
+    </form>
+
 
     <form method="POST">
         {% csrf_token %}
@@ -105,8 +135,8 @@
     </form>
 
     <hr>
-    {% for adat in haz_alapjan_adatok %}
-    <h6><a href="{% url 'horoszkop' adat.id %}">{{adat}}</a></h6>
+    {% for adat in leker1 %}
+    <p>{{adat}}</p>
     {% endfor %}
     <hr>
     <hr>
