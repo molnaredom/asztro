@@ -1256,10 +1256,23 @@
           "elfogadása": []
         },
         "skorpió": {
-          "általános": [],
-          "gondolkodása": [],
-          "kapcsolatteremtése": [],
-          "kommunikációja": [],
+          "általános": [
+            "Gonoszság: akkor is megmondom másnak a véleményemet, ha neki nem tetszik",
+            "Le kellene mondania a merkúriságról, vagyis arról, hogy megmondja a véleményét",
+            "Mindenről véleményt tud mondani, de a feladata az lenne , hogy ne kommunikáljon"
+          ],
+          "gondolkodása": [
+            "logikus, lényegretörő, paranoiás(téveszme: az alapelgondolás hibás, a következtetés jó)",
+            "jó nyomozó, jó szichológus, következtet",
+            ""
+          ],
+          "kapcsolatteremtése": [
+            "egyirányú utca, ha ő akar kapcsolatot teremteni, akkor lehet, ha nem, akkor nem lehet",
+            "nehezen megközelíthető, egy tárgyal vagy teljesen érdektelen, vagy fantasztikusnak tartja"
+          ],
+          "kommunikációja": [
+            "írásban jobban tud mint szóban"
+          ],
           "mozgékonyság-változtatasi kepesseg": [],
           "gyermekkora": [],
           "tanulása": [],
