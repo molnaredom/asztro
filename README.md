@@ -14,7 +14,7 @@
 </p>
 
 ## Cél:
--A program főképpen python nyelven íródik.
+- A program főképpen python nyelven íródik.
 - A projektemben szeretnék az informatika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a használó életét, legfőképpen életvezetési tanácsadás szempontjából.
 - Mivel az asztrológiában rengeteg különböző csoportot tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolygók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is(amik megfigyelsések alapján különböző életterületek megoldására utalnak, mutatnak) ,így a mesterséges intelligencia ezen belül is a neuronhálók eszközét könnyen eszközül vehetjük. 
 Az asztrológiában sok adat van , sok megfigyelési szempont, egy ember nehezen képes egyszerre ilyen sok szempontot figyelembevenni és objektíven(úgy hogy ne csak a szempontok egy kisebb részhalmaza alapján döntsön) választ adni egy kérdésre.
@@ -30,7 +30,6 @@ Cél lenne, hogy felmutassuk hogy mennyire tudja jól megjósolni a program az i
 ## Mérföldkövek a konkrét elérendő cél tekintetében
 - [ ] Pályaválasztás(munka, életút)
 - [x] Általános önismeret(javításra szorul)
-- [ ] Párkapcsolati elemzés
 
 
 ## Működési vázlat:
