@@ -81,7 +81,6 @@ def horoszkop_gyujtemeny(request):
 
         elif "leker_2" in request.POST:
 
-
             leker_2 = Horoszkop1.objects.raw("""
             select *, COUNT(tulajdonos_neve) as evszak_szam
             from base_horoszkop1

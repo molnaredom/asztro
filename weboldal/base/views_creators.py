@@ -22,9 +22,9 @@ def createroom(request):
 #createrek
 def createJegyek(request):
     form = JegyekForm()
-
     if request.method == "POST":
         form = JegyekForm(request.POST)
+
         if form.is_valid():
             form.save()
             return redirect("jegyek")

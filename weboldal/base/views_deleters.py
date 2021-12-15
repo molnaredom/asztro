@@ -24,7 +24,6 @@ def deleteMessage(request, pk):
 @login_required(login_url="login")
 def deleteRoom(request, pk):
     room = Room.objects.get(id=pk)
-
     if request.user != room.host:
         return HttpResponse("Nem engedélyezett művelet, amíg nem vagy bejelentkezve")
 
