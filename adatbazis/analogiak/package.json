@@ -741,7 +741,7 @@
             "mindig látja a negatív oldalt",
             "racionális, rációja a tapasztalaton alapszik",
             "keresi a tapasztalatokat, átélési lehetőségeket",
-            "ösztönös döntésre képtelen",
+            "döntésre képtelen",
             "mindig a hasznos dolgokat szereti, keresi, ami előreviszi az életben"
           ],
           "tehetsége": [
@@ -1050,22 +1050,54 @@
         },
         "halak": {
           "általános": [
+            "Azért kapja valaki, hogy olyan élethelyzetbe kerüljön, hogy az érzelmeinek változnia kell."
           ],
           "ösztönei": [
+            "segítőkész, odaadó, bár ez sokszor csak álca, de a segítségükre mindig lehet számítani",
+            "ösztönösen benne van a félelem, benne van a görcs, félelmi neurózisok",
+            "jó művészi érzék, jó intuíciók, jó empátia érzék",
+            "problémamegoldó képesség nem túl jó"
+          ],
+          "érzelmei": [
+            "nagyon odaadó érzelmei vannak, ő tud legjobban szeretni, bármit képes odaadni",
+            "bármit képes feláldozni az érzelmeiért",
+            "könnyen illúzióba ringatja magát, emiatt könnyen csalódásba eshet",
+            "könnyen vált érzelmi helyzetet, megcsalásra is hajlamos olykor",
+            "az egyik pillanatban nagyon érzelmes, a másikban lezuhannak",
+            "bárhol sírva tud fakadni(egy jó könyv, vagy film is elég)",
+            "kiváló érzelmi zsaroló, könnyen lesz féltékeny is, de tud veszíteni"
           ],
           "tehetsége": [
+            "művészetekben, egészségügyben, vendéglátásban"
           ],
           "anya": [
+            "odaadó, erős kötődés a gyerekez, ezért sokszor fejére nő a gyerek",
+            "nem tud következetes lenni, kerüli a felelősséget, mindig próbálja másra hárítani",
+            "gyakran áldozat szerepbe helyezi magát a gyerek előtt, 'szegény én' , önsajnálat"
           ],
           "gyerek": [
+            "nem vállal felelősséget, gyakran beteg,szüleit zsarolja érzelmileg",
+            "sok lemondással szembesül a családban, akár iskolában",
+            "anyaminta: önzetlenség, önfeláldozás, művészet, vagy alkoholizmus"
           ],
           "feleség": [
+            "odaadó, önfeláldozó , segíti előre a párját, átadja a felelősséget a párjának",
+            "azt érezheti a párom becsap, elnyom, kihasznál, zsarnok felettem",
+            "lehet beteg férfi mellette akit ápolni kell"
           ],
           "férfi": [
+            "ha nem nem a nőn kereszül éli, akkor hárítja a felelősséget, ha jól éli a nőtől átveszi az irányítást",
+            "ha a nőben éli lehet elnyomja a párját, vagy ő adja a stabilitást, ő dönt",
+            "lehet hogy művész lelkű, vagy ilyen párt keres"
           ],
           "alárendeltsége": [
+            "tökéletesen alá tud rendelődni, de mindig ott van benne az önfeláldozás is"
           ],
           "befogadása": [
+            "könnyedén és pozitívan fogad be"
+          ],
+          "munka": [
+            "önálló munkát nem szabad adni neki, mindenképp kell mellé valaki"
           ]
         }
       },
@@ -1324,14 +1356,30 @@
           ]
         },
         "mérleg": {
-          "általános": [],
-          "gondolkodása": [],
-          "kapcsolatteremtése": [],
+          "általános": [
+            "olyan élethelyzetekbe kell kerülnie, ahol meg kell felelnie",
+            "Kapcsolatteremtés, harmónia a környezettel, elfogadás jó ha alapvető gondolatmenet"
+          ],
+          "gondolkodása": [
+            "kompromisszumok",
+            "elfogadás, harmóniára való törekvés ",
+            "nehezen éli meg a konfligtusokat",
+            "nehezen vállalja fel önmagát ha nem kap visszajelzést"
+
+          ],
+          "kapcsolatteremtése": [
+            "oylan tárgyakkal veszi körbe magát ami szép",
+            "szereti ha a másik kompromisszumkész",
+            "fontos neki a protokoll az etikett, hog hol tut megfelelni",
+            "fél attól hogy nehogy rossza tegyen",
+            "fontos neki a divat"
+          ],
           "kommunikációja": [],
           "mozgékonyság-változtatasi kepesseg": [],
           "gyermekkora": [],
           "tanulása": [],
-          "elfogadása": []
+          "elfogadása": [],
+          "munka": "középvezetőnek nem jó mert mindenkinek meg akar felelni"
         },
         "skorpió": {
           "általános": [],
