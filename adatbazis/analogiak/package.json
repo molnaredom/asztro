@@ -15,21 +15,20 @@
           "főnök"
         ],
         "kos": {
-          "altalanos": [
-            "kos nap analogia",
-            "ez az"
+          "általános": [
+            ""
           ],
           "apa": [
             "én házam én váram",
-            "megbescsülést vár",
+            "megbecsülést vár",
             "tiszteletet vár",
             "gyereknek nem lehet igaza vele szemben",
             "megkérdőjelezhetetlen",
-            "küzdhet az egyerekért",
-            "segítheti a gyerket"
+            "küzdhet a gyerekért",
+            "segítheti a gyereket"
           ],
           "gyerek": [
-            "azt látja az apa egresszív",
+            "azt látja az apa agresszív",
             "az apa a vállalkozásával foglalkozik"
           ],
           "férfi": [
@@ -39,29 +38,28 @@
             "tevékenyen részt vesz az életben",
             "küzd, felvállalja a férfi szerepeket",
             "igazi macsó férfi tradícionális értelemben",
-            "nem szabad engednie hogy a párja vagy más nő a fejére nőljön",
+            "nem szabad engednie hogy a párja vagy más nő a fejére nőjön",
             "alázatosan küzdhet a családjáért, különben a párjával küzd majd"
           ],
           "nő": [
             "olyan férfit választ akiből kihozhatja a kost",
             "a férfi küzdjön érte",
             "harcoljanak érte",
-            "ferfivel vállalkozás-> ő irányít"
+            "férfivel vállalkozás-> ő irányít"
           ],
           "főnök": [
             "viszi előre a céget",
             "elkapkodja a dolgokat",
             "előbb cselekszik utána gondolkodik",
             "nem lehet vele vitatkozni",
-            "ha valamit elhatároz, tűzön vizen keresztülmegy érte , véghezviszi",
-            "ott jó vezetőnek ahol nem kérdőjelezik meg",
+            "ha valamit elhatároz, tűzön vizen keresztülmegy érte, véghezviszi",
+            "ott jó vezetőnek, ahol nem kérdőjelezik meg",
             "állandó bizonyítási vágy, könnyen motiválható"
           ]
         },
         "bika": {
           "általános információk": [
-            "bika nap analogia",
-            "ez az"
+
           ],
           "apa": [
             "anyagiakben méri a szeretetét, törődését",
@@ -71,7 +69,7 @@
           "gyerek": [
             "erős kötődés, nagyon ragaszkodik",
             "igényli, hogy kiszolgálják",
-            "azt látja az apa teremti a biztonságot",
+            "azt látja, hogy az apa teremti a biztonságot",
             "az apára mindig lehet támaszkodni, sose ideges",
             "az apát csak a pénz érdekli"
           ],
@@ -91,7 +89,7 @@
             "van kivel jókat enni(párja)"
           ],
           "főnök": [
-            "ameddig nem kell fizetést adni addig minden szuper",
+            "ameddig nem kell fizetést adni, addig minden szuper",
             "nem szereti a felelősséget",
             "megbízható és kitartó",
             "nem szeretik az aprópénzt, próbál tőle megszabadulni"
@@ -99,16 +97,15 @@
         },
         "ikrek": {
           "általános információk": [
-            "ikrek nap analogia",
-            "ez az"
+
           ],
           "apa": [
-            "nem apa inkább barátja a gyereknek",
+            "nem apa, inkább barátja a gyereknek",
             "nem tud korlátozó lenni, nem tud ragaszkodni",
             "a nevelést lazán veszi",
             "nem tud kötődni hosszútávon, rövid távon igen",
             "mindenhova elviszi a gyerekét, mindig történjen valami",
-            "nem beszél komoly támákról a gyerekével, meghitten",
+            "nem beszél komoly témákról a gyerekével, meghitten",
             "elvárja a gyerektől, hogy önálló legyen"
           ],
           "gyerek": [
@@ -116,23 +113,23 @@
             "sokat mozog, tesz-vesz, ide-oda megy",
             "az apját szélhámosnak látja",
             "az apját mindig üzletelni látja",
-            "azt látja az apja ne, foglalkozik vele kellő időt"
+            "azt látja, az apja nem tölt vele elég időt"
           ],
           "férfi": [
-            "szórakozató vicces",
-            "jó társaság, nem unalmas, értelmes jól beszél",
-            "a nőt partnernak, egyenrangú társnak tekinti",
+            "szórakozató, vicces",
+            "jó társaság, nem unalmas, értelmes, jól beszél",
+            "a nőt partnernek, egyenrangú társnak tekinti",
             "nem tud kötődni a párjához",
             "lehet megígér valamit, de nem teszi meg, vagy nem figyelt rád eléggé"
           ],
           "nő": [
-            "jön,megy ,sokat beszél",
-            "intelektuális férfit választ",
+            "jön, megy ,sokat beszél",
+            "intellektuális férfit választ",
             "mozgalmasabb életet választ a párjával",
             "üzlettársnak látja a párját"
           ],
           "főnök": [
-            "sokat, beszél, nem szeret hallgatni",
+            "sokat beszél, nem szeret hallgatni",
             "keresi a hallgatóságot",
             "nagy a szabadságigénye, munkatársai ritkán látják"
           ]
@@ -462,6 +459,8 @@
         ],
         "kos": {
           "általános": [
+            "",
+            "sldkflkdsnfs"
           ],
           "ösztönei": [
             "állandóan keresi a kihívásokat",
