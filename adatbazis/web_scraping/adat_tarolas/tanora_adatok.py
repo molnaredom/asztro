@@ -57,7 +57,7 @@ horoszkop_tarolo = [
                        "Mert nem tudna hiteles lenni. Pl nem tudna segíteni egy önbizalomhiányos paciensnek, mert őmaga nagyon szép"
                        ]
 },{
-    "nev": "2_3",
+    "nev": "2_4",
     "horoszkoptipus": "radix",
     "ev": 1996,
     "honap": 9,
@@ -75,7 +75,26 @@ horoszkop_tarolo = [
     "elemzes leiras": [
         "van 3 gyereke 1. felségtől 2 , második felségtől 2",
         "rendszerváltásban meggazdagodott"
-    ]
+    ],
+
+},{
+    "nev": "2_5",
+    "horoszkoptipus": "radix",
+    "ev": 1940,
+    "honap": 11,
+    "nap": 12,
+    "ora": 12,
+    "perc": 25,
+    "hely": "Győr",
+    "kep": "",
+    "munka":[""],
+    "elet_leiras": [
+                    ],
+    "elemzes leiras": [
+        "van 3 gyereke 1. felségtől 2 , második felségtől 2",
+        "rendszerváltásban meggazdagodott"
+    ],
+
 },
 
 ]

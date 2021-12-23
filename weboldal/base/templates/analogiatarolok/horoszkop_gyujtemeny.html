@@ -1,54 +1,11 @@
 {% extends 'analogia_db_base.html' %}
 
 {% block content %}
-<style>
-    sidenav a {
-
-        background-color: #3f4156;
-        color: #dddddd;
-    }
-
-    a:hover {
-        background-color: #ddd;
-        color: black;
-    }
-
-</style>
 
 <a id="create" href="{% url 'create-horoszkop' %}">Készíts Horoszkóp analógiát</a>
 
 
 <div class="sidenav">
-
-
-    <form method="POST">
-        {% csrf_token %}
-
-        <p><input type="submit"
-                  value="Horoszkóp a tulajdonosok a neve ahol a horoszkőptípus radix és a jupiter bolygó levegő jegyben áll"
-                  name="leker_1"></p>
-        <p><input type="submit"
-                  value="Csoportosítsuk évszak szerint hány horoszkópunk van"
-                  name="leker_2"></p>
-        <p><input type="submit"
-                  value="Csoportosítsuk a hazak tipsua szerint a Horoszkópokat és írjuk ki számukat, ahol az adott horoszkópok hold jegyének még nem lett elkészítve a részletes leírása"
-                  name="leker_3"></p>
-
-            {% for adat in leker_1 %}
-        <p> {{adat}} </p>
-        {% endfor %}
-
-        {% for adat in leker_2 %}
-        <p> {{adat.evszak}}: {{adat.evszak_szam}} </p>
-        {% endfor %}
-
-        {% for adat in leker_3 %}
-        <p> {{adat.haztipus}}: {{adat.haztipus_szam}} </p>
-        {% endfor %}
-
-
-    </form>
-
 
     <form method="POST">
         {% csrf_token %}
@@ -70,6 +27,7 @@
                 <option value="halak">halak</option>
             </select>
         </label>
+
         <label>
             <select name="bolygoNev">
                 <option value="nap">nap</option>
@@ -84,12 +42,12 @@
                 <option value="plúto">plúto</option>
             </select>
         </label>
+
         <input type="submit" value="Listázás" name="bolygo_es_jegy_lekerdezes">
     </form>
     <hr>
     {% for adat in jegy_alapjan_lekeres %}
     <h6><a href="{% url 'horoszkop' adat.id %}">{{adat}}</a></h6>
-
     {% endfor %}
     <hr>
     <hr>

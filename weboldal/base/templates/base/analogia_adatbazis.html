@@ -1,22 +1,9 @@
-
 {% extends 'analogia_db_base.html' %}
 
 {% block content %}
 
-
-
-<style>
-    .analogia_adatbazis-container {
-        display: grid;
-        grid-template-columns: 1fr 3fr; /* 1 fraction and 3 frections, how many fraction does a webside contains*/
-
-    }
-
-</style>
-
 <div>
-    <a href="{% url 'horoszkop_gyujtemeny' %}">Horoszkópok</a>
-    <hr>
+
     <a href="{% url 'jegyek' %}">Jegyek</a>
     <a href="{% url 'bolygok' %}">Bolygok</a>
     <a href="{% url 'hazak' %}">Hazak</a>
@@ -25,7 +12,6 @@
     <a href="{% url 'bolygokHazakban' %}">Bolygók Házakban</a>
     <a href="{% url 'hazakJegyekben' %}">Házak Jegyekben</a>
 </div>
-<hr>
 <hr>
 <a href="{% url 'titkos-szoba' %}">Titkos Szobába átlépés</a>
 {% endblock content %}
