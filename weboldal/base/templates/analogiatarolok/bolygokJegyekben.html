@@ -1,6 +1,22 @@
 {% extends 'analogia_db_base.html' %}
 
 {% block content %}
+<main>
+    {% for adat in adatok %}
+    <div class="flex-md-equal w-100 my-md-3">
+        <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+            <div class="my-3 py-3">
+                <a  href="{% url 'bolygoJegyben' adat.id %}" type="button" class="btn btn-outline-light">{{adat}}</a>
+                <h2><a></a></h2>
+                <a href="{% url 'delete-bolygoJegyben' adat.id %}">Delete {{adat.nevID}}</a>
+                <a href="{% url 'update-bolygoJegyben' adat.id %}">Vátoztasd meg analógiát</a>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</main>
+
 <div class="sidenav">
    <div>
         <form method="POST" action="">
@@ -17,30 +33,4 @@
         {% endfor %}
     </div>
 </div>
-
-<div class="main">
-    <a id="create" href="{% url 'create-bolygoJegyben' %}">Készíts {{adat}} analogiat</a>
-
-    <hr>
-    <hr>
-
-    {% for adat in adatok %}
-    <div id="exact">
-
-        <h6><a href="{% url 'bolygoJegyben' adat.id %}"> {{adat}}</a></h6>
-    </div>
-
-    <div id="delete">
-        <a href="{% url 'delete-bolygoJegyben' adat.id %}">Törlés</a>
-    </div>
-
-    <div id="update">
-
-        <a href="{% url 'update-bolygoJegyben' adat.id %}">Vátoztatás</a>
-
-    </div>
-    <hr>
-    {% endfor %}
-    <hr>
-    {% endblock content %}
-</div>
+{% endblock content %}

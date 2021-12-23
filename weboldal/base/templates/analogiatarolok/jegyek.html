@@ -1,8 +1,22 @@
 {% extends 'analogia_db_base.html' %}
 
-<body>
-
 {% block content %}
+<main>
+    {% for adat in adatok %}
+    <div class="flex-md-equal w-100 my-md-3">
+        <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+            <div class="my-3 py-3">
+                <a href="{% url 'jegy' adat.nevID %}" type="button" class="btn btn-outline-light">{{adat.nevID}}</a>
+                <h2><a></a></h2>
+                <a href="{% url 'delete-jegy' adat.nevID %}">Delete {{adat.nevID}}</a>
+                <a href="{% url 'update-jegy' adat.nevID %}">Vátoztasd meg analógiát</a>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</main>
+
 
 <!-- Side navigation -->
 <div class="sidenav">
@@ -12,9 +26,9 @@
             <label> Válassz egy haz minőségét a listázáshoz: </label><br>
 
             <select name="minoseg">
-              <option value="kardinális">kardinális</option>
-              <option value="szilárd">szilárd</option>
-              <option value="változó">változó</option>
+                <option value="kardinális">kardinális</option>
+                <option value="szilárd">szilárd</option>
+                <option value="változó">változó</option>
             </select>
             <br><br>
             <input type="submit" value="Submit">
@@ -28,34 +42,6 @@
     </div>
 </div>
 
-<div class="main">
+<a id="create" href="{% url 'create-jegyek' %}">Készíts Jegy analógiát</a>
 
-    <a id="create" href="{% url 'create-jegyek' %}">Készíts Jegy analógiát</a>
-
-    <hr>
-<hr>
-
-
-    {% for adat in adatok %}
-    <div id="exact">
-
-        <h6><a href="{% url 'jegy' adat.nevID %}">{{adat.nevID}}</a></h6>
-    </div>
-
-    <div id="delete">
-        <a href="{% url 'delete-jegy' adat.nevID %}">Delete {{adat.nevID}}</a>
-    </div>
-
-    <div id="update">
-        <a href="{% url 'update-jegy' adat.nevID %}">Vátoztasd meg analógiát</a>
-
-    </div>
-    <hr>
-    {% endfor %}
-
-
-    <hr>
-    {% endblock content %}
-
-</div>
-</body>
+{% endblock content %}

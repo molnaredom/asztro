@@ -1,17 +1,112 @@
 {% extends 'analogia_db_base.html' %}
 
+
+
 {% block content %}
 
-<div>
 
-    <a href="{% url 'jegyek' %}">Jegyek</a>
-    <a href="{% url 'bolygok' %}">Bolygok</a>
-    <a href="{% url 'hazak' %}">Hazak</a>
-    <hr>
-    <a href="{% url 'bolygokJegyekben' %}">Bolygók Jegyekben</a>
-    <a href="{% url 'bolygokHazakban' %}">Bolygók Házakban</a>
-    <a href="{% url 'hazakJegyekben' %}">Házak Jegyekben</a>
-</div>
+
+<main>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
+
+          <a href="{% url 'jegyek' %}" type="button" class="btn btn-primary btn-lg">Jegyek</a>
+        <p class="lead">A jegy analógiák személyiségek tárgyak viselkedések jellemzőit adja meg.
+            Valójában egyfajta tulajdonság halmazt alkotnak</p>
+      </div>
+    </div>
+
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+            <a href="{% url 'bolygok' %}" type="button" class="btn btn-outline-primary btn-lg">Bolygók</a>
+        <p class="lead">A bolygók a mit , és mi kérdésre válaszolnak. Megmutatsák egy adott
+            minőségben amit a jegy ad, mi vagy ki az illető aki átéli a jegy tulajdonságát</p>
+      </div>
+
+    </div>
+      <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
+            <a href="{% url 'hazak' %}" type="button" class="btn btn-primary btn-lg">Házak</a>
+        <p class="lead">A hol kérdésre válaszol, megmutatja az adott bolygót milyen életterületen élhetjük meg.
+            A házban álló jegy maga az életterület minőségét fogja mutatni</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+          <a href="{% url 'bolygokJegyekben' %}" type="button" class="btn btn-outline-primary btn-lg">Bolygó a Jegyben</a>
+        <p class="lead">Összetett analógia a bolygó minőségét adja meg.
+            A jegyek és a bolygók kombinációiból áll össze</p>
+      </div>
+    </div>
+      <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+      <div class="my-3 py-3">
+          <a href="{% url 'bolygokHazakban' %}" type="button" class="btn btn-primary btn-lg">Bolygó a Házban</a>
+        <p class="lead">Összetett analógia. Megmutatja mi történhet egy adott életterületen</p>
+      </div>
+    </div>
+      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+          <a href="{% url 'hazakJegyekben' %}" type="button" class="btn btn-outline-primary btn-lg">Ház a Jegyben</a>
+        <p class="lead">Összetett analógia. A házak minőségét mutatja meg, egy-egy életterületnek milyen analógiáj lesz</p>
+      </div>
+    </div>
+  </div>
+
+
+</main>
+
+<footer class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+      <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Features</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Cool stuff</a></li>
+        <li><a class="link-secondary" href="#">Random feature</a></li>
+        <li><a class="link-secondary" href="#">Team feature</a></li>
+        <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+        <li><a class="link-secondary" href="#">Another one</a></li>
+        <li><a class="link-secondary" href="#">Last time</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Resource name</a></li>
+        <li><a class="link-secondary" href="#">Resource</a></li>
+        <li><a class="link-secondary" href="#">Another resource</a></li>
+        <li><a class="link-secondary" href="#">Final resource</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Business</a></li>
+        <li><a class="link-secondary" href="#">Education</a></li>
+        <li><a class="link-secondary" href="#">Government</a></li>
+        <li><a class="link-secondary" href="#">Gaming</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>About</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Team</a></li>
+        <li><a class="link-secondary" href="#">Locations</a></li>
+        <li><a class="link-secondary" href="#">Privacy</a></li>
+        <li><a class="link-secondary" href="#">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
 <hr>
 <a href="{% url 'titkos-szoba' %}">Titkos Szobába átlépés</a>
 {% endblock content %}

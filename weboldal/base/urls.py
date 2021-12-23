@@ -30,9 +30,9 @@ urlpatterns = [
     path("create-hazak/", views_creators.createHazak, name= "create-hazak"),
     path("create-bolygok/", views_creators.createBolygok, name= "create-bolygok"),
 
-    path("jegy/<str:nevID>/", views_konkret_analogia.jegy, name="jegy"),  # ~room
-    path("haz/<str:nevID>/", views_konkret_analogia.haz, name="haz"),  # ~room
-    path("bolygo/<str:nevID>/", views_konkret_analogia.bolygo, name="bolygo"),  # ~room
+    path("jegy/<str:nevID>/", views_konkret_analogia.jegy, name="jegy"),
+    path("haz/<str:nevID>/", views_konkret_analogia.haz, name="haz"),
+    path("bolygo/<str:nevID>/", views_konkret_analogia.bolygo, name="bolygo"),
 
     path("delete-jegy/<str:nevID>/", views_deleters.deleteJegy, name= "delete-jegy"),
     path("delete-haz/<str:nevID>/", views_deleters.deleteHaz, name= "delete-haz"),

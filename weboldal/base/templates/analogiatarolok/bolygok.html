@@ -1,6 +1,25 @@
 {% extends 'analogia_db_base.html' %}
 
 {% block content %}
+
+<main>
+    {% for adat in adatok %}
+    <div class="flex-md-equal w-100 my-md-3">
+        <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+            <div class="my-3 py-3">
+                <a href="{% url 'bolygo' adat.nevID %}" type="button" class="btn btn-outline-light">{{adat.nevID}}</a>
+                <h2><a></a></h2>
+                <a href="{% url 'delete-bolygo' adat.nevID %}">Delete {{adat.nevID}}</a>
+                <a href="{% url 'update-bolygo' adat.nevID %}">Vátoztasd meg analógiát</a>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</main>
+
+
+
 <!-- Side navigation -->
 <div class="sidenav">
     <div>
@@ -27,28 +46,24 @@
 </div>
 
 
-<div class="main">   <!--main-->
-    <a id="create" href="{% url 'create-bolygok' %}">Készíts Bolygó analógiát</a>
-    <hr>
-    <hr>
+<!--<div class="main">   &lt;!&ndash;main&ndash;&gt;-->
+<!--    <a id="create" href="{% url 'create-bolygok' %}">Készíts Bolygó analógiát</a>-->
+<!--    <hr>-->
+<!--    <hr>-->
 
-    {% for adat in adatok %}
-    <div id="exact">
+<!--    {% for adat in adatok %}-->
 
-        <h6><a href="{% url 'bolygo' adat.nevID %}">{{adat.nevID}}</a></h6>
-    </div>
+<!--    <div id="delete">-->
+<!--        <a href="{% url 'delete-bolygo' adat.nevID %}">Delete {{adat.nevID}}</a>-->
+<!--    </div>-->
 
-    <div id="delete">
-        <a href="{% url 'delete-bolygo' adat.nevID %}">Delete {{adat.nevID}}</a>
-    </div>
+<!--    <div id="update">-->
 
-    <div id="update">
+<!--        <a href="{% url 'update-bolygo' adat.nevID %}">Vátoztasd meg analógiát</a>-->
 
-        <a href="{% url 'update-bolygo' adat.nevID %}">Vátoztasd meg analógiát</a>
-
-    </div>
-    <hr>
-    {% endfor %}
-    <hr>
-</div>
+<!--    </div>-->
+<!--    <hr>-->
+<!--    {% endfor %}-->
+<!--    <hr>-->
+<!--</div>-->
 {% endblock content %}

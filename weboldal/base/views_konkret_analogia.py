@@ -5,7 +5,6 @@ from .models import Room, Topic, Jegy, Bolygo, Haz, Message ,BolygoHazban, Bolyg
 # konkrét oldalak( a fa levelei)
 def jegy(request,nevID):
     analogia = Jegy.objects.get(nevID=nevID)
-
     context = {"analogia": analogia}  # ez egy objektum
 
     return render(request, "konkret_analogiak/jegy.html", context)

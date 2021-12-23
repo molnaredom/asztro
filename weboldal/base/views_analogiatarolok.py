@@ -7,12 +7,13 @@ from .forms import Horoszkop_Csillagjegyszures
 # több oldalt tartalmazo,analógiatároló felület
 def jegyek_oldal(request):
     jegyek = Jegy.objects.all()
-    jegy_minoseg_lekerdezes = {}
-    if request.method == "POST":
-        minoseg_neve = request.POST.get('minoseg')
-        jegy_minoseg_lekerdezes = Jegy.objects.filter(minoseg=minoseg_neve)
-
-    context = {'adatok': jegyek, "jegy_minoseg_lekerdezes": jegy_minoseg_lekerdezes}
+    print("hejj" ,jegyek)
+    # jegy_minoseg_lekerdezes = {}
+    # if request.method == "POST":
+    #     minoseg_neve = request.POST.get('minoseg')
+    #     jegy_minoseg_lekerdezes = Jegy.objects.filter(minoseg=minoseg_neve)
+    #
+    context = {'adatok': jegyek}#, "jegy_minoseg_lekerdezes": jegy_minoseg_lekerdezes}
     return render(request, 'analogiatarolok/jegyek.html', context)
 
 
@@ -22,7 +23,7 @@ def bolygok_oldal(request):
     if request.method == "POST":
         tipusnev = request.POST.get('bolygotipus')
         bolygotipus_lekerdezes = Bolygo.objects.filter(tipus=tipusnev)
-
+    print("hejj", bolygok)
     context = {'adatok': bolygok, "bolygotipus_lekerdezes": bolygotipus_lekerdezes}
     return render(request, 'analogiatarolok/bolygok.html', context)
 
