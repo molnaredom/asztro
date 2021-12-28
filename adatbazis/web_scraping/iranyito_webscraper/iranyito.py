@@ -24,8 +24,6 @@ def inditas():
     return web
 
 
-
-
 def get_kulso_web():
     return web
 
@@ -74,17 +72,18 @@ def horoszkopok_feltoltese(web):
         egy_horoszkop_feltoltese(tulajodonosi_adatok, web)
 
 
-def bolygojegyben_feltoltes(web):
-    web.get('http://127.0.0.1:8000/create-bolygoJegyben/')
-    bolygojegyben_kitoltes(web)
-
-
 def hazjegyben_feltoltes(web):
     web.get('http://127.0.0.1:8000/create-hazJegyben/')
     hazjegyben_kitoltes(web)
 
+
 def alapanalogia_beolvas():
     with open("../../analogiak/alapanalogiak.json", encoding="utf-8") as f:
+        return json.loads(f.read())
+
+
+def bolygojegyben_beolvas():
+    with open("../../analogiak/bolygoJegyben_analogiak.json", encoding="utf-8") as f:
         return json.loads(f.read())
 
 
@@ -92,22 +91,19 @@ def main():
     web = inditas()
     print("inditas")
 
-
-
     uj_horoszkop_keszites_ = False
-    bolygojegyben_feltoltes_ = False
+    bolygojegyben_feltoltes_ = True
     hazjegyben_feltoltes_ = False
-    alapanalogia_feltoltes_ = True
+    alapanalogia_feltoltes_ = False
 
     process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_, web)
-    # TODO beallitani a redirectet createre
 
 
 def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_,alapanalogia_feltoltes_, web):
     if uj_horoszkop_keszites_:
         horoszkopok_feltoltese(web)
     if bolygojegyben_feltoltes_:
-        bolygojegyben_feltoltes(web)
+        bolygojegyben_feltoltes(web, bolygojegyben_beolvas())
     if hazjegyben_feltoltes_:
         hazjegyben_kitoltes(web)
     if alapanalogia_feltoltes_:

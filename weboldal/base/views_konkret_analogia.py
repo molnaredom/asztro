@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2 ,BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2
-
+import random
 
 # konkrét oldalak( a fa levelei)
 def jegy(request,nevID):
@@ -28,8 +28,9 @@ def haz(request,nevID):
 
 def bolygoJegyben(request,id):
     analogia = BolygoJegyben2.objects.get(id=id)
+    randomszamok = random.randint(1,50)
 
-    context = {"analogia": analogia}  # ez egy objektum
+    context = {"analogia": analogia, "randomszamok" : randomszamok}  # ez egy objektum
 
     return render(request, "konkret_analogiak/bolygoJegyben.html", context)
 

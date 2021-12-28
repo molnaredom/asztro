@@ -7,26 +7,39 @@ import json
 from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import *
 
 
-def bolygojegyben_kitoltes(web):
-    def adat_kitoltes(web, bolygoszam, jegyszam):
+def bolygojegyben_feltoltes(web,feltoltendo ):
+    web.get('http://127.0.0.1:8000/create-bolygoJegyben/')
+
+
+    def adat_kitoltes(web, bolygoszam, jegyszam, bolygonev, jegynev, feltoltendo):
         # bolygo
-        select = Select(web.find_element_by_xpath('//*[@id="id_nevID"]'))
+        select = Select(web.find_element_by_xpath('//*[@id="id_bolygo"]'))
         select.select_by_value(str(bolygoszam))
 
         # jegy
         select = Select(web.find_element_by_xpath('//*[@id="id_jegy"]'))
         select.select_by_value(str(jegyszam))
-        # időt adunk a weboldalnak hogy betöltődjön
 
-    def press_submit_button(web):
-        adatok_kuldese_gomb = web.find_element_by_xpath('/html/body/div/form/input[2]')
-        adatok_kuldese_gomb.click()
+        # adatok
+        hely_xpath = web.find_element_by_xpath(f'//*[@id="id_adatok"]')
+        hely_xpath.clear()
+        jsonban_analogia = "{ \"analogiak\" : \"" + \
+                               str(feltoltendo["analogiak"][bolygonev][jegynev]).strip() \
+                               + "\" }"
+        hely_xpath.send_keys(jsonban_analogia)
+
 
     time.sleep(2)
-    for bolygo in range(1,11):
-        for jegy in range(1, 13):
-            adat_kitoltes(web, bolygo, jegy)
-            press_submit_button(web)
+
+    bolygok = ["nap", "hold", "merkúr", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun",
+                       "pluto"]
+    jegyek = ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
+                         "vízöntő", "halak"]
+
+    for bolygoszam, bolygonev in enumerate(bolygok, 2):
+        for jegyszam, jegynev in enumerate(jegyek,10):
+            adat_kitoltes(web, bolygoszam, jegyszam, bolygonev, jegynev, feltoltendo)
+            feltoltes(web)
 
 
 def hazjegyben_kitoltes(web):
@@ -39,15 +52,12 @@ def hazjegyben_kitoltes(web):
         select = Select(web.find_element_by_xpath('//*[@id="id_jegy"]'))
         select.select_by_value(str(jegyszam))
 
-    def press_submit_button(web):
-        adatok_kuldese_gomb = web.find_element_by_xpath('/html/body/div/form/input[2]')
-        adatok_kuldese_gomb.click()
 
     time.sleep(2)
     for haz in range(1, 13):
         for jegy in range(1, 13):
             adat_kitoltes(web, haz, jegy)
-            press_submit_button(web)
+            feltoltes(web)
 
 
 def alapanalogia_feltoltes(web, alapanalogiak):

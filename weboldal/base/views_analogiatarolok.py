@@ -1,3 +1,5 @@
+import random
+
 from django.shortcuts import render
 from django.db.models import Count, Max
 from .models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2
@@ -7,7 +9,6 @@ from .forms import Horoszkop_Csillagjegyszures
 # több oldalt tartalmazo,analógiatároló felület
 def jegyek_oldal(request):
     jegyek = Jegy2.objects.all()
-    print("hejj" ,jegyek)
     # jegy_minoseg_lekerdezes = {}
     # if request.method == "POST":
     #     minoseg_neve = request.POST.get('minoseg')
