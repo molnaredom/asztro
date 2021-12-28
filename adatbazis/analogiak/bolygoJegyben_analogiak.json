@@ -4,1944 +4,2370 @@
   "dependencies": {
   },
   "analogiak": {
-      "nap": {
-        "szempontok": [
-          "általános",
-          "apa",
-          "gyerek",
-          "férfi",
-          "nő",
-          "főnök"
+    "nap": {
+      "szempontok": [
+        "általános",
+        "apa",
+        "gyerek",
+        "férfi",
+        "nő",
+        "főnök"
+      ],
+      "kos": {
+        "általános": [
+          ""
         ],
-        "kos": {
-          "általános": [
-            ""
-          ],
-          "apa": [
-            "én házam én váram",
-            "megbecsülést vár",
-            "tiszteletet vár",
-            "gyereknek nem lehet igaza vele szemben",
-            "megkérdőjelezhetetlen",
-            "küzdhet a gyerekért",
-            "segítheti a gyereket"
-          ],
-          "gyerek": [
-            "azt látja az apa agresszív",
-            "az apa a vállalkozásával foglalkozik"
-          ],
-          "férfi": [
-            "",
-            "a párja felnéz rá",
-            "a párja azt éli, hogy erős férfi van mellette",
-            "tevékenyen részt vesz az életben",
-            "küzd, felvállalja a férfi szerepeket",
-            "igazi macsó férfi tradícionális értelemben",
-            "nem szabad engednie hogy a párja vagy más nő a fejére nőjön",
-            "alázatosan küzdhet a családjáért, különben a párjával küzd majd"
-          ],
-          "nő": [
-            "olyan férfit választ akiből kihozhatja a kost",
-            "a férfi küzdjön érte",
-            "harcoljanak érte",
-            "férfivel vállalkozás-> ő irányít"
-          ],
-          "főnök": [
-            "viszi előre a céget",
-            "elkapkodja a dolgokat",
-            "előbb cselekszik utána gondolkodik",
-            "nem lehet vele vitatkozni",
-            "ha valamit elhatároz, tűzön vizen keresztülmegy érte, véghezviszi",
-            "ott jó vezetőnek, ahol nem kérdőjelezik meg",
-            "állandó bizonyítási vágy, könnyen motiválható"
-          ]
-        },
-        "bika": {
-          "általános információk": [
-
-          ],
-          "apa": [
-            "anyagiakben méri a szeretetét, törődését",
-            "szerinte az anyagiakkal minden elérhető",
-            "fárasztják a gyerekek"
-          ],
-          "gyerek": [
-            "erős kötődés, nagyon ragaszkodik",
-            "igényli, hogy kiszolgálják",
-            "azt látja, hogy az apa teremti a biztonságot",
-            "az apára mindig lehet támaszkodni, sose ideges",
-            "az apát csak a pénz érdekli"
-          ],
-          "férfi": [
-            "lusta",
-            "élvezkedő, fontos a testiség, a szerelem",
-            "birtokolni szeretné a párját-> tenyerén hordja",
-            "a felelősség lehet a nőé, de az anyagiak semmiképpen",
-            "mellette mindig sokat költ a nő, de keveset keres",
-            "nehezen hozható ki a sodrából",
-            "szereti a jó ételeket, a kényeztetést",
-            "ragaszkodik a biztonságos életvitelhez"
-          ],
-          "nő": [
-            "anyagiságot, biztonságot, teremtést, élvezeteket él meg a párjában",
-            "mindig féltékeny",
-            "van kivel jókat enni(párja)"
-          ],
-          "főnök": [
-            "ameddig nem kell fizetést adni, addig minden szuper",
-            "nem szereti a felelősséget",
-            "megbízható és kitartó",
-            "nem szeretik az aprópénzt, próbál tőle megszabadulni"
-          ]
-        },
-        "ikrek": {
-          "általános információk": [
-
-          ],
-          "apa": [
-            "nem apa, inkább barátja a gyereknek",
-            "nem tud korlátozó lenni, nem tud ragaszkodni",
-            "a nevelést lazán veszi",
-            "nem tud kötődni hosszútávon, rövid távon igen",
-            "mindenhova elviszi a gyerekét, mindig történjen valami",
-            "nem beszél komoly témákról a gyerekével, meghitten",
-            "elvárja a gyerektől, hogy önálló legyen"
-          ],
-          "gyerek": [
-            "állandóan füllent(vagy csak élénk a fantáziája)",
-            "sokat mozog, tesz-vesz, ide-oda megy",
-            "az apját szélhámosnak látja",
-            "az apját mindig üzletelni látja",
-            "azt látja, az apja nem tölt vele elég időt"
-          ],
-          "férfi": [
-            "szórakozató, vicces",
-            "jó társaság, nem unalmas, értelmes, jól beszél",
-            "a nőt partnernek, egyenrangú társnak tekinti",
-            "nem tud kötődni a párjához",
-            "lehet megígér valamit, de nem teszi meg, vagy nem figyelt rád eléggé"
-          ],
-          "nő": [
-            "jön, megy ,sokat beszél",
-            "intellektuális férfit választ",
-            "mozgalmasabb életet választ a párjával",
-            "üzlettársnak látja a párját"
-          ],
-          "főnök": [
-            "sokat beszél, nem szeret hallgatni",
-            "keresi a hallgatóságot",
-            "nagy a szabadságigénye, munkatársai ritkán látják"
-          ]
-        },
-        "rák": {
-          "általános információk": [
-            "akkor lehet nap , ha megéli a rákságot, a gondoskodást",
-            "ez az"
-          ],
-          "apa": [
-            "Melegen korlátozó szülő",
-            "olyan szabályokat hoz gyerekének ahol a szeretete is meg tud nyilvánulni",
-            "megjelennek az aggodallmak a féltés a gyerek iránt",
-            "sokszor nem engedi felnőni a gyereket",
-            "szüksége van arra hogy a gyerek nélküle ne tudjon lépni, szükség legyen rá"
-          ],
-          "gyerek": [
-            "túlérzékeny",
-            "kötődés a család, az apa a szülők felé",
-            "szükságesnek érzi a szülőket a dolgok átéléséhez",
-            "azt látja az apa gondoskodik a családról",
-            "azt látja az apjának fontos a nélkülözhetetlenség"
-          ],
-          "férfi": [
-            "ha gondoskodhat a családjáról, jófej  jó pasi",
-            "önmagában nem tud erőslenni, kell mögé egy nő aki ezt az erőt képviseli",
-            "papucsságra hasjlamos, mos ,mosogat, átcsúszhat női szerepekbe"
-          ],
-          "nő": [
-            "sokszor átveszi a nap szerepet és ő irányít",
-            "ő az erősebb, ő határoz, ő dönt a párkapcsolatban, övé a felelősség",
-            "olyan pasit választ akinek fontos a gyerek, a család",
-            "olyan férfit választ aki tele van érzelemmel, romantikus, odafigyel az érzéseire",
-            "választhat tutyi-mutyi férfit aki majd otthon marad a gyerekkel és ő mehet dolgozni"
-          ],
-          "főnök": [
-            "meg lehet vele csináltatni a munkát",
-            "hisztis: hullámzik érzelmileg, hangulatilag",
-            "döntéseket érzelmi alapon hoz, nem tartják jó főnöknek"
-          ]
-        },
-        "oroszlán": {
-          "általános információk": [
-            "vagyok valaki",
-            "felnéznek rám mert bíznak bennem"
-          ],
-          "apa": [
-            "szeretne büszke lenni a fiára, elvárja hogy a gyerek agy is viselkedjen",
-            "mepgpróbálja anyagi szinten oroszlánná tenni a fiát ezzel mutatva, hogy az ő fia értékes",
-            "nem egy korlátozó típus, ráhagyja az anyára"
-          ],
-          "gyerek": [
-            "azt hiszi neki minden jár ,pusztán attól hogy létezik",
-            "lehet azt látja, hogy az apát tisztelik elismerik",
-            "lehet azt látja, az apa szerepet játszik mert szeretné kivívni a fensőbbséget",
-            "lehet azt látja, az apa lenyomja a körülötte lévőket",
-            "láthatja a bátorságot a lustaságot, vagy a gyávaságot is az apjában",
-            "vigyázni kell rá nehogy eltörják a gernincét , az önbecsülését nem szabad ledegradálni"
-          ],
-          "férfi": [
-            "elvárja a kényeztetést, hogy becsüljék tiszteljék, felnézzenek rá",
-            "csak olyan nője lehet aki alárandelődik neki",
-            "egyfajta koronaékszerként bányik a nővel",
-            "fontos neki a nő, nem akárki az én feleségem",
-            "a nő nem kérdőjelezheti meg, el kell fogadnia a férfi fensőbbségét",
-            "nem szabad neki beszólni, és a nő ne hozza kellemetlen helyzetbe, kritizálni mások előtt"
-          ],
-          "nő": [
-            "mindig erősebb mint a férfi",
-            "a nőn múlik a pasiból tud-e napot faragni vagy sem",
-            "tudja mit akar és hogyan",
-            "nehezen kerül olyan helyzetbe hogy fel tudjon nézni egy férfira"
-          ],
-          "főnök": [
-            "csak felsővezetőnek jó, hogy ne kelljen senkinek alárendelődnie",
-            "könnyen bedől a hízelgésnek, ilyenkor nem látja a valódi értéket"
-          ]
-        },
-        "szűz": {
-          "általános információk": [
-            "meg kell tanulnia ,hogy minden tökéltetes",
-            "ha mindent elfogad azt mondják passzív vagy így nehezen lesz nap",
-            ""
-          ],
-          "apa": [
-            "elvárásokat támaszt gyerekével szemben",
-            "fontos neki ,hogy a gyereke tudással bírjon",
-            "frusztrálja ,ha a gyerek tehetségtelen, elvárja hogy szorgalmes legyen",
-            "vigyáznia kell a maximalizmussal , ne mással szembel legyen elvárs, max magunkkal szemben",
-            "racionális , nem nagyon engedi közel magához a gyereket"
-          ],
-          "gyerek": [
-            "tudóscsemete, jó tanuló, meg akar felelni az elvárásoknak",
-            "ha nem tud jól teljesíteni nagyon leteszi a lécet, nehogy ne feleljen meg",
-            "sokszor betegséget kreál, hogy az elvárások megszűnjenek",
-            "maximalista apát lát, aki mindig dolgozik, és semmi sem elég jó neki"
-          ],
-          "férfi": [
-            "negyon erős elvárások",
-            "nem elég ha megcsinálod amit elvár, úgy is kell gondolnod(persze nem tudhatod mit gondol)",
-            "ha azt érzi ,hogy nem néznek fel rá, megpróbálja a másikat lenyomni",
-            "önbizalomhiányos, ritkán hiszi , hogy felnéznek rá",
-            "olyan feleséget választ , hogy neki is fontos legyen az ő szűzsége"
-          ],
-          "nő": [
-            "ha nő éli a napot sokkal intenzívebb mint egy férfinél éa ez rettenetes",
-            "kötözködő, munkamániás, maximalista, ez nem jó, át kellene adnia a nap szerepet",
-            "lehet hogy szeteri , ha lenyomják, és ezért választ olyan férfit akinek semmi sem jó"
-          ],
-          "főnök": [
-            "nem való vezetőnek, nem tud pozitív oldalról erősíteni, csak a hibát veszi észre",
-            "nem akarja átadni a munkát, mer tudja ,úgyis csak ő tudja tökéletesen megcsinálni"
-          ]
-        },
-        "mérleg": {
-          "általános információk": [
-          ],
-          "apa": [
-            "jó szülő, bár nem tud nevelni",
-            "nem tud korlátozni nem tud nemet mondani",
-            "nagyon manipulálható, befolyásolható",
-            "nem szabad ütköznie a gyerekkel, az apa jelölö ki a korlátokat, de az anya tartassa be",
-            "lehetnek elvárásea, zsarolásai a gyerekkel szemben"
-          ],
-          "gyerek": [
-            "nagyon meg akar felelni , nem szereti, ha kritizálják",
-            "kettős: 1. megpróbál visszahúzódni, nehogy valamiben ne feleljen meg vagy 2. mindig felhívja magára a figyelmet, hogy észrevegyék",
-            "kisfiú -> hogyan kell férfivá fejlődni? az apa tanítsa meg: felvállalni önmagát "
-          ],
-          "férfi": [
-            "semmiben sem dönt, felelőséget se nagyon vállal",
-            "a nő tuti hogy 1000* erősebb lesz",
-            "a karrierista pasik többsége mérleg",
-            "könnyebb a külvilágban lennie valakinek mint a magánéletben, nem jár neki kockázattal"
-          ],
-          "nő": [
-            "kölvilág elismerésére való törekvés, tetszeni akar a világnak, hogy elismerjék szeressék",
-            "feladata: a pasit tolni előre beállni mögé, neki kell támogatni erősítani a férfit"
-          ],
-          "főnök": [
-            "felső vezetőnek jó, középvezetőnek szörnyű, mert az alkalmazottaknak és a felette lévőknek is meg akar felelni",
-            "nem válallja fel a veszteséggel járó kockázatot"
-          ]
-        },
-        "skorpió": {
-          "általános információk": [
-            "egy dolgot biztosan nem érezhet, azt hogy ő nap)érzékelhetetlen nap analógiát kell megéélni)"
-          ],
-          "apa": [
-            "szigorú kemény, határozott, az érzelmek gyengévé tesznek, megpróbálja elfolytani ez érzéseit",
-            "úgy neveli a gyereket mintha nem lennének érései, hideg korlátozó szülő, de mindent megtesz a gyerekért",
-            "elvárások a gyerekkel szemben, nem mondhat ellent a szülőnek, totálisan alá kell rendelődnie"
-          ],
-          "gyerek": [
-            "a nagy bújkálósak, fonos neki mennyire figyelnek rá, mennyire fontosak másoknak(ösztönösen)",
-            "fél, hogy nem kap érzelmeket(engem nem szeret senki, én nem vagyok fontos senkiek) fél, hogy nem kell",
-            "szégyenlős, kezelhetetlen szélsőséges",
-            "szüleitől tudja: bármit megtennének érte, vagy nem fontos nekik ",
-            "önbüntető, ezáltal bünteti környezetét is",
-            "midnig figyeli a szülőt mennyire fogadják el",
-            "fél a vesztéstől a szülőbe is figyeli képes e veszíteni",
-            "nem azt kell megtanulni, hogy a vesztés jó, hanem ,hogy a vesztés része az életnek",
-            "lehet a szenvedélyeket, komiszságot, polgárpukksztóságot tanulja meg a szülőtől",
-            "van olyan aki teljesen visszahúződő, magányos, befelé forduló"
-          ],
-          "férfi": [
-            "nem nagyon tudja kimutatni az érzelmeket, szívesen viszonozza, de mindig a másiknak kell megtenni az érzelmi megnyilatkozást",
-            "elvárja az alárendeltséget a nőtől, nagyon kötősik, nagyon ragaszkodik hozzá",
-            "szenvedélyes szerelem(kezdetben mindenképpen), de a legnagyobb veszély az elhidegülés",
-            "tesztel, hogy mennyire vagy fontos a párjának, akkor is ha nem veszed észre",
-            "elvár olyan dolgokat amik lehetetlenek--> tesztel",
-            "ilyen férfi mellett szémítania kell a nőnek a magányra",
-            "szereti az olyan sportot ahol tök egyedül van(pl horgászat, vadászat)"
-          ],
-          "nő": [
-            "hihetetlenül eros és kemény makacs önfejű, ha ő hordozza",
-            "a pasiban ráválaszthat a szenvedélyre, a szexre, az anyagiakra, vagy ogy lenyomják őt és valakinek alá tudjon rendelődni ",
-            "de hajlamosak gyengébb pasit is választani, akiben művészi hajlam ven érzékeny és tele van érzelemmel"
-          ],
-          "főnök": [
-            "következetes, nagyon kemény, durva nagyon, nem tekinti embernek a beosztottját, azt gondolja bátmit megtehet",
-            "fantasztikusan csinálja amit csinál és ezt mástól is elvárja, erős a büntetésre vaaló késztetése",
-            "ha vezető mindent meg fog tenni, nem ismer lehetelent,de a végére teljesen egyedül marad",
-            " fantasztikus vezető a cég érdekeit mindenek elé helyezi"
-          ]
-        },
-        "nyilas": {
-          "általános információk": [
-          ],
-          "apa": [
-            "a gyerekek általában szeretik, nem egy korlátozó típtus",
-            "inkább barát mint szülő, jókedélyű,szabadságra neveli, szeret játszani vele",
-            "a a felelősséget nem szereti, ha a gyereknek szüksége van rá , nem biztos, hogy oda tu állni"
-          ],
-          "gyerek": [
-            "jó kedvű, jó kedélyű, szeret szerepelni",
-            "gyorsan fel tud pörögni",
-            "milyen az apa? - van hite, erkölcsileg vállalja?, megjátsza magát?, szélhámos és mellébeszél?"
-          ],
-          "férfi": [
-            "kezdetben nagyon szeretik a nők, mert szerelmes típusok(könnyen fellángolnak legalábbis)",
-            "rajongnak a nőkért, érzi a nő, hogy mindent megtesznek érte",
-            "a férfiban az jön elő,hogy a nő nem tudja belevonni a felleősségbe, pl lehet h nem akar gyerekret",
-            "ha nem vállal felelősséget, a nő azt érzi a férfi nem megbízható"
-          ],
-          "nő": [
-            "tele van lelekesedéssel optimizmussal, borzasztó erővel megy előre fele",
-            "a férfiban keresi a nyilasságot: legyen ite a férfinak, jól szeretne szórakozni a férfi mellett",
-            "legjobb szabadidő partner a nyilas"
-          ],
-          "főnök": [
-            "egyik legjobb főnök, mindig olyan munkatársakat vesz maga mellé aki dolgozik, mert ő nem akar",
-            "legkönnyebben átverhető és befolyásolható főnök"
-          ]
-        },
-        "bak": {
-          "általános információk": [
-          ],
-          "apa": [
-            "nagyon kekmény, nagyon rideg",
-            "szigorú számonkérések, beosztás, következmények",
-            "munkára nevel, hideg, korlátozó(úgy korlátoz hogy nem visz bele érzelmet)",
-            "büntető mechanizmus, neveleésben ezt eszköznek tekinti"
-          ],
-          "gyerek": [
-            "csendes visszahúzódó magának való",
-            "azt látja ,hogy a szülő, szigorú, következetes,, vagy rideg, vagy nem mutat érzelmet"
-          ],
-          "férfi": [
-            "nehezen vonható be egy csaláf hétköznapjaiba, maguknak valóak, félrvonulnak",
-            "mindenben lehet rájuk számítani, bármi feladatot teljesíteni tud, megbízható",
-            "mindig támasza a családnak és a párkapcsolatnak",
-            "túl soka gyengeségre nem lehet náluk számítani, nem mutatnak érzelmeket",
-            "nem szeretik az alárendelt szerepet, általában mellérendeltségre törekszik"
-          ],
-          "nő": [
-            "keresi a férfiban  a határozottságot, keménységet ,olyan férfit aki célokat valósít meg",
-            "olyat keres aki támasz lesz ellette, akire szmíthat, akivel nem kell sokat beszélgetni",
-            "de ha a nő éli a gakságot, nem lehet alárendelté tenni"
-          ],
-          "főnök": [
-            "nem való főnöknek, mert nem rugalmas, nem kreatív, nem tud alkalmazkodni",
-            "akkor is kitart amikor már nem kellene, nagyon szabálykövető"
-          ]
-        },
-        "vízöntő": {
-          "általános információk": [
-          ],
-          "apa": [
-            "vasárnapi apuka(elvált)",
-            "nevelő szülő, örökbe fogadó szülő, olyan mintha apa lenne",
-            "sokat utazik, sokat van távol",
-            "nem egy nevelő típus inkább függetlenségre szabadságra , önállóságra neveli a gyerekét",
-            "megadja a gyereknek a kellő szabadságot"
-          ],
-          "gyerek": [
-            "vagy kötődik, hogy eltold magadtól, vagy szökik, hogy te korlátozd",
-            "vagy nagyon kötődik az apához vagy teljesen leválik",
-            "nehezen nevelhetőek, folyamatosan lázadnak, nehéz a szülőknek is",
-            "hárítják azokat a dolgokat ,amik \" hétköznapiak\"",
-            "vagy valamilyen \"disz\"-es vagy allergiás vagy valamiben különbözik a többiektől",
-            "lehet viszelkedészavaros, lehet hiperaktív, lehet antiszociális",
-            "a szülőnek nem szabad érzelmeket behoznia, amikor a gyerek hidztizik, ha hisztizik hagy hisztizzen",
-            "apában láthatja ,hogy neki minden fontos csak ő nem, apa mindenkinek segít, az apa más mint a többiek"
-          ],
-          "férfi": [
-            "nem lehet \"megfogni\", helyette szeret visszajönni, \"háromszor válik 4 szer házasodik\"",
-            "nem szereti az alá-felé rendeltséget, csak a mellérendeltség elfogadható",
-            "nem tud felelősséget vállalni(nem bírja ha rátolják)",
-            "magától sok mindent megtesz, de nem lehet korlátozni",
-            "ritka hogy egy házasságban le tudná élni az életét"
-          ],
-          "nő": [
-            "szeretne független lenni, motorozás, tetoválás tipik vizontő lányok",
-            "jó dolog beosztani a feladatokat: kinek mi a dolga párkapcsolatban",
-            "jó ha ő vízöntő pasit választ, ők legalább nem unalmasak, mindig van bennük valami különleges",
-            ""
-          ],
-          "főnök": [
-            "nem jó főnök, nem szeret együttműködi a kollégákkal",
-            "olyan szerepekben jó ,ahol egyenrangú fél",
-            "az ötleteit, megpróbálja keresztülvinni bármin, ami már hajmeresztő"
-          ]
-        },
-        "halak": {
-          "általános információk": [
-          ],
-          "apa": [
-            "nem lehet erős, nem erős apa, gyerekek a férfi fejére nőnek",
-            "nem tud nemet mondani, ha a férfi ütközik tuti ,hogy a gyerek győz",
-            "inkább nem vesz tudomást a problémáról, homokba dugja a fejét, minthogy a konfligtust vállalja",
-            "lehet alkoholista vagy genge, vagy nem vállal felelősséget"
-          ],
-          "gyerek": [
-            "próbál megfoghatatlanná válni, probléma a felelősség vállalása",
-            "mindig kell mellé valaki aki a felelősséget vállalja"
-          ],
-          "férfi": [
-            "biztos hogy a nő erősebb lesz nála, és ő fog irányítani",
-            "a férfinak azt kell megélni, hogy közös célokat valósítsanak meg(egység), amiben a nő tolja előre",
-            "nem mer ellenállást kifejteni nem mer harcolni",
-            "a férja vagy becsajozik, vagy elválnak, vagy alkoholista lesz , vagy munkamánisás, vagy választ egy",
-            " olyan hobbit ahol világgá megy(horgászat, vadászat), vagy belebetegszik"
-          ],
-          "nő": [
-            "ha jól csinálja átadja a nap szerepet a férfinek és felismeri ,hogy neki támogatni kell a férfit",
-            "hajlmos, hogy illúziókba ringassa magát pl művészeteket választ"
-          ],
-          "főnök": [
-            "nagyon egnedékenyek, sértődősek, ha nem azt csinálja a beosztott amit kér",
-            "összefog egy csapatot akik érte küzednek"
-          ]
-        }
+        "apa": [
+          "én házam én váram",
+          "megbecsülést vár",
+          "tiszteletet vár",
+          "gyereknek nem lehet igaza vele szemben",
+          "megkérdőjelezhetetlen",
+          "küzdhet a gyerekért",
+          "segítheti a gyereket"
+        ],
+        "gyerek": [
+          "azt látja az apa agresszív",
+          "az apa a vállalkozásával foglalkozik"
+        ],
+        "férfi": [
+          "",
+          "a párja felnéz rá",
+          "a párja azt éli, hogy erős férfi van mellette",
+          "tevékenyen részt vesz az életben",
+          "küzd, felvállalja a férfi szerepeket",
+          "igazi macsó férfi tradícionális értelemben",
+          "nem szabad engednie hogy a párja vagy más nő a fejére nőjön",
+          "alázatosan küzdhet a családjáért, különben a párjával küzd majd"
+        ],
+        "nő": [
+          "olyan férfit választ akiből kihozhatja a kost",
+          "a férfi küzdjön érte",
+          "harcoljanak érte",
+          "férfivel vállalkozás-> ő irányít"
+        ],
+        "főnök": [
+          "viszi előre a céget",
+          "elkapkodja a dolgokat",
+          "előbb cselekszik utána gondolkodik",
+          "nem lehet vele vitatkozni",
+          "ha valamit elhatároz, tűzön vizen keresztülmegy érte, véghezviszi",
+          "ott jó vezetőnek, ahol nem kérdőjelezik meg",
+          "állandó bizonyítási vágy, könnyen motiválható"
+        ]
       },
-      "hold": {
-        "szempontok": [
-          "általános",
-          "!!!! érzelmek",
-          "ösztönei",
-          "tehetsége",
-          "anya",
-          "gyerek",
-          "feleség",
-          "férfi",
-          "alárendeltség",
-          "befogadás"
+      "bika": {
+        "általános információk": [
         ],
-        "kos": {
-          "általános": [
-            "",
-            "sldkflkdsnfs"
-          ],
-          "ösztönei": [
-            "állandóan keresi a kihívásokat",
-            "keresi azokat a helyzetekeet ahol ő győzhet",
-            "erős benne a versenyszellem",
-            "mindent az erejéből szeretne megoldani",
-            "türelmetlen",
-            "nem figyel a másikra, nem figyeli a másik mit reagál a dolgaira",
-            "a választ a saját kérdésére nem hallja meg"
-          ],
-          "tehetsége": [
-            "mindenhol ahol irányítani kell",
-            "amikor egy konkrét célt kell megvalósítani",
-            "ahol sok energiát kell belefektetni egy feladatba"
-          ],
-          "anya": [
-            "hirtelen módon képes küzdeni a gyerekért, erős anyatigris",
-            "a gyerek azt csinálhatja amit ő, nem veszi figyelembe az ő akaratát"
-          ],
-          "gyerek": [
-            "öntörvényű, akaratos, nehéz irányítani",
-            "anya-gyerek csaták nem ritkák",
-            "az anya mindenkit elnyom a környezetében"
-          ],
-          "feleség": [
-            "legyen mivel harcolnia, a férfit tolja előre",
-            "gyengébb párja lesz(sokkal)",
-            "ösztönösen irányítja a családot",
-            "nem egy házitündér, minden otthoni dolgot feladatnak fog fel",
-            "képtelen alárendelődni, de ezt nem veszi észre"
-          ],
-          "férfi": [
-            "erős nőt választ maga mellé, így imád harcolni a párjával",
-            "nem szeret felelősséget vállalni",
-            "kell neki egy olyan nő aki őt segíti"
-          ],
-          "alárendeltsége": [
-            "csak ott tud ,ahol valakire fel tud nézni",
-            "vagy magától rendelődik alá vagy sehogy"
-          ],
-          "befogadása": [
-            "gyereket akar(viszont a gyereket nem akarni kell)"
-          ]
-        },
-        "bika": {
-          "általános": [
-            "olyan élethelyzetbe fog kerülni, ahol ő nagyon erősen kötődni fog",
-            "ragaszkodás nagyon erős (párkapcsolatban még nehéz is lehet)",
-            "azt kellene megtanulnia, hogy a másikból hozd ki ami neked fontos, hogy a másikra figyeljen ne magára"
-          ],
-          "érzelemi": [
-            "nagyon ragaszkodik , nagyon odaadó, rajongani tud a másikért, a dolagiért",
-            "elég önző, nem az adás , hanem a birtoklás az érzelem alapja",
-            "nagyon sérülékennyé tud válni(ha valami analógiához kötődsz, a sorsnak dolga van)",
-            "erős vágyai vannak(szemben a mars)"
-          ],
-          "ösztönei": [
-            "imádja az ételeket, szereti élvezni az életet",
-            "a dolgok élvezhetősége nála alap dolog",
-            "ösztönösen vágyik a biztonságra, anyagias, nem tud lemondani",
-            "kötődéseit mindig tiszteletben kell tartani, neki ez alapvető motiváció"
-          ],
-          "tehetsége": [
-            "földhöz ,állaatokhoz, művészetekhez, pénzkereséshez",
-            "az élővilág az ő analógiája",
-            "csak akkor vagy biztonságban, ha nem jut eszedbe",
-            ""
-          ],
-          "anya": [
-            "nagyon erősen kötődik, ragaszkodik a gyerekéhez",
-            "birtokolni szeretné gyerekét",
-            "mindent megad a gyereknek de elvárja hogy hálás legyen,nehezen éli ha a gyerek hálátlan",
-            "mindent megbpróbál előteremteni a gyerekének",
-            "félti aggódik a gyerek iránt, de nagyon erősen kötődnek egymáshoz",
-            "a gyerek mindig számíthat az anyára, de ha a gyerek le szeretne válni hálátlanságnak nézi az anya"
-          ],
-          "gyerek": [
-            "rácuppan az anyára, néhány évig le sem akad róla, nagyon ragaszkodik",
-            "csak az anya van, az anya megpróbál mindent megadni végig az élete során",
-            "az anya megpróbálja pénzzel birtokolni a gyereket, ezzel próbál biztonságot adni",
-            "az anyának örömöt ad, már-már tulajdonként tekint a gyerekre"
-          ],
-          "feleség": [
-            "olyan párt választ aki az anyagiakat biztosítani tudja",
-            "jó partner tud lenni, nem bírja a pénztelenséget",
-            "biztos támasza lehet a férjnek, kötődik, ragaszkodik, akár alárendelődik is hajéamos"
-          ],
-          "férfi": [
-            "élvezeteket szereti, evés ,szex pl",
-            "a férfi a nőben az erotikus kisugárzást keresi",
-            "oylan nőt keres akit birtokolni lehet"
-          ],
-          "alárendeltsége": [
-            "megéri-e ez a kérdés számára, ha igen akkor alárendelődik"
-
-          ],
-          "befogadása": [
-            "nagyon természetes jegy, termékeny minden életterületen"
-          ]
-        },
-        "ikrek": {
-          "általános": [
-            "olyan élethelyzetbe kerüljön, ahol nincsenek érzelmi kötődések"
-          ],
-          "érzelmei": [
-            "felületes, de ez nem azt jeleniti, hogy nem szeret, hanem hogy van egy pillanat amikor szeret, de a következőben már nem",
-            "az érzelmek kimutatasa mindig a ráción keresztül történik, nem tudhatod, amit mond milyne érzés van mögötte",
-            "nem tud igazán kötődni, pl jó ha cserélődnek az emberek, ne kelljen kötődni",
-            "az érzelmek felületesek, de ez nem azt jelenti, hogy ne tudna szeretni",
-            "ne várd tőle, hogy kényeztesse, vagy hogy kötődjön",
-            "az érzelmek kimutatása a ráción alapul",
-            "pillanat analógiája, egyikben ezt éli, következőben már nem",
-            "soha, nem tudhatod, amit mind ,amit ír, amit csekejszik, valóban érzelmi alapú-e"
-          ],
-          "ösztönei": [
-            "kíváncsi, minden érdekli",
-            "közvetítés, kommunikáció minden formája",
-            "rövidtávú kapcsolódások a legpozitívabbak számára",
-            "ikrek beszél , szűz ír, sző elszáll írás megmarad",
-            "jó szerepjátékos, minden helyzethez elő tudja adni magát, ezzel alkalmazkodva"
-          ],
-          "tehetsége": [
-            "minden terület ahol kapcsolatokat építhet, ápolhat, vagy hozhat létre",
-            "jó minden területen ahol változtatni kell",
-            "közvetítői területen jó: tanítástól kereskedelemen át, információáramláson át minden terület",
-            "ahol szerepelni, kell, órákon át tud beszélni a semmiről érdkesen, jól eladja magát"
-          ],
-          "anya": [
-            "gyerek lehet az élete része, de célja nem",
-            "mindig viszi jobbra balra a gyerekét, rászoktatja az emberi kapcsolatokra",
-            "nem lesz ideje a gyerekre csak futtában fogja felnevelni",
-            "mindig tanítja a gyereket , felkelti a kíváncsiságát ,érdeklődését"
-          ],
-          "gyerek": [
-            "érdeklődik a világ iránt, nem ragad le egy dolog mellett",
-            "nem tud egy dolog mellett leragadni, mindent ki szeretne próbálni",
-            "állandóan szemmel kell tartani, mert folyton mozgolódik",
-            "azt látja  az anya midnig mással foglalkozik, nem a gyerekkel"
-          ],
-          "feleség": [
-            "nem tud kötődni",
-            "általában intelektuális partnert keres",
-            "nem egy tipikus háziasszony"
-          ],
-          "férfi": [
-            "férfinak a nő mellett nem szabad unalmassá válnia",
-            "kíváncsi természetű nőt választ, aki okos",
-            "vanaki azért választ nőt, hogy ne kelljen érzelmileg belemennie a kapcsolatba",
-            "van aki a szélhámos nőkre bukik van aki jó üzlettársat keres",
-            "nem kérdés hogy szereted-e a másikat, a tettekkel a programokkal bizonyitod h szereted, nem kell modnani"
-          ],
-          "alárendeltsége": [
-            "csak racionálisan tud alárendelődni",
-            "sose tudod alárendelt-e (vevő vagy az eladó az alárendelt)"
-          ],
-          "befogadása": [
-            "racionálisan tud befogadó lenni, egyébként nem is gondol rá",
-            "nem tudatosan teszi amit tesz, mert nem gondol rá",
-            "útközben evés jövök-megyek"
-          ]
-        },
-        "rák": {
-          "általános": [
-            "odaadó",
-            "negyon erős érzelmei vannak, erős kötődés",
-            "nagyon féltékeny"
-          ],
-          "érzelmei": [
-            "odaadó",
-            "negyon erős érzelmei vannak, erős kötődés",
-            "nagyon féltékeny, kisajátít"
-          ],
-          "ösztönei": [
-            "jók az intuíciós képességei",
-            "megérzi átérzi, erős az empátiája",
-            "jól teremt kapcsolatot a tudatalattival/tudattalannal",
-            "tele van állandóan szorongással és aggodalommal"
-          ],
-          "tehetsége": [
-            "erős a művészi tehetsége",
-            "minden tarületen ami családhoz, otthonhoz tartozik"
-          ],
-          "anya": [
-            "ősanya típus",
-            "ha 1 gyereke van nagyon csak hozzá kötődik, ha több akkor megoszlik a szeretet",
-            "nagyon odaadó a gyereke iránt",
-            "aggódik és szorong a gyereke miatt",
-            "nem gyenge ,de érzelmileg kötődik"
-          ],
-          "gyerek": [
-            "nagyon erős kötősések",
-            "az otthonban találja mae a biztonságot, nyugalmat",
-            "nem szeret változtani kockáztatni",
-            "nagyon érzékeny",
-            "jó művészi épességű"
-          ],
-          "feleség": [
-            "jó háziasszony",
-            "élvezi a feleség szerepet",
-            "mindent a család felől közelít meg",
-            "érzékeny és érzelmekben kiáradó párkapcsolat"
-          ],
-          "férfi": [
-            "a nőt a termékenysége miatt választja",
-            "érzékenysége, romantikája miatt választja a nőt",
-            "a nőt azért választja mert szereti ha a ő söt főz takarít",
-            "gyereket, családot szeretne a nőtől"
-          ],
-          "alárendeltsége": [
-            "ahol érzelmileg érintett ott tökéletesen alá tud rendelődkni",
-            "ahol ő nélkülözhetetlen ott alá tud rendlődni"
-          ],
-          "befogadása": [
-            "tökéletes befogadó",
-            "a gyerek a befogadás számára",
-            "gyereket csak az akarhat nála aki megtermékenyíti"
-          ]
-        },
-        "oroszlán": {
-          "általános": [
-            "nagyon ritkán mutatja a valódi önmagát",
-            "ritkán ismerhetőek meg a valódi érzései",
-            "ne várd, hogy előbb valljon szerelmet mint te(mert ha lapátra tennéd nem bírná az egója)",
-            "ne várj tőle lángolást, odaadást",
-            "büszke, tartással rendelkező"
-          ],
-          "érzelmei": [
-            "nagyon ritkán mutatja a valódi önmagát",
-            "ritkán ismerhetőek meg a valódi érzései",
-            "ne várd, hogy előbb valljon szerelmet mint te(mert ha lapátra tennéd nem bírná az egója)",
-            "ne várj tőle lángolást, odaadást",
-            "büszke, tartással rendelkező"
-          ],
-          "ösztönei": [
-            "gyáva: kerüli a megalázó vagy alárendelt helyzeteket",
-            "bátor: ahol érzi, hogy vagyok valaki, előjön az uralkodó hajlama",
-            "nagylelkű,odaaoás,büszkeség",
-            "lusta: azért nem tesz valamit, hogy más megtegye és általa átélhesse a fensőbbséget"
-          ],
-          "tehetsége": [
-            "mindenhol, ahol luxust, fensőbbséget hatalmat, gazdagságot képviseli",
-            "adottságok: vezetés irányítás, uralkodás, alkotás, teremtés, kreativitás"
-          ],
-          "anya": [
-            "általában nagyon jó anya",
-            "szeret büszkének lenni a gyerekére",
-            "nevelni a gyereket nem nagyon tudja, nem megy bele a kis játékokba",
-            "neki égkő a gyerek, mint egy ékszer, így is bánik vele"
-          ],
-          "gyerek": [
-            "anya uralkodik, imádja a környezetét vezetni",
-            "az anya lusta, vagy hedonista, vagy uralkodó típus,(vagy más oroszlan analógiák"
-          ],
-          "feleség": [
-            "büszke ved, nemes vad. a férfi legyen rá büszke",
-            "nem egy konyhatündér",
-            "first lady",
-            "olyan férfit választ akinek olyan ahivatása, hogy nyílvánosság előtt szerepel, hogy megélhesse az oroszlánságot"
-          ],
-          "férfi": [
-            "oroszlánná teszi a nőt aki mellette van(ezt úgy érdemes ,hogy ha ő a királynő akkor én a király)"
-          ],
-          "alárendeltsége": [
-            "csak egy embernek",
-            "olyan pozíciókat kell neki keresni, ahol max 1 embernek kell alárendelődni(másképp nem tud)"
-          ],
-          "befogadása": [
-            "csak ,ha ő akarja",
-            "csak ,ha teremteni akar, ehyébként nem"
-          ]
-        },
-        "szűz": {
-          "általános": [
-          ],
-          "ösztönei": [
-            "kritikus, viszonyít mindent mindenhez(nem tudja igazán kikapcsolni)",
-            "mindig látja a negatív oldalt",
-            "racionális, rációja a tapasztalaton alapszik",
-            "keresi a tapasztalatokat, átélési lehetőségeket",
-            "döntésre képtelen",
-            "mindig a hasznos dolgokat szereti, keresi, ami előreviszi az életben"
-          ],
-          "tehetsége": [
-            "ahol másokat segíteni, támogatni kell",
-            "mindenhol ahol elemezni kell",
-            "jó könyvelő, számokhoz nagyon ért"
-          ],
-          "anya": [
-            "megpróbálja könyvből nevelni a gyereket, ahogy leírtan a lehető legjobb",
-            "megpróbál tökéletesen nevelni, ehhez mindent megad a gyerekeknek",
-            "racionálisan kikapcsolaj az érzelmeket, van hogy valami  nem jó a gyereknek egóban, ő akkor is megteszi az érdekében"
-          ],
-          "gyerek": [
-            "az anyának magasak az elvárásai, megpróbál ennek megfelelni",
-            "azt érzi az anyának semmi nem jó",
-            "az anya képes kezelni a tökéletesség kérdését és nem viszonyít",
-            "megtanulja az anyjától a segytőkészséget, a szolgálatot, alárendeltséget, tisztaság mániát"
-          ],
-          "feleség": [
-            "megbízható, húséges, erényes",
-            "szégyenlős"
-          ],
-          "férfi": [
-            "nőben keresi a megbízhatóságot, hűséget",
-            "nőben keresi a precizitást, pontosságot, akár munkatársat",
-            "olyan nőt keres aki szintén szeret dolgozni",
-            "lehet hogy rendmániás nőt keres"
-          ],
-          "alárendeltsége": [
-            "legjobb munkaerő, mindent tökéletesen póbálnak véghezvinni"
-          ],
-          "befogadása": [
-            "ösztönöket próbálja kikapcsolni, racionális"
-          ]
-        },
-        "mérleg": {
-          "általános": [
-            "mindig érzelmeket vár, és szeretné ha viszonoznák az övét",
-            "ott nem tud érzelmileg megnyílni ahol az érzelmeit nem viszonozzák"
-          ],
-          "érzelmei": [
-            "mindig érzelmeket vár, és szeretné ha viszonoznák az övét",
-            "ott nem tud érzelmileg megnyílni ahol az érzelmeit nem viszonozzák"
-          ],
-          "ösztönei": [
-            "keresi a harmóniát, egyenssúlyt békességet",
-            "keresi a pozitív visszajelzéseket",
-            "kompromisszumkedvelő, nem szeret másokkal szembeszállni ha nem muszáj",
-            "döntőképesságe nem túl erős",
-            "jó a diplomáciaérzéke",
-            "nem önérvényesítő típus, mindig a külvilágot figyeli",
-            "szeretne másoknak megfelelni"
-          ],
-          "tehetsége": [
-            "az emberi kapcsolatokban",
-            "olyan élethelyzetekben ahol átéli az egyensúlyt és elfogadást kap",
-            "jól megérzi hogy lehet a másik emberhez közel kerülni",
-            "jó a művészetekben, színészeti dolgokban",
-            "jó nyilvános szereplő"
-          ],
-          "anya": [
-            "jó kacsolatot próbál kialakítani a gyerekkel",
-            "fontos neki mit mondanak a gyerekéről, ez befolyásolja a nevelésben",
-            "a külvilág megfelelésének mgefelelően neveli a gyerekét",
-            "a gyerek szülő fejére nőhet, és már ő irányít a kapcsolatban",
-            "a párkapcsolat fontosabb mint a gyerek"
-          ],
-          "gyerek": [
-            "minden határt megpróbál átlépni/elérni",
-            "nagyon hisztis, folyton azt tezsteli vajon szeretik-e szülei ",
-            "harmonikusan éli meg a gyerekkort",
-            "láthatja, hogy az anya folyton szerepet játszik",
-            "láthatja hogy az anyja kétszínű",
-            "látja az anyja kompromisszumkötő készségét",
-            "látja hogy az anyja nagyon nőies"
-          ],
-          "feleség": [
-            "fontos neki a párkapcsolaat és szeretné ha tökéletes lenne",
-            "nem a tipikus háziasszony, ő továbbra is nő szeretne lenni",
-            "a páron keresztül kell kiteljesednie, nem önállóan"
-          ],
-          "férfi": [
-            "szép nőt keres, aki nőies",
-            "fontos neki hogy a nő adjon magára",
-            "szereti ha a nő engedelmes,alárendelt és azt teszi amit mond",
-            "szeretne büszke lenni a párjára, és hogy elismerjék őt"
-          ],
-          "alárendeltsége": [
-            "akkor tud ha fontos neki a párja"
-          ],
-          "befogadása": [
-            "ha fontos neki a párja akkor befogadó",
-            "ha meg akarja szerezni a másikat akkor igen",
-            "ha nem tetszik a másik nem eljátszik egy szerepet"
-          ]
-        },
-        "skorpió": {
-          "általános": [
-          ],
-          "érzelemi": [
-            "szélsőséges, vagy mindent vagy semmit",
-            "vagy óriási szenvedélyek, vagy teljes hidegség",
-            "átmenetiek,nehezen észlelhetőek",
-            "visszaigazolást vár arra,vajon szeretnek-e engem"
-          ],
-          "ösztönei": [
-            "igazi öszönember, jók a megérzései, érzéekenyen reagál mindenre",
-            "erős empátiakészség, azt hiszi hogy másokban is nagy aztán nagyot csalódik",
-            "féltékeny, mást tapasztal mint amit szeretne",
-            "halállal, elmúlással, tudattalannal való kapcsolat",
-            "fél a veszteségtől, öszönösen próbálja ezt kikerülni"
-          ],
-          "tehetsége": [
-            "ahol a tudattalannal, elmúlással,halállal foglakozhat",
-            "művészetben",
-            "mások értékének megőrzése: pénz, anyagiak, emberi élet"
-          ],
-          "anya": [
-            "nagyon jó anya, de van amikor hárítják, és nem akarnaka zok lenni"
-          ],
-          "gyerek": [
-            "magányosan éli a gyermekkorát",
-            "érzelmileg kicsit zárkózott, nehezen nyílik meg nehezen  barátkozik",
-            "panaszkodik a szülőre, hogy nem szeretik nme úgy szeretik",
-            "figyeli hogy mit csinál a szülő, mit csinál az anya"
-          ],
-          "feleség": [
-            "lelki társat keres, de ez nem fog sikerülni",
-            "a másik nem érezheti amit ő, így nem is létezik lelki társ",
-            "nagyon sok érzelmet lehet tőle kapni, ha pont azt szeretné",
-            "nagyon tud szeretni, nagyon tud gyűlölni",
-            "ha keresztbetettél neki, ne számíts megbocsájtásra",
-            "ha szeret magától szeret, nem lehet kényszeríteni"
-          ],
-          "férfi": [
-            " a szexuális kisugárzása alapján választja a párt",
-            "azért válaszztja a nőt hogy jókat harcolhasson vele"
-          ],
-          "alárendeltsége": [
-            "semilyen módon nem rendelősik alá, csak ha ő akarja, de akkor sem érzed h így lenne"
-          ],
-          "befogadása": [
-            "legkevésbé befogadó jegy"
-          ],
-          "munka": [
-            "tűzoltó",
-            "banki trezort őrző",
-            "testőr",
-            "mentős"
-          ]
-        },
-        "nyilas": {
-          "általános": [
-            "hihetetlenül idealista személyiség, aki maga a leghetőségből is a történést látja",
-            "nagyon erős az optimizmusa és a pozitív gondolkodása, ez nagyban segíti"
-          ],
-          "érzelmei": [
-            "szerelem(fellángolás) az övé, nagyon gyorsan lángra kap nagyon gyorsan elhamvad",
-            "hihetetlenül el tud köteleződni, rövid időn belül "
-          ],
-          "ösztönei": [
-            "ösztönösen optimista és lelkes, ősbizalom van benne mindenki felé",
-            "vallás , misztikus dolgok iránti vágy, szeretne hinni valamiben",
-            "erős a hite, így kevésbé van szüksége a realitásra"
-          ],
-          "tehetsége": [
-            "ahol a lelkesedésére, buzdítására szükség van",
-            " de ez lehet a ploitikai elfogultság is neki",
-            "jó tanítói képességek"
-          ],
-          "anya": [
-            "nagyon jó a kapcsolata a gyerekkel, része leet az életének, de célja nem, nem ősanya típus",
-            "nagyon barátian próbálja nevelni a gyerkét, mindent bizalomra épít, jó az elv de nehéz tanítani",
-            "nevelésben inkább \"kampányszerű\", nem akar nagyon erős kötődéseket kiépíteni"
-          ],
-          "gyerek": [
-            "nehezen lehet lekorlátozni, szabad szellemű, szülő mellett a bizalmat tanulja meg ",
-            "az anya mindenre odafigyel csak rá nem, ezt érzi, néha nevelik néha nem",
-            "látja sok mindent megígér a szülő, de nem biztos ,hogy betartja"
-          ],
-          "feleség": [
-            "legjobb társak közé tartozik, elvárja a bizalmat, nem hajlandó alárendelődni",
-            "egyenrangú párkapcsolatben tud lenni csak, nem egy konyhatündér, nem is lehet leláncolni",
-            "fontos hogy olyan legyen a párkapcsolat, hogy együtt tudjanak működni",
-            "a nő adja a célt, a férfi valósítsa meg",
-            "a hűség és az állandóság kérdése felmerül, de próbál szabad is lenni",
-            "nem e legtermékenyebb nő, mindig rájö, hogy nem most van ennek az ideje"
-          ],
-          "férfi": [
-            "könnyedség, lazaság, nemtörődömség",
-            "nyitottság, nyitott házasság, ami akár válással végződhet mert nem bírják",
-            "a nő feltétel nélkül bízik benne(ha benne éli)"
-          ],
-          "alárendeltsége": [
-            "sosem tudod, hogy alárendelődik vagy sem, ha igen magától teszi, de akkor se tudod",
-            "elég nehéz egy alárendelt szerepben lévő alkalmazottban megbízni",
-            "megbízhatatlan, vagy megteszi vagy nem, ebből se tudod eldőnteni, hogy alárendelt e",
-            "hárítja a rációt, teljesen kiszámíthatatlan"
-          ],
-          "befogadása": [
-            "ha fontos neki, ha hisz benne,akkor igen, egyébként nem"
-          ]
-        },
-        "bak": {
-          "általános": [
-            "oppozícióban áll a rákkal , Elviekben a legnehezebb holfállás",
-            "Érzelmi kötődés a célokhoz, oppozíció a hold elveivel",
-            "Az érzelmekhez való viszonyt a célok fogják meghatározni"
-          ],
-          "érzelmei": [
-            "leghidegebb érzelmek. Az érzelem nem a szereteten alapul , hanem a célokon.",
-            "Olyan mikor az anya szeretetből neveli, de a gyerek a nevelésen keresztül nem a szeretetet érzi"
-          ],
-          "ösztönei": [
-            "szabályok keresése, szabályok követése",
-            "fegyelmezettség, keretek, szabályok, korlátok megélése",
-            "keresi a szabályokat , amikhez tud alkalmazkodni"
-          ],
-          "tehetsége": [
-            "ahol kell fegyelem, következetesség, szigor ,céltudatosság",
-            "tanításban , példamutatásban, pedagógusságban, hogy megtartsa a rendet az osztályban",
-            "nevelőnek, könyvelőnek nagyon jó, és minden más helyen ahol nem kell érzelmeket vinni a dologba"
-          ],
-          "anya": [
-            "szigorú, következetes, nem elnéző, büntető, büntetett",
-            "a gyerek érdekében bármire képes, mindent megtesz érte",
-            ""
-          ],
-          "gyerek": [
-            "az anyjára olyan hatással lesz hogy mindig korlátozza őt",
-            "nagyon kitartó, (főleg akkor ha rosszaságot kell csinálni)",
-            "egy kicsit magányos, korlátok között élés",
-            "azt érzi az anyja segíti a céljait",
-            "kevésbé nyitottak, inkább befelé fordulóak"
-          ],
-          "feleség": [
-            "a nőben nincs könnyedség, inkább szigorú",
-            "biztosan gyengébb pasi lesz mellette, fontos hogy felismerje ,hogy közös célok kellnek  párjával",
-            "nem vágyik szabadságra, nem vágyik semmire, az a fontos, hogy minden rendbe legyen",
-            "szívós, egyáltalán nem könnyed, vagy gyengéd, nem a nőiség a domináns",
-            "odafigyelés támogatás, hűség, mindent rendben tart, otthon ,család ,csak a kapcsolat nincs rendben"
-          ],
-          "férfi": [
-            "makacs , keményfejű, érzelem nélküli",
-            "érzéketlen, akár igénytelen is lehet",
-            "vagy a nő álla férfi mögé és tolja előre, vagy a nő helyett is dolgozik",
-            "azért vállalja a párja, hogy valaki velelősséget vállaljon a családban"
-          ],
-          "alárendeltsége": [
-            "jól tud alárendelődni, ha feladata van végrahajtja",
-            "nincs egyénisége nincs kreativitása",
-            "neki az a jó ha megmondják mit kell csinálni és nagyon pontosan végre tudja hajtani"
-          ],
-          "befogadása": [
-            "nem túl befogadó, régen a terméketlenség szimbóluma volt",
-            "akkor lehet gyereke ,ha a célja az anyaság, de a befogadás nem lehet célja"
-          ]
-        },
-        "vízöntő": {
-          "általános": [
-            "a kötődései átmenetiek- ha ős zerelmes én nem ha én akkor ő nem",
-            "repülő és a reptér- tudni akarja h van valaki aki engem szeret, de ne korlátozzon"
-          ],
-          "ösztönei": [
-            "keresi a szabadságot, kreatív",
-            "vonzódik a különleges helyzetekhez dolgokhoz",
-            "keresi a másságot",
-            "az a dolga hogy kiegészítse a világot amivel a másságot képviseli"
-          ],
-          "tehetsége": [
-            "kreativitas, sok utazas, sok valtozatossag ahol csak a kiindulópont adott"
-          ],
-          "anya": [
-            "házasságon kívüli anya",
-            "örökbe fogad",
-            "nevelőszülőség",
-            "külföldi pár(akár szinesbőrű)",
-            "császárral szülés",
-            "jó anya tud lenni, de az hogy őt a gyerek korlátozza az lehetetlen"
-          ],
-          "gyerek": [
-            "kettősség: ragaszkodik az anyához nagyon 2. szabadghyerek akit fogni kell",
-            "azt érzi az én anyám szabad akart lenni mellettem",
-            "anya tanítja: mindent érted teszek, egyedül nevelés"
-          ],
-          "feleség": [
-            "nem neki való",
-            "olyan párra van szüksége aki korlátozza, ha nem tudja elfogadni menekülni fog",
-            "olyan párra vágyik ahol egyenrangú a kapcsolat,kivesszük a közös jót",
-            "olyan férfit talál aki a független nőt keresi"
-          ],
-          "férfi": [
-            "menekül minden kötöttségtől",
-            "legjobb ha kiszolgáltatott neki a nő",
-            "azért választja a nőt mert különleges más mint a többi, érdekes",
-            "vagy csak szabad akar lenni es egyilyen lany mellett tud leginkabb az lenni",
-            "legjobb szerető típus"
-          ],
-          "alárendeltsége": [
-            "nem szeret alárendelődni",
-            "inkább a melléreendeltség az övé"
-          ],
-          "befogadása": [
-            "gyerekvállalásban is kell valami különleges, eltérő a hagyományostól"
-          ]
-        },
-        "halak": {
-          "általános": [
-            "Azért kapja valaki, hogy olyan élethelyzetbe kerüljön, hogy az érzelmeinek változnia kell."
-          ],
-          "ösztönei": [
-            "segítőkész, odaadó, bár ez sokszor csak álca, de a segítségükre mindig lehet számítani",
-            "ösztönösen benne van a félelem, benne van a görcs, félelmi neurózisok",
-            "jó művészi érzék, jó intuíciók, jó empátia érzék",
-            "problémamegoldó képesség nem túl jó"
-          ],
-          "érzelmei": [
-            "nagyon odaadó érzelmei vannak, ő tud legjobban szeretni, bármit képes odaadni",
-            "bármit képes feláldozni az érzelmeiért",
-            "könnyen illúzióba ringatja magát, emiatt könnyen csalódásba eshet",
-            "könnyen vált érzelmi helyzetet, megcsalásra is hajlamos olykor",
-            "az egyik pillanatban nagyon érzelmes, a másikban lezuhannak",
-            "bárhol sírva tud fakadni(egy jó könyv, vagy film is elég)",
-            "kiváló érzelmi zsaroló, könnyen lesz féltékeny is, de tud veszíteni"
-          ],
-          "tehetsége": [
-            "művészetekben, egészségügyben, vendéglátásban"
-          ],
-          "anya": [
-            "odaadó, erős kötődés a gyerekez, ezért sokszor fejére nő a gyerek",
-            "nem tud következetes lenni, kerüli a felelősséget, mindig próbálja másra hárítani",
-            "gyakran áldozat szerepbe helyezi magát a gyerek előtt, 'szegény én' , önsajnálat"
-          ],
-          "gyerek": [
-            "nem vállal felelősséget, gyakran beteg,szüleit zsarolja érzelmileg",
-            "sok lemondással szembesül a családban, akár iskolában",
-            "anyaminta: önzetlenség, önfeláldozás, művészet, vagy alkoholizmus"
-          ],
-          "feleség": [
-            "odaadó, önfeláldozó , segíti előre a párját, átadja a felelősséget a párjának",
-            "azt érezheti a párom becsap, elnyom, kihasznál, zsarnok felettem",
-            "lehet beteg férfi mellette akit ápolni kell"
-          ],
-          "férfi": [
-            "ha nem nem a nőn kereszül éli, akkor hárítja a felelősséget, ha jól éli a nőtől átveszi az irányítást",
-            "ha a nőben éli lehet elnyomja a párját, vagy ő adja a stabilitást, ő dönt",
-            "lehet hogy művész lelkű, vagy ilyen párt keres"
-          ],
-          "alárendeltsége": [
-            "tökéletesen alá tud rendelődni, de mindig ott van benne az önfeláldozás is"
-          ],
-          "befogadása": [
-            "könnyedén és pozitívan fogad be"
-          ],
-          "munka": [
-            "önálló munkát nem szabad adni neki, mindenképp kell mellé valaki"
-          ]
-        }
+        "apa": [
+          "anyagiakben méri a szeretetét, törődését",
+          "szerinte az anyagiakkal minden elérhető",
+          "fárasztják a gyerekek"
+        ],
+        "gyerek": [
+          "erős kötődés, nagyon ragaszkodik",
+          "igényli, hogy kiszolgálják",
+          "azt látja, hogy az apa teremti a biztonságot",
+          "az apára mindig lehet támaszkodni, sose ideges",
+          "az apát csak a pénz érdekli"
+        ],
+        "férfi": [
+          "lusta",
+          "élvezkedő, fontos a testiség, a szerelem",
+          "birtokolni szeretné a párját-> tenyerén hordja",
+          "a felelősség lehet a nőé, de az anyagiak semmiképpen",
+          "mellette mindig sokat költ a nő, de keveset keres",
+          "nehezen hozható ki a sodrából",
+          "szereti a jó ételeket, a kényeztetést",
+          "ragaszkodik a biztonságos életvitelhez"
+        ],
+        "nő": [
+          "anyagiságot, biztonságot, teremtést, élvezeteket él meg a párjában",
+          "mindig féltékeny",
+          "van kivel jókat enni(párja)"
+        ],
+        "főnök": [
+          "ameddig nem kell fizetést adni, addig minden szuper",
+          "nem szereti a felelősséget",
+          "megbízható és kitartó",
+          "nem szeretik az aprópénzt, próbál tőle megszabadulni"
+        ]
       },
-      "merkúr": {
-        "szempontok": [
-          "általános",
-          "gondolkodása",
-          "kapcsolatteremtése",
-          "kommunikációja",
-          "mozgékonyság-változtatasi kepesseg",
-          "gyermekkora",
-          "tanulása",
-          "elfogadása"
+      "ikrek": {
+        "általános információk": [
         ],
-        "kos": {
-          "általános": [],
-          "gondolkodása": [
-            "tele van versenyszellemmel",
-            "fontos neki a gyozelem",
-            "mindenkivel versenyezni akar, le akar győzni",
-            "nehezen fogja fel ha valaki ellenáll neki",
-            "nagyon erősen meg akar győzni az igazáról",
-            "gyorsak a reakciói",
-            "jól vág az esze csak előbb cselekszik mint gondolkozik",
-            "türelmetlen, nem tud semmit kivárni"
-          ],
-          "kapcsolatteremtése": [
-            "agresszívan teremt kapcsolatot",
-            "mindent gyorsan akar megszerezni"
-          ],
-          "kommunikációja": [
-            "azt hiszi az az erősebb aki hangosabb",
-            "szeretné hogy társaságben odafigyeljenek rá"
-          ],
-          "mozgékonyság-változtatasi kepesseg": [
-            "\"beveszi a várat aztán megy tovább, nem aar várban lakni\"",
-            "sokszor olyanon vitatkozik aminek semmi értelme nincs"
-          ],
-          "gyermekkora": [
-            "olyan nevelést kap és olyan élethelyzetekbe kerül, ahol akaratát érvényesíteni tudja",
-            "sokszor harcolnia kell a testvérrel",
-            "sokszor sportioskolába jár, vagy olyan helyre ahol edzenie kell, pörög az élet"
-          ],
-          "tanulása": [
-            "ami érdekli azért mindent megtesz",
-            "amiben ott van a lehetőség hogy győzzön ott tenni is fog érte",
-            "állandóan veresenyhelyzetben kell tartani",
-            "olyan dolgokat tanuljon ahol mindig igaza lehet"
-          ],
-          "elfogadása": [
-            "mindent elfogad, amit akar, de semmi mást nem",
-            "ha mondják neki hogy el kellene fogadni ,annál kisebb esélye lesz hogy tényleg elfogadja",
-            "ha ő nem akarja nem fog menni"
-          ]
-        },
-        "bika": {
-          "általános": [],
-          "gondolkodása": [
-            "lassú, megfontolt",
-            "anyagias",
-            "alapos, sokszor átrágja a dolgokat",
-            "tiszta paraszti észjárás",
-            "birtoklás és az anyagiak motiválják"
-          ],
-          "kapcsolatteremtése": [
-            "nem teremt könnyen kapcsolatot, inkább a begtartásra törekszik",
-            "Olyan kapcsolatokra törekszik amit meg is tud tartani",
-            "nem szeret hitelt felvenni, mert abban nincs benne a biztonság"
-          ],
-          "kommunikációja": [
-            "lassan kommunikál",
-            "előnyösebb ha írásban kommunikálhat, mert ott jobban át tudja goldolni mit írjon",
-            "nem túl jó a problébamegoldó képessége",
-            "egy egy problémány napokig rágódik"
-          ],
-          "mozgékonyság-változtatasi kepesseg": [
-            "híresen lusta",
-            "kényelem, nyubalom , biztonság motiválja",
-            "nem szeret változtatni, ragaszkodik a helyzetekhez"
-          ],
-          "gyermekkora": [
-            "nyugalomban békességben stabilitásban telik",
-            "szülők anyagilag motiválják"
-          ],
-          "tanulása": [
-            "nem gyors de alapos",
-            "amit megtanul azt tudja is, jó az emlékezőképessége, mély a tudása"
-          ],
-          "elfogadása": [
-            "anyag szinten fogad el",
-            "aki nem sérti a nyugalmát és nem akar elvenni tőle semmit, azt elfogadja",
-            "ha kibillentik a biztonságból azt nem tudja elfogadni"
-          ]
-        },
-        "ikrek": {
-          "általános": [],
-          "gondolkodása": [
-            "furfangos, ravasz",
-            "jó eszű, jó reakciójú",
-            "mindenre tud megoldást találni",
-            "kíváncsi, információt szeretne adni és kapni",
-            "nem kíván elköteleződni semmi mellett"
-          ],
-          "kapcsolatteremtése": [
-            "könnyen teremt kapcsolatot emberekkel tárgyakkal",
-            "a kapcsolatainak többsége nem túl mély",
-            "nagyon sok ismerőse van",
-            "jól tudja alkalmazni kapcsolatait a hétköznapokban"
-          ],
-          "kommunikációja": [
-            "jól kommunikál",
-            "idegennyelvekhez is jó adottsága van"
-          ],
-          "mozgékonyság-változtatasi kepesseg": [
-            "bármikor tud változtatni",
-            "vagy éppen jön valahonnan, vagy éppen megy valahova",
-            "nem szabad beleragadnia helyzetekbe, mert neki fontos a változás"
-          ],
-          "gyermekkora": [
-            "nagyon változatos",
-            "gyakran elválnak a szülők, vagy iskolát vált, vagy költöznek sok változás a környezetében",
-            "mindig van mit tanulni, mindig van információ amire szert tehet"
-          ],
-          "tanulása": [
-            "legjobb rövid távú tanuló, vizsgákra pl nagyon jól fel tud készülni, aztán elfelejti",
-            "nagyon jó memória, hallásból látásból is minden megmarad"
-          ],
-          "elfogadása": [
-            "könnyen fogad el helyzeteket, főleg ha nem fontos számára",
-            "egyszer valami nagyon fontos neki, nemsokára már annyira mégse lesz fontos",
-            "könnyebben túllép dolgokon",
-            "ha őt megcsalják, a másik azt hiszi mekkora problémát okoz ezzel, de valójában a megcsaló jobban megsínyli"
-          ]
-        },
-        "rák": {
-          "általános": [],
-          "gondolkodása": [
-            "érzelmileg dönt, mindent így közelít meg",
-            "fontos a múlt és a család",
-            "intuitív döntései vannak, ehhez jó érzéke van",
-            "nem vesz tudomást azokról a folgokról amik sértik ez érzelmeit",
-            "ha azt mondja \u0027úgy érzem\u0027, akkor racionális alapon nem tudod lebeszélni, neki az úgy van és kész"
-          ],
-          "kapcsolatteremtése": [
-            "érzelem alapáján hoz létre kapcsolatot emberekkel és tárgyakkal is",
-            "neki a szimpátia érzelem alapú, ha nem vagy szimpatikus neki nem lesz jó kapcsolat",
-            "őrizget régi tárgyakat, főleg ha családtól, vagy régi emlékből van",
-            "szereti a romantikát, hogy valami érzéki is legyen"
-          ],
-          "kommunikációja": [
-            "olyat szeretne mondani amire mindenki kíváncsi(itt jön a pletyka)",
-            "ha valaki tud valamit akkor ő biztos, lehet hozzá fordulni bármivel",
-            "szeretne nélkülözhetetlen lenni kapcsolataiban",
-            "az érzelmeket sokkal jobban le tudja írni mint szóban kimondani"
-          ],
-          "mozgékonyság-változtatasi kepesseg": [
-            "amig szeret nem változtat, amikor már nem akkor változtat",
-            "ha kötődik nem változtat, ha nem akkor vált"
-          ],
-          "gyermekkora": [
-            "fontos neki a család, és hogy tudjon velük beszélni",
-            "gyakran úgy érzi elvesztette az édesannyát, ha testvére születik"
-          ],
-          "tanulása": [
-            "érzelmi alapon tanul, kötődik a tanárhoz , tantárgyhoz is, vagy pont nem akkor utálja",
-            "nem képes racionálisan tanulni"
-          ],
-          "elfogadása": [
-            "amihez érzelmileg kötődnek azt korlátlanul elfogadják",
-            "olyan dolgokat is elfogad pl gyerekekben amit nem kellene, néha túl megengedő"
-          ]
-        },
-        "oroszlán": {
-          "általános": [
-            "Kulcsmondata: Ha hallgattál volna, bölcs maradtál volna.",
-            "Nem szabad versenyeztetni, olyan hely kell neki , ahol tudása kommunikációja, MEGKÉRDŐJELEZHETETLEN"
-          ],
-          "gondolkodása": [
-            "fensőbbségtudat: én aztán vagyok valaki",
-            "nagyvonalú tud lenni",
-            "könnyen befolyásolhatóak, nagyon hiúak, könnyen bedőlnek a szép szavaknak"
-          ],
-          "kapcsolatteremtése": [
-            "felülről teremt kapcsolatot: ami értékes , ami különleges az jöhet, ami nem érdekes azzal nem foglalkozik kizárja",
-            "párkapcsolatban fontos, hogy büszkel lehessen a kapcsolatra"
-          ],
-          "kommunikációja": [
-            "nem megy bele olyan kommunikációba, ahol alul maradhat",
-            "ha nincs versenyhelyzet nagyra van magával , egyébként meg nyuszi",
-            "nem szereti ha megkérdőjelezik amit ő mond, nem szeret vitatkozni",
-            "szeret fensőbbséggel beszélni",
-            "szeret kioktato lenni",
-            "szereti önmagát megkoronázni"
-          ],
-          "mozgékonyság-változtatasi kepesseg": [
-            "az alattvalókat nem szívesen cseréli le",
-            "ha olyan helyzetben van ahol nem érzi, hogy vagyok valaki, képes változtatni"
-          ],
-          "gyermekkora": [
-            "kettősség: vagy tenyerén hordja a szülő, mindent megadnak neki, támogatják segítik, hogy kiteljesüljönvagy olyan közegből jön, ahol mindig lenyomták lehúzták ezért be akarja bizonyítani, hogy én is érek annyit mint más",
-            "sokszor olyanok a testvérei ,akik közt ő lehet a király",
-            "vigyázni kell vele, nehogy megtörjék a gerincét, az egóját"
-          ],
-          "tanulása": [
-            "ha tudod motiválni, nagyon jó tanuló tud lenni(látnia kell mi lesz az eredménye)"
-          ],
-          "elfogadása": [
-            "a dícséretet igen, a főhajtást igen, a kritikát nem",
-            "elfogadhatatlannak tartják a megalázó helyzeteket"
-          ]
-        },
-        "szűz": {
-          "általános": [
-            "saját jegyében nagyon jellemző lesz rá a merkúriság",
-            "olyan helyzetekbe kell kerülnie, ahol a tapasztalás fog eldönteni mindent",
-            "nagyon lényeges szerepe van a tudásának",
-            "tudás amikor az ismereteidet beépíted az életedbe"
-          ],
-          "gondolkodása": [
-            "ő gondolkodik a legpraktikusabban, tudja mit mire lehet használni",
-            "mindent próbál előre megtervezni, előre látni , hogy ne érje meglepetés",
-            "nehezen tud bármit kezdeni váratlan dolgokkal",
-            "ha valami nem úgy alakul ahogy gondolja, újratervez",
-            "nagyon számító, ritkán van benne érzelmileg helyzetekben"
-          ],
-          "kapcsolatteremtése": [
-            "akkor teremt kapcsolatot, ha úgy érzi, hogy neki erre szüksége van",
-            "feleslgesen nem szereti, használja a tárgyakat",
-            "nem rendmániás, csak szereti a rendszert a dolgokban",
-            "nagyon megfontolja, kivel kerül kapcsolatba",
-            "csak akkor változtat, ha úgy érzi ,hogy meg érett a kapcsolat arra hogy nem érdemes tovább folytatni"
-          ],
-          "kommunikációja": [
-            "akkor szeret beszélni amikor értelme van",
-            "nagyon kioktató tud lenni, úgy beszél mintha ő tudná az igazságot"
-          ],
-          "mozgékonyság-változtatasi kepesseg": [
-            "csak akkor változtat ,ha szerinte megéri, feleslegesen nem",
-            "tökéletességre törekszik, addig nem változtat, a saját útját tökéletesnek látja",
-            "ragaszkodik a helyzetekhez ráció alapján, tehát megfontoltság viszonyításra alapoz mindent"
-          ],
-          "gyermekkora": [
-            "kis tudós, nagy elvárások a szülőktől",
-            "hajlamosak a lécet túl alacsonyra helyezni, hogy ne várjanak el tőlük túl sokat",
-            "szeretnek tanulni, szeretnek érteni, tudni valamit",
-            "a megfelelés folyamatosan jelen van, de ezt jól fel tudják használni a fejlődéshez"
-          ],
-          "tanulása": [
-            "nagyon jól tanulnak, de csak akkor van értelme ha azt használni is tudják a hétköznapokban"
-          ],
-          "elfogadása": [
-            "csak azokat a dolgokat fogadja el, amit racionálisan is el lehet fogadni",
-            "mindenben keresi a valóságot, a tapasztalhatóságot",
-            "hihetetlenül nehéz neki megfelelni, pontosan látja minden hibádat, ezt nem kellene senkinek se mondania"
-          ]
-        },
-        "mérleg": {
-          "általános": [
-            "olyan élethelyzetekbe kell kerülnie, ahol meg kell felelnie",
-            "Kapcsolatteremtés, harmónia a környezettel, elfogadás jó ha alapvető gondolatmenet"
-          ],
-          "gondolkodása": [
-            "kompromisszumok",
-            "elfogadás, harmóniára való törekvés ",
-            "nehezen éli meg a konfligtusokat",
-            "nehezen vállalja fel önmagát ha nem kap visszajelzést"
-
-          ],
-          "kapcsolatteremtése": [
-            "oylan tárgyakkal veszi körbe magát ami szép",
-            "szereti ha a másik kompromisszumkész",
-            "fontos neki a protokoll az etikett, hog hol tut megfelelni",
-            "fél attól hogy nehogy rossza tegyen",
-            "fontos neki a divat"
-          ],
-          "kommunikációja": [],
-          "mozgékonyság-változtatasi kepesseg": [],
-          "gyermekkora": [],
-          "tanulása": [],
-          "elfogadása": [],
-          "munka": "középvezetőnek nem jó mert mindenkinek meg akar felelni"
-        },
-        "skorpió": {
-          "általános": [],
-          "gondolkodása": [],
-          "kapcsolatteremtése": [],
-          "kommunikációja": [],
-          "mozgékonyság-változtatasi kepesseg": [],
-          "gyermekkora": [],
-          "tanulása": [],
-          "elfogadása": []
-        },
-        "nyilas": {
-          "általános": [],
-          "gondolkodása": [],
-          "kapcsolatteremtése": [],
-          "kommunikációja": [],
-          "mozgékonyság-változtatasi kepesseg": [],
-          "gyermekkora": [],
-          "tanulása": [],
-          "elfogadása": []
-        },
-        "bak": {
-          "általános": [
-            "célszerű gondolkodás , nagyon racionális, nagyon céltudatos",
-            "makacs és következetes, képtelen rugalmasan alkalmazkodni, ha valamit fejükbe vesznek azt elérik"
-          ],
-          "gondolkodása": [
-            "puritán, egyszerű, egyszerűsített, nem veszi figyelembe a lehetőségeket, csak megy előre a cél felé",
-            "tipikusan a legrövidebb út az egyenes valami eléréséhez, ennek szellemében él, csak ez nem mindig van így",
-            "makacs, merev, gondolkodásmódja kiismerhető, kiszámítható, szabályozott gondolkodás"
-          ],
-          "kapcsolatteremtése": [
-            "nem teremt könnyen, nem is nagyon keres kapcsoaltokat, de lehetőségeket se",
-            "ha céljainak megfelel hogy kapcsolatot teremtsen akkor fog is, hasonlóan tárgyakat se használ feleselgesen",
-            "mindent a lehtő legletisztultabban leghasznosabban próbál kialakítani, pl minimál stílus"
-          ],
-          "kommunikációja": [
-            "ha nem muszáj nem beszél, mindent 10* megfontol mielőtt bármit is mond, nem fog órákat csevegni",
-            "neki a lényeg a fontos, mit szeretne, hogy szeretné, legrosszabb neki ha nem történik semmi, nincs mit csinálni"
-          ],
-          "mozgékonyság-változtatasi kepesseg": [
-            "\"járt utat járatlanért el ne hagyd\", nem változtat ha nem muszáj, nem is kutat új megoldások után",
-            "neki ha valami minél kiszámíthatóbb, minél egyszerűbb, minél sablonosabb, annál jobb"
-          ],
-          "gyermekkora": [
-            "nem túl fényes, korán feladatokat, felelősséget kapnak, segíteni kell",
-            "azorgalom kitartás, már gyermekkorban is, őt mindig terhelni kell neki ez a jó",
-            "nem szabad elvenni tőle a feladatokat, felelősséget, mert különben céltalannak érzi majd magát"
-          ],
-          "tanulása": [
-            "kitartó szorgalmas, ő ki tudja járni végig az iskloát, képes fegyelmezetten magolni",
-            "nem túl kreatív ezért ez egyszer elsajátított módszerek, utak tanulmányok a legjobbak neki"
-          ],
-          "elfogadása": [
-            "nem egy elfogadó típus, legfeljesbb érdektelen valamiben",
-            " akkor fogad el bárkit ,ha valamilyen szinten analóg a céljaival és érdeke fűződik hozzá, támogatja az előre jutását",
-            "a karrierista szimbóluma, de jó nevelő és jó tanár is mert képes a szabályokat betartatni, kereteket kijelölni",
-            "a szabály az szabály, mindig tudja hol vannak a határok, elfogadás csak kereteken belül"
-          ]
-        },
-        "vízöntő": {
-          "általános": [
-            "miért jó valakinek?.. még folynak a kutatások, neki jó, másnak halálosan idegesítő",
-            "ő mindig mást gondol mint te, teljesen mindegy ,hogy te mit akarsz",
-            "olyan élethelyzetben kell kerülnie, ahol midig más és más, új és új gondolatok, elképzelések, kapcsolatok akulnak ki"
-          ],
-          "gondolkodása": [
-            "zseniális és őrült egyszerre, különleges gondolkodás, és sok kérdést vet fel",
-            "nem nagyon képes hétköznapi gondolkodásra, a begyakorolt sémák nem az ő asztala",
-            "kell neki viszonyítási pont akihez képest változtathat, pl iskolán belül ő más módszerekkel tanul",
-            "pár analógia: idegen nylev, tolmács, külföldi élet(és onnan hazjönni), mozgássérült anya"
-          ],
-          "kapcsolatteremtése": [
-            "jól teremt kapcsolatokat, csak olyan ne legyen ahol őt korlátozzák",
-            "fontosak neki a baráti kapcsolatai, a haveri kör és az ezekkel járó szabadság ",
-            "nem egy emberhez kötődik, hanem sokhoz,\"leugrom  haverokhoz\"",
-            "mindig benne van kicsit a személytelenség, nem akar kötődni nagyon erősen egy kapcsolathoz se",
-            "bérlés, van is meg nem is elv kapcsolatokban",
-            "szeret mindig visszajönni, ha birtokolni akarod biztos hogy elmegy, hagyni kell ha menni akar úgyis visszajön"
-          ],
-          "kommunikációja": [
-            "idegennyelv a kommunkációjának része, internet, telfon, olyan mintha kommunikáció lenne",
-            "több diploma több idegennyelv"
-          ],
-          "mozgékonyság-változtatasi kepesseg": [
-            "semmit nem szeret véglegesen megváltoztatni, mindig a kiinduló ponthoz képest képes csak változtatni"
-          ],
-          "gyermekkora": [
-            "nagyon színes tud lenni, lehet , hogy külföldön jár iskolába, mert ott laknak, vagy sokat utaznak",
-            "lehet, hogy nem teljes családban nő fel, vagy elvált szülők gyereke, vagy nagymama neveli, vagy intézteben lakik",
-            "hihetetlenül nehezen korlátozhatóak, annyira nem tűrik a korlátokat"
-          ],
-          "tanulása": [
-            "zseni és az őrültség határán, hihetetlen képesség lehet, de lehet diszes gyerek is, diszlekszia diszgráfia,stb",
-            "a gyerekkel kell kijelöltetni a korlátot,de azt aztán be is kell tartani"
-          ],
-          "elfogadása": [
-            "simán el tudja fogadni a másságot, ő mondhatja valakire hogy más, de te nem mondhatod rá"
-          ]
-        },
-        "halak": {
-          "általános": [],
-          "gondolkodása": [
-            "megajándékozza a sors a felejtés tudományával, azért jó miert mindenen túl tud lépni könnyedén",
-            ""
-          ],
-          "kapcsolatteremtése": [
-            "tele van illúzióval, abszolút nem racionális, sokkal inkább a megérzésekre, hamgulatra támaszkodik"
-          ],
-          "kommunikációja": [
-            ""
-          ],
-          "mozgékonyság-változtatasi kepesseg": [],
-          "gyermekkora": [],
-          "tanulása": [],
-          "elfogadása": []
-        }
+        "apa": [
+          "nem apa, inkább barátja a gyereknek",
+          "nem tud korlátozó lenni, nem tud ragaszkodni",
+          "a nevelést lazán veszi",
+          "nem tud kötődni hosszútávon, rövid távon igen",
+          "mindenhova elviszi a gyerekét, mindig történjen valami",
+          "nem beszél komoly témákról a gyerekével, meghitten",
+          "elvárja a gyerektől, hogy önálló legyen"
+        ],
+        "gyerek": [
+          "állandóan füllent(vagy csak élénk a fantáziája)",
+          "sokat mozog, tesz-vesz, ide-oda megy",
+          "az apját szélhámosnak látja",
+          "az apját mindig üzletelni látja",
+          "azt látja, az apja nem tölt vele elég időt"
+        ],
+        "férfi": [
+          "szórakozató, vicces",
+          "jó társaság, nem unalmas, értelmes, jól beszél",
+          "a nőt partnernek, egyenrangú társnak tekinti",
+          "nem tud kötődni a párjához",
+          "lehet megígér valamit, de nem teszi meg, vagy nem figyelt rád eléggé"
+        ],
+        "nő": [
+          "jön, megy ,sokat beszél",
+          "intellektuális férfit választ",
+          "mozgalmasabb életet választ a párjával",
+          "üzlettársnak látja a párját"
+        ],
+        "főnök": [
+          "sokat beszél, nem szeret hallgatni",
+          "keresi a hallgatóságot",
+          "nagy a szabadságigénye, munkatársai ritkán látják"
+        ]
       },
-      "vénusz": {
-        "bolygo_leiras": [
-          "A venusz mindig a holdat hozza letre , a venusz segiti a holdat , ea a mars segiti a nepot, viszont ha ez nem megy akkor forditott analogia",
-          "jelenik meg es a mars analogiat a hold fogja tamogatni , a nap pedig a venuszt , igy keresztbe fordul meg.",
-          "A lanyok egyrea marsikuasbbak, a ferfiak pedig egyre venusziasabbak(anyagi vagy szepseg fele mennek)",
-          "Igy a ferfiak sokkal kevesbe a noben elik meg a venuszt ikabba a sajat penzugyeikben helyette",
-          "Es a nok is sokkal kevesbe a ferfiakban elik a marsukat, helyette az akaratukban esa vagyaikban"
+      "rák": {
+        "általános információk": [
+          "akkor lehet nap , ha megéli a rákságot, a gondoskodást",
+          "ez az"
         ],
-        "szempontok": [
-          "általános",
-          "anyaghoz való viszonya",
-          "biztonságvágya",
-          "stabilitás igénye",
-          "szépséghez való viszonya",
-          "nőiessége",
-          "szexualitása",
-          "művészete",
-          "önelfogadása"
+        "apa": [
+          "Melegen korlátozó szülő",
+          "olyan szabályokat hoz gyerekének ahol a szeretete is meg tud nyilvánulni",
+          "megjelennek az aggodallmak a féltés a gyerek iránt",
+          "sokszor nem engedi felnőni a gyereket",
+          "szüksége van arra hogy a gyerek nélküle ne tudjon lépni, szükség legyen rá"
         ],
-        "kos": {
-          "általános": [],
-          "anyához való viszonya": [
-            "küzd harcol érte",
-            "nem akarja megtartani csak megszerezni",
-            "keresi a kihívásokat, szeretne valamit, elég tudnia hogy megkaphatná és már nem kell neki",
-            "sosem azt érzi, hogy az enyém, hanem hogy meg akaarom szerezni",
-            "pozitiv megeles: a kihivast ne akarja beteljesiteni, legyen elég neki az, hogy elérhetné "
-          ],
-          "biztonságvágya": [
-            "kockaztato tipus, egyaltalan nem a biztonsag neki a fontos",
-            "nem érdekli, hogy biztonságban van-e, mert ha úgy gondolja megéri kockáztatni, meg fogja tenni"
-          ],
-          "stabilitás igénye": [
-            "az induláshoz kell egy stabil pont, onnantól nem"
-          ],
-          "szépséghez való viszonya": [
-            "a szepseg a marsikussagat fejezi ki",
-            "inkabb sportossagra torekszik",
-            "vékonyság és izmosság, célszerűség",
-            "nam túl lágyak"
-          ],
-          "nőiessége": [
-            "a legférfiasabb nők, izmosak, markánsak, erősek",
-            "neki pont a venusz es a hold terület sérül"
-          ],
-          "szexualitása": [
-            "kezdemenyező típus, nem nagyon befogadóak",
-            "sokszor nem engedik a párjukat kezdeményezni"
-          ],
-          "művészete": [
-            "marsikus művészetek: faragás. szobrászat, tűzzománc, ötvösség"
-          ],
-          "önelfogadása": [
-            "riktán kerül szóba nála",
-            "öntörvényőűek ebben, nem nagyon tesznek hangsúlyt a visszajelzésekre"
-          ]
-        },
-        "bika": {
-          "általános": [
-            "minél erősebben kötődjön az anyaghoz",
-            "anyagi szinten ne tudjon változtani, hogy ragaszkodjon"
-          ],
-          "anyához való viszonya": [
-            "nagyon fontos lesz a birtoklás",
-            "fontos neki ,amit elér az életében tartsa meg",
-            "neki minden anyag arra való hogy élevezze az életet(nem szabadna elfelejtenie)",
-            "negyon nehezen mond le bármiről is"
-          ],
-          "biztonságvágya": [
-            "ez az ő adottsága, neki ez nagyon nagyon fontos",
-            "ne mondjuk neki, hogy meg kell tanulnia elengedni",
-            "tanulnia kell: a penz az anyag nem cél hanem eszköz",
-            "ne azért birtokoljon valamit mert aza za enyém(céltalanul), hanem azért hogy az által valamit el tudjo érni"
-          ],
-          "stabilitás igénye": [
-            "nagyon nagy, mindig stabil , biztonságos élethelyzetekre van szüksége",
-            "mindig 4 lábbal álla földön, de ha egyet megemel már könnyen felborul",
-            "nem szeret változtatni ezért igényli a stabilitást"
-          ],
-          "szépséghez való viszonya": [
-            "ösztönös szépérzéke van",
-            "mindenben meglátja a szépet és a harmóniát",
-            "természetesen szép, azt emeli ki magán ami van és nem azt ami nincs(merleg)",
-            "gömbölyűség lágyság"
-          ],
-          "nőiessége": [
-            "bajaság ösztönös",
-            "legnőiesebb jegym ezért gömbölyűek, fogyókúra esélytelen",
-            "ha nem fogadja el a testiségét pajzsmirigy problémája lesz"
-          ],
-          "szexualitása": [
-            "az egyik legjobb az ágyban , nagyon élvezkedős",
-            "erős szexualitás a vágyak vezérlik, vele el lehet tölteni 1-2 napot az ágyban"
-          ],
-          "művészete": [
-            "legjobb neki ha elkezd a művészetekkel foglalkozni",
-            "övé az ösztönös művészet, bármelyik jó, de a legjobb az anyagszerű, fazekasság,szobrászat(formázás)"
-          ],
-          "önelfogadása": [
-            "nagyon szeretné, ha mindenki hódolna neki"
-          ]
-        },
-        "ikrek": {
-          "általános": [
-            "változékony avényusz",
-            "nem ragaszkodik, nem kötődik, nem marad benne egy helyzetben",
-            "ha nem mozog maatol, majd megmozditja a sors"
-          ],
-          "anyához való viszonya": [
-            "van pénze, de folyamatos forgásban van",
-            "az a legjobb ha nincs saját anya(másé minden)",
-            "nem különösebben fontos neki, hogy valamit birtokoljon",
-            "egyszer kötődne, máskor pont hogy nem kell neki, változik",
-            "ha kötődik az anyaghoz, stabil élethelyzetben van szélhámos válik belőle",
-            "olyan élethelyzetet kell teremtenie, hogy bármikor tovább tudjon lépni",
-            "a pénzt szereti szórni"
-          ],
-          "biztonságvágya": [
-            "vagy jön valhonnan, vagy megy éppen valahova , útközben nincs biztonság",
-            "mindig ott akarja magát biztonságban érezni ahol van",
-            "kapcsolataikban szeretnek változtatni"
-          ],
-          "stabilitás igénye": [
-            "semmi, nem keresi a stabil élethelyzeteket",
-            "csak az legyen stabil , hogy valahonnan el tudjon indulni, és valahova tudjon érkezni"
-          ],
-          "szépséghez való viszonya": [
-            "nincs ízélese ehhez túlságosan",
-            "nem azt veszi fel ami neki tetszik, hanem ami éppen szükséges azadott \"darabhoz\""
-          ],
-          "nőiessége": [
-            "kislányosak, nem túl magasak , nem túl erősek, hanem ilyen serdulőlány formájúak"
-          ],
-          "szexualitása": [
-            "nem forróvérűek, de gyorsan tanulnak",
-            "probléma, hogy nincs kötődés",
-            "nehezen engedik el magukat"
-          ],
-          "művészete": [
-            "színészet, szereplés, szavalás"
-          ],
-          "önelfogadása": [
-            "nem nagyon tudja magát eldogadni, de ezzel nem is törődnik, neki ez nem fontos, hogy elfogadja- e magát",
-            "inkább nem figyel oda az önelfogadásra, ezért olyan mintha elfogadná önmagát"
-          ]
-        },
-        "rák": {
-          "általános": [
-            "lényeg az hogy érzelmileg kötődjön az anyagiakhoz",
-            "ha érzelmileg kötődünk, sokkal nehezebben változtatnuk"
-          ],
-          "anyához való viszonya": [
-            "érzelmileg közelíti meg a dolgokat, mindig az a döntő, hogy mit szeretek, mennyire kötősöm hozzá",
-            "ők, akik, gyűjtik a gyerekek dolgait fényképeket stb, minden dolgot ami a kötődést segíti",
-            "nem mond le semmi olyan dologról, ami érzelmileg megfogja őt"
-          ],
-          "biztonságvágya": [
-            "legaggodalmasabb jegy, mindig fél, hogy szerettei, családtagjai biztonságban vannak-e",
-            "nagyon nehehzen viseli, ha az érzelmi stabilitása veszélybe kerül",
-            "nem túl jók, a dolgok elengedésében"
-          ],
-          "stabilitás igénye": [
-            "amiben érzelmei,vannak ott stabilitásra vágyik",
-            "család, otthon érzelmi tárgyak stabilitására vágyik",
-            "akkor tud változtatni, ha az érzelmei is változnak"
-          ],
-          "szépséghez való viszonya": [
-            "ne felejtse el, hiyg anikor gyerek van mcsalád van, neki valahol akkor is nőnek kell lennie",
-            "szenvedélyesen szereti a laza kényelmes dolgokat",
-            "nem divatkövető jegy, inkább az otthonosabb kényelmesebb dolgok jönnek be neki",
-            "neki mindig az tetszik, ami érzelmi alapon nyújt valami többletet",
-            "veszélye van az elhízásnak, ha jön a gyerek gömbölyödni fog utána"
-          ],
-          "nőiessége": [
-            "ha figyelnek magukra nagyon nőiesek,ha nem akkor nem",
-            "általában vonzzák a férfiakat, de neki ez azért kell, mert neki fontos a család és a gyerek",
-            "nagyon odaadóak, nagyon szeretetteljesek és ezt a férfiak is szeretik",
-            "azt hiszik, azzal fogják meg  a pasit, ha jók a konyhában",
-            "azt gondolja, addig kell nőnek lenni amíg nem jön a gyerek"
-          ],
-          "szexualitása": [
-            "ha védekezik, csak idő kérdése, hogy a kapcsolatban tönkremenjen a szexualitás",
-            "azért kapja a vénuszát , hogy hold legyen belőle",
-            "ha azt akarja, hogy működjön a szex, ne védekezzen"
-          ],
-          "művészete": [
-            "övék a népművészet, zenében cimbalom citera, stb, hímzés",
-            "fontos neki, hogy a hagyományokat, a múltat ápolja"
-          ],
-          "önelfogadása": [
-            "egyik legönbizalomhiányosabb, nem igazán tudja magát elfogadni",
-            "ha család van akkor remekül el tudja fogadni magát"
-          ]
-        },
-        "oroszlán": {
-          "általános": [
-            "hisz magában , tudja magáról ,hogy jó nő és a nőiességével igenis elismerést válthat ki",
-            "a külvilágnak nagyon zavaró lehet, főleg akiknek problémája van az önelfogadással",
-            "ezt kell megtanulnia, hogy ő királylány, azért kapta, hogy átélje , hogy én vagyo valaki"
-          ],
-          "anyához való viszonya": [
-            "nagyon hivalkodó tud lenni, szereti kiemelni, ogy ő kicsoda",
-            "azzal próbál elsimerést szerezni, hogy mim van nekem",
-            "minden olyan dolog ami emeli az ő tekintélyét nagyon fontos lesz neki anyagként is",
-            "ami őt emeli, arra mindig nagyon büszke, az mindig látványos, ami nem emeli, azt megpróbálja elrejteni"
-          ],
-          "biztonságvágya": [
-            "akkor érzi magát biztonságban, ha van olyan életterület ahol lehet valaki, ahhoz nagyon ragaszkodik",
-            "akkor érzi, hogy a helyén van, ha látja, hogy mások becsülik, tisztelik, elfogadják",
-            "ragaszkodik az alattvalókhoz, nehezen mond le olyanokról, akik őt emelik"
-          ],
-          "stabilitás igénye": [
-            "szilard jegy, eros a stabilitas igenye, főleg hogy átélhesse, hogy vagyok valaki",
-            "ha állandóan vááltozik a körülmény elbizonytalanodik, hogy elég-e az a helyzet, amiben uralkodom"
-          ],
-          "szépséghez való viszonya": [
-            "nem feltétlenül szépek, de mindenképpen van tartásuk",
-            "inkább az elegancia, a magára való adás az övé",
-            "márkafüggő, neki fontos hogy látszódjon, meg vannak nála a státusz szimbólumok"
-          ],
-          "nőiessége": [
-            "nem feltétlenül divatkövető, max akkor, ha ez őt emeli"
-          ],
-          "szexualitása": [
-            "mindig ott, van egyfajta visszafogottság, nehezen adja ki magát",
-            "fél attól ,hogy kihasználják",
-            "nagyon ritkán kezdeményez, mert fél a visszautasítástól",
-            "sokszor új és új kapcsolatot keres , ezzel bizonyítva a világnak, hogy ő mennyire kelendő"
-          ],
-          "művészete": [
-            "inkább műgyűjtő, mint művész",
-            "azt hogy más ítélja meg , amit én teremtek azt  nehezen éli meg"
-          ],
-          "önelfogadása": [
-            "külvilág függő, nehéz az önelfogadás",
-            "mindig fontos, hogy megőrizze a méltóságát",
-            "egy pasi örüljön, ha megkaphat engem",
-            "a tartás mindig maradjon meg, ha őt megalázzák egy kapcsoatban, akkor már vége is"
-          ]
-        },
-        "szűz": {
-          "általános": [
-            "praktikussági oldalról kell megközelíteni ezt a dolgot, neki ez a legfontosabb, praktikussag, hasznosság",
-            "minfig a tapasztalatai alapján fog közelíteni"
-          ],
-          "anyához való viszonya": [
-            "legfontosabb neki az egyszerűség, a használhatóság és a praktikusság",
-            "a pénzkezelése is nagyon praktikus, nagyon kkszámítható",
-            "ha vlamiről jó tapasztalata van az egy plusz pont"
-          ],
-          "biztonságvágya": [
-            "a biztonságot, a tervezhetőség és a kiszámíthatóság adja",
-            "ha valami nem úgy a hogy azt elképzelte, akkor újratervez",
-            "tervezés nélkül nem érzi megát bizonságban"
-          ],
-          "stabilitás igénye": [
-            "nincs szüksége igazán nagy stabilitásra, állandó változásokra kész, a körülménynek megfelelően",
-            "állandóan viszonyít, ennek megfelelően változtat ha kell",
-            "stabilitását is a viszonyítás határzozza meg",
-            "mihhez képest? -> ezért döntenek nehezen ha nincs viszonyítási alap"
-          ],
-          "szépséghez való viszonya": [
-            "szimmetria az övé, de ez nem feltétlenül jelent szépet, mert az egyedi az asszimtrikus folgok a szépek",
-            "egyhangú, unalmas, nem divatkövető",
-            "az sem igaz hogy elveti a divatot, mert ha az a praktikus, akkor éppen követi"
-          ],
-          "nőiessége": [
-            "érintetlenség, visszafogottság szimbóluma",
-            "azt akarja mutatni valójában, ha valami nem látszik, még attól is lehet szép"
-          ],
-          "szexualitása": [
-            "erősen kezdők , de gyorsan tanulnak ",
-            "legkönnyebben válnak unalmasssá, kreativitás nem sok vn bennük",
-            "jó tanuló , jó szerető is válhat belőle"
-          ],
-          "művészete": [
-            "másolás: szimbolikusan, ha valami tökéletes, annál nem lehet szebbet csinálni ezért inkább másol"
-          ],
-          "önelfogadása": [
-            "önbizalomhiányos, mert mindig viszonyít valalkihez, valamiez"
-          ]
-        },
-        "mérleg": {
-          "általános": [
-          ],
-          "anyához való viszonya": [
-          ],
-          "biztonságvágya": [
-          ],
-          "stabilitás igénye": [
-          ],
-          "szépséghez való viszonya": [
-          ],
-          "nőiessége": [
-          ],
-          "szexualitása": [
-          ],
-          "művészete": [
-          ],
-          "önelfogadása": [
-          ]
-        },
-        "skorpió": {
-          "általános": [
-            "egyik legerősebb, mégis az egyik legtöbb problémával jár együtt, legyen képes lemondani a vénuszról, képes legyen másban megélni"
-          ],
-          "anyához való viszonya": [
-            "szélaőaéges, vagy nagyon küzd az anyagiakért és mindent megtsz,vagy teljesen tagadja az anyagra törekvőséget",
-            "hajlamos minden anyagot megtagadni magától, vagy éppen szenvedélyesen belefolyni a pénzügyi dolgokba"
-          ],
-          "biztonságvágya": [
-            "nagyon fontos neki a biztonság, mégis hajlamos mindent kockára tenni",
-            "ha gy nő haragszik egy férfira, bármit képes megtenni hogy vénusszal böntessen",
-            "keményen elfolyt,mindent kockára tesz, nem érdekli a biztonság, semmi"
-          ],
-          "stabilitás igénye": [
-            "ha valamiihez kötődik, nagy a stabilitás igénye, de ha már nem működik, megtagad magától minden stabilitást"
-          ],
-          "szépséghez való viszonya": [
-            "nagyo kettős: vagy nagyon törekszik a szépségre, vagy semennyire",
-            "neki a külsőség nem mond semmit, mégis övék a szépészeti műtétek",
-            "nem foglalkozik a szépséggel, mondja is tudja is, de mégis szép és ad is magára",
-            "tagadja a divatot, már szinte támadja, támad minden külvilágnak való megfelelést",
-            "általában nem vénusziak(gömbölyűek), tehát főleg vékonyabbak, marsikusak",
-            "neki nem a szépség a fontos, hanem hogy mit érzékelsz, hogyan éled át a dolgokat"
-          ],
-          "nőiessége": [
-            "nagyon vonzóak, nagyon erős szexuális kiszugárzásúak, viszont van aki teljesen megtagadja a nőiességet"
-          ],
-          "szexualitása": [
-            "övék a legjobb szexualitás(már ha van ,mert lehet hogy egyáltalán nincs)",
-            "a szex megvonásával büntet, ha nem úgy nem azt csinálod, akkor no szex,ők kibírják"
-          ],
-          "művészete": [
-            "igazi művészet az övé, teljesen beleélik maguk szélsőségesen, fájdalom, szerelem, halál, csalódás ",
-            "mindent szenvedélyesen élnek meg, drogtól kezdve minden tott van körülöttük"
-          ],
-          "önelfogadása": [
-            "ezzel foglalkozik a legkevesebbet, egyszerűen nem érdekli, ha elfogadják elfogadják, ha nem, akkor  nem",
-            "ha nem fogadod el akkor max az ellensége lettél, de ez nem hatotta meg",
-            "állandóan teszteli a környezetét valyon elfogadnak-e így"
-          ]
-        },
-        "nyilas": {
-          "általános": [
-            "új és új anyagi célok megjelenése olyan feladatok,jönnek, ha belaragad azanyagba nem tudja megoldani, muszáj változnia"
-          ],
-          "anyához való viszonya": [
-            "folyamatosan változtat, nem tud ragaszkodni semmihez, sokkal lazább mint más jegyek",
-            "mindenből képes továbblépni, még az anyagi veszteségeket is jól viseli, nem is panaszkodik",
-            "amikor valami anyagi cél választ nagyon be tud lelkesedni, de ha problémát lát inkább kikerülné",
-            "sokszor a környezetét beviszi az erdőbe, mert lelkesen elkezd valamit, és a másiknek kell befejeznie",
-            "tárgyakhoz sem kötősik,mindig azzal kezd valamit ami éppen van, pillanatban akar lenni, nem gondol bele hogy holnap ez mivel jár"
-          ],
-          "biztonságvágya": [
-            "kevésbé törekszik biztonságra, inkább kalandozik helyette",
-            "a biztonság is nála esetleges, abban a pillanatban ahol él fontos neki, de nem előre meghatározott"
-          ],
-          "stabilitás igénye": [
-            "kockázatvállaló, az alapján, ogy ppen akkor mit érez, mit tesz a kedvén múlik",
-            "ha valami tetszik ,egy, ha nem akkor nem megy, aktuális célért bármit képes kockára tenni"
-          ],
-          "szépséghez való viszonya": [
-            "legkevésbé szeretne alkalmazkodni az aktuális szépség ideához, neki az önelfogadás alap analógia",
-            "bárhogyan képes magát elfogadni, mindenből is tud ruhát csinálni, tudják hordani magukat",
-            "van egy kellemes kiáradó kisugárzásuk, ami vonzza a környezetet, nem fontos neki az effektív szépség",
-            "könnyedsége, lazasága vonzza az embereket"
-          ],
-          "nőiessége": [
-            "nagyon nőiesek tudnak lenni, nem híresek a vékonyságukról,inkábba  kiterjedés szimbóluma van velük",
-            "hízásra hajlamosak, de ezzel vonzzák be a férfiakat, szimbolikusan vonzóak",
-            "sportosan elegáns,megaja mindennek a módját, miközben laza"
-          ],
-          "szexualitása": [
-            "legjobb szeretők, jó a szexualitása, vonzó a férfiak számára, játéknak veszi a szexet",
-            "nincs gátlásossága, de akár a vallásosság is megjelenhet nála(házasság után van szex csak), csak csak kapcsolatban"
-          ],
-          "művészete": [
-            "monumentális, freskók, zenében orgona, képzőművészetben pl Feszti körkép"
-          ],
-          "önelfogadása": [
-            "önbizalom, önelfogadás az övé , neki van a legjobb adottsága ehhez"
-          ]
-        },
-        "bak": {
-          "általános": [
-          ],
-          "anyához való viszonya": [
-          ],
-          "biztonságvágya": [
-          ],
-          "stabilitás igénye": [
-          ],
-          "szépséghez való viszonya": [
-          ],
-          "nőiessége": [
-          ],
-          "szexualitása": [
-          ],
-          "művészete": [
-          ],
-          "önelfogadása": [
-          ]
-        },
-        "vízöntő": {
-          "általános": [
-          ],
-          "anyához való viszonya": [
-          ],
-          "biztonságvágya": [
-          ],
-          "stabilitás igénye": [
-          ],
-          "szépséghez való viszonya": [
-          ],
-          "nőiessége": [
-          ],
-          "szexualitása": [
-          ],
-          "művészete": [
-          ],
-          "önelfogadása": [
-          ]
-        },
-        "halak": {
-          "általános": [
-          ],
-          "anyához való viszonya": [
-          ],
-          "biztonságvágya": [
-          ],
-          "stabilitás igénye": [
-          ],
-          "szépséghez való viszonya": [
-          ],
-          "nőiessége": [
-          ],
-          "szexualitása": [
-          ],
-          "művészete": [
-          ],
-          "önelfogadása": [
-          ]
-        }
+        "gyerek": [
+          "túlérzékeny",
+          "kötődés a család, az apa a szülők felé",
+          "szükságesnek érzi a szülőket a dolgok átéléséhez",
+          "azt látja az apa gondoskodik a családról",
+          "azt látja az apjának fontos a nélkülözhetetlenség"
+        ],
+        "férfi": [
+          "ha gondoskodhat a családjáról, jófej  jó pasi",
+          "önmagában nem tud erőslenni, kell mögé egy nő aki ezt az erőt képviseli",
+          "papucsságra hasjlamos, mos ,mosogat, átcsúszhat női szerepekbe"
+        ],
+        "nő": [
+          "sokszor átveszi a nap szerepet és ő irányít",
+          "ő az erősebb, ő határoz, ő dönt a párkapcsolatban, övé a felelősség",
+          "olyan pasit választ akinek fontos a gyerek, a család",
+          "olyan férfit választ aki tele van érzelemmel, romantikus, odafigyel az érzéseire",
+          "választhat tutyi-mutyi férfit aki majd otthon marad a gyerekkel és ő mehet dolgozni"
+        ],
+        "főnök": [
+          "meg lehet vele csináltatni a munkát",
+          "hisztis: hullámzik érzelmileg, hangulatilag",
+          "döntéseket érzelmi alapon hoz, nem tartják jó főnöknek"
+        ]
+      },
+      "oroszlán": {
+        "általános információk": [
+          "vagyok valaki",
+          "felnéznek rám mert bíznak bennem"
+        ],
+        "apa": [
+          "szeretne büszke lenni a fiára, elvárja hogy a gyerek agy is viselkedjen",
+          "mepgpróbálja anyagi szinten oroszlánná tenni a fiát ezzel mutatva, hogy az ő fia értékes",
+          "nem egy korlátozó típus, ráhagyja az anyára"
+        ],
+        "gyerek": [
+          "azt hiszi neki minden jár ,pusztán attól hogy létezik",
+          "lehet azt látja, hogy az apát tisztelik elismerik",
+          "lehet azt látja, az apa szerepet játszik mert szeretné kivívni a fensőbbséget",
+          "lehet azt látja, az apa lenyomja a körülötte lévőket",
+          "láthatja a bátorságot a lustaságot, vagy a gyávaságot is az apjában",
+          "vigyázni kell rá nehogy eltörják a gernincét , az önbecsülését nem szabad ledegradálni"
+        ],
+        "férfi": [
+          "elvárja a kényeztetést, hogy becsüljék tiszteljék, felnézzenek rá",
+          "csak olyan nője lehet aki alárandelődik neki",
+          "egyfajta koronaékszerként bányik a nővel",
+          "fontos neki a nő, nem akárki az én feleségem",
+          "a nő nem kérdőjelezheti meg, el kell fogadnia a férfi fensőbbségét",
+          "nem szabad neki beszólni, és a nő ne hozza kellemetlen helyzetbe, kritizálni mások előtt"
+        ],
+        "nő": [
+          "mindig erősebb mint a férfi",
+          "a nőn múlik a pasiból tud-e napot faragni vagy sem",
+          "tudja mit akar és hogyan",
+          "nehezen kerül olyan helyzetbe hogy fel tudjon nézni egy férfira"
+        ],
+        "főnök": [
+          "csak felsővezetőnek jó, hogy ne kelljen senkinek alárendelődnie",
+          "könnyen bedől a hízelgésnek, ilyenkor nem látja a valódi értéket"
+        ]
+      },
+      "szűz": {
+        "általános információk": [
+          "meg kell tanulnia ,hogy minden tökéltetes",
+          "ha mindent elfogad azt mondják passzív vagy így nehezen lesz nap",
+          ""
+        ],
+        "apa": [
+          "elvárásokat támaszt gyerekével szemben",
+          "fontos neki ,hogy a gyereke tudással bírjon",
+          "frusztrálja ,ha a gyerek tehetségtelen, elvárja hogy szorgalmes legyen",
+          "vigyáznia kell a maximalizmussal , ne mással szembel legyen elvárs, max magunkkal szemben",
+          "racionális , nem nagyon engedi közel magához a gyereket"
+        ],
+        "gyerek": [
+          "tudóscsemete, jó tanuló, meg akar felelni az elvárásoknak",
+          "ha nem tud jól teljesíteni nagyon leteszi a lécet, nehogy ne feleljen meg",
+          "sokszor betegséget kreál, hogy az elvárások megszűnjenek",
+          "maximalista apát lát, aki mindig dolgozik, és semmi sem elég jó neki"
+        ],
+        "férfi": [
+          "negyon erős elvárások",
+          "nem elég ha megcsinálod amit elvár, úgy is kell gondolnod(persze nem tudhatod mit gondol)",
+          "ha azt érzi ,hogy nem néznek fel rá, megpróbálja a másikat lenyomni",
+          "önbizalomhiányos, ritkán hiszi , hogy felnéznek rá",
+          "olyan feleséget választ , hogy neki is fontos legyen az ő szűzsége"
+        ],
+        "nő": [
+          "ha nő éli a napot sokkal intenzívebb mint egy férfinél éa ez rettenetes",
+          "kötözködő, munkamániás, maximalista, ez nem jó, át kellene adnia a nap szerepet",
+          "lehet hogy szeteri , ha lenyomják, és ezért választ olyan férfit akinek semmi sem jó"
+        ],
+        "főnök": [
+          "nem való vezetőnek, nem tud pozitív oldalról erősíteni, csak a hibát veszi észre",
+          "nem akarja átadni a munkát, mer tudja ,úgyis csak ő tudja tökéletesen megcsinálni"
+        ]
+      },
+      "mérleg": {
+        "általános információk": [
+        ],
+        "apa": [
+          "jó szülő, bár nem tud nevelni",
+          "nem tud korlátozni nem tud nemet mondani",
+          "nagyon manipulálható, befolyásolható",
+          "nem szabad ütköznie a gyerekkel, az apa jelölö ki a korlátokat, de az anya tartassa be",
+          "lehetnek elvárásea, zsarolásai a gyerekkel szemben"
+        ],
+        "gyerek": [
+          "nagyon meg akar felelni , nem szereti, ha kritizálják",
+          "kettős: 1. megpróbál visszahúzódni, nehogy valamiben ne feleljen meg vagy 2. mindig felhívja magára a figyelmet, hogy észrevegyék",
+          "kisfiú -> hogyan kell férfivá fejlődni? az apa tanítsa meg: felvállalni önmagát "
+        ],
+        "férfi": [
+          "semmiben sem dönt, felelőséget se nagyon vállal",
+          "a nő tuti hogy 1000* erősebb lesz",
+          "a karrierista pasik többsége mérleg",
+          "könnyebb a külvilágban lennie valakinek mint a magánéletben, nem jár neki kockázattal"
+        ],
+        "nő": [
+          "kölvilág elismerésére való törekvés, tetszeni akar a világnak, hogy elismerjék szeressék",
+          "feladata: a pasit tolni előre beállni mögé, neki kell támogatni erősítani a férfit"
+        ],
+        "főnök": [
+          "felső vezetőnek jó, középvezetőnek szörnyű, mert az alkalmazottaknak és a felette lévőknek is meg akar felelni",
+          "nem válallja fel a veszteséggel járó kockázatot"
+        ]
+      },
+      "skorpió": {
+        "általános információk": [
+          "egy dolgot biztosan nem érezhet, azt hogy ő nap)érzékelhetetlen nap analógiát kell megéélni)"
+        ],
+        "apa": [
+          "szigorú kemény, határozott, az érzelmek gyengévé tesznek, megpróbálja elfolytani ez érzéseit",
+          "úgy neveli a gyereket mintha nem lennének érései, hideg korlátozó szülő, de mindent megtesz a gyerekért",
+          "elvárások a gyerekkel szemben, nem mondhat ellent a szülőnek, totálisan alá kell rendelődnie"
+        ],
+        "gyerek": [
+          "a nagy bújkálósak, fonos neki mennyire figyelnek rá, mennyire fontosak másoknak(ösztönösen)",
+          "fél, hogy nem kap érzelmeket(engem nem szeret senki, én nem vagyok fontos senkiek) fél, hogy nem kell",
+          "szégyenlős, kezelhetetlen szélsőséges",
+          "szüleitől tudja: bármit megtennének érte, vagy nem fontos nekik ",
+          "önbüntető, ezáltal bünteti környezetét is",
+          "midnig figyeli a szülőt mennyire fogadják el",
+          "fél a vesztéstől a szülőbe is figyeli képes e veszíteni",
+          "nem azt kell megtanulni, hogy a vesztés jó, hanem ,hogy a vesztés része az életnek",
+          "lehet a szenvedélyeket, komiszságot, polgárpukksztóságot tanulja meg a szülőtől",
+          "van olyan aki teljesen visszahúződő, magányos, befelé forduló"
+        ],
+        "férfi": [
+          "nem nagyon tudja kimutatni az érzelmeket, szívesen viszonozza, de mindig a másiknak kell megtenni az érzelmi megnyilatkozást",
+          "elvárja az alárendeltséget a nőtől, nagyon kötősik, nagyon ragaszkodik hozzá",
+          "szenvedélyes szerelem(kezdetben mindenképpen), de a legnagyobb veszély az elhidegülés",
+          "tesztel, hogy mennyire vagy fontos a párjának, akkor is ha nem veszed észre",
+          "elvár olyan dolgokat amik lehetetlenek--> tesztel",
+          "ilyen férfi mellett szémítania kell a nőnek a magányra",
+          "szereti az olyan sportot ahol tök egyedül van(pl horgászat, vadászat)"
+        ],
+        "nő": [
+          "hihetetlenül eros és kemény makacs önfejű, ha ő hordozza",
+          "a pasiban ráválaszthat a szenvedélyre, a szexre, az anyagiakra, vagy ogy lenyomják őt és valakinek alá tudjon rendelődni ",
+          "de hajlamosak gyengébb pasit is választani, akiben művészi hajlam ven érzékeny és tele van érzelemmel"
+        ],
+        "főnök": [
+          "következetes, nagyon kemény, durva nagyon, nem tekinti embernek a beosztottját, azt gondolja bátmit megtehet",
+          "fantasztikusan csinálja amit csinál és ezt mástól is elvárja, erős a büntetésre vaaló késztetése",
+          "ha vezető mindent meg fog tenni, nem ismer lehetelent,de a végére teljesen egyedül marad",
+          "fantasztikus vezető a cég érdekeit mindenek elé helyezi"
+        ]
+      },
+      "nyilas": {
+        "általános információk": [
+        ],
+        "apa": [
+          "a gyerekek általában szeretik, nem egy korlátozó típtus",
+          "inkább barát mint szülő, jókedélyű,szabadságra neveli, szeret játszani vele",
+          "a a felelősséget nem szereti, ha a gyereknek szüksége van rá , nem biztos, hogy oda tu állni"
+        ],
+        "gyerek": [
+          "jó kedvű, jó kedélyű, szeret szerepelni",
+          "gyorsan fel tud pörögni",
+          "milyen az apa? - van hite, erkölcsileg vállalja?, megjátsza magát?, szélhámos és mellébeszél?"
+        ],
+        "férfi": [
+          "kezdetben nagyon szeretik a nők, mert szerelmes típusok(könnyen fellángolnak legalábbis)",
+          "rajongnak a nőkért, érzi a nő, hogy mindent megtesznek érte",
+          "a férfiban az jön elő,hogy a nő nem tudja belevonni a felleősségbe, pl lehet h nem akar gyerekret",
+          "ha nem vállal felelősséget, a nő azt érzi a férfi nem megbízható"
+        ],
+        "nő": [
+          "tele van lelekesedéssel optimizmussal, borzasztó erővel megy előre fele",
+          "a férfiban keresi a nyilasságot: legyen ite a férfinak, jól szeretne szórakozni a férfi mellett",
+          "legjobb szabadidő partner a nyilas"
+        ],
+        "főnök": [
+          "egyik legjobb főnök, mindig olyan munkatársakat vesz maga mellé aki dolgozik, mert ő nem akar",
+          "legkönnyebben átverhető és befolyásolható főnök"
+        ]
+      },
+      "bak": {
+        "általános információk": [
+        ],
+        "apa": [
+          "nagyon kekmény, nagyon rideg",
+          "szigorú számonkérések, beosztás, következmények",
+          "munkára nevel, hideg, korlátozó(úgy korlátoz hogy nem visz bele érzelmet)",
+          "büntető mechanizmus, neveleésben ezt eszköznek tekinti"
+        ],
+        "gyerek": [
+          "csendes visszahúzódó magának való",
+          "azt látja ,hogy a szülő, szigorú, következetes,, vagy rideg, vagy nem mutat érzelmet"
+        ],
+        "férfi": [
+          "nehezen vonható be egy csaláf hétköznapjaiba, maguknak valóak, félrvonulnak",
+          "mindenben lehet rájuk számítani, bármi feladatot teljesíteni tud, megbízható",
+          "mindig támasza a családnak és a párkapcsolatnak",
+          "túl soka gyengeségre nem lehet náluk számítani, nem mutatnak érzelmeket",
+          "nem szeretik az alárendelt szerepet, általában mellérendeltségre törekszik"
+        ],
+        "nő": [
+          "keresi a férfiban  a határozottságot, keménységet ,olyan férfit aki célokat valósít meg",
+          "olyat keres aki támasz lesz ellette, akire szmíthat, akivel nem kell sokat beszélgetni",
+          "de ha a nő éli a gakságot, nem lehet alárendelté tenni"
+        ],
+        "főnök": [
+          "nem való főnöknek, mert nem rugalmas, nem kreatív, nem tud alkalmazkodni",
+          "akkor is kitart amikor már nem kellene, nagyon szabálykövető"
+        ]
+      },
+      "vízöntő": {
+        "általános információk": [
+        ],
+        "apa": [
+          "vasárnapi apuka(elvált)",
+          "nevelő szülő, örökbe fogadó szülő, olyan mintha apa lenne",
+          "sokat utazik, sokat van távol",
+          "nem egy nevelő típus inkább függetlenségre szabadságra , önállóságra neveli a gyerekét",
+          "megadja a gyereknek a kellő szabadságot"
+        ],
+        "gyerek": [
+          "vagy kötődik, hogy eltold magadtól, vagy szökik, hogy te korlátozd",
+          "vagy nagyon kötődik az apához vagy teljesen leválik",
+          "nehezen nevelhetőek, folyamatosan lázadnak, nehéz a szülőknek is",
+          "hárítják azokat a dolgokat ,amik  hétköznapiak",
+          "vagy valamilyen disz-es vagy allergiás vagy valamiben különbözik a többiektől",
+          "lehet viszelkedészavaros, lehet hiperaktív, lehet antiszociális",
+          "a szülőnek nem szabad érzelmeket behoznia, amikor a gyerek hidztizik, ha hisztizik hagy hisztizzen",
+          "apában láthatja ,hogy neki minden fontos csak ő nem, apa mindenkinek segít, az apa más mint a többiek"
+        ],
+        "férfi": [
+          "nem lehet megfogni, helyette szeret visszajönni, háromszor válik 4 szer házasodik",
+          "nem szereti az alá-felé rendeltséget, csak a mellérendeltség elfogadható",
+          "nem tud felelősséget vállalni(nem bírja ha rátolják)",
+          "magától sok mindent megtesz, de nem lehet korlátozni",
+          "ritka hogy egy házasságban le tudná élni az életét"
+        ],
+        "nő": [
+          "szeretne független lenni, motorozás, tetoválás tipik vizontő lányok",
+          "jó dolog beosztani a feladatokat: kinek mi a dolga párkapcsolatban",
+          "jó ha ő vízöntő pasit választ, ők legalább nem unalmasak, mindig van bennük valami különleges",
+          ""
+        ],
+        "főnök": [
+          "nem jó főnök, nem szeret együttműködi a kollégákkal",
+          "olyan szerepekben jó ,ahol egyenrangú fél",
+          "az ötleteit, megpróbálja keresztülvinni bármin, ami már hajmeresztő"
+        ]
+      },
+      "halak": {
+        "általános információk": [
+        ],
+        "apa": [
+          "nem lehet erős, nem erős apa, gyerekek a férfi fejére nőnek",
+          "nem tud nemet mondani, ha a férfi ütközik tuti ,hogy a gyerek győz",
+          "inkább nem vesz tudomást a problémáról, homokba dugja a fejét, minthogy a konfligtust vállalja",
+          "lehet alkoholista vagy genge, vagy nem vállal felelősséget"
+        ],
+        "gyerek": [
+          "próbál megfoghatatlanná válni, probléma a felelősség vállalása",
+          "mindig kell mellé valaki aki a felelősséget vállalja"
+        ],
+        "férfi": [
+          "biztos hogy a nő erősebb lesz nála, és ő fog irányítani",
+          "a férfinak azt kell megélni, hogy közös célokat valósítsanak meg(egység), amiben a nő tolja előre",
+          "nem mer ellenállást kifejteni nem mer harcolni",
+          "a férja vagy becsajozik, vagy elválnak, vagy alkoholista lesz , vagy munkamánisás, vagy választ egy",
+          " olyan hobbit ahol világgá megy(horgászat, vadászat), vagy belebetegszik"
+        ],
+        "nő": [
+          "ha jól csinálja átadja a nap szerepet a férfinek és felismeri ,hogy neki támogatni kell a férfit",
+          "hajlmos, hogy illúziókba ringassa magát pl művészeteket választ"
+        ],
+        "főnök": [
+          "nagyon egnedékenyek, sértődősek, ha nem azt csinálja a beosztott amit kér",
+          "összefog egy csapatot akik érte küzednek"
+        ]
+      }
+    },
+    "hold": {
+      "szempontok": [
+        "általános",
+        "!!!! érzelmek",
+        "ösztönei",
+        "tehetsége",
+        "anya",
+        "gyerek",
+        "feleség",
+        "férfi",
+        "alárendeltség",
+        "befogadás"
+      ],
+      "kos": {
+        "általános": [
+          "",
+          "sldkflkdsnfs"
+        ],
+        "ösztönei": [
+          "állandóan keresi a kihívásokat",
+          "keresi azokat a helyzetekeet ahol ő győzhet",
+          "erős benne a versenyszellem",
+          "mindent az erejéből szeretne megoldani",
+          "türelmetlen",
+          "nem figyel a másikra, nem figyeli a másik mit reagál a dolgaira",
+          "a választ a saját kérdésére nem hallja meg"
+        ],
+        "tehetsége": [
+          "mindenhol ahol irányítani kell",
+          "amikor egy konkrét célt kell megvalósítani",
+          "ahol sok energiát kell belefektetni egy feladatba"
+        ],
+        "anya": [
+          "hirtelen módon képes küzdeni a gyerekért, erős anyatigris",
+          "a gyerek azt csinálhatja amit ő, nem veszi figyelembe az ő akaratát"
+        ],
+        "gyerek": [
+          "öntörvényű, akaratos, nehéz irányítani",
+          "anya-gyerek csaták nem ritkák",
+          "az anya mindenkit elnyom a környezetében"
+        ],
+        "feleség": [
+          "legyen mivel harcolnia, a férfit tolja előre",
+          "gyengébb párja lesz(sokkal)",
+          "ösztönösen irányítja a családot",
+          "nem egy házitündér, minden otthoni dolgot feladatnak fog fel",
+          "képtelen alárendelődni, de ezt nem veszi észre"
+        ],
+        "férfi": [
+          "erős nőt választ maga mellé, így imád harcolni a párjával",
+          "nem szeret felelősséget vállalni",
+          "kell neki egy olyan nő aki őt segíti"
+        ],
+        "alárendeltsége": [
+          "csak ott tud ,ahol valakire fel tud nézni",
+          "vagy magától rendelődik alá vagy sehogy"
+        ],
+        "befogadása": [
+          "gyereket akar(viszont a gyereket nem akarni kell)"
+        ]
+      },
+      "bika": {
+        "általános": [
+          "olyan élethelyzetbe fog kerülni, ahol ő nagyon erősen kötődni fog",
+          "ragaszkodás nagyon erős (párkapcsolatban még nehéz is lehet)",
+          "azt kellene megtanulnia, hogy a másikból hozd ki ami neked fontos, hogy a másikra figyeljen ne magára"
+        ],
+        "érzelemi": [
+          "nagyon ragaszkodik , nagyon odaadó, rajongani tud a másikért, a dolagiért",
+          "elég önző, nem az adás , hanem a birtoklás az érzelem alapja",
+          "nagyon sérülékennyé tud válni(ha valami analógiához kötődsz, a sorsnak dolga van)",
+          "erős vágyai vannak(szemben a mars)"
+        ],
+        "ösztönei": [
+          "imádja az ételeket, szereti élvezni az életet",
+          "a dolgok élvezhetősége nála alap dolog",
+          "ösztönösen vágyik a biztonságra, anyagias, nem tud lemondani",
+          "kötődéseit mindig tiszteletben kell tartani, neki ez alapvető motiváció"
+        ],
+        "tehetsége": [
+          "földhöz ,állaatokhoz, művészetekhez, pénzkereséshez",
+          "az élővilág az ő analógiája",
+          "csak akkor vagy biztonságban, ha nem jut eszedbe",
+          ""
+        ],
+        "anya": [
+          "nagyon erősen kötődik, ragaszkodik a gyerekéhez",
+          "birtokolni szeretné gyerekét",
+          "mindent megad a gyereknek de elvárja hogy hálás legyen,nehezen éli ha a gyerek hálátlan",
+          "mindent megbpróbál előteremteni a gyerekének",
+          "félti aggódik a gyerek iránt, de nagyon erősen kötődnek egymáshoz",
+          "a gyerek mindig számíthat az anyára, de ha a gyerek le szeretne válni hálátlanságnak nézi az anya"
+        ],
+        "gyerek": [
+          "rácuppan az anyára, néhány évig le sem akad róla, nagyon ragaszkodik",
+          "csak az anya van, az anya megpróbál mindent megadni végig az élete során",
+          "az anya megpróbálja pénzzel birtokolni a gyereket, ezzel próbál biztonságot adni",
+          "az anyának örömöt ad, már-már tulajdonként tekint a gyerekre"
+        ],
+        "feleség": [
+          "olyan párt választ aki az anyagiakat biztosítani tudja",
+          "jó partner tud lenni, nem bírja a pénztelenséget",
+          "biztos támasza lehet a férjnek, kötődik, ragaszkodik, akár alárendelődik is hajéamos"
+        ],
+        "férfi": [
+          "élvezeteket szereti, evés ,szex pl",
+          "a férfi a nőben az erotikus kisugárzást keresi",
+          "oylan nőt keres akit birtokolni lehet"
+        ],
+        "alárendeltsége": [
+          "megéri-e ez a kérdés számára, ha igen akkor alárendelődik"
+        ],
+        "befogadása": [
+          "nagyon természetes jegy, termékeny minden életterületen"
+        ]
+      },
+      "ikrek": {
+        "általános": [
+          "olyan élethelyzetbe kerüljön, ahol nincsenek érzelmi kötődések"
+        ],
+        "érzelmei": [
+          "felületes, de ez nem azt jeleniti, hogy nem szeret, hanem hogy van egy pillanat amikor szeret, de a következőben már nem",
+          "az érzelmek kimutatasa mindig a ráción keresztül történik, nem tudhatod, amit mond milyne érzés van mögötte",
+          "nem tud igazán kötődni, pl jó ha cserélődnek az emberek, ne kelljen kötődni",
+          "az érzelmek felületesek, de ez nem azt jelenti, hogy ne tudna szeretni",
+          "ne várd tőle, hogy kényeztesse, vagy hogy kötődjön",
+          "az érzelmek kimutatása a ráción alapul",
+          "pillanat analógiája, egyikben ezt éli, következőben már nem",
+          "soha, nem tudhatod, amit mind ,amit ír, amit csekejszik, valóban érzelmi alapú-e"
+        ],
+        "ösztönei": [
+          "kíváncsi, minden érdekli",
+          "közvetítés, kommunikáció minden formája",
+          "rövidtávú kapcsolódások a legpozitívabbak számára",
+          "ikrek beszél , szűz ír, sző elszáll írás megmarad",
+          "jó szerepjátékos, minden helyzethez elő tudja adni magát, ezzel alkalmazkodva"
+        ],
+        "tehetsége": [
+          "minden terület ahol kapcsolatokat építhet, ápolhat, vagy hozhat létre",
+          "jó minden területen ahol változtatni kell",
+          "közvetítői területen jó: tanítástól kereskedelemen át, információáramláson át minden terület",
+          "ahol szerepelni, kell, órákon át tud beszélni a semmiről érdkesen, jól eladja magát"
+        ],
+        "anya": [
+          "gyerek lehet az élete része, de célja nem",
+          "mindig viszi jobbra balra a gyerekét, rászoktatja az emberi kapcsolatokra",
+          "nem lesz ideje a gyerekre csak futtában fogja felnevelni",
+          "mindig tanítja a gyereket , felkelti a kíváncsiságát ,érdeklődését"
+        ],
+        "gyerek": [
+          "érdeklődik a világ iránt, nem ragad le egy dolog mellett",
+          "nem tud egy dolog mellett leragadni, mindent ki szeretne próbálni",
+          "állandóan szemmel kell tartani, mert folyton mozgolódik",
+          "azt látja  az anya midnig mással foglalkozik, nem a gyerekkel"
+        ],
+        "feleség": [
+          "nem tud kötődni",
+          "általában intelektuális partnert keres",
+          "nem egy tipikus háziasszony"
+        ],
+        "férfi": [
+          "férfinak a nő mellett nem szabad unalmassá válnia",
+          "kíváncsi természetű nőt választ, aki okos",
+          "vanaki azért választ nőt, hogy ne kelljen érzelmileg belemennie a kapcsolatba",
+          "van aki a szélhámos nőkre bukik van aki jó üzlettársat keres",
+          "nem kérdés hogy szereted-e a másikat, a tettekkel a programokkal bizonyitod h szereted, nem kell modnani"
+        ],
+        "alárendeltsége": [
+          "csak racionálisan tud alárendelődni",
+          "sose tudod alárendelt-e (vevő vagy az eladó az alárendelt)"
+        ],
+        "befogadása": [
+          "racionálisan tud befogadó lenni, egyébként nem is gondol rá",
+          "nem tudatosan teszi amit tesz, mert nem gondol rá",
+          "útközben evés jövök-megyek"
+        ]
+      },
+      "rák": {
+        "általános": [
+          "odaadó",
+          "negyon erős érzelmei vannak, erős kötődés",
+          "nagyon féltékeny"
+        ],
+        "érzelmei": [
+          "odaadó",
+          "negyon erős érzelmei vannak, erős kötődés",
+          "nagyon féltékeny, kisajátít"
+        ],
+        "ösztönei": [
+          "jók az intuíciós képességei",
+          "megérzi átérzi, erős az empátiája",
+          "jól teremt kapcsolatot a tudatalattival/tudattalannal",
+          "tele van állandóan szorongással és aggodalommal"
+        ],
+        "tehetsége": [
+          "erős a művészi tehetsége",
+          "minden tarületen ami családhoz, otthonhoz tartozik"
+        ],
+        "anya": [
+          "ősanya típus",
+          "ha 1 gyereke van nagyon csak hozzá kötődik, ha több akkor megoszlik a szeretet",
+          "nagyon odaadó a gyereke iránt",
+          "aggódik és szorong a gyereke miatt",
+          "nem gyenge ,de érzelmileg kötődik"
+        ],
+        "gyerek": [
+          "nagyon erős kötősések",
+          "az otthonban találja mae a biztonságot, nyugalmat",
+          "nem szeret változtani kockáztatni",
+          "nagyon érzékeny",
+          "jó művészi épességű"
+        ],
+        "feleség": [
+          "jó háziasszony",
+          "élvezi a feleség szerepet",
+          "mindent a család felől közelít meg",
+          "érzékeny és érzelmekben kiáradó párkapcsolat"
+        ],
+        "férfi": [
+          "a nőt a termékenysége miatt választja",
+          "érzékenysége, romantikája miatt választja a nőt",
+          "a nőt azért választja mert szereti ha a ő söt főz takarít",
+          "gyereket, családot szeretne a nőtől"
+        ],
+        "alárendeltsége": [
+          "ahol érzelmileg érintett ott tökéletesen alá tud rendelődkni",
+          "ahol ő nélkülözhetetlen ott alá tud rendlődni"
+        ],
+        "befogadása": [
+          "tökéletes befogadó",
+          "a gyerek a befogadás számára",
+          "gyereket csak az akarhat nála aki megtermékenyíti"
+        ]
+      },
+      "oroszlán": {
+        "általános": [
+          "nagyon ritkán mutatja a valódi önmagát",
+          "ritkán ismerhetőek meg a valódi érzései",
+          "ne várd, hogy előbb valljon szerelmet mint te(mert ha lapátra tennéd nem bírná az egója)",
+          "ne várj tőle lángolást, odaadást",
+          "büszke, tartással rendelkező"
+        ],
+        "érzelmei": [
+          "nagyon ritkán mutatja a valódi önmagát",
+          "ritkán ismerhetőek meg a valódi érzései",
+          "ne várd, hogy előbb valljon szerelmet mint te(mert ha lapátra tennéd nem bírná az egója)",
+          "ne várj tőle lángolást, odaadást",
+          "büszke, tartással rendelkező"
+        ],
+        "ösztönei": [
+          "gyáva: kerüli a megalázó vagy alárendelt helyzeteket",
+          "bátor: ahol érzi, hogy vagyok valaki, előjön az uralkodó hajlama",
+          "nagylelkű,odaaoás,büszkeség",
+          "lusta: azért nem tesz valamit, hogy más megtegye és általa átélhesse a fensőbbséget"
+        ],
+        "tehetsége": [
+          "mindenhol, ahol luxust, fensőbbséget hatalmat, gazdagságot képviseli",
+          "adottságok: vezetés irányítás, uralkodás, alkotás, teremtés, kreativitás"
+        ],
+        "anya": [
+          "általában nagyon jó anya",
+          "szeret büszkének lenni a gyerekére",
+          "nevelni a gyereket nem nagyon tudja, nem megy bele a kis játékokba",
+          "neki égkő a gyerek, mint egy ékszer, így is bánik vele"
+        ],
+        "gyerek": [
+          "anya uralkodik, imádja a környezetét vezetni",
+          "az anya lusta, vagy hedonista, vagy uralkodó típus,(vagy más oroszlan analógiák"
+        ],
+        "feleség": [
+          "büszke ved, nemes vad. a férfi legyen rá büszke",
+          "nem egy konyhatündér",
+          "first lady",
+          "olyan férfit választ akinek olyan ahivatása, hogy nyílvánosság előtt szerepel, hogy megélhesse az oroszlánságot"
+        ],
+        "férfi": [
+          "oroszlánná teszi a nőt aki mellette van(ezt úgy érdemes ,hogy ha ő a királynő akkor én a király)"
+        ],
+        "alárendeltsége": [
+          "csak egy embernek",
+          "olyan pozíciókat kell neki keresni, ahol max 1 embernek kell alárendelődni(másképp nem tud)"
+        ],
+        "befogadása": [
+          "csak ,ha ő akarja",
+          "csak ,ha teremteni akar, ehyébként nem"
+        ]
+      },
+      "szűz": {
+        "általános": [
+        ],
+        "ösztönei": [
+          "kritikus, viszonyít mindent mindenhez(nem tudja igazán kikapcsolni)",
+          "mindig látja a negatív oldalt",
+          "racionális, rációja a tapasztalaton alapszik",
+          "keresi a tapasztalatokat, átélési lehetőségeket",
+          "döntésre képtelen",
+          "mindig a hasznos dolgokat szereti, keresi, ami előreviszi az életben"
+        ],
+        "tehetsége": [
+          "ahol másokat segíteni, támogatni kell",
+          "mindenhol ahol elemezni kell",
+          "jó könyvelő, számokhoz nagyon ért"
+        ],
+        "anya": [
+          "megpróbálja könyvből nevelni a gyereket, ahogy leírtan a lehető legjobb",
+          "megpróbál tökéletesen nevelni, ehhez mindent megad a gyerekeknek",
+          "racionálisan kikapcsolaj az érzelmeket, van hogy valami  nem jó a gyereknek egóban, ő akkor is megteszi az érdekében"
+        ],
+        "gyerek": [
+          "az anyának magasak az elvárásai, megpróbál ennek megfelelni",
+          "azt érzi az anyának semmi nem jó",
+          "az anya képes kezelni a tökéletesség kérdését és nem viszonyít",
+          "megtanulja az anyjától a segytőkészséget, a szolgálatot, alárendeltséget, tisztaság mániát"
+        ],
+        "feleség": [
+          "megbízható, húséges, erényes",
+          "szégyenlős"
+        ],
+        "férfi": [
+          "nőben keresi a megbízhatóságot, hűséget",
+          "nőben keresi a precizitást, pontosságot, akár munkatársat",
+          "olyan nőt keres aki szintén szeret dolgozni",
+          "lehet hogy rendmániás nőt keres"
+        ],
+        "alárendeltsége": [
+          "legjobb munkaerő, mindent tökéletesen póbálnak véghezvinni"
+        ],
+        "befogadása": [
+          "ösztönöket próbálja kikapcsolni, racionális"
+        ]
+      },
+      "mérleg": {
+        "általános": [
+          "mindig érzelmeket vár, és szeretné ha viszonoznák az övét",
+          "ott nem tud érzelmileg megnyílni ahol az érzelmeit nem viszonozzák"
+        ],
+        "érzelmei": [
+          "mindig érzelmeket vár, és szeretné ha viszonoznák az övét",
+          "ott nem tud érzelmileg megnyílni ahol az érzelmeit nem viszonozzák"
+        ],
+        "ösztönei": [
+          "keresi a harmóniát, egyenssúlyt békességet",
+          "keresi a pozitív visszajelzéseket",
+          "kompromisszumkedvelő, nem szeret másokkal szembeszállni ha nem muszáj",
+          "döntőképesságe nem túl erős",
+          "jó a diplomáciaérzéke",
+          "nem önérvényesítő típus, mindig a külvilágot figyeli",
+          "szeretne másoknak megfelelni"
+        ],
+        "tehetsége": [
+          "az emberi kapcsolatokban",
+          "olyan élethelyzetekben ahol átéli az egyensúlyt és elfogadást kap",
+          "jól megérzi hogy lehet a másik emberhez közel kerülni",
+          "jó a művészetekben, színészeti dolgokban",
+          "jó nyilvános szereplő"
+        ],
+        "anya": [
+          "jó kacsolatot próbál kialakítani a gyerekkel",
+          "fontos neki mit mondanak a gyerekéről, ez befolyásolja a nevelésben",
+          "a külvilág megfelelésének mgefelelően neveli a gyerekét",
+          "a gyerek szülő fejére nőhet, és már ő irányít a kapcsolatban",
+          "a párkapcsolat fontosabb mint a gyerek"
+        ],
+        "gyerek": [
+          "minden határt megpróbál átlépni/elérni",
+          "nagyon hisztis, folyton azt tezsteli vajon szeretik-e szülei ",
+          "harmonikusan éli meg a gyerekkort",
+          "láthatja, hogy az anya folyton szerepet játszik",
+          "láthatja hogy az anyja kétszínű",
+          "látja az anyja kompromisszumkötő készségét",
+          "látja hogy az anyja nagyon nőies"
+        ],
+        "feleség": [
+          "fontos neki a párkapcsolaat és szeretné ha tökéletes lenne",
+          "nem a tipikus háziasszony, ő továbbra is nő szeretne lenni",
+          "a páron keresztül kell kiteljesednie, nem önállóan"
+        ],
+        "férfi": [
+          "szép nőt keres, aki nőies",
+          "fontos neki hogy a nő adjon magára",
+          "szereti ha a nő engedelmes,alárendelt és azt teszi amit mond",
+          "szeretne büszke lenni a párjára, és hogy elismerjék őt"
+        ],
+        "alárendeltsége": [
+          "akkor tud ha fontos neki a párja"
+        ],
+        "befogadása": [
+          "ha fontos neki a párja akkor befogadó",
+          "ha meg akarja szerezni a másikat akkor igen",
+          "ha nem tetszik a másik nem eljátszik egy szerepet"
+        ]
+      },
+      "skorpió": {
+        "általános": [
+        ],
+        "érzelemi": [
+          "szélsőséges, vagy mindent vagy semmit",
+          "vagy óriási szenvedélyek, vagy teljes hidegség",
+          "átmenetiek,nehezen észlelhetőek",
+          "visszaigazolást vár arra,vajon szeretnek-e engem"
+        ],
+        "ösztönei": [
+          "igazi öszönember, jók a megérzései, érzéekenyen reagál mindenre",
+          "erős empátiakészség, azt hiszi hogy másokban is nagy aztán nagyot csalódik",
+          "féltékeny, mást tapasztal mint amit szeretne",
+          "halállal, elmúlással, tudattalannal való kapcsolat",
+          "fél a veszteségtől, öszönösen próbálja ezt kikerülni"
+        ],
+        "tehetsége": [
+          "ahol a tudattalannal, elmúlással,halállal foglakozhat",
+          "művészetben",
+          "mások értékének megőrzése: pénz, anyagiak, emberi élet"
+        ],
+        "anya": [
+          "nagyon jó anya, de van amikor hárítják, és nem akarnaka zok lenni"
+        ],
+        "gyerek": [
+          "magányosan éli a gyermekkorát",
+          "érzelmileg kicsit zárkózott, nehezen nyílik meg nehezen  barátkozik",
+          "panaszkodik a szülőre, hogy nem szeretik nme úgy szeretik",
+          "figyeli hogy mit csinál a szülő, mit csinál az anya"
+        ],
+        "feleség": [
+          "lelki társat keres, de ez nem fog sikerülni",
+          "a másik nem érezheti amit ő, így nem is létezik lelki társ",
+          "nagyon sok érzelmet lehet tőle kapni, ha pont azt szeretné",
+          "nagyon tud szeretni, nagyon tud gyűlölni",
+          "ha keresztbetettél neki, ne számíts megbocsájtásra",
+          "ha szeret magától szeret, nem lehet kényszeríteni"
+        ],
+        "férfi": [
+          " a szexuális kisugárzása alapján választja a párt",
+          "azért válaszztja a nőt hogy jókat harcolhasson vele"
+        ],
+        "alárendeltsége": [
+          "semilyen módon nem rendelősik alá, csak ha ő akarja, de akkor sem érzed h így lenne"
+        ],
+        "befogadása": [
+          "legkevésbé befogadó jegy"
+        ],
+        "munka": [
+          "tűzoltó",
+          "banki trezort őrző",
+          "testőr",
+          "mentős"
+        ]
+      },
+      "nyilas": {
+        "általános": [
+          "hihetetlenül idealista személyiség, aki maga a leghetőségből is a történést látja",
+          "nagyon erős az optimizmusa és a pozitív gondolkodása, ez nagyban segíti"
+        ],
+        "érzelmei": [
+          "szerelem(fellángolás) az övé, nagyon gyorsan lángra kap nagyon gyorsan elhamvad",
+          "hihetetlenül el tud köteleződni, rövid időn belül "
+        ],
+        "ösztönei": [
+          "ösztönösen optimista és lelkes, ősbizalom van benne mindenki felé",
+          "vallás , misztikus dolgok iránti vágy, szeretne hinni valamiben",
+          "erős a hite, így kevésbé van szüksége a realitásra"
+        ],
+        "tehetsége": [
+          "ahol a lelkesedésére, buzdítására szükség van",
+          " de ez lehet a ploitikai elfogultság is neki",
+          "jó tanítói képességek"
+        ],
+        "anya": [
+          "nagyon jó a kapcsolata a gyerekkel, része leet az életének, de célja nem, nem ősanya típus",
+          "nagyon barátian próbálja nevelni a gyerkét, mindent bizalomra épít, jó az elv de nehéz tanítani",
+          "nevelésben inkább kampányszerű, nem akar nagyon erős kötődéseket kiépíteni"
+        ],
+        "gyerek": [
+          "nehezen lehet lekorlátozni, szabad szellemű, szülő mellett a bizalmat tanulja meg ",
+          "az anya mindenre odafigyel csak rá nem, ezt érzi, néha nevelik néha nem",
+          "látja sok mindent megígér a szülő, de nem biztos ,hogy betartja"
+        ],
+        "feleség": [
+          "legjobb társak közé tartozik, elvárja a bizalmat, nem hajlandó alárendelődni",
+          "egyenrangú párkapcsolatben tud lenni csak, nem egy konyhatündér, nem is lehet leláncolni",
+          "fontos hogy olyan legyen a párkapcsolat, hogy együtt tudjanak működni",
+          "a nő adja a célt, a férfi valósítsa meg",
+          "a hűség és az állandóság kérdése felmerül, de próbál szabad is lenni",
+          "nem e legtermékenyebb nő, mindig rájö, hogy nem most van ennek az ideje"
+        ],
+        "férfi": [
+          "könnyedség, lazaság, nemtörődömség",
+          "nyitottság, nyitott házasság, ami akár válással végződhet mert nem bírják",
+          "a nő feltétel nélkül bízik benne(ha benne éli)"
+        ],
+        "alárendeltsége": [
+          "sosem tudod, hogy alárendelődik vagy sem, ha igen magától teszi, de akkor se tudod",
+          "elég nehéz egy alárendelt szerepben lévő alkalmazottban megbízni",
+          "megbízhatatlan, vagy megteszi vagy nem, ebből se tudod eldőnteni, hogy alárendelt e",
+          "hárítja a rációt, teljesen kiszámíthatatlan"
+        ],
+        "befogadása": [
+          "ha fontos neki, ha hisz benne,akkor igen, egyébként nem"
+        ]
+      },
+      "bak": {
+        "általános": [
+          "oppozícióban áll a rákkal , Elviekben a legnehezebb holfállás",
+          "Érzelmi kötődés a célokhoz, oppozíció a hold elveivel",
+          "Az érzelmekhez való viszonyt a célok fogják meghatározni"
+        ],
+        "érzelmei": [
+          "leghidegebb érzelmek. Az érzelem nem a szereteten alapul , hanem a célokon.",
+          "Olyan mikor az anya szeretetből neveli, de a gyerek a nevelésen keresztül nem a szeretetet érzi"
+        ],
+        "ösztönei": [
+          "szabályok keresése, szabályok követése",
+          "fegyelmezettség, keretek, szabályok, korlátok megélése",
+          "keresi a szabályokat , amikhez tud alkalmazkodni"
+        ],
+        "tehetsége": [
+          "ahol kell fegyelem, következetesség, szigor ,céltudatosság",
+          "tanításban , példamutatásban, pedagógusságban, hogy megtartsa a rendet az osztályban",
+          "nevelőnek, könyvelőnek nagyon jó, és minden más helyen ahol nem kell érzelmeket vinni a dologba"
+        ],
+        "anya": [
+          "szigorú, következetes, nem elnéző, büntető, büntetett",
+          "a gyerek érdekében bármire képes, mindent megtesz érte",
+          ""
+        ],
+        "gyerek": [
+          "az anyjára olyan hatással lesz hogy mindig korlátozza őt",
+          "nagyon kitartó, (főleg akkor ha rosszaságot kell csinálni)",
+          "egy kicsit magányos, korlátok között élés",
+          "azt érzi az anyja segíti a céljait",
+          "kevésbé nyitottak, inkább befelé fordulóak"
+        ],
+        "feleség": [
+          "a nőben nincs könnyedség, inkább szigorú",
+          "biztosan gyengébb pasi lesz mellette, fontos hogy felismerje ,hogy közös célok kellnek  párjával",
+          "nem vágyik szabadságra, nem vágyik semmire, az a fontos, hogy minden rendbe legyen",
+          "szívós, egyáltalán nem könnyed, vagy gyengéd, nem a nőiség a domináns",
+          "odafigyelés támogatás, hűség, mindent rendben tart, otthon ,család ,csak a kapcsolat nincs rendben"
+        ],
+        "férfi": [
+          "makacs , keményfejű, érzelem nélküli",
+          "érzéketlen, akár igénytelen is lehet",
+          "vagy a nő álla férfi mögé és tolja előre, vagy a nő helyett is dolgozik",
+          "azért vállalja a párja, hogy valaki velelősséget vállaljon a családban"
+        ],
+        "alárendeltsége": [
+          "jól tud alárendelődni, ha feladata van végrahajtja",
+          "nincs egyénisége nincs kreativitása",
+          "neki az a jó ha megmondják mit kell csinálni és nagyon pontosan végre tudja hajtani"
+        ],
+        "befogadása": [
+          "nem túl befogadó, régen a terméketlenség szimbóluma volt",
+          "akkor lehet gyereke ,ha a célja az anyaság, de a befogadás nem lehet célja"
+        ]
+      },
+      "vízöntő": {
+        "általános": [
+          "a kötődései átmenetiek- ha ős zerelmes én nem ha én akkor ő nem",
+          "repülő és a reptér- tudni akarja h van valaki aki engem szeret, de ne korlátozzon"
+        ],
+        "ösztönei": [
+          "keresi a szabadságot, kreatív",
+          "vonzódik a különleges helyzetekhez dolgokhoz",
+          "keresi a másságot",
+          "az a dolga hogy kiegészítse a világot amivel a másságot képviseli"
+        ],
+        "tehetsége": [
+          "kreativitas, sok utazas, sok valtozatossag ahol csak a kiindulópont adott"
+        ],
+        "anya": [
+          "házasságon kívüli anya",
+          "örökbe fogad",
+          "nevelőszülőség",
+          "külföldi pár(akár szinesbőrű)",
+          "császárral szülés",
+          "jó anya tud lenni, de az hogy őt a gyerek korlátozza az lehetetlen"
+        ],
+        "gyerek": [
+          "kettősség: ragaszkodik az anyához nagyon 2. szabadghyerek akit fogni kell",
+          "azt érzi az én anyám szabad akart lenni mellettem",
+          "anya tanítja: mindent érted teszek, egyedül nevelés"
+        ],
+        "feleség": [
+          "nem neki való",
+          "olyan párra van szüksége aki korlátozza, ha nem tudja elfogadni menekülni fog",
+          "olyan párra vágyik ahol egyenrangú a kapcsolat,kivesszük a közös jót",
+          "olyan férfit talál aki a független nőt keresi"
+        ],
+        "férfi": [
+          "menekül minden kötöttségtől",
+          "legjobb ha kiszolgáltatott neki a nő",
+          "azért választja a nőt mert különleges más mint a többi, érdekes",
+          "vagy csak szabad akar lenni es egyilyen lany mellett tud leginkabb az lenni",
+          "legjobb szerető típus"
+        ],
+        "alárendeltsége": [
+          "nem szeret alárendelődni",
+          "inkább a melléreendeltség az övé"
+        ],
+        "befogadása": [
+          "gyerekvállalásban is kell valami különleges, eltérő a hagyományostól"
+        ]
+      },
+      "halak": {
+        "általános": [
+          "Azért kapja valaki, hogy olyan élethelyzetbe kerüljön, hogy az érzelmeinek változnia kell."
+        ],
+        "ösztönei": [
+          "segítőkész, odaadó, bár ez sokszor csak álca, de a segítségükre mindig lehet számítani",
+          "ösztönösen benne van a félelem, benne van a görcs, félelmi neurózisok",
+          "jó művészi érzék, jó intuíciók, jó empátia érzék",
+          "problémamegoldó képesség nem túl jó"
+        ],
+        "érzelmei": [
+          "nagyon odaadó érzelmei vannak, ő tud legjobban szeretni, bármit képes odaadni",
+          "bármit képes feláldozni az érzelmeiért",
+          "könnyen illúzióba ringatja magát, emiatt könnyen csalódásba eshet",
+          "könnyen vált érzelmi helyzetet, megcsalásra is hajlamos olykor",
+          "az egyik pillanatban nagyon érzelmes, a másikban lezuhannak",
+          "bárhol sírva tud fakadni(egy jó könyv, vagy film is elég)",
+          "kiváló érzelmi zsaroló, könnyen lesz féltékeny is, de tud veszíteni"
+        ],
+        "tehetsége": [
+          "művészetekben, egészségügyben, vendéglátásban"
+        ],
+        "anya": [
+          "odaadó, erős kötődés a gyerekez, ezért sokszor fejére nő a gyerek",
+          "nem tud következetes lenni, kerüli a felelősséget, mindig próbálja másra hárítani",
+          "gyakran áldozat szerepbe helyezi magát a gyerek előtt, szegény én , önsajnálat"
+        ],
+        "gyerek": [
+          "nem vállal felelősséget, gyakran beteg,szüleit zsarolja érzelmileg",
+          "sok lemondással szembesül a családban, akár iskolában",
+          "anyaminta: önzetlenség, önfeláldozás, művészet, vagy alkoholizmus"
+        ],
+        "feleség": [
+          "odaadó, önfeláldozó , segíti előre a párját, átadja a felelősséget a párjának",
+          "azt érezheti a párom becsap, elnyom, kihasznál, zsarnok felettem",
+          "lehet beteg férfi mellette akit ápolni kell"
+        ],
+        "férfi": [
+          "ha nem nem a nőn kereszül éli, akkor hárítja a felelősséget, ha jól éli a nőtől átveszi az irányítást",
+          "ha a nőben éli lehet elnyomja a párját, vagy ő adja a stabilitást, ő dönt",
+          "lehet hogy művész lelkű, vagy ilyen párt keres"
+        ],
+        "alárendeltsége": [
+          "tökéletesen alá tud rendelődni, de mindig ott van benne az önfeláldozás is"
+        ],
+        "befogadása": [
+          "könnyedén és pozitívan fogad be"
+        ],
+        "munka": [
+          "önálló munkát nem szabad adni neki, mindenképp kell mellé valaki"
+        ]
+      }
+    },
+    "merkúr": {
+      "szempontok": [
+        "általános",
+        "gondolkodása",
+        "kapcsolatteremtése",
+        "kommunikációja",
+        "mozgékonyság-változtatasi kepesseg",
+        "gyermekkora",
+        "tanulása",
+        "elfogadása"
+      ],
+      "kos": {
+        "általános": [],
+        "gondolkodása": [
+          "tele van versenyszellemmel",
+          "fontos neki a gyozelem",
+          "mindenkivel versenyezni akar, le akar győzni",
+          "nehezen fogja fel ha valaki ellenáll neki",
+          "nagyon erősen meg akar győzni az igazáról",
+          "gyorsak a reakciói",
+          "jól vág az esze csak előbb cselekszik mint gondolkozik",
+          "türelmetlen, nem tud semmit kivárni"
+        ],
+        "kapcsolatteremtése": [
+          "agresszívan teremt kapcsolatot",
+          "mindent gyorsan akar megszerezni"
+        ],
+        "kommunikációja": [
+          "azt hiszi az az erősebb aki hangosabb",
+          "szeretné hogy társaságben odafigyeljenek rá"
+        ],
+        "mozgékonyság-változtatasi kepesseg": [
+          "beveszi a várat aztán megy tovább, nem aar várban lakni",
+          "sokszor olyanon vitatkozik aminek semmi értelme nincs"
+        ],
+        "gyermekkora": [
+          "olyan nevelést kap és olyan élethelyzetekbe kerül, ahol akaratát érvényesíteni tudja",
+          "sokszor harcolnia kell a testvérrel",
+          "sokszor sportioskolába jár, vagy olyan helyre ahol edzenie kell, pörög az élet"
+        ],
+        "tanulása": [
+          "ami érdekli azért mindent megtesz",
+          "amiben ott van a lehetőség hogy győzzön ott tenni is fog érte",
+          "állandóan veresenyhelyzetben kell tartani",
+          "olyan dolgokat tanuljon ahol mindig igaza lehet"
+        ],
+        "elfogadása": [
+          "mindent elfogad, amit akar, de semmi mást nem",
+          "ha mondják neki hogy el kellene fogadni ,annál kisebb esélye lesz hogy tényleg elfogadja",
+          "ha ő nem akarja nem fog menni"
+        ]
+      },
+      "bika": {
+        "általános": [],
+        "gondolkodása": [
+          "lassú, megfontolt",
+          "anyagias",
+          "alapos, sokszor átrágja a dolgokat",
+          "tiszta paraszti észjárás",
+          "birtoklás és az anyagiak motiválják"
+        ],
+        "kapcsolatteremtése": [
+          "nem teremt könnyen kapcsolatot, inkább a begtartásra törekszik",
+          "Olyan kapcsolatokra törekszik amit meg is tud tartani",
+          "nem szeret hitelt felvenni, mert abban nincs benne a biztonság"
+        ],
+        "kommunikációja": [
+          "lassan kommunikál",
+          "előnyösebb ha írásban kommunikálhat, mert ott jobban át tudja goldolni mit írjon",
+          "nem túl jó a problébamegoldó képessége",
+          "egy egy problémány napokig rágódik"
+        ],
+        "mozgékonyság-változtatasi kepesseg": [
+          "híresen lusta",
+          "kényelem, nyubalom , biztonság motiválja",
+          "nem szeret változtatni, ragaszkodik a helyzetekhez"
+        ],
+        "gyermekkora": [
+          "nyugalomban békességben stabilitásban telik",
+          "szülők anyagilag motiválják"
+        ],
+        "tanulása": [
+          "nem gyors de alapos",
+          "amit megtanul azt tudja is, jó az emlékezőképessége, mély a tudása"
+        ],
+        "elfogadása": [
+          "anyag szinten fogad el",
+          "aki nem sérti a nyugalmát és nem akar elvenni tőle semmit, azt elfogadja",
+          "ha kibillentik a biztonságból azt nem tudja elfogadni"
+        ]
+      },
+      "ikrek": {
+        "általános": [],
+        "gondolkodása": [
+          "furfangos, ravasz",
+          "jó eszű, jó reakciójú",
+          "mindenre tud megoldást találni",
+          "kíváncsi, információt szeretne adni és kapni",
+          "nem kíván elköteleződni semmi mellett"
+        ],
+        "kapcsolatteremtése": [
+          "könnyen teremt kapcsolatot emberekkel tárgyakkal",
+          "a kapcsolatainak többsége nem túl mély",
+          "nagyon sok ismerőse van",
+          "jól tudja alkalmazni kapcsolatait a hétköznapokban"
+        ],
+        "kommunikációja": [
+          "jól kommunikál",
+          "idegennyelvekhez is jó adottsága van"
+        ],
+        "mozgékonyság-változtatasi kepesseg": [
+          "bármikor tud változtatni",
+          "vagy éppen jön valahonnan, vagy éppen megy valahova",
+          "nem szabad beleragadnia helyzetekbe, mert neki fontos a változás"
+        ],
+        "gyermekkora": [
+          "nagyon változatos",
+          "gyakran elválnak a szülők, vagy iskolát vált, vagy költöznek sok változás a környezetében",
+          "mindig van mit tanulni, mindig van információ amire szert tehet"
+        ],
+        "tanulása": [
+          "legjobb rövid távú tanuló, vizsgákra pl nagyon jól fel tud készülni, aztán elfelejti",
+          "nagyon jó memória, hallásból látásból is minden megmarad"
+        ],
+        "elfogadása": [
+          "könnyen fogad el helyzeteket, főleg ha nem fontos számára",
+          "egyszer valami nagyon fontos neki, nemsokára már annyira mégse lesz fontos",
+          "könnyebben túllép dolgokon",
+          "ha őt megcsalják, a másik azt hiszi mekkora problémát okoz ezzel, de valójában a megcsaló jobban megsínyli"
+        ]
+      },
+      "rák": {
+        "általános": [],
+        "gondolkodása": [
+          "érzelmileg dönt, mindent így közelít meg",
+          "fontos a múlt és a család",
+          "intuitív döntései vannak, ehhez jó érzéke van",
+          "nem vesz tudomást azokról a folgokról amik sértik ez érzelmeit",
+          "ha azt mondja \u0027úgy érzem\u0027, akkor racionális alapon nem tudod lebeszélni, neki az úgy van és kész"
+        ],
+        "kapcsolatteremtése": [
+          "érzelem alapáján hoz létre kapcsolatot emberekkel és tárgyakkal is",
+          "neki a szimpátia érzelem alapú, ha nem vagy szimpatikus neki nem lesz jó kapcsolat",
+          "őrizget régi tárgyakat, főleg ha családtól, vagy régi emlékből van",
+          "szereti a romantikát, hogy valami érzéki is legyen"
+        ],
+        "kommunikációja": [
+          "olyat szeretne mondani amire mindenki kíváncsi(itt jön a pletyka)",
+          "ha valaki tud valamit akkor ő biztos, lehet hozzá fordulni bármivel",
+          "szeretne nélkülözhetetlen lenni kapcsolataiban",
+          "az érzelmeket sokkal jobban le tudja írni mint szóban kimondani"
+        ],
+        "mozgékonyság-változtatasi kepesseg": [
+          "amig szeret nem változtat, amikor már nem akkor változtat",
+          "ha kötődik nem változtat, ha nem akkor vált"
+        ],
+        "gyermekkora": [
+          "fontos neki a család, és hogy tudjon velük beszélni",
+          "gyakran úgy érzi elvesztette az édesannyát, ha testvére születik"
+        ],
+        "tanulása": [
+          "érzelmi alapon tanul, kötődik a tanárhoz , tantárgyhoz is, vagy pont nem akkor utálja",
+          "nem képes racionálisan tanulni"
+        ],
+        "elfogadása": [
+          "amihez érzelmileg kötődnek azt korlátlanul elfogadják",
+          "olyan dolgokat is elfogad pl gyerekekben amit nem kellene, néha túl megengedő"
+        ]
+      },
+      "oroszlán": {
+        "általános": [
+          "Kulcsmondata: Ha hallgattál volna, bölcs maradtál volna.",
+          "Nem szabad versenyeztetni, olyan hely kell neki , ahol tudása kommunikációja, MEGKÉRDŐJELEZHETETLEN"
+        ],
+        "gondolkodása": [
+          "fensőbbségtudat: én aztán vagyok valaki",
+          "nagyvonalú tud lenni",
+          "könnyen befolyásolhatóak, nagyon hiúak, könnyen bedőlnek a szép szavaknak"
+        ],
+        "kapcsolatteremtése": [
+          "felülről teremt kapcsolatot: ami értékes , ami különleges az jöhet, ami nem érdekes azzal nem foglalkozik kizárja",
+          "párkapcsolatban fontos, hogy büszkel lehessen a kapcsolatra"
+        ],
+        "kommunikációja": [
+          "nem megy bele olyan kommunikációba, ahol alul maradhat",
+          "ha nincs versenyhelyzet nagyra van magával , egyébként meg nyuszi",
+          "nem szereti ha megkérdőjelezik amit ő mond, nem szeret vitatkozni",
+          "szeret fensőbbséggel beszélni",
+          "szeret kioktato lenni",
+          "szereti önmagát megkoronázni"
+        ],
+        "mozgékonyság-változtatasi kepesseg": [
+          "az alattvalókat nem szívesen cseréli le",
+          "ha olyan helyzetben van ahol nem érzi, hogy vagyok valaki, képes változtatni"
+        ],
+        "gyermekkora": [
+          "kettősség: vagy tenyerén hordja a szülő, mindent megadnak neki, támogatják segítik, hogy kiteljesüljönvagy olyan közegből jön, ahol mindig lenyomták lehúzták ezért be akarja bizonyítani, hogy én is érek annyit mint más",
+          "sokszor olyanok a testvérei ,akik közt ő lehet a király",
+          "vigyázni kell vele, nehogy megtörjék a gerincét, az egóját"
+        ],
+        "tanulása": [
+          "ha tudod motiválni, nagyon jó tanuló tud lenni(látnia kell mi lesz az eredménye)"
+        ],
+        "elfogadása": [
+          "a dícséretet igen, a főhajtást igen, a kritikát nem",
+          "elfogadhatatlannak tartják a megalázó helyzeteket"
+        ]
+      },
+      "szűz": {
+        "általános": [
+          "saját jegyében nagyon jellemző lesz rá a merkúriság",
+          "olyan helyzetekbe kell kerülnie, ahol a tapasztalás fog eldönteni mindent",
+          "nagyon lényeges szerepe van a tudásának",
+          "tudás amikor az ismereteidet beépíted az életedbe"
+        ],
+        "gondolkodása": [
+          "ő gondolkodik a legpraktikusabban, tudja mit mire lehet használni",
+          "mindent próbál előre megtervezni, előre látni , hogy ne érje meglepetés",
+          "nehezen tud bármit kezdeni váratlan dolgokkal",
+          "ha valami nem úgy alakul ahogy gondolja, újratervez",
+          "nagyon számító, ritkán van benne érzelmileg helyzetekben"
+        ],
+        "kapcsolatteremtése": [
+          "akkor teremt kapcsolatot, ha úgy érzi, hogy neki erre szüksége van",
+          "feleslgesen nem szereti, használja a tárgyakat",
+          "nem rendmániás, csak szereti a rendszert a dolgokban",
+          "nagyon megfontolja, kivel kerül kapcsolatba",
+          "csak akkor változtat, ha úgy érzi ,hogy meg érett a kapcsolat arra hogy nem érdemes tovább folytatni"
+        ],
+        "kommunikációja": [
+          "akkor szeret beszélni amikor értelme van",
+          "nagyon kioktató tud lenni, úgy beszél mintha ő tudná az igazságot"
+        ],
+        "mozgékonyság-változtatasi kepesseg": [
+          "csak akkor változtat ,ha szerinte megéri, feleslegesen nem",
+          "tökéletességre törekszik, addig nem változtat, a saját útját tökéletesnek látja",
+          "ragaszkodik a helyzetekhez ráció alapján, tehát megfontoltság viszonyításra alapoz mindent"
+        ],
+        "gyermekkora": [
+          "kis tudós, nagy elvárások a szülőktől",
+          "hajlamosak a lécet túl alacsonyra helyezni, hogy ne várjanak el tőlük túl sokat",
+          "szeretnek tanulni, szeretnek érteni, tudni valamit",
+          "a megfelelés folyamatosan jelen van, de ezt jól fel tudják használni a fejlődéshez"
+        ],
+        "tanulása": [
+          "nagyon jól tanulnak, de csak akkor van értelme ha azt használni is tudják a hétköznapokban"
+        ],
+        "elfogadása": [
+          "csak azokat a dolgokat fogadja el, amit racionálisan is el lehet fogadni",
+          "mindenben keresi a valóságot, a tapasztalhatóságot",
+          "hihetetlenül nehéz neki megfelelni, pontosan látja minden hibádat, ezt nem kellene senkinek se mondania"
+        ]
+      },
+      "mérleg": {
+        "általános": [
+          "olyan élethelyzetekbe kell kerülnie, ahol meg kell felelnie",
+          "Kapcsolatteremtés, harmónia a környezettel, elfogadás jó ha alapvető gondolatmenet"
+        ],
+        "gondolkodása": [
+          "kompromisszumok",
+          "elfogadás, harmóniára való törekvés ",
+          "nehezen éli meg a konfligtusokat",
+          "nehezen vállalja fel önmagát ha nem kap visszajelzést"
+        ],
+        "kapcsolatteremtése": [
+          "oylan tárgyakkal veszi körbe magát ami szép",
+          "szereti ha a másik kompromisszumkész",
+          "fontos neki a protokoll az etikett, hog hol tut megfelelni",
+          "fél attól hogy nehogy rossza tegyen",
+          "fontos neki a divat"
+        ],
+        "kommunikációja": [],
+        "mozgékonyság-változtatasi kepesseg": [],
+        "gyermekkora": [],
+        "tanulása": [],
+        "elfogadása": [],
+        "munka": "középvezetőnek nem jó mert mindenkinek meg akar felelni"
+      },
+      "skorpió": {
+        "általános": [],
+        "gondolkodása": [],
+        "kapcsolatteremtése": [],
+        "kommunikációja": [],
+        "mozgékonyság-változtatasi kepesseg": [],
+        "gyermekkora": [],
+        "tanulása": [],
+        "elfogadása": []
+      },
+      "nyilas": {
+        "általános": [],
+        "gondolkodása": [],
+        "kapcsolatteremtése": [],
+        "kommunikációja": [],
+        "mozgékonyság-változtatasi kepesseg": [],
+        "gyermekkora": [],
+        "tanulása": [],
+        "elfogadása": []
+      },
+      "bak": {
+        "általános": [
+          "célszerű gondolkodás , nagyon racionális, nagyon céltudatos",
+          "makacs és következetes, képtelen rugalmasan alkalmazkodni, ha valamit fejükbe vesznek azt elérik"
+        ],
+        "gondolkodása": [
+          "puritán, egyszerű, egyszerűsített, nem veszi figyelembe a lehetőségeket, csak megy előre a cél felé",
+          "tipikusan a legrövidebb út az egyenes valami eléréséhez, ennek szellemében él, csak ez nem mindig van így",
+          "makacs, merev, gondolkodásmódja kiismerhető, kiszámítható, szabályozott gondolkodás"
+        ],
+        "kapcsolatteremtése": [
+          "nem teremt könnyen, nem is nagyon keres kapcsoaltokat, de lehetőségeket se",
+          "ha céljainak megfelel hogy kapcsolatot teremtsen akkor fog is, hasonlóan tárgyakat se használ feleselgesen",
+          "mindent a lehtő legletisztultabban leghasznosabban próbál kialakítani, pl minimál stílus"
+        ],
+        "kommunikációja": [
+          "ha nem muszáj nem beszél, mindent 10* megfontol mielőtt bármit is mond, nem fog órákat csevegni",
+          "neki a lényeg a fontos, mit szeretne, hogy szeretné, legrosszabb neki ha nem történik semmi, nincs mit csinálni"
+        ],
+        "mozgékonyság-változtatasi kepesseg": [
+          "járt utat járatlanért el ne hagyd, nem változtat ha nem muszáj, nem is kutat új megoldások után",
+          "neki ha valami minél kiszámíthatóbb, minél egyszerűbb, minél sablonosabb, annál jobb"
+        ],
+        "gyermekkora": [
+          "nem túl fényes, korán feladatokat, felelősséget kapnak, segíteni kell",
+          "azorgalom kitartás, már gyermekkorban is, őt mindig terhelni kell neki ez a jó",
+          "nem szabad elvenni tőle a feladatokat, felelősséget, mert különben céltalannak érzi majd magát"
+        ],
+        "tanulása": [
+          "kitartó szorgalmas, ő ki tudja járni végig az iskloát, képes fegyelmezetten magolni",
+          "nem túl kreatív ezért ez egyszer elsajátított módszerek, utak tanulmányok a legjobbak neki"
+        ],
+        "elfogadása": [
+          "nem egy elfogadó típus, legfeljesbb érdektelen valamiben",
+          " akkor fogad el bárkit ,ha valamilyen szinten analóg a céljaival és érdeke fűződik hozzá, támogatja az előre jutását",
+          "a karrierista szimbóluma, de jó nevelő és jó tanár is mert képes a szabályokat betartatni, kereteket kijelölni",
+          "a szabály az szabály, mindig tudja hol vannak a határok, elfogadás csak kereteken belül"
+        ]
+      },
+      "vízöntő": {
+        "általános": [
+          "miért jó valakinek?.. még folynak a kutatások, neki jó, másnak halálosan idegesítő",
+          "ő mindig mást gondol mint te, teljesen mindegy ,hogy te mit akarsz",
+          "olyan élethelyzetben kell kerülnie, ahol midig más és más, új és új gondolatok, elképzelések, kapcsolatok akulnak ki"
+        ],
+        "gondolkodása": [
+          "zseniális és őrült egyszerre, különleges gondolkodás, és sok kérdést vet fel",
+          "nem nagyon képes hétköznapi gondolkodásra, a begyakorolt sémák nem az ő asztala",
+          "kell neki viszonyítási pont akihez képest változtathat, pl iskolán belül ő más módszerekkel tanul",
+          "pár analógia: idegen nylev, tolmács, külföldi élet(és onnan hazjönni), mozgássérült anya"
+        ],
+        "kapcsolatteremtése": [
+          "jól teremt kapcsolatokat, csak olyan ne legyen ahol őt korlátozzák",
+          "fontosak neki a baráti kapcsolatai, a haveri kör és az ezekkel járó szabadság ",
+          "nem egy emberhez kötődik, hanem sokhoz,leugrom  haverokhoz",
+          "mindig benne van kicsit a személytelenség, nem akar kötődni nagyon erősen egy kapcsolathoz se",
+          "bérlés, van is meg nem is elv kapcsolatokban",
+          "szeret mindig visszajönni, ha birtokolni akarod biztos hogy elmegy, hagyni kell ha menni akar úgyis visszajön"
+        ],
+        "kommunikációja": [
+          "idegennyelv a kommunkációjának része, internet, telfon, olyan mintha kommunikáció lenne",
+          "több diploma több idegennyelv"
+        ],
+        "mozgékonyság-változtatasi kepesseg": [
+          "semmit nem szeret véglegesen megváltoztatni, mindig a kiinduló ponthoz képest képes csak változtatni"
+        ],
+        "gyermekkora": [
+          "nagyon színes tud lenni, lehet , hogy külföldön jár iskolába, mert ott laknak, vagy sokat utaznak",
+          "lehet, hogy nem teljes családban nő fel, vagy elvált szülők gyereke, vagy nagymama neveli, vagy intézteben lakik",
+          "hihetetlenül nehezen korlátozhatóak, annyira nem tűrik a korlátokat"
+        ],
+        "tanulása": [
+          "zseni és az őrültség határán, hihetetlen képesség lehet, de lehet diszes gyerek is, diszlekszia diszgráfia,stb",
+          "a gyerekkel kell kijelöltetni a korlátot,de azt aztán be is kell tartani"
+        ],
+        "elfogadása": [
+          "simán el tudja fogadni a másságot, ő mondhatja valakire hogy más, de te nem mondhatod rá"
+        ]
+      },
+      "halak": {
+        "általános": [],
+        "gondolkodása": [
+          "megajándékozza a sors a felejtés tudományával, azért jó miert mindenen túl tud lépni könnyedén",
+          ""
+        ],
+        "kapcsolatteremtése": [
+          "tele van illúzióval, abszolút nem racionális, sokkal inkább a megérzésekre, hamgulatra támaszkodik"
+        ],
+        "kommunikációja": [
+          ""
+        ],
+        "mozgékonyság-változtatasi kepesseg": [],
+        "gyermekkora": [],
+        "tanulása": [],
+        "elfogadása": []
+      }
+    },
+    "vénusz": {
+      "bolygo_leiras": [
+        "A venusz mindig a holdat hozza letre , a venusz segiti a holdat , ea a mars segiti a nepot, viszont ha ez nem megy akkor forditott analogia",
+        "jelenik meg es a mars analogiat a hold fogja tamogatni , a nap pedig a venuszt , igy keresztbe fordul meg.",
+        "A lanyok egyrea marsikuasbbak, a ferfiak pedig egyre venusziasabbak(anyagi vagy szepseg fele mennek)",
+        "Igy a ferfiak sokkal kevesbe a noben elik meg a venuszt ikabba a sajat penzugyeikben helyette",
+        "Es a nok is sokkal kevesbe a ferfiakban elik a marsukat, helyette az akaratukban esa vagyaikban"
+      ],
+      "szempontok": [
+        "általános",
+        "anyaghoz való viszonya",
+        "biztonságvágya",
+        "stabilitás igénye",
+        "szépséghez való viszonya",
+        "nőiessége",
+        "szexualitása",
+        "művészete",
+        "önelfogadása"
+      ],
+      "kos": {
+        "általános": [],
+        "anyához való viszonya": [
+          "küzd harcol érte",
+          "nem akarja megtartani csak megszerezni",
+          "keresi a kihívásokat, szeretne valamit, elég tudnia hogy megkaphatná és már nem kell neki",
+          "sosem azt érzi, hogy az enyém, hanem hogy meg akaarom szerezni",
+          "pozitiv megeles: a kihivast ne akarja beteljesiteni, legyen elég neki az, hogy elérhetné "
+        ],
+        "biztonságvágya": [
+          "kockaztato tipus, egyaltalan nem a biztonsag neki a fontos",
+          "nem érdekli, hogy biztonságban van-e, mert ha úgy gondolja megéri kockáztatni, meg fogja tenni"
+        ],
+        "stabilitás igénye": [
+          "az induláshoz kell egy stabil pont, onnantól nem"
+        ],
+        "szépséghez való viszonya": [
+          "a szepseg a marsikussagat fejezi ki",
+          "inkabb sportossagra torekszik",
+          "vékonyság és izmosság, célszerűség",
+          "nam túl lágyak"
+        ],
+        "nőiessége": [
+          "a legférfiasabb nők, izmosak, markánsak, erősek",
+          "neki pont a venusz es a hold terület sérül"
+        ],
+        "szexualitása": [
+          "kezdemenyező típus, nem nagyon befogadóak",
+          "sokszor nem engedik a párjukat kezdeményezni"
+        ],
+        "művészete": [
+          "marsikus művészetek: faragás. szobrászat, tűzzománc, ötvösség"
+        ],
+        "önelfogadása": [
+          "riktán kerül szóba nála",
+          "öntörvényőűek ebben, nem nagyon tesznek hangsúlyt a visszajelzésekre"
+        ]
+      },
+      "bika": {
+        "általános": [
+          "minél erősebben kötődjön az anyaghoz",
+          "anyagi szinten ne tudjon változtani, hogy ragaszkodjon"
+        ],
+        "anyához való viszonya": [
+          "nagyon fontos lesz a birtoklás",
+          "fontos neki ,amit elér az életében tartsa meg",
+          "neki minden anyag arra való hogy élevezze az életet(nem szabadna elfelejtenie)",
+          "negyon nehezen mond le bármiről is"
+        ],
+        "biztonságvágya": [
+          "ez az ő adottsága, neki ez nagyon nagyon fontos",
+          "ne mondjuk neki, hogy meg kell tanulnia elengedni",
+          "tanulnia kell: a penz az anyag nem cél hanem eszköz",
+          "ne azért birtokoljon valamit mert aza za enyém(céltalanul), hanem azért hogy az által valamit el tudjo érni"
+        ],
+        "stabilitás igénye": [
+          "nagyon nagy, mindig stabil , biztonságos élethelyzetekre van szüksége",
+          "mindig 4 lábbal álla földön, de ha egyet megemel már könnyen felborul",
+          "nem szeret változtatni ezért igényli a stabilitást"
+        ],
+        "szépséghez való viszonya": [
+          "ösztönös szépérzéke van",
+          "mindenben meglátja a szépet és a harmóniát",
+          "természetesen szép, azt emeli ki magán ami van és nem azt ami nincs(merleg)",
+          "gömbölyűség lágyság"
+        ],
+        "nőiessége": [
+          "bajaság ösztönös",
+          "legnőiesebb jegym ezért gömbölyűek, fogyókúra esélytelen",
+          "ha nem fogadja el a testiségét pajzsmirigy problémája lesz"
+        ],
+        "szexualitása": [
+          "az egyik legjobb az ágyban , nagyon élvezkedős",
+          "erős szexualitás a vágyak vezérlik, vele el lehet tölteni 1-2 napot az ágyban"
+        ],
+        "művészete": [
+          "legjobb neki ha elkezd a művészetekkel foglalkozni",
+          "övé az ösztönös művészet, bármelyik jó, de a legjobb az anyagszerű, fazekasság,szobrászat(formázás)"
+        ],
+        "önelfogadása": [
+          "nagyon szeretné, ha mindenki hódolna neki"
+        ]
+      },
+      "ikrek": {
+        "általános": [
+          "változékony avényusz",
+          "nem ragaszkodik, nem kötődik, nem marad benne egy helyzetben",
+          "ha nem mozog maatol, majd megmozditja a sors"
+        ],
+        "anyához való viszonya": [
+          "van pénze, de folyamatos forgásban van",
+          "az a legjobb ha nincs saját anya(másé minden)",
+          "nem különösebben fontos neki, hogy valamit birtokoljon",
+          "egyszer kötődne, máskor pont hogy nem kell neki, változik",
+          "ha kötődik az anyaghoz, stabil élethelyzetben van szélhámos válik belőle",
+          "olyan élethelyzetet kell teremtenie, hogy bármikor tovább tudjon lépni",
+          "a pénzt szereti szórni"
+        ],
+        "biztonságvágya": [
+          "vagy jön valhonnan, vagy megy éppen valahova , útközben nincs biztonság",
+          "mindig ott akarja magát biztonságban érezni ahol van",
+          "kapcsolataikban szeretnek változtatni"
+        ],
+        "stabilitás igénye": [
+          "semmi, nem keresi a stabil élethelyzeteket",
+          "csak az legyen stabil , hogy valahonnan el tudjon indulni, és valahova tudjon érkezni"
+        ],
+        "szépséghez való viszonya": [
+          "nincs ízélese ehhez túlságosan",
+          "nem azt veszi fel ami neki tetszik, hanem ami éppen szükséges azadott darabhoz"
+        ],
+        "nőiessége": [
+          "kislányosak, nem túl magasak , nem túl erősek, hanem ilyen serdulőlány formájúak"
+        ],
+        "szexualitása": [
+          "nem forróvérűek, de gyorsan tanulnak",
+          "probléma, hogy nincs kötődés",
+          "nehezen engedik el magukat"
+        ],
+        "művészete": [
+          "színészet, szereplés, szavalás"
+        ],
+        "önelfogadása": [
+          "nem nagyon tudja magát eldogadni, de ezzel nem is törődnik, neki ez nem fontos, hogy elfogadja- e magát",
+          "inkább nem figyel oda az önelfogadásra, ezért olyan mintha elfogadná önmagát"
+        ]
+      },
+      "rák": {
+        "általános": [
+          "lényeg az hogy érzelmileg kötődjön az anyagiakhoz",
+          "ha érzelmileg kötődünk, sokkal nehezebben változtatnuk"
+        ],
+        "anyához való viszonya": [
+          "érzelmileg közelíti meg a dolgokat, mindig az a döntő, hogy mit szeretek, mennyire kötősöm hozzá",
+          "ők, akik, gyűjtik a gyerekek dolgait fényképeket stb, minden dolgot ami a kötődést segíti",
+          "nem mond le semmi olyan dologról, ami érzelmileg megfogja őt"
+        ],
+        "biztonságvágya": [
+          "legaggodalmasabb jegy, mindig fél, hogy szerettei, családtagjai biztonságban vannak-e",
+          "nagyon nehehzen viseli, ha az érzelmi stabilitása veszélybe kerül",
+          "nem túl jók, a dolgok elengedésében"
+        ],
+        "stabilitás igénye": [
+          "amiben érzelmei,vannak ott stabilitásra vágyik",
+          "család, otthon érzelmi tárgyak stabilitására vágyik",
+          "akkor tud változtatni, ha az érzelmei is változnak"
+        ],
+        "szépséghez való viszonya": [
+          "ne felejtse el, hiyg anikor gyerek van mcsalád van, neki valahol akkor is nőnek kell lennie",
+          "szenvedélyesen szereti a laza kényelmes dolgokat",
+          "nem divatkövető jegy, inkább az otthonosabb kényelmesebb dolgok jönnek be neki",
+          "neki mindig az tetszik, ami érzelmi alapon nyújt valami többletet",
+          "veszélye van az elhízásnak, ha jön a gyerek gömbölyödni fog utána"
+        ],
+        "nőiessége": [
+          "ha figyelnek magukra nagyon nőiesek,ha nem akkor nem",
+          "általában vonzzák a férfiakat, de neki ez azért kell, mert neki fontos a család és a gyerek",
+          "nagyon odaadóak, nagyon szeretetteljesek és ezt a férfiak is szeretik",
+          "azt hiszik, azzal fogják meg  a pasit, ha jók a konyhában",
+          "azt gondolja, addig kell nőnek lenni amíg nem jön a gyerek"
+        ],
+        "szexualitása": [
+          "ha védekezik, csak idő kérdése, hogy a kapcsolatban tönkremenjen a szexualitás",
+          "azért kapja a vénuszát , hogy hold legyen belőle",
+          "ha azt akarja, hogy működjön a szex, ne védekezzen"
+        ],
+        "művészete": [
+          "övék a népművészet, zenében cimbalom citera, stb, hímzés",
+          "fontos neki, hogy a hagyományokat, a múltat ápolja"
+        ],
+        "önelfogadása": [
+          "egyik legönbizalomhiányosabb, nem igazán tudja magát elfogadni",
+          "ha család van akkor remekül el tudja fogadni magát"
+        ]
+      },
+      "oroszlán": {
+        "általános": [
+          "hisz magában , tudja magáról ,hogy jó nő és a nőiességével igenis elismerést válthat ki",
+          "a külvilágnak nagyon zavaró lehet, főleg akiknek problémája van az önelfogadással",
+          "ezt kell megtanulnia, hogy ő királylány, azért kapta, hogy átélje , hogy én vagyo valaki"
+        ],
+        "anyához való viszonya": [
+          "nagyon hivalkodó tud lenni, szereti kiemelni, ogy ő kicsoda",
+          "azzal próbál elsimerést szerezni, hogy mim van nekem",
+          "minden olyan dolog ami emeli az ő tekintélyét nagyon fontos lesz neki anyagként is",
+          "ami őt emeli, arra mindig nagyon büszke, az mindig látványos, ami nem emeli, azt megpróbálja elrejteni"
+        ],
+        "biztonságvágya": [
+          "akkor érzi magát biztonságban, ha van olyan életterület ahol lehet valaki, ahhoz nagyon ragaszkodik",
+          "akkor érzi, hogy a helyén van, ha látja, hogy mások becsülik, tisztelik, elfogadják",
+          "ragaszkodik az alattvalókhoz, nehezen mond le olyanokról, akik őt emelik"
+        ],
+        "stabilitás igénye": [
+          "szilard jegy, eros a stabilitas igenye, főleg hogy átélhesse, hogy vagyok valaki",
+          "ha állandóan vááltozik a körülmény elbizonytalanodik, hogy elég-e az a helyzet, amiben uralkodom"
+        ],
+        "szépséghez való viszonya": [
+          "nem feltétlenül szépek, de mindenképpen van tartásuk",
+          "inkább az elegancia, a magára való adás az övé",
+          "márkafüggő, neki fontos hogy látszódjon, meg vannak nála a státusz szimbólumok"
+        ],
+        "nőiessége": [
+          "nem feltétlenül divatkövető, max akkor, ha ez őt emeli"
+        ],
+        "szexualitása": [
+          "mindig ott, van egyfajta visszafogottság, nehezen adja ki magát",
+          "fél attól ,hogy kihasználják",
+          "nagyon ritkán kezdeményez, mert fél a visszautasítástól",
+          "sokszor új és új kapcsolatot keres , ezzel bizonyítva a világnak, hogy ő mennyire kelendő"
+        ],
+        "művészete": [
+          "inkább műgyűjtő, mint művész",
+          "azt hogy más ítélja meg , amit én teremtek azt  nehezen éli meg"
+        ],
+        "önelfogadása": [
+          "külvilág függő, nehéz az önelfogadás",
+          "mindig fontos, hogy megőrizze a méltóságát",
+          "egy pasi örüljön, ha megkaphat engem",
+          "a tartás mindig maradjon meg, ha őt megalázzák egy kapcsoatban, akkor már vége is"
+        ]
+      },
+      "szűz": {
+        "általános": [
+          "praktikussági oldalról kell megközelíteni ezt a dolgot, neki ez a legfontosabb, praktikussag, hasznosság",
+          "minfig a tapasztalatai alapján fog közelíteni"
+        ],
+        "anyához való viszonya": [
+          "legfontosabb neki az egyszerűség, a használhatóság és a praktikusság",
+          "a pénzkezelése is nagyon praktikus, nagyon kkszámítható",
+          "ha vlamiről jó tapasztalata van az egy plusz pont"
+        ],
+        "biztonságvágya": [
+          "a biztonságot, a tervezhetőség és a kiszámíthatóság adja",
+          "ha valami nem úgy a hogy azt elképzelte, akkor újratervez",
+          "tervezés nélkül nem érzi megát bizonságban"
+        ],
+        "stabilitás igénye": [
+          "nincs szüksége igazán nagy stabilitásra, állandó változásokra kész, a körülménynek megfelelően",
+          "állandóan viszonyít, ennek megfelelően változtat ha kell",
+          "stabilitását is a viszonyítás határzozza meg",
+          "mihhez képest? -> ezért döntenek nehezen ha nincs viszonyítási alap"
+        ],
+        "szépséghez való viszonya": [
+          "szimmetria az övé, de ez nem feltétlenül jelent szépet, mert az egyedi az asszimtrikus folgok a szépek",
+          "egyhangú, unalmas, nem divatkövető",
+          "az sem igaz hogy elveti a divatot, mert ha az a praktikus, akkor éppen követi"
+        ],
+        "nőiessége": [
+          "érintetlenség, visszafogottság szimbóluma",
+          "azt akarja mutatni valójában, ha valami nem látszik, még attól is lehet szép"
+        ],
+        "szexualitása": [
+          "erősen kezdők , de gyorsan tanulnak ",
+          "legkönnyebben válnak unalmasssá, kreativitás nem sok vn bennük",
+          "jó tanuló , jó szerető is válhat belőle"
+        ],
+        "művészete": [
+          "másolás: szimbolikusan, ha valami tökéletes, annál nem lehet szebbet csinálni ezért inkább másol"
+        ],
+        "önelfogadása": [
+          "önbizalomhiányos, mert mindig viszonyít valalkihez, valamiez"
+        ]
+      },
+      "mérleg": {
+        "általános": [
+        ],
+        "anyához való viszonya": [
+        ],
+        "biztonságvágya": [
+        ],
+        "stabilitás igénye": [
+        ],
+        "szépséghez való viszonya": [
+        ],
+        "nőiessége": [
+        ],
+        "szexualitása": [
+        ],
+        "művészete": [
+        ],
+        "önelfogadása": [
+        ]
+      },
+      "skorpió": {
+        "általános": [
+          "egyik legerősebb, mégis az egyik legtöbb problémával jár együtt, legyen képes lemondani a vénuszról, képes legyen másban megélni"
+        ],
+        "anyához való viszonya": [
+          "szélaőaéges, vagy nagyon küzd az anyagiakért és mindent megtsz,vagy teljesen tagadja az anyagra törekvőséget",
+          "hajlamos minden anyagot megtagadni magától, vagy éppen szenvedélyesen belefolyni a pénzügyi dolgokba"
+        ],
+        "biztonságvágya": [
+          "nagyon fontos neki a biztonság, mégis hajlamos mindent kockára tenni",
+          "ha gy nő haragszik egy férfira, bármit képes megtenni hogy vénusszal böntessen",
+          "keményen elfolyt,mindent kockára tesz, nem érdekli a biztonság, semmi"
+        ],
+        "stabilitás igénye": [
+          "ha valamiihez kötődik, nagy a stabilitás igénye, de ha már nem működik, megtagad magától minden stabilitást"
+        ],
+        "szépséghez való viszonya": [
+          "nagyo kettős: vagy nagyon törekszik a szépségre, vagy semennyire",
+          "neki a külsőség nem mond semmit, mégis övék a szépészeti műtétek",
+          "nem foglalkozik a szépséggel, mondja is tudja is, de mégis szép és ad is magára",
+          "tagadja a divatot, már szinte támadja, támad minden külvilágnak való megfelelést",
+          "általában nem vénusziak(gömbölyűek), tehát főleg vékonyabbak, marsikusak",
+          "neki nem a szépség a fontos, hanem hogy mit érzékelsz, hogyan éled át a dolgokat"
+        ],
+        "nőiessége": [
+          "nagyon vonzóak, nagyon erős szexuális kiszugárzásúak, viszont van aki teljesen megtagadja a nőiességet"
+        ],
+        "szexualitása": [
+          "övék a legjobb szexualitás(már ha van ,mert lehet hogy egyáltalán nincs)",
+          "a szex megvonásával büntet, ha nem úgy nem azt csinálod, akkor no szex,ők kibírják"
+        ],
+        "művészete": [
+          "igazi művészet az övé, teljesen beleélik maguk szélsőségesen, fájdalom, szerelem, halál, csalódás ",
+          "mindent szenvedélyesen élnek meg, drogtól kezdve minden tott van körülöttük"
+        ],
+        "önelfogadása": [
+          "ezzel foglalkozik a legkevesebbet, egyszerűen nem érdekli, ha elfogadják elfogadják, ha nem, akkor  nem",
+          "ha nem fogadod el akkor max az ellensége lettél, de ez nem hatotta meg",
+          "állandóan teszteli a környezetét valyon elfogadnak-e így"
+        ]
+      },
+      "nyilas": {
+        "általános": [
+          "új és új anyagi célok megjelenése olyan feladatok,jönnek, ha belaragad azanyagba nem tudja megoldani, muszáj változnia"
+        ],
+        "anyához való viszonya": [
+          "folyamatosan változtat, nem tud ragaszkodni semmihez, sokkal lazább mint más jegyek",
+          "mindenből képes továbblépni, még az anyagi veszteségeket is jól viseli, nem is panaszkodik",
+          "amikor valami anyagi cél választ nagyon be tud lelkesedni, de ha problémát lát inkább kikerülné",
+          "sokszor a környezetét beviszi az erdőbe, mert lelkesen elkezd valamit, és a másiknek kell befejeznie",
+          "tárgyakhoz sem kötősik,mindig azzal kezd valamit ami éppen van, pillanatban akar lenni, nem gondol bele hogy holnap ez mivel jár"
+        ],
+        "biztonságvágya": [
+          "kevésbé törekszik biztonságra, inkább kalandozik helyette",
+          "a biztonság is nála esetleges, abban a pillanatban ahol él fontos neki, de nem előre meghatározott"
+        ],
+        "stabilitás igénye": [
+          "kockázatvállaló, az alapján, ogy ppen akkor mit érez, mit tesz a kedvén múlik",
+          "ha valami tetszik ,egy, ha nem akkor nem megy, aktuális célért bármit képes kockára tenni"
+        ],
+        "szépséghez való viszonya": [
+          "legkevésbé szeretne alkalmazkodni az aktuális szépség ideához, neki az önelfogadás alap analógia",
+          "bárhogyan képes magát elfogadni, mindenből is tud ruhát csinálni, tudják hordani magukat",
+          "van egy kellemes kiáradó kisugárzásuk, ami vonzza a környezetet, nem fontos neki az effektív szépség",
+          "könnyedsége, lazasága vonzza az embereket"
+        ],
+        "nőiessége": [
+          "nagyon nőiesek tudnak lenni, nem híresek a vékonyságukról,inkábba  kiterjedés szimbóluma van velük",
+          "hízásra hajlamosak, de ezzel vonzzák be a férfiakat, szimbolikusan vonzóak",
+          "sportosan elegáns,megaja mindennek a módját, miközben laza"
+        ],
+        "szexualitása": [
+          "legjobb szeretők, jó a szexualitása, vonzó a férfiak számára, játéknak veszi a szexet",
+          "nincs gátlásossága, de akár a vallásosság is megjelenhet nála(házasság után van szex csak), csak csak kapcsolatban"
+        ],
+        "művészete": [
+          "monumentális, freskók, zenében orgona, képzőművészetben pl Feszti körkép"
+        ],
+        "önelfogadása": [
+          "önbizalom, önelfogadás az övé , neki van a legjobb adottsága ehhez"
+        ]
+      },
+      "bak": {
+        "általános": [
+        ],
+        "anyához való viszonya": [
+        ],
+        "biztonságvágya": [
+        ],
+        "stabilitás igénye": [
+        ],
+        "szépséghez való viszonya": [
+        ],
+        "nőiessége": [
+        ],
+        "szexualitása": [
+        ],
+        "művészete": [
+        ],
+        "önelfogadása": [
+        ]
+      },
+      "vízöntő": {
+        "általános": [
+        ],
+        "anyához való viszonya": [
+        ],
+        "biztonságvágya": [
+        ],
+        "stabilitás igénye": [
+        ],
+        "szépséghez való viszonya": [
+        ],
+        "nőiessége": [
+        ],
+        "szexualitása": [
+        ],
+        "művészete": [
+        ],
+        "önelfogadása": [
+        ]
+      },
+      "halak": {
+        "általános": [
+        ],
+        "anyához való viszonya": [
+        ],
+        "biztonságvágya": [
+        ],
+        "stabilitás igénye": [
+        ],
+        "szépséghez való viszonya": [
+        ],
+        "nőiessége": [
+        ],
+        "szexualitása": [
+        ],
+        "művészete": [
+        ],
+        "önelfogadása": [
+        ]
+      }
+    },
+    "mars": {
+      "bolygo_leiras": [
+        ""
+      ],
+      "szempontok": [
+        "általános",
+        "akarata",
+        "tetteiben",
+        "vágyaiban",
+        "mint férfi",
+        "szexualitása",
+        "sportja",
+        "életereje"
+      ],
+      "kos": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "bika": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "ikrek": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "rák": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "oroszlán": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "szűz": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "mérleg": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "skorpió": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "nyilas": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "bak": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "vízöntő": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      },
+      "halak": {
+        "általános": [
+        ],
+        "akarata": [
+        ],
+        "tetteiben": [
+        ],
+        "vágyaiban": [
+        ],
+        "mint férfi": [
+        ],
+        "szexualitása": [
+        ],
+        "sportja": [
+        ],
+        "életereje": [
+        ]
+      }
+    },
+    "jupiter": {
+      "bolygo_leiras": [],
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "szaturnusz": {
+      "bolygo_leiras": [],
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "uránusz": {
+      "bolygo_leiras": [],
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "neptun": {
+      "bolygo_leiras": [],
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "pluto": {
+      "bolygo_leiras": [],
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
       }
     }
-
+  }
 }
 
 

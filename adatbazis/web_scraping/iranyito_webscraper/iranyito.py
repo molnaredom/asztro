@@ -72,10 +72,6 @@ def horoszkopok_feltoltese(web):
         egy_horoszkop_feltoltese(tulajodonosi_adatok, web)
 
 
-def hazjegyben_feltoltes(web):
-    web.get('http://127.0.0.1:8000/create-hazJegyben/')
-    hazjegyben_kitoltes(web)
-
 
 def alapanalogia_beolvas():
     with open("../../analogiak/alapanalogiak.json", encoding="utf-8") as f:
@@ -84,6 +80,11 @@ def alapanalogia_beolvas():
 
 def bolygojegyben_beolvas():
     with open("../../analogiak/bolygoJegyben_analogiak.json", encoding="utf-8") as f:
+        return json.loads(f.read())
+
+
+def hazjegyben_beolvas():
+    with open("../../analogiak/hazJegyben_analogiak.json", encoding="utf-8") as f:
         return json.loads(f.read())
 
 
@@ -105,7 +106,7 @@ def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszit
     if bolygojegyben_feltoltes_:
         bolygojegyben_feltoltes(web, bolygojegyben_beolvas())
     if hazjegyben_feltoltes_:
-        hazjegyben_kitoltes(web)
+        hazjegyben_kitoltes(web, hazjegyben_beolvas())
     if alapanalogia_feltoltes_:
         alapanalogia_feltoltes(web, alapanalogia_beolvas())
 

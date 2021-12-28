@@ -1,15 +1,10 @@
-import os
-
-from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import time
-import json
 from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import *
 
 
 def bolygojegyben_feltoltes(web,feltoltendo ):
     web.get('http://127.0.0.1:8000/create-bolygoJegyben/')
-
 
     def adat_kitoltes(web, bolygoszam, jegyszam, bolygonev, jegynev, feltoltendo):
         # bolygo
@@ -23,11 +18,9 @@ def bolygojegyben_feltoltes(web,feltoltendo ):
         # adatok
         hely_xpath = web.find_element_by_xpath(f'//*[@id="id_adatok"]')
         hely_xpath.clear()
-        jsonban_analogia = "{ \"analogiak\" : \"" + \
-                               str(feltoltendo["analogiak"][bolygonev][jegynev]).strip() \
-                               + "\" }"
+        jsonban_analogia = feltoltendo["analogiak"][bolygonev][jegynev]
+        jsonban_analogia= str(jsonban_analogia).replace("'", '"')
         hely_xpath.send_keys(jsonban_analogia)
-
 
     time.sleep(2)
 
@@ -42,9 +35,11 @@ def bolygojegyben_feltoltes(web,feltoltendo ):
             feltoltes(web)
 
 
-def hazjegyben_kitoltes(web):
-    def adat_kitoltes(web, hazszam, jegyszam):
-        # haz
+def hazjegyben_kitoltes(web, feltoltendo):
+    web.get('http://127.0.0.1:8000/create-hazJegyben/')
+
+    def adat_kitoltes(web, hazszam, jegyszam, haznev, jegynev, feltoltendo):
+        # bolygo
         select = Select(web.find_element_by_xpath('//*[@id="id_haz"]'))
         select.select_by_value(str(hazszam))
 
@@ -52,20 +47,31 @@ def hazjegyben_kitoltes(web):
         select = Select(web.find_element_by_xpath('//*[@id="id_jegy"]'))
         select.select_by_value(str(jegyszam))
 
+        # adatok
+        hely_xpath = web.find_element_by_xpath(f'//*[@id="id_leiras"]')
+        hely_xpath.clear()
+        jsonban_analogia = "{ \"analogiak\" : \"" + \
+                           str(feltoltendo["analogiak"][haznev][jegynev]).strip() \
+                           + "\" }"
+        hely_xpath.send_keys(jsonban_analogia)
 
     time.sleep(2)
-    for haz in range(1, 13):
-        for jegy in range(1, 13):
-            adat_kitoltes(web, haz, jegy)
+
+    hazak = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+    jegyek = ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
+              "vízöntő", "halak"]
+
+    for hazszam, haznev in enumerate(hazak, 6):
+        for jegyszam, jegynev in enumerate(jegyek, 10):
+            adat_kitoltes(web, hazszam, jegyszam, haznev, jegynev, feltoltendo)
             feltoltes(web)
 
 
 def alapanalogia_feltoltes(web, alapanalogiak):
     feltoltendo = alapanalogiak
-    print(feltoltendo)
 
-    # jegy_feltoltes(web, feltoltendo)
-    #bolygo_feltoltes(web, feltoltendo)
+    jegy_feltoltes(web, feltoltendo)
+    bolygo_feltoltes(web, feltoltendo)
     haz_feltoltes(web, feltoltendo)
 
 

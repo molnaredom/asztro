@@ -1,0 +1,476 @@
+{
+  "name": "hazJegyben",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "analogiak": {
+    "1": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "2": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "3": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "4": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "5": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "6": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "7": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "8": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "9": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "10": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "11": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "12": {
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    }
+  }
+}
