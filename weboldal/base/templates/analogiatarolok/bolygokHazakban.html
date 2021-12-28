@@ -17,27 +17,6 @@
     {% endfor %}
 </main>
 
+<a id="create" href="{% url 'create-bolygoHazban' %}">Készíts Bolygó analógiát</a>
 
-<!--<a id="create" href="{% url 'create-bolygokHazakban' %}">Készíts {{adat}} analogiat</a>-->
-<!--<hr>-->
-<!--<hr>-->
-
-<!--{% for adat in adatok %}-->
-<!--<div id="exact">-->
-
-<!--    <h6> <a href="{% url 'bolygoHazban' adat.id %}"> {{adat}}</a> </h6>-->
-<!--</div>-->
-
-<!--<div id="delete">-->
-<!--    <a href="{% url 'delete-bolygoHazban' adat.id %}">Törlés</a>-->
-<!--</div>-->
-
-<!--<div id="update">-->
-
-<!--    <a href="{% url 'update-bolygoHazban' adat.id %}">Vátoztatás</a>-->
-
-</div>
-<hr>
-{% endfor %}
-<hr>
 {% endblock content %}

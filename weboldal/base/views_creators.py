@@ -2,13 +2,17 @@ from django.contrib.auth.decorators import login_required
 from .forms import JegyekForm, BolygokForm, HazakForm , BolygoJegybenForm, HazJegybenForm, BolygoHazbanForm, RoomForm, HoroszkopForm
 from django.shortcuts import render, redirect
 
-
-
 @login_required(login_url="login")
 def createroom(request):
     form = RoomForm()
 
     if request.method == "POST":
+
+        if 'bolygo_es_jegy_lekerdezes' in request.POST:
+            jegyNev = request.POST.get('jegyNev')
+            bolygoNev = request.POST.get('bolygoNev')
+            jegy_alapjan_lekeres = bolygo_alapjan_lekeres(bolygoNev, jegyNev)
+
         form = RoomForm(request.POST)
         if form.is_valid():
             room = form.save(commit=False)
@@ -19,89 +23,52 @@ def createroom(request):
     return render(request, "create_templates/room_form.html", context)
 
 
-#createrek
-def createJegyek(request):
-    form = JegyekForm()
+def _analogiafeltoltes(request,Osztalyform, analogia):
+    form = Osztalyform()
     if request.method == "POST":
-        form = JegyekForm(request.POST)
 
+        if "megse" in request.POST:
+            return redirect(f"{analogia}")
+
+        form = Osztalyform(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("jegyek")
+
+        if 'ujabb_fevitel' in request.POST:
+            return redirect(f"create-{analogia}")
+
+        elif "mentes_es_foolal" in request.POST:
+            return redirect(f"{analogia}")
 
     context = {'form': form}
-    return render(request, "create_templates/jegyek_form.html", context)
+    return render(request, "create_templates/analogia_form.html", context)
+
+#createrek
+def createJegyek(request):
+    return _analogiafeltoltes(request, JegyekForm, "jegyek")
 
 
 def createBolygok(request):
-    form = BolygokForm()
-
-    if request.method == "POST":
-        form = BolygokForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("bolygok")
-
-    context = {'form': form}
-    return render(request, "create_templates/bolygok_form.html", context)
-
+    return _analogiafeltoltes(request, BolygokForm, "bolygok")
 
  #job lib
 
 def createHazak(request):
-    form = HazakForm()
-
-    if request.method == "POST":
-        form = HazakForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("hazak")
-
-    context = {'form': form}
-    return render(request, "create_templates/hazak_form.html", context)
+    return _analogiafeltoltes(request, HazakForm, "hazak")
 
 
 def createBolygoJegyben(request):
-    form = BolygoJegybenForm()
-
-    if request.method == "POST":
-        form = BolygoJegybenForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # return redirect("bolygokJegyekben")
-            return redirect("create-bolygoJegyben")
-
-    context = {'form': form}
-    return render(request, "create_templates/bolygoJegyben_form.html", context)
+    return _analogiafeltoltes(request, BolygoJegybenForm, "bolygoJegyben")
 
 
 def createBolygoHazban(request):
-    form = BolygoHazbanForm()
-
-    if request.method == "POST":
-        form = BolygoHazbanForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("create-bolygokHazakban")
-
-    context = {'form': form}
-    return render(request, "create_templates/bolygoHazban_form.html", context)
+    return _analogiafeltoltes(request, BolygoHazbanForm, "bolygoHazbann")
 
 
  #job lib
 
 def createHazJegyben(request):
-    form = HazJegybenForm()
-
-    if request.method == "POST":
-        form = HazJegybenForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("create-hazJegyben")
-
-    context = {'form': form}
-    return render(request, "create_templates/hazJegyben_form.html", context)
-
+    return _analogiafeltoltes(request, HazJegybenForm, "hazJegyben")
 
 
 def createHoroszkop(request):
@@ -113,5 +80,5 @@ def createHoroszkop(request):
             return redirect("horoszkop_gyujtemeny")
 
     context = {'form': form}
-    return render(request, "create_templates/horoszkop_form.html", context)
+    return render(request, "create_templates/analogia_form.html", context)
 

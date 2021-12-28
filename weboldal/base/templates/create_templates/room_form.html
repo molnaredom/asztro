@@ -1,4 +1,4 @@
-{% extends 'main.html' %}
+{% extends 'analogia_db_base.html' %}
 
 {% block content %}
 
@@ -6,7 +6,8 @@
     <form method="POST" action="">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit">
+        <input type="submit" value="Főoldal" name="fooldal">
+        <input type="submit" value="Újabb felvitel" name="ujabb_felvitel">
     </form>
 
 </div>

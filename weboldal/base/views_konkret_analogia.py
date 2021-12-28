@@ -1,17 +1,17 @@
 from django.shortcuts import render
-from .models import Room, Topic, Jegy, Bolygo, Haz, Message ,BolygoHazban, BolygoJegyben2, HazJegyben, Horoszkop1
+from .models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2 ,BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2
 
 
 # konkrét oldalak( a fa levelei)
 def jegy(request,nevID):
-    analogia = Jegy.objects.get(nevID=nevID)
+    analogia = Jegy2.objects.get(nevID=nevID)
     context = {"analogia": analogia}  # ez egy objektum
 
     return render(request, "konkret_analogiak/jegy.html", context)
 
 
 def bolygo(request,nevID):
-    analogia = Bolygo.objects.get(nevID=nevID)
+    analogia = Bolygo2.objects.get(nevID=nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -19,7 +19,7 @@ def bolygo(request,nevID):
 
 
 def haz(request,nevID):
-    analogia = Haz.objects.get(nevID=nevID)
+    analogia = Haz2.objects.get(nevID=nevID)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -35,7 +35,7 @@ def bolygoJegyben(request,id):
 
 
 def bolygoHazban(request,id):
-    analogia = BolygoHazban.objects.get(id=id)
+    analogia = BolygoHazban2.objects.get(id=id)
 
     context = {"analogia": analogia}  # ez egy objektum
 
@@ -43,14 +43,14 @@ def bolygoHazban(request,id):
 
 
 def hazJegyben(request,id):
-    analogia = HazJegyben.objects.get(id=id)
+    analogia = HazJegyben2.objects.get(id=id)
 
     context = {"analogia": analogia}  # ez egy objektum
 
     return render(request, "konkret_analogiak/hazJegyben.html", context)
 
 def horoszkop(request,id):
-    analogia = Horoszkop1.objects.get(id=id)
+    analogia = Horoszkop2.objects.get(id=id)
 
     context = {"analogia": analogia}  # ez egy objektum
 

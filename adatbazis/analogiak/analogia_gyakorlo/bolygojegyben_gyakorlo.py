@@ -4,7 +4,7 @@ import os
 
 def read_file():
 
-    with open("../package.json",  encoding="utf8") as f:
+    with open("../../web_scraping/adat_tarolas/package.json", encoding="utf8") as f:
         bolygojegyben = json.load(f)["analogiak"]["bolygoJegyben"]
         return bolygojegyben
 

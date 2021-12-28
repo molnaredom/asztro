@@ -1,3 +1,5 @@
+
+
 def ekezetnelkul(szo: str):
     szo =szo.replace("á", "a")
     szo =szo.replace("ű", "u")
@@ -6,5 +8,7 @@ def ekezetnelkul(szo: str):
     szo =szo.replace("ö", "o")
     szo =szo.replace("ő", "o")
     szo =szo.replace("é", "e")
+    szo =szo.replace("í", "i")
+    szo =szo.replace(" ", "_")
 
     return szo.replace("á", "a")

@@ -1,6 +1,7 @@
 # from bs4 import BeautifulSoup
 import requests
 from selenium import webdriver
+from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import *
 
 from selenium.webdriver.support.ui import Select
 
@@ -8,17 +9,6 @@ import time
 
 
 def bolygojegyben_beallit(web, bolygo, jegy, xpath):
-    def ekezetnelkul(szo: str):
-        szo =szo.replace("á", "a")
-        szo =szo.replace("ű", "u")
-        szo =szo.replace("ú", "u")
-        szo =szo.replace("ó", "o")
-        szo =szo.replace("ö", "o")
-        szo =szo.replace("ő", "o")
-        szo =szo.replace("é", "e")
-
-        return szo.replace("á", "a")
-
 
     def szama(keresett_bolygo, keresett_jegy):
         szam = 1
@@ -38,16 +28,6 @@ def bolygojegyben_beallit(web, bolygo, jegy, xpath):
 
 
 def hazjegyben_beallit(web, haz, jegy, xpath):
-    def ekezetnelkul(szo: str):
-        szo =szo.replace("á", "a")
-        szo =szo.replace("ű", "u")
-        szo =szo.replace("ú", "u")
-        szo =szo.replace("ó", "o")
-        szo =szo.replace("ö", "o")
-        szo =szo.replace("ő", "o")
-        szo =szo.replace("é", "e")
-
-        return szo.replace("á", "a")
 
 
     def szama(keresett_haz, keresett_jegy):
@@ -72,15 +52,7 @@ def sajat_horoszkopform_kitoltes(horoszkop_adatok, web):
     sajat_weboldal_kitoltes(horoszkop_adatok, web)
 
 
-
-
 def sajat_web_inditasa(web):
-    # rendszer = "win10"
-    # # rendszer = "linux"
-    # if rendszer == "win10":
-    #     web = webdriver.Firefox(executable_path=r'../adat_tarolas/geckodriver.exe')
-    # else:
-    #     web = webdriver.Firefox()
     web.get('http://127.0.0.1:8000/create-horoszkop/')
     time.sleep(2)
 

@@ -1,33 +1,33 @@
 from django.forms import ModelForm
-from .models import Room, Jegy, Haz, Bolygo, BolygoJegyben2, HazJegyben, BolygoHazban, Horoszkop1
+from .models import Room2, Jegy2, Haz2, Bolygo2, BolygoJegyben2, HazJegyben2, BolygoHazban2, Horoszkop2
 
 class RoomForm(ModelForm):
     class Meta:
-        model = Room
+        model = Room2
         fields = "__all__"
         exclude = ["host", "participants"]
 
 class AnalogiaForm(ModelForm):
     class Meta:
-        model = Jegy
+        model = Jegy2
         fields = "__all__"
 
 
 class JegyekForm(ModelForm):
     class Meta:
-        model = Jegy
+        model = Jegy2
         fields = "__all__"
 
 
 class HazakForm(ModelForm):
     class Meta:
-        model = Haz
+        model = Haz2
         fields = "__all__"
 
 
 class BolygokForm(ModelForm):
     class Meta:
-        model = Bolygo
+        model = Bolygo2
         fields = "__all__"
 
 
@@ -39,24 +39,24 @@ class BolygoJegybenForm(ModelForm):
 
 class BolygoHazbanForm(ModelForm):
     class Meta:
-        model = BolygoHazban
+        model = BolygoHazban2
         fields = "__all__"
 
 
 class HazJegybenForm(ModelForm):
     class Meta:
-        model = HazJegyben
+        model = HazJegyben2
         fields = "__all__"
 
 
 class HoroszkopForm(ModelForm):
     class Meta:
-        model = Horoszkop1
+        model = Horoszkop2
         fields = "__all__"
 
 
 class Horoszkop_Csillagjegyszures(ModelForm):
     class Meta:
-        model = Horoszkop1
+        model = Horoszkop2
         fields = ["nap"]
 

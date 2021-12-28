@@ -1,0 +1,270 @@
+{
+  "jegyek": {
+    "kos": {
+      "elem": "tűz",
+      "minőség": "kardinális",
+      "paritás": "pozitív",
+      "évszak": "tavasz",
+      "leírás": [
+        "a"
+      ]
+    },
+    "bika": {
+      "elem": "föld",
+      "minőség": "szilárd",
+      "paritás": "negatív",
+      "évszak": "tavasz",
+      "leírás": [
+        "a"
+      ]
+    },
+    "ikrek": {
+      "elem": "levegő",
+      "minőség": "változó",
+      "paritás": "pozitív",
+      "évszak": "tavasz",
+      "leírás": [
+        "a"
+      ]
+    },
+    "rák": {
+      "elem": "víz",
+      "minőség": "kardinális",
+      "paritás": "negatív",
+      "évszak": "nyár",
+      "leírás": [
+        "a"
+      ]
+    },
+    "oroszlán": {
+      "elem": "tűz",
+      "minőség": "szilárd",
+      "paritás": "pozitív",
+      "évszak": "nyár",
+      "leírás": [
+        "a"
+      ]
+    },
+    "szűz": {
+      "elem": "föld",
+      "minőség": "változó",
+      "paritás": "negatív",
+      "évszak": "nyár",
+      "leírás": [
+        "a"
+      ]
+    },
+    "mérleg": {
+      "elem": "levegő",
+      "minőség": "kardinális",
+      "paritás": "pozitív",
+      "évszak": "ősz",
+      "leírás": [
+        "a"
+      ]
+    },
+    "skorpió": {
+      "elem": "víz",
+      "minőség": "szilárd",
+      "paritás": "negatív",
+      "évszak": "ősz",
+      "leírás": [
+        "a"
+      ]
+    },
+    "nyilas": {
+      "elem": "tűz",
+      "minőség": "változó",
+      "paritás": "pozitív",
+      "évszak": "ősz",
+      "leírás": [
+        "a"
+      ]
+    },
+    "bak": {
+      "elem": "föld",
+      "minőség": "kardinális",
+      "paritás": "negatív",
+      "évszak": "tél",
+      "leírás": [
+        "a"
+      ]
+    },
+    "vízöntő": {
+      "elem": "levegő",
+      "minőség": "szilárd",
+      "paritás": "pozitív",
+      "évszak": "tél",
+      "leírás": [
+        "a"
+      ]
+    },
+    "halak": {
+      "elem": "víz",
+      "minőség": "változó",
+      "paritás": "negatív",
+      "évszak": "tél",
+      "leírás": [
+        "a"
+      ]
+    }
+  },
+  "bolygok": {
+    "nap": {
+      "típus": "személyjelölő",
+      "pontérték": 2,
+      "leírás": [
+        "b"
+      ]
+    },
+    "hold": {
+      "típus": "személyjelölő",
+      "pontérték": 2,
+      "leírás": [
+        "b"
+      ]
+    },
+    "merkúr": {
+      "típus": "személyjelölő",
+      "pontérték": 2,
+      "leírás": [
+        "b"
+      ]
+    },
+    "vénusz": {
+      "típus": "személyjelölő",
+      "pontérték": 1,
+      "leírás": [
+        "b"
+      ]
+    },
+    "mars": {
+      "típus": "személyjelölő",
+      "pontérték": 1,
+      "leírás": [
+        "b"
+      ]
+    },
+    "jupiter": {
+      "típus": "sorsjelölő",
+      "pontérték": 1,
+      "leírás": [
+        "b"
+      ]
+    },
+    "szaturnusz": {
+      "típus": "sorsjelölő",
+      "pontérték": 1,
+      "leírás": [
+        "b"
+      ]
+    },
+    "uránusz": {
+      "típus": "transzcendens",
+      "pontérték": 1,
+      "leírás": [
+        "b"
+      ]
+    },
+    "neptun": {
+      "típus": "transzcendens",
+      "pontérték": 1,
+      "leírás": [
+        "b"
+      ]
+    },
+    "pluto": {
+      "típus": "transzcendens",
+      "pontérték": 1,
+      "leírás": [
+        "b"
+      ]
+    }
+  },
+  "hazak": {
+    "1": {
+      "típus" : "sarok",
+      "mundán jegye" : "kos",
+      "leírás": [
+        "c"
+      ]
+    },
+    "2": {
+      "típus" : "követő",
+      "mundán jegye" : "bika",
+      "leírás": [
+        "c"
+      ]
+    },
+    "3": {
+      "típus" : "hanyatló",
+      "mundán jegye" : "ikrek",
+      "leírás": [
+        "c"
+      ]
+    },
+    "4": {
+      "típus" : "sarok",
+      "mundán jegye" : "rák",
+      "leírás": [
+        "c"
+      ]
+    },
+    "5": {
+      "típus" : "követő",
+      "mundán jegye" : "oroszlán",
+      "leírás": [
+        "c"
+      ]
+    },
+    "6": {
+      "típus" : "hanyatló",
+      "mundán jegye" : "szűz",
+      "leírás": [
+        "c"
+      ]
+    },
+    "7": {
+      "típus" : "sarok",
+      "mundán jegye" : "mérleg",
+      "leírás": [
+        "c"
+      ]
+    },
+    "8": {
+      "típus" : "követő",
+      "mundán jegye" : "skorpió",
+      "leírás": [
+        "c"
+      ]
+    },
+    "9": {
+      "típus" : "hanyatló",
+      "mundán jegye" : "nyilas",
+      "leírás": [
+        "c"
+      ]
+    },
+    "10": {
+      "típus" : "sarok",
+      "mundán jegye" : "bak",
+      "leírás": [
+        "c"
+      ]
+    },
+    "11": {
+      "típus" : "követő",
+      "mundán jegye" : "vízöntő",
+      "leírás": [
+        "c"
+      ]
+    },
+    "12": {
+      "típus" : "hanyatló",
+      "mundán jegye" : "halak",
+      "leírás": [
+        "c"
+      ]
+    }
+  }
+}

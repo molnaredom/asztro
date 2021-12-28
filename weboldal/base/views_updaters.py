@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room, Topic, Jegy, Bolygo, Haz, Message ,BolygoHazban, BolygoJegyben2, HazJegyben, Horoszkop1
+from .models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2 ,BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2
 from django.contrib.auth.models import User
 from .forms import RoomForm, AnalogiaForm
 from django.contrib.auth import authenticate, login, logout
@@ -60,15 +60,15 @@ def updateRestrichted(request, nevID, AnalogiaObject, AnalogiaForm, visszateres_
 
 
 def updateBolygo(request, nevID):
-    return updateAltalanos(request, nevID, Bolygo, BolygokForm, "bolygok", "bolygok_form.html")
+    return updateAltalanos(request, nevID, Bolygo2, BolygokForm, "bolygok", "bolygok_form.html")
 
 
 def updateJegy(request, nevID):
-    return updateAltalanos(request, nevID, Jegy, JegyekForm, "jegyek", "horoszkop_form.html")
+    return updateAltalanos(request, nevID, Jegy2, JegyekForm, "jegyek", "horoszkop_form.html")
 
 
 def updateHaz(request, nevID):
-    return updateAltalanos(request, nevID, Haz, HazakForm, "hazak", "hazak_form.html")
+    return updateAltalanos(request, nevID, Haz2, HazakForm, "hazak", "hazak_form.html")
 
 
 def updateBolygoJegyben(request, id):
@@ -76,15 +76,15 @@ def updateBolygoJegyben(request, id):
 
 
 def updateBolygoHazban(request, id):
-    return updateAltalanos_id(request, id, BolygoHazban, BolygoHazbanForm, "bolygokHazakban", "bolygoHazban_form.html")
+    return updateAltalanos_id(request, id, BolygoHazban2, BolygoHazbanForm, "bolygokHazakban", "bolygoHazban_form.html")
 
 
 def updateHazJegyben(request, id):
-    return updateAltalanos_id(request, id, HazJegyben, HazJegybenForm, "hazakJegyekben", "hazJegyben_form.html")
+    return updateAltalanos_id(request, id, HazJegyben2, HazJegybenForm, "hazakJegyekben", "hazJegyben_form.html")
 
 
 def updateHoroszkop(request, id):
-    return updateAltalanos_id(request, id, Horoszkop1, HoroszkopForm, "horoszkop_gyujtemeny", "horoszkop_form.html")
+    return updateAltalanos_id(request, id, Horoszkop2, HoroszkopForm, "horoszkop_gyujtemeny", "horoszkop_form.html")
 
 
 

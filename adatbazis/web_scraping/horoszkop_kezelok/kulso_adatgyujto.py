@@ -4,7 +4,6 @@ import requests
 from selenium.webdriver.support.select import Select
 
 
-
 def kulso_weboldalra_tulajdonosadatok_feltoltese(web, szuletesi_adatok: dict):
     # időt adunk a weboldalnak hogy betöltődjön
     time.sleep(2)

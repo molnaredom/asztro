@@ -1,8 +1,8 @@
 from selenium import webdriver
 from adatbazis.web_scraping.adat_tarolas import tulajdonos_adat_tarolo
 import warnings
-
-from adatbazis.web_scraping.bolygojegyben_hazjegyben_feltoltes import bolygojegyben_kitoltes, hazjegyben_kitoltes
+import time
+from adatbazis.web_scraping.bolygojegyben_hazjegyben_feltoltes import *
 from adatbazis.web_scraping.horoszkop_kezelok.sajat_horoszkop_keszito import sajat_horoszkopform_kitoltes
 from adatbazis.web_scraping.horoszkop_kezelok.kulso_adatgyujto import kulso_weboldalra_tulajdonosadatok_feltoltese, \
     kulso_weboldalrol_adatkiszedes
@@ -10,12 +10,9 @@ from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import ekezetnelkul
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-import time
-
 
 def inditas():
     global web
-    from selenium.webdriver.firefox.options import Options
     # rendszer = "win10"
     rendszer = "linux"
     web = ""
@@ -86,24 +83,36 @@ def hazjegyben_feltoltes(web):
     web.get('http://127.0.0.1:8000/create-hazJegyben/')
     hazjegyben_kitoltes(web)
 
+def alapanalogia_beolvas():
+    with open("../../analogiak/alapanalogiak.json", encoding="utf-8") as f:
+        return json.loads(f.read())
+
+
 def main():
     web = inditas()
+    print("inditas")
 
-    uj_horoszkop_keszites_ = True
+
+
+    uj_horoszkop_keszites_ = False
     bolygojegyben_feltoltes_ = False
     hazjegyben_feltoltes_ = False
+    alapanalogia_feltoltes_ = True
 
-    process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, web)
+    process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_, web)
     # TODO beallitani a redirectet createre
 
 
-def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, web):
+def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_,alapanalogia_feltoltes_, web):
     if uj_horoszkop_keszites_:
         horoszkopok_feltoltese(web)
     if bolygojegyben_feltoltes_:
         bolygojegyben_feltoltes(web)
     if hazjegyben_feltoltes_:
         hazjegyben_kitoltes(web)
+    if alapanalogia_feltoltes_:
+        alapanalogia_feltoltes(web, alapanalogia_beolvas())
+
 
 
 if __name__ == '__main__':

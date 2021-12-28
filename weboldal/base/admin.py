@@ -1,17 +1,17 @@
 from django.contrib import admin
 
-from .models import Room, Topic, Message,  Bolygo, BolygoJegyben2, BolygoHazban, Jegy, HazJegyben, Haz, \
-        Horoszkop1
+from .models import Room2, Topic2, Message2,  Bolygo2, BolygoJegyben2, BolygoHazban2, Jegy2, HazJegyben2, Haz2, \
+        Horoszkop2
 
-admin.site.register(Room)
-admin.site.register(Topic)
-admin.site.register(Message)
+admin.site.register(Room2)
+admin.site.register(Topic2)
+admin.site.register(Message2)
 
 
-admin.site.register(Bolygo)
-admin.site.register(BolygoHazban)
+admin.site.register(Bolygo2)
+admin.site.register(BolygoHazban2)
 admin.site.register(BolygoJegyben2)
-admin.site.register(Jegy)
-admin.site.register(HazJegyben)
-admin.site.register(Haz)
-admin.site.register(Horoszkop1)
+admin.site.register(Jegy2)
+admin.site.register(HazJegyben2)
+admin.site.register(Haz2)
+admin.site.register(Horoszkop2)

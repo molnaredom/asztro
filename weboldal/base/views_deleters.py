@@ -4,13 +4,13 @@ from django.contrib.auth.decorators import login_required
 
 
 from django.shortcuts import render, redirect
-from .models import Jegy, Bolygo, Haz, BolygoHazban, BolygoJegyben2, HazJegyben, Message,Room, Horoszkop1
+from .models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Message2,Room2, Horoszkop2
 
 
 
 @login_required(login_url="login")
 def deleteMessage(request, pk):
-    message = Message.objects.get(id=pk)
+    message = Message2.objects.get(id=pk)
 
     if request.user != message.user:
         return HttpResponse("Nem engedélyezett művelet, amíg nem vagy bejelentkezve")
@@ -23,7 +23,7 @@ def deleteMessage(request, pk):
 
 @login_required(login_url="login")
 def deleteRoom(request, pk):
-    room = Room.objects.get(id=pk)
+    room = Room2.objects.get(id=pk)
     if request.user != room.host:
         return HttpResponse("Nem engedélyezett művelet, amíg nem vagy bejelentkezve")
 
@@ -43,7 +43,7 @@ def _delete_altalanos_by_id(request,pk, objetum,ide_ter_vissza:str):
 
 #deleterek
 def deleteBolygo(request, nevID):
-    bolygo = Bolygo.objects.get(nevID=nevID)
+    bolygo = Bolygo2.objects.get(nevID=nevID)
     if request.method == "POST":
         bolygo.delete()
         return redirect("bolygok")
@@ -51,7 +51,7 @@ def deleteBolygo(request, nevID):
 
 
 def deleteJegy(request, nevID):
-    jegy = Jegy.objects.get(nevID=nevID)
+    jegy = Jegy2.objects.get(nevID=nevID)
     if request.method == "POST":
         jegy.delete()
         return redirect("jegyek")
@@ -59,7 +59,7 @@ def deleteJegy(request, nevID):
 
 
 def deleteHaz(request,nevID):
-    haz = Haz.objects.get(nevID=nevID)
+    haz = Haz2.objects.get(nevID=nevID)
     if request.method == "POST":
         haz.delete()
         return redirect("hazak")
@@ -71,15 +71,15 @@ def deleteBolygoJegyben(request, id):
 
 
 def deleteBolygoHazban(request, id):
-    return _delete_altalanos_by_id(request, id, BolygoHazban,"bolygokHazakban" )
+    return _delete_altalanos_by_id(request, id, BolygoHazban2, "bolygokHazakban")
 
 
 def deleteHazJegyben(request,id):
-    return _delete_altalanos_by_id(request, id, HazJegyben,"hazakJegyekben" )
+    return _delete_altalanos_by_id(request, id, HazJegyben2, "hazakJegyekben")
 
 
 def deleteHoroszkop(request,id):
-    return _delete_altalanos_by_id(request, id,Horoszkop1, "horoszkop_gyujtemeny")
+    return _delete_altalanos_by_id(request, id, Horoszkop2, "horoszkop_gyujtemeny")
 
 
 

@@ -93,8 +93,7 @@ horoszkop_tarolo = [
     "elemzes leiras": [
         "van 3 gyereke 1. felségtől 2 , második felségtől 2",
         "rendszerváltásban meggazdagodott"
-    ],
-
+    ]
 },
 
 ]
