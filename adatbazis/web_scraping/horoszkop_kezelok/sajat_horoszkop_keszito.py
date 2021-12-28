@@ -1,6 +1,4 @@
-# from bs4 import BeautifulSoup
 import requests
-from selenium import webdriver
 from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import *
 
 from selenium.webdriver.support.ui import Select
@@ -93,7 +91,6 @@ def press_submit_button(web):
 def get_web_content():
     url = requests.get("https://astro.cafeastrology.com/natal.php")
     return url.text
-
 
 
 def szama(keresett_bolygo, keresett_jegy):

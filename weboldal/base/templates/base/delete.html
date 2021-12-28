@@ -1,15 +1,22 @@
-{% extends 'main.html' %}
-
+{% extends 'analogia_db_base.html' %}
 {% block content %}
 
-<div>
-    <form method="POST" action="">
-        {% csrf_token %}
-        <p>Biztosan törölni szeretnéd?"{{obj}}" </p>
-        <a href="{{request.META.HTTP_REFERER}}" >Visszalépés</a>
-        <input type="submit" value="Confirm">
-    </form>
-
-</div>
-
+<html lang="en" class="h-100">
+    <main class="px-3 bg-dark d-flex d-flex h-100 text-center text-white bg-dark">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <h1>
+            Biztosan törölni szeretnéd ezt: {{obj}}?
+        </h1>
+        <p class="lead">Törlés után elveszik az összes adat ami ehhez az analógiához tartozott.
+            Illetve ha építőeleme egy másik analógiának , akkor az az analógia is törlődni fog.
+        </p>
+        <p class="lead">
+            <a href="{{request.META.HTTP_REFERER}}" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Visszalépés az előző oldalra</a>
+        </p>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Igen, törölni szeretném.</button>
+        </form></div>
+    </main>
+</html>
 {% endblock content %}
