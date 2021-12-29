@@ -9,7 +9,7 @@ import time
 def bolygojegyben_beallit(web, bolygo, jegy, xpath):
 
     def szama(keresett_bolygo, keresett_jegy):
-        szam = 1
+        szam = 223
         for akt_bolygo in ["nap", "hold", "merkur", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun",
                            "plúto"]:
             for akt_jegy in ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
@@ -29,7 +29,7 @@ def hazjegyben_beallit(web, haz, jegy, xpath):
 
 
     def szama(keresett_haz, keresett_jegy):
-        szam = 5
+        szam = 3
         for akt_haz in range(1, 13):
             for akt_jegy in ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
                              "vízöntő", "halak"]:
@@ -41,7 +41,6 @@ def hazjegyben_beallit(web, haz, jegy, xpath):
 
     select = Select(web.find_element_by_xpath(xpath))
     select.select_by_value(str(szama(str(haz), jegy)))
-
 
 
 def sajat_horoszkopform_kitoltes(horoszkop_adatok, web):
@@ -56,6 +55,7 @@ def sajat_web_inditasa(web):
 
 
 def sajat_weboldal_kitoltes(horoszkop_adatok, web):
+    print(horoszkop_adatok)
     egyeb_tulajdonosi_adat_feltoltes(horoszkop_adatok, web)
     bolygo_jegyben_feltoltes(horoszkop_adatok, web)
     haz_jegyben_feltoltes(horoszkop_adatok, web)
@@ -65,9 +65,11 @@ def sajat_weboldal_kitoltes(horoszkop_adatok, web):
 
 def egyeb_tulajdonosi_adat_feltoltes(horoszkop_adatok, web):
 
-    for adat_nev in ["tulajdonos_neve","tipus","hely"]:
+    for adat_nev in ["tulajdonos_neve","tipus","hely", "idopont"]:
         hely_xpath = web.find_element_by_xpath(f'//*[@id="id_{adat_nev}"]')
+        hely_xpath.clear()
         hely_xpath.send_keys(horoszkop_adatok[f"{adat_nev}"])
+
 
 
 def haz_jegyben_feltoltes(horoszkop_adatok, web):
@@ -93,16 +95,16 @@ def get_web_content():
     return url.text
 
 
-def szama(keresett_bolygo, keresett_jegy):
-    szam = 22
-    for akt_bolygo in ["nap", "hold", "merkur", "venusz", "mars", "jupiter", "szaturnusz", "uranusz", "neptun",
-                       "pluto"]:
-        for akt_jegy in ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
-                         "vízöntő", "halak"]:
-            print(akt_bolygo, akt_jegy, szam)
-            if keresett_bolygo == akt_bolygo and keresett_jegy == akt_jegy:
-                return szam
-            szam += 1
+# def szama(keresett_bolygo, keresett_jegy):
+#     szam = 223
+#     for akt_bolygo in ["nap", "hold", "merkur", "venusz", "mars", "jupiter", "szaturnusz", "uranusz", "neptun",
+#                        "pluto"]:
+#         for akt_jegy in ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
+#                          "vízöntő", "halak"]:
+#             print(akt_bolygo, akt_jegy, szam)
+#             if keresett_bolygo == akt_bolygo and keresett_jegy == akt_jegy:
+#                 return szam
+#             szam += 1
 
 
 

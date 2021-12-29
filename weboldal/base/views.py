@@ -10,23 +10,8 @@ from .forms import RoomForm, AnalogiaForm
 from django.contrib.auth import authenticate, login, logout
 
 
-
-
 def home(request):
-    q = request.GET.get('q') if request.GET.get('q') != None else ''
-
-    rooms = Room2.objects.filter(
-        Q(topic__name__icontains=q) |
-        Q(name__icontains=q) |
-        Q(discription__icontains=q)
-
-    )
-
-    topics = Topic2.objects.all()
-    room_count = rooms.count()
-
-    context = {'rooms': rooms, "topics":topics, "room_count":room_count}
-    return render(request, 'base/home.html', context )
+    return render(request, 'base/kezdolap.html', {} )
 
 
 def room(request, pk):
@@ -118,9 +103,7 @@ def registerPage(request):
     return render(request, "base/login_register.html", {'form': form})
 
 
-
 def analogia_adatbazis(request):
-
 
     context = {}
     return render(request, 'base/analogia_adatbazis.html', context )
@@ -128,3 +111,9 @@ def analogia_adatbazis(request):
 
 def titkosSzoba(request):
     return render(request, "base/titkosSzoba.html", {})
+
+
+def rolunk(request):
+    return render(request, "base/rolunk.html", {})
+
+

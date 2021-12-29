@@ -1,12 +1,8 @@
 from selenium import webdriver
-from adatbazis.web_scraping.adat_tarolas import tulajdonos_adat_tarolo
 import warnings
-import time
+import json
 from adatbazis.web_scraping.bolygojegyben_hazjegyben_feltoltes import *
-from adatbazis.web_scraping.horoszkop_kezelok.sajat_horoszkop_keszito import sajat_horoszkopform_kitoltes
-from adatbazis.web_scraping.horoszkop_kezelok.kulso_adatgyujto import kulso_weboldalra_tulajdonosadatok_feltoltese, \
-    kulso_weboldalrol_adatkiszedes
-from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import ekezetnelkul
+from adatbazis.web_scraping.horoszkop_kezelok.main_horoszkop_keszito import horoszkopok_feltoltese
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -22,55 +18,6 @@ def inditas():
         web = webdriver.Firefox()
 
     return web
-
-
-def get_kulso_web():
-    return web
-
-
-def egy_horoszkop_feltoltese(tulajodonosi_adatok, web):
-    kulso_weboldal_lehivasa(web)
-
-    kulso_weboldalra_tulajdonosadatok_feltoltese(web, tulajodonosi_adatok)
-
-    kinyert_kulso_bolygo_es_haz_adatok = kulso_weboldalrol_adatkiszedes(web)
-    print(kinyert_kulso_bolygo_es_haz_adatok)
-
-    horoszkop_feltolt_adatok = get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok,
-                                                                  kinyert_kulso_bolygo_es_haz_adatok)
-    sajat_horoszkopform_kitoltes(horoszkop_feltolt_adatok,web)
-
-
-def kulso_weboldal_lehivasa(web):
-    web.get('https://astro.cafeastrology.com/natal.php')
-    time.sleep(2)
-
-
-def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo_es_haz_adatok):
-    horoszkop_feltolt_adatok = {}
-
-    horoszkop_feltolt_adatok["tulajdonos_neve"] = tulajodonosi_adatok["nev"]
-    horoszkop_feltolt_adatok["tipus"] = tulajodonosi_adatok["horoszkoptipus"]
-    horoszkop_feltolt_adatok["hely"] = tulajodonosi_adatok["hely"]
-    horoszkop_feltolt_adatok["tipus"] = tulajodonosi_adatok["horoszkoptipus"]
-
-    for bolygonev, bolygo_tulajdonsagok in kinyert_kulso_bolygo_es_haz_adatok["bolygok"].items():
-        horoszkop_feltolt_adatok[ekezetnelkul(bolygonev.lower())] = \
-            [ekezetnelkul(bolygo_tulajdonsagok["jegy"].lower()),
-             bolygo_tulajdonsagok["fokszam"]]
-
-    for haznev, haz_tulajdonsagok in kinyert_kulso_bolygo_es_haz_adatok["hazak"].items():
-        horoszkop_feltolt_adatok[str(haznev)] = \
-            [ekezetnelkul(haz_tulajdonsagok["jegy"].lower()),
-             haz_tulajdonsagok["fokszam"]]
-
-    return horoszkop_feltolt_adatok
-
-
-def horoszkopok_feltoltese(web):
-    for tulajodonosi_adatok in tulajdonos_adat_tarolo.horoszkop_tarolo:
-        egy_horoszkop_feltoltese(tulajodonosi_adatok, web)
-
 
 
 def alapanalogia_beolvas():
