@@ -29,6 +29,7 @@ def haz(request,nevID):
 def bolygoJegyben(request,id):
     analogia = BolygoJegyben2.objects.get(id=id)
     randomszamok = random.randint(1,50)
+    analogia
 
     context = {"analogia": analogia, "randomszamok" : randomszamok}  # ez egy objektum
 

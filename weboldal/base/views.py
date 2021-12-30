@@ -117,3 +117,7 @@ def rolunk(request):
     return render(request, "base/rolunk.html", {})
 
 
+def analogiagyakorlo(request):
+    return render(request, "analogiagyakorlo/analogia_gyakorlo.html", {})
+
+

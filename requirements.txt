@@ -1,4 +1,2 @@
 django
-selenium
 requests
-Pillow

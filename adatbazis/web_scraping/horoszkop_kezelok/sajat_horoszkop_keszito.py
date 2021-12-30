@@ -9,7 +9,7 @@ import time
 def bolygojegyben_beallit(web, bolygo, jegy, xpath):
 
     def szama(keresett_bolygo, keresett_jegy):
-        szam = 223
+        szam = 342
         for akt_bolygo in ["nap", "hold", "merkur", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun",
                            "plúto"]:
             for akt_jegy in ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",

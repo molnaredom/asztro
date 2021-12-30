@@ -4,10 +4,12 @@ from django.urls import path
 
 from . import views, views_creators, views_deleters, views_analogiatarolok,views_konkret_analogia, views_updaters
 
+
 urlpatterns = [
     path("", views.home, name = "home"),
     path("room/<str:pk>/", views.room, name="room"),
     path("rolunk", views.rolunk, name="rolunk"),
+    path("analogiagyakorlo", views.analogiagyakorlo, name="analogiagyakorlo"),
 
     path("create-room/", views_creators.createroom, name= "create-room"),
     path("update-room/<str:pk>/", views.updateRoom, name= "update-room"),

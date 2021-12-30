@@ -39,8 +39,8 @@ def main():
     web = inditas()
     print("inditas")
 
-    uj_horoszkop_keszites_ = False
-    bolygojegyben_feltoltes_ = True
+    uj_horoszkop_keszites_ = True
+    bolygojegyben_feltoltes_ = False
     hazjegyben_feltoltes_ = False
     alapanalogia_feltoltes_ = False
 
