@@ -1,0 +1,153 @@
+{
+  "kos": {
+    "önmaga": [
+      "önérvényesítés"
+    ],
+    "tagadja": [
+    ],
+    "szűz": [
+      "mindent én tudok a legjobban: oksokodó"
+    ],
+    "skorpió": [
+      "te meg nem tudsz semmit"
+    ]
+  },
+  "bika": {
+    "önmaga": [
+      "nyugalom állandóság"
+    ],
+    "tagadja": "szenvedély",
+    "mérleg": "odaadó",
+    "nyilas": "biztonság"
+  },
+  "ikrek": {
+    "önmaga": [
+      "felszínes",
+      "racionális",
+      "felületes"
+    ],
+    "tagadja": [
+      "önbizalom",
+      "magabiztosság"
+    ],
+    "skorpió": [
+      "hogyan kerülhetem el a dolgokat",
+      "inkább lemond, nehogy olyat kelljen tenni amit ő sem akar"
+    ],
+    "bak": [
+      "érdek: hogyan vonódhatok bele dolgokba",
+      "számító"
+    ]
+  },
+  "rák": {
+    "önmaga": [
+      "gyakorlatias"
+    ],
+    "halak": [
+      "tagadja az elvont elméleti dolgokat"
+    ],
+    "vízöntő": [
+      "pontosan tudja mit nem akar"
+    ],
+    "kos": [
+      "pontosan tudom mit kell tennem"
+    ]
+  },
+  "szűz" : {
+    "önmaga": [
+      "beosztó"
+    ],
+    "tagadja": [
+      "könnyedség"
+    ],
+    "vízöntő": [
+      "mindent én tudok a legjobban",
+      "mások akármit csinálnak sehogyan sem jó"
+    ],
+    "kos": [
+      "mindent én tudok a legjobban"
+    ]
+  },
+  "mérleg": {
+    "önmaga": [
+      "harmóniára való törekvés",
+      "kompromisszumkészség"
+    ],
+    "tagadja": [
+      "öntörvényűség"
+    ],
+    "halak": [
+      "odaadó (magától megteszi nem kell kérni)",
+      "önzetlen, önfeláldozó"
+    ],
+    "bika": [
+      "gyávaság (hárítja a felelősséget)",
+    ]
+  },
+  "skorpió": {
+    "tagadja": [
+      "nyugalom, állandóság"
+    ],
+    "kos": [
+      "kozkázatot keres",
+      "fanatikus",
+      "törtető"
+    ],
+    "ikrek": [
+      "változtat, nehogy unalmas legyen",
+      "érdektelenség",
+      "motíválatlanság"
+    ]
+  },
+  "nyilas": {
+    "önmaga": [
+      "önbizalom",
+      "magabiztosság"
+    ],
+    "tagadja": [
+      "felszínesség",
+      "felületesség",
+      "ráció"
+    ],
+    "bika": [
+      "élvezetek(életművész analógia)"
+    ],
+    "rák": [
+      "azt gondolja, úgyis lesznek anyagiak, nem aggódik",
+      "optimista"
+    ]
+  },
+  "vízöntő": {
+    "önmaga": [
+      "tekintélyelvűség"
+    ],
+    "tagadja": [
+      "felsőbbrendűség",
+      "alárendeltség"
+    ],
+    "rák": [
+      "kiszolgáltatottság"
+    ],
+    "szűz": [
+      "egymásra utaltság(segítő analógia)"
+    ]
+  },
+  "halak": {
+    "önmaga": [
+      "önfeláldozó"
+    ],
+    "tagadja": [
+      "praktikusság",
+      "haszonelvűség"
+    ],
+    "oroszlán": [
+      "ha te szerednéd, akkor lesz család",
+      "nagyvonalúság(megengedhetem magamnak)"
+    ],
+    "mérleg": [
+      "szeretne megfelelni mert fél, ezért átengedi a döntést",
+      "illúziókba ringatja magát",
+      "tudom, hogy annyira szerettek, hogy adtok majd nekem"
+    ]
+  }
+}

@@ -80,19 +80,20 @@ horoszkop_tarolo = [
 },{
     "nev": "2_5",
     "horoszkoptipus": "radix",
-    "ev": 1940,
-    "honap": 11,
-    "nap": 12,
-    "ora": 12,
-    "perc": 25,
-    "hely": "Győr",
+    "ev": 1985,
+    "honap": 10,
+    "nap": 17,
+    "ora": 13,
+    "perc": 30,
+    "hely": "Tatabánya",
     "kep": "",
-    "munka":[""],
+    "munka":["jog"],
     "elet_leiras": [
+        "színiskolába jár"
                     ],
     "elemzes leiras": [
-        "van 3 gyereke 1. felségtől 2 , második felségtől 2",
-        "rendszerváltásban meggazdagodott"
+        "Lilla név nap szerű név",
+        ""
     ]
 },
 
