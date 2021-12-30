@@ -3,6 +3,7 @@ from django.urls import path
 
 
 from . import views, views_creators, views_deleters, views_analogiatarolok,views_konkret_analogia, views_updaters
+from . import views_horoszkop_elemzes
 
 
 urlpatterns = [
@@ -62,7 +63,7 @@ urlpatterns = [
     path("create-horoszkop/", views_creators.createHoroszkop, name= "create-horoszkop"),
     path("delete-horoszop/<str:id>/", views_deleters.deleteHoroszkop, name= "delete-horoszkop"),
 
-    path("horoszkop/<str:id>/", views_konkret_analogia.horoszkop, name="horoszkop"),
+    path("horoszkop/<str:id>/", views_horoszkop_elemzes.horoszkop, name="horoszkop"),
 
 
     path("update-jegy/<str:nevID>/", views_updaters.updateJegy, name= "update-jegy"),
