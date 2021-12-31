@@ -5,6 +5,7 @@ from .models import Horoszkop2, Jegy2
 
 def horoszkop(request, id):
     analogia = Horoszkop2.objects.get(id=id)
+    print(analogia)
     osszesjegy = Jegy2.objects.all()
 
     elemzes_adat = _elemzes(analogia, osszesjegy)
@@ -12,7 +13,8 @@ def horoszkop(request, id):
 
     return render(request, "konkret_analogiak/horoszkop.html", context)
 
-#todo asct is szamitasba venni rejtett ASC nel
+
+# todo asct is szamitasba venni rejtett ASC nel
 
 
 def _elemzes(adatok, osszesjegy):
@@ -26,10 +28,23 @@ def _elemzes(adatok, osszesjegy):
     eredmeny["évszak szerinti felosztás"] = _evszak_szerinti_felosztas(bolygok, adatok)
     eredmeny["minőség szerinti felosztás"] = minoseg_szarinti_felosztas(bolygok, adatok)
     eredmeny["elemek szerinti felosztás"] = _elemek_szerinti_felosztas(bolygok, adatok)
-    eredmeny["rejtett ASC"] = rejtett_aszcendens(eredmeny["elemek szerinti felosztás"], eredmeny["minőség szerinti felosztás"], osszesjegy )
+    eredmeny["rejtett ASC"] = rejtett_aszcendens(eredmeny["elemek szerinti felosztás"],
+                                                 eredmeny["minőség szerinti felosztás"], osszesjegy)
     eredmeny["sorstípus"] = _sorstipus(bolygok)
 
     return eredmeny
+
+
+def _altalanosfelosztas_adagolo(szetoszto, bolygok, jegynalogia, asc):
+    szetoszto[asc] += 2
+
+    for bolygok in bolygok:
+        if str(bolygok) in ["nap", "hold", "merkúr"]:
+            szetoszto[jegynalogia] += 2
+        else:
+            szetoszto[jegynalogia] += 1
+
+    return evszakok
 
 
 def _evszak_szerinti_felosztas(bolygok, adatok):
@@ -49,8 +64,6 @@ def _elemek_szerinti_felosztas(bolygok, adatok):
     elemek[adatok.haz_1.jegy.elem] += 2
 
     for bolygo in bolygok:
-        print(bolygo.bolygo, elemek)
-        print(bolygo.bolygo)
         if str(bolygo.bolygo) in ["nap", "hold", "merkúr"]:
             elemek[bolygo.jegy.elem] += 2
         else:
@@ -63,7 +76,6 @@ def minoseg_szarinti_felosztas(bolygok, adatok):
     minosegek = {"kardinális": 0, "szilárd": 0, "változó": 0}
     minosegek[adatok.haz_1.jegy.minoseg] += 2
 
-
     for bolygo in bolygok:
         if str(bolygo.bolygo) in ["nap", "hold", "merkúr"]:
             minosegek[bolygo.jegy.minoseg] += 2
@@ -73,15 +85,12 @@ def minoseg_szarinti_felosztas(bolygok, adatok):
     return minosegek
 
 
-def rejtett_aszcendens(elemek,minosegek, osszesjegy):
+def rejtett_aszcendens(elemek, minosegek, osszesjegy):
+    maxelem_key, maxminoseg_key = str(max(elemek, key=elemek.get)), str(max(minosegek, key=minosegek.get))
+    maxelem_value, max_minoseg_value = max(list(elemek.values())), max(list(minosegek.values()))
 
-    maxelem_key,maxminoseg_key = str(max(elemek, key=elemek.get)),str(max(minosegek, key=minosegek.get))
-    maxelem_value, max_minoseg_value = max(list(elemek.values())),max(list(minosegek.values()))
-
-    if list(elemek.values()).count(maxelem_value) == 1 and \
-            list(minosegek.values()).count(max_minoseg_value) == 1:
-
-        return [jegy.nevID for jegy in osszesjegy if maxelem_key == jegy.elem and maxminoseg_key ==jegy.minoseg ][0]
+    if list(elemek.values()).count(maxelem_value) == 1 and list(minosegek.values()).count(max_minoseg_value) == 1:
+        return [jegy.nevID for jegy in osszesjegy if maxelem_key == jegy.elem and maxminoseg_key == jegy.minoseg][0]
     else:
         return "Nincs rejtett aszcendens"
 

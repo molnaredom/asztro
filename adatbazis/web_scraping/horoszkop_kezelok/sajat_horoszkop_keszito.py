@@ -59,6 +59,7 @@ def sajat_weboldal_kitoltes(horoszkop_adatok, web):
     egyeb_tulajdonosi_adat_feltoltes(horoszkop_adatok, web)
     bolygo_jegyben_feltoltes(horoszkop_adatok, web)
     haz_jegyben_feltoltes(horoszkop_adatok, web)
+    fokszam_feltoltes(horoszkop_adatok, web)
 
     press_submit_button(web)
 
@@ -79,9 +80,28 @@ def haz_jegyben_feltoltes(horoszkop_adatok, web):
 
 
 def bolygo_jegyben_feltoltes(horoszkop_adatok, web):
-    for bolygo in ["nap", "hold", "merkur", "venusz", "mars", "jupiter", "szaturnusz", "uranusz", "neptun", "pluto"]:
+    for bolygo in ["nap", "hold", "merkur", "venusz", "mars", "jupiter",
+                   "szaturnusz", "uranusz", "neptun", "pluto"]:
         bolygojegyben_beallit(web, bolygo, horoszkop_adatok[bolygo][0],
                               f'//*[@id="id_{bolygo}"]')
+
+
+def fokszam_feltoltes(horoszkop_adatok, web):
+    fokszamok = {}
+    for bolygo in ["nap", "hold", "merkur", "venusz", "mars", "jupiter",
+                   "szaturnusz", "uranusz", "neptun", "pluto"]:
+        fokszamok[bolygo] = horoszkop_adatok[bolygo][1]
+
+    for haz in range(1,13):
+        fokszamok[str(haz)] = horoszkop_adatok[str(haz)][1]
+
+    hely_xpath = web.find_element_by_xpath(f'//*[@id="id_fokszamok"]')
+    hely_xpath.clear()
+    jsonban_analogia = "{ \"analogiak\" : \"" + \
+                       str(fokszamok) \
+                       + "\" }"
+    hely_xpath.send_keys(jsonban_analogia)
+
 
 
 def press_submit_button(web):

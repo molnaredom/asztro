@@ -22,7 +22,6 @@ def egy_horoszkop_feltoltese(tulajodonosi_adatok, web):
 
     horoszkop_feltolt_adatok = get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok,
                                                                   kinyert_kulso_bolygo_es_haz_adatok)
-    print("1",kinyert_kulso_bolygo_es_haz_adatok)
     sajat_horoszkopform_kitoltes(horoszkop_feltolt_adatok, web)
 
 
@@ -31,6 +30,11 @@ def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo
     def datumido_keszit():
         t = tulajodonosi_adatok
         return f"{t['ev']}-{t['honap']}-{t['nap']} {t['ora']}:{t['perc']}:00"
+
+    def float_fokszam(strfok:str):
+        fperc,fmp = strfok.split("°")
+        return str(float(fperc)+float(fmp[:-1])*(1/6)/10)
+
 
     horoszkop_feltolt_adatok = {}
 
@@ -42,15 +46,17 @@ def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo
 
     print(horoszkop_feltolt_adatok["idopont"])
 
+
+
     for bolygonev, bolygo_tulajdonsagok in kinyert_kulso_bolygo_es_haz_adatok["bolygok"].items():
         horoszkop_feltolt_adatok[ekezetnelkul(bolygonev.lower())] = \
             [ekezetnelkul(bolygo_tulajdonsagok["jegy"].lower()),
-             bolygo_tulajdonsagok["fokszam"]]
+             float_fokszam(bolygo_tulajdonsagok["fokszam"])]
 
     for haznev, haz_tulajdonsagok in kinyert_kulso_bolygo_es_haz_adatok["hazak"].items():
         horoszkop_feltolt_adatok[str(haznev)] = \
             [ekezetnelkul(haz_tulajdonsagok["jegy"].lower()),
-             haz_tulajdonsagok["fokszam"]]
+             float_fokszam(haz_tulajdonsagok["fokszam"])]
 
     return horoszkop_feltolt_adatok
 
