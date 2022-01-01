@@ -1,12 +1,13 @@
 from django.shortcuts import render
-
+import pandas as pd
 from .models import Horoszkop2, Jegy2
 
 
 def horoszkop(request, id):
     analogia = Horoszkop2.objects.get(id=id)
-    print(analogia)
     osszesjegy = Jegy2.objects.all()
+    # print(analogia.fokszamok)
+    analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"]) # eval strbol dictet csinal
 
     elemzes_adat = _elemzes(analogia, osszesjegy)
     context = {"analogia": analogia, "elemzes": elemzes_adat}  # ez egy objektum
@@ -14,16 +15,39 @@ def horoszkop(request, id):
     return render(request, "konkret_analogiak/horoszkop.html", context)
 
 
-# todo asct is szamitasba venni rejtett ASC nel
-
-
 def _elemzes(adatok, osszesjegy):
+    eredmeny = {}
+    eredmeny = alapszamolasok(adatok, osszesjegy)
+
+    adatok = fokszamhozzarendeles(adatok)
+
+    return eredmeny
+
+def fokszamhozzarendeles(adatok):
+    bolygojegyben_adatok = [adatok.nap, adatok.hold, adatok.merkur, adatok.venusz, adatok.mars, adatok.jupiter, adatok.szaturnusz,
+               adatok.uranusz, adatok.neptun, adatok.pluto]
+
+    hazjegyben_adatok = [ adatok.haz_1, adatok.haz_2, adatok.haz_3, adatok.haz_4, adatok.haz_5, adatok.haz_6, adatok.haz_7,
+                adatok.haz_8, adatok.haz_9, adatok.haz_10, adatok.haz_11, adatok.haz_12]
+
+    bolygok, hazak = {}, {}
+
+    for analogia in list(zip(['nap', 'hold', 'merkur', 'venusz','mars', 'jupiter', 'szaturnusz', 'uranusz', 'neptun', 'pluto'],bolygojegyben_adatok)):
+        bolygok[analogia[0]] = {"jegy": analogia[1].jegy, "bolygo": analogia[1].bolygo, "fokszam": adatok.fokszamok[analogia[0]]}
+
+    for analogia in list(zip(['haz1', 'haz2', 'haz3', 'haz4', 'haz5', 'haz6', 'haz7', 'haz8', 'haz9', 'haz10', 'haz11', 'haz12'],hazjegyben_adatok)):
+        hazak[analogia[0]] = {"jegy": analogia[1].jegy, "haz": analogia[1].haz, "fokszam": adatok.fokszamok[analogia[0][3:]]}
+
+    return pd.DataFrame(bolygok), pd.DataFrame(hazak)
+
+
+def alapszamolasok(adatok, osszesjegy):
+
     eredmeny = {}
     bolygok = [adatok.nap, adatok.hold, adatok.merkur, adatok.venusz, adatok.mars, adatok.jupiter, adatok.szaturnusz,
                adatok.uranusz, adatok.neptun, adatok.pluto]
-
-    hazak = [adatok.haz_1, adatok.haz_2, adatok.haz_3, adatok.haz_4, adatok.haz_5, adatok.haz_6, adatok.haz_7
-        , adatok.haz_8, adatok.haz_9, adatok.haz_10, adatok.haz_11, adatok.haz_12]
+    # hazak = [adatok.haz_1, adatok.haz_2, adatok.haz_3, adatok.haz_4, adatok.haz_5, adatok.haz_6, adatok.haz_7
+    #     , adatok.haz_8, adatok.haz_9, adatok.haz_10, adatok.haz_11, adatok.haz_12]
 
     eredmeny["évszak szerinti felosztás"] = _evszak_szerinti_felosztas(bolygok, adatok)
     eredmeny["minőség szerinti felosztás"] = minoseg_szarinti_felosztas(bolygok, adatok)
@@ -31,8 +55,6 @@ def _elemzes(adatok, osszesjegy):
     eredmeny["rejtett ASC"] = rejtett_aszcendens(eredmeny["elemek szerinti felosztás"],
                                                  eredmeny["minőség szerinti felosztás"], osszesjegy)
     eredmeny["sorstípus"] = _sorstipus(bolygok)
-
-    return eredmeny
 
 
 def _altalanosfelosztas_adagolo(szetoszto, bolygok, jegynalogia, asc):
@@ -99,3 +121,20 @@ def _sorstipus(adatok):
     kiemelthazak = [1, 5, 9, 10, 11, ]
     # todo nem tudjuk az uranusz milyen hazban van - fokszam kell hozza
     return 0
+
+
+if __name__ == '__main__':
+    h = {adatok.nap :2, adatok.hold:3 }
+    print(h[adatok.nap])
+
+
+
+
+
+
+
+
+
+
+
+

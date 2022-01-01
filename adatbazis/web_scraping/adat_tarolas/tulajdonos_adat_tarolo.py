@@ -1,17 +1,16 @@
 horoszkop_tarolo = [
 {
-    "nev": "Kozma Korinna (Korinka)",
-    "horoszkoptipus": "radix",
-    "ev": 2014,
-    "honap": 10,
-    "nap": 1,
-    "ora": 14,
+    "nev": "Chermat Viola Viktória",
+    "horoszkoptipus": "radix kb",
+    "ev": 1977,
+    "honap": 5,
+    "nap": 29,
+    "ora": 10,
     "perc": 30,
     "hely": "Vác",
     "kep": "",
     "munka": [],
-    "elet_leiras": ["szeret bohóckodni és másokat megnevettetni", "teszteli a körülötte lévőket, hogy figyelnek-e rá",
-                    "emaptikus, jó megérzések", "szeretne megfelelni a környezetnek, hogy legyenek barátai"],
+    "elet_leiras": [],
     "elemzes leiras": []
 }
 ]
