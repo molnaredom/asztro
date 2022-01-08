@@ -1,62 +1,63 @@
-# Asztroprogram 2.0.1
-
-## Pár szó magamról: 
-- 3.féléves programtervező informatikus szakra járok.
-- Szegeden a TTIK-n a Szoftverfejlesztő tanszéken dolgozok. Itt adatok kinyerésével és feldolgozásával foglalkozunk.
-- Régebb óta érdekelnek spirituális, pszichológiai dolgok, köztük gyereknevelés, oktatás, absztrakt/elvont gondolkodásmódok, lelki segítségnyújtás, tanulási technikák, tudatalatti, tudatosság. És még ezen kívül sok más. 
+# Asztroprogram 2.1.0
 
 ## Mi az asztrológia?
-- Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, emire különböző szimbólumoket helyezve, különböző következtetésekre juthatunk.
-- A következő képlet, az égbolt vázlatos rajza egy adott pillanatban, ebből tudunk adatokat kinyerni. 
+- Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, amire különböző szimbólumoket helyezve, különböző következtetésekre juthatunk.
+- Nem összetévesztendő a "vásári" asztrológia ,amit az újságban olvashatunk összefüggéstelen "jóslatokkal" és a valódi asztrológia, ami teljesen racionális alapokon fekszik és matematikai számításokat használ fel.
+- Az asztrológiában különböző csoportokat, halmazokat tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolygók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is, amik megfigyelsések alapján különböző életterületek megoldására utalnak, mutatnak.
+- A következő képlet, az égbolt vázlatos rajza egy adott pillanatban, ebből tudunk adatokat kinyerni.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/77636185/138847759-e8614944-8984-4bd0-b738-eafbf976cd1e.png"/>
 </p>
 
 ## Cél:
-- A program főképpen python nyelven íródik.
-- A projektemben szeretnék az informatika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a használó életét, legfőképpen életvezetési tanácsadás szempontjából.
-- Mivel az asztrológiában rengeteg különböző csoportot tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolygók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is(amik megfigyelsések alapján különböző életterületek megoldására utalnak, mutatnak) ,így a mesterséges intelligencia ezen belül is a neuronhálók eszközét könnyen eszközül vehetjük. 
-Az asztrológiában sok adat van , sok megfigyelési szempont, egy ember nehezen képes egyszerre ilyen sok szempontot figyelembevenni és objektíven(úgy hogy ne csak a szempontok egy kisebb részhalmaza alapján döntsön) választ adni egy kérdésre.
-Cél lenne, hogy felmutassuk hogy mennyire tudja jól megjósolni a program az illető leendő munhahelyének valószínűségeit. Van-e erős korrelácó?
+- A projektemben szeretnék az informatika, a matematika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a használó életvezetési tanácsadás szempontjából.
+- Egy Python Django backendel megvalósított webes felületen legyenek elérhetőek a később tárgyalt adatok, funkciók.
+- Asztrológia validálása: Vajon valóban pontos elemzést tud adni az asztrológia minden emberre? Milyen pontossággal tud szakterületet javasolni egy ismeretlen embernek, is ismert amberek alapján?
 
 
-## Mérföldkövek alap implementációkban
-- [x] horoszkóp szerkezetének implementálása(javíításra szorul)
-- [ ] adatbázis feltöltése megfelelő analógiákkal(folyamatban...)
-- [ ] weboldal létrehozása ahonnan elérhetőek az információk(folyamatban..)
-
-
-## Mérföldkövek a konkrét elérendő cél tekintetében
-- [ ] Pályaválasztás(munka, életút)
-- [x] Általános önismeret(javításra szorul)
-
-
-## Működési vázlat:
-1.a A kedves emberünk megadja az adatait(neme, szül.hely, szül.idő(év,hónap, nap, óra, perc)). Pontos adatok hiányában nem működik a program.
-
-1.b (opcionális). A program feltesz kérdéseket, amivel a kedves emberünk élethelyzetét pontosítjuk.
+## Megvalósítandó mérföldkövek, funkciók
+- [x] horoszkóp szerkezetének implementálása, adatbázisban kezelhetővé tétele
+  -  A további adatok feldolgozásához, szükség van egy struktúrára, amiben könnyen kezelhetőek az adatok
+- [ ] Adatbázis feltöltése ~ 7 hét
+  - Emberek adatainak beszerzése, strukturált tárolása (~ 400-1000 ember)
+  - Analógiák feltöltése: Bolygók, Jegyek, Házak és kombinációik (562 oldal)
+- [ ] Pályaválasztás segítő program ~ 15 hét
+  - Neuronhálók segítségével valószínűségi értékek szabása a különböző munkaterületekre a felhasználónak
+  - Ez az asztrológia validálására is lehetőséget biztosít 
+- [ ] Analógia gyakorló ~ 2 hét
+  - Játékos módon lehessen az egymással analóg személyiségjellemzőket, tárgyakat, színeket, stb. dolgokat pároztatni.
+- [ ] Általános elemzés ~ 6 hét
+  - Sorstípus: független/kiszolgáltatott/önfeláldozó/áldozat
+  - Felosztások: Évszak- Minőség- Elemek- szerinti felosztás
+  - Rejtett aszcendens
+  - Célkijelölő vagy Megvalósító
+  - "Asztro cikk-cakk"
+  - Hyleg/Anaréta meghatározása
+  - Sérült minta Nap/Hold
  
-2. Ezek alapján  készül 3 horoszkóp: (Egész életre vonatkozó(radix), Éves(solar), Holdciklusú(lunar))
+- [ ] Születési idő pontosítás ~ 15 hét (ha gyorsabban haladnék a vártnál)
+  - Ha egy embernek nem tudjuk pontosan mikor született, de történtek már kardinális események az életében. Vissza lehet számolni, pontosan hány óra hány perckor született.
+
       
-3.a Pályaválasztási kiértékelés
-Mély neuronháló alkalmazásával dolgozunk.
-- Input rétegben megkapja a különböző szempontok analógiáit(6 os ház jegye, hold jegye, 6 os ház ura, 5. ös ház, 3 mas ház, 9 es ház...stb)
-- Output rétegen a különböző munkákra fog jósolni a gépünk egy-egy valószínűségi százalékot(pl 0.26- cégvezetői munka, 0.80 hogy irodai alkalmazott...stb)
-
-3.b Párkapcsolati elemzés
-- (túl bonyolult, először jussunk el 3.a-ig)
-
-3.c Önismereti fejlesztés
-- Általános adatok kiíratása(ebben nincs semmi matematika, de mégis személyreszabott, az asztrológia eszköze miatt)
+### Pályaválasztási kiértékelésről részletesen
+- Neuronháló felpéítése
+  - Input rétegben megkapja a különböző szempontok analógiáit(6 os ház jegye, hold jegye, 6 os ház ura, 5. ös ház, 3 mas ház, 9 es ház...stb).
+  Ezzeket a születési képletből lehet kiolvasni
+  - Output rétegen a különböző munkákra fog predikciót adni a gépünk egy-egy valószínűségi százalék formájában(pl 0.26- cégvezetői munka, 0.80 hogy irodai alkalmazott...stb)
 
 ### Hosszútávú tervek:
 - Szövegfeldolgozással kinyerni az analógiáknak az értelmét mesterséges intelligenciával, ezáltal kérdéseket feltenni élethelyzet pontosításhoz.
-- SZámítógép grafikával létrehozni 3d- képlet modelleket a könyebb értelmezhetőség érdekében
+- Számítógép grafikával létrehozni 3d- képlet modelleket a könyebb értelmezhetőség érdekében
 
 ### Érdeklődni: 
 - Molnár Ádám 
 - molnaradam8466@gmail.com 
+
+## Pár szó magamról: 
+- 3.féléves programtervező informatikus szakra járok.
+- Szegeden a TTIK-n a Szoftverfejlesztő tanszéken dolgozok. Itt adatok kinyerésével és feldolgozásával foglalkozunk.
+- Régebb óta érdekelnek spirituális, pszichológiai dolgok, köztük gyereknevelés, oktatás, absztrakt/elvont gondolkodásmódok, lelki segítségnyújtás, tanulási technikák, tudatalatti, tudatosság. És még ezen kívül sok más. 
 
 ### A terv fejlődési pontjai:
 - 1.0.0 2021 marc.30
@@ -65,6 +66,7 @@ Mély neuronháló alkalmazásával dolgozunk.
 - 1.1.2 2021 jun 6.
 - 2.0.0 2021 okt. 26.
 - 2.0.1 2021 okt.28.
+- 2.1.0 2022 jan.8.
 
 
 
