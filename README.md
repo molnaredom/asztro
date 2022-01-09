@@ -46,9 +46,15 @@
   Ezzeket a születési képletből lehet kiolvasni
   - Output rétegen a különböző munkákra fog predikciót adni a gépünk egy-egy valószínűségi százalék formájában(pl 0.26- cégvezetői munka, 0.80 hogy irodai alkalmazott...stb)
 
-### Hosszútávú tervek:
-- Szövegfeldolgozással kinyerni az analógiáknak az értelmét mesterséges intelligenciával, ezáltal kérdéseket feltenni élethelyzet pontosításhoz.
-- Számítógép grafikával létrehozni 3d- képlet modelleket a könyebb értelmezhetőség érdekében
+### Program indítása
+```
+pip3 install requirements.txt
+cd .\weboldal\
+python3 .\manage.py makemigrations base
+python3 .\manage.py migrate
+python3 .\manage.py runserver
+```
+
 
 ### Érdeklődni: 
 - Molnár Ádám 
@@ -70,6 +76,9 @@
 
 
 
+#### Hosszútávú tervek:
+- Szövegfeldolgozással kinyerni az analógiáknak az értelmét mesterséges intelligenciával, ezáltal kérdéseket feltenni élethelyzet pontosításhoz.
+- Számítógép grafikával létrehozni 3d- képlet modelleket a könyebb értelmezhetőség érdekében
 
 #### *korábbi ötletek(NEM RELEVÁNS MÁR)*
 - A személyiségmodellben egyes analógia csoportkörök pont értéket fognak kapni. A megkapott értékek alapján egy optimális küszöbindexet határozunk meg.
