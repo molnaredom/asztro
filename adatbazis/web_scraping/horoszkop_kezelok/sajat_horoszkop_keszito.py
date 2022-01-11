@@ -6,10 +6,10 @@ from selenium.webdriver.support.ui import Select
 import time
 
 
-def bolygojegyben_beallit(web, bolygo, jegy, xpath):
+def bolygojegyben_beallit(web, bolygo, jegy, xpath, kezdobolygojegyben):
 
-    def szama(keresett_bolygo, keresett_jegy):
-        szam = 342
+    def szama(keresett_bolygo, keresett_jegy, kezdobolygojegyben):
+        szam = kezdobolygojegyben
         for akt_bolygo in ["nap", "hold", "merkur", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun",
                            "plúto"]:
             for akt_jegy in ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
@@ -21,15 +21,13 @@ def bolygojegyben_beallit(web, bolygo, jegy, xpath):
         return None
 
     select = Select(web.find_element_by_xpath(xpath))
-    select.select_by_value(str(szama(bolygo, jegy)))
+    select.select_by_value(str(szama(bolygo, jegy, kezdobolygojegyben)))
 
 
+def hazjegyben_beallit(web, haz, jegy, xpath, kezdohazjegyben):
 
-def hazjegyben_beallit(web, haz, jegy, xpath):
-
-
-    def szama(keresett_haz, keresett_jegy):
-        szam = 3
+    def szama(keresett_haz, keresett_jegy, kezdohazjegyben):
+        szam = kezdohazjegyben
         for akt_haz in range(1, 13):
             for akt_jegy in ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
                              "vízöntő", "halak"]:
@@ -40,13 +38,13 @@ def hazjegyben_beallit(web, haz, jegy, xpath):
         return None
 
     select = Select(web.find_element_by_xpath(xpath))
-    select.select_by_value(str(szama(str(haz), jegy)))
+    select.select_by_value(str(szama(str(haz), jegy, kezdohazjegyben)))
 
 
-def sajat_horoszkopform_kitoltes(horoszkop_adatok, web):
+def sajat_horoszkopform_kitoltes(horoszkop_adatok, web, kezdobolygojegyben, kezdohazjegyben):
     sajat_web_inditasa(web)
 
-    sajat_weboldal_kitoltes(horoszkop_adatok, web)
+    sajat_weboldal_kitoltes(horoszkop_adatok, web, kezdobolygojegyben, kezdohazjegyben)
 
 
 def sajat_web_inditasa(web):
@@ -54,11 +52,11 @@ def sajat_web_inditasa(web):
     time.sleep(2)
 
 
-def sajat_weboldal_kitoltes(horoszkop_adatok, web):
+def sajat_weboldal_kitoltes(horoszkop_adatok, web, kezdobolygojegyben, kezdohazjegyben):
     print(horoszkop_adatok)
     egyeb_tulajdonosi_adat_feltoltes(horoszkop_adatok, web)
-    bolygo_jegyben_feltoltes(horoszkop_adatok, web)
-    haz_jegyben_feltoltes(horoszkop_adatok, web)
+    bolygo_jegyben_feltoltes(horoszkop_adatok, web,kezdobolygojegyben)
+    haz_jegyben_feltoltes(horoszkop_adatok, web, kezdohazjegyben)
     fokszam_feltoltes(horoszkop_adatok, web)
 
     press_submit_button(web)
@@ -72,18 +70,17 @@ def egyeb_tulajdonosi_adat_feltoltes(horoszkop_adatok, web):
         hely_xpath.send_keys(horoszkop_adatok[f"{adat_nev}"])
 
 
-
-def haz_jegyben_feltoltes(horoszkop_adatok, web):
+def haz_jegyben_feltoltes(horoszkop_adatok, web, kezdohazjegyben):
     for haz in range(1, 13):
         hazjegyben_beallit(web, str(haz), horoszkop_adatok[str(haz)][0],
-                           f'//*[@id="id_haz_{str(haz)}"]')
+                           f'//*[@id="id_haz_{str(haz)}"]', kezdohazjegyben)
 
 
-def bolygo_jegyben_feltoltes(horoszkop_adatok, web):
+def bolygo_jegyben_feltoltes(horoszkop_adatok, web, kezdobolygojegyben):
     for bolygo in ["nap", "hold", "merkur", "venusz", "mars", "jupiter",
                    "szaturnusz", "uranusz", "neptun", "pluto"]:
         bolygojegyben_beallit(web, bolygo, horoszkop_adatok[bolygo][0],
-                              f'//*[@id="id_{bolygo}"]')
+                              f'//*[@id="id_{bolygo}"]', kezdobolygojegyben)
 
 
 def fokszam_feltoltes(horoszkop_adatok, web):

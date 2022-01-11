@@ -12,7 +12,7 @@ def kulso_weboldal_lehivasa(web):
     time.sleep(2)
 
 
-def egy_horoszkop_feltoltese(tulajodonosi_adatok, web):
+def egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdohazjegyben):
     kulso_weboldal_lehivasa(web)
 
     kulso_weboldalra_tulajdonosadatok_feltoltese(web, tulajodonosi_adatok)
@@ -21,8 +21,9 @@ def egy_horoszkop_feltoltese(tulajodonosi_adatok, web):
 
 
     horoszkop_feltolt_adatok = get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok,
-                                                                  kinyert_kulso_bolygo_es_haz_adatok)
-    sajat_horoszkopform_kitoltes(horoszkop_feltolt_adatok, web)
+                                                                  kinyert_kulso_bolygo_es_haz_adatok,
+                                                                  )
+    sajat_horoszkopform_kitoltes(horoszkop_feltolt_adatok, web, kezdobolygojegyben, kezdohazjegyben)
 
 
 def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo_es_haz_adatok):
@@ -61,6 +62,6 @@ def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo
     return horoszkop_feltolt_adatok
 
 
-def horoszkopok_feltoltese(web):
+def horoszkopok_feltoltese(web,kezdobolygojegyben, kezdohazjegyben):
     for tulajodonosi_adatok in tulajdonos_adat_tarolo.horoszkop_tarolo:
-        egy_horoszkop_feltoltese(tulajodonosi_adatok, web)
+        egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdohazjegyben)

@@ -3,7 +3,7 @@ import time
 from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import *
 
 
-def bolygojegyben_feltoltes(web,feltoltendo ):
+def bolygojegyben_feltoltes(web,feltoltendo, kezdobolygoszam, kezdojegyszam ):
     web.get('http://127.0.0.1:8000/create-bolygoJegyben/')
 
     def adat_kitoltes(web, bolygoszam, jegyszam, bolygonev, jegynev, feltoltendo):
@@ -29,13 +29,13 @@ def bolygojegyben_feltoltes(web,feltoltendo ):
     jegyek = ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
                          "vízöntő", "halak"]
 
-    for bolygoszam, bolygonev in enumerate(bolygok, 2):
-        for jegyszam, jegynev in enumerate(jegyek,10):
+    for bolygoszam, bolygonev in enumerate(bolygok, kezdobolygoszam):
+        for jegyszam, jegynev in enumerate(jegyek,kezdojegyszam):
             adat_kitoltes(web, bolygoszam, jegyszam, bolygonev, jegynev, feltoltendo)
             feltoltes(web)
 
 
-def hazjegyben_kitoltes(web, feltoltendo):
+def hazjegyben_kitoltes(web, feltoltendo, kezdojegyszam, kezdohazszam):
     web.get('http://127.0.0.1:8000/create-hazJegyben/')
 
     def adat_kitoltes(web, hazszam, jegyszam, haznev, jegynev, feltoltendo):
@@ -61,8 +61,8 @@ def hazjegyben_kitoltes(web, feltoltendo):
     jegyek = ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
               "vízöntő", "halak"]
 
-    for hazszam, haznev in enumerate(hazak, 6):
-        for jegyszam, jegynev in enumerate(jegyek, 10):
+    for hazszam, haznev in enumerate(hazak, kezdohazszam):
+        for jegyszam, jegynev in enumerate(jegyek, kezdojegyszam):
             adat_kitoltes(web, hazszam, jegyszam, haznev, jegynev, feltoltendo)
             feltoltes(web)
 

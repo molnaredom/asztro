@@ -44,16 +44,18 @@ def main():
     hazjegyben_feltoltes_ = False
     alapanalogia_feltoltes_ = False
 
+    print("KÉÉSZ")
+
     process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_, web)
 
 
 def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_,alapanalogia_feltoltes_, web):
     if uj_horoszkop_keszites_:
-        horoszkopok_feltoltese(web)
+        horoszkopok_feltoltese(web, kezdobolygojegyben = 1, kezdohazjegyben = 1)
     if bolygojegyben_feltoltes_:
-        bolygojegyben_feltoltes(web, bolygojegyben_beolvas())
+        bolygojegyben_feltoltes(web, bolygojegyben_beolvas(), kezdojegyszam=1, kezdobolygoszam=1)
     if hazjegyben_feltoltes_:
-        hazjegyben_kitoltes(web, hazjegyben_beolvas())
+        hazjegyben_kitoltes(web, hazjegyben_beolvas(),kezdojegyszam=1, kezdohazszam=1)
     if alapanalogia_feltoltes_:
         alapanalogia_feltoltes(web, alapanalogia_beolvas())
 
