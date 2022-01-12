@@ -1,7 +1,7 @@
-# Asztroprogram 2.1.0
+# Asztroprogram 2.1.1
 
 ## Mi az asztrológia?
-- Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, amire különböző szimbólumoket helyezve, különböző következtetésekre juthatunk.
+- Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, amire különböző szimbólumokat helyezve, különböző következtetésekre juthatunk.
 - Nem összetévesztendő a "vásári" asztrológia ,amit az újságban olvashatunk összefüggéstelen "jóslatokkal" és a valódi asztrológia, ami teljesen racionális alapokon fekszik és matematikai számításokat használ fel.
 - Az asztrológiában különböző csoportokat, halmazokat tudunk megkülönböztetni(Csillagjegyek(12), Házak(12), Bolygók(10), Fényszögek(~6)) és ezeknek vehetjük kombinációit is, amik megfigyelsések alapján különböző életterületek megoldására utalnak, mutatnak.
 - A következő képlet, az égbolt vázlatos rajza egy adott pillanatban, ebből tudunk adatokat kinyerni.
@@ -11,23 +11,23 @@
 </p>
 
 ## Cél:
-- A projektemben szeretnék az informatika, a matematika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a használó életvezetési tanácsadás szempontjából.
-- Egy Python Django backendel megvalósított webes felületen legyenek elérhetőek a később tárgyalt adatok, funkciók.
-- Asztrológia validálása: Vajon valóban pontos elemzést tud adni az asztrológia minden emberre? Milyen pontossággal tud szakterületet javasolni egy ismeretlen embernek, is ismert amberek alapján?
+- A projektemben szeretnék az informatika, a matematika és az asztrológia vegyítésével egy olyan programot létrehozni, ami különböző módokon segíti előre a felhasználók mindennapjait.
+- Egy Python Django backend-del megvalósított webes felületen lesznek elérhetőek a később tárgyalt adatok, funkciók.
+- Asztrológia validálása: Vajon valóban pontos elemzést tud adni az asztrológia minden emberre? Milyen pontossággal tud szakterületet javasolni egy ismeretlen embernek? Ezekre a kérdésekre szeretnék választ adni.
 
 
 ## Megvalósítandó mérföldkövek, funkciók
-- [x] horoszkóp szerkezetének implementálása, adatbázisban kezelhetővé tétele
+- [x] horoszkóp szerkezetének implementálása, adatbázisban kezelhetővé tétele ~ 12 hét - 100% KÉSZ
   -  A további adatok feldolgozásához, szükség van egy struktúrára, amiben könnyen kezelhetőek az adatok
-- [ ] Adatbázis feltöltése ~ 7 hét
+- [ ] Adatbázis feltöltése ~ 20 hét - 40% KÉSZ
   - Emberek adatainak beszerzése, strukturált tárolása (~ 400-1000 ember)
   - Analógiák feltöltése: Bolygók, Jegyek, Házak és kombinációik (562 oldal)
-- [ ] Pályaválasztás segítő program ~ 15 hét
+- [ ] Pályaválasztás segítő program ~ 15 hét - 5% KÉSZ
   - Neuronhálók segítségével valószínűségi értékek szabása a különböző munkaterületekre a felhasználónak
   - Ez az asztrológia validálására is lehetőséget biztosít 
-- [ ] Analógia gyakorló ~ 2 hét
-  - Játékos módon lehessen az egymással analóg személyiségjellemzőket, tárgyakat, színeket, stb. dolgokat pároztatni.
-- [ ] Általános elemzés ~ 6 hét
+- [ ] Analógia gyakorló ~ 2 hét - 10% KÉSZ
+  - Játékos módon lehessen az egymással analóg személyiségjellemzőket, tárgyakat, színeket, stb. dolgokat párosítani.
+- [ ] Általános elemzés ~ 6 hét - 50% KÉSZ
   - Sorstípus: független/kiszolgáltatott/önfeláldozó/áldozat
   - Felosztások: Évszak- Minőség- Elemek- szerinti felosztás
   - Rejtett aszcendens
@@ -36,15 +36,22 @@
   - Hyleg/Anaréta meghatározása
   - Sérült minta Nap/Hold
  
-- [ ] Születési idő pontosítás ~ 15 hét (ha gyorsabban haladnék a vártnál)
+- [ ] Születési idő pontosítás ~ 15 hét (ha gyorsabban haladnék a vártnál) - 0% - KÉSZ
   - Ha egy embernek nem tudjuk pontosan mikor született, de történtek már kardinális események az életében. Vissza lehet számolni, pontosan hány óra hány perckor született.
 
       
 ### Pályaválasztási kiértékelésről részletesen
-- Neuronháló felpéítése
-  - Input rétegben megkapja a különböző szempontok analógiáit(6 os ház jegye, hold jegye, 6 os ház ura, 5. ös ház, 3 mas ház, 9 es ház...stb).
-  Ezzeket a születési képletből lehet kiolvasni
-  - Output rétegen a különböző munkákra fog predikciót adni a gépünk egy-egy valószínűségi százalék formájában(pl 0.26- cégvezetői munka, 0.80 hogy irodai alkalmazott...stb)
+1. Gondolat
+- Neuronháló felépítése:
+  - Input rétegben megkapja a különböző szempontok analógiáit (6-os ház jegye, Hold jegye, 6-os ház ura, 5-ös ház, 3-mas ház, ...stb).
+  Ezeket a születési képletből lehet kiolvasni
+  - Output rétegen a különböző munkákra fog predikciót adni a gépünk egy-egy valószínűségi százalék formájában (pl 0.26- cégvezetői munka, 0.80 hogy irodai alkalmazott...stb)
+ 2. Gondolat 
+ - Algoritmikusan kellene felépíteni, halmazok alapján besorolás
+  - Minden munkát halmazokba sorolni
+  - Az embereket különböző szempontok alapján besorolni munka halmazokba
+  - Majd ezeket a halmazokat összegezve különböző munkákra mondanánk valószínűségi esélyeket
+  - Ugyanúgy ellenőrizni lehetne mennyire értékel jól a program egy n+1 emberen
 
 ### Program indítása
 ```
@@ -53,6 +60,12 @@ cd .\weboldal\
 python3 .\manage.py makemigrations base
 python3 .\manage.py migrate
 python3 .\manage.py runserver
+```
+
+### Adatok feltöltése üres adatbázisba
+
+```
+python3 adatbazis\webscraping\iranyito.py
 ```
 
 
@@ -73,7 +86,7 @@ python3 .\manage.py runserver
 - 2.0.0 2021 okt. 26.
 - 2.0.1 2021 okt.28.
 - 2.1.0 2022 jan.8.
-
+- 2.1.1 2022 jan.12.
 
 
 #### Hosszútávú tervek:
