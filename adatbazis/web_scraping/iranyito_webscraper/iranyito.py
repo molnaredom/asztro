@@ -51,7 +51,7 @@ def main():
 
 def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_,alapanalogia_feltoltes_, web):
     if uj_horoszkop_keszites_:
-        horoszkopok_feltoltese(web, kezdobolygojegyben = 1, kezdohazjegyben = 1)
+        horoszkopok_feltoltese(web, kezdobolygojegyben = 1, kezdohazjegyben = 4)
     if bolygojegyben_feltoltes_:
         bolygojegyben_feltoltes(web, bolygojegyben_beolvas(), kezdojegyszam=1, kezdobolygoszam=1)
     if hazjegyben_feltoltes_:

@@ -6,8 +6,8 @@ from .models import Horoszkop2, Jegy2
 def horoszkop(request, id):
     analogia = Horoszkop2.objects.get(id=id)
     osszesjegy = Jegy2.objects.all()
-    # print(analogia.fokszamok)
-    analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"]) # eval strbol dictet csinal
+
+    analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"])  # eval strbol dictet csinal
 
     elemzes_adat = _elemzes(analogia, osszesjegy)
     context = {"analogia": analogia, "elemzes": elemzes_adat}  # ez egy objektum
@@ -17,61 +17,110 @@ def horoszkop(request, id):
 
 def _elemzes(adatok, osszesjegy):
     eredmeny = {}
-    eredmeny = alapszamolasok(adatok, osszesjegy)
+    eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
 
     bolygok, hazak = fokszamhozzarendeles(adatok)
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
+    bolygok = bolygohoz_haz_rendeles(hazak, bolygok)  # megmondja egy bolygo milyen hazban van
 
-    [print(i) for i in bolygok]
-    [print(i) for i in hazak]
+    bolygok = hazhoz_bolygok_rendelese(hazak, bolygok)  # megmondja egy_egy hazban milyen bolygok vannak
+
+    eredmeny["bolygoHazban"] = hazak
+    # todo megmondani egy hazban hany bolygo van es mik azok
+    [print(i["haz"]) for i in hazak]
 
     return eredmeny
 
+
+def hazhoz_bolygok_rendelese(hazak, bolygok):
+    # for haz in hazak:
+    #     haz["bolygok"] = []
+
+    for haz in hazak:
+        for bolygo in bolygok:
+            pass
+            print("---------", haz["haz"])
+            #if bolygo["hazszam"]["haz"] == haz.nevID:
+            #     haz["bolygok"].append(bolygo)
+
+
+def bolygohoz_haz_rendeles(hazak, bolygok):
+    ujhaz = {"jegy": hazak[0]["jegy"], "haz": hazak[0]["haz"], "fokszam": hazak[0]["fokszam"], "osszfokszam": 360}
+    hazak.append(ujhaz)
+
+    for bolygo in bolygok:
+        for hazszam, haz in enumerate(hazak):
+            # todo keletkezett e lefedetlen resz?
+            # todo ellenorizni mi van akkor ha a 12. hazbol atmegy az 1 es hazba
+            if haz["haz"].tipus == "sarok" and bolygo["osszfokszam"] + 5 < hazak[hazszam + 1]["osszfokszam"]:
+                bolygo["hazszam"] = haz
+                break
+            elif haz["haz"].tipus != "sarok" and bolygo["osszfokszam"] + 3 < hazak[hazszam + 1]["osszfokszam"]:
+                bolygo["hazszam"] = haz
+                break
+        else:
+            print("valami nincs lekezelve")
+            raise Exception
+
+    hazak.pop(-1) # elttűntetni a plusz 1 házat
+
+    return bolygok
+
+
 def fokszamhozzarendeles(adatok):
-    bolygojegyben_adatok = [adatok.nap, adatok.hold, adatok.merkur, adatok.venusz, adatok.mars, adatok.jupiter, adatok.szaturnusz,
-               adatok.uranusz, adatok.neptun, adatok.pluto]
+    bolygojegyben_adatok = [adatok.nap, adatok.hold, adatok.merkur, adatok.venusz, adatok.mars, adatok.jupiter,
+                            adatok.szaturnusz,
+                            adatok.uranusz, adatok.neptun, adatok.pluto]
 
-    hazjegyben_adatok = [ adatok.haz_1, adatok.haz_2, adatok.haz_3, adatok.haz_4, adatok.haz_5, adatok.haz_6, adatok.haz_7,
-                adatok.haz_8, adatok.haz_9, adatok.haz_10, adatok.haz_11, adatok.haz_12]
+    hazjegyben_adatok = [adatok.haz_1, adatok.haz_2, adatok.haz_3, adatok.haz_4, adatok.haz_5, adatok.haz_6,
+                         adatok.haz_7,
+                         adatok.haz_8, adatok.haz_9, adatok.haz_10, adatok.haz_11, adatok.haz_12]
 
-    #bolygok, hazak = {}, {} # egy regi otlet
-    bolygok, hazak = [],[]
+    # bolygok, hazak = {}, {} # egy regi otlet
+    bolygok, hazak = [], []
 
-    for analogia in list(zip(['nap', 'hold', 'merkur', 'venusz','mars', 'jupiter', 'szaturnusz', 'uranusz', 'neptun', 'pluto'],bolygojegyben_adatok)):
-        bolygok.append( {"jegy": analogia[1].jegy, "bolygo": analogia[1].bolygo, "fokszam": adatok.fokszamok[analogia[0]]})
+    for analogia in list(
+            zip(['nap', 'hold', 'merkur', 'venusz', 'mars', 'jupiter', 'szaturnusz', 'uranusz', 'neptun', 'pluto'],
+                bolygojegyben_adatok)):
+        bolygok.append(
+            {"jegy": analogia[1].jegy, "bolygo": analogia[1].bolygo, "fokszam": adatok.fokszamok[analogia[0]]})
 
-    for analogia in list(zip(['haz1', 'haz2', 'haz3', 'haz4', 'haz5', 'haz6', 'haz7', 'haz8', 'haz9', 'haz10', 'haz11', 'haz12'],hazjegyben_adatok)):
-        hazak.append( {"jegy": analogia[1].jegy, "haz": analogia[1].haz, "fokszam": adatok.fokszamok[analogia[0][3:]]})
+    for analogia in list(
+            zip(['haz1', 'haz2', 'haz3', 'haz4', 'haz5', 'haz6', 'haz7', 'haz8', 'haz9', 'haz10', 'haz11', 'haz12'],
+                hazjegyben_adatok)):
+        hazak.append({"jegy": analogia[1].jegy, "haz": analogia[1].haz, "fokszam": adatok.fokszamok[analogia[0][3:]]})
 
-    return bolygok, hazak #pd.DataFrame(bolygok), pd.DataFrame(hazak)
+    return bolygok, hazak  # pd.DataFrame(bolygok), pd.DataFrame(hazak)
 
 
 def osszfokszam_hozzarendeles(bolygok, hazak):
-    ascfok, ascjegy = float(hazak[0]["fokszam"]) , hazak[0]["jegy"].nevID
+    ascfok, ascjegy = float(hazak[0]["fokszam"]), hazak[0]["jegy"].nevID
+
     for haz in hazak:
-        haz["osszfokszam"] = hanyadik_jegy_asctol(ascjegy,haz["jegy"].nevID)*30 - ascfok + float(haz["fokszam"])
-
-
+        haz["osszfokszam"] = hanyadik_jegy_asctol(ascjegy, haz["jegy"].nevID) * 30 - ascfok + float(haz["fokszam"])
+        # print(haz["haz"], haz["jegy"].nevID,haz["osszfokszam"],hanyadik_jegy_asctol(ascjegy,haz["jegy"].nevID), ascfok,float(haz["fokszam"]   ))
 
     for bolygo in bolygok:
-        bolygo["osszfokszam"] = hanyadik_jegy_asctol(ascjegy,bolygo["jegy"].nevID)*30 -ascfok +float(bolygo["fokszam"])
+        bolygo["osszfokszam"] = hanyadik_jegy_asctol(ascjegy, bolygo["jegy"].nevID) * 30 - ascfok + float(
+            bolygo["fokszam"])
+        # print(bolygo["bolygo"], bolygo["jegy"].nevID,bolygo["osszfokszam"],hanyadik_jegy_asctol(ascjegy,bolygo["jegy"].nevID), ascfok,float(bolygo["fokszam"]   ))
 
     return bolygok, hazak
 
 
 def hanyadik_jegy_asctol(kiindulasijegy, aktjegy):
-    kiind_szam , akt_szam = jegyet_szamra_valt(kiindulasijegy), jegyet_szamra_valt(aktjegy)
-    return (akt_szam-kiind_szam) % 12
+    kiind_szam, akt_szam = jegyet_szamra_valt(kiindulasijegy), jegyet_szamra_valt(aktjegy)
+    return (akt_szam - kiind_szam) % 12
 
 
 def jegyet_szamra_valt(jegynev):
-    jegyhezszam = {"kos" :1, "bika":2, "ikrek":3, "rák":4, "oroszlán":5, "szűz":6, "mérleg":7, "skorpió":8, "nyilas":9, "bak":10,
-              "vízöntő":11, "halak":12}
+    jegyhezszam = {"kos": 1, "bika": 2, "ikrek": 3, "rák": 4, "oroszlán": 5, "szűz": 6, "mérleg": 7, "skorpió": 8,
+                   "nyilas": 9, "bak": 10,
+                   "vízöntő": 11, "halak": 12}
     return jegyhezszam[jegynev]
 
 
 def alapszamolasok(adatok, osszesjegy):
-
     eredmeny = {}
     bolygok = [adatok.nap, adatok.hold, adatok.merkur, adatok.venusz, adatok.mars, adatok.jupiter, adatok.szaturnusz,
                adatok.uranusz, adatok.neptun, adatok.pluto]
@@ -84,6 +133,8 @@ def alapszamolasok(adatok, osszesjegy):
     eredmeny["rejtett ASC"] = rejtett_aszcendens(eredmeny["elemek szerinti felosztás"],
                                                  eredmeny["minőség szerinti felosztás"], osszesjegy)
     eredmeny["sorstípus"] = _sorstipus(bolygok)
+
+    return eredmeny
 
 
 def _altalanosfelosztas_adagolo(szetoszto, bolygok, jegynalogia, asc):
@@ -153,17 +204,5 @@ def _sorstipus(adatok):
 
 
 if __name__ == '__main__':
-    h = {adatok.nap :2, adatok.hold:3 }
+    h = {adatok.nap: 2, adatok.hold: 3}
     print(h[adatok.nap])
-
-
-
-
-
-
-
-
-
-
-
-

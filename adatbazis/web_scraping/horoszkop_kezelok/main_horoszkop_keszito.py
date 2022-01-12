@@ -19,7 +19,6 @@ def egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdo
 
     kinyert_kulso_bolygo_es_haz_adatok = kulso_weboldalrol_adatkiszedes(web)
 
-
     horoszkop_feltolt_adatok = get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok,
                                                                   kinyert_kulso_bolygo_es_haz_adatok,
                                                                   )
