@@ -44,9 +44,9 @@ def main():
     hazjegyben_feltoltes_ = False
     alapanalogia_feltoltes_ = False
 
-    print("KÉÉSZ")
-
     process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_, web)
+
+    print("KÉÉSZ")
 
 
 def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_,alapanalogia_feltoltes_, web):

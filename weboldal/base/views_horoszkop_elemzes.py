@@ -22,26 +22,24 @@ def _elemzes(adatok, osszesjegy):
     bolygok, hazak = fokszamhozzarendeles(adatok)
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
     bolygok = bolygohoz_haz_rendeles(hazak, bolygok)  # megmondja egy bolygo milyen hazban van
-
     bolygok = hazhoz_bolygok_rendelese(hazak, bolygok)  # megmondja egy_egy hazban milyen bolygok vannak
 
     eredmeny["bolygoHazban"] = hazak
     # todo megmondani egy hazban hany bolygo van es mik azok
-    [print(i["haz"]) for i in hazak]
 
     return eredmeny
 
 
 def hazhoz_bolygok_rendelese(hazak, bolygok):
-    # for haz in hazak:
-    #     haz["bolygok"] = []
+    for haz in hazak:
+        haz["bolygok"] = []
 
     for haz in hazak:
         for bolygo in bolygok:
-            pass
-            print("---------", haz["haz"])
-            #if bolygo["hazszam"]["haz"] == haz.nevID:
-            #     haz["bolygok"].append(bolygo)
+            if haz["haz"] == bolygo["hazszam"]["haz"]:
+                haz["bolygok"].append(bolygo)
+
+    return bolygok
 
 
 def bolygohoz_haz_rendeles(hazak, bolygok):

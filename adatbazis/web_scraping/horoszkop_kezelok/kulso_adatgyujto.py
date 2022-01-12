@@ -4,6 +4,11 @@ import requests
 from selenium.webdriver.support.select import Select
 
 
+def kulso_weboldalrol_adatkiszedes(web):
+    time.sleep(1)
+    return {"bolygok": get_bolygok(web), "hazak": get_hazak(web)}
+
+
 def kulso_weboldalra_tulajdonosadatok_feltoltese(web, szuletesi_adatok: dict):
     # időt adunk a weboldalnak hogy betöltődjön
     time.sleep(2)
@@ -55,11 +60,6 @@ def select_adat_beallit(web, tartalom, xpath):
     select.select_by_value(str(tartalom))
 
 
-def kulso_weboldalrol_adatkiszedes(web):
-    time.sleep(1)
-    return {"bolygok": get_bolygok(web), "hazak": get_hazak(web)}
-
-
 def get_bolygok(web):
     bolygok = {}
     # todo nem biztos hogy az akt szam megfelelo !!!
@@ -85,14 +85,14 @@ def get_hazak(web):
 def create_bolygo_dict(szam_xpathoz,web):
     return {
         "jegy": get_text(f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{szam_xpathoz}]/td[4]",web),
-        "fokszam": get_text(f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{szam_xpathoz}]/td[11]",web)
+        "fokszam": get_text(f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{szam_xpathoz}]/td[5]", web)
     }
 
 
 def create_haz_dict(szam_xpathhoz,web):
     return {"jegy": get_text(f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{szam_xpathhoz}]/td[10]",web),
-            "fokszam": get_text(f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{szam_xpathhoz}]/td[11]",web)}
-
+            "fokszam": get_text(f"/html/body/div[3]/div/div[2]/div[2]/div[1]/table/tbody/tr[{szam_xpathhoz}]/td[11]",web)
+            }
 def get_text(xpath, web):
     return web.find_element_by_xpath(xpath).text
 
