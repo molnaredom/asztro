@@ -13,7 +13,7 @@ def inditas():
     rendszer = "linux"
     web = ""
     if rendszer == "win10":
-        web = webdriver.Firefox(executable_path=r'../adat_tarolas/geckodriver.exe')
+        web = webdriver.Firefox(executable_path=r'adat_tarolas/geckodriver.exe')
     else:
         web = webdriver.Firefox()
 
@@ -21,17 +21,17 @@ def inditas():
 
 
 def alapanalogia_beolvas():
-    with open("../../analogiak/alapanalogiak.json", encoding="utf-8") as f:
+    with open("../analogiak/alapanalogiak.json", encoding="utf-8") as f:
         return json.loads(f.read())
 
 
 def bolygojegyben_beolvas():
-    with open("../../analogiak/bolygoJegyben_analogiak.json", encoding="utf-8") as f:
+    with open("../analogiak/bolygoJegyben_analogiak.json", encoding="utf-8") as f:
         return json.loads(f.read())
 
 
 def hazjegyben_beolvas():
-    with open("../../analogiak/hazJegyben_analogiak.json", encoding="utf-8") as f:
+    with open("../analogiak/hazJegyben_analogiak.json", encoding="utf-8") as f:
         return json.loads(f.read())
 
 

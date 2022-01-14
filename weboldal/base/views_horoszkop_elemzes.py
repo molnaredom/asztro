@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render
 import pandas as pd
 from .models import Horoszkop2, Jegy2
@@ -17,16 +19,63 @@ def horoszkop(request, id):
 
 def _elemzes(adatok, osszesjegy):
     eredmeny = {}
-    eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
+
+    pontos_kor =szuletesi_datumido(adatok)
 
     bolygok, hazak = fokszamhozzarendeles(adatok)
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
     bolygok = bolygohoz_haz_rendeles(hazak, bolygok)  # megmondja egy bolygo milyen hazban van
     bolygok = hazhoz_bolygok_rendelese(hazak, bolygok)  # megmondja egy_egy hazban milyen bolygok vannak
 
+    eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
+    eredmeny["pontos kor"] = pontos_kor_szamitas(pontos_kor)
+    eredmeny["életciklus"] = eletciklus(pontos_kor)
     eredmeny["sorstípus"] = _sorstipus(bolygok, hazak)
 
     return eredmeny
+
+
+def pontos_kor_szamitas(pontoskor:datetime):
+    return f'A pontos életkorod {pontoskor.year} év  ' \
+           f'{pontoskor.month} hónap  ' \
+           f'{pontoskor.day} nap  ' \
+           f'{pontoskor.hour} óra  ' \
+           f'{pontoskor.minute} perc ' \
+           f'{pontoskor.second} másodperc.'
+
+
+def szuletesi_datumido(adatok):
+    szuletes = adatok.idopont.replace(tzinfo=None)
+
+
+    currentDate = datetime.datetime.now()
+    deadlineDate = szuletes
+    # print(deadlineDate)
+    daysLeft = currentDate - deadlineDate
+    # print(daysLeft)
+
+    years = ((daysLeft.total_seconds()) / (365.242199 * 24 * 3600))
+    yearsInt = int(years)
+
+    months = (years - yearsInt) * 12
+    monthsInt = int(months)
+
+    days = (months - monthsInt) * (365.242199 / 12)
+    daysInt = int(days)
+
+    hours = (days - daysInt) * 24
+    hoursInt = int(hours)
+
+    minutes = (hours - hoursInt) * 60
+    minutesInt = int(minutes)
+
+    seconds = (minutes - minutesInt) * 60
+    secondsInt = int(seconds)
+
+    pontos_kor = datetime.datetime(yearsInt,monthsInt,daysInt,hoursInt,minutesInt,secondsInt)
+
+
+    return pontos_kor
 
 
 def hazhoz_bolygok_rendelese(hazak, bolygok):
@@ -59,7 +108,7 @@ def bolygohoz_haz_rendeles(hazak, bolygok):
             print("valami nincs lekezelve")
             raise Exception
 
-    hazak.pop(-1) # elttűntetni a plusz 1 házat
+    hazak.pop(-1)  # elttűntetni a plusz 1 házat
 
     return bolygok
 
@@ -130,7 +179,6 @@ def alapszamolasok(adatok, osszesjegy):
     eredmeny["rejtett ASC"] = rejtett_aszcendens(eredmeny["elemek szerinti felosztás"],
                                                  eredmeny["minőség szerinti felosztás"], osszesjegy)
 
-
     return eredmeny
 
 
@@ -194,7 +242,7 @@ def rejtett_aszcendens(elemek, minosegek, osszesjegy):
         return "Nincs rejtett aszcendens"
 
 
-def _sorstipus(bolygok,hazak):
+def _sorstipus(bolygok, hazak):
     kiemelthazak = ["1", "5", "9", "10", "11"]
 
     kiemelthazakbolygoi = []
@@ -203,11 +251,10 @@ def _sorstipus(bolygok,hazak):
             for bolygo in haz["bolygok"]:
                 kiemelthazakbolygoi.append(bolygo["bolygo"].nevID)
 
-    print(kiemelthazakbolygoi)
 
     if "uránusz" in kiemelthazakbolygoi and "neptun" not in kiemelthazakbolygoi:
         return "elsőkörös uránuszi"
-    elif "neptun" in  kiemelthazakbolygoi and "uránusz" not in kiemelthazakbolygoi:
+    elif "neptun" in kiemelthazakbolygoi and "uránusz" not in kiemelthazakbolygoi:
         return "elsőkörös neptuni"
 
     if "jupiter" in kiemelthazakbolygoi and "szaturnusz" not in kiemelthazakbolygoi:
@@ -222,7 +269,6 @@ def _sorstipus(bolygok,hazak):
                          if i["bolygo"].nevID not in felhasznaltbolygok])
     print("haz11pontszam, haz12pontszam", haz11pontszam, haz12pontszam)
 
-
     if haz11pontszam > haz12pontszam:
         return "haramdik körös kiszolgáltatott"
     elif haz11pontszam < haz12pontszam:
@@ -230,9 +276,9 @@ def _sorstipus(bolygok,hazak):
 
     # 4. kör
     halakpontszam = sum([i["bolygo"].pontertek for i in bolygok
-                          if i["jegy"].nevID == "halak" and i["bolygo"].nevID not in felhasznaltbolygok])
-    vizontopontszam =  sum([i["bolygo"].pontertek for i in bolygok
-                            if i["jegy"].nevID == "vízöntő" and i["bolygo"].nevID not in felhasznaltbolygok])
+                         if i["jegy"].nevID == "halak" and i["bolygo"].nevID not in felhasznaltbolygok])
+    vizontopontszam = sum([i["bolygo"].pontertek for i in bolygok
+                           if i["jegy"].nevID == "vízöntő" and i["bolygo"].nevID not in felhasznaltbolygok])
     print("halakpontszam, vizontopontszam", halakpontszam, vizontopontszam)
 
     if vizontopontszam > halakpontszam:
@@ -243,8 +289,35 @@ def _sorstipus(bolygok,hazak):
     return "a jelenlegi adatok alapján nem lehet kiszámolni a sorstípust mert 5. körös lenne"
 
 
+def eletciklus(pontos_kor):
+    yearsInt =pontos_kor.year
+    eletciklus = ""
+    if yearsInt > 63:
+        eletciklus = "szaturnusz"
+    elif yearsInt > 56:
+        eletciklus = "jupiter-szaturnusz"
+    elif yearsInt > 56:
+        eletciklus = "jupiter"
+    elif yearsInt > 42:
+        eletciklus = "nap-mars"
+    elif yearsInt > 35:
+        eletciklus = "nap-jupiter"
+    elif yearsInt > 28:
+        eletciklus = "nap"
+    elif yearsInt > 21:
+        eletciklus = "ha férfi NAP, ha nő HOLD"
+    elif yearsInt > 14:
+        eletciklus = "ha fiú hold-mars, ha lány hold vénusz"
+    elif yearsInt > 7:
+        eletciklus = "hold-merkúr"
+    elif yearsInt > 0:
+        eletciklus = "hold"
+    else:
+        eletciklus = "még nem született meg"
+
+    return eletciklus
+
+
 if __name__ == '__main__':
     h = {adatok.nap: 2, adatok.hold: 3}
     print(h[adatok.nap])
-
-
