@@ -38,12 +38,13 @@ def hazjegyben_beolvas():
 def main():
     web = inditas()
     domain = "https://asztro.herokuapp.com"
+    domain = "http://127.0.0.1:8000"
     print("inditas")
 
     uj_horoszkop_keszites_ = True
-    bolygojegyben_feltoltes_ = False
-    hazjegyben_feltoltes_ = False
-    alapanalogia_feltoltes_ = False
+    bolygojegyben_feltoltes_ = True
+    hazjegyben_feltoltes_ = True
+    alapanalogia_feltoltes_ = True
 
     process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_, web, domain)
 
@@ -51,14 +52,14 @@ def main():
 
 
 def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_,alapanalogia_feltoltes_, web, domain):
-    if uj_horoszkop_keszites_:
-        horoszkopok_feltoltese(web, kezdobolygojegyben = 1, kezdohazjegyben = 1, domain=domain)
+    if alapanalogia_feltoltes_:
+        alapanalogia_feltoltes(web, alapanalogia_beolvas(), domain=domain)
     if bolygojegyben_feltoltes_:
         bolygojegyben_feltoltes(web, bolygojegyben_beolvas(), kezdojegyszam=1, kezdobolygoszam=1, domain=domain)
     if hazjegyben_feltoltes_:
         hazjegyben_kitoltes(web, hazjegyben_beolvas(),kezdojegyszam=1, kezdohazszam=1, domain=domain)
-    if alapanalogia_feltoltes_:
-        alapanalogia_feltoltes(web, alapanalogia_beolvas(), domain=domain)
+    if uj_horoszkop_keszites_:
+        horoszkopok_feltoltese(web, kezdobolygojegyben = 1, kezdohazjegyben = 1, domain=domain)
 
 
 

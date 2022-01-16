@@ -5,6 +5,7 @@
       "minőség": "kardinális",
       "paritás": "pozitív",
       "évszak": "tavasz",
+      "uralkodo_bolygo": "mars",
       "leírás": [
         "a"
       ]
@@ -14,6 +15,7 @@
       "minőség": "szilárd",
       "paritás": "negatív",
       "évszak": "tavasz",
+      "uralkodo_bolygo": "vénusz",
       "leírás": [
         "a"
       ]
@@ -23,6 +25,7 @@
       "minőség": "változó",
       "paritás": "pozitív",
       "évszak": "tavasz",
+      "uralkodo_bolygo": "merkúr",
       "leírás": [
         "a"
       ]
@@ -32,6 +35,7 @@
       "minőség": "kardinális",
       "paritás": "negatív",
       "évszak": "nyár",
+      "uralkodo_bolygo": "hold",
       "leírás": [
         "a"
       ]
@@ -41,6 +45,7 @@
       "minőség": "szilárd",
       "paritás": "pozitív",
       "évszak": "nyár",
+      "uralkodo_bolygo": "nap",
       "leírás": [
         "a"
       ]
@@ -50,6 +55,7 @@
       "minőség": "változó",
       "paritás": "negatív",
       "évszak": "nyár",
+      "uralkodo_bolygo": "merkúr",
       "leírás": [
         "a"
       ]
@@ -59,6 +65,7 @@
       "minőség": "kardinális",
       "paritás": "pozitív",
       "évszak": "ősz",
+      "uralkodo_bolygo": "vénusz",
       "leírás": [
         "a"
       ]
@@ -68,6 +75,7 @@
       "minőség": "szilárd",
       "paritás": "negatív",
       "évszak": "ősz",
+      "uralkodo_bolygo": "mars",
       "leírás": [
         "a"
       ]
@@ -77,6 +85,7 @@
       "minőség": "változó",
       "paritás": "pozitív",
       "évszak": "ősz",
+      "uralkodo_bolygo": "jupiter",
       "leírás": [
         "a"
       ]
@@ -86,6 +95,7 @@
       "minőség": "kardinális",
       "paritás": "negatív",
       "évszak": "tél",
+      "uralkodo_bolygo": "szaturnusz",
       "leírás": [
         "a"
       ]
@@ -95,6 +105,7 @@
       "minőség": "szilárd",
       "paritás": "pozitív",
       "évszak": "tél",
+      "uralkodo_bolygo": "szaturnusz",
       "leírás": [
         "a"
       ]
@@ -104,6 +115,7 @@
       "minőség": "változó",
       "paritás": "negatív",
       "évszak": "tél",
+      "uralkodo_bolygo": "jupiter",
       "leírás": [
         "a"
       ]

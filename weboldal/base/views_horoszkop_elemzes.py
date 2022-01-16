@@ -24,8 +24,10 @@ def _elemzes(adatok, osszesjegy):
 
     bolygok, hazak = fokszamhozzarendeles(adatok)
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
+
     bolygok = bolygohoz_haz_rendeles(hazak, bolygok)  # megmondja egy bolygo milyen hazban van
     bolygok = hazhoz_bolygok_rendelese(hazak, bolygok)  # megmondja egy_egy hazban milyen bolygok vannak
+    hazura_melyik_hazaban(hazak)
 
     eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
     eredmeny["pontos kor"] = pontos_kor_szamitas(pontos_kor)
@@ -318,6 +320,38 @@ def eletciklus(pontos_kor):
     return eletciklus
 
 
+def hazura_melyik_hazaban(hazak):
+    for haz in hazak:
+        hazura = haz["jegy"].uralkodo_bolygo
+        for belso_haz in hazak:
+            for belso_bolygo in belso_haz["bolygok"]:
+                if hazura == belso_bolygo["bolygo"].nevID :
+                    # print(haz["haz"], haz["jegy"].paritas)
+                    # print(belso_haz["haz"],belso_bolygo["jegy"].paritas)
+                    if haz["jegy"].paritas == belso_bolygo["jegy"].paritas or\
+                            belso_bolygo["bolygo"].nevID == "hold" or belso_bolygo["bolygo"].nevID == "nap":
+                        haz["hazura"] = belso_haz["haz"]
+
+        if "hazura" not in haz:
+            haz["hazura"] = "nincs hazur"
+
+
+    # [print(i["haz"], i["hazura"], end="\n\n") for i in hazak]
+    # todo egyuttallasokat szemugyre venni amikor meglesznek a fenyszogek
+
+
+
 if __name__ == '__main__':
     h = {adatok.nap: 2, adatok.hold: 3}
     print(h[adatok.nap])
+
+
+
+
+
+
+
+
+
+
+

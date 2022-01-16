@@ -45,18 +45,18 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="/" class="nav-link px-2 text-white">Kezdőlap</a></li>
                 <li><a href="{% url 'horoszkop_gyujtemeny' %}" class="nav-link px-2 text-white">Horoszkópok</a></li>
-                <li><a href="{% url 'analogia_adatbazis' %}" class="nav-link px-2 text-white">Analógia adatbázis</a>
-                </li>
-                <li><a href="{% url 'analogiagyakorlo' %}" class="nav-link px-2 text-white">Analógia gyakorló</a></li>
+                <li><a href="{% url 'analogia_adatbazis' %}" class="nav-link px-2 text-white">Analógia adatbázis</a></li>
+<!--                <li><a href="{% url 'analogiagyakorlo' %}" class="nav-link px-2 text-white">Analógia gyakorló</a></li>-->
                 <li><a href="/rolunk" class="nav-link px-2 text-white">Rólunk</a></li>
             </ul>
 
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             {{request.user}}
-
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" class="form-control form-control-dark" placeholder="Keresés..."
-                       aria-label="Search">
-            </form>
+</ul>
+<!--            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">-->
+<!--                <input type="search" class="form-control form-control-dark" placeholder="Keresés..."-->
+<!--                       aria-label="Search">-->
+<!--            </form>-->
 
             <div class="text-end">
 

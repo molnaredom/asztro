@@ -79,7 +79,7 @@ def jegy_feltoltes(web, feltoltendo, domain):
     web.get(f'{domain}/create-jegyek/')
 
     for jegy in feltoltendo["jegyek"].keys():
-        for adat_nev in ["nevID", "leírás", "elem", "minőség", "paritás", "évszak"]:
+        for adat_nev in ["nevID", "leírás", "elem", "minőség", "paritás", "évszak", "uralkodo_bolygo"]:
 
             szoveggelkitoltes(web, feltoltendo,"jegyek", jegy, adat_nev)
 

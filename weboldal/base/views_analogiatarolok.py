@@ -64,19 +64,20 @@ def hazakJegyekben(request):
 
 
 def horoszkop_gyujtemeny(request):
-    jegy_alapjan_lekeres, haz_alapjan_adatok, leker_1, leker_2, leker_3 = {},{},{},{},{}
+    bolygo_es_jegy_lekerdezes, haz_es_jegy_lekerdezes, leker_1, leker_2, leker_3 = {},{},{},{},{}
 
     if request.method == "POST":
 
         if 'bolygo_es_jegy_lekerdezes' in request.POST:
             jegyNev = request.POST.get('jegyNev')
             bolygoNev = request.POST.get('bolygoNev')
-            jegy_alapjan_lekeres = bolygo_alapjan_lekeres(bolygoNev, jegyNev)
+            bolygo_es_jegy_lekerdezes = bolygo_alapjan_lekeres(bolygoNev, jegyNev)
+
 
         elif "haz_es_jegy_lekerdezes" in request.POST:
             jegyNev = request.POST.get('jegyNev')
             hazNev = request.POST.get('hazNev')
-            haz_alapjan_adatok = haz_alapjan_lekeres(hazNev, jegyNev)
+            haz_es_jegy_lekerdezes = haz_alapjan_lekeres(hazNev, jegyNev)
 
         # elif "leker_1" in request.POST:
         #     leker_1 = Horoszkop1.objects.filter(jupiter__jegy__elem="levegő")
@@ -105,8 +106,8 @@ def horoszkop_gyujtemeny(request):
     hp = Horoszkop2.objects.all()
 
     context = {'adatok': hp,
-               "jegy_alapjan_lekeres": jegy_alapjan_lekeres,
-               "haz_alapjan_adatok":haz_alapjan_adatok ,
+               "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
+               "haz_es_jegy_lekerdezes":haz_es_jegy_lekerdezes ,
                "leker_1" : leker_1,
                "leker_2" : leker_2,
                "leker_3" : leker_3

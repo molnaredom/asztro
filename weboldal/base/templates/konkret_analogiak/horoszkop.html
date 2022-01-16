@@ -158,10 +158,10 @@
 </div>
 
 <div class="topnav">
-    <a href="#">Link</a>
-    <a href="#">Link</a>
-    <a href="#">Link</a>
-    <a href="#" style="float:right">Link</a>
+<!--    <a href="#">Link</a>-->
+<!--    <a href="#">Link</a>-->
+<!--    <a href="#">Link</a>-->
+<!--    <a href="#" style="float:right">Link</a>-->
 </div>
 
 <div class="row">
@@ -170,10 +170,14 @@
             <h2>Horoszkóp leírás</h2>
             <h5>Létrehozás ideje: {{analogia.idopont}}</h5>
             <p>Életesemények leírása:</p>
-            <p>Született, majd élt.</p>
+
             <p>{{analogia.leiras}}</p>
-            <p> {{ elemzes }}</p>
-            <p> {{ analogia.fokszamok }}</p>
+
+            {% for szempont,k in elemzes.items %}
+                <h3>{{ szempont }}</h3>
+                {{ k }}
+
+            {% endfor %}
             <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
 
         </div>

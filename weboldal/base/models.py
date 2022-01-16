@@ -67,6 +67,7 @@ class Jegy2(Analogia2):
     minoseg = models.CharField(max_length=20, blank=True)
     paritas = models.CharField(max_length=20, blank=True)
     evszak = models.CharField(max_length=20, blank=True)
+    uralkodo_bolygo = models.CharField(max_length=20, blank=True)
 
     def __str__(self):
         return self.nevID
