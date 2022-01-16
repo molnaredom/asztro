@@ -1,4 +1,5 @@
-# Asztroprogram 2.1.1
+# Asztroprogram 2.1.2
+https://asztro.herokuapp.com
 
 ## Mi az asztrológia?
 - Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, amire különböző szimbólumokat helyezve, különböző következtetésekre juthatunk.
@@ -87,6 +88,7 @@ python3 adatbazis\webscraping\iranyito.py
 - 2.0.1 2021 okt.28.
 - 2.1.0 2022 jan.8.
 - 2.1.1 2022 jan.12.
+- - 2.1.1 2022 jan.14.
 
 
 #### Hosszútávú tervek:
