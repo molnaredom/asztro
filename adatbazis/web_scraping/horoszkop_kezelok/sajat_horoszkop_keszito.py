@@ -41,14 +41,14 @@ def hazjegyben_beallit(web, haz, jegy, xpath, kezdohazjegyben):
     select.select_by_value(str(szama(str(haz), jegy, kezdohazjegyben)))
 
 
-def sajat_horoszkopform_kitoltes(horoszkop_adatok, web, kezdobolygojegyben, kezdohazjegyben):
-    sajat_web_inditasa(web)
+def sajat_horoszkopform_kitoltes(horoszkop_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain):
+    sajat_web_inditasa(web, domain)
 
     sajat_weboldal_kitoltes(horoszkop_adatok, web, kezdobolygojegyben, kezdohazjegyben)
 
 
-def sajat_web_inditasa(web):
-    web.get('http://127.0.0.1:8000/create-horoszkop/')
+def sajat_web_inditasa(web,domain):
+    web.get(f'{domain}/create-horoszkop/')
     time.sleep(2)
 
 

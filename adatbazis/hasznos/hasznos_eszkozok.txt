@@ -1,0 +1,6 @@
+1----------------------------
+nem mukodik a makemigrations es a migrate
+OperationalError at /horoszkop_gyujtemeny/
+
+no such table: base_horoszkop2
+manage.py migrate --run-syncdb

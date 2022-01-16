@@ -3,8 +3,8 @@ import time
 from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import *
 
 
-def bolygojegyben_feltoltes(web,feltoltendo, kezdobolygoszam, kezdojegyszam ):
-    web.get('http://127.0.0.1:8000/create-bolygoJegyben/')
+def bolygojegyben_feltoltes(web,feltoltendo, kezdobolygoszam, kezdojegyszam , domain):
+    web.get(f'{domain}/create-bolygoJegyben/')
 
     def adat_kitoltes(web, bolygoszam, jegyszam, bolygonev, jegynev, feltoltendo):
         # bolygo
@@ -35,8 +35,8 @@ def bolygojegyben_feltoltes(web,feltoltendo, kezdobolygoszam, kezdojegyszam ):
             feltoltes(web)
 
 
-def hazjegyben_kitoltes(web, feltoltendo, kezdojegyszam, kezdohazszam):
-    web.get('http://127.0.0.1:8000/create-hazJegyben/')
+def hazjegyben_kitoltes(web, feltoltendo, kezdojegyszam, kezdohazszam, domain):
+    web.get(f'{domain}/create-hazJegyben/')
 
     def adat_kitoltes(web, hazszam, jegyszam, haznev, jegynev, feltoltendo):
         # bolygo
@@ -67,16 +67,16 @@ def hazjegyben_kitoltes(web, feltoltendo, kezdojegyszam, kezdohazszam):
             feltoltes(web)
 
 
-def alapanalogia_feltoltes(web, alapanalogiak):
+def alapanalogia_feltoltes(web, alapanalogiak, domain):
     feltoltendo = alapanalogiak
 
-    jegy_feltoltes(web, feltoltendo)
-    bolygo_feltoltes(web, feltoltendo)
-    haz_feltoltes(web, feltoltendo)
+    jegy_feltoltes(web, feltoltendo, domain)
+    bolygo_feltoltes(web, feltoltendo, domain)
+    haz_feltoltes(web, feltoltendo, domain)
 
 
-def jegy_feltoltes(web, feltoltendo):
-    web.get('http://127.0.0.1:8000/create-jegyek/')
+def jegy_feltoltes(web, feltoltendo, domain):
+    web.get(f'{domain}/create-jegyek/')
 
     for jegy in feltoltendo["jegyek"].keys():
         for adat_nev in ["nevID", "leírás", "elem", "minőség", "paritás", "évszak"]:
@@ -87,8 +87,8 @@ def jegy_feltoltes(web, feltoltendo):
         time.sleep(2)
 
 
-def bolygo_feltoltes(web, feltoltendo:dict):
-    web.get('http://127.0.0.1:8000/create-bolygok/')
+def bolygo_feltoltes(web, feltoltendo:dict, domain):
+    web.get(f'{domain}/create-bolygok/')
 
     for bolygo in feltoltendo["bolygok"].keys():
         for adat_nev in ["nevID", "leírás", "pontérték", "típus"]:
@@ -99,8 +99,8 @@ def bolygo_feltoltes(web, feltoltendo:dict):
         time.sleep(2)
 
 
-def haz_feltoltes(web, feltoltendo):
-    web.get('http://127.0.0.1:8000/create-hazak/')
+def haz_feltoltes(web, feltoltendo, domain):
+    web.get(f'{domain}/create-hazak/')
 
     for haz in feltoltendo["hazak"].keys():
         for adat_nev in ["nevID", "leírás", "mundán jegye", "típus"]:
