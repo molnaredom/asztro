@@ -55,17 +55,21 @@
   },
   "szűz" : {
     "önmaga": [
-      "beosztó"
+      "beosztó",
+      "gyakorlatias"
     ],
     "tagadja": [
-      "könnyedség"
+      "könnyedség",
+      "elméleti dolgok"
     ],
     "vízöntő": [
       "mindent én tudok a legjobban",
-      "mások akármit csinálnak sehogyan sem jó"
+      "mások akármit csinálnak sehogyan sem jó",
+      "pontosan tudja, hogy mit nem akar"
     ],
     "kos": [
-      "mindent én tudok a legjobban"
+      "mindent én tudok a legjobban",
+      "pontosan tudom, hogí mit kell tennem"
     ]
   },
   "mérleg": {
@@ -85,8 +89,13 @@
     ]
   },
   "skorpió": {
+    "önmaga": [
+      "szenvedélyesség"
+    ],
     "tagadja": [
-      "nyugalom, állandóság"
+      "nyugalom",
+      "állandóság",
+      "unalom"
     ],
     "kos": [
       "kozkázatot keres",
@@ -115,6 +124,23 @@
     "rák": [
       "azt gondolja, úgyis lesznek anyagiak, nem aggódik",
       "optimista"
+    ]
+  },
+  "bak": {
+    "önmaga": [
+      "érzelem mentesség"
+    ],
+    "tagadja": [
+      "érzelmek",
+      "otthonhoz való kötődés"
+    ],
+    "ikrek": [
+      "céltudatosság",
+      "tudom miért megyek külföldre (mert megéri)"
+    ],
+    "oroszlán": [
+      "olyan kapcsolatokat keres, amiben úgy érzi ő többet tud adni, mint a másik",
+      "több lehetek az által ha külföldre megyek (tanulok, dolgozok)"
     ]
   },
   "vízöntő": {

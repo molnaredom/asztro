@@ -1,5 +1,10 @@
 {
   "1": {
+    "1": [
+      "az akaratát érvényesíteni fogja",
+      "önösség lehet tetteiben",
+      "öntörvényű"
+    ],
     "9": [
       "előtérbe kerülhet a külföld szerepe",
       "fontos a törvény",
@@ -19,6 +24,11 @@
       "törekszik az anyagi teremtésre",
       "törekszik a dolgok élvezetére",
       "fontosak a külsőségek, de tesz is érte"
+    ],
+    "7":[
+      "a párja irányítja a pénzügyeket",
+      "anyagi elismerésre törekszik",
+      "párja segíti vágyait"
     ],
     "9": [
       "külföldön keresett pénz",
@@ -43,6 +53,12 @@
       "pedagógus",
       "sokat utazik",
       "mozgásszervi problémák"
+    ],
+    "7": [
+      "nyilvános szereplés",
+      "iskolatárs lesz a párja",
+      "együttélés házasság előtt",
+      "kereskedelmi társulás"
     ]
   },
   "4": {
@@ -61,6 +77,12 @@
       "ingatlannal kapcsolatos pálya",
       "alárendeltség a családban",
       "építési vállalkozó"
+    ],
+    "12": [
+      "szeretőtől lesz gyermek",
+      "lemond a családról: amíg ő szeretné a gyereket addig nem lesz",
+      "elkerül az otthonából",
+      "élete végén kórházban él"
     ]
   },
   "5": {
@@ -75,7 +97,7 @@
       "törvényes gyerek",
       "iskolai szerelem",
       "csak házasságban lehet gyerek"
-    ]
+    ],
   },
   "6": {
     "9": [
@@ -91,6 +113,11 @@
       "hivatásában alárendeltnek kell lennie",
       "munkájában éli meg a sikert",
       "munkájában elismerik"
+    ],
+    "11": [
+      "barátaival dolgozik",
+      "alárendeltként teljesülnek céljai, vágyai",
+      "a közösséget szolgálja"
     ]
   },
   "7": {
@@ -138,6 +165,12 @@
       "párja jelöli ki a célokat",
       "célja föld és ingatlan szerzése"
     ],
+    "5": [
+      "vágyik a karrierre",
+      "vágyik a sikerre",
+      "céljai családi vállalkozásban teljesülhetnek",
+      "gyerek hozza a sikert"
+    ],
     "10": [
       "cléja a karrier",
       "törekszik az elismerésre",
@@ -146,6 +179,11 @@
     ]
   },
   "11": {
+    "6": [
+      "munkájában érzi jól magát",
+      "barátaival dolgozik",
+      "alárendeltként teljesülnek vágyai"
+    ],
     "8": [
       "elveszíti barátait",
       "erős szexuális vágyak",
@@ -161,6 +199,13 @@
     ]
   },
   "12": {
+    "5": [
+      "együtt dolgozik a párjával",
+      "mindene a vállakozása",
+      "szerelem titkos kapcsolatban",
+      "közös vállalkozás bárkivel",
+      "szeretőtől gyerek"
+    ],
     "9": [
       "fontos a házasság (egység megélése)",
       "összeütközés a törvénnyel",

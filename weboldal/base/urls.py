@@ -11,6 +11,7 @@ urlpatterns = [
     path("room/<str:pk>/", views.room, name="room"),
     path("rolunk", views.rolunk, name="rolunk"),
     path("analogiagyakorlo", views.analogiagyakorlo, name="analogiagyakorlo"),
+    path("fejlesztes_alatt", views.fejlesztes_alatt, name="fejlesztes_alatt"),
 
     path("create-room/", views_creators.createroom, name= "create-room"),
     path("update-room/<str:pk>/", views.updateRoom, name= "update-room"),

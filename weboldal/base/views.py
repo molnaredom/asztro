@@ -121,3 +121,8 @@ def analogiagyakorlo(request):
     return render(request, "analogiagyakorlo/analogia_gyakorlo.html", {})
 
 
+def fejlesztes_alatt(request):
+    return render(request, "base/fejlesztes_alatt.html", {})
+
+
+
