@@ -42,9 +42,14 @@ def main():
     print("inditas")
 
     uj_horoszkop_keszites_ = True
-    bolygojegyben_feltoltes_ = True
-    hazjegyben_feltoltes_ = True
-    alapanalogia_feltoltes_ = True
+    bolygojegyben_feltoltes_ = False
+    hazjegyben_feltoltes_ = False
+    alapanalogia_feltoltes_ = False
+
+    # uj_horoszkop_keszites_ = True
+    # bolygojegyben_feltoltes_ = True
+    # hazjegyben_feltoltes_ = True
+    # alapanalogia_feltoltes_ = True
 
     process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_, web, domain)
 

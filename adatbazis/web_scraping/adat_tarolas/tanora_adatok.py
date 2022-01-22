@@ -1,13 +1,13 @@
 horoszkop_tarolo = [
 {
-    "nev": "2_2",
+    "nev": "TESZT 2_2",
     "horoszkoptipus": "radix",
     "ev": 1994,
     "honap": 11,
     "nap": 1,
     "ora": 7,
     "perc": 30,
-    "hely": "Móvár",
+    "hely": "Mosonmagyaróvár",
     "kep": "",
     "munka":[""],
     "elet_leiras": ["egy nővére és egy báttya van",
@@ -19,26 +19,7 @@ horoszkop_tarolo = [
                        "kevés a fényszöge"
                        ]
 },{
-    "nev": "2_2",
-    "horoszkoptipus": "radix",
-    "ev": 1994,
-    "honap": 11,
-    "nap": 1,
-    "ora": 7,
-    "perc": 30,
-    "hely": "Móvár",
-    "kep": "",
-    "munka":[""],
-    "elet_leiras": ["egy nővére és egy báttya van",
-                    "fontos neki hogy érezze hogy szeretik",
-                    "sok kis balesete volt",
-                    "lovagol"
-                    ],
-    "elemzes leiras": ["híleg a hold,anaréta nincs",
-                       "kevés a fényszöge"
-                       ]
-},{
-    "nev": "2_3",
+    "nev": "TESZT 2_3",
     "horoszkoptipus": "radix",
     "ev": 1996,
     "honap": 9,
@@ -57,7 +38,7 @@ horoszkop_tarolo = [
                        "Mert nem tudna hiteles lenni. Pl nem tudna segíteni egy önbizalomhiányos paciensnek, mert őmaga nagyon szép"
                        ]
 },{
-    "nev": "2_4",
+    "nev": "TESZT 2_4",
     "horoszkoptipus": "radix",
     "ev": 1996,
     "honap": 9,
@@ -78,7 +59,7 @@ horoszkop_tarolo = [
     ],
 
 },{
-    "nev": "2_5",
+    "nev": "TESZT 2_5",
     "horoszkoptipus": "radix",
     "ev": 1985,
     "honap": 10,

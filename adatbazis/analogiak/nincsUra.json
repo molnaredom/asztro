@@ -53,7 +53,13 @@
       "pontosan tudom mit kell tennem"
     ]
   },
-  "szűz" : {
+  "szűz": [
+    {
+      "önmaga":"racionalítás",
+      "tagadja": "önfeláldozás",
+      "vízöntő": "barátokkal szemben elvárások",
+      "kos": "olyan barátságokra törekszik, ahol mindig az van mait ő gondol soha sneki nem elég jó (kielégületlenség)",
+    },
     "önmaga": [
       "beosztó",
       "gyakorlatias"
@@ -71,8 +77,14 @@
       "mindent én tudok a legjobban",
       "pontosan tudom, hogí mit kell tennem"
     ]
-  },
-  "mérleg": {
+  ],
+  "mérleg": [
+    {
+      "önmaga":"nem tudja megélni a harmóniát",
+      "tagadja": "az öntörvényűséget",
+      "halak":"illúziókba temetkezik",
+      "bika": "magától megy bele helyzetekbe, magától próbálja kitalálni mi jó a másiknak"
+    },
     "önmaga": [
       "harmóniára való törekvés",
       "kompromisszumkészség"
@@ -85,65 +97,82 @@
       "önzetlen, önfeláldozó"
     ],
     "bika": [
-      "gyávaság (hárítja a felelősséget)",
+      "gyávaság (hárítja a felelősséget)"
     ]
-  },
-  "skorpió": {
-    "önmaga": [
-      "szenvedélyesség"
-    ],
-    "tagadja": [
-      "nyugalom",
-      "állandóság",
-      "unalom"
-    ],
-    "kos": [
-      "kozkázatot keres",
-      "fanatikus",
-      "törtető"
-    ],
-    "ikrek": [
-      "változtat, nehogy unalmas legyen",
-      "érdektelenség",
-      "motíválatlanság"
-    ]
-  },
-  "nyilas": {
-    "önmaga": [
-      "önbizalom",
-      "magabiztosság"
-    ],
-    "tagadja": [
-      "felszínesség",
-      "felületesség",
-      "ráció"
-    ],
-    "bika": [
-      "élvezetek(életművész analógia)"
-    ],
-    "rák": [
-      "azt gondolja, úgyis lesznek anyagiak, nem aggódik",
-      "optimista"
-    ]
-  },
-  "bak": {
-    "önmaga": [
-      "érzelem mentesség"
-    ],
-    "tagadja": [
-      "érzelmek",
-      "otthonhoz való kötődés"
-    ],
-    "ikrek": [
-      "céltudatosság",
-      "tudom miért megyek külföldre (mert megéri)"
-    ],
-    "oroszlán": [
-      "olyan kapcsolatokat keres, amiben úgy érzi ő többet tud adni, mint a másik",
-      "több lehetek az által ha külföldre megyek (tanulok, dolgozok)"
-    ]
-  },
+  ],
+  "skorpió": [
+    {
+      "önmaga": "",
+      "tagadja": "",
+      "kos": "",
+      "ikrek": ""
+    },
+    {
+      "önmaga": "szenvedélyesség, elfolytások öntörvényűség",
+      "tagadja": "nyugalom , állandóság",
+      "kos": "kockázatot keres",
+      "ikrek": "változtat, nehogy unalmas legyen"
+    },
+    {
+      "analogia": "tudja, hogy veszíthet",
+      "tagadja": "kötődést",
+      "kos": "mindent kockáztat dupla vagy semmit játszik",
+      "ikrek": "változtat mielőtt kötődne"
+    }
+  ],
+  "nyilas": [
+    {
+      "önmaga": "nagyvonalú",
+      "tagadja": "rációt",
+      "bika": "élvezetek",
+      "rák": "elkötelezettség"
+    },
+    {
+      "önmaga":
+        "önbizalom magabiztosság",
+      "tagadja": "felszínesség felületesség ráció",
+      "bika": "élvezetek(életművész analógia)",
+      "rák": "azt gondolja, úgyis lesznek anyagiak, nem aggódik optimista"
+    },
+    {
+      "önmaga":"hit, magabiztosság önbizalom, könnyelműség",
+      "tagadja": "a rációt a tervezést",
+      "kos": "élvezetek",
+      "ikrek": "opitmista"
+    }
+  ],
+  "bak": [
+    {
+      "önmaga": [
+        "érzelem mentesség"
+      ],
+      "tagadja": [
+        "érzelmek",
+        "otthonhoz való kötődés"
+      ],
+      "ikrek": [
+        "céltudatosság",
+        "tudom miért megyek külföldre (mert megéri)"
+      ],
+      "oroszlán": [
+        "olyan kapcsolatokat keres, amiben úgy érzi ő többet tud adni, mint a másik",
+        "több lehetek az által ha külföldre megyek (tanulok, dolgozok)"
+      ]
+    },
+    {
+      "önmaga":"céltudatosság kapcsolataiban",
+      "tagadja": "érzelmességet a kapcsolataiban",
+      "kos":"céltudatosság",
+      "ikrek": "uralkodás, legyek valaki a kapcsolataim által"
+    }
+  ],
   "vízöntő": {
+    {
+      "önmaga":"másképp gondolkodik mint az átlag",
+      "tagadja": "alárendeltség",
+      "kos":"mások irányítását elfogadja",
+      "ikrek": "úgyis jobban tudok mindent mint a másik"
+    },
     "önmaga": [
       "tekintélyelvűség"
     ],

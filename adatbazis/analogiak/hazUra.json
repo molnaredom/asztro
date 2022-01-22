@@ -5,6 +5,12 @@
       "önösség lehet tetteiben",
       "öntörvényű"
     ],
+    "6": [
+      "munkamánia",
+      "alárdeneltként dolgozhat",
+      "minden helyzetben másokat segíthet",
+      "örök kielégületlenség"
+    ],
     "9": [
       "előtérbe kerülhet a külföld szerepe",
       "fontos a törvény",
@@ -29,6 +35,12 @@
       "a párja irányítja a pénzügyeket",
       "anyagi elismerésre törekszik",
       "párja segíti vágyait"
+    ],
+    "8": [
+      "anyagi veszteségek",
+      "élvezetek elfolytása",
+      "szexualitás felerősödés",
+      "pénzügyi befektetések"
     ],
     "9": [
       "külföldön keresett pénz",
@@ -59,6 +71,14 @@
       "iskolatárs lesz a párja",
       "együttélés házasság előtt",
       "kereskedelmi társulás"
+    ],
+    "8": [
+      "kényszerből költözés",
+      "a múlt kutatása",
+      "bezártság",
+      "nehezen teremt kapcsolatokat",
+      "pénzügyi tanácadás",
+      "lemondás a kapcsolatokról, környezetről, tanulásról"
     ]
   },
   "4": {
@@ -78,6 +98,19 @@
       "alárendeltség a családban",
       "építési vállalkozó"
     ],
+    "7": [
+      "család miatt házasodik",
+      "üzlettársból lehet pár",
+      "örökösödési per",
+      "társas ingatlan"
+    ],
+    "8": [
+      "otthonvesztés",
+      "családról való lemondás",
+      "apavesztés",
+      "ingatlan kölcsönből",
+      "ingatlan örökség"
+    ],
     "12": [
       "szeretőtől lesz gyermek",
       "lemond a családról: amíg ő szeretné a gyereket addig nem lesz",
@@ -91,6 +124,12 @@
       "alárendelt a családi vállakozásban",
       "gyerekeit szolgálja"
     ],
+    "8" : [
+      "a szerelem alapja a szexulaitás",
+      "szerelmi csalódás",
+      "elveszti a gyermekét (lemondás)",
+      "bukott vállalkozás"
+    ],
     "9": [
       "külföldi vállalkozás",
       "vágyai külföldön teljesülnek",
@@ -98,8 +137,28 @@
       "iskolai szerelem",
       "csak házasságban lehet gyerek"
     ],
+    "10": [
+      "célja a gyerek",
+      "sikeres vállalkozás",
+      "érdekkapcsolatok",
+      "vezetői adottságok"
+    ],
+    "11": [
+      "barátságból lesz szerelem",
+      "párja akarja a gyermeket",
+      "barátokkal alakít vállalkozást",
+      "közösség vezetője",
+      "mások segítik vágyaihoz"
+    ]
   },
   "6": {
+    "4": [
+      "a családot szolgálja",
+      "otthon dolgozik",
+      "párja céljait segíti",
+      "nevelő apa",
+      "ingatlannal kapcsolatos munka"
+    ],
     "9": [
       "törvénnyel kapcsolatos munka",
       "tanári hivatás",
@@ -121,6 +180,11 @@
     ]
   },
   "7": {
+    "2" : [
+      "ragaszkodik a párjához",
+      "nyilvános szereplés hozza az anyagiakat",
+      "házasságban a biztonsága és erre is törekszik - ő teremti"
+    ],
     "9": [
       "törvényes párkapcsolat",
       "nyílvánosság előtti hivatás",
@@ -136,6 +200,17 @@
     ]
   },
   "8": {
+    "2": [
+      "pénzügyi befektetések",
+      "erős vágyélet",
+      "a párjának biztonságot teremt"
+    ],
+    "5": [
+      "vágyik a szexualitásra",
+      "kedveli a szerencsejátkot",
+      "sebészi tehetség",
+      "spirituális tevékenység"
+    ],
     "11": [
       "teljesülnek szexuális vágyai",
       "barátból szerető",
@@ -145,6 +220,24 @@
     ]
   },
   "9": {
+    "2": [
+      "az anyagiakat külföldön teremti meg",
+      "gazdag akar lenni",
+      "gazdasági pályát választ",
+      "ragaszkodik a törvényhez"
+    ],
+    "4": [
+      "csak törvényes család létezik számára",
+      "kültöldön lesz az otthona",
+      "együtt él az unokával"
+    ],
+    "5": [
+      "vágyik a szerelemre",
+      "fontos számára a gyerek",
+      "politikai tehetséget mutat",
+      "sikeres vállalkozás",
+      "vágyik a házasságra"
+    ],
     "10": [
       "jogászi/politikai életfutás",
       "hivatása a külföldhöz köti",
@@ -160,6 +253,12 @@
     ]
   },
   "10": {
+    "2": [
+      "céljaihoz ragaszkodik",
+      "mindent biztonság oldalról közelít",
+      "céljait anyagiakban rendeli alá",
+      "élvezi a hivatását"
+    ],
     "4": [
       "családon keresztül teljesedik ki",
       "párja jelöli ki a célokat",
@@ -179,10 +278,17 @@
     ]
   },
   "11": {
+    "1": [
+      "közösséget irányít",
+      "barátásgok létrehozására törekszik",
+      "nem lehet korlátozni",
+      "önfejűen él"
+    ],
     "6": [
       "munkájában érzi jól magát",
       "barátaival dolgozik",
-      "alárendeltként teljesülnek vágyai"
+      "alárendeltként teljesülnek vágyai",
+      "függetlenül dolgozik"
     ],
     "8": [
       "elveszíti barátait",
@@ -206,6 +312,13 @@
       "közös vállalkozás bárkivel",
       "szeretőtől gyerek"
     ],
+    "7": [
+      "párjától függ",
+      "jogi páyla",
+      "társulásban alárendelt",
+      "művészként sikeres",
+      "szeretőből lesz párja"
+    ],
     "9": [
       "fontos a házasság (egység megélése)",
       "összeütközés a törvénnyel",
@@ -216,7 +329,7 @@
       "zárt helyen dolgozik",
       "szeretőt tart",
       "nem akar egyedül élni",
-      "magány",
+      "magány - őt teszik magányossá",
       "zárt intézetben csapatot vezet",
       "önmaga által soha nem érhet el karriert, másoknak kell őt segíteni a karrierben",
       "célja a szeretői kapcsolat"
