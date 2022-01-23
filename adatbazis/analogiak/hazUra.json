@@ -5,6 +5,16 @@
       "önösség lehet tetteiben",
       "öntörvényű"
     ],
+    "4": [
+      "családban irányít",
+      "otthon éli meg egóját",
+      "nehezen válik le otthonáról"
+    ],
+    "5": [
+      "elvárja hogy elimserjék",
+      "vállalkozás lesz neki a legfontosabb",
+      "vágyai irányítják"
+    ],
     "6": [
       "munkamánia",
       "alárdeneltként dolgozhat",
@@ -30,6 +40,11 @@
       "törekszik az anyagi teremtésre",
       "törekszik a dolgok élvezetére",
       "fontosak a külsőségek, de tesz is érte"
+    ],
+    "2": [
+      "család adja az anyagiakat",
+      "ingatlanból származó jövedelem",
+      "erős az érzelmi kötődés"
     ],
     "7":[
       "a párja irányítja a pénzügyeket",
@@ -79,6 +94,13 @@
       "nehezen teremt kapcsolatokat",
       "pénzügyi tanácadás",
       "lemondás a kapcsolatokról, környezetről, tanulásról"
+    ],
+    "11": [
+      "sok barát és ismerős",
+      "közösségi szerepek",
+      "sikeres kapcsolatok",
+      "függetlenség",
+      "környezetében, lakóhelyén közéleti szerepet vállal"
     ]
   },
   "4": {
@@ -110,6 +132,9 @@
       "apavesztés",
       "ingatlan kölcsönből",
       "ingatlan örökség"
+    ],
+    "11": [
+      "család teljesíti be a vágyait"
     ],
     "12": [
       "szeretőtől lesz gyermek",
@@ -149,6 +174,15 @@
       "barátokkal alakít vállalkozást",
       "közösség vezetője",
       "mások segítik vágyaihoz"
+    ],
+    "12": [
+      "mások tehetik sikeressé",
+      "abortusz",
+      "szerelem titkos kapcsolatokban",
+      "szeretőtől gyermek",
+      "gyermekvesztés",
+      "csalódás szerelemben",
+      "csalódás vállakozásban"
     ]
   },
   "6": {
@@ -211,6 +245,12 @@
       "sebészi tehetség",
       "spirituális tevékenység"
     ],
+    "8": [
+      "anyagiasság",
+      "eltartási szerződés",
+      "választott műtétek",
+      "szenvedélyes szexualitás"
+    ],
     "11": [
       "teljesülnek szexuális vágyai",
       "barátból szerető",
@@ -237,6 +277,14 @@
       "politikai tehetséget mutat",
       "sikeres vállalkozás",
       "vágyik a házasságra"
+    ],
+    "7": [
+      "a törvényt képviseli a külvilágban",
+      "külföldi házastárs",
+      "nyilvános sikerek"
+    ],
+    "8": [
+      ""
     ],
     "10": [
       "jogászi/politikai életfutás",
@@ -289,6 +337,12 @@
       "barátaival dolgozik",
       "alárendeltként teljesülnek vágyai",
       "függetlenül dolgozik"
+    ],
+    "9": [
+      "állandóan külföldön tartózkodik",
+      "büszke a diplomájára",
+      "egyetemi barátok",
+      "politikai sikerek külföldön"
     ],
     "8": [
       "elveszíti barátait",

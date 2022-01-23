@@ -20,13 +20,19 @@ def horoszkop(request, id):
 def _elemzes(adatok, osszesjegy):
     eredmeny = {}
 
-    pontos_kor =szuletesi_datumido(adatok)
+    pontos_kor = szuletesi_datumido(adatok)
 
     bolygok, hazak = fokszamhozzarendeles(adatok)
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
 
     bolygok = bolygohoz_haz_rendeles(hazak, bolygok)  # megmondja egy bolygo milyen hazban van
     bolygok = hazhoz_bolygok_rendelese(hazak, bolygok)  # megmondja egy_egy hazban milyen bolygok vannak
+
+    fenyszog_hozzarendeles(bolygok)
+
+    # [print(i["bolygo"], [j["bolygo"] for j in i["fenyszogek"]["kvadrat"]], "\n") for i in bolygok]
+    # [print(i["bolygo"], [j["bolygo"] for j in i["fenyszogek"]["trigon"]], "\n") for i in bolygok]
+
     hazura_melyik_hazaban(hazak)
 
     eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
@@ -37,7 +43,7 @@ def _elemzes(adatok, osszesjegy):
     return eredmeny
 
 
-def pontos_kor_szamitas(pontoskor:datetime):
+def pontos_kor_szamitas(pontoskor: datetime):
     return f'A pontos életkorod {pontoskor.year} év  ' \
            f'{pontoskor.month} hónap  ' \
            f'{pontoskor.day} nap  ' \
@@ -48,7 +54,6 @@ def pontos_kor_szamitas(pontoskor:datetime):
 
 def szuletesi_datumido(adatok):
     szuletes = adatok.idopont.replace(tzinfo=None)
-
 
     currentDate = datetime.datetime.now()
     deadlineDate = szuletes
@@ -74,8 +79,7 @@ def szuletesi_datumido(adatok):
     seconds = (minutes - minutesInt) * 60
     secondsInt = int(seconds)
 
-    pontos_kor = datetime.datetime(yearsInt,monthsInt,daysInt,hoursInt,minutesInt,secondsInt)
-
+    pontos_kor = datetime.datetime(yearsInt, monthsInt, daysInt, hoursInt, minutesInt, secondsInt)
 
     return pontos_kor
 
@@ -253,7 +257,6 @@ def _sorstipus(bolygok, hazak):
             for bolygo in haz["bolygok"]:
                 kiemelthazakbolygoi.append(bolygo["bolygo"].nevID)
 
-
     if "uránusz" in kiemelthazakbolygoi and "neptun" not in kiemelthazakbolygoi:
         return "elsőkörös uránuszi"
     elif "neptun" in kiemelthazakbolygoi and "uránusz" not in kiemelthazakbolygoi:
@@ -292,7 +295,7 @@ def _sorstipus(bolygok, hazak):
 
 
 def eletciklus(pontos_kor):
-    yearsInt =pontos_kor.year
+    yearsInt = pontos_kor.year
     eletciklus = ""
     if yearsInt > 63:
         eletciklus = "szaturnusz"
@@ -325,33 +328,82 @@ def hazura_melyik_hazaban(hazak):
         hazura = haz["jegy"].uralkodo_bolygo
         for belso_haz in hazak:
             for belso_bolygo in belso_haz["bolygok"]:
-                if hazura == belso_bolygo["bolygo"].nevID :
+                if hazura == belso_bolygo["bolygo"].nevID:
                     # print(haz["haz"], haz["jegy"].paritas)
                     # print(belso_haz["haz"],belso_bolygo["jegy"].paritas)
-                    if haz["jegy"].paritas == belso_bolygo["jegy"].paritas or\
+                    if haz["jegy"].paritas == belso_bolygo["jegy"].paritas or \
                             belso_bolygo["bolygo"].nevID == "hold" or belso_bolygo["bolygo"].nevID == "nap":
                         haz["hazura"] = belso_haz["haz"]
 
         if "hazura" not in haz:
             haz["hazura"] = "nincs hazur"
 
-
     # [print(i["haz"], i["hazura"], end="\n\n") for i in hazak]
     # todo egyuttallasokat szemugyre venni amikor meglesznek a fenyszogek
 
 
+def fenyszog_hozzarendeles(bolygok):
 
-if __name__ == '__main__':
-    h = {adatok.nap: 2, adatok.hold: 3}
-    print(h[adatok.nap])
+    for bolygo in bolygok:
+        bolygo["fenyszogek"] = {}
+        bolygo["fenyszogek"]["konjukcio"] = []
+        bolygo["fenyszogek"]["oppozicio"] = []
+        bolygo["fenyszogek"]["kvadrat"] = []
+        bolygo["fenyszogek"]["trigon"] = []
+
+    orbisz = 6
+
+    for kulso_bolygo in bolygok:
+        for belso_bolygo in bolygok:
+            kulso_osszfok = float(kulso_bolygo["osszfokszam"])
+            belso_osszfok = float(belso_bolygo["osszfokszam"])
+
+            debug = True
+            # konjukció
+            fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz,
+                            fenyszogtipus="konjukcio", fok_kilenges=0, debug=debug)
+            # oppozicio
+            fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz,
+                            fenyszogtipus="oppozicio", fok_kilenges=180, debug=debug)
+            # kvadrat
+            fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz,
+                            fenyszogtipus="kvadrat", fok_kilenges=90, debug=debug)
+            # trigon
+            fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz,
+                            fenyszogtipus="trigon", fok_kilenges=120, debug=debug)
 
 
+    lancolt_egyuttallas(bolygok)
 
 
+def fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz, fenyszogtipus, fok_kilenges, debug):
+
+    if (kulso_osszfok + orbisz > belso_osszfok + fok_kilenges > kulso_osszfok - orbisz and belso_bolygo["bolygo"] != kulso_bolygo["bolygo"]) or \
+            (kulso_osszfok + orbisz > belso_osszfok - fok_kilenges > kulso_osszfok - orbisz and belso_bolygo["bolygo"] != kulso_bolygo["bolygo"]):
+
+        if debug:
+            print(fenyszogtipus)
+            print(belso_bolygo["bolygo"], kulso_bolygo["bolygo"])
+
+        belso_bolygo["fenyszogek"][fenyszogtipus].append(kulso_bolygo)
 
 
+def lancolt_egyuttallas(bolygok):
+    for kulso_bolygo in bolygok:
+        # hold
+        for belso_bolygo in bolygok:
+            if kulso_bolygo != belso_bolygo:
+                kulso_konjukcios_bolygok = kulso_bolygo["fenyszogek"]["konjukcio"]
+                belso_konjukcios_bolygok = belso_bolygo["fenyszogek"]["konjukcio"]
+                for kulso_konjukcios_bolygo in kulso_konjukcios_bolygok:
 
-
+                    if kulso_konjukcios_bolygo not in belso_konjukcios_bolygok and \
+                            kulso_bolygo["bolygo"].nevID in [i["bolygo"].nevID for i in belso_konjukcios_bolygok] and \
+                            belso_bolygo["bolygo"].nevID != kulso_konjukcios_bolygo["bolygo"].nevID:
+                        belso_konjukcios_bolygok.append(kulso_konjukcios_bolygo)
+                        # print(kulso_konjukcios_bolygo["bolygo"].nevID, belso_bolygo["bolygo"].nevID)
+                        # print(kulso_bolygo["bolygo"], belso_bolygo["bolygo"])
+                        # print()
 
 
 

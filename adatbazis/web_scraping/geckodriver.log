@@ -3945,3 +3945,24 @@ console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkErr
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1642881678345	geckodriver	INFO	Listening on 127.0.0.1:50101
+1642881681427	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50102" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileIywNnb"
+1642881682037	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileIywNnb\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50102/devtools/browser/b77fd69b-09c0-41c7-bdce-537ab0bb3e14
+1642881685123	Marionette	INFO	Listening on port 50107
+1642881685620	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/RSjKnk5gG5e-YnqyaokaGBofRBYcmQ35b5mWA3AF7Xg.js line 1 > eval line 514 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://astro.cafeastrology.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/RSjKnk5gG5e-YnqyaokaGBofRBYcmQ35b5mWA3AF7Xg.js line 1 > eval line 1421 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/RSjKnk5gG5e-YnqyaokaGBofRBYcmQ35b5mWA3AF7Xg.js line 1 > eval line 6430 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
+1642893687003	Marionette	INFO	Stopped listening on port 50107
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A015B,name=PContent::Msg_InsertNewFocusActionId) Closed channel: cannot send/recv
+
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A014E,name=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
+
