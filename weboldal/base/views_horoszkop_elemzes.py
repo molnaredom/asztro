@@ -372,7 +372,6 @@ def fenyszog_hozzarendeles(bolygok):
             fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz,
                             fenyszogtipus="trigon", fok_kilenges=120, debug=debug)
 
-
     lancolt_egyuttallas(bolygok)
 
 
