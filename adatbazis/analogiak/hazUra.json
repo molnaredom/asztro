@@ -5,6 +5,13 @@
       "önösség lehet tetteiben",
       "öntörvényű"
     ],
+    "2": [
+      "ragaszkodik az akaratához",
+      "mindig az élvezetek motiválják",
+      "csak akkor dönt ha biztos a döntésében"
+    ],
+    "3": [
+    ],
     "4": [
       "családban irányít",
       "otthon éli meg egóját",
@@ -21,32 +28,65 @@
       "minden helyzetben másokat segíthet",
       "örök kielégületlenség"
     ],
+    "7": [
+    ],
+    "8": [
+      "le kell mondania az akaratáról",
+      "műtétek",
+      "fontos a szexualitás",
+      "gyakran árt magának"
+    ],
     "9": [
       "előtérbe kerülhet a külföld szerepe",
       "fontos a törvény",
       "magasabb iskkolák",
       "magabiztosság önbizalom",
-      "az egója a tanításban érvényesül"
+      "az egója a tanításban érvényesül",
+      "fontos a házasság"
     ],
     "10": [
       "törekszik a céljai megvalósítására",
       "fontos számára a karrier",
       "amit akar, minden áron eléri",
       "a karrier fogja meghatározni egóját (de szaturnusz miatt le is kell mondania róla he egóból akarja)"
+    ],
+    "11": [
+    ],
+    "12": [
+      "mások által érvényesülhet",
+      "titkos kapcsolatok",
+      "zárt területen dolgozik",
+      "magányossá válhat",
+      "állandóan bizonytani akarja saját egóját"
     ]
   },
   "2": {
     "1": [
       "törekszik az anyagi teremtésre",
       "törekszik a dolgok élvezetére",
-      "fontosak a külsőségek, de tesz is érte"
+      "fontosak a külsőségek, de tesz is érte",
+      "anyagiak motiválják",
+      "fontos a biztonság megteremtése"
     ],
     "2": [
-      "család adja az anyagiakat",
-      "ingatlanból származó jövedelem",
-      "erős az érzelmi kötődés"
+      "család adja az anyagiakat?",
+      "ingatlanból származó jövedelem?",
+      "erős az érzelmi kötődés?",
+      "mindent az anyagiakon keresztül ítél meg",
+      "ragaszkodik a dolgokhoz, nem képes lemondani",
+      "mindig az élvezetek motiválják, a gazdagság"
     ],
-    "7":[
+    "3": [
+    ],
+    "4": [
+      "erős érzelmi kötődés az apához",
+      "a család biztosítja az anyagiakat"
+    ],
+    "5": [
+    ],
+    "6": [
+    ],
+    "7": [
       "a párja irányítja a pénzügyeket",
       "anyagi elismerésre törekszik",
       "párja segíti vágyait"
@@ -63,9 +103,30 @@
       "anyagias gondolkodás megközeítés",
       "gazdasági vállalkozások",
       "hitrendszerek alapja a pénz"
+    ],
+    "10": [
+    ],
+    "11": [
+    ],
+    "12": [
     ]
   },
   "3": {
+    "1": [
+    ],
+    "2": [
+      "ragaszkodik a környezetéhez",
+      "jó testvéri viszony",
+      "kapcsolatait birtokolja",
+      "nehezen mozdul",
+      "komminukációval szerzi az anyagiakat"
+    ],
+    "3": [
+      "sok kapcsolat",
+      "állandó változtatások",
+      "sok költözés",
+      "tanulási vágy"
+    ],
     "4": [
       "együttélés testvérrel",
       "gondoskodik a környezetéről",
@@ -73,6 +134,8 @@
       "otthon tanítás",
       "együtt él a családdal(nagy család)",
       "lakberendező"
+    ],
+    "5": [
     ],
     "6": [
       "kereskedelemben dolgozhat",
@@ -95,15 +158,34 @@
       "pénzügyi tanácadás",
       "lemondás a kapcsolatokról, környezetről, tanulásról"
     ],
+    "9": [
+      "külföldre utazás",
+      "gyakori utazások",
+      "több diploma",
+      "törvényes kapcsolatok",
+      "tanítás",
+      "testvérekkel megy külföldre"
+    ],
+    "10": [
+      "kommunikációs pálya",
+      "állandó utazások",
+      "céltudatos gondolkodás",
+      "sporttehetség"
+    ],
     "11": [
       "sok barát és ismerős",
       "közösségi szerepek",
       "sikeres kapcsolatok",
       "függetlenség",
       "környezetében, lakóhelyén közéleti szerepet vállal"
+    ],
+    "12": [
+      "gondolkodásom miatt zárnak be"
     ]
   },
   "4": {
+    "1": [
+    ],
     "2": [
       "ragaszkodik a családhoz",
       "saját lakás",
@@ -112,6 +194,12 @@
       "anyagi gondoskodás",
       "birtokolni akar",
       "saját lakást mindenképp akar"
+    ],
+    "3": [
+    ],
+    "4": [
+    ],
+    "5": [
     ],
     "6": [
       "otthon dolgozik",
@@ -133,23 +221,52 @@
       "ingatlan kölcsönből",
       "ingatlan örökség"
     ],
+    "9": [
+    ],
+    "10": [
+      "cél a család",
+      "hivatása kapcsolódik a gondoskodással, házzal, otthonnal",
+      "törekszik önnálló otthonra"
+    ],
     "11": [
       "család teljesíti be a vágyait"
     ],
     "12": [
       "szeretőtől lesz gyermek",
+      "lehet családja, ha a másik akarja",
       "lemond a családról: amíg ő szeretné a gyereket addig nem lesz",
       "elkerül az otthonából",
-      "élete végén kórházban él"
+      "élete végén kórházban él",
+      "akkor lesz stabil otthona, ha a másik vágyik rá",
+      "nem tud biztonságos otthont megvalósítani"
     ]
   },
   "5": {
+    "1": [
+    ],
+    "2": [
+    ],
+    "3": [
+      "szállítási kereskedelmi vállalkozás",
+      "keresi a nyilvános szereplést",
+      "fontos a tudás, a tanulás"
+    ],
+    "4": [
+      "családi vállalkozás",
+      "együtt él a gyerekével",
+      "gondoskodó",
+      "művészi tehetség"
+    ],
+    "5": [
+    ],
     "6": [
       "munkában sikeres",
       "alárendelt a családi vállakozásban",
       "gyerekeit szolgálja"
     ],
-    "8" : [
+    "7": [
+    ],
+    "8": [
       "a szerelem alapja a szexulaitás",
       "szerelmi csalódás",
       "elveszti a gyermekét (lemondás)",
@@ -186,12 +303,33 @@
     ]
   },
   "6": {
+    "1": [
+    ],
+    "2": [
+      "ragaszkodik a munkájához",
+      "az anyagiakat munkával teremti meg",
+      "földel állatokkal foglalkozhat"
+    ],
+    "3": [
+      "munkavégzés közben rengeteget utazik",
+      "munkakapcsolatok",
+      "otthonához közel dolgozik",
+      "a környezetét segíti"
+    ],
     "4": [
       "a családot szolgálja",
       "otthon dolgozik",
       "párja céljait segíti",
       "nevelő apa",
       "ingatlannal kapcsolatos munka"
+    ],
+    "5": [
+    ],
+    "6": [
+    ],
+    "7": [
+    ],
+    "8": [
     ],
     "9": [
       "törvénnyel kapcsolatos munka",
@@ -211,13 +349,41 @@
       "barátaival dolgozik",
       "alárendeltként teljesülnek céljai, vágyai",
       "a közösséget szolgálja"
+    ],
+    "12": [
     ]
   },
   "7": {
-    "2" : [
+    "1": [
+      "irányít a kapcsolatokban",
+      "nyilbános szereplésre vágyik",
+      "házasságot akar"
+    ],
+    "2": [
       "ragaszkodik a párjához",
       "nyilvános szereplés hozza az anyagiakat",
       "házasságban a biztonsága és erre is törekszik - ő teremti"
+    ],
+    "3": [
+    ],
+    "4": [
+      "kötődik a párjához",
+      "gyerek miatt lesz párkapcsolat",
+      "ingatlan miatt társulás",
+      "párkapcsolat miatt ingatlan"
+    ],
+    "5": [
+      "vágyik a párkapcsolatra",
+      "párjával vállalkozik",
+      "szerelemből lehet társ",
+      "vágyik a szerelemre",
+      "olyan kapcsolatra vágyik amit elfogad a világ"
+    ],
+    "6": [
+    ],
+    "7": [
+    ],
+    "8": [
     ],
     "9": [
       "törvényes párkapcsolat",
@@ -225,19 +391,35 @@
       "polgári perek",
       "üzleti sikerek",
       "elismertség",
-      "külföldi párkapcsolat"
+      "külföldi párkapcsolat",
+      "második házasság",
+      "jogi vagy politikai hivatás"
     ],
-    "10" : [
+    "10": [
       "célja a párkapcsolat",
       "nyilvánosság előtti hivatás",
       "üzleti sikerek, elismertség"
+    ],
+    "11": [
+    ],
+    "12": [
     ]
   },
   "8": {
+    "1": [
+    ],
     "2": [
       "pénzügyi befektetések",
       "erős vágyélet",
       "a párjának biztonságot teremt"
+    ],
+    "3": [
+    ],
+    "4": [
+      "érzelmi alapú szexualitás",
+      "a családtól kapja az anyagiakat",
+      "otthonában éri a halál",
+      "lakáshitel"
     ],
     "5": [
       "vágyik a szexualitásra",
@@ -245,26 +427,50 @@
       "sebészi tehetség",
       "spirituális tevékenység"
     ],
+    "6": [
+    ],
+    "7": [
+    ],
     "8": [
       "anyagiasság",
       "eltartási szerződés",
       "választott műtétek",
       "szenvedélyes szexualitás"
     ],
+    "9": [
+    ],
+    "10": [
+      "bankár hivatás",
+      "anyagi célok",
+      "céljait a párja finanszírozza",
+      "pszichológus pálya"
+    ],
     "11": [
       "teljesülnek szexuális vágyai",
-      "barátból szerető",
+      "barátból lesz szerető",
       "másoktól kap pénzt",
       "tervezett műtétek",
-      "kapok pénzt barátokra költeni"
+      "kapok pénzt barátokra költeni",
+      "szexuális kielégületlenség",
+      "barátok támogatják anyagilag"
+    ],
+    "12": [
+      "szeretői kapcsolatok",
+      "műtét miatt kórházba kerül",
+      "pénzügyi veszteségek",
+      "spiritualitás"
     ]
   },
   "9": {
+    "1": [
+    ],
     "2": [
       "az anyagiakat külföldön teremti meg",
       "gazdag akar lenni",
       "gazdasági pályát választ",
       "ragaszkodik a törvényhez"
+    ],
+    "3": [
     ],
     "4": [
       "csak törvényes család létezik számára",
@@ -278,13 +484,16 @@
       "sikeres vállalkozás",
       "vágyik a házasságra"
     ],
+    "6": [
+    ],
     "7": [
       "a törvényt képviseli a külvilágban",
       "külföldi házastárs",
       "nyilvános sikerek"
     ],
     "8": [
-      ""
+    ],
+    "9": [
     ],
     "10": [
       "jogászi/politikai életfutás",
@@ -298,14 +507,26 @@
       "külföldön él",
       "vallási közösség tagja",
       "házasság által teljesülnek vágyai"
+    ],
+    "12": [
+      "törvénnyel való összeütközés",
+      "nem veszik fel egyetemre",
+      "nem kap vízumot",
+      "házasság felbontása"
     ]
   },
   "10": {
+    "1": [
+    ],
     "2": [
       "céljaihoz ragaszkodik",
       "mindent biztonság oldalról közelít",
       "céljait anyagiakban rendeli alá",
       "élvezi a hivatását"
+    ],
+    "3": [
+      "kapcsolatait céljainak megfelelően alakítja",
+      "tanulással vagy utazással kapcsolatos célok"
     ],
     "4": [
       "családon keresztül teljesedik ki",
@@ -318,11 +539,23 @@
       "céljai családi vállalkozásban teljesülhetnek",
       "gyerek hozza a sikert"
     ],
+    "6": [
+    ],
+    "7": [
+    ],
+    "8": [
+    ],
+    "9": [
+    ],
     "10": [
       "cléja a karrier",
       "törekszik az elismerésre",
       "céljait édesanyja segíti",
       "fontos a karrier"
+    ],
+    "11": [
+    ],
+    "12": [
     ]
   },
   "11": {
@@ -332,11 +565,27 @@
       "nem lehet korlátozni",
       "önfejűen él"
     ],
+    "2": [
+    ],
+    "3": [
+    ],
+    "4": [
+    ],
+    "5": [
+    ],
     "6": [
       "munkájában érzi jól magát",
       "barátaival dolgozik",
       "alárendeltként teljesülnek vágyai",
       "függetlenül dolgozik"
+    ],
+    "7": [
+    ],
+    "8": [
+      "elveszíti barátait",
+      "erős szexuális vágyak",
+      "anyagi segítséget kap",
+      "párja vállalkozásban keresi pénzét"
     ],
     "9": [
       "állandóan külföldön tartózkodik",
@@ -344,11 +593,13 @@
       "egyetemi barátok",
       "politikai sikerek külföldön"
     ],
-    "8": [
-      "elveszíti barátait",
-      "erős szexuális vágyak",
-      "anyagi segítséget kap",
-      "párja vállalkozásban keresi pénzét"
+    "10": [
+    ],
+    "11": [
+      "fontosak a barátok",
+      "közösségi ember",
+      "sok támogató",
+      "első a szabadság"
     ],
     "12": [
       "barátai által lehet sikeres",
@@ -359,6 +610,17 @@
     ]
   },
   "12": {
+    "1": [
+    ],
+    "2": [
+    ],
+    "3": [
+    ],
+    "4": [
+      "fontos a család",
+      "otthon dolgozik",
+      "szeretőtől vállalhat gyereket"
+    ],
     "5": [
       "együtt dolgozik a párjával",
       "mindene a vállakozása",
@@ -366,12 +628,22 @@
       "közös vállalkozás bárkivel",
       "szeretőtől gyerek"
     ],
+    "6": [
+    ],
     "7": [
       "párjától függ",
       "jogi páyla",
       "társulásban alárendelt",
       "művészként sikeres",
       "szeretőből lesz párja"
+    ],
+    "8": [
+      "titkos kapcsolatok",
+      "válás",
+      "szexuális zavarok",
+      "műtét",
+      "folyamatos veszteségek",
+      "kórházban halhat meg"
     ],
     "9": [
       "fontos a házasság (egység megélése)",
@@ -383,10 +655,18 @@
       "zárt helyen dolgozik",
       "szeretőt tart",
       "nem akar egyedül élni",
+      "kórházi vezető",
+      "mások valósítják meg céljait",
+      "az anya dominanciája",
       "magány - őt teszik magányossá",
       "zárt intézetben csapatot vezet",
       "önmaga által soha nem érhet el karriert, másoknak kell őt segíteni a karrierben",
       "célja a szeretői kapcsolat"
+    ],
+    "11": [
+      "számít a barátaira",
+      "az édesanyja pénzzel segíti",
+      "mások által lehet sikeres"
     ],
     "12": [
       "gyakoriak a betegségek",
