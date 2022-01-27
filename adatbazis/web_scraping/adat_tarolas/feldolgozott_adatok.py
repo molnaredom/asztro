@@ -18,7 +18,7 @@ horoszkop_tarolo = [{
     "honap": 6,
     "nap": 6,
     "ora": 22,
-    "perc": 58,
+    "perc": 54,
     "hely": "Budapest",
     "kep": "",
     "munka": [],

@@ -34,6 +34,7 @@ def _elemzes(adatok, osszesjegy):
     # [print(i["bolygo"], [j["bolygo"] for j in i["fenyszogek"]["trigon"]], "\n") for i in bolygok]
 
     hazura_melyik_hazaban(hazak, bolygok)
+    [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
 
     eredmeny["Alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
     eredmeny["Pontos kor"] = pontos_kor_szamitas(pontos_kor)
@@ -103,13 +104,13 @@ def bolygohoz_haz_rendeles(hazak, bolygok):
 
     for bolygo in bolygok:
         for hazszam, haz in enumerate(hazak):
-            # todo keletkezett e lefedetlen resz?
             # todo ellenorizni mi van akkor ha a 12. hazbol atmegy az 1 es hazba
             if haz["haz"].tipus == "sarok" and bolygo["osszfokszam"] + 5 < hazak[hazszam + 1]["osszfokszam"]:
                 bolygo["hazszam"] = haz
                 break
             elif haz["haz"].tipus != "sarok" and bolygo["osszfokszam"] + 3 < hazak[hazszam + 1]["osszfokszam"]:
                 bolygo["hazszam"] = haz
+                print(bolygo["bolygo"],bolygo["hazszam"])
                 break
         else:
             print("valami nincs lekezelve")
@@ -344,6 +345,10 @@ def hazura_melyik_hazaban(hazak, bolygok):
             return True
         elif egyuttallo_bolygo_szam > 1 and "transzcendens" in [bolygo["bolygo"].tipus for bolygo in konjukciok]:
             return False
+        elif egyuttallo_bolygo_szam > 1:
+            return True
+        else:
+            print("baj van jegyvaltas -nal")
 
     for haz in hazak: # 12
         hazura_nev = haz["jegy"].uralkodo_bolygo
@@ -351,10 +356,10 @@ def hazura_melyik_hazaban(hazak, bolygok):
         for belso_haz in hazak: # 12
             for belso_bolygo in belso_haz["bolygok"]: # 0-10
                 if hazura_nev == belso_bolygo["bolygo"].nevID:
-                    # print(haz["haz"], haz["jegy"].paritas)
-                    # print(belso_haz["haz"],belso_bolygo["jegy"].paritas)
-                    # print("hazura:", hazura_nev)
-                    # print(hazura_bolygo)
+                    print(haz["haz"], haz["jegy"].nevID, haz["jegy"].paritas)
+                    print(belso_haz["haz"],belso_bolygo["jegy"].nevID,belso_bolygo["bolygo"].nevID, belso_bolygo["jegy"].paritas)
+                    print("hazura:", hazura_nev)
+                    print()
                     if belso_bolygo["bolygo"].nevID == "hold" or belso_bolygo["bolygo"].nevID == "nap":# nap/hold
                         haz["hazura"] = belso_haz["haz"]
 
