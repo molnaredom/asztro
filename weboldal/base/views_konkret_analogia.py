@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2, BolygoHazban2, BolygoJegyben2, HazJegyben2, \
-    Horoszkop2
+    Horoszkop2, HazUraHazban
 import random
 
 
@@ -31,7 +31,6 @@ def haz(request, nevID):
 def bolygoJegyben(request, id):
     analogia = BolygoJegyben2.objects.get(id=id)
     randomszamok = random.randint(1, 50)
-    analogia
 
     context = {"analogia": analogia, "randomszamok": randomszamok}  # ez egy objektum
 
@@ -52,6 +51,15 @@ def hazJegyben(request, id):
     context = {"analogia": analogia}  # ez egy objektum
 
     return render(request, "konkret_analogiak/hazJegyben.html", context)
+
+
+def hazUraHazban(request, id):
+    analogia = HazUraHazban.objects.get(id=id)
+
+    context = {"analogia": analogia}  # ez egy objektum
+
+    return render(request, "konkret_analogiak/hazUraHazban.html", context)
+
 
 
 def elemzes(adatok):

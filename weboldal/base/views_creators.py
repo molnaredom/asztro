@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from .forms import JegyekForm, BolygokForm, HazakForm , BolygoJegybenForm, HazJegybenForm, BolygoHazbanForm, RoomForm, HoroszkopForm
+from .forms import JegyekForm, BolygokForm, HazakForm , BolygoJegybenForm, HazJegybenForm, BolygoHazbanForm, RoomForm, HoroszkopForm, HazUraHazbanForm
 from django.shortcuts import render, redirect
 
 @login_required(login_url="login")
@@ -69,6 +69,10 @@ def createBolygoHazban(request):
 
 def createHazJegyben(request):
     return _analogiafeltoltes(request, HazJegybenForm, "hazJegyben")
+
+
+def createHazUraHazban(request):
+    return _analogiafeltoltes(request, HazUraHazbanForm, "hazakUraHazakban")
 
 
 def createHoroszkop(request):

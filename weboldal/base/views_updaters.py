@@ -4,11 +4,11 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2 ,BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2
+from .models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2 ,BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2, HazUraHazban
 from django.contrib.auth.models import User
 from .forms import RoomForm, AnalogiaForm
 from django.contrib.auth import authenticate, login, logout
-from .forms import JegyekForm, BolygokForm, HazakForm , BolygoJegybenForm, HazJegybenForm, BolygoHazbanForm, RoomForm, HoroszkopForm
+from .forms import JegyekForm, BolygokForm, HazakForm , BolygoJegybenForm, HazJegybenForm, BolygoHazbanForm, RoomForm, HoroszkopForm, HazUraHazbanForm
 
 
 
@@ -81,6 +81,9 @@ def updateBolygoHazban(request, id):
 
 def updateHazJegyben(request, id):
     return updateAltalanos_id(request, id, HazJegyben2, HazJegybenForm, "hazakJegyekben", "hazJegyben_form.html")
+
+def updateHazUraHazban(request, id):
+    return updateAltalanos_id(request, id, HazUraHazban, HazUraHazbanForm, "hazakUraHazakban", "hazUraHazban_form.html")
 
 
 def updateHoroszkop(request, id):

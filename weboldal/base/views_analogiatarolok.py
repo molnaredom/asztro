@@ -2,7 +2,7 @@ import random
 
 from django.shortcuts import render
 from django.db.models import Count, Max
-from .models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2
+from .models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2, HazUraHazban
 from .forms import Horoszkop_Csillagjegyszures
 
 
@@ -61,6 +61,12 @@ def hazakJegyekben(request):
     hazjegyben = HazJegyben2.objects.all()
     context = {'adatok': hazjegyben}
     return render(request, 'analogiatarolok/hazakJegyekben.html', context)
+
+
+def hazakUraHazakban(request):
+    hazUraHazban = HazUraHazban.objects.all()
+    context = {'adatok': hazUraHazban}
+    return render(request, 'analogiatarolok/hazakUraHazakban.html', context)
 
 
 def horoszkop_gyujtemeny(request):

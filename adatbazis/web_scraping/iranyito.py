@@ -1,7 +1,10 @@
 from selenium import webdriver
 import warnings
 import json
-from adatbazis.web_scraping.bolygojegyben_hazjegyben_feltoltes import *
+from adatbazis.web_scraping.feltoltes_kezelok.alapanalogia_feltoltes_modul import alapanalogia_feltoltes
+from adatbazis.web_scraping.feltoltes_kezelok.bolygo_jegyben_feltoltes_modul import bolygojegyben_feltoltes
+from adatbazis.web_scraping.feltoltes_kezelok.haz_jegyben_feltoltes_modul import hazjegyben_kitoltes
+from adatbazis.web_scraping.feltoltes_kezelok.hazurahazban_feltoltes_modul import hazurahazban_feltoltes
 from adatbazis.web_scraping.horoszkop_kezelok.main_horoszkop_keszito import horoszkopok_feltoltese
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -35,13 +38,20 @@ def hazjegyben_beolvas():
         return json.loads(f.read())
 
 
+def hazurahazban_beolvasas():
+    with open("../analogiak/hazUra.json", encoding="utf-8") as f:
+        return json.loads(f.read())
+
+
 def main():
     web = inditas()
     domain = "https://asztro.herokuapp.com"
     domain = "http://127.0.0.1:8000"
     print("inditas")
 
-    uj_horoszkop_keszites_ = True
+    hazurahazban_feltoltes = True
+
+    uj_horoszkop_keszites_ = False
     bolygojegyben_feltoltes_ = False
     hazjegyben_feltoltes_ = False
     alapanalogia_feltoltes_ = False
@@ -51,12 +61,12 @@ def main():
     # hazjegyben_feltoltes_ = True
     # alapanalogia_feltoltes_ = True
 
-    process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_, web, domain)
+    process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_,hazurahazban_feltoltes, web, domain)
 
     print("KÉÉSZ")
 
 
-def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_,alapanalogia_feltoltes_, web, domain):
+def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_,alapanalogia_feltoltes_,hazurahazban_, web, domain):
     if alapanalogia_feltoltes_:
         alapanalogia_feltoltes(web, alapanalogia_beolvas(), domain=domain)
     if bolygojegyben_feltoltes_:
@@ -65,6 +75,9 @@ def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszit
         hazjegyben_kitoltes(web, hazjegyben_beolvas(),kezdojegyszam=1, kezdohazszam=1, domain=domain)
     if uj_horoszkop_keszites_:
         horoszkopok_feltoltese(web, kezdobolygojegyben = 1, kezdohazjegyben = 1, domain=domain)
+    if hazurahazban_:
+        hazurahazban_feltoltes(web,hazurahazban_beolvasas(), kezdo_alaphazszam=1, kezdojegyszam=1, domain=domain)
+
 
 
 

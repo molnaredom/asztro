@@ -115,6 +115,24 @@ class BolygoHazban2(OsszetettAnalogia2):
         return str(self.bolygo) + " ◈ " + str(self.haz)
 
 
+class HazUraHazban(models.Model):
+    alap_haz = models.ForeignKey(Haz2, related_name='alap_haz', on_delete=models.CASCADE)
+    ura_melyik_hazban = models.ForeignKey(Haz2, related_name='ura', on_delete=models.CASCADE)
+    tulajdonsagok = models.JSONField(null=True, blank=True, default=dict)
+
+    def __str__(self):
+        return str(self.alap_haz) + ". ház ura " + str(self.ura_melyik_hazban) + ". ház"
+
+#
+# class NincsUra(OsszetettAnalogia2):
+#     alap_jegy = models.ForeignKey(HazJegyben2, related_name='alap_haz', on_delete=models.CASCADE)
+#     ura_melyik_hazban = models.ForeignKey(HazJegyben2, related_name='ura', on_delete=models.CASCADE)
+#     talajdonasagok = models.JSONField(null=True, blank=True, default=dict)
+#
+#     def __str__(self):
+#         return str(self.alap_haz) + ". ház ura " + str(self.ura_melyik_hazban) + ". ház"
+
+
 class Horoszkop2(models.Model):
     tulajdonos_neve = models.CharField(max_length=30)
     idopont = models.DateTimeField(default=datetime.datetime.now())

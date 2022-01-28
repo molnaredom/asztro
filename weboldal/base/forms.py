@@ -1,11 +1,13 @@
 from django.forms import ModelForm
-from .models import Room2, Jegy2, Haz2, Bolygo2, BolygoJegyben2, HazJegyben2, BolygoHazban2, Horoszkop2
+from .models import Room2, Jegy2, Haz2, Bolygo2, BolygoJegyben2, HazJegyben2, BolygoHazban2, Horoszkop2, HazUraHazban
+
 
 class RoomForm(ModelForm):
     class Meta:
         model = Room2
         fields = "__all__"
         exclude = ["host", "participants"]
+
 
 class AnalogiaForm(ModelForm):
     class Meta:
@@ -52,6 +54,12 @@ class HazJegybenForm(ModelForm):
 class HoroszkopForm(ModelForm):
     class Meta:
         model = Horoszkop2
+        fields = "__all__"
+
+
+class HazUraHazbanForm(ModelForm):
+    class Meta:
+        model = HazUraHazban
         fields = "__all__"
 
 

@@ -47,18 +47,22 @@ urlpatterns = [
     path("bolygokJegyekben/", views_analogiatarolok.bolygokJegyekben, name= "bolygokJegyekben"),
     path("bolygokHazakban/", views_analogiatarolok.bolygokHazakban, name= "bolygokHazakban"),
     path("hazakJegyekben/", views_analogiatarolok.hazakJegyekben, name= "hazakJegyekben"),
+    path("hazakUraHazakban/", views_analogiatarolok.hazakUraHazakban, name= "hazakUraHazakban"),
 
     path("create-bolygoJegyben/", views_creators.createBolygoJegyben, name= "create-bolygoJegyben"),
     path("create-bolygoHazban/", views_creators.createBolygoHazban, name= "create-bolygoHazban"),
     path("create-hazJegyben/", views_creators.createHazJegyben, name= "create-hazJegyben"),
+    path("create-hazUraHazban/", views_creators.createHazUraHazban, name= "create-hazUraHazban"),
 
     path("bolygoJegyben/<str:id>/", views_konkret_analogia.bolygoJegyben, name="bolygoJegyben"),  # ~room
     path("bolygoHazban/<str:id>/", views_konkret_analogia.bolygoHazban, name="bolygoHazban"),  # ~room
     path("hazJegyben/<str:id>/", views_konkret_analogia.hazJegyben, name="hazJegyben"),  # ~room
+    path("hazUraHazban/<str:id>/", views_konkret_analogia.hazUraHazban, name="hazUraHazban"),  # ~room
 
     path("delete-bolygoJegyben/<str:id>/", views_deleters.deleteBolygoJegyben, name= "delete-bolygoJegyben"),
     path("delete-hazJegyben/<str:id>/", views_deleters.deleteHazJegyben, name= "delete-hazJegyben"),
     path("delete-bolygoHazban/<str:id>/", views_deleters.deleteBolygoHazban, name= "delete-bolygoHazban"),
+    path("delete-hazUraHazban/<str:id>/", views_deleters.deleteHazUraHazban, name= "delete-hazUraHazban"),
 
     path("horoszkop_gyujtemeny/", views_analogiatarolok.horoszkop_gyujtemeny, name="horoszkop_gyujtemeny"),
     path("create-horoszkop/", views_creators.createHoroszkop, name= "create-horoszkop"),
@@ -74,6 +78,7 @@ urlpatterns = [
     path("update-bolygoJegyben/<str:id>/", views_updaters.updateBolygoJegyben, name= "update-bolygoJegyben"),
     path("update-hazJegyben/<str:id>/", views_updaters.updateHazJegyben, name= "update-hazJegyben"),
     path("update-bolygoHazban/<str:id>/", views_updaters.updateBolygoHazban, name= "update-bolygoHazban"),
+    path("update-hazUraHazban/<str:id>/", views_updaters.updateHazUraHazban, name= "update-hazUraHazban"),
 
     path("titkos-szoba/", views.titkosSzoba, name="titkos-szoba"),
 
