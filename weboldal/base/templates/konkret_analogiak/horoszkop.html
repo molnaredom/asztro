@@ -172,17 +172,47 @@
             <p>Életesemények leírása:</p>
 
             <p>{{analogia.leiras}}</p>
+            <hr>
 
 
-            {% for szempont,k in elemzes.items %}
-                {{ szempont }}
+            <h3>Felosztások</h3>
+            {% for szempont, eredmenyek in elemzes.alapszamolasok.items %}
 
-
-                <h3>{{ szempont }}</h3>
-                {{ k }}
-
+                <h4>{{ szempont }}</h4>
+                {% for analogia, ertek in eredmenyek.items %}
+                {{analogia}} : {{ertek}} pont <br>
 
             {% endfor %}
+
+            {% endfor %}
+            <hr>
+
+            <h3>Pontos életkor</h3>
+            {{ elemzes.pontoskor }}
+            <hr>
+
+            <h3>Életciklus</h3>
+            {{ elemzes.eletciklus }}
+            <hr>
+
+            <h3>Sorstípus</h3>
+            {{ elemzes.sorstipus }}
+            <hr>
+
+            <h3>Házak Urai</h3>
+
+            {% for hazurahazban in elemzes.hazakurai %}
+
+                {% for hazuranev, analogiak in hazurahazban.items %}
+                <h4>{{ hazuranev }}</h4>
+
+                 <p>{{ analogiak.analogiak }}</p>
+
+
+                {% endfor %}
+
+            {% endfor %}
+
             <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
 
         </div>

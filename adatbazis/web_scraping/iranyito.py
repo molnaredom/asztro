@@ -49,9 +49,9 @@ def main():
     domain = "http://127.0.0.1:8000"
     print("inditas")
 
-    hazurahazban_feltoltes = True
-
-    uj_horoszkop_keszites_ = False
+    hazurahazban_feltoltes = False
+    #
+    uj_horoszkop_keszites_ = True
     bolygojegyben_feltoltes_ = False
     hazjegyben_feltoltes_ = False
     alapanalogia_feltoltes_ = False
@@ -59,7 +59,7 @@ def main():
     # uj_horoszkop_keszites_ = True
     # bolygojegyben_feltoltes_ = True
     # hazjegyben_feltoltes_ = True
-    # alapanalogia_feltoltes_ = True
+    # alapanalogia_feltoltes_ = False
 
     process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_,hazurahazban_feltoltes, web, domain)
 

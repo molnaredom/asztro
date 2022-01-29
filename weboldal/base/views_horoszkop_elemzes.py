@@ -2,22 +2,23 @@ import datetime
 
 from django.shortcuts import render
 import pandas as pd
-from .models import Horoszkop2, Jegy2
+from .models import Horoszkop2, Jegy2, HazUraHazban
 
 
 def horoszkop(request, id):
     analogia = Horoszkop2.objects.get(id=id)
+    hazakUraHazakban = HazUraHazban.objects.all()
     osszesjegy = Jegy2.objects.all()
 
     analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"])  # eval strbol dictet csinal
 
-    elemzes_adat = _elemzes(analogia, osszesjegy)
+    elemzes_adat = _elemzes(analogia, osszesjegy, hazakUraHazakban)
     context = {"analogia": analogia, "elemzes": elemzes_adat}  # ez egy objektum
 
     return render(request, "konkret_analogiak/horoszkop.html", context)
 
 
-def _elemzes(adatok, osszesjegy):
+def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     eredmeny = {}
 
     pontos_kor = szuletesi_datumido(adatok)
@@ -34,13 +35,13 @@ def _elemzes(adatok, osszesjegy):
     # [print(i["bolygo"], [j["bolygo"] for j in i["fenyszogek"]["trigon"]], "\n") for i in bolygok]
 
     hazura_melyik_hazaban(hazak, bolygok)
-    [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
+    # [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
 
-    eredmeny["Alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
-    eredmeny["Pontos kor"] = pontos_kor_szamitas(pontos_kor)
-    eredmeny["Életciklus"] = eletciklus(pontos_kor)
-    eredmeny["Sorstípus"] = _sorstipus(bolygok, hazak)
-    eredmeny["Házak urai"] = hazura_kiiratas(hazak)
+    eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
+    eredmeny["pontoskor"] = pontos_kor_szamitas(pontos_kor)
+    eredmeny["eletciklus"] = eletciklus(pontos_kor)
+    eredmeny["sorstipus"] = _sorstipus(bolygok, hazak)
+    eredmeny["hazakurai"] = hazura_kiiratas(hazak,hazakUraHazakban)
 
     return eredmeny
 
@@ -286,7 +287,7 @@ def _sorstipus(bolygok, hazak):
                          if i["jegy"].nevID == "halak" and i["bolygo"].nevID not in felhasznaltbolygok])
     vizontopontszam = sum([i["bolygo"].pontertek for i in bolygok
                            if i["jegy"].nevID == "vízöntő" and i["bolygo"].nevID not in felhasznaltbolygok])
-    print("halakpontszam, vizontopontszam", halakpontszam, vizontopontszam)
+    # print("halakpontszam, vizontopontszam", halakpontszam, vizontopontszam)
 
     if vizontopontszam > halakpontszam:
         return "negyedik körös kiszolgáltatott"
@@ -374,7 +375,8 @@ def hazura_melyik_hazaban(hazak, bolygok):
         if "hazura" not in haz: # ugy fut le hogy nem talalt hazurat
             haz["hazura"] = "nincs hazur"
 
-def hazura_kiiratas(hazak):
+
+def hazura_kiiratas(hazak, hazakUraHazakban):
 
     def hazur_kiiratas(haz, ura):
         if ura in ["1", "2", "4", "7", "9", '10', '11', "12"]:
@@ -392,8 +394,14 @@ def hazura_kiiratas(hazak):
             print(ura)
 
     haz_urak_kiiratva = []
+
     for i in hazak:
-        haz_urak_kiiratva.append( hazur_kiiratas(haz=str(i["haz"]), ura=str(i["hazura"])))
+        for hazurahazban in hazakUraHazakban:
+            # print(hazurahazban.alap_haz, str(i["haz"]) ,"--", hazurahazban.ura_melyik_hazban ,str(i["hazura"]))
+            if str(hazurahazban.alap_haz) == str(i["haz"]) and str(hazurahazban.ura_melyik_hazban) == str(i["hazura"]):
+                # print("házura")
+                haz_urak_kiiratva.append({hazur_kiiratas(haz=str(i["haz"]), ura=str(i["hazura"])) : hazurahazban.tulajdonsagok })
+
 
     return haz_urak_kiiratva
     # [print(hazur_kiiratas(haz=str(i["haz"]), ura=str(i["hazura"]))) for i in hazak]
@@ -407,7 +415,7 @@ def fenyszog_hozzarendeles(bolygok):
         bolygo["fenyszogek"]["kvadrat"] = []
         bolygo["fenyszogek"]["trigon"] = []
 
-    orbisz = 10
+    orbisz = 5
 
     for kulso_bolygo in bolygok:
         for belso_bolygo in bolygok:
