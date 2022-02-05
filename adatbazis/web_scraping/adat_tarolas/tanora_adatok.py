@@ -76,6 +76,80 @@ horoszkop_tarolo = [
         "Lilla név nap szerű név",
         ""
     ]
-},
+}, {
+    "nev": "TESZT 2_10",
+    "horoszkoptipus": "radix",
+    "ev": 1964,
+    "honap": 12,
+    "nap": 21,
+    "ora": 4,
+    "perc": 30,
+    "hely": "Bekes-Csaba",
+    "kep": "",
+    "munka":["zenész"],
+    "elet_leiras": [
+        "egyedül neveli kislányát",
+        "elvált",
+        "báttya korán meghalt veserákban",
+        "erős aszmája van",
+        "fuvolázik"
+                    ],
+    "elemzes leiras": [
+    ]
+}, {
+    "nev": "TESZT 2_11",
+    "horoszkoptipus": "radix",
+    "ev": 1975,
+    "honap": 3,
+    "nap": 10,
+    "ora": 16,
+    "perc": 45,
+    "hely": "Győr",
+    "kep": "",
+    "munka":["zenész"],
+    "elet_leiras": [
+        "egyedül neveli kislányát",
+        "elvált",
+        "báttya korán meghalt veserákban",
+        "erős aszmája van",
+        "fuvolázik"
+                    ],
+    "elemzes leiras": [
+    ]
+}, {
+    "nev": "TESZT 2_12",
+    "horoszkoptipus": "radix",
+    "ev": 1975,
+    "honap": 3,
+    "nap": 10,
+    "ora": 16,
+    "perc": 45,
+    "hely": "Győr",
+    "kep": "",
+    "munka":["fodrász"],
+    "elet_leiras": [
+        "egyedül neveli egyerekét",
+        "szeretői kapcsolatba került egy "
+                    ],
+    "elemzes leiras": [
+    ]
+},{
+    "nev": "TESZT 2_12_Bea",
+    "horoszkoptipus": "radix",
+    "neme": "nő",
+    "ev": 1974,
+    "honap": 1,
+    "nap": 9,
+    "ora": 21,
+    "perc": 15,
+    "hely": "Győr",
+    "kep": "",
+    "munka":["titkárnő"],
+    "elet_leiras": [
+
+                    ],
+    "elemzes leiras": [
+    ]
+}
 
 ]

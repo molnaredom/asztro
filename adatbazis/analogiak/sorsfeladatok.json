@@ -1,0 +1,392 @@
+{
+  "kos": {
+    "kos": [
+      "úgy szervezek küzdök irányítok, vállalkozok, hogy azt miértünk teszem"
+    ],
+    "bika": [
+      "azért kapok, hogy másokért küzdjek"
+    ],
+    "ikrek": [
+      "azért tanulok, utazok, költözök, tanítok, hogy miértünk küzdhessek"
+    ],
+    "rák": [
+      "akkor lesz nélkülözhetetlen, ha másokért küzd"
+    ],
+    "oroszlán": [
+      "mások sorsában való döntéseken keresztül küzdeni másokért"
+    ],
+    "szűz": [
+      "mindig úgy segítek, küzdök másokért, ahogy kérik (és nem úgy ahogy szerintem jobb lenne)"
+    ],
+    "mérleg": [
+      "küzdelem a párkapcsolatért és azokért akik szeretik"
+    ],
+    "skorpió": [
+      "akkor is küzdeni másokért, ha nem viszonozzák, nem mutatnak hálát",
+      "nincsenek elvárásaim, bármibe is kerül , megteszem másokért"
+    ],
+    "nyilas": [
+      "azokért küzdök akik hisznek bennem",
+      "házasságért a másikért kell küzdenem"
+    ],
+    "bak": [
+      "úgy küzd másokért, hogy küzben a saját céljai is megvalósulnak",
+      "ami látszólag a saját célja, valójában mások célja is, így együtt küzdhettek egymásért"
+    ],
+    "vízöntő": [
+      "minden változásnak az az eredménye, hogy másokért küzdhessek",
+      "azért van szabadsága, hogy másokért küzhessen",
+      "nem szabadságért küzdesz, hanem azért vagy szabad, hogy küzdhess másokért"
+    ],
+    "halak": [
+      "akkor is küzdök másokért, ha ez áldozattal is jár",
+      "bármiről lemondok, hogy érted küzdhessek, vagy másokért küzdhessek"
+    ]
+  },
+  "bika": {
+    "kos": [
+      "azért küzdök, harcolok irányítok, hogy neked adhassak",
+      "addig szervezhetek irányíthatok, amíg tudok adni"
+    ],
+    "bika": [
+      "olyan anyagi biztonságom lesz, amit te teremtesz",
+      "pontosan azt kapom, amivel megvalósul az anyagi biztonságom"
+    ],
+    "ikrek": [
+      "akkor költözöm, ha érted költözöm",
+      "akkor kereskedem, ha azért kereskedem, hogy nekünk legyen",
+      "azért tanulok, hogy többet tudjunk",
+      "kommunikációval, mozgással, adjon valamit másoknak"
+    ],
+    "rák": [
+      "akkor lesz családod, ha a másik is szeretné, hogy legyen",
+      "Azért gondoskodsz a másikról, mert neki is fontos, hogy gondoskodj róla",
+      "azért fontos, hogy szeresselek, hogy legyen kinek adnom a szeretetem",
+      "megteremtem a helyzetet, hogy te fontosnak érezd magad",
+      "azért vagyok nélkülözhetetlen, hogy te adhassál",
+      "nem én igénylem a nélkülözhetetlenségemet, hanem te",
+      "azért kapok, hogy te adhassál"
+    ],
+    "oroszlán": [
+      "azért vállalkozok, hogy a családnak meglegyen mindene, tudjak nekik adni"
+    ],
+    "szűz": [
+      "azért dolgozom, hogy te pénzt adhassál ki",
+      "ha én dolgozom nálad, neked az jó ha adhatsz, ha te adsz tied a fensőbbség"
+    ],
+    "mérleg": [
+      "adok a páromnak, ha érzem, hogy szeretnek elfogadnak",
+      "a párodért adnod kell, ha olyan helyzet is adódik, ahol lemondás jön"
+    ],
+    "skorpió": [
+      "sose azt kapom, amit kapni szeretnék",
+      "én azt akarom, hogy azt add, amit én kapni szeretnék, de mégse azt kapom",
+      "sors szembe állít, hogy a másiktól megkapnád amit szeretnél, kédrés váltasz-e?",
+      "az ego-mindig csak a jót szeretné, nem akar lemondani"
+    ],
+    "nyilas": [
+      "annyira vagy gazdag amennyire el tudod hinni magadról",
+      "annyira lesz meg mindened, amennyire el tudod hinni, hogy meglesz mindnened",
+      "képes vagy-e azonosulni az életedben azzal a helyzettel, hogy gazdag vagyok, amiben élek, vagy sem",
+      "annyit kapsz, amennyit megérdemelsz, mindig annyid lesz, amennyire szükséged van"
+    ],
+    "bak": [
+      "akkor valósulnak meg céljaid, ha képes vagy adni, ehhez kapod a karriert",
+      "ha olyanok a céljaid, akkor ahhoz mindent meg fogsz kapni",
+      "az egyén életében meg fog jelenni, hogy mihez kapta a célokat"
+    ],
+    "vízöntő": [
+      "akkor változtatok, hogy másoknak adni tudja",
+      "akkor függetlenedek, ha te akarsz menni",
+      "akkor fogadhatsz örökbe gyereket, ha nem magadnak akarsz gyereket, hanem a gyereknak szeretnél csaádot"
+    ],
+    "halak": [
+      "akkor is áldozatot vállalok, ha ezért nekem mindenemet oda kell adnom",
+      "ami nem fontos azt mindent megkapsz, minden tiéd lehet, amihez nem kötődsz",
+      "amit a másik adni akar, azt meg tudod kapni"
+    ]
+  },
+  "ikrek": {
+    "kos": [
+      "csak olyanokért harcolj, akiket fel is tudsz vállalni"
+    ],
+    "bika": [
+      "tanítom, hogyank kell kapni",
+      "fel kellene vállalni, hogy nem te teremtesz, hanem másoktól kapsz",
+      "meg kell tanulnia, hogy nem rajta múlnak a dolgok",
+      "fel tudja-e vállalni a másoktól kapást"
+    ],
+    "ikrek": [
+      "nem hazudás művészetének elsajátítása"
+    ],
+    "rák": [
+      "felvállalod-e a párod családját",
+      "felvállalod-e a saját családod",
+      "fel tudod-e vállalni, hogy hol laksz? milyen környezetben"
+    ],
+    "oroszlán": [
+      "fel tudja-e vállalni mit alkotott, mit teremtett, kicsoda ő",
+      "fel tudja-e vállalni a gyerekét, vállalkozását, cégét",
+      "fel tudja-e vállalni a szerelmét, a vágyait"
+    ],
+    "szűz": [
+      "fel tudod-e vállalni, hogy milyen munkát végzel",
+      "fel tudod-e vállalni az alárendeltséget",
+      "fel tudod-e vállalni a betegséget"
+    ],
+    "mérleg": [
+      "felvállalom a páromat, a prákapcsolatomat",
+      "felvállalni magadat a nyilványosság előtt"
+    ],
+    "skorpió": [
+      "felvállalod a veszteségeid, a szexualitásod a hitedet, a kapott ötökségeidet"
+    ],
+    "nyilas": [
+      "az ígéretemet fel tudom-e vállalni",
+      "házasságoddat fel tudod-e vállalni"
+    ],
+    "bak": [
+      "felvállalod-e magad , a tetteid a karrieredben a céljaidban, a hivatásodban"
+    ],
+    "vízöntő": [
+      "fel tudod-e vállalni a barátaid, a másságod, a szabadságod, a függetlenségedet"
+    ],
+    "halak": [
+      "fel kell vállalni, hogy én azt fogom akarni amit te akarsz"
+    ]
+  },
+  "": {
+    "kos": [
+    ],
+    "bika": [
+    ],
+    "ikrek": [
+    ],
+    "rák": [
+    ],
+    "oroszlán": [
+    ],
+    "szűz": [
+    ],
+    "mérleg": [
+    ],
+    "skorpió": [
+    ],
+    "nyilas": [
+    ],
+    "bak": [
+    ],
+    "vízöntő": [
+    ],
+    "halak": [
+    ]
+  },
+  "": {
+    "kos": [
+    ],
+    "bika": [
+    ],
+    "ikrek": [
+    ],
+    "rák": [
+    ],
+    "oroszlán": [
+    ],
+    "szűz": [
+    ],
+    "mérleg": [
+    ],
+    "skorpió": [
+    ],
+    "nyilas": [
+    ],
+    "bak": [
+    ],
+    "vízöntő": [
+    ],
+    "halak": [
+    ]
+  },
+  "": {
+    "kos": [
+    ],
+    "bika": [
+    ],
+    "ikrek": [
+    ],
+    "rák": [
+    ],
+    "oroszlán": [
+    ],
+    "szűz": [
+    ],
+    "mérleg": [
+    ],
+    "skorpió": [
+    ],
+    "nyilas": [
+    ],
+    "bak": [
+    ],
+    "vízöntő": [
+    ],
+    "halak": [
+    ]
+  },
+  "": {
+    "kos": [
+    ],
+    "bika": [
+    ],
+    "ikrek": [
+    ],
+    "rák": [
+    ],
+    "oroszlán": [
+    ],
+    "szűz": [
+    ],
+    "mérleg": [
+    ],
+    "skorpió": [
+    ],
+    "nyilas": [
+    ],
+    "bak": [
+    ],
+    "vízöntő": [
+    ],
+    "halak": [
+    ]
+  },
+  "": {
+    "kos": [
+    ],
+    "bika": [
+    ],
+    "ikrek": [
+    ],
+    "rák": [
+    ],
+    "oroszlán": [
+    ],
+    "szűz": [
+    ],
+    "mérleg": [
+    ],
+    "skorpió": [
+    ],
+    "nyilas": [
+    ],
+    "bak": [
+    ],
+    "vízöntő": [
+    ],
+    "halak": [
+    ]
+  },
+  "": {
+    "kos": [
+    ],
+    "bika": [
+    ],
+    "ikrek": [
+    ],
+    "rák": [
+    ],
+    "oroszlán": [
+    ],
+    "szűz": [
+    ],
+    "mérleg": [
+    ],
+    "skorpió": [
+    ],
+    "nyilas": [
+    ],
+    "bak": [
+    ],
+    "vízöntő": [
+    ],
+    "halak": [
+    ]
+  },
+  "": {
+    "kos": [
+    ],
+    "bika": [
+    ],
+    "ikrek": [
+    ],
+    "rák": [
+    ],
+    "oroszlán": [
+    ],
+    "szűz": [
+    ],
+    "mérleg": [
+    ],
+    "skorpió": [
+    ],
+    "nyilas": [
+    ],
+    "bak": [
+    ],
+    "vízöntő": [
+    ],
+    "halak": [
+    ]
+  },
+  "": {
+    "kos": [
+    ],
+    "bika": [
+    ],
+    "ikrek": [
+    ],
+    "rák": [
+    ],
+    "oroszlán": [
+    ],
+    "szűz": [
+    ],
+    "mérleg": [
+    ],
+    "skorpió": [
+    ],
+    "nyilas": [
+    ],
+    "bak": [
+    ],
+    "vízöntő": [
+    ],
+    "halak": [
+    ]
+  },
+  "": {
+    "kos": [
+    ],
+    "bika": [
+    ],
+    "ikrek": [
+    ],
+    "rák": [
+    ],
+    "oroszlán": [
+    ],
+    "szűz": [
+    ],
+    "mérleg": [
+    ],
+    "skorpió": [
+    ],
+    "nyilas": [
+    ],
+    "bak": [
+    ],
+    "vízöntő": [
+    ],
+    "halak": [
+    ]
+  }
+}

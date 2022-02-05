@@ -5295,8 +5295,12 @@ JavaScript warning: https://pagead2.googlesyndication.com/bg/OQeXulqavt2yHYod1yF
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
-1643449334840	geckodriver	INFO	Listening on 127.0.0.1:60147
-1643449337895	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60148" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilexaD4MC"
+1643455111458	Marionette	INFO	Stopped listening on port 59807
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+zprofilexaD4MC"
 1643449338380	Marionette	INFO	Marionette enabled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilexaD4MC\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://localhost:60148/devtools/browser/33c701dd-7974-4d6d-a6f4-4c15d93b731d
@@ -5308,3 +5312,51 @@ JavaScript warning: https://pagead2.googlesyndication.com/bg/OQeXulqavt2yHYod1yF
 JavaScript warning: https://pagead2.googlesyndication.com/bg/OQeXulqavt2yHYod1yFVtMfB5cE7WnIBzfht8HOtA8E.js line 1 > eval line 2141 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
+1643455112432	Marionette	INFO	Stopped listening on port 60153
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643792273078	geckodriver	INFO	Listening on 127.0.0.1:63268
+1643792276131	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63269" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileJeU78O"
+1643792276508	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileJeU78O\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:63269/devtools/browser/7987279f-758e-4da8-bbc6-c5f7528534be
+1643792279128	Marionette	INFO	Listening on port 63274
+1643792279307	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/mdqKvlGwTeSXiP4SbDG4fPc0JxjBpG49JTgeDIKrRjQ.js line 1 > eval line 2484 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://astro.cafeastrology.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/mdqKvlGwTeSXiP4SbDG4fPc0JxjBpG49JTgeDIKrRjQ.js line 1 > eval line 3132 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1643792690028	Marionette	INFO	Stopped listening on port 63274
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "63330" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilekGKRgc"
+1643792329290	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilekGKRgc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:63330/devtools/browser/4b8b2dce-c471-4cf2-a47f-b191c7da481e
+1643792331611	Marionette	INFO	Listening on port 63335
+1643792331647	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/mdqKvlGwTeSXiP4SbDG4fPc0JxjBpG49JTgeDIKrRjQ.js line 1 > eval line 1690 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://astro.cafeastrology.com"
+JavaScript warning: https://pagead2.googlesyndication.com/bg/mdqKvlGwTeSXiP4SbDG4fPc0JxjBpG49JTgeDIKrRjQ.js line 1 > eval line 3208 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\fuji\AppData\Local\Temp\rust_mozprofilekGKRgc\thumbnails) because it does not exist
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\fuji\AppData\Local\Temp\rust_mozprofilekGKRgc\thumbnails) because it does not exist
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\fuji\AppData\Local\Temp\rust_mozprofilekGKRgc\thumbnails) because it does not exist
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\fuji\AppData\Local\Temp\rust_mozprofilekGKRgc\thumbnails) because it does not exist
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\fuji\AppData\Local\Temp\rust_mozprofilekGKRgc\thumbnails) because it does not exist
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1644055359747	Marionette	INFO	Stopped listening on port 63335
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+val line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/mdqKvlGwTeSXiP4SbDG4fPc0JxjBpG49JTgeDIKrRjQ.js line 1 > eval line 752 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
+1643809422090	Marionette	INFO	Stopped listening on port 63595
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
