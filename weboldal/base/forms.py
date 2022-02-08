@@ -67,4 +67,3 @@ class Horoszkop_Csillagjegyszures(ModelForm):
     class Meta:
         model = Horoszkop2
         fields = ["nap"]
-

@@ -440,6 +440,9 @@ def fenyszog_hozzarendeles(bolygok):
     return bolygok
 
 
+def serult_nap_hold():
+    pass
+
 
 def fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz, fenyszogtipus, fok_kilenges,
                     debug):

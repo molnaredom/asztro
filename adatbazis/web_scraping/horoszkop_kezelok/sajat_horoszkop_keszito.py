@@ -58,13 +58,14 @@ def sajat_weboldal_kitoltes(horoszkop_adatok, web, kezdobolygojegyben, kezdohazj
     bolygo_jegyben_feltoltes(horoszkop_adatok, web,kezdobolygojegyben)
     haz_jegyben_feltoltes(horoszkop_adatok, web, kezdohazjegyben)
     fokszam_feltoltes(horoszkop_adatok, web)
+    munka_feltoltes(horoszkop_adatok, web)
 
     press_submit_button(web)
 
 
 def egyeb_tulajdonosi_adat_feltoltes(horoszkop_adatok, web):
 
-    for adat_nev in ["tulajdonos_neve","tipus","hely", "idopont"]:
+    for adat_nev in ["tulajdonos_neve","tipus","hely", "idopont", "neme"]:
         hely_xpath = web.find_element_by_xpath(f'//*[@id="id_{adat_nev}"]')
         hely_xpath.clear()
         hely_xpath.send_keys(horoszkop_adatok[f"{adat_nev}"])
@@ -99,6 +100,14 @@ def fokszam_feltoltes(horoszkop_adatok, web):
                        + "\" }"
     hely_xpath.send_keys(jsonban_analogia)
 
+
+def munka_feltoltes(horoszkop_adatok, web):
+    hely_xpath = web.find_element_by_xpath(f'//*[@id="id_munka"]')
+    hely_xpath.clear()
+    jsonban_analogia = "{ \"analogiak\" : \"" + \
+                       str(horoszkop_adatok["munka"]) \
+                       + "\" }"
+    hely_xpath.send_keys(jsonban_analogia)
 
 
 def press_submit_button(web):

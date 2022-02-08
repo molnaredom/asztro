@@ -1,12 +1,13 @@
 horoszkop_tarolo = [{
     "nev": "TESZT 2_11",
     "horoszkoptipus": "radix",
-    "ev": 1975,
-    "honap": 3,
-    "nap": 10,
+    "neme" : "férfi",
+    "ev": 2001,
+    "honap": 1,
+    "nap": 1,
     "ora": 16,
     "perc": 45,
-    "hely": "Győr",
+    "hely": "Szolnok",
     "kep": "",
     "munka":["zenész"],
     "elet_leiras": [

@@ -138,10 +138,14 @@ class Horoszkop2(models.Model):
     idopont = models.DateTimeField(default=datetime.datetime.now())
     hely = models.CharField(max_length=80, blank=True)
     tipus = models.CharField(max_length=30, blank=True)
+    neme = models.CharField(max_length=10, blank=True, default="")
 
-    kepletkep = models.ImageField(upload_to='blah', default= os.getcwd()+'weboldal/static/images/hold.jpg')
+
+    kepletkep = models.ImageField(upload_to='images/', default= os.getcwd()+'weboldal/static/images/hold.jpg')
     leirasok = models.JSONField(default=dict, blank=True)
     fokszamok = models.JSONField(default=dict, blank=True)
+    munka = models.JSONField(default=dict, blank=True)
+
 
     nap = models.ForeignKey(BolygoJegyben2, related_name='nap+', on_delete=models.CASCADE)
     hold = models.ForeignKey(BolygoJegyben2, related_name='hold+', on_delete=models.CASCADE)

@@ -1,5 +1,9 @@
 ## Jellemzővektorok Súlyozással:
 
+### Alap adatok
+- Nem
+- Kor
+
 ###Házak jegyekben
 - 1-es ház --- 5 személyiség, vezetői hajlam
 - 2-es ház ---- 8 pénzügyek

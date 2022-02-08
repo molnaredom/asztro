@@ -1,6 +1,7 @@
 horoszkop_tarolo = [{
     "nev": "Molnár Ádám",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 2001,
     "honap": 8,
     "nap": 19,
@@ -14,6 +15,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Kapi Laura",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 2001,
     "honap": 6,
     "nap": 6,
@@ -27,6 +29,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Árpási Viktor",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 2004,
     "honap": 4,
     "nap": 18,
@@ -41,6 +44,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Wolf Levente",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 2002,
     "honap": 3,
     "nap": 13,
@@ -54,6 +58,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Jekkel János",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 1971,
     "honap": 9,
     "nap": 5,
@@ -67,6 +72,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Balassa Kristóf",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 1999,
     "honap": 8,
     "nap": 3,
@@ -80,6 +86,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Hápl Amíra",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 2021,
     "honap": 11,
     "nap": 11,
@@ -93,6 +100,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Kubik Anna",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 2002,
     "honap": 12,
     "nap": 1,
@@ -106,6 +114,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Lukács Anna",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 1997,
     "honap": 7,
     "nap": 9,
@@ -119,6 +128,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "ifj. Molnár Imre",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 1969,
     "honap": 6,
     "nap": 5,
@@ -132,6 +142,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Molnár Anna Lili",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 2002,
     "honap": 10,
     "nap": 11,
@@ -145,6 +156,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Hápl Melinda",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 1970,
     "honap": 4,
     "nap": 22,
@@ -158,6 +170,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "E. Bálint",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 2001,
     "honap": 7,
     "nap": 5,
@@ -171,6 +184,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Berni",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 2002,
     "honap": 3,
     "nap": 25,
@@ -184,6 +198,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Ágota Bettina",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 2001,
     "honap": 6,
     "nap": 19,
@@ -197,6 +212,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Dzseni",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 2001,
     "honap": 11,
     "nap": 6,
@@ -210,6 +226,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "T. Dzsoni",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 2001,
     "honap": 2,
     "nap": 23,
@@ -223,6 +240,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Emese",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 2002,
     "honap": 4,
     "nap": 12,
@@ -236,6 +254,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Endi",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 2001,
     "honap": 10,
     "nap": 28,
@@ -249,6 +268,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "H. Ervin",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 1978,
     "honap": 5,
     "nap": 13,
@@ -262,6 +282,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Tóth Eszter",
     "horoszkoptipus": "radix",
+    "neme": "nő",
     "ev": 1976,
     "honap": 4,
     "nap": 4,
@@ -275,6 +296,7 @@ horoszkop_tarolo = [{
 }, {
     "nev": "Id. Molnár Imre",
     "horoszkoptipus": "radix",
+    "neme": "férfi",
     "ev": 1944,
     "honap": 3,
     "nap": 24,
@@ -289,6 +311,7 @@ horoszkop_tarolo = [{
     {
         "nev": "Sallai Gabi",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2002,
         "honap": 5,
         "nap": 17,
@@ -302,6 +325,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Hajni",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 1974,
         "honap": 10,
         "nap": 3,
@@ -315,6 +339,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Mihályi Ilona",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 1959,
         "honap": 3,
         "nap": 21,
@@ -328,6 +353,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Balogh Kriszti",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2003,
         "honap": 3,
         "nap": 6,
@@ -338,6 +364,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Laky Tamás",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 2002,
         "honap": 1,
         "nap": 2,
@@ -351,6 +378,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Orosz Léna",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2002,
         "honap": 4,
         "nap": 19,
@@ -364,6 +392,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Háplné Ilona",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 1945,
         "honap": 3,
         "nap": 5,
@@ -377,6 +406,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Döme Márk",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 2001,
         "honap": 10,
         "nap": 5,
@@ -390,6 +420,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Lekrinczki Márti",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 1977,
         "honap": 12,
         "nap": 20,
@@ -403,6 +434,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Nagy Máté",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 2004,
         "honap": 1,
         "nap": 6,
@@ -416,6 +448,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Pojgovec Máté",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 1999,
         "honap": 5,
         "nap": 23,
@@ -429,6 +462,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Nagy Ákos",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 2000,
         "honap": 6,
         "nap": 28,
@@ -442,6 +476,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Pusok Patrik",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 2003,
         "honap": 2,
         "nap": 13,
@@ -455,6 +490,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Berkó Réka",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2005,
         "honap": 11,
         "nap": 19,
@@ -468,6 +504,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Kovács Viktor",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 2001,
         "honap": 1,
         "nap": 14,
@@ -481,6 +518,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Molnár Szilárd",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 2004,
         "honap": 6,
         "nap": 8,
@@ -491,6 +529,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Szekeres Szilvia",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2001,
         "honap": 6,
         "nap": 20,
@@ -504,6 +543,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Takács Tibor",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 1959,
         "honap": 9,
         "nap": 5,
@@ -517,6 +557,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Tordia Tina",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2004,
         "honap": 6,
         "nap": 8,
@@ -530,6 +571,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Gulácsi Martina",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2005,
         "honap": 7,
         "nap": 8,
@@ -543,6 +585,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Toth Krisztián",
         "horoszkoptipus": "radix",
+        "neme": "férfi",
         "ev": 2001,
         "honap": 5,
         "nap": 14,
@@ -556,6 +599,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Zsófi",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2001,
         "honap": 11,
         "nap": 7,
@@ -566,6 +610,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Kozma Kamilla",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2012,
         "honap": 6,
         "nap": 18,
@@ -580,6 +625,7 @@ horoszkop_tarolo = [{
     }, {
         "nev": "Kozma Korinna (Korinka)",
         "horoszkoptipus": "radix",
+        "neme": "nő",
         "ev": 2014,
         "honap": 10,
         "nap": 1,
@@ -596,6 +642,7 @@ horoszkop_tarolo = [{
     {
         "nev": "Chermat Viola Viktória",
         "horoszkoptipus": "radix kb",
+        "neme": "nő",
         "ev": 1977,
         "honap": 5,
         "nap": 29,

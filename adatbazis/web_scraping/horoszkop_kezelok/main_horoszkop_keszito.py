@@ -43,7 +43,8 @@ def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo
     horoszkop_feltolt_adatok["tulajdonos_neve"] = tulajodonosi_adatok["nev"]
     horoszkop_feltolt_adatok["tipus"] = tulajodonosi_adatok["horoszkoptipus"]
     horoszkop_feltolt_adatok["hely"] = tulajodonosi_adatok["hely"]
-    horoszkop_feltolt_adatok["tipus"] = tulajodonosi_adatok["horoszkoptipus"]
+    horoszkop_feltolt_adatok["neme"] = tulajodonosi_adatok["neme"]
+    horoszkop_feltolt_adatok["munka"] = tulajodonosi_adatok["munka"]
     horoszkop_feltolt_adatok["idopont"] = datumido_keszit()
 
     print(horoszkop_feltolt_adatok["idopont"])
