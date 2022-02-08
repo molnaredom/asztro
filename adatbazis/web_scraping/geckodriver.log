@@ -5468,4 +5468,6 @@ JavaScript warning: https://pagead2.googlesyndication.com/bg/kRDJmBQzOe9o97-xR6c
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://astro.cafeastrology.com"
 JavaScript warning: https://pagead2.googlesyndication.com/bg/kRDJmBQzOe9o97-xR6cepyyyPd4l_fx5ZaLBvvWym_o.js line 1 > eval line 7336 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
-1644327187188	geckodriver	INFO	Listening on 127.0.0.1:50287
+1644328311850	Marionette	INFO	Stopped listening on port 50197
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1644335799207	geckodriver	INFO	Listening on 127.0.0.1:50820

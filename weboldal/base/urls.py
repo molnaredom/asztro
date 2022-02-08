@@ -2,7 +2,7 @@
 from django.urls import path
 
 
-from . import views, views_creators, views_deleters, views_analogiatarolok,views_konkret_analogia, views_updaters
+from . import views, views_creators, views_deleters, views_analogiatarolok,views_konkret_analogia, views_updaters, ml
 from . import views_horoszkop_elemzes
 
 
@@ -81,6 +81,13 @@ urlpatterns = [
     path("update-hazUraHazban/<str:id>/", views_updaters.updateHazUraHazban, name= "update-hazUraHazban"),
 
     path("titkos-szoba/", views.titkosSzoba, name="titkos-szoba"),
+
+
+
+
+    path("ml_fooldal/", ml.ml_fooldal, name="ml_fooldal"),
+    path("generalt_adatok/", ml.generalt_adatok, name="generalt_adatok"),
+
 
 
 

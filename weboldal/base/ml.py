@@ -5,17 +5,28 @@ import pandas as pd
 from .models import Horoszkop2, Jegy2, HazUraHazban
 
 
-def horoszkop(request, id):
-    analogia = Horoszkop2.objects.get(id=id)
+def ml_fooldal(request):
+    context = {"analogia": {} }
+
+    return render(request, "ml_oldalak/ml_fooldal.html", context)
+
+
+def generalt_adatok(request):
+
+    horoszkopok = Horoszkop2.objects.all()
     hazakUraHazakban = HazUraHazban.objects.all()
     osszesjegy = Jegy2.objects.all()
 
-    analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"])  # eval strbol dictet csinal
+    kinyert_adatok = []
 
-    elemzes_adat = _elemzes(analogia, osszesjegy, hazakUraHazakban)
-    context = {"analogia": analogia, "elemzes": elemzes_adat}  # ez egy objektum
+    for horoszkop in horoszkopok:
+        horoszkop.fokszamok = eval(dict(horoszkop.fokszamok)["analogiak"])  # eval strbol dictet csinal
+        elemzes_adat = _elemzes(horoszkop, osszesjegy, hazakUraHazakban)
+        kinyert_adatok.append(elemzes_adat)
 
-    return render(request, "konkret_analogiak/horoszkop.html", context)
+    context = {"analogia": kinyert_adatok}  # ez egy objektum
+
+    return render(request, "ml_oldalak/generalt_adatok.html", context)
 
 
 def _elemzes(adatok, osszesjegy, hazakUraHazakban):
@@ -41,18 +52,21 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     eredmeny["pontoskor"] = pontos_kor_szamitas(pontos_kor)
     eredmeny["eletciklus"] = eletciklus(pontos_kor)
     eredmeny["sorstipus"] = _sorstipus(bolygok, hazak)
-    eredmeny["hazakurai"] = hazura_kiiratas(hazak,hazakUraHazakban)
+    eredmeny["hazakurai"] = hazura_kiiratas(hazak, hazakUraHazakban)
 
     return eredmeny
 
 
-def pontos_kor_szamitas(pontoskor: datetime):
-    return f'A pontos életkorod {pontoskor.year} év  ' \
-           f'{pontoskor.month} hónap  ' \
-           f'{pontoskor.day} nap  ' \
-           f'{pontoskor.hour} óra  ' \
-           f'{pontoskor.minute} perc ' \
-           f'{pontoskor.second} másodperc.'
+def pontos_kor_szamitas(pontoskor):
+    if type(pontoskor) == list:
+        return str(pontoskor)
+    else:
+        return f'A pontos életkorod {pontoskor["year"]} év  ' \
+               f'{pontoskor["month"]} hónap  ' \
+               f'{pontoskor["day"]} nap  ' \
+               f'{pontoskor["hour"]} óra  ' \
+               f'{pontoskor["minute"]} perc ' \
+               f'{pontoskor["second"]} másodperc.'
 
 
 def szuletesi_datumido(adatok):
@@ -82,9 +96,12 @@ def szuletesi_datumido(adatok):
     seconds = (minutes - minutesInt) * 60
     secondsInt = int(seconds)
 
-    pontos_kor = datetime.datetime(yearsInt, monthsInt, daysInt, hoursInt, minutesInt, secondsInt)
-
-    return pontos_kor
+    return {"year": yearsInt,
+            "month": monthsInt,
+            "day": daysInt,
+            "hour": hoursInt,
+            "minute": minutesInt,
+            "second": secondsInt}
 
 
 def hazhoz_bolygok_rendelese(hazak, bolygok):
@@ -111,7 +128,7 @@ def bolygohoz_haz_rendeles(hazak, bolygok):
                 break
             elif haz["haz"].tipus != "sarok" and bolygo["osszfokszam"] + 3 < hazak[hazszam + 1]["osszfokszam"]:
                 bolygo["hazszam"] = haz
-                print(bolygo["bolygo"],bolygo["hazszam"])
+                print(bolygo["bolygo"], bolygo["hazszam"])
                 break
         else:
             print("valami nincs lekezelve")
@@ -189,6 +206,7 @@ def alapszamolasok(adatok, osszesjegy):
                                                  eredmeny["minőség szerinti felosztás"], osszesjegy)
 
     return eredmeny
+
 
 #
 # def _altalanosfelosztas_adagolo(szetoszto, bolygok, jegynalogia, asc):
@@ -298,7 +316,8 @@ def _sorstipus(bolygok, hazak):
 
 
 def eletciklus(pontos_kor):
-    yearsInt = pontos_kor.year
+    yearsInt = pontos_kor["year"]
+
     eletciklus = ""
     if yearsInt > 63:
         eletciklus = "szaturnusz"
@@ -327,7 +346,6 @@ def eletciklus(pontos_kor):
 
 
 def hazura_melyik_hazaban(hazak, bolygok):
-
     def hazurnak_bolygot_talal(hazura_nev):
         for bolygo in bolygok:
             if bolygo["bolygo"].nevID == hazura_nev:
@@ -351,17 +369,18 @@ def hazura_melyik_hazaban(hazak, bolygok):
         else:
             print("baj van jegyvaltas -nal")
 
-    for haz in hazak: # 12
+    for haz in hazak:  # 12
         hazura_nev = haz["jegy"].uralkodo_bolygo
         hazura_bolygo = hazurnak_bolygot_talal(hazura_nev)
-        for belso_haz in hazak: # 12
-            for belso_bolygo in belso_haz["bolygok"]: # 0-10
+        for belso_haz in hazak:  # 12
+            for belso_bolygo in belso_haz["bolygok"]:  # 0-10
                 if hazura_nev == belso_bolygo["bolygo"].nevID:
                     print(haz["haz"], haz["jegy"].nevID, haz["jegy"].paritas)
-                    print(belso_haz["haz"],belso_bolygo["jegy"].nevID,belso_bolygo["bolygo"].nevID, belso_bolygo["jegy"].paritas)
+                    print(belso_haz["haz"], belso_bolygo["jegy"].nevID, belso_bolygo["bolygo"].nevID,
+                          belso_bolygo["jegy"].paritas)
                     print("hazura:", hazura_nev)
                     print()
-                    if belso_bolygo["bolygo"].nevID == "hold" or belso_bolygo["bolygo"].nevID == "nap":# nap/hold
+                    if belso_bolygo["bolygo"].nevID == "hold" or belso_bolygo["bolygo"].nevID == "nap":  # nap/hold
                         haz["hazura"] = belso_haz["haz"]
 
                     if jegyvaltas(hazura_bolygo):
@@ -372,16 +391,15 @@ def hazura_melyik_hazaban(hazak, bolygok):
                         if haz["jegy"].paritas == belso_bolygo["jegy"].paritas:  # megyegyezik a polaritás
                             haz["hazura"] = belso_haz["haz"]
 
-        if "hazura" not in haz: # ugy fut le hogy nem talalt hazurat
+        if "hazura" not in haz:  # ugy fut le hogy nem talalt hazurat
             haz["hazura"] = "nincs hazur"
 
 
 def hazura_kiiratas(hazak, hazakUraHazakban):
-
     def hazur_kiiratas(haz, ura):
         if ura in ["1", "2", "4", "7", "9", '10', '11', "12"]:
             return f"{haz}.ház ura az {ura}-es házban"
-        elif ura in ["3","8"]:
+        elif ura in ["3", "8"]:
             return f"{haz}.ház ura az {ura}-as házban"
         elif ura in ["6"]:
             return f"{haz}.ház ura az {ura}-os házban"
@@ -400,8 +418,8 @@ def hazura_kiiratas(hazak, hazakUraHazakban):
             # print(hazurahazban.alap_haz, str(i["haz"]) ,"--", hazurahazban.ura_melyik_hazban ,str(i["hazura"]))
             if str(hazurahazban.alap_haz) == str(i["haz"]) and str(hazurahazban.ura_melyik_hazban) == str(i["hazura"]):
                 # print("házura")
-                haz_urak_kiiratva.append({hazur_kiiratas(haz=str(i["haz"]), ura=str(i["hazura"])) : hazurahazban.tulajdonsagok })
-
+                haz_urak_kiiratva.append(
+                    {hazur_kiiratas(haz=str(i["haz"]), ura=str(i["hazura"])): hazurahazban.tulajdonsagok})
 
     return haz_urak_kiiratva
     # [print(hazur_kiiratas(haz=str(i["haz"]), ura=str(i["hazura"]))) for i in hazak]
