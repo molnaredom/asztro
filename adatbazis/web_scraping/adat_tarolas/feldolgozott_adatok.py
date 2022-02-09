@@ -650,7 +650,7 @@ horoszkop_tarolo = [{
         "perc": 30,
         "hely": "Vác",
         "kep": "",
-        "munka": [],
+        "munka": ["szépségszalon" ],
         "elet_leiras": [],
         "elemzes leiras": []
     }

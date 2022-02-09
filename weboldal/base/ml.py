@@ -19,14 +19,31 @@ def generalt_adatok(request):
 
     kinyert_adatok = []
 
-    for horoszkop in horoszkopok:
+    for i, horoszkop in enumerate(horoszkopok,1):
         horoszkop.fokszamok = eval(dict(horoszkop.fokszamok)["analogiak"])  # eval strbol dictet csinal
         elemzes_adat = _elemzes(horoszkop, osszesjegy, hazakUraHazakban)
+        elemzes_adat["sorszam"] = str(i)
         kinyert_adatok.append(elemzes_adat)
+
+    csv_keszites(kinyert_adatok)
 
     context = {"analogia": kinyert_adatok}  # ez egy objektum
 
     return render(request, "ml_oldalak/generalt_adatok.html", context)
+
+
+def csv_keszites(kinyert_adatok):
+    with open("kinyert_adatok.csv", "w") as f:
+        f.write("sorszam;nev;sorstipus;kor;nem;eletciklus;munkai\n")
+        for adat in kinyert_adatok:
+            f.write(f"{adat['sorszam']};"
+                    f"{adat['nev']};"
+                    f"{adat['sorstipus']};"
+                    f"{adat['pontoskor']['year']};"
+                    f"{adat['neme']};"
+                    f"{adat['eletciklus']};"
+                    f"{adat['munka']}\n")
+
 
 
 def _elemzes(adatok, osszesjegy, hazakUraHazakban):
@@ -45,14 +62,17 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     # [print(i["bolygo"], [j["bolygo"] for j in i["fenyszogek"]["konjukcio"]], "\n") for i in bolygok]
     # [print(i["bolygo"], [j["bolygo"] for j in i["fenyszogek"]["trigon"]], "\n") for i in bolygok]
 
-    hazura_melyik_hazaban(hazak, bolygok)
+    # hazura_melyik_hazaban(hazak, bolygok)
     # [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
-
-    eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
-    eredmeny["pontoskor"] = pontos_kor_szamitas(pontos_kor)
-    eredmeny["eletciklus"] = eletciklus(pontos_kor)
+    # eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
+    eredmeny["pontoskor"] = pontos_kor
+    eredmeny["eletciklus"] = eletciklus(pontos_kor, adatok)
     eredmeny["sorstipus"] = _sorstipus(bolygok, hazak)
-    eredmeny["hazakurai"] = hazura_kiiratas(hazak, hazakUraHazakban)
+    # eredmeny["hazakurai"] = hazura_kiiratas(hazak, hazakUraHazakban)
+    eredmeny["neme"] = str(adatok.neme)
+    eredmeny["nev"] = str(adatok.tulajdonos_neve)
+    eredmeny["munka"] = eval(dict(adatok.munka)["analogiak"])
+
 
     return eredmeny
 
@@ -131,7 +151,7 @@ def bolygohoz_haz_rendeles(hazak, bolygok):
                 print(bolygo["bolygo"], bolygo["hazszam"])
                 break
         else:
-            print("valami nincs lekezelve")
+            print("valami nincs lekezelve valami a bolygohazrendelesben")
             raise Exception
 
     hazak.pop(-1)  # elttűntetni a plusz 1 házat
@@ -293,7 +313,7 @@ def _sorstipus(bolygok, hazak):
                          if i["bolygo"].nevID not in felhasznaltbolygok])
     haz12pontszam = sum([i["bolygo"].pontertek for i in hazak[11]["bolygok"]
                          if i["bolygo"].nevID not in felhasznaltbolygok])
-    print("haz11pontszam, haz12pontszam", haz11pontszam, haz12pontszam)
+    # print("haz11pontszam, haz12pontszam", haz11pontszam, haz12pontszam)
 
     if haz11pontszam > haz12pontszam:
         return "haramdik körös kiszolgáltatott"
@@ -315,29 +335,39 @@ def _sorstipus(bolygok, hazak):
     return "a jelenlegi adatok alapján nem lehet kiszámolni a sorstípust mert 5. körös lenne"
 
 
-def eletciklus(pontos_kor):
+def eletciklus(pontos_kor, adatok):
     yearsInt = pontos_kor["year"]
-
+    print("-----",adatok.neme, type(adatok.neme), adatok.neme == "férfi")
     eletciklus = ""
-    if yearsInt > 63:
+    if yearsInt >= 63:
         eletciklus = "szaturnusz"
-    elif yearsInt > 56:
+    elif yearsInt >= 56:
         eletciklus = "jupiter-szaturnusz"
-    elif yearsInt > 56:
+    elif yearsInt >= 56:
         eletciklus = "jupiter"
-    elif yearsInt > 42:
+    elif yearsInt >= 42:
         eletciklus = "nap-mars"
-    elif yearsInt > 35:
+    elif yearsInt >= 35:
         eletciklus = "nap-jupiter"
-    elif yearsInt > 28:
+    elif yearsInt >= 28:
         eletciklus = "nap"
-    elif yearsInt > 21:
-        eletciklus = "ha férfi NAP, ha nő HOLD"
-    elif yearsInt > 14:
-        eletciklus = "ha fiú hold-mars, ha lány hold vénusz"
-    elif yearsInt > 7:
+    elif yearsInt >= 21:
+        if adatok.neme == "nő":
+            eletciklus = "hold"
+        elif adatok.neme == "férfi":
+            eletciklus = "nap"
+        else:
+            return None
+    elif yearsInt >= 14:
+        if str(adatok.neme) == "nő":
+            eletciklus = "hold-vénusz"
+        elif str(adatok.neme) == "férfi":
+            eletciklus = "hold-mars"
+        else:
+            return None
+    elif yearsInt >= 7:
         eletciklus = "hold-merkúr"
-    elif yearsInt > 0:
+    elif yearsInt >= 0:
         eletciklus = "hold"
     else:
         eletciklus = "még nem született meg"
@@ -375,11 +405,11 @@ def hazura_melyik_hazaban(hazak, bolygok):
         for belso_haz in hazak:  # 12
             for belso_bolygo in belso_haz["bolygok"]:  # 0-10
                 if hazura_nev == belso_bolygo["bolygo"].nevID:
-                    print(haz["haz"], haz["jegy"].nevID, haz["jegy"].paritas)
-                    print(belso_haz["haz"], belso_bolygo["jegy"].nevID, belso_bolygo["bolygo"].nevID,
-                          belso_bolygo["jegy"].paritas)
-                    print("hazura:", hazura_nev)
-                    print()
+                    # print(haz["haz"], haz["jegy"].nevID, haz["jegy"].paritas)
+                    # print(belso_haz["haz"], belso_bolygo["jegy"].nevID, belso_bolygo["bolygo"].nevID,
+                    #       belso_bolygo["jegy"].paritas)
+                    # print("hazura:", hazura_nev)
+                    # print()
                     if belso_bolygo["bolygo"].nevID == "hold" or belso_bolygo["bolygo"].nevID == "nap":  # nap/hold
                         haz["hazura"] = belso_haz["haz"]
 
