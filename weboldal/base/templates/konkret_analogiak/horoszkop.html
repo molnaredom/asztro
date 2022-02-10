@@ -169,12 +169,13 @@
         <div class="card">
             <h2>Horoszkóp leírás</h2>
             <h5>Születési idő: {{analogia.idopont}}</h5>
-            <p>Munkái:</p>
-                {{analogia.munka}}
-            <p>{{analogia.leiras}}</p>
-            {{analogia.neme}}
-            <hr>
 
+            <p>{{analogia.leiras}}</p>
+            Neme: {{analogia.neme}}
+            <hr>
+<h3>Munkái:</h3>
+                {{analogia.munka}}
+            <hr>
 
             <h3>Felosztások</h3>
             {% for szempont, eredmenyek in elemzes.alapszamolasok.items %}
@@ -203,6 +204,9 @@
             <h3>Sérült-e a Nap/Hold</h3>
             {{ elemzes.serult_e_nap }} <p></p>
             {{ elemzes.serult_e_hold }}
+            <hr>
+            <h3>Hyleg</h3>
+            {{ elemzes.hyleg }} <p></p>
             <hr>
 
             <h3>Házak Urai</h3>

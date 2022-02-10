@@ -44,6 +44,7 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     eredmeny["hazakurai"] = hazura_kiiratas(hazak, hazakUraHazakban)
     eredmeny["serult_e_nap"] = serult_e_nap(bolygok, adatok)
     eredmeny["serult_e_hold"] = serult_e_hold(bolygok, adatok)
+    eredmeny["hyleg"] = hyleg(bolygok)
 
 
     return eredmeny
@@ -478,7 +479,6 @@ def serult_e_hold(bolygok, adatok):
         return "a hold nem sérült"
 
 
-
 def fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz, fenyszogtipus, fok_kilenges,
                     debug):
     # if fenyszogtipus == "konjukcio":
@@ -519,3 +519,17 @@ def lancolt_egyuttallas(bolygok):
                         # print(kulso_bolygo["bolygo"], belso_bolygo["bolygo"])
                         # print()
     return bolygok
+
+
+def hyleg(bolygok):
+
+    kiemelt_hazak = [7,9,10,11]
+    if int(bolygok[0]["hazszam"]["haz"].nevID) in kiemelt_hazak:
+        return "nap"
+    elif int(bolygok[1]["hazszam"]["haz"].nevID) in kiemelt_hazak:
+        return "hold"
+    else:
+        return "ASC"
+
+def anareta(hyleg):
+    pass
