@@ -77,18 +77,6 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     return eredmeny
 
 
-def pontos_kor_szamitas(pontoskor):
-    if type(pontoskor) == list:
-        return str(pontoskor)
-    else:
-        return f'A pontos életkorod {pontoskor["year"]} év  ' \
-               f'{pontoskor["month"]} hónap  ' \
-               f'{pontoskor["day"]} nap  ' \
-               f'{pontoskor["hour"]} óra  ' \
-               f'{pontoskor["minute"]} perc ' \
-               f'{pontoskor["second"]} másodperc.'
-
-
 def szuletesi_datumido(adatok):
     szuletes = adatok.idopont.replace(tzinfo=None)
 

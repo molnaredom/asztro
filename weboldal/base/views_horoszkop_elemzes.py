@@ -41,7 +41,10 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     eredmeny["pontoskor"] = pontos_kor_szamitas(pontos_kor)
     eredmeny["eletciklus"] = eletciklus(pontos_kor)
     eredmeny["sorstipus"] = _sorstipus(bolygok, hazak)
-    eredmeny["hazakurai"] = hazura_kiiratas(hazak,hazakUraHazakban)
+    eredmeny["hazakurai"] = hazura_kiiratas(hazak, hazakUraHazakban)
+    eredmeny["serult_e_nap"] = serult_e_nap(bolygok, adatok)
+    eredmeny["serult_e_hold"] = serult_e_hold(bolygok, adatok)
+
 
     return eredmeny
 
@@ -440,8 +443,40 @@ def fenyszog_hozzarendeles(bolygok):
     return bolygok
 
 
-def serult_nap_hold():
-    pass
+def serult_e_nap(bolygok, adatok):
+
+
+    kiemelt_vilagos_hazak = [1,5,9,10,11]
+    kiemelt_sotet_hazak = [4,8,12]
+
+    nap = bolygok[0]
+    print(nap)
+    neme = adatok.neme
+    print(neme, int(nap["hazszam"]["haz"].nevID))
+
+    if neme == "férfi" and int(nap["hazszam"]["haz"].nevID) in kiemelt_sotet_hazak:
+        return "- nap"
+    elif neme == "nő" and int(nap["hazszam"]["haz"].nevID) in kiemelt_vilagos_hazak:
+        return "+ nap"
+    else:
+        return "a nap nem sérült"
+
+
+def serult_e_hold(bolygok, adatok):
+
+    kiemelt_vilagos_hazak = [1,5,9,10,11]
+    kiemelt_sotet_hazak = [4,8,12]
+
+    hold = bolygok[1]
+    neme = adatok.neme
+    print(neme, int(hold["hazszam"]["haz"].nevID))
+    if neme == "férfi" and int(hold["hazszam"]["haz"].nevID) in kiemelt_vilagos_hazak:
+        return "+ hold"
+    elif neme == "nő" and int(hold["hazszam"]["haz"].nevID) in kiemelt_sotet_hazak:
+        return "- hold"
+    else:
+        return "a hold nem sérült"
+
 
 
 def fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz, fenyszogtipus, fok_kilenges,
