@@ -45,7 +45,6 @@ def csv_keszites(kinyert_adatok):
                     f"{adat['munka']}\n")
 
 
-
 def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     eredmeny = {}
 
@@ -72,7 +71,9 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     eredmeny["neme"] = str(adatok.neme)
     eredmeny["nev"] = str(adatok.tulajdonos_neve)
     eredmeny["munka"] = eval(dict(adatok.munka)["analogiak"])
-
+    hyleg_res = hyleg(bolygok)
+    eredmeny["hyleg"] = hyleg_res
+    eredmeny["anareta"] = anareta(hyleg_res, bolygok)
 
     return eredmeny
 
@@ -482,25 +483,31 @@ def serult_nap_hold():
 
 def fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz, fenyszogtipus, fok_kilenges,
                     debug):
-    # if fenyszogtipus == "konjukcio":
-    #     print(fenyszogtipus)
-    #     print(belso_bolygo["bolygo"], kulso_bolygo["bolygo"])
-    #     print()
-    #
-    #     if (kulso_osszfok + orbisz > belso_osszfok > kulso_osszfok - orbisz and
-    #             belso_bolygo["bolygo"] != kulso_bolygo["bolygo"]) :
-    #         belso_bolygo["fenyszogek"][fenyszogtipus].append(kulso_bolygo)
 
-    if (kulso_osszfok + orbisz > belso_osszfok + fok_kilenges > kulso_osszfok - orbisz and belso_bolygo["bolygo"] !=
-        kulso_bolygo["bolygo"]) or \
-            (kulso_osszfok + orbisz > belso_osszfok - fok_kilenges > kulso_osszfok - orbisz and belso_bolygo[
-                "bolygo"] != kulso_bolygo["bolygo"]):
+    # jobb oldali fényszög
+    if (kulso_osszfok + orbisz > belso_osszfok + fok_kilenges > kulso_osszfok - orbisz
+            and belso_bolygo["bolygo"] != kulso_bolygo["bolygo"]):
+
+        fokelteres = abs(belso_osszfok + fok_kilenges - kulso_osszfok)
 
         if debug:
             print(fenyszogtipus)
             print(belso_bolygo["bolygo"], kulso_bolygo["bolygo"])
 
-        belso_bolygo["fenyszogek"][fenyszogtipus].append(kulso_bolygo)
+        belso_bolygo["fenyszogek"][fenyszogtipus].append({"bolygo":kulso_bolygo, "fokelteres":fokelteres })
+
+    # bal oldali fényszög
+    elif (kulso_osszfok + orbisz > belso_osszfok - fok_kilenges > kulso_osszfok - orbisz
+            and belso_bolygo["bolygo"] != kulso_bolygo["bolygo"]):
+
+        fokelteres = abs(belso_osszfok + fok_kilenges - kulso_osszfok)
+
+        if debug:
+            print(fenyszogtipus)
+            print(belso_bolygo["bolygo"], kulso_bolygo["bolygo"])
+
+        belso_bolygo["fenyszogek"][fenyszogtipus].append({"bolygo":kulso_bolygo, "fokelteres":fokelteres })
+
 
 
 def lancolt_egyuttallas(bolygok):
@@ -508,10 +515,11 @@ def lancolt_egyuttallas(bolygok):
         # hold
         for belso_bolygo in bolygok:
             if kulso_bolygo != belso_bolygo:
-                kulso_konjukcios_bolygok = kulso_bolygo["fenyszogek"]["konjukcio"]
-                belso_konjukcios_bolygok = belso_bolygo["fenyszogek"]["konjukcio"]
-                for kulso_konjukcios_bolygo in kulso_konjukcios_bolygok:
+                kulso_konjukcios_bolygok = [i["bolygo"] for i in kulso_bolygo["fenyszogek"]["konjukcio"]]
+                belso_konjukcios_bolygok = [i["bolygo"] for i in belso_bolygo["fenyszogek"]["konjukcio"]]
 
+                for kulso_konjukcios_bolygo in kulso_konjukcios_bolygok:
+                    # print(kulso_bolygo)
                     if kulso_konjukcios_bolygo not in belso_konjukcios_bolygok and \
                             kulso_bolygo["bolygo"].nevID in [i["bolygo"].nevID for i in belso_konjukcios_bolygok] and \
                             belso_bolygo["bolygo"].nevID != kulso_konjukcios_bolygo["bolygo"].nevID:
@@ -520,3 +528,53 @@ def lancolt_egyuttallas(bolygok):
                         # print(kulso_bolygo["bolygo"], belso_bolygo["bolygo"])
                         # print()
     return bolygok
+
+
+def hyleg(bolygok):
+    kiemelt_hazak = [i for i in range(1,13)] #[7, 9, 10, 11]
+    if int(bolygok[0]["hazszam"]["haz"].nevID) in kiemelt_hazak:
+        return "nap"
+    elif int(bolygok[1]["hazszam"]["haz"].nevID) in kiemelt_hazak:
+        return "hold"
+    else:
+        return "ASC"
+
+
+def anareta(hyleg, bolygok):
+    if hyleg == "nap":
+        print("NAP")
+        oppoziciok = bolygok[0]["fenyszogek"]["oppozicio"]
+        kvadratok = bolygok[0]["fenyszogek"]["kvadrat"]
+        if oppoziciok:
+            print("OPP:", len(oppoziciok))
+            return str(oppoziciok[0]["bolygo"]["bolygo"].nevID) + str(len(oppoziciok))
+            # [print(i) for i in oppoziciok]
+
+        elif kvadratok:
+            print("KVAD", len(kvadratok))
+            return str(kvadratok[0]["bolygo"]["bolygo"].nevID) + str(len(kvadratok))
+            # [print(i) for i in kvadratok]
+        else:
+            return "Nincs anaréta"
+
+    elif hyleg == "hold":
+        print("HOLD")
+        # print(bolygok[1]["fenyszogek"])
+        oppoziciok = bolygok[1]["fenyszogek"]["oppozicio"]
+        kvadratok = bolygok[1]["fenyszogek"]["kvadrat"]
+
+        if oppoziciok:
+            print("OPP:", len(oppoziciok))
+            return str(oppoziciok[0]["bolygo"]["bolygo"].nevID) + str(len(oppoziciok))
+            # [print(i) for i in oppoziciok]
+
+        elif kvadratok:
+            print("KVAD", len(kvadratok))
+            return str(kvadratok[0]["bolygo"]["bolygo"].nevID) + str(len(kvadratok))
+            # [print(i) for i in kvadratok]
+        else:
+            return "Nincs anaréta"
+
+    elif hyleg == "ASC":
+        return "Nincs anaréta"
+        # [print(i) for i in bolygok[0]["fenyszogek"]]
