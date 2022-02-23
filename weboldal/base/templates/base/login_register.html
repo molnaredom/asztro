@@ -1,42 +1,53 @@
-{% extends 'analogia_db_base.html' %}
-
-
+{% extends 'base.html' %}
 {% block content %}
 
-{% if page == 'login' %}
-<div>
-    <div>
-        <form method="POST" action="">
-            {% csrf_token %}
+<html lang="en" class="h-100">
+    <main class="px-3 bg-dark d-flex d-flex h-100 text-center text-white bg-dark">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+        {% if page == 'login' %}
+        <div>
+            <div>
+                <form method="POST" action="">
+                    {% csrf_token %}
+
+                    <label>Falhasználónév:</label>
+                    <input type="text" name="username" placeholder="Add meg a felhasználóneved"/>
+
+                    <label>Jelszó:</label>
+                    <input type="password" name="password" placeholder="Add meg a jelszavad"/>
+
+                    <input type="submit" name="Login" >
+                </form>
+                <br><br>
+                <p>Még nem vagy regisztrálva?</p>
+                <br><br>
+                <button type="button" class="btn btn-warning"><a href="{% url 'register' %}">Regisztráció</a></button>
+                <br><br>
+
+            </div>
+
+            {% else %}
+            <div>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" name="Register">
+                </form>
+                <br><br>
+                <p>Már be vagy regisztrálva?</p>
+                <br>
+                <a href="{% url 'login' %}">Belépés</a>
+                <br><br><br><br>
+            </div>
 
 
-            <label>Username:</label>
-            <input type="text" name="username" placeholder="Add meg a felhasználóneved"/>
-
-            <label>Password:</label>
-            <input type="password" name="password" placeholder="Add meg a jelszavad"/>
-
-            <input type="submit" name="Login">
-        </form>
-        <p>Még nem vagy regisztrálva?</p>
-        <a href="{% url 'register' %}">Regisztráció</a>
-    </div>
-
-{% else %}
-    <div>
-        <form method="POST" action="">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" name="Register">
-        </form>
-        <p>Már be vagy regisztrálva?</p>
-        <a href="{% url 'login' %}">Belépés</a>
-    </div>
-
+        </div>
+    {% endif %}
 
 </div>
-{% endif %}
-
+    </main>
+</html>
 {% endblock content %}
 
 

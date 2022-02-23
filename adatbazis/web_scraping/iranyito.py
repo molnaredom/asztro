@@ -1,11 +1,12 @@
 from selenium import webdriver
 import warnings
 import json
+
 from adatbazis.web_scraping.feltoltes_kezelok.alapanalogia_feltoltes_modul import alapanalogia_feltoltes
 from adatbazis.web_scraping.feltoltes_kezelok.bolygo_jegyben_feltoltes_modul import bolygojegyben_feltoltes
 from adatbazis.web_scraping.feltoltes_kezelok.haz_jegyben_feltoltes_modul import hazjegyben_kitoltes
 from adatbazis.web_scraping.feltoltes_kezelok.hazurahazban_feltoltes_modul import hazurahazban_feltoltes
-from adatbazis.web_scraping.horoszkop_kezelok.main_horoszkop_keszito import horoszkopok_feltoltese
+from adatbazis.web_scraping.horoszkop_kezelok.main_horoszkop_keszito import *
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -43,7 +44,32 @@ def hazurahazban_beolvasas():
         return json.loads(f.read())
 
 
+import argparse
+
+# Initialize parser
+parser = argparse.ArgumentParser()
+
+# Adding optional argument
+parser.add_argument("-o", "--Output", help="Show Output")
+parser.add_argument("-m", "--mode", default= "api",
+                    help="Set running mode, which is api or web ")
+
+# Read arguments from command line
+args = parser.parse_args()
+
 def main():
+
+    if args.mode == "api":
+        print("api mode")
+        api_mode()
+
+    elif args.mode == "web":
+        print("web mode")
+        web_mode()
+
+    print("KÉÉSZ")
+
+def web_mode():
     web = inditas()
     domain = "https://asztro.herokuapp.com"
     domain = "http://127.0.0.1:8000"
@@ -56,17 +82,16 @@ def main():
     hazjegyben_feltoltes_ = False
     alapanalogia_feltoltes_ = False
 
-    # uj_horoszkop_keszites_ = True
-    # bolygojegyben_feltoltes_ = True
-    # hazjegyben_feltoltes_ = True
-    # alapanalogia_feltoltes_ = False
-
-    process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_,hazurahazban_feltoltes, web, domain)
-
-    print("KÉÉSZ")
+    process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_,
+            hazurahazban_feltoltes, web, domain)
 
 
-def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_,alapanalogia_feltoltes_,hazurahazban_, web, domain):
+def api_mode():
+    process(mode="api", uj_horoszkop_keszites_=True)
+
+
+def process(mode,bolygojegyben_feltoltes_ = False, hazjegyben_feltoltes_ = False, uj_horoszkop_keszites_ = False,
+            alapanalogia_feltoltes_ = False,hazurahazban_ = False, web=None, domain=None):
     if alapanalogia_feltoltes_:
         alapanalogia_feltoltes(web, alapanalogia_beolvas(), domain=domain)
     if bolygojegyben_feltoltes_:
@@ -74,10 +99,13 @@ def process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszit
     if hazjegyben_feltoltes_:
         hazjegyben_kitoltes(web, hazjegyben_beolvas(),kezdojegyszam=1, kezdohazszam=1, domain=domain)
     if uj_horoszkop_keszites_:
-        horoszkopok_feltoltese(web, kezdobolygojegyben = 1, kezdohazjegyben = 1, domain=domain)
+        horoszkopok_feltoltese(web, kezdobolygojegyben = 1, kezdohazjegyben = 1, domain=domain, mode=mode)
     if hazurahazban_:
         hazurahazban_feltoltes(web,hazurahazban_beolvasas(), kezdo_alaphazszam=1, kezdojegyszam=1, domain=domain)
 
+    # running modes
+    # -kulsoweb
+    # -api
 
 
 

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>{{quiz.name}}</title>
+</head>
+<style>
+.timer{
+    float: right;
+}
+.total{
+    margin-bottom: 5px;
+}
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #16b138;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    .logo {
+        position: relative;
+        bottom: 2rem;
+    }
+
+    .container-fluid {
+        height: 60px;
+    }
+
+    .head1 {
+        color: #FBAD30;
+        font-size: 2rem;
+        font-weight: bold;
+        height: 50px;
+    }
+
+    .head2 {
+        color: #EF4926;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+</style>
+
+{% load static%}
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div>
+                    <img src="{% static 'images/techvidvan.png' %}" alt="" width="60" height="60"
+                        class="logo d-inline-block align-text-top">
+                    <span class="head1">Tech</span> <span class="head2">Vidvan</span>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <button type="button" class="start btn btn-outline-primary btn-lg start-button mt-3">Click Here to Start Attempting the Quiz</button>
+        <h1 class="text-danger mt-3">{{quiz.name}} <span class="badge bg-dark timer" id="hide-time">Seconds Left : <span
+                    id="time-left">{{quiz.time}}</span></span> </h1>
+
+        <hr class="nice" style="display: none;">
+        <div>
+
+            <form id="quiz-form" class="mt-3 mb-3">
+                {% csrf_token %}
+                <div id="quiz-box"></div>
+                <button type="submit" style="display: none;" id="button1" class="btn btn-success mt-3">Submit</button>
+            
+            </form>
+            <button class="badge bg-dark total" id="total" style="display: none;"></button> 
+            <div id="result-box"></div>      
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+</body>
+<script>
+    const url = window.location.href
+    const quizBox = document.getElementById('quiz-box')
+    const resultBox = document.getElementById('result-box')
+    const totalScore = document.getElementById('total')
+
+    $.ajax({
+    type: 'GET',
+    url: `${url}data`,
+    success: function(response){
+        const data = response.data
+        data.forEach(ele => {
+            for (const [question, answers] of Object.entries(ele)){
+             
+                quizBox.innerHTML += `
+                    <hr class="ques" style="display:none">
+                    <div class="mb-2 ques" style="display:none">
+                        <b>${question}</b>
+                    </div>
+                `
+                $('.start-button').click(function () {
+            $(".ques").show();
+        });
+                    answers.forEach(answer=>{
+                    quizBox.innerHTML += `
+                        <div>
+                            <input type="radio" class="ans" style="display:none" id="${question}-${answer}" name="${question}" value="${answer}">
+                            <label for="${question}" style="display:none" class="answer">${answer}</label>
+                        </div>
+                    `
+                    $('.start-button').click(function () {
+            $(".ans").show();
+            $(".answer").show();
+        });
+               
+                });
+            }
+        });
+    },
+    error: function(error){
+        console.log(error)
+    }
+});
+
+// timer countdown
+document.addEventListener('DOMContentLoaded', () => {
+        const timeLeftDisplay = document.querySelector('#time-left');
+        const startbtn = document.querySelector('.start-button');
+        let timeLeft = {{quiz.time}} ;
+
+        function countDown() {
+            setInterval(function () {
+                if (timeLeft <= 0) {
+                    clearInterval(timeLeft = 0)
+                }
+                if (timeLeft == 0) {
+                    $(".ans").attr("disabled", true);
+                }
+                timeLeftDisplay.innerHTML = timeLeft
+                timeLeft--;
+            }, 1000)
+        }
+        startbtn.addEventListener('click', countDown)
+    });
+
+
+const quizForm = document.getElementById('quiz-form')
+const csrf = document.getElementsByName('csrfmiddlewaretoken')
+
+const sendData = () => {
+    const elements = [...document.getElementsByClassName('ans')]
+    const data = {}
+    data['csrfmiddlewaretoken'] = csrf[0].value
+    elements.forEach(el=>{
+        if (el.checked) {
+            data[el.name] = el.value
+        } else {
+            if (!data[el.name]) {
+                data[el.name] = null
+            }
+        }
+    });
+
+
+    $.ajax({
+        type: 'POST',
+        url: `${url}save/`,
+        data: data,
+        success: function(response){
+            const marks = response.marks
+            quizForm.classList.add('not-visible')
+            totalScore.innerHTML = `<h4>Final Score : ${response.score} Out Of {{quiz.number_of_questions}} marks</h4>`
+
+
+            marks.forEach(res=>{
+                const resDiv = document.createElement("div")
+                for (const [question, resp] of Object.entries(res)){
+
+                    resDiv.innerHTML += question
+                    const cls = ['container', 'p-3', 'text-light', 'h6']
+                    resDiv.classList.add(...cls)
+
+                    if (resp=='not answered') {
+                        resDiv.innerHTML += '- not answered'
+                        resDiv.classList.add('bg-info')
+                    }
+                    else {
+                        const answer = resp['answered']
+                        const correct = resp['correct_answer']
+
+                        if (answer == correct) {
+                            resDiv.classList.add('bg-success')
+                            resDiv.innerHTML += ` answered: ${answer}`
+                        } else {
+                            resDiv.classList.add('bg-danger')
+                            resDiv.innerHTML += ` | correct answer: ${correct}`
+                            resDiv.innerHTML += ` | answered: ${answer}`
+                        }
+                    }
+                }
+                resultBox.append(resDiv)
+            })
+        },
+        error: function(error){
+            console.log(error)
+        }
+    })
+}
+
+quizForm.addEventListener('submit', e=>{
+    e.preventDefault()
+
+    sendData()
+});
+
+    $(document).ready(function () {
+
+        $('.start-button').click(function () {
+            $(".start").hide();
+            $("#button1").show();
+        });
+        $("#button1").click(function () {
+            $(".total").show();
+            $("#hide-time").hide();
+        });
+    });
+  
+</script>
+</html>

@@ -1,6 +1,7 @@
 import time
 
 from adatbazis.web_scraping.adat_tarolas import tulajdonos_adat_tarolo
+from adatbazis.web_scraping.horoszkop_kezelok.api_adatgyujto import api_adatlehivo_manager
 from adatbazis.web_scraping.horoszkop_kezelok.kulso_adatgyujto import kulso_weboldalra_tulajdonosadatok_feltoltese, \
     kulso_weboldalrol_adatkiszedes
 from adatbazis.web_scraping.horoszkop_kezelok.sajat_horoszkop_keszito import sajat_horoszkopform_kitoltes
@@ -12,22 +13,31 @@ def kulso_weboldal_lehivasa(web):
     time.sleep(2)
 
 
-def egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain):
-    kulso_weboldal_lehivasa(web)
+def egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain, mode):
 
-    kulso_weboldalra_tulajdonosadatok_feltoltese(web, tulajodonosi_adatok)
+    kinyert_kulso_bolygo_es_haz_adatok = kulso_adat_kinyero(mode, tulajodonosi_adatok, web)
 
-    kinyert_kulso_bolygo_es_haz_adatok = kulso_weboldalrol_adatkiszedes(web)
-    print(kinyert_kulso_bolygo_es_haz_adatok)
-
-
+    # print(kinyert_kulso_bolygo_es_haz_adatok)
+    exit()
     horoszkop_feltolt_adatok = get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok,
                                                                   kinyert_kulso_bolygo_es_haz_adatok,
+                                                                  mode
                                                                   )
     sajat_horoszkopform_kitoltes(horoszkop_feltolt_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain)
 
 
-def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo_es_haz_adatok):
+def kulso_adat_kinyero( mode, tulajodonosi_adatok, web):
+    if mode == "kulsoweb":
+        kulso_weboldal_lehivasa(web)
+
+        kulso_weboldalra_tulajdonosadatok_feltoltese(web, tulajodonosi_adatok)
+        return kulso_weboldalrol_adatkiszedes(web)
+
+    elif mode == "api":
+        return api_adatlehivo_manager(tulajodonosi_adatok)
+
+
+def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo_es_haz_adatok, mode):
 
     def datumido_keszit():
         t = tulajodonosi_adatok
@@ -64,6 +74,6 @@ def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo
     return horoszkop_feltolt_adatok
 
 
-def horoszkopok_feltoltese(web,kezdobolygojegyben, kezdohazjegyben, domain):
+def horoszkopok_feltoltese(web,kezdobolygojegyben, kezdohazjegyben, domain, mode):
     for tulajodonosi_adatok in tulajdonos_adat_tarolo.horoszkop_tarolo:
-        egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain)
+        egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain, mode)

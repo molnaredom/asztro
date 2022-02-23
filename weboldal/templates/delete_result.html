@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Delete Results {% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h4>Are you sure you want to delete {{marks.user}} who has score: {{marks.score}} in {{marks.quiz}} ?</h4>
+    <br>
+    <form action="/delete_result/{{marks.id}}/" method="POST">
+            
+        {% csrf_token %}
+        <a class="btn btn-warning" href="/results/">Cancel</a>
+    
+        <input class="btn btn-danger" type="submit" value="Delete">
+    </form>
+</div>
+
+{% endblock %}

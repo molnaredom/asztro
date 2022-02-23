@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Add Quiz {% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <form action="/add_quiz/" method="POST"> {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>
+</div>
+{% endblock %}
