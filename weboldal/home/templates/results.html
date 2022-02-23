@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Results {% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Quiz</th>
+            <th>Score</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+{% for mark in marks %}
+<tr>
+  <td>{{mark.user}}</td>
+  <td>{{mark.quiz}}</td>
+  <td>{{mark.score}}</td>
+  <td><a href="/delete_result/{{mark.id}}/" class="btn btn-danger">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
