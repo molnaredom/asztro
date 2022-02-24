@@ -14,7 +14,7 @@ def jegyek_oldal(request):
     #     minoseg_neve = request.POST.get('minoseg')
     #     jegy_minoseg_lekerdezes = Jegy.objects.filter(minoseg=minoseg_neve)
     #
-    context = {'adatok': jegyek}#, "jegy_minoseg_lekerdezes": jegy_minoseg_lekerdezes}
+    context = {'adatok': jegyek}  # , "jegy_minoseg_lekerdezes": jegy_minoseg_lekerdezes}
     return render(request, 'analogiatarolok/jegyek.html', context)
 
 
@@ -70,7 +70,7 @@ def hazakUraHazakban(request):
 
 
 def horoszkop_gyujtemeny(request):
-    bolygo_es_jegy_lekerdezes, haz_es_jegy_lekerdezes, leker_1, leker_2, leker_3 = {},{},{},{},{}
+    bolygo_es_jegy_lekerdezes, haz_es_jegy_lekerdezes, leker_1, leker_2, leker_3 = {}, {}, {}, {}, {}
 
     if request.method == "POST":
 
@@ -107,17 +107,39 @@ def horoszkop_gyujtemeny(request):
         #     inner join base_bolygojegyben bj on base_horoszkop1.hold_id = bj.id
         #     where bj.leiras = ''
         #     group by haz.tipus
-        #                                         """)
+        #
+        #                                        """)
 
-    hp = Horoszkop2.objects.all()
+    def nevet_privatra(nev):
+        nev = str(nev)
+        if len(nev.split()) == 1:
+            return nev[0] + (len(nev.split()[0])-1) * "*"
+        elif len(nev.split()) >= 1:
+            return nev[0] + (len(nev.split()[0])-1) * "*"+ " " + len(nev.split()[1]) * "*"
 
-    context = {'adatok': hp,
+    hpok = Horoszkop2.objects.all()
+
+    context = {}
+    if request.user.is_superuser:
+        print("superuser")
+        context = {'adatok': hpok,
                "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
-               "haz_es_jegy_lekerdezes":haz_es_jegy_lekerdezes ,
-               "leker_1" : leker_1,
-               "leker_2" : leker_2,
-               "leker_3" : leker_3
-               }
+               "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
+               "leker_1": leker_1,
+               "leker_2": leker_2,
+               "leker_3": leker_3
+                }
+    else:
+        for horoszkop in hpok:
+            horoszkop.tulajdonos_neve = nevet_privatra(horoszkop.tulajdonos_neve)
+        context = {'adatok': hpok,
+                   "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
+                   "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
+                   "leker_1": leker_1,
+                   "leker_2": leker_2,
+                   "leker_3": leker_3
+                   }
+
     return render(request, 'analogiatarolok/horoszkop_gyujtemeny.html', context)
 
 
@@ -145,6 +167,7 @@ def bolygo_alapjan_lekeres(bolygoNev, jegyNev):
     elif bolygoNev == "plúto":
         jegy_alapjan_lekeres = Horoszkop2.objects.filter(pluto__jegy__nevID=jegyNev)
     return jegy_alapjan_lekeres
+
 
 def haz_alapjan_lekeres(hazNev, jegyNev):
     jegy_alapjan_lekeres = None

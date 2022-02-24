@@ -1,15 +1,7 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-    <title>{{quiz.name}}</title>
-</head>
 <style>
 .timer{
     float: right;
@@ -30,44 +22,12 @@
         visibility: visible;
         border: 2px solid white;
     }
-
-    .logo {
-        position: relative;
-        bottom: 2rem;
-    }
-
-    .container-fluid {
-        height: 60px;
-    }
-
-    .head1 {
-        color: #FBAD30;
-        font-size: 2rem;
-        font-weight: bold;
-        height: 50px;
-    }
-
-    .head2 {
-        color: #EF4926;
-        font-size: 2rem;
-        font-weight: bold;
-    }
 </style>
 
 {% load static%}
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <div>
-                    <img src="{% static 'images/techvidvan.png' %}" alt="" width="60" height="60"
-                        class="logo d-inline-block align-text-top">
-                    <span class="head1">Tech</span> <span class="head2">Vidvan</span>
-                </div>
-            </a>
-        </div>
-    </nav>
+
 
     <div class="container">
         <button type="button" class="start btn btn-outline-primary btn-lg start-button mt-3">Click Here to Start Attempting the Quiz</button>
@@ -245,4 +205,6 @@ quizForm.addEventListener('submit', e=>{
     });
   
 </script>
-</html>
+
+
+{% endblock content %}

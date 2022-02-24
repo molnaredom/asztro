@@ -3,9 +3,10 @@
 
 {% block body %}
 <div class="container mt-4">
-    <form action="/add_quiz/" method="POST"> {% csrf_token %}
+    <form action="/home/add_quiz/" method="POST">
+        {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-info">Submit</button>
+    <button type="submit" class="btn btn-info">Készítsd el</button>
 </form>
 </div>
 {% endblock %}
