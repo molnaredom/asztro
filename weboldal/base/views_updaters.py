@@ -31,7 +31,6 @@ def updateAltalanos_id(request, pk, AnalogiaObject, AnalogiaForm, visszateres_he
     analogia = AnalogiaObject.objects.get(id=pk)
     form = AnalogiaForm(instance=analogia)
 
-
     if request.method == 'POST':
         form = AnalogiaForm(request.POST, instance=analogia)
         if form.is_valid():
