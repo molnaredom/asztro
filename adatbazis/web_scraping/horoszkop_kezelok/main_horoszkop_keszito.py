@@ -1,7 +1,7 @@
 import time
 
 from adatbazis.web_scraping.adat_tarolas import tulajdonos_adat_tarolo
-from adatbazis.web_scraping.horoszkop_kezelok.api_adatgyujto import api_adatlehivo_manager
+from adatbazis.web_scraping.horoszkop_kezelok.flatlib_api import api_adatlehivo_manager
 from adatbazis.web_scraping.horoszkop_kezelok.kulso_adatgyujto import kulso_weboldalra_tulajdonosadatok_feltoltese, \
     kulso_weboldalrol_adatkiszedes
 from adatbazis.web_scraping.horoszkop_kezelok.sajat_horoszkop_keszito import sajat_horoszkopform_kitoltes
