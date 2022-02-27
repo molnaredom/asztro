@@ -5746,3 +5746,21 @@ console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkErr
 
 1644488566120	geckodriver	INFO	Listening on 127.0.0.1:58948
 1644488569190	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58949" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileYLJy9D"
+1644583545042	geckodriver	INFO	Listening on 127.0.0.1:60074
+1644583548134	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60075" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileqxCM7Z"
+1644583548652	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileqxCM7Z\\search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+DevTools listening on ws://localhost:60075/devtools/browser/0af9e3fd-3c37-49b6-a83b-3b1b4479e7f7
+1644583551568	Marionette	INFO	Listening on port 60080
+1644583551839	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1644583979298	Marionette	INFO	Stopped listening on port 60080
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_InsertNewFocusActionId) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
+
