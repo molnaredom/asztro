@@ -1,0 +1,66 @@
+https://www.wikiwand.com/hu/Ny%C3%A1ri_id%C5%91sz%C3%A1m%C3%ADt%C3%A1s
+DEF: A nyári időszámítás (daylight saving time, DST), melyben a helyi időt 1 órával előre állítják az adott időzóna idejéhez képest.
+érdekesség: Föld területének viszonylag kis részén, nagyjából a 30. és 50. szélesség közti sávban van értelme.
+            Német Császárság és az Osztrák–Magyar Monarchia területén vezettek be először nyári időszámítást 1916 április 30-án.
+             nyári időszámítás szabályait az Európai Unió 1996-ban egységesítette, majd 2001-ben irányelvben rögzítette
+
+
+1916;április;30;23 h 	- 1916. 	október 	1. 	1 h
+1917;április;16;3 h 	- 1917.	június 	17. 	2 h
+1918;április;15;3 h 	- 1918.	szeptember 	16. 	2 h
+1919;április;15;3 h 	- 1919.	november 	24. 	2 h
+1941;április;7;23 h 	- 1941. november 	2. 	2 h
+1943;március;29;2 h 	- 1943.	október 	4. 	2 h
+1944;április;3;2 h 	- 1944.	október 	2. 	2 h
+1945;május;1;23 h 	- 1945. november 	1. 	0 h
+1946;március;31;2 h 	- 1946.	október 	6. 	0 h
+1947;április;6;2 h 	- 1947.	október 	5. 	3 h
+1948;április;4;2 h 	- 1948.	október 	3. 	3 h
+1949;április;10;2 h 	- 1949.	október 	2. 	3 h
+1954;május;23;0 h 	- 1954. október 	2. 	2 h
+1955;május;22;2 h 	- 1955. október 	2. 	2 h
+1956;június;3.      2 h     - 1956. 	- 	szeptember 	30. 	3 h
+1957;június;2.      2 h     - 1957. h 	- 	szeptember 	29. 	3 h
+1980;április;6.     0 h 	- 1980.  	szeptember 	28. 	0 h
+1981;március;29.    0 h 	- 1981.  	szeptember 	27. 	1 h
+1982;március;28; ;1982; 	szeptember 	26. 	1 h
+1983;március;27; ;1983; 	szeptember 	25. 	1 h
+1984;március;25;2;1984;szeptember;30;3
+1985;március;31;2;1985;szeptember;29;3
+1986;március;30;2;1986;szeptember;28;3
+1987;március;29;2;1987;szeptember;27;3
+1988;március;27;2;1988;szeptember;25;3
+1989;március;26;2;1989;szeptember;24;3
+1990;március;25;2;1990;szeptember;30;3
+1991;március;31;2;1991;szeptember;29;3
+1992;március;29;2;1992;szeptember;27;3
+1993;március;28;2;1993;szeptember;26;3
+1994;március;27;2;1994;szeptember;25;3
+1995;március;26;2;1995;szeptember;24;3
+1996;március;31;2;1996;október;27;3
+1997;március;30;2;1997;október;26;3
+1998;március;29;2;1998;október;25;3
+1999;március;28;2;1999;október;31;3
+2000;március;26;2;2000;október;29;3
+2001;március;25;2;2001;október;28;3
+2002;március;31;2;2002;október;27;3
+2003;március;30;2;2003;október;26;3
+2004;március;28;2;2004;október;31;3
+2005;március;27;2;2005;október;30;3
+2006;március;26;2;2006;október;29;3
+2007;március;25;2;2007;október;28;3
+2008;március;30;2;2008;október;26;3
+2009;március;29;2;2009;október;25;3
+2010;március;28;2;2010;október;31;3
+2011;március;27;2;2011;október;30;3
+2012;március;25;2;2012;október;28;3
+2013;március;31;2;2013;október;27;3
+2014;március;30;2;2014;október;26;3
+2015;március;29;2;2015;október;25;3
+2016;március;27;2;2016;október;30;3
+2017;március;26;2;2017;október;29;3
+2018;március;25;2;2018;október;28;3
+2019;március;31;2;2019;október;27;3
+2020;március;29;2;2020;október;25;3
+2021;március;28;2;2021;október;31;3
+2022;március;27;2;2022;október;30;3

@@ -2,6 +2,7 @@ from flatlib.chart import Chart
 from flatlib.datetime import Datetime
 from flatlib.geopos import GeoPos
 
+
 def api_adatlehivo_manager(tulajdonso_adatok):
     print(tulajdonso_adatok)
     chart = init_flatlib(tulajdonso_adatok)
