@@ -1,5 +1,7 @@
 from django.forms import ModelForm
-from .models import Room2, Jegy2, Haz2, Bolygo2, BolygoJegyben2, HazJegyben2, BolygoHazban2, Horoszkop2, HazUraHazban
+from django import  forms
+from .models import Room2, Jegy2, Haz2, Bolygo2, BolygoJegyben2, HazJegyben2, BolygoHazban2, Horoszkop2, HazUraHazban, \
+    HoroszkopAdatok
 
 
 class RoomForm(ModelForm):
@@ -54,6 +56,18 @@ class HazJegybenForm(ModelForm):
 class HoroszkopForm(ModelForm):
     class Meta:
         model = Horoszkop2
+        fields = "__all__"
+
+
+class HoroszkopFormGyors(ModelForm):
+    class Meta:
+        model = Horoszkop2
+        fields = "__all__"
+
+
+class HoroszkopAdatokForm(ModelForm):
+    class Meta:
+        model = HoroszkopAdatok
         fields = "__all__"
 
 

@@ -133,6 +133,19 @@ class HazUraHazban(models.Model):
 #         return str(self.alap_haz) + ". ház ura " + str(self.ura_melyik_hazban) + ". ház"
 
 
+class HoroszkopAdatok(models.Model):
+    tulajdonos_neve = models.CharField(max_length=30)
+    idopont = models.DateTimeField(default=datetime.datetime.now())
+    hely = models.CharField(max_length=80, blank=True)
+    tipus = models.CharField(max_length=30, blank=True)
+    neme = models.CharField(max_length=10, blank=True, default="")
+
+    kepletkep = models.ImageField(upload_to='images/', default= os.getcwd()+'weboldal/static/images/hold.jpg')
+    leirasok = models.JSONField(default=dict, blank=True)
+    fokszamok = models.JSONField(default=dict, blank=True)
+    munka = models.JSONField(default=dict, blank=True)
+
+
 class Horoszkop2(models.Model):
     tulajdonos_neve = models.CharField(max_length=30)
     idopont = models.DateTimeField(default=datetime.datetime.now())

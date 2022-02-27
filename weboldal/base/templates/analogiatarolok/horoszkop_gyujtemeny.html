@@ -1,4 +1,4 @@
-{% extends 'analogia_db_base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
@@ -129,7 +129,7 @@
                     </thead>
 
                     <tbody>
-
+                    {% if request.user.is_superuser %}
                     {% for adat in haz_es_jegy_lekerdezes %}
                     <tr>
                         <td><a href="{% url 'horoszkop' adat.id %}">{{adat}}</a></td>
@@ -139,6 +139,10 @@
                         <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
                     </tr>
                     {% endfor %}
+                    {% endif %}
+
+
+
                     </tbody>
                 </table>
             </div>

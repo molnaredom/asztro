@@ -89,9 +89,6 @@ urlpatterns = [
     path("generalt_adatok/", ml.generalt_adatok, name="generalt_adatok"),
 
 
-
-
-
     ]
 
 

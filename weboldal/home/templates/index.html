@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% block title %} Quiz {% endblock %}
+{% block css %}
+<style>
+  .attempt {
+    --gradient: linear-gradient(to left top, #c724dd 10%, #aaaaaa 90%) !important;
+  }
+
+  body {
+    background: #111;
+  }
+
+  .card {
+    background: #222;
+    border: 1px solid #7a24dd;
+    color: rgba(250, 250, 250, 0.8);
+    margin-bottom: 3rem;
+  }
+
+  #btn {
+    border: 5px solid;
+    border-image-slice: 1;
+    background: var(--gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    border-image-source: var(--gradient) !important;
+    text-decoration: none;
+    position: relative;
+    left: 80px;
+  }
+
+  .head1 {
+    color: #FBAD30;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 50px;
+  }
+
+  .head2 {
+    color: #EF4926;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  #btn:hover,
+  #btn:focus {
+    background: var(--gradient) !important;
+    -webkit-background-clip: none !important;
+    -webkit-text-fill-color: #fff !important;
+    border: 5px solid #fff !important;
+    box-shadow: #222 1px 0 10px;
+    text-decoration: underline;
+  }
+
+  .logo {
+    position: relative;
+    bottom: 2rem;
+  }
+
+  .container-fluid {
+    height: 60px;
+  }
+</style>
+{% endblock %}
+{% load static %}
+
+{% block body %}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      {% if user.is_authenticated %}
+      <div class="modal-body" id="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="start-quiz" class="btn btn-primary">Start Quiz</button>
+      </div>
+      {% else %}
+      <div class="modal-body">
+        <h3>Login first to start the quiz</h3>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+<!-- cards -->
+<div class="container">
+  <div class="container mx-auto mt-2">
+    <div class="row">
+
+      {% for i in quiz %}
+      <div class="col-md-4">
+        <div class="card" style="width: 21rem;">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">{{i.name}}</h5>
+            <br>
+            <p class="card-text">{{i.desc}}</p>
+            <br>
+            <button data-bs-target="#exampleModal" data-bs-toggle="modal" data-time="{{i.time}}"
+              data-questions="{{i.number_of_questions}}" data-name="{{i.name}}" data-id="{{i.id}}" id="btn"
+              style="justify-content: center;" class="attempt btn mr-2 modal-button"><i class="fas fa-link"></i>Attempt
+              Quiz</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+  const modalBtns = [...document.getElementsByClassName('modal-button')]
+  const modalBody = document.getElementById('modal-body')
+  const modaltitle = document.getElementById('modal-title')
+  const startQuiz = document.getElementById('start-quiz')
+
+  const url = window.location.href
+
+  modalBtns.forEach(modalBtn => modalBtn.addEventListener('click', () => {
+    const id = modalBtn.getAttribute('data-id')
+    const name = modalBtn.getAttribute('data-name')
+    const numberOfQuestions = modalBtn.getAttribute('data-questions')
+    const time = modalBtn.getAttribute('data-time')
+
+    modaltitle.innerHTML = `${name}`
+
+    modalBody.innerHTML = `
+    The ${name} consists of ${numberOfQuestions} questions and hence it is of ${numberOfQuestions} marks. You will be getting exactly ${time} seconds to complete ${numberOfQuestions} multiple choice questions. After completing the questions you can click on the
+          submit button to get your score and to understand the concept in which you made a mistake.<br>
+          All the best for the quiz!!!.
+    `
+
+    startQuiz.addEventListener('click', () => {
+      window.location.href = url + id
+    });
+  }));
+</script>
+{% endblock %}

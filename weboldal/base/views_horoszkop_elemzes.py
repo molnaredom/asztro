@@ -10,12 +10,23 @@ def horoszkop(request, id):
     hazakUraHazakban = HazUraHazban.objects.all()
     osszesjegy = Jegy2.objects.all()
 
+    if request.user.is_superuser:
+        analogia.tulajdonos_neve = nevet_privatra(analogia.tulajdonos_neve)
+
     analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"])  # eval strbol dictet csinal
 
     elemzes_adat = _elemzes(analogia, osszesjegy, hazakUraHazakban)
     context = {"analogia": analogia, "elemzes": elemzes_adat}  # ez egy objektum
 
     return render(request, "konkret_analogiak/horoszkop.html", context)
+
+
+def nevet_privatra(nev):
+    nev = str(nev)
+    if len(nev.split()) == 1:
+        return nev[0] + (len(nev.split()[0])-1) * "*"
+    elif len(nev.split()) >= 1:
+        return nev[0] + (len(nev.split()[0])-1) * "*"+ " " + len(nev.split()[1]) * "*"
 
 
 def _elemzes(adatok, osszesjegy, hazakUraHazakban):
