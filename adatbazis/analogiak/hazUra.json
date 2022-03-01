@@ -371,19 +371,26 @@
       "szerelem, gyerek, vágyak megvalósítása a cél"
     ],
     "2": [
+      "eltartom a gyereket",
+      "gyerekhez, szerelemhez, vállalkozáshoz erősen ragaszkodik",
+      "vágyai az anyagiakon keresztül valósulhat meg"
     ],
     "3": [
       "szállítási kereskedelmi vállalkozás",
       "keresi a nyilvános szereplést",
-      "fontos a tudás, a tanulás"
+      "fontos a tudás, a tanulás",
+      "társközvetítő ügynök"
     ],
     "4": [
       "családi vállalkozás",
       "együtt él a gyerekével",
-      "gondoskodó",
-      "művészi tehetség"
+      "művészi tehetség",
+      "a gyerek által jön létre a család",
+      "az otthon feltétele lehet a gyermek"
     ],
     "5": [
+      "gyerek által teremtek",
+      "apa pénzéből teremt"
     ],
     "6": [
       "munkában sikeres",
@@ -396,13 +403,19 @@
       "nyilvános elismertség",
       "házasságban lesz gyermek",
       "vágyait a párja valósíthatja meg",
-      "egyik gyerek a párromnál lesz"
+      "egyik gyerek a párromnál lesz",
+      "a gyerek által lesz párkapcsolatom ( először a gyerek, utána jön meg a párkapcsolat)",
+      "szerelmi házasság",
+      "társulás gyermekkel",
+      "a párttól függ, hogy lesz e gyermek vagy vállalkozás"
     ],
     "8": [
       "a szerelem alapja a szexulaitás",
       "szerelmi csalódás",
       "elveszti a gyermekét (lemondás)",
-      "bukott vállalkozás"
+      "bukott vállalkozás",
+      "lemondok a gyerekről",
+      ""
     ],
     "9": [
       "külföldi vállalkozás",
@@ -410,20 +423,27 @@
       "törvényes gyerek",
       "iskolai szerelem",
       "csak házasságban lehet gyerek",
-      "gyerek által szeretné biztosítani a családot és a házasságot"
+      "gyerek által szeretné biztosítani a családot és a házasságot",
+      "hisz az örök szerelemben",
+      "külföldön világra hozott gyerek"
     ],
     "10": [
       "célja a gyerek",
       "sikeres vállalkozás",
       "érdekkapcsolatok",
-      "vezetői adottságok"
+      "vezetői adottságok",
+      "gyereknevelés (= hivatásos anya)",
+      "vágyait a céljainak rendeli alá"
     ],
     "11": [
       "barátságból lesz szerelem",
       "párja akarja a gyermeket",
       "barátokkal alakít vállalkozást",
       "közösség vezetője",
-      "mások segítik vágyaihoz"
+      "mások segítik vágyaihoz",
+      "vállalkozás okoz örömet",
+      "szerelemben, vállalkozásban és gyerekben teljesedhet ki",
+      ""
     ],
     "12": [
       "mások tehetik sikeressé",
@@ -432,7 +452,11 @@
       "szeretőtől gyermek",
       "gyermekvesztés",
       "csalódás szerelemben",
-      "csalódás vállakozásban"
+      "csalódás vállakozásban",
+      "lemondok a gyerekről/beteg gyerek/",
+      "impotencia",
+      "vállalkozás veszteségem",
+      "szerelemmel kapcsolatos problémák"
     ]
   },
   "6": {
@@ -448,7 +472,9 @@
       "munkavégzés közben rengeteget utazik",
       "munkakapcsolatok",
       "otthonához közel dolgozik",
-      "a környezetét segíti"
+      "a környezetét segíti",
+      " családtagjaival dolgozik",
+      "olyan munka, mely sok rövid utazással jár"
     ],
     "4": [
       "a családot szolgálja",
@@ -458,38 +484,54 @@
       "ingatlannal kapcsolatos munka"
     ],
     "5": [
+      "a munkáját a saját vállalkozásában végzi"
     ],
     "6": [
+      "a munka/szolgálat megbetegítheti",
+      "alárendelődés lesz fontos a munkájában"
     ],
     "7": [
+      "olyan munka, amit elismer a külvilág"
     ],
     "8": [
+      "munkahelyvesztés",
+      "olyan betegségek, amelyek műtéttel végződnek",
+      "sokszori munkahelyi probléma",
+      "munkahelyi veszteség"
     ],
     "9": [
       "törvénnyel kapcsolatos munka",
       "tanári hivatás",
       "külföldi munka",
       "politikai pályafutás",
-      "alárendeltségett tud megélni a házasságban"
+      "alárendeltségett tud megélni a házasságban",
+      "főiskolán/egyetemen dolgozik"
     ],
     "10": [
       "céljaimban fontos a munka",
       "mindig mások céljait segíti",
       "hivatásában alárendelt",
       "munkájában éli meg a sikert",
-      "munkájában elismerik"
+      "munkájában elismerik",
+      "megdolgozik a sikerért"
     ],
     "11": [
       "barátaival dolgozik",
       "alárendeltként teljesülnek céljai, vágyai",
       "a közösséget szolgálja",
-      "barátai segíthetik álláshoz"
+      "barátai segíthetik álláshoz",
+      "munka által szerez barátokat",
+      "önkéntes vagyok egy alapítványnál",
+      " párom titkos kapcsolatra vágyik",
+      "a munkám egyben a hobbim is"
     ],
     "12": [
       "zárt helyen dolgozik",
       "önzetlenül szolgál és segít",
       "alárendelté válik",
-      "elhúzódó betegségek"
+      "elhúzódó betegségek",
+      "börtönben, kórházban végzett munka",
+      "szerzett betegségek krónikussá válhatnak"
     ]
   },
   "7": {

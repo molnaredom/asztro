@@ -65,7 +65,7 @@ urlpatterns = [
     path("delete-hazUraHazban/<str:id>/", views_deleters.deleteHazUraHazban, name= "delete-hazUraHazban"),
 
     path("horoszkop_gyujtemeny/", views_analogiatarolok.horoszkop_gyujtemeny, name="horoszkop_gyujtemeny"),
-    path("create-horoszkop/", views_creators.createHoroszkop, name= "create-horoszkop"),
+    path("create-horoszkop/", views_creators.createHoroszkopGyors, name= "create-horoszkop"),
     path("delete-horoszop/<str:id>/", views_deleters.deleteHoroszkop, name= "delete-horoszkop"),
 
     path("horoszkop/<str:id>/", views_horoszkop_elemzes.horoszkop, name="horoszkop"),
