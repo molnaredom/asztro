@@ -11,7 +11,7 @@ def ekezetnelkul(szo: str):
     szo =szo.replace("í", "i")
     szo =szo.replace(" ", "_")
     szo.replace("á", "a")
-    return szo.lower()
+    return szo
 
 
 def varos_poz(varosnev):

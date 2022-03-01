@@ -5,9 +5,11 @@ from adatbazis.web_scraping.kisegito_modulok.feltoltes_kisegito_modul import szo
 
 def alapanalogia_feltoltes(web, alapanalogiak, domain):
     feltoltendo = alapanalogiak
-
+    time.sleep(1)
     jegy_feltoltes(web, feltoltendo, domain)
+    time.sleep(1)
     bolygo_feltoltes(web, feltoltendo, domain)
+    time.sleep(1)
     haz_feltoltes(web, feltoltendo, domain)
 
 

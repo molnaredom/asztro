@@ -58,6 +58,9 @@ parser.add_argument("-m", "--mode", default= "api",
 args = parser.parse_args()
 
 def main():
+    alapadat_feltoltes("alapadat")
+    print("kész")
+    exit()
 
     if args.mode == "api":
         print("api mode")
@@ -66,6 +69,12 @@ def main():
     elif args.mode == "web":
         print("web mode")
         web_mode()
+
+    elif args.mode == "alapadat":
+        print("alapadatok feltöltése mód")
+        alapadat_feltoltes("alapadat")
+
+
 
     print("KÉÉSZ")
 
@@ -84,6 +93,20 @@ def web_mode():
 
     process(bolygojegyben_feltoltes_, hazjegyben_feltoltes_, uj_horoszkop_keszites_, alapanalogia_feltoltes_,
             hazurahazban_feltoltes, web, domain)
+
+
+def alapadat_feltoltes(mode):
+    web = inditas()
+    domain = "https://asztro.herokuapp.com"
+    domain = "http://127.0.0.1:8000"
+    print("inditas")
+
+
+    process(mode,web = web, domain=domain, bolygojegyben_feltoltes_ = True,
+            hazjegyben_feltoltes_ = True, alapanalogia_feltoltes_ = True,
+            hazurahazban_= True)
+
+
 
 
 def api_mode():
