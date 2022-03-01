@@ -13,7 +13,11 @@ def horoszkop(request, id):
     if request.user.is_superuser:
         analogia.tulajdonos_neve = nevet_privatra(analogia.tulajdonos_neve)
 
-    analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"])  # eval strbol dictet csinal
+    print(analogia.fokszamok)
+    if "analogiak" not in analogia.fokszamok:
+        analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"])  # eval strbol dictet csinal
+    else:
+        analogia.fokszamok = analogia.fokszamok["analogiak"]
 
     elemzes_adat = _elemzes(analogia, osszesjegy, hazakUraHazakban)
     context = {"analogia": analogia, "elemzes": elemzes_adat}  # ez egy objektum
@@ -61,12 +65,12 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
 
 
 def pontos_kor_szamitas(pontoskor: datetime):
-    return f'A pontos életkorod {pontoskor.year} év  ' \
-           f'{pontoskor.month} hónap  ' \
-           f'{pontoskor.day} nap  ' \
-           f'{pontoskor.hour} óra  ' \
-           f'{pontoskor.minute} perc ' \
-           f'{pontoskor.second} másodperc.'
+    return f'A pontos életkorod {pontoskor[0]} év  ' \
+           f'{pontoskor[1]} hónap  ' \
+           f'{pontoskor[2]} nap  ' \
+           f'{pontoskor[3]} óra  ' \
+           f'{pontoskor[4]} perc ' \
+           f'{pontoskor[5]} másodperc.'
 
 
 def szuletesi_datumido(adatok):
@@ -96,7 +100,7 @@ def szuletesi_datumido(adatok):
     seconds = (minutes - minutesInt) * 60
     secondsInt = int(seconds)
 
-    pontos_kor = datetime.datetime(yearsInt, monthsInt, daysInt, hoursInt, minutesInt, secondsInt)
+    pontos_kor = [yearsInt, monthsInt, daysInt, hoursInt, minutesInt, secondsInt]   # datetime.datetime(yearsInt, monthsInt, daysInt, hoursInt, minutesInt, secondsInt)
 
     return pontos_kor
 
@@ -151,6 +155,12 @@ def fokszamhozzarendeles(adatok):
     for analogia in list(
             zip(['nap', 'hold', 'merkur', 'venusz', 'mars', 'jupiter', 'szaturnusz', 'uranusz', 'neptun', 'pluto'],
                 bolygojegyben_adatok)):
+        print(analogia[1].jegy)
+        print(analogia[1].bolygo)
+        print("fokszamok", adatok.fokszamok)
+        print("fokszamok", analogia[0])
+        print(adatok.fokszamok[analogia[0]])
+
         bolygok.append(
             {"jegy": analogia[1].jegy, "bolygo": analogia[1].bolygo, "fokszam": adatok.fokszamok[analogia[0]]})
 
@@ -312,7 +322,7 @@ def _sorstipus(bolygok, hazak):
 
 
 def eletciklus(pontos_kor):
-    yearsInt = pontos_kor.year
+    yearsInt = pontos_kor[0]
     eletciklus = ""
     if yearsInt > 63:
         eletciklus = "szaturnusz"

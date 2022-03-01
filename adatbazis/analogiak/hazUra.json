@@ -3,43 +3,57 @@
     "1": [
       "az akaratát érvényesíteni fogja",
       "önösség lehet tetteiben",
-      "öntörvényű",
+      "öntörvényű, önérvényesítő",
       "keresi a kihívásokat"
     ],
     "2": [
       "ragaszkodik az akaratához",
       "mindig az élvezetek motiválják",
-      "csak akkor dönt ha biztos a döntésében"
+      "csak akkor dönt ha biztos a döntésében",
+      "küzd az anyagiakért, törekvései anyagi jellegűek"
     ],
     "3": [
+      "egoját alárendeli a saját környezetének",
+      "az ego a környezete által tud kibontakozni"
     ],
     "4": [
       "családban irányít",
       "otthon éli meg egóját",
       "nehezen válik le otthonáról",
-      "mindenben a család motiválja"
+      "mindenben a család motiválja",
+      "az ego az otthon által tud kibontakozni"
     ],
     "5": [
       "elvárja hogy elimserjék",
       "vállalkozás lesz neki a legfontosabb",
       "vágyai irányítják",
-      "célja a gyerek"
+      "célja a gyerek",
+      "szerelem, gyerek a fontos, vállalkozás megteremtése minden áron",
+      "gyereknemzés, szerelem és szenvedélyre fordítja az ego erejét"
     ],
     "6": [
       "munkamánia",
       "alárdeneltként dolgozhat",
       "minden helyzetben másokat segíthet",
-      "örök kielégületlenség"
+      "örök kielégületlenség",
+      "nagy munkabírás, ego és erő a munkában"
     ],
     "7": [
       "vágyait a házasságban élheti meg",
-      "őt fogja irányítani párja"
+      "őt fogja irányítani párja",
+      "házasodni akar",
+      "elszántságon keresztül lesz sikeres"
     ],
     "8": [
       "le kell mondania az akaratáról",
       "műtétek",
       "fontos a szexualitás",
-      "gyakran árt magának"
+      "gyakran árt magának",
+      "lemondok az egóról vagy ego vesztés, azaz lemondatják mások",
+      "önelfogadási probléma",
+      "szex tartja életben, szexmániás",
+      "külvilág pénzével foglalkozik",
+      "spiritualitáson keresztül érvényesülhet az egoja"
     ],
     "9": [
       "előtérbe kerülhet a külföld szerepe",
@@ -47,7 +61,9 @@
       "magasabb iskkolák",
       "magabiztosság önbizalom",
       "az egója a tanításban érvényesül",
-      "fontos a házasság"
+      "fontos a házasság",
+      "hivatalos párkapcsolat",
+      "erős önbizalom, egoizmus"
     ],
     "10": [
       "törekszik a céljai megvalósítására",
@@ -55,15 +71,19 @@
       "amit akar, minden áron eléri",
       "a karrier fogja meghatározni egóját (de szaturnusz miatt le is kell mondania róla he egóból akarja)",
       "minél inkább megvalósulnak céljai, anál inkább érzi, hogy ő már valaki",
+      "fontos az anyával való kapcsolat"
     ],
     "11": [
+      "közösségben tud egoja kibontakozni "
     ],
     "12": [
       "mások által érvényesülhet",
       "titkos kapcsolatok",
       "zárt területen dolgozik",
       "magányossá válhat",
-      "állandóan bizonytani akarja saját egóját"
+      "állandóan bizonytani akarja saját egóját",
+      "az egoja zárt közegben, intézetben érvényesülhet",
+      "okkultizmuson keresztül jelenik meg az ego"
     ]
   },
   "2": {
@@ -72,7 +92,9 @@
       "törekszik a dolgok élvezetére",
       "fontosak a külsőségek, de tesz is érte",
       "anyagiak motiválják",
-      "fontos a biztonság megteremtése"
+      "fontos a biztonság megteremtése",
+      "alárendelődök az anyagiaknak",
+      "biztonság, az állandóság lesz az egojának a fontos"
     ],
     "2": [
       "család adja az anyagiakat?",
@@ -80,62 +102,93 @@
       "erős az érzelmi kötődés?",
       "mindent az anyagiakon keresztül ítél meg",
       "ragaszkodik a dolgokhoz, nem képes lemondani",
-      "mindig az élvezetek motiválják, a gazdagság"
+      "mindig az élvezetek motiválják, a gazdagság",
+      "akkor lesz biztonságban, ha anyagiakra tesz szert",
+      "pénzhez köthető az anyagi teremtése (bankár, bróker)",
+      "ragaszkodik a megszerzett pénzhez",
+      "testéből él (pl. conzum lány vagy testépítő)"
     ],
     "3": [
+      "pénzügyi előadó, banki ellenőr, kereskedőként teremti a pénzt",
+      "kereskedelemből, vagy írói tevékenységből keres pénzt, tanítóként érvényesülhet"
     ],
     "4": [
       "erős érzelmi kötődés az apához",
       "a család biztosítja az anyagiakat",
-      "ingatlanból származó jövedelem"
+      "ingatlanból származó jövedelem, otthonában teremti a pénzt"
     ],
     "5": [
       "szerelmi kalandok",
       "vállalkozás anyagi céllal",
-      "fontosak számára a külsőségek, luxus"
+      "fontosak számára a külsőségek, luxus",
+      "anyagi és fizikai szintű vágyak elsődlegessé válnak",
+      "jövedelmező vállalkozás",
+      "anyagi vágyak a fontosak"
     ],
     "6": [
+      "pénzszerzés miatt dolgozik sokat",
+      "munkája által teremti a biztonságot",
+      "kereskedőként dolgozik"
     ],
     "7": [
       "a párja irányítja a pénzügyeket",
       "anyagi elismerésre törekszik",
-      "párja segíti vágyait"
+      "párja segíti vágyait",
+      "házastárs teremtheti meg a pénzt, párja keresi a pénzt",
+      " érdekházasság"
     ],
     "8": [
       "anyagi veszteségek",
       "élvezetek elfolytása",
       "szexualitás felerősödés",
-      "pénzügyi befektetések"
+      "pénzügyi befektetések",
+      "fizikai szintű betegségek, amelyek műtéteket hoznak",
+      "örökölt vagyon",
+      "párja teremti az anyagiakat"
     ],
     "9": [
       "külföldön keresett pénz",
       "pénzügyi tanulmányok",
       "anyagias gondolkodás megközeítés",
       "gazdasági vállalkozások",
-      "hitrendszerek alapja a pénz"
+      "hitrendszerek alapja a pénz",
+      "fizikai lét kiemelt fontossággal bír, hisz a biztonság megteremtésében",
+      "pénz hatalmában hisz, anyagi gondoskodásban hisz"
     ],
     "10": [
+      "az anyagiak a cél ,biztonság megteremtése a cél",
+      "mindenáron megvalósítja azt, amit kitűz maga elé, nem kímélve az anyagiakat"
     ],
     "11": [
+      "anyagi vágyak beteleljesülése a fontos, anyagi beteljesülés várható"
     ],
     "12": [
+      "anyagiak által válhat áldozattá",
+      "anyagiakban veszíthet, anyagiakon keresztül lehet önfeláldozó"
     ]
   },
   "3": {
     "1": [
+      "folyamatosan változtatni akar",
+      "saját otthont akar"
     ],
     "2": [
       "ragaszkodik a környezetéhez",
       "jó testvéri viszony",
       "kapcsolatait birtokolja",
       "nehezen mozdul",
-      "komminukációval szerzi az anyagiakat"
+      "komminukációval szerzi az anyagiakat",
+      "testvér segíti pénzhez,",
+      "tanítás által jut pénzhez"
     ],
     "3": [
       "sok kapcsolat",
       "állandó változtatások",
       "sok költözés",
-      "tanulási vágy"
+      "tanulási vágy",
+      "testvér által juthat otthonhoz",
+      "környezete, rokonai támogatásával lehet háza",
+      "többször költözik"
     ],
     "4": [
       "együttélés testvérrel",
@@ -149,20 +202,28 @@
       "vágyik az utazásokra",
       "tanulási tanítási tehetség",
       "nyilvános szereplés",
-      "kereskedelmi vállakozás"
+      "kereskedelmi vállakozás",
+      "egyéni vállalkozóként kereskedhet"
     ],
     "6": [
       "kereskedelemben dolgozhat",
       "rokonait segíti",
       "pedagógus",
       "sokat utazik",
-      "mozgásszervi problémák"
+      "mozgásszervi problémák",
+      "testvérével dolgozik, lehet kereskedő",
+      "változás a munkában vagy a munka által"
     ],
     "7": [
       "nyilvános szereplés",
       "iskolatárs lesz a párja",
       "együttélés házasság előtt",
-      "kereskedelmi társulás"
+      "kereskedelmi társulás",
+      "változás a párkapcsolatban",
+      "tanítóként lesz sikeres",
+      "testvérrel társulás",
+      "kereskedelmen keresztül jelenik meg a külvilágban"
+
     ],
     "8": [
       "kényszerből költözés",
@@ -170,7 +231,9 @@
       "bezártság",
       "nehezen teremt kapcsolatokat",
       "pénzügyi tanácadás",
-      "lemondás a kapcsolatokról, környezetről, tanulásról"
+      "lemondás a kapcsolatokról, környezetről, tanulásról",
+      "otthon, ház, ingatlan vesztése",
+      "testvér vesztés"
     ],
     "9": [
       "kisebb utazásokat tesz külföldre",
@@ -179,31 +242,48 @@
       "törvényes kapcsolatok",
       "tanítás",
       "testvérekkel megy külföldre",
-      "törvényességre törekszik testvéreivel"
+      "törvényességre törekszik testvéreivel",
+      "változások a házasságban",
+      "a testvér külföldre költözik",
+      "egyetemi tanár",
+      "külföldön töltött hosszabb idő"
     ],
     "10": [
       "kommunikációs pálya",
       "állandó utazások",
       "céltudatos gondolkodás",
-      "sporttehetség"
+      "sporttehetség",
+      "változások a karrierben",
+      "tanítás jelenhet meg célként",
+      "ingatlanvásárlással kapcsolatos célok",
+      "testvérrel kapcsolatos célok"
     ],
     "11": [
       "nagyon sok barát és ismerős",
       "közösségi szerepek",
       "sikeres kapcsolatok",
       "függetlenség",
-      "környezetében, lakóhelyén közéleti szerepet vállal"
+      "környezetében, lakóhelyén közéleti szerepet vállal",
+      "tanítás által teljesedik ki"
     ],
     "12": [
       "gondolkodásom miatt zárnak be",
       "többgenerációs otthon",
-      "magány, bezártság",
       "otthonvesztés",
-      "mozgásproblémák"
+      "mozgásproblémák",
+      "lemondás a változásról",
+      "nehéz a változás",
+      "testvér segít lemondani az egoról",
+      "közlekedési balesetek",
+      "kommunikációs problémák",
+      "ezoterikus tanítás",
+      "titkos kapcsolat"
     ]
   },
   "4": {
     "1": [
+      "otthonteremtés",
+      "család megvalósításra"
     ],
     "2": [
       "ragaszkodik a családhoz",
@@ -212,45 +292,61 @@
       "erős érzelmi kötődés",
       "anyagi gondoskodás",
       "birtokolni akar",
-      "saját lakást mindenképp akar"
+      "saját lakást mindenképp akar",
+      "családra költi minden pénzét",
+      "a pénzét az otthonába fekteti"
     ],
     "3": [
+      "ingatlanügynök",
+      "taníthat régészetet, történelmet",
+      "oktathat családterápiát"
     ],
     "4": [
+      "Az apja által lehet otthona",
+      "az apával él együtt, közös az otthona az apjával"
     ],
     "5": [
       "vágyik a családra",
       "szerelemből gyerek",
       "családi vállakozás",
       "művészeti tehetség",
-      "ingatlan befektetés"
+      "ingatlan befektetés",
+      "Először a gyerek, aztán az otthon: a gyermek által lehet otthona"
     ],
     "6": [
       "otthon dolgozik",
       "gondozói munka",
       "ingatlannal kapcsolatos pálya",
       "alárendeltség a családban",
-      "építési vállalkozó"
+      "építési vállalkozó",
+      "azért dolgozik, hogy családot alapítson",
+      "betegségeknek családi okai lehetnek"
     ],
     "7": [
       "család miatt házasodik",
       "üzlettársból lehet pár",
       "örökösödési per",
-      "társas ingatlan"
+      "társas ingatlan",
+      "társas vállalkozását otthon csinálja"
     ],
     "8": [
       "otthonvesztés",
       "családról való lemondás",
       "apavesztés",
       "ingatlan kölcsönből",
-      "ingatlan örökség"
+      "a pár ingatlanértékesítő",
+      "örökségből származó ingatlan"
     ],
     "9": [
+      "külföldi otthon megteremtése",
+      "családba vetett hit"
     ],
     "10": [
       "cél a család",
       "hivatása kapcsolódik a gondoskodással, házzal, otthonnal",
-      "törekszik önnálló otthonra"
+      "törekszik önnálló otthonra",
+      "otthonteremtés jelenik meg célként",
+      "családon keresztül valósulhatnak meg a célok"
     ],
     "11": [
       "család teljesíti be a vágyait",
@@ -271,21 +367,30 @@
   },
   "5": {
     "1": [
+      "gyereket, vállalkozást  akarok",
+      "szerelem, gyerek, vágyak megvalósítása a cél"
     ],
     "2": [
+      "eltartom a gyereket",
+      "gyerekhez, szerelemhez, vállalkozáshoz erősen ragaszkodik",
+      "vágyai az anyagiakon keresztül valósulhat meg"
     ],
     "3": [
       "szállítási kereskedelmi vállalkozás",
       "keresi a nyilvános szereplést",
-      "fontos a tudás, a tanulás"
+      "fontos a tudás, a tanulás",
+      "társközvetítő ügynök"
     ],
     "4": [
       "családi vállalkozás",
       "együtt él a gyerekével",
-      "gondoskodó",
-      "művészi tehetség"
+      "művészi tehetség",
+      "a gyerek által jön létre a család",
+      "az otthon feltétele lehet a gyermek"
     ],
     "5": [
+      "gyerek által teremtek",
+      "apa pénzéből teremt"
     ],
     "6": [
       "munkában sikeres",
@@ -298,13 +403,19 @@
       "nyilvános elismertség",
       "házasságban lesz gyermek",
       "vágyait a párja valósíthatja meg",
-      "egyik gyerek a párromnál lesz"
+      "egyik gyerek a párromnál lesz",
+      "a gyerek által lesz párkapcsolatom ( először a gyerek, utána jön meg a párkapcsolat)",
+      "szerelmi házasság",
+      "társulás gyermekkel",
+      "a párttól függ, hogy lesz e gyermek vagy vállalkozás"
     ],
     "8": [
       "a szerelem alapja a szexulaitás",
       "szerelmi csalódás",
       "elveszti a gyermekét (lemondás)",
-      "bukott vállalkozás"
+      "bukott vállalkozás",
+      "lemondok a gyerekről",
+      ""
     ],
     "9": [
       "külföldi vállalkozás",
@@ -312,20 +423,27 @@
       "törvényes gyerek",
       "iskolai szerelem",
       "csak házasságban lehet gyerek",
-      "gyerek által szeretné biztosítani a családot és a házasságot"
+      "gyerek által szeretné biztosítani a családot és a házasságot",
+      "hisz az örök szerelemben",
+      "külföldön világra hozott gyerek"
     ],
     "10": [
       "célja a gyerek",
       "sikeres vállalkozás",
       "érdekkapcsolatok",
-      "vezetői adottságok"
+      "vezetői adottságok",
+      "gyereknevelés (= hivatásos anya)",
+      "vágyait a céljainak rendeli alá"
     ],
     "11": [
       "barátságból lesz szerelem",
       "párja akarja a gyermeket",
       "barátokkal alakít vállalkozást",
       "közösség vezetője",
-      "mások segítik vágyaihoz"
+      "mások segítik vágyaihoz",
+      "vállalkozás okoz örömet",
+      "szerelemben, vállalkozásban és gyerekben teljesedhet ki",
+      ""
     ],
     "12": [
       "mások tehetik sikeressé",
@@ -334,7 +452,11 @@
       "szeretőtől gyermek",
       "gyermekvesztés",
       "csalódás szerelemben",
-      "csalódás vállakozásban"
+      "csalódás vállakozásban",
+      "lemondok a gyerekről/beteg gyerek/",
+      "impotencia",
+      "vállalkozás veszteségem",
+      "szerelemmel kapcsolatos problémák"
     ]
   },
   "6": {
@@ -350,7 +472,9 @@
       "munkavégzés közben rengeteget utazik",
       "munkakapcsolatok",
       "otthonához közel dolgozik",
-      "a környezetét segíti"
+      "a környezetét segíti",
+      " családtagjaival dolgozik",
+      "olyan munka, mely sok rövid utazással jár"
     ],
     "4": [
       "a családot szolgálja",
@@ -360,38 +484,54 @@
       "ingatlannal kapcsolatos munka"
     ],
     "5": [
+      "a munkáját a saját vállalkozásában végzi"
     ],
     "6": [
+      "a munka/szolgálat megbetegítheti",
+      "alárendelődés lesz fontos a munkájában"
     ],
     "7": [
+      "olyan munka, amit elismer a külvilág"
     ],
     "8": [
+      "munkahelyvesztés",
+      "olyan betegségek, amelyek műtéttel végződnek",
+      "sokszori munkahelyi probléma",
+      "munkahelyi veszteség"
     ],
     "9": [
       "törvénnyel kapcsolatos munka",
       "tanári hivatás",
       "külföldi munka",
       "politikai pályafutás",
-      "alárendeltségett tud megélni a házasságban"
+      "alárendeltségett tud megélni a házasságban",
+      "főiskolán/egyetemen dolgozik"
     ],
     "10": [
       "céljaimban fontos a munka",
       "mindig mások céljait segíti",
       "hivatásában alárendelt",
       "munkájában éli meg a sikert",
-      "munkájában elismerik"
+      "munkájában elismerik",
+      "megdolgozik a sikerért"
     ],
     "11": [
       "barátaival dolgozik",
       "alárendeltként teljesülnek céljai, vágyai",
       "a közösséget szolgálja",
-      "barátai segíthetik álláshoz"
+      "barátai segíthetik álláshoz",
+      "munka által szerez barátokat",
+      "önkéntes vagyok egy alapítványnál",
+      " párom titkos kapcsolatra vágyik",
+      "a munkám egyben a hobbim is"
     ],
     "12": [
       "zárt helyen dolgozik",
       "önzetlenül szolgál és segít",
       "alárendelté válik",
-      "elhúzódó betegségek"
+      "elhúzódó betegségek",
+      "börtönben, kórházban végzett munka",
+      "szerzett betegségek krónikussá válhatnak"
     ]
   },
   "7": {
