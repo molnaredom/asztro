@@ -20,20 +20,20 @@ def egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdo
     horoszkop_feltolt_adatok = get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok,
                                                                   kinyert_kulso_bolygo_es_haz_adatok,
                                                                   mode)
-    # print(horoszkop_feltolt_adatok)
+    print(horoszkop_feltolt_adatok)
 
     sajat_horoszkopform_kitoltes(horoszkop_feltolt_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain)
 
 
 def kulso_adat_kinyero(mode, tulajodonosi_adatok, web):
-    if mode == "kulsoweb":
+    if "kulsoweb" in mode:
         kulso_weboldal_lehivasa(web)
 
         kulso_weboldalra_tulajdonosadatok_feltoltese(web, tulajodonosi_adatok)
         return kulso_weboldalrol_adatkiszedes(web)
 
-    elif mode == "api":
-        return ryuphi_api_adatlehivo_manager(tulajodonosi_adatok)
+    elif "api" in mode:
+        return ryuphi_api_adatlehivo_manager(tulajodonosi_adatok, mode)
 
 
 def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo_es_haz_adatok, mode):
@@ -42,13 +42,15 @@ def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo
         return f"{t['ev']}-{t['honap']}-{t['nap']} {t['ora']}:{t['perc']}:00"
 
     def float_fokszam(strfok: str):
-        if mode == "kulsoweb":
+        if "kulsoweb" in mode:
             fperc, fmp = strfok.split("°")
             return str(float(fperc) + float(fmp[:-1]) * (1 / 6) / 10)
-        elif mode == "api":
+        elif "api" in mode:
             return strfok
 
     horoszkop_feltolt_adatok = tulajodonosi_adatok
+    horoszkop_feltolt_adatok["tulajdonos_neve"] = horoszkop_feltolt_adatok["nev"]
+    horoszkop_feltolt_adatok["tipus"] = horoszkop_feltolt_adatok["horoszkoptipus"]
     horoszkop_feltolt_adatok["idopont"] = datumido_keszit()
 
     # print(horoszkop_feltolt_adatok["idopont"])

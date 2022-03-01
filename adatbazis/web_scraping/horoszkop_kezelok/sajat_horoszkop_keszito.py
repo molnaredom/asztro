@@ -80,7 +80,7 @@ def haz_jegyben_feltoltes(horoszkop_adatok, web, kezdohazjegyben):
 def bolygo_jegyben_feltoltes(horoszkop_adatok, web, kezdobolygojegyben):
     for bolygo in ["nap", "hold", "merkur", "venusz", "mars", "jupiter",
                    "szaturnusz", "uranusz", "neptun", "pluto"]:
-        bolygojegyben_beallit(web, bolygo, horoszkop_adatok[bolygo][0],
+        bolygojegyben_beallit(web, bolygo,  horoszkop_adatok[bolygo][0],
                               f'//*[@id="id_{bolygo}"]', kezdobolygojegyben)
 
 

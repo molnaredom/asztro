@@ -5764,3 +5764,72 @@ console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkErr
 
 ###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
 
+1645957148183	geckodriver	INFO	Listening on 127.0.0.1:51363
+1645957151216	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51364" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilePyEsPq"
+1645957151690	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilePyEsPq\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51364/devtools/browser/8949b590-c62a-4184-aa50-6bc93592a55a
+1645957154040	Marionette	INFO	Listening on port 51369
+1645957154363	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/iRu7R9Kt0H3UwF1-zQK7LLgwIl8DaRlhr3qpKTHCDIY.js line 1 > eval line 5519 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1645957832020	Marionette	INFO	Stopped listening on port 51369
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 8852, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+uld not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofile4KasMp\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51433/devtools/browser/b86882c4-90ee-4655-a840-03e27b3da9d7
+1645957317467	Marionette	INFO	Listening on port 51438
+1645957318005	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/iRu7R9Kt0H3UwF1-zQK7LLgwIl8DaRlhr3qpKTHCDIY.js line 1 > eval line 7230 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1645957831113	Marionette	INFO	Stopped listening on port 51438
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileEZsQ7h\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51500/devtools/browser/4a152d72-c32e-4c0b-9d23-52dbc48df404
+1645957358565	Marionette	INFO	Listening on port 51505
+1645957358987	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1645957830067	Marionette	INFO	Stopped listening on port 51505
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 5344, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+957417849	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileRmt78X\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51552/devtools/browser/7a6bd0b1-9061-4a4a-bb02-c5cc4486cc7a
+1645957420383	Marionette	INFO	Listening on port 51557
+1645957420694	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
+1645957829384	Marionette	INFO	Stopped listening on port 51557
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofileLwrNx2\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51630/devtools/browser/4c142934-9930-4b0f-a975-048b66bfa66f
+1645957558437	Marionette	INFO	Listening on port 51635
+1645957558528	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1645957828976	Marionette	INFO	Stopped listening on port 51635
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilepkp2WM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51687/devtools/browser/b70c009e-562c-47bb-9b1b-9bb2620b619d
+1645957634437	Marionette	INFO	Listening on port 51692
+1645957634556	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1645957826463	Marionette	INFO	Stopped listening on port 51692
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "51766" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilemMQ54g"
+1645957767184	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilemMQ54g\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51766/devtools/browser/8088e79b-0bab-4a55-b39e-1747f43935ad
+1645957769789	Marionette	INFO	Listening on port 51771
+1645957770083	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\fuji\AppData\Local\Temp\rust_mozprofilemMQ54g\thumbnails) because it does not exist

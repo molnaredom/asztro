@@ -6,40 +6,52 @@ from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import ekezetnelkul
 ## todo timezone
 
 
-def ryuphi_api_adatlehivo_manager(tulajdonso_adatok):
+def ryuphi_api_adatlehivo_manager(tulajdonso_adatok, mode):
     # print("tulajdonos adatok",tulajdonso_adatok)
-    kinyert_adatok = init_api(tulajdonso_adatok)
+    kinyert_adatok = init_api(tulajdonso_adatok, mode)
     # print("kinyert adatok",kinyert_adatok)
     return {"bolygok": get_bolygok(kinyert_adatok), "hazak": get_hazak(kinyert_adatok)}
 
 
-def char2(char):
+def two_digit_str_num(char):
     if len(char) == 1:
         return "0" + char
     return char
 
 
-def init_api(tulajdonos_adatok):
-    ev = char2(str(tulajdonos_adatok["ev"]))
-    honap = char2(str(tulajdonos_adatok["honap"]))
-    nap = char2(str(tulajdonos_adatok["nap"]))
-    ora = char2(str(tulajdonos_adatok["ora"]))
-    perc = char2(str(tulajdonos_adatok["perc"]))
+def init_api(tulajdonos_adatok, mode):
+    ev = two_digit_str_num(str(tulajdonos_adatok["ev"]))
+    honap = two_digit_str_num(str(tulajdonos_adatok["honap"]))
+    nap = two_digit_str_num(str(tulajdonos_adatok["nap"]))
+    ora = two_digit_str_num(str(tulajdonos_adatok["ora"]))
+    perc = two_digit_str_num(str(tulajdonos_adatok["perc"]))
     mp = "00"  # tulajdonos_adatok["mp"]
-    varos = char2(str(tulajdonos_adatok["hely"]))
+    varos = two_digit_str_num(str(tulajdonos_adatok["hely"]))
 
     szelesseg, hosszusag = varos_poz(varosnev=ekezetnelkul(varos.lower()))
 
     start = datetime.datetime.now()
-    adat = requests.get(
-        # f'https://dev-astrology-api.herokuapp.com/'
-        f'http://127.0.0.1:3000/'
-        f'horoscope?time={ev}-{honap}-{nap}T{ora}:{perc}:{mp}%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+
+    adat = get_adatok_from_link(ev, honap, hosszusag, mode, mp, nap, ora, perc, szelesseg)
 
     end = datetime.datetime.now()
     print("runtime api", end - start)
 
     return adat.json()
+
+
+def get_adatok_from_link(ev, honap, hosszusag, mode, mp, nap, ora, perc, szelesseg):
+    if "localapi" in mode:
+        return requests.get(
+            f'http://127.0.0.1:3000/'
+            f'horoscope?time={ev}-{honap}-{nap}T{ora}:{perc}:{mp}%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+
+    elif "kulsoapi" in mode:
+        return requests.get(
+            f'https://dev-astrology-api.herokuapp.com/'
+            f'horoscope?time={ev}-{honap}-{nap}T{ora}:{perc}:{mp}%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+
+    return None
 
 
 def get_bolygok(chart):

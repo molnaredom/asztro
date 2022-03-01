@@ -87,7 +87,9 @@ def web_mode():
 
 
 def api_mode():
-    process(mode="api", uj_horoszkop_keszites_=True)
+    web = inditas()
+    domain = "http://127.0.0.1:8000"
+    process(mode="kulsoapi", uj_horoszkop_keszites_=True, web=web, domain=domain)
 
 
 def process(mode,bolygojegyben_feltoltes_ = False, hazjegyben_feltoltes_ = False, uj_horoszkop_keszites_ = False,
