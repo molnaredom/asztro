@@ -81,48 +81,25 @@ def createHazUraHazban(request):
 def createHoroszkop(request):
     form = HoroszkopForm()
     if request.method == "POST":
+
+        if "megse" in request.POST:
+            return redirect(f"horoszkop_gyujtemeny")
+
         form = HoroszkopForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("horoszkop_gyujtemeny")
+
+        if 'ujabb_fevitel' in request.POST:
+            return redirect(f"create-horoszkop")
+
+        elif "mentes_es_foolal" in request.POST:
+            return redirect(f"horoszkop_gyujtemeny")
+
 
     context = {'form': form}
     return render(request, "create_templates/analogia_form.html", context)
 
 
-# import flatlib
-# from flatlib import const
-# from flatlib.chart import Chart
-# from flatlib.datetime import Datetime
-# from flatlib.geopos import GeoPos
-#
-# def createHoroszkopGyors(request, alapadatok):
-#
-#     print(alapadatok["idopont"])
-#     datetimeobj = datetime.datetime.strptime(alapadatok["idopont"], "%Y-%m-%d %H:%M:%S")
-#     print(datetimeobj)
-#     print(alapadatok["hely"])
-#
-#     date = Datetime(f'{datetimeobj.year}/{datetimeobj.month}/{datetimeobj.day}', '16:42', '+02:00')
-#     pos = GeoPos('38n32', '8w54')
-#     chart = Chart(date, pos)
-#     print(chart.isHouse10MC())
-#
-#     sun = chart.get(const.SUN)
-#     print(sun)
-#
-#     moon = chart.get(const.MOON)
-#     print(moon)
-#
-#     merkury = chart.get(const.MERCURY)
-#     print(merkury)
-#
-#     form = HoroszkopFormGyors()
-#     if form.is_valid():
-        # form.save()
-
-#
-#
 # def createHoroszkopAdatok(request):
 #     form = HoroszkopAdatokForm()
 #     if request.method == "POST":
@@ -135,10 +112,8 @@ def createHoroszkop(request):
 #
 #     context = {'form': form}
 #     return render(request, "create_templates/analogia_form.html", context)
-#
-#
-#
-#
+
+
 def createHoroszkopGyors(request):
     form = HoroszkopFormGyors()
     if request.method == "POST":
@@ -186,49 +161,6 @@ def createHoroszkopGyors(request):
     context = {'form': form}
     return render(request, "create_templates/analogia_form.html", context)
 
-    # room = "kakao"  #get_object_or_404(Room, pk=room_id)
-    # form = HoroszkopFormGyors(room=room, author=request.user, data=request.POST)
-    # if form.is_valid():
-    #     form.save()
-    # return HttpResponseRedirect(reverse('chat.views.add_message', args=(p.id,)))
-
-    # print(alapadatok["idopont"])
-    # datetimeobj = datetime.datetime.strptime(alapadatok["idopont"], "%Y-%m-%d %H:%M:%S")
-    # print(datetimeobj)
-    # print(alapadatok["hely"])
-    #
-    # date = Datetime(f'{datetimeobj.year}/{datetimeobj.month}/{datetimeobj.day}', '16:42', '+02:00')
-    # pos = GeoPos('38n32', '8w54')
-    # chart = Chart(date, pos)
-    # print(chart.isHouse10MC())
-    #
-    # sun = chart.get(const.SUN)
-    # print(sun)
-    #
-    # moon = chart.get(const.MOON)
-    # print(moon)
-    #
-    # merkury = chart.get(const.MERCURY)
-    # print(merkury)
-    #
-    # form = HoroszkopFormGyors()
-    # if form.is_valid():
-    #     form.save()
-
-
-#
-# def createHoroszkopAdatok(request):
-#     form = HoroszkopAdatokForm()
-#     if request.method == "POST":
-#         form = HoroszkopAdatokForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             createHoroszkopGyors(request, alapadatok=form.data)
-#
-#             return redirect("horoszkop_gyujtemeny")
-#
-#     context = {'form': form}
-#     return render(request, "create_templates/analogia_form.html", context)
 
 def get_fokszamok(bolygo_es_haz_adatok):
     res = dict()
