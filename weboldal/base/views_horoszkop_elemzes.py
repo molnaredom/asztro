@@ -9,15 +9,16 @@ def horoszkop(request, id):
     analogia = Horoszkop2.objects.get(id=id)
     hazakUraHazakban = HazUraHazban.objects.all()
     osszesjegy = Jegy2.objects.all()
-
+    print(".................",analogia.hold)
     if request.user.is_superuser:
         analogia.tulajdonos_neve = nevet_privatra(analogia.tulajdonos_neve)
 
-    print(analogia.fokszamok)
+    # print(analogia.fokszamok)
     if "analogiak" not in analogia.fokszamok:
         analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"])  # eval strbol dictet csinal
     else:
         analogia.fokszamok = analogia.fokszamok["analogiak"]
+    print(".................",analogia.hold)
 
     elemzes_adat = _elemzes(analogia, osszesjegy, hazakUraHazakban)
     context = {"analogia": analogia, "elemzes": elemzes_adat}  # ez egy objektum
@@ -35,7 +36,6 @@ def nevet_privatra(nev):
 
 def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     eredmeny = {}
-
     pontos_kor = szuletesi_datumido(adatok)
 
     bolygok, hazak = fokszamhozzarendeles(adatok)
@@ -47,6 +47,7 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     bolygok = fenyszog_hozzarendeles(bolygok)
 
     hazura_melyik_hazaban(hazak, bolygok)
+    print(bolygok)
     # [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
 
     eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
@@ -151,15 +152,16 @@ def fokszamhozzarendeles(adatok):
 
     # bolygok, hazak = {}, {} # egy regi otlet
     bolygok, hazak = [], []
-
+    print("------", bolygojegyben_adatok)
+    print("------", adatok.fokszamok)
     for analogia in list(
             zip(['nap', 'hold', 'merkur', 'venusz', 'mars', 'jupiter', 'szaturnusz', 'uranusz', 'neptun', 'pluto'],
                 bolygojegyben_adatok)):
         print(analogia[1].jegy)
         print(analogia[1].bolygo)
-        print("fokszamok", adatok.fokszamok)
-        print("fokszamok", analogia[0])
-        print(adatok.fokszamok[analogia[0]])
+        # print("fokszamok", adatok.fokszamok)
+        # print("fokszamok", analogia[0])
+        # print(adatok.fokszamok[analogia[0]])
 
         bolygok.append(
             {"jegy": analogia[1].jegy, "bolygo": analogia[1].bolygo, "fokszam": adatok.fokszamok[analogia[0]]})
@@ -354,6 +356,7 @@ def hazura_melyik_hazaban(hazak, bolygok):
 
     def hazurnak_bolygot_talal(hazura_nev):
         for bolygo in bolygok:
+            print( bolygo["bolygo"].nevID ,hazura_nev)
             if bolygo["bolygo"].nevID == hazura_nev:
                 return bolygo
         else:

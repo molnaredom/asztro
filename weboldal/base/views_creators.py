@@ -150,32 +150,35 @@ def createHoroszkopGyors(request):
 
             horoszkop_alap = ryuphi_api_adatlehivo_manager(obj)
 
-            obj.haz_1_id = "1"
-            obj.haz_2_id = "1"
-            obj.haz_3_id = "1"
-            obj.haz_4_id = "1"
-            obj.haz_5_id = "1"
-            obj.haz_6_id = "1"
-            obj.haz_7_id = "1"
-            obj.haz_8_id = "1"
-            obj.haz_9_id = "1"
-            obj.haz_10_id = "1"
-            obj.haz_11_id = "1"
-            obj.haz_12_id = "1"
+            print("***********",horoszkop_alap)
 
-            obj.nap_id = "1"
-            obj.hold_id = "1"
-            obj.merkur_id = "1"
-            obj.venusz_id = "1"
-            obj.mars_id = "1"
-            obj.jupiter_id = "1"
-            obj.szaturnusz_id = "1"
-            obj.uranusz_id = "1"
-            obj.neptun_id = "1"
-            obj.pluto_id = "1"
+
+            obj.haz_1_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][1]["jegy"],haz="1")
+            obj.haz_2_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][2]["jegy"],haz="2")
+            obj.haz_3_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][3]["jegy"],haz="3")
+            obj.haz_4_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][4]["jegy"],haz="4")
+            obj.haz_5_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][5]["jegy"],haz="5")
+            obj.haz_6_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][6]["jegy"],haz="6")
+            obj.haz_7_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][7]["jegy"],haz="7")
+            obj.haz_8_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][8]["jegy"],haz="8")
+            obj.haz_9_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][9]["jegy"],haz="9")
+            obj.haz_10_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][10]["jegy"],haz="10")
+            obj.haz_11_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][11]["jegy"],haz="11")
+            obj.haz_12_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["hazak"][12]["jegy"],haz="12")
+
+            obj.nap_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Nap"]["jegy"],bolygo= "nap")
+            obj.hold_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Hold"]["jegy"], bolygo="hold")
+            obj.merkur_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Merkur"]["jegy"], bolygo="merkur")
+            obj.venusz_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Vénusz"]["jegy"], bolygo="venusz")
+            obj.mars_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Mars"]["jegy"], bolygo="mars")
+            obj.jupiter_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Jupiter"]["jegy"], bolygo="jupiter")
+            obj.szaturnusz_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Szaturnusz"]["jegy"], bolygo="szaturnusz")
+            obj.uranusz_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Uránusz"]["jegy"], bolygo="uranusz")
+            obj.neptun_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Neptun"]["jegy"], bolygo="neptun")
+            obj.pluto_id = get_id_to_horoszkopalapadat(jegy= horoszkop_alap["bolygok"]["Pluto"]["jegy"], bolygo="pluto")
 
             obj.fokszamok = {"analogiak" : get_fokszamok(horoszkop_alap)}
-            print(obj.fokszamok)
+            print("\n*******",obj.fokszamok)
 
             obj.save()
             return redirect("horoszkop_gyujtemeny")
@@ -235,6 +238,70 @@ def get_fokszamok(bolygo_es_haz_adatok):
         res[ekezetnelkul(str(k))] = v["fokszam"]
 
     return res
+
+
+def get_id_to_horoszkopalapadat(jegy=None, bolygo=None, haz=None):
+    # bolygojegyben
+    print("haz= ",haz," jegy= ", jegy, " bolygo= ",bolygo)
+
+    if haz == None:
+        return jegy_to_num(jegy) + (bolygo_to_num(bolygo)-1)*12
+    elif bolygo == None:
+        return jegy_to_num(jegy) + (int(haz)-1)*12
+    else:
+        raise Exception
+
+def bolygo_to_num(bolygo):
+    if bolygo == "nap":
+        return 1
+    elif bolygo == "hold":
+        return 2
+    elif bolygo == "merkur":
+        return 3
+    elif bolygo == "venusz":
+        return 4
+    elif bolygo == "mars":
+        return 5
+    elif bolygo == "jupiter":
+        return 6
+    elif bolygo == "szaturnusz":
+        return 7
+    elif bolygo == "uranusz":
+        return 8
+    elif bolygo == "neptun":
+        return 9
+    elif bolygo == "pluto":
+        return 10
+    else:
+        raise Exception
+
+def jegy_to_num(jegy):
+    if jegy == "kos":
+        return 1
+    elif jegy == "bika":
+        return 2
+    elif jegy == "ikrek":
+        return 3
+    elif jegy == "rák":
+        return 4
+    elif jegy == "oroszlán":
+        return 5
+    elif jegy == "szűz":
+        return 6
+    elif jegy == "mérleg":
+        return 7
+    elif jegy == "skorpió":
+        return 8
+    elif jegy == "nyilas":
+        return 9
+    elif jegy == "bak":
+        return 10
+    elif jegy == "vízöntő":
+        return 11
+    elif jegy == "halak":
+        return 12
+
+
 
 
 """
