@@ -537,8 +537,10 @@
   "7": {
     "1": [
       "irányít a kapcsolatokban",
-      "nyilbános szereplésre vágyik",
-      "házasságot akar"
+      "nyilvános szereplésre vágyik",
+      "házasságot akar",
+      " külvilágban akar szerepeket vállalni ",
+      ""
     ],
     "2": [
       "ragaszkodik a párjához",
@@ -546,12 +548,15 @@
       "házasságban a biztonsága és erre is törekszik - ő teremti"
     ],
     "3": [
+      "jogot tanít",
+      "házasságközvetítő"
     ],
     "4": [
       "kötődik a párjához",
       "gyerek miatt lesz párkapcsolat",
       "ingatlan miatt társulás",
-      "párkapcsolat miatt ingatlan"
+      "párkapcsolat miatt ingatlan",
+      "akkor vállal párkapcsolatot, ha már van otthona"
     ],
     "5": [
       "vágyik a párkapcsolatra",
@@ -565,11 +570,15 @@
       "párja irányít",
       "baleset lehetősége",
       "nyilvános elismertség",
-      "a vállalkozásban a társa a vezető"
+      "a vállalkozásban a társa a vezető",
+      "munkája által lesz elismert,"
     ],
     "7": [
+      "hittérítővé válhat",
+      "párjával dolgozik"
     ],
     "8": [
+      "házastárstól örökség"
     ],
     "9": [
       "törvényes párkapcsolat",
@@ -579,24 +588,28 @@
       "elismertség",
       "külföldi párkapcsolat",
       "második házasság",
-      "jogi vagy politikai hivatás"
+      "jogi vagy politikai hivatás",
+      "fontos, hogy megmutassa magát a világnak"
     ],
     "10": [
       "célja a párkapcsolat",
       "nyilvánosság előtti hivatás",
       "üzleti sikerek, elismertség",
-      "sportban siker, karrier"
+      "sportban siker, karrier",
+      "célja a világban elért siker"
     ],
     "11": [
       "boldog sikeres párkapcsolat",
       "nyert perek",
-      "barátja válik párjává"
+      "barátja válik párjává",
+      "a házasságban leli örömét"
     ],
     "12": [
       "lemond a párkapcsolatról",
       "visszavonultság",
       "büntetőperek",
-      "önelfogadási problémák"
+      "önelfogadási problémák",
+      "házasság megpróbáltatásokkal jár"
     ]
   },
   "8": {
@@ -604,14 +617,18 @@
       "fontos a szexualitás",
       "önmaga halálát okozza",
       "mások pénzügyeivel foglalkozik",
-      "lélekkel kapcsolatos dolgok érdeklik"
+      "lélekkel kapcsolatos dolgok érdeklik",
+      "titkos tanokkal foglalkozhat",
+      "mások pénzét forgathatja vállalkozásba"
     ],
     "2": [
       "pénzügyi befektetések",
       "erős vágyélet",
-      "a párjának biztonságot teremt"
+      "a párjának biztonságot teremt",
+      "örökségből vagy pár által juthat pénzhez"
     ],
     "3": [
+      "szexoktató, szexuális tanácsadó"
     ],
     "4": [
       "érzelmi alapú szexualitás",
@@ -638,7 +655,10 @@
       "anyagiasság",
       "eltartási szerződés",
       "választott műtétek",
-      "szenvedélyes szexualitás"
+      "szenvedélyes szexualitás",
+      "párja anyagi helyzete által teljesedhet ki",
+      "műtéteken keresztül éli meg a veszteségeket",
+      "párja pénzét veszíti el"
     ],
     "9": [
     ],
@@ -656,7 +676,10 @@
       "tervezett műtétek",
       "kapok pénzt barátokra költeni",
       "szexuális kielégületlenség",
-      "barátok támogatják anyagilag"
+      "barátok támogatják anyagilag",
+      "szexualitás által érezheti a beteljesülést",
+      "kiteljesedik az ezotéria által",
+      "dominánssá válik a halál, elmúlás kérdése"
     ],
     "12": [
       "szeretői kapcsolatok",
@@ -679,6 +702,9 @@
       "ragaszkodik a törvényhez"
     ],
     "3": [
+      "lehet egyetemi oktató",
+      "külföldön sok kisebb utazást tesz",
+      "bízik a testvérében"
     ],
     "4": [
       "csak törvényes család létezik számára",
@@ -690,9 +716,12 @@
       "fontos számára a gyerek",
       "politikai tehetséget mutat",
       "sikeres vállalkozás",
-      "vágyik a házasságra"
+      "vágyik a házasságra",
+      "vállalkozást indíthat külföldön",
+      "hobbiját élheti külföldön"
     ],
     "6": [
+      "külföldön vállalhat munkát"
     ],
     "7": [
       "a törvényt képviseli a külvilágban",
@@ -701,8 +730,12 @@
       "külföldi párkapcsolat"
     ],
     "8": [
+      "külföldről kapott örökség",
+      "nehézség külföldön"
     ],
     "9": [
+      "hisz a házasságban",
+      "céljait külföldön valósítja meg"
     ],
     "10": [
       "jogászi/politikai életfutás",
@@ -721,7 +754,9 @@
       "törvénnyel való összeütközés",
       "nem veszik fel egyetemre",
       "nem kap vízumot",
-      "házasság felbontása"
+      "házasság felbontása",
+      "kirugják az egyetemről",
+      "külföldi kórházi ápolás, kezelések"
     ]
   },
   "10": {
@@ -756,8 +791,10 @@
       "karrierjét a munkában valósítja meg"
     ],
     "7": [
+      "célja a párkapcsolat"
     ],
     "8": [
+      "karrierbeli csalódások"
     ],
     "9": [
       "külföldön lesz sikeres",
@@ -795,12 +832,21 @@
       "önfejűen él"
     ],
     "2": [
+      "az anyagiakra vágyik",
+      "barátait birtokolja igen"
     ],
     "3": [
+      "otthonra vágyik",
+      "érzelmileg kötődik a barátokhoz",
+      "nehezen enged el",
+      "sok csalódás, mert bízik a barátokban"
     ],
     "4": [
+      "a családra vágyik,otthon, család által teljesülnek a vágyai"
     ],
     "5": [
+      "gyerekre vágyik, szerelemre vágyik",
+      ""
     ],
     "6": [
       "munkájában érzi jól magát",
@@ -810,37 +856,49 @@
     ],
     "7": [
       "vágyait a párja teljesíti",
-      "minden vállalkozásban párja van"
+      "minden vállalkozásban párja van",
+      "párja által lehet boldog",
+      "külvilágban betöltött szerep hozza meg számára a vágyak beteljesülését"
     ],
     "8": [
       "elveszíti barátait",
       "erős szexuális vágyak",
       "anyagi segítséget kap",
-      "párja vállalkozásban keresi pénzét"
+      "párja vállalkozásban keresi pénzét",
+      "barátok általi veszteségek",
+      "barátoktól jöhetnek a problémák és veszélyek",
+      "párja pénzére vágyik"
     ],
     "9": [
       "állandóan külföldön tartózkodik",
       "büszke a diplomájára",
       "egyetemi barátok",
-      "politikai sikerek külföldön"
+      "politikai sikerek külföldön",
+      "házasságra vágyik",
+      "külföldre vágyik"
     ],
     "10": [
       "barátok segítik karrierjét",
       "barátok támogatják a céljait",
-      "édesanyja segíti pénzügyileg"
+      "édesanyja segíti pénzügyileg",
+      "közösségi célok létrejövése",
+      "céljait az édesanya anyagilag támogatja"
     ],
     "11": [
       "fontosak a barátok",
       "közösségi ember",
       "sok támogató",
-      "első a szabadság"
+      "első a szabadság",
+      "közösségekben betöltött szerep jelenthet számára beteljesülést"
     ],
     "12": [
       "barátai által lehet sikeres",
       "barátból lesz szerető",
       "titkos szervezetnek tagja",
       "titkolja a barátait(nem vállalja fel a közösséget amiben van)",
-      "kórházban segít másoknak"
+      "kórházban segít másoknak",
+      "le kell mondania a vágyairól",
+      "barátok keserítik meg az életét"
     ]
   },
   "12": {
@@ -855,6 +913,7 @@
     "2": [
     ],
     "3": [
+      "oktathat kórházban"
     ],
     "4": [
       "fontos a család",
@@ -912,7 +971,8 @@
       "gyakoriak a betegségek",
       "titkos szeretők",
       "magényos élet",
-      "mások teszik sikeressé"
+      "mások teszik sikeressé",
+      "Krónikus betegségei révén kórházban tölti idejét "
     ]
   }
 }
