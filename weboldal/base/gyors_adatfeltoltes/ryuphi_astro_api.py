@@ -1,7 +1,7 @@
 import datetime
 import requests
 
-from nyelvi_kisegito import ekezetnelkul,varos_poz
+from feltoltes_kisegito_modul import *
 
 ## todo timezone
 

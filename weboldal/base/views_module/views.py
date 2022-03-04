@@ -2,16 +2,15 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
-from .models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2 ,BolygoHazban2, BolygoJegyben2, HazJegyben2
+from ..models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2 ,BolygoHazban2, BolygoJegyben2, HazJegyben2
 from django.contrib.auth.models import User
-from .forms import RoomForm, AnalogiaForm
+from ..forms import RoomForm, AnalogiaForm
 from django.contrib.auth import authenticate, login, logout
 
 
 def home(request):
-    return render(request, 'base/kezdolap.html', {} )
+    return render(request, 'base/kezdolap.html', {})
 
 
 def room(request, pk):
@@ -106,7 +105,7 @@ def registerPage(request):
 def analogia_adatbazis(request):
 
     context = {}
-    return render(request, 'base/analogia_adatbazis.html', context )
+    return render(request, 'base/analogia_adatbazis.html', context)
 
 
 def titkosSzoba(request):
@@ -115,10 +114,6 @@ def titkosSzoba(request):
 
 def rolunk(request):
     return render(request, "base/rolunk.html", {})
-
-
-def analogiagyakorlo(request):
-    return render(request, "analogiagyakorlo/analogia_gyakorlo.html", {})
 
 
 def fejlesztes_alatt(request):

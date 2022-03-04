@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'base',
+    'base.views_module',
+    'base.views_module.creators',
     'home.apps.HomeConfig',
 ]
 

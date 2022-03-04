@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 
 from django.shortcuts import render, redirect
-from .models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Message2,Room2, Horoszkop2, HazUraHazban
+from ..models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Message2,Room2, Horoszkop2, HazUraHazban
 
 
 

@@ -2,8 +2,8 @@ import random
 
 from django.shortcuts import render
 from django.db.models import Count, Max
-from .models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2, HazUraHazban
-from .forms import Horoszkop_Csillagjegyszures
+from ..models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2, HazUraHazban
+
 
 
 # több oldalt tartalmazo,analógiatároló felület

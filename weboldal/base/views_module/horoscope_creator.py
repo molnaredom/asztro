@@ -1,100 +1,9 @@
 import datetime
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
 
-from .forms import *
+import requests
+from django.shortcuts import redirect, render
 
-
-@login_required(login_url="login")
-def createroom(request):
-    form = RoomForm()
-
-    if request.method == "POST":
-
-        if 'bolygo_es_jegy_lekerdezes' in request.POST:
-            jegyNev = request.POST.get('jegyNev')
-            bolygoNev = request.POST.get('bolygoNev')
-            jegy_alapjan_lekeres = bolygo_alapjan_lekeres(bolygoNev, jegyNev)
-
-        form = RoomForm(request.POST)
-        if form.is_valid():
-            room = form.save(commit=False)
-            room.host = request.user
-            return redirect("home")
-
-    context = {'form': form}
-    return render(request, "create_templates/room_form.html", context)
-
-
-def _analogiafeltoltes(request, Osztalyform, analogia):
-    form = Osztalyform()
-    if request.method == "POST":
-
-        if "megse" in request.POST:
-            return redirect(f"{analogia}")
-
-        form = Osztalyform(request.POST)
-        if form.is_valid():
-            form.save()
-
-        if 'ujabb_fevitel' in request.POST:
-            return redirect(f"create-{analogia}")
-
-        elif "mentes_es_foolal" in request.POST:
-            return redirect(f"{analogia}")
-
-    context = {'form': form}
-    return render(request, "create_templates/analogia_form.html", context)
-
-
-# createrek
-def createJegyek(request):
-    return _analogiafeltoltes(request, JegyekForm, "jegyek")
-
-
-def createBolygok(request):
-    return _analogiafeltoltes(request, BolygokForm, "bolygok")
-
-
-def createHazak(request):
-    return _analogiafeltoltes(request, HazakForm, "hazak")
-
-
-def createBolygoJegyben(request):
-    return _analogiafeltoltes(request, BolygoJegybenForm, "bolygoJegyben")
-
-
-def createBolygoHazban(request):
-    return _analogiafeltoltes(request, BolygoHazbanForm, "bolygoHazbann")
-
-
-def createHazJegyben(request):
-    return _analogiafeltoltes(request, HazJegybenForm, "hazJegyben")
-
-
-def createHazUraHazban(request):
-    return _analogiafeltoltes(request, HazUraHazbanForm, "hazakUraHazakban")
-
-
-def createHoroszkop(request):
-    form = HoroszkopForm()
-    if request.method == "POST":
-
-        if "megse" in request.POST:
-            return redirect(f"horoszkop_gyujtemeny")
-
-        form = HoroszkopForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-        if 'ujabb_fevitel' in request.POST:
-            return redirect(f"create-horoszkop")
-
-        elif "mentes_es_foolal" in request.POST:
-            return redirect(f"horoszkop_gyujtemeny")
-
-    context = {'form': form}
-    return render(request, "create_templates/analogia_form.html", context)
+from ..forms import HoroszkopFormGyors
 
 
 def createHoroszkopGyors(request):
@@ -247,19 +156,6 @@ def jegy_to_num(jegy):
         return 12
 
 
-"""
-{"analogiak": "{'nap': '26.7', 'hold': '3.8166666666666664', 'merkur': '9.9',
- 'venusz': '21.083333333333332', 'mars': '21.116666666666667',
-  'jupiter': '7.766666666666667', 'szaturnusz': '13.683333333333334',
-   'uranusz': '22.7', 'neptun': '6.866666666666666',
-    'pluto': '12.5', '1': '3.55', '2': '17.6', '3': '2.183333333333333', 
-    '4': '3.95', '5': '26.566666666666666', '6': '15.166666666666666', '7': '3.55', '8': '17.6', 
-    '9': '2.183333333333333', '10': '3.95', '11': '26.566666666666666', '12': '15.166666666666666'}"}"""
-
-import datetime
-import requests
-
-
 def ekezetnelkul(szo: str):
     szo = szo.replace("á", "a")
     szo = szo.replace("ű", "u")
@@ -304,9 +200,6 @@ def varos_poz(varosnev):
     if varosnev == "papa": return "47.326", "17.469"
     if varosnev == "esztergom": return "47.785", "18.74"
     if varosnev == "szekesfehervar" or varosnev == "fehervar": return "47.188", "18.413"
-
-
-## todo timezone
 
 
 def ryuphi_api_adatlehivo_manager(tulajdonso_adatok):
@@ -422,6 +315,3 @@ def bolygo_to_hun(eng_bolygo):
         return "neptun"
     else:
         return eng_bolygo  # mars , jupiter pluto ua. magyarul ékezet nélkül
-
-#
-# print(get_basic_datas("2001", "08", "19", "16", "54", "00", "Szolnok"))

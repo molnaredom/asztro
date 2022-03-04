@@ -1,4 +1,25 @@
 
+def szoveggelkitoltes(web,feltoltendo,foanalogia, al_analogia, konkret_analogia ):
+
+    hely_xpath = web.find_element_by_xpath(f'//*[@id="id_{ekezetnelkul( konkret_analogia)}"]')
+    hely_xpath.clear()
+    if konkret_analogia == "leírás":
+        jsonban_analogia = "{ \"analogiak\" : \"" + \
+                           str(feltoltendo[foanalogia][al_analogia][konkret_analogia]).strip() \
+                           + "\" }"
+        hely_xpath.send_keys(jsonban_analogia)
+
+    elif konkret_analogia != "nevID":
+        hely_xpath.send_keys(feltoltendo[foanalogia][al_analogia][konkret_analogia])
+    else:
+        hely_xpath.send_keys(al_analogia) # az analógia neve
+
+
+def feltoltes(web):
+    hely_xpath = web.find_element_by_xpath("/html/body/div/form/input[3]")
+    hely_xpath.click()
+
+
 
 def ekezetnelkul(szo: str):
     szo =szo.replace("á", "a")
@@ -10,8 +31,8 @@ def ekezetnelkul(szo: str):
     szo =szo.replace("é", "e")
     szo =szo.replace("í", "i")
     szo =szo.replace(" ", "_")
-
-    return szo.replace("á", "a")
+    szo.replace("á", "a")
+    return szo
 
 
 def varos_poz(varosnev):
@@ -47,3 +68,4 @@ def varos_poz(varosnev):
 
 def nyari_idoszamitas(ido):
     pass
+
