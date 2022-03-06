@@ -17,7 +17,7 @@ def anareta(hyleg, bolygok):
             return str(kvadratok[0]["bolygo"]["bolygo"].nevID) + " (kvadrát)"
             # [print(i) for i in kvadratok]
         else:
-            return "Nincs anaréta"
+            return  "Nincs anaréta"
 
     elif hyleg == "hold":
         print("HOLD")
@@ -40,47 +40,87 @@ def anareta(hyleg, bolygok):
         # [print(i) for i in bolygok[0]["fenyszogek"]]
 
 
+
+
 def sorstipus(bolygok, hazak):
     kiemelthazak = ["1", "5", "9", "10", "11"]
+    felhasznaltbolygok = ["neptun", "uránusz", "jupiter", "szaturnusz"]
+    kiemelthazakbolygoi = get_kiemelthazak_bolygoi(hazak, kiemelthazak)
+    print(kiemelthazakbolygoi)
+    korok = [
+        elso_kor_eldontes(kiemelthazakbolygoi),
+        masodik_kor_eldontes(kiemelthazakbolygoi),
+        harmadik_kor(hazak, felhasznaltbolygok),
+        negyedik_kor(bolygok, felhasznaltbolygok),
+        otodik_kor()
+    ]
 
+    for kor_eredmeny in korok:
+        if kor_eredmeny != False:
+            return kor_eredmeny
+
+
+def get_kiemelthazak_bolygoi(hazak, kiemelthazak):
     kiemelthazakbolygoi = []
     for haz in hazak:
         if haz["haz"].nevID in kiemelthazak:
             for bolygo in haz["bolygok"]:
                 kiemelthazakbolygoi.append(bolygo["bolygo"].nevID)
+    return kiemelthazakbolygoi
 
-    if "uránusz" in kiemelthazakbolygoi and "neptun" not in kiemelthazakbolygoi:
-        return "elsőkörös uránuszi"
-    elif "neptun" in kiemelthazakbolygoi and "uránusz" not in kiemelthazakbolygoi:
-        return "elsőkörös neptuni"
 
-    if "jupiter" in kiemelthazakbolygoi and "szaturnusz" not in kiemelthazakbolygoi:
-        return "második körös kiszolgáltatott"
-    elif "szaturnusz" in kiemelthazakbolygoi and "jupiter" not in kiemelthazakbolygoi:
-        return "második körös önfeláldozó"
+def otodik_kor():
+    return altalanos_kor_eldontes(korszam=5, bolygo="még nem tudjuk", sorstipus="még nem tudjuk kiszámolni")
 
-    felhasznaltbolygok = ["neptun", "uránusz", "jupiter", "szaturnusz"]
-    haz11pontszam = sum([i["bolygo"].pontertek for i in hazak[10]["bolygok"]
-                         if i["bolygo"].nevID not in felhasznaltbolygok])
-    haz12pontszam = sum([i["bolygo"].pontertek for i in hazak[11]["bolygok"]
-                         if i["bolygo"].nevID not in felhasznaltbolygok])
-    # print("haz11pontszam, haz12pontszam", haz11pontszam, haz12pontszam)
 
-    if haz11pontszam > haz12pontszam:
-        return "haramdik körös kiszolgáltatott"
-    elif haz11pontszam < haz12pontszam:
-        return "harmadik körös önfeláldozó"
-
-    # 4. kör
+def negyedik_kor(bolygok, felhasznaltbolygok):
     halakpontszam = sum([i["bolygo"].pontertek for i in bolygok
                          if i["jegy"].nevID == "halak" and i["bolygo"].nevID not in felhasznaltbolygok])
     vizontopontszam = sum([i["bolygo"].pontertek for i in bolygok
                            if i["jegy"].nevID == "vízöntő" and i["bolygo"].nevID not in felhasznaltbolygok])
-    # print("halakpontszam, vizontopontszam", halakpontszam, vizontopontszam)
-
     if vizontopontszam > halakpontszam:
-        return "negyedik körös kiszolgáltatott"
+        return altalanos_kor_eldontes(korszam=4, bolygo="uránuszi", sorstipus="kiszolgáltatott")
     elif halakpontszam > vizontopontszam:
-        return "negyedik körös önfeláldozó"
+        return altalanos_kor_eldontes(korszam=4, bolygo="neptuni", sorstipus="önfeláldozó")
+    else:
+        return False
 
-    return "a jelenlegi adatok alapján nem lehet kiszámolni a sorstípust mert 5. körös lenne"
+
+def harmadik_kor(hazak, felhasznaltbolygok):
+    haz11pontszam = sum([i["bolygo"].pontertek for i in hazak[10]["bolygok"]
+                         if i["bolygo"].nevID not in felhasznaltbolygok])
+    haz12pontszam = sum([i["bolygo"].pontertek for i in hazak[11]["bolygok"]
+                         if i["bolygo"].nevID not in felhasznaltbolygok])
+
+    if haz11pontszam > haz12pontszam:
+        return altalanos_kor_eldontes(korszam=3, bolygo="uránuszi", sorstipus="kiszolgáltatott")
+    elif haz11pontszam < haz12pontszam:
+        return altalanos_kor_eldontes(korszam=3, bolygo="neptuni", sorstipus="önfeláldozó")
+    else:
+        return False
+
+
+def masodik_kor_eldontes(kiemelthazakbolygoi):
+    if "jupiter" in kiemelthazakbolygoi and "szaturnusz" not in kiemelthazakbolygoi:
+        return altalanos_kor_eldontes(korszam=2, bolygo="uránuszi", sorstipus="kiszolgáltatott")
+    elif "szaturnusz" in kiemelthazakbolygoi and "jupiter" not in kiemelthazakbolygoi:
+        return altalanos_kor_eldontes(korszam=2, bolygo="neptuni", sorstipus="önfeláldozó")
+    else:
+        return False
+
+
+def elso_kor_eldontes(kiemelthazakbolygoi):
+    if "uránusz" in kiemelthazakbolygoi and "neptun" not in kiemelthazakbolygoi:
+        return altalanos_kor_eldontes(korszam=1, bolygo="uránuszi", sorstipus="független vagy kiszolgáltatott")
+    elif "neptun" in kiemelthazakbolygoi and "uránusz" not in kiemelthazakbolygoi:
+        return altalanos_kor_eldontes(korszam=1, bolygo="neptuni", sorstipus="önfeláldozó vagy áldozat")
+    else:
+        return False
+
+
+def altalanos_kor_eldontes(korszam,bolygo, sorstipus):
+    eredmeny = dict()
+    eredmeny["korszam"] = str(korszam)
+    eredmeny["bolygoja"] = bolygo
+    eredmeny["sorstipus"] = sorstipus
+    return eredmeny

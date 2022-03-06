@@ -4,9 +4,9 @@ import datetime
 def nevet_privatra(nev):
     nev = str(nev)
     if len(nev.split()) == 1:
-        return nev[0] + (len(nev.split()[0])-1) * "*"
+        return nev[0] + (len(nev.split()[0]) - 1) * "*"
     elif len(nev.split()) >= 1:
-        return nev[0] + (len(nev.split()[0])-1) * "*" + " " + len(nev.split()[1]) * "*"
+        return nev[0] + (len(nev.split()[0]) - 1) * "*" + " " + len(nev.split()[1]) * "*"
 
 
 def hanyadik_jegy_asctol(kiindulasijegy, aktjegy):
@@ -21,7 +21,7 @@ def jegyet_szamra_valt(jegynev):
     return jegyhezszam[jegynev]
 
 
-def szuletesi_datumido(adatok):
+def szuletesi_datumido(adatok) -> list:
     szuletes = adatok.idopont.replace(tzinfo=None)
 
     currentDate = datetime.datetime.now()
@@ -48,6 +48,5 @@ def szuletesi_datumido(adatok):
     seconds = (minutes - minutesInt) * 60
     secondsInt = int(seconds)
 
-    pontos_kor = [yearsInt, monthsInt, daysInt, hoursInt, minutesInt, secondsInt]   # datetime.datetime(yearsInt, monthsInt, daysInt, hoursInt, minutesInt, secondsInt)
-
-    return pontos_kor
+    return [yearsInt, monthsInt, daysInt, hoursInt, minutesInt,
+            secondsInt]  # datetime.datetime(yearsInt, monthsInt, daysInt, hoursInt, minutesInt, secondsInt)
