@@ -1,4 +1,8 @@
+from ..default_parameters import *
+
+
 def hazura_kiiratas(hazak, hazakUraHazakban):
+    fgv_nev = "hazura_kiiratas"
 
     def hazur_kiiratas(haz, ura):
         if ura in ["1", "2", "4", "7", "9", '10', '11', "12"]:
@@ -12,8 +16,7 @@ def hazura_kiiratas(hazak, hazakUraHazakban):
         elif ura == "nincs hazur":
             return f"{haz}.háznak nincs ura"
         else:
-            print("HIBA")
-            print(ura)
+            printw(ura,problema=fgv_nev)
 
     haz_urak_kiiratva = []
 

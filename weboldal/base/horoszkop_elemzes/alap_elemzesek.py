@@ -1,5 +1,7 @@
 import datetime
 
+from ..default_parameters import *
+
 
 def pontos_kor_szamitas(pontoskor: datetime):
     return f'A pontos életkorod {pontoskor[0]} év  ' \
@@ -122,13 +124,13 @@ def serult_e_nap(bolygok, adatok):
 
 
 def serult_e_hold(bolygok, adatok):
-
+    fgv_nev = "serult_e_hold"
     kiemelt_vilagos_hazak = [1,5,9,10,11]
     kiemelt_sotet_hazak = [4,8,12]
 
     hold = bolygok[1]
     neme = adatok.neme
-    # print(neme, int(hold["hazszam"]["haz"].nevID))
+    printd(neme, int(hold["hazszam"]["haz"].nevID),problema=fgv_nev)
     if neme == "férfi" and int(hold["hazszam"]["haz"].nevID) in kiemelt_vilagos_hazak:
         return "+ hold"
     elif neme == "nő" and int(hold["hazszam"]["haz"].nevID) in kiemelt_sotet_hazak:

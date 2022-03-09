@@ -1,4 +1,5 @@
 from .kisegito import hanyadik_jegy_asctol
+from ..default_parameters import *
 
 
 def hazhoz_bolygok_rendelese(hazak, bolygok):
@@ -28,7 +29,7 @@ def bolygohoz_haz_rendeles(hazak, bolygok):
                 # print(bolygo["bolygo"],bolygo["hazszam"])
                 break
         else:
-            print("valami nincs lekezelve")
+            printe("valami nincs lekezelve",problema=bolygohoz_haz_rendeles.__name__)
             raise Exception
 
     hazak.pop(-1)  # elttűntetni a plusz 1 házat
@@ -47,13 +48,13 @@ def fokszamhozzarendeles(adatok):
 
     # bolygok, hazak = {}, {} # egy regi otlet
     bolygok, hazak = [], []
-    print("------", bolygojegyben_adatok)
-    print("------", adatok.fokszamok)
+    printd(bolygojegyben_adatok ,problema=fokszamhozzarendeles.__name__)
+    printd(adatok.fokszamok,problema=fokszamhozzarendeles.__name__)
     for analogia in list(
             zip(['nap', 'hold', 'merkur', 'venusz', 'mars', 'jupiter', 'szaturnusz', 'uranusz', 'neptun', 'pluto'],
                 bolygojegyben_adatok)):
-        print(analogia[1].jegy)
-        print(analogia[1].bolygo)
+        printd(analogia[1].jegy,problema=fokszamhozzarendeles.__name__)
+        printd(analogia[1].bolygo,problema=fokszamhozzarendeles.__name__)
         # print("fokszamok", adatok.fokszamok)
         # print("fokszamok", analogia[0])
         # print(adatok.fokszamok[analogia[0]])
@@ -88,7 +89,7 @@ def hazura_melyik_hazaban(hazak, bolygok):
 
     def hazurnak_bolygot_talal(hazura_nev):
         for bolygo in bolygok:
-            print( bolygo["bolygo"].nevID ,hazura_nev)
+            printd( bolygo["bolygo"].nevID ,hazura_nev,problema=hazura_melyik_hazaban.__name__)
             if bolygo["bolygo"].nevID == hazura_nev:
                 return bolygo
         else:
@@ -108,7 +109,7 @@ def hazura_melyik_hazaban(hazak, bolygok):
         elif egyuttallo_bolygo_szam > 1:
             return True
         else:
-            print("baj van jegyvaltas -nal")
+            printe("baj van jegyvaltas -nal",problema=jegyvaltas.__name__)
 
     for haz in hazak: # 12
         hazura_nev = haz["jegy"].uralkodo_bolygo
@@ -149,7 +150,7 @@ def fenyszog_hozzarendeles(bolygok, orbisz=8):
             kulso_osszfok = float(kulso_bolygo["osszfokszam"])
             belso_osszfok = float(belso_bolygo["osszfokszam"])
 
-            debug = True
+            debug = False
             # konjukció
             fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz,
                             fenyszogtipus="konjukcio", fok_kilenges=0, debug=debug)

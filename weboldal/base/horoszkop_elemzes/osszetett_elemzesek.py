@@ -1,7 +1,12 @@
+from ..default_parameters import *
+
+basic_parameters = get_basic_parameters()
+
 def anareta(hyleg, bolygok):
+    fgv_nev = "anaréta"
 
     if hyleg == "nap":
-        print("NAP")
+        printd("NAP")
         oppoziciok = bolygok[0]["fenyszogek"]["oppozicio"]
         kvadratok = bolygok[0]["fenyszogek"]["kvadrat"]
         if oppoziciok:
@@ -9,9 +14,9 @@ def anareta(hyleg, bolygok):
             return str(oppoziciok[0]["bolygo"]["bolygo"].nevID) + " (oppozíció)"
 
         elif kvadratok:
-            #print("KVAD", len(kvadratok))
-            # print( [[i["bolygo"]["bolygo"].nevID,i["fokelteres"]] for i in kvadratok ])
-            # print(kvadratok.sort())
+            printd("KVAD", len(kvadratok), problema=fgv_nev)
+            printd( [[i["bolygo"]["bolygo"].nevID,i["fokelteres"]] for i in kvadratok ],problema=fgv_nev)
+            printd(kvadratok.sort(),problema=fgv_nev)
 
             kvadratok.sort(key=lambda x: float(x["fokelteres"]))
             return str(kvadratok[0]["bolygo"]["bolygo"].nevID) + " (kvadrát)"
@@ -20,8 +25,8 @@ def anareta(hyleg, bolygok):
             return  "Nincs anaréta"
 
     elif hyleg == "hold":
-        print("HOLD")
-        # print(bolygok[1]["fenyszogek"])
+        printd("HOLD",problema=fgv_nev)
+        printd(bolygok[1]["fenyszogek"],problema=fgv_nev)
         oppoziciok = bolygok[1]["fenyszogek"]["oppozicio"]
         kvadratok = bolygok[1]["fenyszogek"]["kvadrat"]
 
@@ -40,13 +45,12 @@ def anareta(hyleg, bolygok):
         # [print(i) for i in bolygok[0]["fenyszogek"]]
 
 
-
-
 def sorstipus(bolygok, hazak):
+    fgv_nev = "sorstipus"
     kiemelthazak = ["1", "5", "9", "10", "11"]
     felhasznaltbolygok = ["neptun", "uránusz", "jupiter", "szaturnusz"]
     kiemelthazakbolygoi = get_kiemelthazak_bolygoi(hazak, kiemelthazak)
-    print(kiemelthazakbolygoi)
+    printd(kiemelthazakbolygoi,problema=fgv_nev)
     korok = [
         elso_kor_eldontes(kiemelthazakbolygoi),
         masodik_kor_eldontes(kiemelthazakbolygoi),

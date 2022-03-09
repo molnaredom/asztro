@@ -2,6 +2,7 @@ import datetime
 import requests
 
 from feltoltes_kisegito_modul import *
+from ..default_parameters import *
 
 ## todo timezone
 
@@ -20,7 +21,7 @@ def char2(char):
 
 
 def init_api(tulajdonos_adatok):
-    print(tulajdonos_adatok)
+    printd(tulajdonos_adatok)
     ev = char2(str(tulajdonos_adatok["hi"]))
     honap = char2(str(tulajdonos_adatok["honap"]))
     nap = char2(str(tulajdonos_adatok["nap"]))
@@ -38,7 +39,7 @@ def init_api(tulajdonos_adatok):
         f'horoscope?time={ev}-{honap}-{nap}T{ora}:{perc}:{mp}%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
 
     end = datetime.datetime.now()
-    print("runtime api", end - start)
+    printi("API runtime", end - start)
 
     return adat.json()
 

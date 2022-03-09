@@ -3,6 +3,7 @@ import random
 from django.shortcuts import render
 from django.db.models import Count, Max
 from ..models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2, HazUraHazban
+from ..default_parameters import *
 
 
 
@@ -24,7 +25,7 @@ def bolygok_oldal(request):
     if request.method == "POST":
         tipusnev = request.POST.get('bolygotipus')
         bolygotipus_lekerdezes = Bolygo2.objects.filter(tipus=tipusnev)
-    print("hejj", bolygok)
+    printd("hejj", bolygok,problema="bolygok_oldal")
     context = {'adatok': bolygok, "bolygotipus_lekerdezes": bolygotipus_lekerdezes}
     return render(request, 'analogiatarolok/bolygok.html', context)
 
@@ -70,6 +71,7 @@ def hazakUraHazakban(request):
 
 
 def horoszkop_gyujtemeny(request):
+    fgv_nev = "horoszkop_gyujtemeny"
     bolygo_es_jegy_lekerdezes, haz_es_jegy_lekerdezes, leker_1, leker_2, leker_3 = {}, {}, {}, {}, {}
 
     if request.method == "POST":
@@ -121,7 +123,7 @@ def horoszkop_gyujtemeny(request):
 
     context = {}
     if request.user.is_superuser:
-        print("superuser")
+        printd("superuser",problema=fgv_nev)
         context = {'adatok': hpok,
                "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
                "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
@@ -144,7 +146,8 @@ def horoszkop_gyujtemeny(request):
 
 
 def bolygo_alapjan_lekeres(bolygoNev, jegyNev):
-    print(Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev).query)
+    fgv_nev = "bolygo_alapjan_lekeres"
+    printd(Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev).query, problema=fgv_nev)
     jegy_alapjan_lekeres = None
     if bolygoNev == "nap":
         jegy_alapjan_lekeres = Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev)
