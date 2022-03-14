@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<a href="/images/myw3schoolsimage.jpg" download>
-  <img src="/images/myw3schoolsimage.jpg" alt="W3Schools" width="104" height="142">
-</a>
 <hr>
 
 <table>
     <tr>
         <th>Sorszám</th>
-        <th>Név</th>
+{#        <th>Név</th>#}
         <th>Munkái</th>
         <th>Sorstípus</th>
         <th>Kor</th>
@@ -23,7 +20,7 @@
 
     <tr>
         <td>{{adat.sorszam}}</td>
-        <td>{{adat.nev}}</td>
+{#        <td>{{adat.nev}}</td>#}
         <td>{{adat.munka}}</td>
         <td>{{adat.sorstipus}}</td>
         <td>{{adat.pontoskor.year}}</td>

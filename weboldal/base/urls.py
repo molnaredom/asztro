@@ -3,9 +3,7 @@ from django.urls import path
 
 from .views_module import horoscope_creator, views_deleters, views, views_creators, views_analogiatarolok, \
     views_horoszkop_elemzes, views_konkret_analogia, views_updaters
-from . import ml
-
-
+from .ml_oldal import ml
 
 egyedi_oldalak = [
     path("titkos-szoba/", views.titkosSzoba, name="titkos-szoba"),
