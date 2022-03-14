@@ -9,7 +9,7 @@ def horoszkop(request, id):
     analogia = Horoszkop2.objects.get(id=id)
     hazakUraHazakban = HazUraHazban.objects.all()
     osszesjegy = Jegy2.objects.all()
-    if request.user.is_superuser:
+    if not request.user.is_superuser:
         analogia.tulajdonos_neve = nevet_privatra(analogia.tulajdonos_neve)
 
     # print(analogia.fokszamok)

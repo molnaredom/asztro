@@ -96,7 +96,7 @@ class BolygoJegyben2(OsszetettAnalogia2):
     adatok = models.JSONField(default= dict, blank=True)
 
     def __str__(self):
-        return str(self.jegy) + " ◈ " + str(self.bolygo)
+        return str(self.jegy) + " - " + str(self.bolygo)
 
 
 class HazJegyben2(OsszetettAnalogia2):
@@ -104,7 +104,7 @@ class HazJegyben2(OsszetettAnalogia2):
     jegy = models.ForeignKey(Jegy2, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.haz) + " ◈ " + str(self.jegy)
+        return str(self.haz) + " - " + str(self.jegy)
 
 
 class BolygoHazban2(OsszetettAnalogia2):
@@ -112,7 +112,7 @@ class BolygoHazban2(OsszetettAnalogia2):
     haz = models.ForeignKey(Haz2, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.bolygo) + " ◈ " + str(self.haz)
+        return str(self.bolygo) + " - " + str(self.haz)
 
 
 class HazUraHazban(models.Model):
@@ -122,15 +122,7 @@ class HazUraHazban(models.Model):
 
     def __str__(self):
         return str(self.alap_haz) + ". ház ura " + str(self.ura_melyik_hazban) + ". ház"
-
-#
-# class NincsUra(OsszetettAnalogia2):
-#     alap_jegy = models.ForeignKey(HazJegyben2, related_name='alap_haz', on_delete=models.CASCADE)
-#     ura_melyik_hazban = models.ForeignKey(HazJegyben2, related_name='ura', on_delete=models.CASCADE)
-#     talajdonasagok = models.JSONField(null=True, blank=True, default=dict)
-#
-#     def __str__(self):
-#         return str(self.alap_haz) + ". ház ura " + str(self.ura_melyik_hazban) + ". ház"
+        #todo magyarosítás
 
 
 class HoroszkopAdatok(models.Model):
@@ -185,4 +177,4 @@ class Horoszkop2(models.Model):
     haz_12 = models.ForeignKey(HazJegyben2, related_name='12+', on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.tulajdonos_neve) + " ◈ " + str(self.tipus)
+        return str(self.tulajdonos_neve)[0].upper() + str(self.tulajdonos_neve)[1:]

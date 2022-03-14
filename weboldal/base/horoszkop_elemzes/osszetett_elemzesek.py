@@ -14,9 +14,9 @@ def anareta(hyleg, bolygok):
             return str(oppoziciok[0]["bolygo"]["bolygo"].nevID) + " (oppozíció)"
 
         elif kvadratok:
-            printd("KVAD", len(kvadratok), problema=fgv_nev)
-            printd( [[i["bolygo"]["bolygo"].nevID,i["fokelteres"]] for i in kvadratok ],problema=fgv_nev)
-            printd(kvadratok.sort(),problema=fgv_nev)
+            # printd("KVAD", len(kvadratok), problema=fgv_nev)
+            # printd( [[i["bolygo"]["bolygo"].nevID,i["fokelteres"]] for i in kvadratok ],problema=fgv_nev)
+            # printd(kvadratok.sort(),problema=fgv_nev)
 
             kvadratok.sort(key=lambda x: float(x["fokelteres"]))
             return str(kvadratok[0]["bolygo"]["bolygo"].nevID) + " (kvadrát)"

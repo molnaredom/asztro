@@ -3,8 +3,7 @@ from .alap_elemzesek import pontos_kor_szamitas, alapszamolasok, eletciklus, \
 from .kiiratas_formatumvalto import hazura_kiiratas
 from .kisegito import szuletesi_datumido
 from .osszetett_elemzesek import anareta, sorstipus
-from .hozzarendelesek import hazhoz_bolygok_rendelese, bolygohoz_haz_rendeles, \
-    fokszamhozzarendeles, osszfokszam_hozzarendeles, hazura_melyik_hazaban, fenyszog_hozzarendeles
+from .hozzarendelesek import *
 
 
 def _elemzes(adatok, osszesjegy, hazakUraHazakban):
