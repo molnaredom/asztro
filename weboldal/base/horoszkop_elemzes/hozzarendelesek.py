@@ -29,7 +29,7 @@ def bolygohoz_haz_rendeles(hazak, bolygok):
                 # print(bolygo["bolygo"],bolygo["hazszam"])
                 break
         else:
-            printe("valami nincs lekezelve",problema=bolygohoz_haz_rendeles.__name__)
+            printe("valami nincs lekezelve", problema=bolygohoz_haz_rendeles.__name__)
             raise Exception
 
     hazak.pop(-1)  # elttűntetni a plusz 1 házat
@@ -48,13 +48,13 @@ def fokszamhozzarendeles(adatok):
 
     # bolygok, hazak = {}, {} # egy regi otlet
     bolygok, hazak = [], []
-    printd(bolygojegyben_adatok ,problema=fokszamhozzarendeles.__name__)
-    printd(adatok.fokszamok,problema=fokszamhozzarendeles.__name__)
+    printd(bolygojegyben_adatok, problema=fokszamhozzarendeles.__name__)
+    printd(adatok.fokszamok, problema=fokszamhozzarendeles.__name__)
     for analogia in list(
             zip(['nap', 'hold', 'merkur', 'venusz', 'mars', 'jupiter', 'szaturnusz', 'uranusz', 'neptun', 'pluto'],
                 bolygojegyben_adatok)):
-        printd(analogia[1].jegy,problema=fokszamhozzarendeles.__name__)
-        printd(analogia[1].bolygo,problema=fokszamhozzarendeles.__name__)
+        printd(analogia[1].jegy, problema=fokszamhozzarendeles.__name__)
+        printd(analogia[1].bolygo, problema=fokszamhozzarendeles.__name__)
         # print("fokszamok", adatok.fokszamok)
         # print("fokszamok", analogia[0])
         # print(adatok.fokszamok[analogia[0]])
@@ -86,10 +86,9 @@ def osszfokszam_hozzarendeles(bolygok, hazak):
 
 
 def hazura_melyik_hazaban(hazak, bolygok):
-
     def hazurnak_bolygot_talal(hazura_nev):
         for bolygo in bolygok:
-            printd( bolygo["bolygo"].nevID ,hazura_nev,problema=hazura_melyik_hazaban.__name__)
+            printd(bolygo["bolygo"].nevID, hazura_nev, problema=hazura_melyik_hazaban.__name__)
             if bolygo["bolygo"].nevID == hazura_nev:
                 return bolygo
         else:
@@ -104,24 +103,25 @@ def hazura_melyik_hazaban(hazak, bolygok):
             return False
         elif egyuttallo_bolygo_szam == 1:
             return True
-        elif egyuttallo_bolygo_szam > 1 and "transzcendens" in [konjukcio["bolygo"]["bolygo"].tipus for konjukcio in konjukciok]:
+        elif egyuttallo_bolygo_szam > 1 and "transzcendens" in [konjukcio["bolygo"]["bolygo"].tipus for konjukcio in
+                                                                konjukciok]:
             return False
         elif egyuttallo_bolygo_szam > 1:
             return True
         else:
-            printe("baj van jegyvaltas -nal",problema=jegyvaltas.__name__)
+            printe("baj van jegyvaltas -nal", problema=jegyvaltas.__name__)
 
-    for haz in hazak: # 12
+    for haz in hazak:  # 12
         hazura_nev = haz["jegy"].uralkodo_bolygo
         hazura_bolygo = hazurnak_bolygot_talal(hazura_nev)
-        for belso_haz in hazak: # 12
-            for belso_bolygo in belso_haz["bolygok"]: # 0-10
+        for belso_haz in hazak:  # 12
+            for belso_bolygo in belso_haz["bolygok"]:  # 0-10
                 if hazura_nev == belso_bolygo["bolygo"].nevID:
                     # print(haz["haz"], haz["jegy"].nevID, haz["jegy"].paritas)
                     # print(belso_haz["haz"],belso_bolygo["jegy"].nevID,belso_bolygo["bolygo"].nevID, belso_bolygo["jegy"].paritas)
                     # print("hazura:", hazura_nev)
                     # print()
-                    if belso_bolygo["bolygo"].nevID == "hold" or belso_bolygo["bolygo"].nevID == "nap":# nap/hold
+                    if belso_bolygo["bolygo"].nevID == "hold" or belso_bolygo["bolygo"].nevID == "nap":  # nap/hold
                         haz["hazura"] = belso_haz["haz"]
 
                     if jegyvaltas(hazura_bolygo):
@@ -132,7 +132,7 @@ def hazura_melyik_hazaban(hazak, bolygok):
                         if haz["jegy"].paritas == belso_bolygo["jegy"].paritas:  # megyegyezik a polaritás
                             haz["hazura"] = belso_haz["haz"]
 
-        if "hazura" not in haz: # ugy fut le hogy nem talalt hazurat
+        if "hazura" not in haz:  # ugy fut le hogy nem talalt hazurat
             haz["hazura"] = "nincs hazur"
 
 
@@ -143,7 +143,6 @@ def fenyszog_hozzarendeles(bolygok, orbisz=8):
         bolygo["fenyszogek"]["oppozicio"] = []
         bolygo["fenyszogek"]["kvadrat"] = []
         bolygo["fenyszogek"]["trigon"] = []
-
 
     for kulso_bolygo in bolygok:
         for belso_bolygo in bolygok:
@@ -170,7 +169,6 @@ def fenyszog_hozzarendeles(bolygok, orbisz=8):
 
 def fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, orbisz, fenyszogtipus, fok_kilenges,
                     debug):
-
     # jobb oldali fényszög
     if (kulso_osszfok + orbisz > belso_osszfok + fok_kilenges > kulso_osszfok - orbisz
             and belso_bolygo["bolygo"] != kulso_bolygo["bolygo"]):
@@ -181,11 +179,11 @@ def fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, or
             print(fenyszogtipus)
             print(belso_bolygo["bolygo"], kulso_bolygo["bolygo"])
 
-        belso_bolygo["fenyszogek"][fenyszogtipus].append({"bolygo":kulso_bolygo, "fokelteres":fokelteres })
+        belso_bolygo["fenyszogek"][fenyszogtipus].append({"bolygo": kulso_bolygo, "fokelteres": fokelteres})
 
     # bal oldali fényszög
     elif (kulso_osszfok + orbisz > belso_osszfok - fok_kilenges > kulso_osszfok - orbisz
-            and belso_bolygo["bolygo"] != kulso_bolygo["bolygo"]):
+          and belso_bolygo["bolygo"] != kulso_bolygo["bolygo"]):
 
         fokelteres = abs(belso_osszfok + fok_kilenges - kulso_osszfok)
 
@@ -193,7 +191,7 @@ def fenyszog_szamol(belso_bolygo, belso_osszfok, kulso_bolygo, kulso_osszfok, or
             print(fenyszogtipus)
             print(belso_bolygo["bolygo"], kulso_bolygo["bolygo"])
 
-        belso_bolygo["fenyszogek"][fenyszogtipus].append({"bolygo":kulso_bolygo, "fokelteres":fokelteres })
+        belso_bolygo["fenyszogek"][fenyszogtipus].append({"bolygo": kulso_bolygo, "fokelteres": fokelteres})
 
 
 def lancolt_egyuttallas(bolygok):

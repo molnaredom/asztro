@@ -38,14 +38,16 @@ def generalt_adatok(request):
 
 
 def _elemzes(adatok, osszesjegy, hazakUraHazakban, sorszam):
-    bolygok, hazak, pontos_kor = uj_alapanalogiak_hozzarendelese(adatok)
+    bolygok, hazak, pontos_kor, hyleg_res = uj_alapanalogiak_hozzarendelese(adatok)
     # [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
 
-    return eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor, sorszam)
+    return eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor, sorszam, hyleg_res)
 
 
-def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor, sorszam):
+def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor, sorszam, hyleg_res):
     eredmeny = dict()
+    print(type(hazak))
+    # print(["-------------------------"+str(i) for i in hazak])
 
     # eredmeny["nev"] = str(adatok.tulajdonos_neve)
     eredmeny["Sorszám"] = str(sorszam)
@@ -54,14 +56,42 @@ def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy,
     # eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
     eredmeny["Életkor"] = pontos_kor[0]
     eredmeny["Életciklus"] = eletciklus(pontos_kor, adatok.neme)
-    eredmeny["Sorstípus"] = sorstipus(bolygok, hazak)
-    #eredmeny["Házak urai"] = hazura_kiiratas(hazak, hazakUraHazakban)
+    eredmeny["Sorstípus"] = sorstipus(bolygok, hazak)["sorstipus"]
     eredmeny["Sérult-e Nap"] = serult_e_nap(bolygok, adatok)
     eredmeny["Sérült-e a Hold"] = serult_e_hold(bolygok, adatok)
-    hyleg_res = hyleg(bolygok)
     eredmeny["Hyleg"] = hyleg_res
     eredmeny["Anaréta"] = anareta(hyleg_res, bolygok)
 
+    eredmeny = hazak_melyik_jegyben__jellemzovektorok_hozzaadasa(eredmeny, hazak)
+    eredmeny = bolygo_melyik_jegyben__jellemzovektorok_hozzaadasa(eredmeny, bolygok)
+    eredmeny = haz_ura_melyik_hazban__jellemzovektorok_hozzaadasa(eredmeny, hazak)
+    eredmeny = bolygo_melyik_hazban__jellemzovektorok_hozzaadasa(eredmeny, bolygok)
+
+    return eredmeny
+
+
+def bolygo_melyik_jegyben__jellemzovektorok_hozzaadasa(eredmeny, bolygok):
+    for i in range(10):
+        eredmeny[f"{bolygok[i]['bolygo'].nevID} jegye"] = bolygok[i]["jegy"]
+    return eredmeny
+
+
+def hazak_melyik_jegyben__jellemzovektorok_hozzaadasa(eredmeny, hazak):
+    for i in range(1, 13):
+        eredmeny[f"{i}. ház jegye"] = hazak[i-1]["jegy"]
+    return eredmeny
+
+
+def haz_ura_melyik_hazban__jellemzovektorok_hozzaadasa(eredmeny, hazak):
+    for i in range(1, 13):
+        eredmeny[f"{i}. ház urának háza"] = hazak[i-1]["hazura"]
+    return eredmeny
+
+
+def bolygo_melyik_hazban__jellemzovektorok_hozzaadasa(eredmeny, bolygok):
+    print(bolygok[0])
+    for i in range(10):
+        eredmeny[f"{bolygok[i]['bolygo'].nevID} háza"] = bolygok[i]["hazszam"]["haz"].nevID
     return eredmeny
 
 
@@ -73,7 +103,9 @@ def uj_alapanalogiak_hozzarendelese(adatok):
     bolygok = hazhoz_bolygok_rendelese(hazak, bolygok)  # megmondja egy_egy hazban milyen bolygok vannak
     bolygok = fenyszog_hozzarendeles(bolygok)
     hazura_melyik_hazaban(hazak, bolygok)
-    return bolygok, hazak, pontos_kor
+    hyleg_res = hyleg(bolygok)
+
+    return bolygok, hazak, pontos_kor, hyleg_res
 
 
 def csv_keszites(kinyert_adatok):
