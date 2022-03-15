@@ -1,5 +1,4 @@
-from .alap_elemzesek import pontos_kor_szamitas, alapszamolasok, eletciklus, \
-    serult_e_nap, serult_e_hold, hyleg
+from .alap_elemzesek import *
 from .kiiratas_formatumvalto import hazura_kiiratas
 from .kisegito import szuletesi_datumido
 from .osszetett_elemzesek import anareta, sorstipus
@@ -19,7 +18,7 @@ def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy,
 
     eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
     eredmeny["pontoskor"] = pontos_kor_szamitas(pontos_kor)
-    eredmeny["eletciklus"] = eletciklus(pontos_kor)
+    eredmeny["eletciklus"] = eletciklus(pontos_kor, adatok.neme)
     eredmeny["sorstipus"] = sorstipus(bolygok, hazak)
     eredmeny["hazakurai"] = hazura_kiiratas(hazak, hazakUraHazakban)
     eredmeny["serult_e_nap"] = serult_e_nap(bolygok, adatok)

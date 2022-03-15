@@ -76,28 +76,34 @@ def rejtett_aszcendens(elemek, minosegek, osszesjegy):
         return "Nincs rejtett aszcendens"
 
 
-def eletciklus(pontos_kor):
+def eletciklus(pontos_kor, neme):
     yearsInt = pontos_kor[0]
     eletciklus = ""
-    if yearsInt > 63:
+    if yearsInt >= 63:
         eletciklus = "szaturnusz"
-    elif yearsInt > 56:
+    elif yearsInt >= 56:
         eletciklus = "jupiter-szaturnusz"
-    elif yearsInt > 56:
+    elif yearsInt >= 56:
         eletciklus = "jupiter"
-    elif yearsInt > 42:
+    elif yearsInt >= 42:
         eletciklus = "nap-mars"
-    elif yearsInt > 35:
+    elif yearsInt >= 35:
         eletciklus = "nap-jupiter"
-    elif yearsInt > 28:
+    elif yearsInt >= 28:
         eletciklus = "nap"
-    elif yearsInt > 21:
-        eletciklus = "ha férfi NAP, ha nő HOLD"
-    elif yearsInt > 14:
-        eletciklus = "ha fiú hold-mars, ha lány hold vénusz"
-    elif yearsInt > 7:
+    elif yearsInt >= 21:
+        if neme == "férfi":
+            eletciklus = "nap"
+        elif neme == "nő":
+            eletciklus = "hold"
+    elif yearsInt >= 14:
+        if neme == "férfi":
+            eletciklus = "hold-mars"
+        elif neme == "nő":
+            eletciklus = "hold-vénusz"
+    elif yearsInt >= 7:
         eletciklus = "hold-merkúr"
-    elif yearsInt > 0:
+    elif yearsInt >= 0:
         eletciklus = "hold"
     else:
         eletciklus = "még nem született meg"
