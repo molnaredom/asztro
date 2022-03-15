@@ -66,6 +66,7 @@ def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy,
     eredmeny = bolygo_melyik_jegyben__jellemzovektorok_hozzaadasa(eredmeny, bolygok)
     eredmeny = haz_ura_melyik_hazban__jellemzovektorok_hozzaadasa(eredmeny, hazak)
     eredmeny = bolygo_melyik_hazban__jellemzovektorok_hozzaadasa(eredmeny, bolygok)
+    eredmeny = bolygok_fenyszogkapcsolatai__jellemzovektorok_hozzaadasa(eredmeny, bolygok)
 
     return eredmeny
 
@@ -89,9 +90,55 @@ def haz_ura_melyik_hazban__jellemzovektorok_hozzaadasa(eredmeny, hazak):
 
 
 def bolygo_melyik_hazban__jellemzovektorok_hozzaadasa(eredmeny, bolygok):
-    print(bolygok[0])
     for i in range(10):
         eredmeny[f"{bolygok[i]['bolygo'].nevID} háza"] = bolygok[i]["hazszam"]["haz"].nevID
+    return eredmeny
+
+
+def bolygok_fenyszogkapcsolatai__jellemzovektorok_hozzaadasa(eredmeny, bolygok):
+
+    def ekezetnelkul(szo: str):
+        szo = szo.replace("á", "a")
+        szo = szo.replace("ű", "u")
+        szo = szo.replace("ú", "u")
+        szo = szo.replace("ó", "o")
+        szo = szo.replace("ö", "o")
+        szo = szo.replace("ő", "o")
+        szo = szo.replace("é", "e")
+        szo = szo.replace("í", "i")
+        szo = szo.replace(" ", "_")
+        szo.replace("á", "a")
+        return szo
+
+    def default_nincs_fenyszog_kapcsolat(eredmeny):
+        bolygonevlista = ["nap", "hold", "merkur", "venusz", "mars", "jupiter", "szaturnusz", "uranusz", "neptun",
+                          "pluto"]
+        vizsgalt_parositasok = []
+        for bolygo1 in bolygonevlista:
+            for bolygo2 in bolygonevlista:
+                if bolygo2 != bolygo1 and {bolygo1, bolygo2} not in vizsgalt_parositasok:
+                    eredmeny[f"{bolygo1} <fényszög> {bolygo2}"] = "-"
+                    vizsgalt_parositasok.append({bolygo1, bolygo2})
+
+    def fenyszogek_hozzaadas_iranyito(bolygok, eredmeny, fenyszoghozzaadas):
+        for bolygo1 in bolygok:
+            bolygo1_nev = bolygo1["bolygo"].nevID
+
+            fenyszoghozzaadas(bolygo1, bolygo1_nev, eredmeny, fenyszognev="konjukcio")
+            fenyszoghozzaadas(bolygo1, bolygo1_nev, eredmeny, fenyszognev="oppozicio")
+            fenyszoghozzaadas(bolygo1, bolygo1_nev, eredmeny, fenyszognev="kvadrat")
+            fenyszoghozzaadas(bolygo1, bolygo1_nev, eredmeny, fenyszognev="trigon")
+
+    def fenyszoghozzaadas(bolygo1, bolygo1_nev, eredmeny, fenyszognev):
+        for konjukcio in bolygo1["fenyszogek"][fenyszognev]:
+            bolygo2_nev = konjukcio["bolygo"]["bolygo"].nevID
+            if f"{ekezetnelkul(bolygo1_nev)} <fényszög> {ekezetnelkul(bolygo2_nev)}" in eredmeny:
+                eredmeny[f"{ekezetnelkul(bolygo1_nev)} <fényszög> {ekezetnelkul(bolygo2_nev)}"] = fenyszognev
+
+    default_nincs_fenyszog_kapcsolat(eredmeny)
+
+    fenyszogek_hozzaadas_iranyito(bolygok, eredmeny, fenyszoghozzaadas)
+
     return eredmeny
 
 
