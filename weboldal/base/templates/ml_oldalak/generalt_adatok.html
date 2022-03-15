@@ -1,39 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<hr>
+    <hr>
 
-<table>
-    <tr>
-        <th>Sorszám</th>
-{#        <th>Név</th>#}
-        <th>Munkái</th>
-        <th>Sorstípus</th>
-        <th>Kor</th>
-        <th>Nem</th>
-        <th>Életcikuls</th>
-        <th>Hyleg</th>
-        <th>Anaréta</th>
+    <table class="table table-striped table-hover">
+        <tr>
+            {% for oszlopnev, tartalom in analogia.0.items %}
+                <th> {{ oszlopnev }}</th>
+            {% endfor %}
 
-    </tr>
-    {% for adat in analogia %}
+        </tr>
+        {% for adat in analogia %}
+            <tr>
+                {% for k,v in adat.items %}
+                    <td>{{ v }}</td>
+                {% endfor %}
+            </tr>
 
-    <tr>
-        <td>{{adat.sorszam}}</td>
-{#        <td>{{adat.nev}}</td>#}
-        <td>{{adat.munka}}</td>
-        <td>{{adat.sorstipus}}</td>
-        <td>{{adat.pontoskor.year}}</td>
-        <td>{{adat.neme}}</td>
-        <td>{{adat.eletciklus}}</td>
-        <td>{{adat.hyleg}}</td>
-        <td>{{adat.anareta}}</td>
-    </tr>
+        {% endfor %}
 
-
-    {% endfor %}
-
-</table>
+    </table>
 
 
 
