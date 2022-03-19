@@ -17,12 +17,14 @@
                     <label>Jelszó:</label>
                     <input type="password" name="password" placeholder="Add meg a jelszavad"/>
 
-                    <input type="submit" name="Login" >
+{#                    <input type="submit" name="Login" >#}
+                    <br><br>
+                    <button type="submit" name="Login" class="btn btn-success btn-lg">Belépés</button>
                 </form>
                 <br><br>
                 <p>Még nem vagy regisztrálva?</p>
                 <br><br>
-                <button type="button" class="btn btn-warning"><a href="{% url 'register' %}">Regisztráció</a></button>
+                <button type="button" class="btn btn-light btn-sm"><a href="{% url 'register' %}">Regisztráció</a></button>
                 <br><br>
 
             </div>
@@ -32,12 +34,13 @@
                 <form method="POST" action="">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" name="Register">
+                    <button type="submit" name="Register" class="btn btn-success btn-lg">Regisztráció</button>
                 </form>
                 <br><br>
-                <p>Már be vagy regisztrálva?</p>
+                <p>Már regisztráltál?</p>
                 <br>
-                <a href="{% url 'login' %}">Belépés</a>
+                <button type="button" class="btn btn-light btn-sm"><a href="{% url 'login' %}">Belépés</a></button>
+
                 <br><br><br><br>
             </div>
 
