@@ -242,9 +242,8 @@ horoszkop_tarolo = [
         "perc": 10,
         "hely": "Győr",
         "kep": "",
-        "munka": [""],
+        "munka": [ "szépség szakma?"],
         "elet_leiras": ["általános iskola kitűnő",
-                        "szépség szakma",
                         "fotózási ajánlatokat kap",
                         "pszichológia érdekli"
                         ],

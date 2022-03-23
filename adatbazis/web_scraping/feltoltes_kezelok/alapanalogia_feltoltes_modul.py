@@ -5,11 +5,11 @@ from adatbazis.web_scraping.kisegito_modulok.feltoltes_kisegito_modul import szo
 
 def alapanalogia_feltoltes(web, alapanalogiak, domain):
     feltoltendo = alapanalogiak
-    time.sleep(1)
+    time.sleep(0.5)
     jegy_feltoltes(web, feltoltendo, domain)
-    time.sleep(1)
+    time.sleep(0.5)
     bolygo_feltoltes(web, feltoltendo, domain)
-    time.sleep(1)
+    time.sleep(0.5)
     haz_feltoltes(web, feltoltendo, domain)
 
 
@@ -22,7 +22,7 @@ def jegy_feltoltes(web, feltoltendo, domain):
             szoveggelkitoltes(web, feltoltendo,"jegyek", jegy, adat_nev)
 
         feltoltes(web)
-        time.sleep(2)
+        time.sleep(0.5)
 
 
 def bolygo_feltoltes(web, feltoltendo:dict, domain):
@@ -34,7 +34,7 @@ def bolygo_feltoltes(web, feltoltendo:dict, domain):
             szoveggelkitoltes(web, feltoltendo,"bolygok", bolygo, adat_nev)
 
         feltoltes(web)
-        time.sleep(2)
+        time.sleep(0.5)
 
 
 def haz_feltoltes(web, feltoltendo, domain):
@@ -45,4 +45,4 @@ def haz_feltoltes(web, feltoltendo, domain):
             szoveggelkitoltes(web, feltoltendo, "hazak", haz, adat_nev)
 
         feltoltes(web)
-        time.sleep(2)
+        time.sleep(0.5)
