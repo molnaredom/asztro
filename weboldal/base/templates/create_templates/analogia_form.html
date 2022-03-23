@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div>
+
+
     <form method="POST" action="">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Mentés és vissza a főoldalra" name="mentes_es_foldal">
-        <input type="submit" value="Újabb felvitel" name="ujabb_felvitel">
-        <input type="submit" value="Mégse" name="megse">
+
+        <button type="submit" name="mentes_es_foldal" class="btn btn-success">Mentés és vissza a főoldalra
+        </button>
+        <button type="submit" name="ujabb_felvitel" class="btn btn-success">Újabb felvitel</button>
+        <button type="submit" name="megse" class="btn btn-danger">Mégse</button>
+
     </form>
 
-</div>
-
 {% endblock content %}
+

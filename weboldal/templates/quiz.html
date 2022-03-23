@@ -30,7 +30,7 @@
 
 
     <div class="container">
-        <button type="button" class="start btn btn-outline-primary btn-lg start-button mt-3">Click Here to Start Attempting the Quiz</button>
+        <button type="button" class="start btn btn-outline-primary btn-lg start-button mt-3">Kattints ide a kvíz kezdéséhez</button>
         <h1 class="text-danger mt-3">{{quiz.name}} <span class="badge bg-dark timer" id="hide-time">Seconds Left : <span
                     id="time-left">{{quiz.time}}</span></span> </h1>
 
@@ -40,11 +40,11 @@
             <form id="quiz-form" class="mt-3 mb-3">
                 {% csrf_token %}
                 <div id="quiz-box"></div>
-                <button type="submit" style="display: none;" id="button1" class="btn btn-success mt-3">Submit</button>
-            
+                <button type="submit" style="display: none;" id="button1" class="btn btn-success mt-3">Kész vagyok</button>
+
             </form>
-            <button class="badge bg-dark total" id="total" style="display: none;"></button> 
-            <div id="result-box"></div>      
+            <button class="badge bg-dark total" id="total" style="display: none;"></button>
+            <div id="result-box"></div>
 
         </div>
     </div>
@@ -70,7 +70,7 @@
         const data = response.data
         data.forEach(ele => {
             for (const [question, answers] of Object.entries(ele)){
-             
+
                 quizBox.innerHTML += `
                     <hr class="ques" style="display:none">
                     <div class="mb-2 ques" style="display:none">
@@ -91,7 +91,7 @@
             $(".ans").show();
             $(".answer").show();
         });
-               
+
                 });
             }
         });
@@ -148,7 +148,9 @@ const sendData = () => {
         success: function(response){
             const marks = response.marks
             quizForm.classList.add('not-visible')
-            totalScore.innerHTML = `<h4>Final Score : ${response.score} Out Of {{quiz.number_of_questions}} marks</h4>`
+            totalScore.innerHTML = `<h4>Az eredményed : ${response.score} / {{quiz.number_of_questions}} pont
+            ${100* (response.score / {{quiz.number_of_questions}})}%
+            </h4>`
 
 
             marks.forEach(res=>{
@@ -160,7 +162,7 @@ const sendData = () => {
                     resDiv.classList.add(...cls)
 
                     if (resp=='not answered') {
-                        resDiv.innerHTML += '- not answered'
+                        resDiv.innerHTML += '- Nem lett megválaszolva'
                         resDiv.classList.add('bg-info')
                     }
                     else {
@@ -169,11 +171,11 @@ const sendData = () => {
 
                         if (answer == correct) {
                             resDiv.classList.add('bg-success')
-                            resDiv.innerHTML += ` answered: ${answer}`
+                            resDiv.innerHTML += ` Helyes!: ${answer}`
                         } else {
                             resDiv.classList.add('bg-danger')
-                            resDiv.innerHTML += ` | correct answer: ${correct}`
-                            resDiv.innerHTML += ` | answered: ${answer}`
+                            resDiv.innerHTML += ` | A helyes válasz: ${correct}`
+                            resDiv.innerHTML += ` | De te ezt jelölted: ${answer}`
                         }
                     }
                 }
@@ -203,7 +205,7 @@ quizForm.addEventListener('submit', e=>{
             $("#hide-time").hide();
         });
     });
-  
+
 </script>
 
 

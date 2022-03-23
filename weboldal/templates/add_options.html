@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
-{% block title %} Add Options {% endblock %}
+{% block title %} Választási lehetőségek hozzáadása {% endblock %}
 
 {% block body %}
 <div class="container mt-4">
-    <form action="/add_options/{{question.id}}/" method="POST"> {% csrf_token %}
+    <form action="/home/add_options/{{question.id}}/" method="POST"> {% csrf_token %}
         {{ formset.as_p }}
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button type="submit" class="btn btn-info">Hozzáadás</button>
     </form>
 </div>
 {% endblock %}
 {% block js %}
 <script>
     {% if alert %}
-alert("Question is added successfully!!!");
-document.location = '/add_question/'
+{#alert("Question is added successfully!!!");#}
+document.location = '/home/add_question/'
 {% endif %}
 </script>
 {% endblock %}

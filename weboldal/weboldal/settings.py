@@ -43,10 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'base',
+    # 'home',
     'base.views_module',
     'base.views_module.creators',
     'home.apps.HomeConfig',
+    # 'crispy_forms',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

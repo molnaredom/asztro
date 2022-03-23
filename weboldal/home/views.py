@@ -70,31 +70,31 @@ def save_quiz_view(request, myid):
                 marks.append({str(q): {'correct_answer': correct_answer, 'answered': a_selected}})
             else:
                 marks.append({str(q): 'not answered'})
-     
+
         Marks_Of_User.objects.create(quiz=quiz, user=user, score=score)
-        
+
         return JsonResponse({'passed': True, 'score': score, 'marks': marks})
-    
+
 
 def Signup(request):
     if request.user.is_authenticated:
         return redirect('/')
-    if request.method=="POST":   
+    if request.method=="POST":
         username = request.POST['username']
         email = request.POST['email']
         first_name=request.POST['first_name']
         last_name=request.POST['last_name']
         password = request.POST['password1']
         confirm_password = request.POST['password2']
-        
+
         if password != confirm_password:
             return redirect('/register')
-        
+
         user = User.objects.create_user(username, email, password)
         user.first_name = first_name
         user.last_name = last_name
         user.save()
-        return render(request, 'login.html')  
+        return render(request, 'login.html')
     return render(request, "signup.html")
 
 def Login(request):
@@ -103,14 +103,14 @@ def Login(request):
     if request.method=="POST":
         username = request.POST['username']
         password = request.POST['password']
-        
+
         user = authenticate(username=username, password=password)
-        
+
         if user is not None:
             login(request, user)
             return redirect("/")
         else:
-            return render(request, "login.html") 
+            return render(request, "login.html")
     return render(request, "login.html")
 
 def Logout(request):
@@ -125,10 +125,11 @@ def add_quiz(request):
             quiz = form.save(commit=False)
             quiz.save()
             obj = form.instance
-            return render(request, "add_quiz.html", {'obj':obj})
+            return render(request, "index.html", {'obj':obj})
     else:
         form=QuizForm()
     return render(request, "add_quiz.html", {'form':form})
+
 
 def add_question(request):
     questions = Question.objects.all()
@@ -152,7 +153,7 @@ def delete_question(request, myid):
 
 def add_options(request, myid):
     question = Question.objects.get(id=myid)
-    QuestionFormSet = inlineformset_factory(Question, Answer, fields=('content','correct', 'question'), extra=4)
+    QuestionFormSet = inlineformset_factory(Question, Answer, fields=('content', 'question'), extra=2)
     if request.method=="POST":
         formset = QuestionFormSet(request.POST, instance=question)
         if formset.is_valid():
@@ -163,13 +164,18 @@ def add_options(request, myid):
         formset=QuestionFormSet(instance=question)
     return render(request, "add_options.html", {'formset':formset, 'question':question})
 
+
 def results(request):
     marks = Marks_Of_User.objects.all()
     return render(request, "results.html", {'marks':marks})
 
+
 def delete_result(request, myid):
+    marks = Marks_Of_User.objects.all()
+    # for mark in marks:
+    #     print(mark.id, mark.user)
     marks = Marks_Of_User.objects.get(id=myid)
     if request.method == "POST":
         marks.delete()
-        return redirect('/results')
+        return redirect('results')
     return render(request, "delete_result.html", {'marks':marks})

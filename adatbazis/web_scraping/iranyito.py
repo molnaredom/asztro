@@ -18,7 +18,7 @@ def inditas():
     web = ""
     if rendszer == "win10":
         web = webdriver.Firefox(executable_path=r'adat_tarolas/geckodriver.exe')
-    else:
+    elif rendszer == "linux":
         web = webdriver.Firefox()
 
     return web
@@ -57,20 +57,22 @@ parser.add_argument("-m", "--mode", default= "api",
 # Read arguments from command line
 args = parser.parse_args()
 
-def main():
-    alapadat_feltoltes("alapadat")
-    print("kész")
-    exit()
 
-    if args.mode == "api":
+def main():
+    """
+    Use external webpage to gain basic horoscope datas
+
+    """
+
+    if "api" in args.mode:
         print("api mode")
         api_mode()
 
-    elif args.mode == "web":
+    elif "web" in args.mode:
         print("web mode")
         web_mode()
 
-    elif args.mode == "alapadat":
+    elif "alapadat" in args.mode:
         print("alapadatok feltöltése mód")
         alapadat_feltoltes("alapadat")
 

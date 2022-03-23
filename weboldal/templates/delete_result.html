@@ -3,14 +3,14 @@
 
 {% block body %}
 <div class="container mt-4">
-    <h4>Are you sure you want to delete {{marks.user}} who has score: {{marks.score}} in {{marks.quiz}} ?</h4>
+    <h4>Szeretnéd törölni {{marks.user}} felhasználó eredményét, akinek pontszáma: {{marks.score}} ebben a kvízben: {{marks.quiz}} ?</h4>
     <br>
-    <form action="/delete_result/{{marks.id}}/" method="POST">
-            
+    <form action="/home/delete_result/{{marks.id}}/" method="POST">
+
         {% csrf_token %}
-        <a class="btn btn-warning" href="/results/">Cancel</a>
-    
-        <input class="btn btn-danger" type="submit" value="Delete">
+        <a class="btn btn-warning" href="/home/results/">Mégse</a>
+
+        <input class="btn btn-danger" type="submit" value="Törlés">
     </form>
 </div>
 

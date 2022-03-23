@@ -68,11 +68,12 @@
 
     {% if user.is_superuser %}
 
-        <li><a class="dropdown-item" href="/home/add_quiz/">Add Quiz</a></li>
-        <li><a class="dropdown-item" href="/home/add_question/">Add Questions</a></li>
-        <li><a class="dropdown-item" href="/home/results/">Results of the Users</a></li>
+        <li><a class="dropdown-item" href="/home/add_quiz/">Kvíz hozzáadás</a></li>
+        <li><a class="dropdown-item" href="/home/add_question/">Kérdés hozzáadás</a></li>
 
     {% endif %}
+
+    <li><a class="dropdown-item" href="/home/results/">Eredmény táblázatok</a></li>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -120,8 +121,7 @@
                                         data-questions="{{ i.number_of_questions }}" data-name="{{ i.name }}"
                                         data-id="{{ i.id }}" id="btn"
                                         style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
-                                        class="fas fa-link"></i>Attempt
-                                    Quiz
+                                        class="fas fa-link"></i>Kvíz kitöltése
                                 </button>
                             </div>
                         </div>
@@ -150,9 +150,9 @@
             modaltitle.innerHTML = `${name}`
 
             modalBody.innerHTML = `
-    The ${name} consists of ${numberOfQuestions} questions and hence it is of ${numberOfQuestions} marks. You will be getting exactly ${time} seconds to complete ${numberOfQuestions} multiple choice questions. After completing the questions you can click on the
-          submit button to get your score and to understand the concept in which you made a mistake.<br>
-          All the best for the quiz!!!.
+    Az ${name} kvíz ${numberOfQuestions} kérdést tartalmaz, amikre összesen ${time} másodperced van válaszolni.
+        <br>
+          Sok sikert!
     `
 
             startQuiz.addEventListener('click', () => {
