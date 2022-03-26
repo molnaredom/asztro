@@ -2,22 +2,33 @@ import time
 
 from selenium.webdriver.support.select import Select
 
-from adatbazis.web_scraping.kisegito_modulok.feltoltes_kisegito_modul import feltoltes
-
-
 def analogiagyakorlo_feltoltes(web, domain, feltoltendo_adatok):
     kvizek = [{"név": "Bolygójegyben gyakorló",
+               "leírás": "ez egy nehéz nehézségű teszt",
+               "kérdésszám": "15",
+               "idő": "200",
+               "kviz_value": "49"
+               },{"név": "Bolygójegyben gyakorló",
                "leírás": "ez egy közepes nehézségű teszt",
                "kérdésszám": "10",
-               "idő": "200",
-               "kviz_value": 0
-               }]
+               "idő": "250",
+               "kviz_value": "50"
+               },{"név": "Bolygójegyben gyakorló",
+               "leírás": "ez egy könnyű nehézségű teszt",
+               "kérdésszám": "8",
+               "idő": "400",
+               "kviz_value": "51"
+               },
+
+
+              ]
 
     bejelentkezes_adminkent(web, domain)
 
-    kvizek_hozzaadasa(domain, web, kvizek)
-
-    bolygojegyben_kozepes_kviz_kerdesfeltoltes(web, domain, feltoltendo_adatok, kviz_value="38")
+    # kvizek_hozzaadasa(domain, web, kvizek)
+    for kviz in kvizek:
+        if kviz["név"] == "Bolygójegyben gyakorló":
+            bolygojegyben_kozepes_kviz_kerdesfeltoltes(web, domain, feltoltendo_adatok, kviz)
 
 
 def bejelentkezes_adminkent(web, domain):
@@ -38,22 +49,22 @@ def kvizek_hozzaadasa(domain, web, kvizek):
         szoveg_kitoltes(web, '//*[@id="id_number_of_questions"]', kviz["kérdésszám"])
         szoveg_kitoltes(web, '//*[@id="id_time"]', kviz["idő"])
         # mentés
-        raklikkeles(web, xpath='/html/body/div/div[3]/div/div[1]/div/form/div/div/input[1]')
+        raklikkeles(web, xpath='/html/body/div/div[3]/div/div[1]/div/form/div/div/input[2]')
 
 
-def bolygojegyben_kozepes_kviz_kerdesfeltoltes(web, domain, feltoltendo_adatok, kviz_value):
+def bolygojegyben_kozepes_kviz_kerdesfeltoltes(web, domain, feltoltendo_adatok, kviz_adatok):
     web.get(f'{domain}/admin/home/question/add/')
-    kerdesek = kerdes_generator(feltoltendo_adatok)
+    kerdesek = kerdes_generator(feltoltendo_adatok, kviz_adatok)
 
     for kerdes in kerdesek:
         egy_kerdes_hozzaadasa(web,
                               kerdes_neve=kerdes["kerdesnev"],
                               valasz_opciok=kerdes["valasz_opciok"],
-                              hozzatartozo_kviz_value=kviz_value
+                              hozzatartozo_kviz_value=kviz_adatok["kviz_value"]
                               )
 
 
-def kerdes_generator(feltoltendo_adatok):
+def kerdes_generator(feltoltendo_adatok, kviz_adatok):
     bolygojegyben_kerdesbank = []
     opciok = set()
     for bolygo_nev, bolygo_values in feltoltendo_adatok["bolygojegyben"]["analogiak"].items():
@@ -63,30 +74,35 @@ def kerdes_generator(feltoltendo_adatok):
                 for szempont_nev, szempont_array in jegy_values.items():
                     for analogia in szempont_array:
                         opciok.add("-".join([jegy_nev, bolygo_nev]))
-                        if analogia != "":
+                        if analogia != "" and szempont_nev != "munka":
                             bolygojegyben_kerdesbank.append({
                                 "kerdes": str(szempont_nev) + ": " + str(analogia),
                                 "valasz": "-".join([jegy_nev, bolygo_nev])
                             })
                         # print(,analogia,sep="-" )
     kerdesbank_meret = len(bolygojegyben_kerdesbank)
-    for i in bolygojegyben_kerdesbank:
-        print(i)
+    # for i in bolygojegyben_kerdesbank:
+    #     print(i)
 
     kerdesek = []
     import random
 
-    for _ in range(10):
-        print(kerdesek)
+    for _ in range(int(kviz_adatok["kérdésszám"])):
+        # print(kerdesek)
         kivalasztott_kerdes_valasz = bolygojegyben_kerdesbank[random.randint(0, kerdesbank_meret-1)]
-        kerdesek.append({
-            "kerdesnev": kivalasztott_kerdes_valasz["kerdes"],
-            "valasz_opciok": [
+
+        valasz_opciok = [
                 {"opcio": kivalasztott_kerdes_valasz["valasz"], "helyes_e": "igaz"},
                 {"opcio": bolygojegyben_kerdesbank[random.randint(0, kerdesbank_meret)]["valasz"], "helyes_e": "haims"},
                 {"opcio": bolygojegyben_kerdesbank[random.randint(0, kerdesbank_meret)]["valasz"], "helyes_e": "haims"}
-            ]})
+            ]
+        random.shuffle(valasz_opciok)
+        kerdesek.append({
+            "kerdesnev": kivalasztott_kerdes_valasz["kerdes"],
 
+            "valasz_opciok": valasz_opciok})
+    print("kérdések")
+    print(kerdesek)
     return kerdesek
 
 
@@ -94,7 +110,7 @@ def egy_kerdes_hozzaadasa(web, kerdes_neve, hozzatartozo_kviz_value, valasz_opci
     szoveg_kitoltes(web, xpath='//*[@id="id_content"]', tartalom=kerdes_neve)
     # value ---> hozzatartozo kviz
     value_alapjan_kivalasztas(web, xpath='//*[@id="id_quiz"]', value=hozzatartozo_kviz_value)  # tudni kell mi a vauleja
-
+    print(valasz_opciok)
     for hanyadik_valaszlehetoseg, opcio in enumerate(valasz_opciok):
         egy_valasz_opcio_hozzaadas(web,
                                    valasz_nev=opcio["opcio"],
@@ -104,14 +120,16 @@ def egy_kerdes_hozzaadasa(web, kerdes_neve, hozzatartozo_kviz_value, valasz_opci
     raklikkeles(web, xpath='/html/body/div/div[3]/div/div[1]/div/form/div/div[2]/input[2]')
 
 
-def egy_valasz_opcio_hozzaadas(web, valasz_nev: str, helyes_e: bool, hanyadik_valaszlehetoseg: int):
+def egy_valasz_opcio_hozzaadas(web, valasz_nev: str, helyes_e, hanyadik_valaszlehetoseg: int):
     if hanyadik_valaszlehetoseg <= 3:
         szoveg_kitoltes(web,
                         xpath=f'//*[@id="id_answer_set-{hanyadik_valaszlehetoseg}-content"]',
                         tartalom=valasz_nev)
         # CHECKBOX
-        if helyes_e:
+        if helyes_e == "igaz":
             raklikkeles(web, xpath=f'//*[@id="id_answer_set-{hanyadik_valaszlehetoseg}-correct"]')
+
+
     if hanyadik_valaszlehetoseg > 3:
         # todo uj opciot hozzaadni
         pass
