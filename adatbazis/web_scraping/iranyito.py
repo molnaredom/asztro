@@ -142,7 +142,13 @@ def process(mode="", bolygojegyben_feltoltes_=False, hazjegyben_feltoltes_=False
     if hazurahazban_:
         hazurahazban_feltoltes(web, hazurahazban_beolvasas(), kezdo_alaphazszam=1, kezdojegyszam=1, domain=domain)
     if gyakorlo_feltoltes_:
-        analogiagyakorlo_feltoltes(web, domain)
+
+        feltoltendo_adatok = {
+            "bolygojegyben" : bolygojegyben_beolvas()
+        }
+
+
+        analogiagyakorlo_feltoltes(web, domain, feltoltendo_adatok)
 
     # running modes
     # -kulsoweb
