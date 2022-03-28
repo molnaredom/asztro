@@ -39,12 +39,13 @@ def save_quiz_view(request, myid):
         questions = []
         data = request.POST
         data_ = dict(data.lists())
+        print(data_)
 
         data_.pop('csrfmiddlewaretoken')
 
-        for k in data_.keys():
-            print('key: ', k)
-            question = Question.objects.get(content=k)
+        for i,k in enumerate(data_.keys()):
+            print(f'{i}key: ', k)
+            question = Question.objects.filter(content=k)[0]
             questions.append(question)
 
         user = request.user

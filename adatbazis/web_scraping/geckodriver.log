@@ -8509,11 +8509,12 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
-667
-1648465162242	Marionette	INFO	Listening on port 58097
-1648465162281	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-1648465535385	Marionette	INFO	Stopped listening on port 58097
+1648479439065	Marionette	INFO	Stopped listening on port 59433
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+ce.
 remote-debugging-port" "58143" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofiletXfp6J"
 1648465227375	Marionette	INFO	Marionette enabled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofiletXfp6J\\search.json.mozlz4", (void 0)))
@@ -8656,11 +8657,10 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
-cdqCM\\search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:53069/devtools/browser/30fb1957-1f2b-413f-a403-f016811d01da
-1648469144499	Marionette	INFO	Listening on port 53074
-1648469144783	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: http://127.0.0.1:8000/home/, line 264: TypeError: modalBody is null
+: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 1648469252033	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/marionette/sync.js:235:19
