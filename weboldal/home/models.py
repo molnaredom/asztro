@@ -15,6 +15,7 @@ class Quiz(models.Model):
     def get_questions(self):
         return self.question_set.all()
 
+
 class Question(models.Model):
     content = models.CharField(max_length=200)
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
@@ -42,5 +43,3 @@ class Marks_Of_User(models.Model):
 
     def __str__(self):
         return str(self.quiz)
-
-

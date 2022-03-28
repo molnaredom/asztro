@@ -1,3 +1,4 @@
+from adatbazis.web_scraping.kisegito_modulok.alap_webscraper_parancsok import raklikkeles
 from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import *
 
 
@@ -18,7 +19,7 @@ def szoveggelkitoltes(web,feltoltendo,foanalogia, al_analogia, konkret_analogia 
 
 
 def feltoltes(web):
-    hely_xpath = web.find_element_by_xpath("/html/body/div/form/input[3]")
-    hely_xpath.click()
+    raklikkeles(web, "/html/body/div[2]/form/button[2]" )
+
 
 

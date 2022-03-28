@@ -27,8 +27,10 @@ def init_api(tulajdonos_adatok, mode):
     perc = two_digit_str_num(str(tulajdonos_adatok["perc"]))
     mp = "00"  # tulajdonos_adatok["mp"]
     varos = two_digit_str_num(str(tulajdonos_adatok["hely"]))
-
+    print(varos)
+    print(ekezetnelkul(varos.lower()))
     szelesseg, hosszusag = varos_poz(varosnev=ekezetnelkul(varos.lower()))
+    print(szelesseg, hosszusag)
 
     start = datetime.datetime.now()
 

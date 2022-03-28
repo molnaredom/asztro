@@ -5,6 +5,7 @@ from feltoltes_kisegito_modul import *
 from ..default_parameters import *
 
 ## todo timezone
+from ..kisegito.magyarositas import jegy_num_to_hun, bolygo_to_hun
 
 
 def ryuphi_api_adatlehivo_manager(tulajdonso_adatok):
@@ -33,10 +34,25 @@ def init_api(tulajdonos_adatok):
     szelesseg, hosszusag = varos_poz(varosnev=ekezetnelkul(varos.lower()))
 
     start = datetime.datetime.now()
-    adat = requests.get(
-        # f'https://dev-astrology-api.herokuapp.com/'
-        f'http://127.0.0.1:3000/'
-        f'horoscope?time={ev}-{honap}-{nap}T{ora}:{perc}:{mp}%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+
+    import socket
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    result = sock.connect_ex(('127.0.0.1', 3000))
+    if result == 0:
+        print ("Port is open")
+        adat = requests.get(
+            f'http://127.0.0.1:3000/'
+            f'horoscope?time={ev}-{honap}-{nap}T{ora}:{perc}:{mp}%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+    else:
+        print("Port is not open")
+        adat = requests.get(
+            f'https://dev-astrology-api.herokuapp.com/'
+            f'horoscope?time={ev}-{honap}-{nap}T{ora}:{perc}:{mp}%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+
+    sock.close()
+
+
+
 
     end = datetime.datetime.now()
     printi("API runtime", end - start)
@@ -77,56 +93,6 @@ def get_hazak(chart):
     #[print(i) for i in hazak.items()]
 
     return hazak
-
-
-def jegy_num_to_hun(eng_jegy):
-    if eng_jegy == "1":
-        return "kos"
-    elif eng_jegy == "2":
-        return "bika"
-    elif eng_jegy == "3":
-        return "ikrek"
-    elif eng_jegy == "4":
-        return "rák"
-    elif eng_jegy == "5":
-        return "oroszlán"
-    elif eng_jegy == "6":
-        return "szűz"
-    elif eng_jegy == "7":
-        return "mérleg"
-    elif eng_jegy == "8":
-        return "skorpió"
-    elif eng_jegy == "9":
-        return "nyilas"
-    elif eng_jegy == "10":
-        return "bak"
-    elif eng_jegy == "11":
-        return "vízöntő"
-    elif eng_jegy == "12":
-        return "halak"
-
-
-def bolygo_to_hun(eng_bolygo):
-    if eng_bolygo == "sun":
-        return "Nap"
-    elif eng_bolygo == "moon":
-        return "Hold"
-    elif eng_bolygo == "mercury":
-        return "Merkur"
-    elif eng_bolygo == "venus":
-        return "Mars"
-    elif eng_bolygo == "mars":
-        return "Jupiter"
-    elif eng_bolygo == "jupiter":
-        return "szűz"
-    elif eng_bolygo == "saturn":
-        return "Szaturnusz"
-    elif eng_bolygo == "uranus":
-        return "Uránusz"
-    elif eng_bolygo == "neptune":
-        return "Neptun"
-    elif eng_bolygo == "pluto":
-        return "Pluto"
 
 #
 # print(get_basic_datas("2001", "08", "19", "16", "54", "00", "Szolnok"))

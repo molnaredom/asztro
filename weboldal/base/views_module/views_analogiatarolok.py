@@ -74,50 +74,32 @@ def horoszkop_gyujtemeny(request):
     fgv_nev = "horoszkop_gyujtemeny"
     bolygo_es_jegy_lekerdezes, haz_es_jegy_lekerdezes, leker_1, leker_2, leker_3 = {}, {}, {}, {}, {}
 
-    if request.method == "POST":
-
-        if 'bolygo_es_jegy_lekerdezes' in request.POST:
-            jegyNev = request.POST.get('jegyNev')
-            bolygoNev = request.POST.get('bolygoNev')
-            bolygo_es_jegy_lekerdezes = bolygo_alapjan_lekeres(bolygoNev, jegyNev)
-
-
-        elif "haz_es_jegy_lekerdezes" in request.POST:
-            jegyNev = request.POST.get('jegyNev')
-            hazNev = request.POST.get('hazNev')
-            haz_es_jegy_lekerdezes = haz_alapjan_lekeres(hazNev, jegyNev)
-
-        # elif "leker_1" in request.POST:
-        #     leker_1 = Horoszkop1.objects.filter(jupiter__jegy__elem="levegő")
-        #
-        # elif "leker_2" in request.POST:
-        #
-        #     leker_2 = Horoszkop1.objects.raw("""
-        #     select *, COUNT(tulajdonos_neve) as evszak_szam
-        #     from base_horoszkop1
-        #     inner join base_bolygojegyben bj on base_horoszkop1.nap_id = bj.id
-        #     inner join  base_jegy jegy on bj.jegy_id = jegy.id
-        #     group by jegy.evszak""")
-        #
-        # elif "leker_3" in request.POST:
-        #
-        #     leker_3 = Horoszkop1.objects.raw("""
-        #     select *,haz.tipus as haztipus, COUNT(tulajdonos_neve) as haztipus_szam
-        #     from base_horoszkop1
-        #     inner join base_hazjegyben as hj on base_horoszkop1.haz_1_id = hj.id
-        #     inner join  base_haz as haz on hj.id = haz.id
-        #     inner join base_bolygojegyben bj on base_horoszkop1.hold_id = bj.id
-        #     where bj.leiras = ''
-        #     group by haz.tipus
-        #
-        #                                        """)
-
     def nevet_privatra(nev):
         nev = str(nev)
         if len(nev.split()) == 1:
             return nev[0] + (len(nev.split()[0])-1) * "*"
         elif len(nev.split()) >= 1:
             return nev[0] + (len(nev.split()[0])-1) * "*"+ " " + len(nev.split()[1]) * "*"
+
+    if request.method == "POST":
+        if 'bolygo_es_jegy_lekerdezes' in request.POST:
+            jegyNev = request.POST.get('jegyNev')
+            bolygoNev = request.POST.get('bolygoNev')
+            bolygo_es_jegy_lekerdezes = bolygo_alapjan_lekeres(bolygoNev, jegyNev)
+
+            if not request.user.is_superuser:
+                for horoszkop in bolygo_es_jegy_lekerdezes:
+                    horoszkop.tulajdonos_neve = nevet_privatra(horoszkop.tulajdonos_neve)
+
+        elif "haz_es_jegy_lekerdezes" in request.POST:
+            jegyNev = request.POST.get('jegyNev')
+            hazNev = request.POST.get('hazNev')
+            haz_es_jegy_lekerdezes = haz_alapjan_lekeres(hazNev, jegyNev)
+
+            if not request.user.is_superuser:
+                for horoszkop in haz_es_jegy_lekerdezes:
+                    horoszkop.tulajdonos_neve = nevet_privatra(horoszkop.tulajdonos_neve)
+
 
     hpok = Horoszkop2.objects.all()
 
@@ -142,12 +124,37 @@ def horoszkop_gyujtemeny(request):
                    "leker_3": leker_3
                    }
 
+    # elif "leker_1" in request.POST:
+    #     leker_1 = Horoszkop1.objects.filter(jupiter__jegy__elem="levegő")
+    #
+    # elif "leker_2" in request.POST:
+    #
+    #     leker_2 = Horoszkop1.objects.raw("""
+    #     select *, COUNT(tulajdonos_neve) as evszak_szam
+    #     from base_horoszkop1
+    #     inner join base_bolygojegyben bj on base_horoszkop1.nap_id = bj.id
+    #     inner join  base_jegy jegy on bj.jegy_id = jegy.id
+    #     group by jegy.evszak""")
+    #
+    # elif "leker_3" in request.POST:
+    #
+    #     leker_3 = Horoszkop1.objects.raw("""
+    #     select *,haz.tipus as haztipus, COUNT(tulajdonos_neve) as haztipus_szam
+    #     from base_horoszkop1
+    #     inner join base_hazjegyben as hj on base_horoszkop1.haz_1_id = hj.id
+    #     inner join  base_haz as haz on hj.id = haz.id
+    #     inner join base_bolygojegyben bj on base_horoszkop1.hold_id = bj.id
+    #     where bj.leiras = ''
+    #     group by haz.tipus
+    #
+    #                                        """)
+
     return render(request, 'analogiatarolok/horoszkop_gyujtemeny.html', context)
 
 
 def bolygo_alapjan_lekeres(bolygoNev, jegyNev):
-    fgv_nev = "bolygo_alapjan_lekeres"
-    printd(Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev).query, problema=fgv_nev)
+    # fgv_nev = "bolygo_alapjan_lekeres"
+    # printd(Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev).query, problema=fgv_nev)
     jegy_alapjan_lekeres = None
     if bolygoNev == "nap":
         jegy_alapjan_lekeres = Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev)
@@ -169,6 +176,7 @@ def bolygo_alapjan_lekeres(bolygoNev, jegyNev):
         jegy_alapjan_lekeres = Horoszkop2.objects.filter(neptun__jegy__nevID=jegyNev)
     elif bolygoNev == "plúto":
         jegy_alapjan_lekeres = Horoszkop2.objects.filter(pluto__jegy__nevID=jegyNev)
+
     return jegy_alapjan_lekeres
 
 

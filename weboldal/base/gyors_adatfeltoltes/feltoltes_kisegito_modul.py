@@ -1,21 +1,6 @@
+def varos_poz(varosnev:str):
+    varosnev = ekezetnelkul(varosnev.lower())
 
-
-
-def ekezetnelkul(szo: str):
-    szo =szo.replace("á", "a")
-    szo =szo.replace("ű", "u")
-    szo =szo.replace("ú", "u")
-    szo =szo.replace("ó", "o")
-    szo =szo.replace("ö", "o")
-    szo =szo.replace("ő", "o")
-    szo =szo.replace("é", "e")
-    szo =szo.replace("í", "i")
-    szo =szo.replace(" ", "_")
-    szo.replace("á", "a")
-    return szo
-
-
-def varos_poz(varosnev):
     if varosnev == "szolnok": return "47.11", "20.12"
     if varosnev == "vac": return "47.77518", "19.131"
     if varosnev == "budapest": return "47.472", "19.05"
@@ -45,7 +30,21 @@ def varos_poz(varosnev):
     if varosnev == "papa": return "47.326", "17.469"
     if varosnev == "esztergom": return "47.785", "18.74"
     if varosnev == "szekesfehervar" or varosnev == "fehervar": return "47.188", "18.413"
+    if varosnev == "mezotur": return "47.0041296", "20.6161"
 
 def nyari_idoszamitas(ido):
     pass
 
+
+def ekezetnelkul(szo: str):
+    szo =szo.replace("á", "a")
+    szo =szo.replace("ű", "u")
+    szo =szo.replace("ú", "u")
+    szo =szo.replace("ó", "o")
+    szo =szo.replace("ö", "o")
+    szo =szo.replace("ő", "o")
+    szo =szo.replace("é", "e")
+    szo =szo.replace("í", "i")
+    szo =szo.replace(" ", "_")
+    szo.replace("á", "a")
+    return szo

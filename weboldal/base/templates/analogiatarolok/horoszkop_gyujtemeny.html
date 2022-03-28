@@ -135,6 +135,7 @@
                             <tbody>
                             {% if request.user.is_superuser %}
                                 {% for adat in haz_es_jegy_lekerdezes %}
+                                    helo
                                     <tr>
                                         <td><a href="{% url 'horoszkop' adat.id %}">{{ adat }}</a></td>
                                         <td>{{ adat.tipus }}</td>
@@ -167,7 +168,10 @@
                             </thead>
 
                             <tbody>
+
                             {% for adat in bolygo_es_jegy_lekerdezes %}
+
+
                                 <tr>
                                     <td><a href="{% url 'horoszkop' adat.id %}">{{ adat }}</a></td>
                                     <td>{{ adat.tipus }}</td>

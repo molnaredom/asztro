@@ -200,6 +200,7 @@ def varos_poz(varosnev):
     if varosnev == "papa": return "47.326", "17.469"
     if varosnev == "esztergom": return "47.785", "18.74"
     if varosnev == "szekesfehervar" or varosnev == "fehervar": return "47.188", "18.413"
+    if varosnev == "mezotur": return "47.0041296", "20.6161"
 
 
 def ryuphi_api_adatlehivo_manager(tulajdonso_adatok):
@@ -222,13 +223,25 @@ def init_api(obj):
 
     start = datetime.datetime.now()
 
-    adat = requests.get(
-        # f'https://dev-astrology-api.herokuapp.com/'
-        f'http://127.0.0.1:3000/'
+    import socket
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    result = sock.connect_ex(('127.0.0.1', 3000))
+    if result == 0:
+        print ("Port is open")
+        adat = requests.get(
+            f'http://127.0.0.1:3000/'
+            f'horoscope?time={ev}-{honap}-{nap}T{ora}:{perc}:{mp}%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+    else:
+        print("Port is not open")
+        adat = requests.get(
+            f'https://dev-astrology-api.herokuapp.com/'
         f'horoscope?time='
         f'{char2(datumido.year)}-{char2(datumido.month)}-{char2(datumido.day)}T'
         f'{char2(datumido.hour)}:{char2(datumido.minute)}:{char2(datumido.second)}'
         f'%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+
+    sock.close()
+
 
     end = datetime.datetime.now()
     print("API Futásidő: ", end - start)

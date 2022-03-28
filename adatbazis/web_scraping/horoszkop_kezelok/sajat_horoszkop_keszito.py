@@ -49,16 +49,21 @@ def sajat_horoszkopform_kitoltes(horoszkop_adatok, web, kezdobolygojegyben, kezd
 
 def sajat_web_inditasa(web,domain):
     web.get(f'{domain}/create-horoszkop/')
-    time.sleep(2)
 
 
 def sajat_weboldal_kitoltes(horoszkop_adatok, web, kezdobolygojegyben, kezdohazjegyben):
     print(horoszkop_adatok)
+
+
+
+
+
     egyeb_tulajdonosi_adat_feltoltes(horoszkop_adatok, web)
-    bolygo_jegyben_feltoltes(horoszkop_adatok, web,kezdobolygojegyben)
-    haz_jegyben_feltoltes(horoszkop_adatok, web, kezdohazjegyben)
-    fokszam_feltoltes(horoszkop_adatok, web)
+    # bolygo_jegyben_feltoltes(horoszkop_adatok, web,kezdobolygojegyben)
+    # haz_jegyben_feltoltes(horoszkop_adatok, web, kezdohazjegyben)
+    # fokszam_feltoltes(horoszkop_adatok, web)
     munka_feltoltes(horoszkop_adatok, web)
+    elet_leiras_feltoltes(horoszkop_adatok, web)
 
     press_submit_button(web)
 
@@ -110,10 +115,20 @@ def munka_feltoltes(horoszkop_adatok, web):
     hely_xpath.send_keys(jsonban_analogia)
 
 
+def elet_leiras_feltoltes(horoszkop_adatok, web):
+    hely_xpath = web.find_element_by_xpath(f'//*[@id="id_leirasok"]')
+    hely_xpath.clear()
+    jsonban_analogia = "{ \"analogiak\" : \"" + \
+                       str(horoszkop_adatok["elet_leiras"]) \
+                       + "\" }"
+    hely_xpath.send_keys(jsonban_analogia)
+
+
 def press_submit_button(web):
     adatok_kuldese_gomb = web.find_element_by_xpath(
-        '/html/body/div/form/input[2]')
+        '/html/body/div[2]/form/button[2]')
     adatok_kuldese_gomb.click()
+    time.sleep(100)
 
 
 def get_web_content():

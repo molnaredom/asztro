@@ -1,23 +1,25 @@
 import time
 
-from selenium.webdriver.support.select import Select
+from adatbazis.web_scraping.kisegito_modulok.alap_webscraper_parancsok import szoveg_kitoltes, \
+    value_alapjan_kivalasztas, raklikkeles
+
 
 def analogiagyakorlo_feltoltes(web, domain, feltoltendo_adatok):
     kvizek = [{"név": "Bolygójegyben gyakorló",
                "leírás": "ez egy nehéz nehézségű teszt",
                "kérdésszám": "15",
                "idő": "200",
-               "kviz_value": "49"
+               "kviz_value": "1"
                },{"név": "Bolygójegyben gyakorló",
                "leírás": "ez egy közepes nehézségű teszt",
                "kérdésszám": "10",
                "idő": "250",
-               "kviz_value": "50"
+               "kviz_value": "2"
                },{"név": "Bolygójegyben gyakorló",
                "leírás": "ez egy könnyű nehézségű teszt",
                "kérdésszám": "8",
                "idő": "400",
-               "kviz_value": "51"
+               "kviz_value": "3"
                },
 
 
@@ -25,7 +27,7 @@ def analogiagyakorlo_feltoltes(web, domain, feltoltendo_adatok):
 
     bejelentkezes_adminkent(web, domain)
 
-    # kvizek_hozzaadasa(domain, web, kvizek)
+    kvizek_hozzaadasa(domain, web, kvizek)
     for kviz in kvizek:
         if kviz["név"] == "Bolygójegyben gyakorló":
             bolygojegyben_kozepes_kviz_kerdesfeltoltes(web, domain, feltoltendo_adatok, kviz)
@@ -135,9 +137,6 @@ def egy_valasz_opcio_hozzaadas(web, valasz_nev: str, helyes_e, hanyadik_valaszle
         pass
 
 
-def raklikkeles(web, xpath):
-    web.find_element_by_xpath(xpath).click()
-
 
 #
 # def kerdes_kitoltes(web, hanyadikkerdes, kerdes, igaze):
@@ -145,12 +144,4 @@ def raklikkeles(web, xpath):
 #     select.select_by_value(kerdes)
 #     # todo igaze kockát bepipáltatni
 
-def szoveg_kitoltes(web, xpath, tartalom):
-    select = web.find_element_by_xpath(xpath)
-    select.clear()
-    select.send_keys(tartalom)
 
-
-def value_alapjan_kivalasztas(web, xpath, value):
-    select = Select(web.find_element_by_xpath(xpath))
-    select.select_by_value(value)

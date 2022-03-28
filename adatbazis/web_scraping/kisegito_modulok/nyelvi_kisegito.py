@@ -44,6 +44,7 @@ def varos_poz(varosnev):
     if varosnev == "papa": return "47.326", "17.469"
     if varosnev == "esztergom": return "47.785", "18.74"
     if varosnev == "szekesfehervar" or varosnev == "fehervar": return "47.188", "18.413"
+    if varosnev == "mezotur": return "47.004", "20.616"
 
 def nyari_idoszamitas(ido):
     pass

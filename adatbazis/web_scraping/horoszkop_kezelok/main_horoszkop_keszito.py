@@ -16,11 +16,10 @@ def kulso_weboldal_lehivasa(web):
 def egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain, mode):
     kinyert_kulso_bolygo_es_haz_adatok = kulso_adat_kinyero(mode, tulajodonosi_adatok, web)
     # print(kinyert_kulso_bolygo_es_haz_adatok)
-
+    print(tulajodonosi_adatok)
     horoszkop_feltolt_adatok = get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok,
-                                                                  kinyert_kulso_bolygo_es_haz_adatok,
-                                                                  mode)
-    print(horoszkop_feltolt_adatok)
+                                                                  # kinyert_kulso_bolygo_es_haz_adatok,
+                                                                  mode=mode)
 
     sajat_horoszkopform_kitoltes(horoszkop_feltolt_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain)
 
@@ -36,10 +35,10 @@ def kulso_adat_kinyero(mode, tulajodonosi_adatok, web):
         return ryuphi_api_adatlehivo_manager(tulajodonosi_adatok, mode)
 
 
-def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo_es_haz_adatok, mode):
+def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo_es_haz_adatok= None, mode=None):
     def datumido_keszit():
         t = tulajodonosi_adatok
-        return f"{t['ev']}-{t['honap']}-{t['nap']} {t['ora']}:{t['perc']}:00"
+        return f"{t['ev']}-{t['honap']}-{t['nap']} {t['ora']}:{t['perc']}:{t['mp']}"
 
     def float_fokszam(strfok: str):
         if "kulsoweb" in mode:
@@ -54,16 +53,16 @@ def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo
     horoszkop_feltolt_adatok["idopont"] = datumido_keszit()
 
     # print(horoszkop_feltolt_adatok["idopont"])
+    if kinyert_kulso_bolygo_es_haz_adatok is not None:
+        for bolygonev, bolygo_tulajdonsagok in kinyert_kulso_bolygo_es_haz_adatok["bolygok"].items():
+            horoszkop_feltolt_adatok[ekezetnelkul(bolygonev.lower())] = \
+                [ekezetnelkul(bolygo_tulajdonsagok["jegy"].lower()),
+                 float_fokszam(bolygo_tulajdonsagok["fokszam"])]
 
-    for bolygonev, bolygo_tulajdonsagok in kinyert_kulso_bolygo_es_haz_adatok["bolygok"].items():
-        horoszkop_feltolt_adatok[ekezetnelkul(bolygonev.lower())] = \
-            [ekezetnelkul(bolygo_tulajdonsagok["jegy"].lower()),
-             float_fokszam(bolygo_tulajdonsagok["fokszam"])]
-
-    for haznev, haz_tulajdonsagok in kinyert_kulso_bolygo_es_haz_adatok["hazak"].items():
-        horoszkop_feltolt_adatok[str(haznev)] = \
-            [ekezetnelkul(haz_tulajdonsagok["jegy"].lower()),
-             float_fokszam(haz_tulajdonsagok["fokszam"])]
+        for haznev, haz_tulajdonsagok in kinyert_kulso_bolygo_es_haz_adatok["hazak"].items():
+            horoszkop_feltolt_adatok[str(haznev)] = \
+                [ekezetnelkul(haz_tulajdonsagok["jegy"].lower()),
+                 float_fokszam(haz_tulajdonsagok["fokszam"])]
 
     return horoszkop_feltolt_adatok
 
