@@ -1,4 +1,4 @@
-# Asztroprogram 2.1.2
+# Asztroprogram 2.3.0 Szakdolgozat 1. félév
 https://asztro.herokuapp.com/horoszkop_gyujtemeny
 
 ## Mi az asztrológia?
@@ -20,15 +20,15 @@ https://asztro.herokuapp.com/horoszkop_gyujtemeny
 ## Megvalósítandó mérföldkövek, funkciók
 - [x] horoszkóp szerkezetének implementálása, adatbázisban kezelhetővé tétele ~ 12 hét - 100% KÉSZ
   -  A további adatok feldolgozásához, szükség van egy struktúrára, amiben könnyen kezelhetőek az adatok
-- [ ] Adatbázis feltöltése ~ 20 hét - 40% KÉSZ
+- [ ] Adatbázis feltöltése ~ 20 hét - 45% KÉSZ
   - Emberek adatainak beszerzése, strukturált tárolása (~ 400-1000 ember)
   - Analógiák feltöltése: Bolygók, Jegyek, Házak és kombinációik (562 oldal)
-- [ ] Pályaválasztás segítő program ~ 15 hét - 5% KÉSZ
+- [ ] Pályaválasztás segítő program ~ 15 hét - 35% KÉSZ
   - Neuronhálók segítségével valószínűségi értékek szabása a különböző munkaterületekre a felhasználónak
   - Ez az asztrológia validálására is lehetőséget biztosít 
-- [ ] Analógia gyakorló ~ 2 hét - 10% KÉSZ
+- [ ] Analógia gyakorló ~ 5 hét - 80% KÉSZ
   - Játékos módon lehessen az egymással analóg személyiségjellemzőket, tárgyakat, színeket, stb. dolgokat párosítani.
-- [ ] Általános elemzés ~ 6 hét - 50% KÉSZ
+- [ ] Általános elemzés ~ 6 hét - 80% KÉSZ
   - Sorstípus: független/kiszolgáltatott/önfeláldozó/áldozat
   - Felosztások: Évszak- Minőség- Elemek- szerinti felosztás
   - Rejtett aszcendens
@@ -37,7 +37,7 @@ https://asztro.herokuapp.com/horoszkop_gyujtemeny
   - Hyleg/Anaréta meghatározása
   - Sérült minta Nap/Hold
  
-- [ ] Születési idő pontosítás ~ 15 hét (ha gyorsabban haladnék a vártnál) - 0% - KÉSZ
+- [ ] Születési idő pontosítás ~ 15 hét (ha gyorsabban haladnék a vártnál) - 10% - KÉSZ
   - Ha egy embernek nem tudjuk pontosan mikor született, de történtek már kardinális események az életében. Vissza lehet számolni, pontosan hány óra hány perckor született.
 
       
@@ -66,7 +66,7 @@ python3 .\manage.py runserver
 ### Adatok feltöltése üres adatbázisba
 
 ```
-python3 adatbazis\webscraping\iranyito.py
+python3 adatbazis\webscraping\iranyito.py -m alapadatok
 ```
 
 
