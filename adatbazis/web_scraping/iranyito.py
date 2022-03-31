@@ -4,6 +4,7 @@ import json
 
 from adatbazis.web_scraping.feltoltes_kezelok.alapanalogia_feltoltes_modul import alapanalogia_feltoltes
 from adatbazis.web_scraping.feltoltes_kezelok.analogia_gyakorlo_feltoltes_modul import analogiagyakorlo_feltoltes
+from adatbazis.web_scraping.feltoltes_kezelok.bolygo_hazban_feltoltes_modul import bolygohazban_feltoltes
 from adatbazis.web_scraping.feltoltes_kezelok.bolygo_jegyben_feltoltes_modul import bolygojegyben_feltoltes
 from adatbazis.web_scraping.feltoltes_kezelok.haz_jegyben_feltoltes_modul import hazjegyben_kitoltes
 from adatbazis.web_scraping.feltoltes_kezelok.hazurahazban_feltoltes_modul import hazurahazban_feltoltes
@@ -45,6 +46,11 @@ def hazurahazban_beolvasas():
         return json.loads(f.read())
 
 
+def bolygohazban_beolvasas():
+    with open("../analogiak/bolygo_hazban_analogiak.json", encoding="utf-8") as f:
+        return json.loads(f.read())
+
+
 import argparse
 
 # Initialize parser
@@ -76,6 +82,10 @@ def main():
     elif "alapadat" in args.mode:
         print("alapadatok feltöltése mód")
         alapadat_feltoltes("alapadat")
+
+    elif "egyeni" in args.mode:
+        print("egyeni feltöltése mód")
+        egyeni_feltoltes("egyeni")
 
     elif "gyakorlo" in args.mode:
         print("gyakorló feltöltés mód")
@@ -112,7 +122,16 @@ def alapadat_feltoltes(mode):
 
     process(mode, web=web, domain=domain, bolygojegyben_feltoltes_=True,
             hazjegyben_feltoltes_=True, alapanalogia_feltoltes_=True,
-            hazurahazban_=True)
+            hazurahazban_=True,bolygo_hazban_feltoltes_=True)
+
+
+def egyeni_feltoltes(mode):
+    web = inditas()
+    domain = "https://asztro.herokuapp.com"
+    domain = "http://127.0.0.1:8000"
+    print("inditas")
+
+    process(mode, web=web, domain=domain, bolygo_hazban_feltoltes_ = True)
 
 
 def gyakorlo_feltoltes(mode):
@@ -129,10 +148,14 @@ def api_mode():
     process(mode="kulsoapi", uj_horoszkop_keszites_=True, web=web, domain=domain)
 
 
+
 def process(mode="", bolygojegyben_feltoltes_=False, hazjegyben_feltoltes_=False, uj_horoszkop_keszites_=False,
-            alapanalogia_feltoltes_=False, hazurahazban_=False, gyakorlo_feltoltes_=False, web=None, domain=None):
+            alapanalogia_feltoltes_=False, hazurahazban_=False, gyakorlo_feltoltes_=False,bolygo_hazban_feltoltes_ =None,
+    web=None, domain=None):
     if alapanalogia_feltoltes_:
         alapanalogia_feltoltes(web, alapanalogia_beolvas(), domain=domain)
+    if bolygo_hazban_feltoltes_:
+        bolygohazban_feltoltes(web, bolygohazban_beolvasas(), kezdohazszam=1, kezdobolygoszam=1, domain=domain)
     if bolygojegyben_feltoltes_:
         bolygojegyben_feltoltes(web, bolygojegyben_beolvas(), kezdojegyszam=1, kezdobolygoszam=1, domain=domain)
     if hazjegyben_feltoltes_:

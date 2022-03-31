@@ -46,3 +46,17 @@ def bolygo_to_hun(eng_bolygo):
         return "Neptun"
     elif eng_bolygo == "pluto":
         return "Pluto"
+
+
+def ekezetnelkul(szo: str):
+    szo =szo.replace("á", "a")
+    szo =szo.replace("ű", "u")
+    szo =szo.replace("ú", "u")
+    szo =szo.replace("ó", "o")
+    szo =szo.replace("ö", "o")
+    szo =szo.replace("ő", "o")
+    szo =szo.replace("é", "e")
+    szo =szo.replace("í", "i")
+    szo =szo.replace(" ", "_")
+    szo.replace("á", "a")
+    return szo

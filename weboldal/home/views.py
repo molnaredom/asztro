@@ -34,8 +34,16 @@ def quiz_data_view(request, myid):
     })
 
 
+from django.shortcuts import HttpResponse
+
+
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+
+
 def save_quiz_view(request, myid):
-    if request.is_ajax():
+
+    if is_ajax(request):
         questions = []
         data = request.POST
         data_ = dict(data.lists())
