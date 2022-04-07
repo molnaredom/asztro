@@ -16,6 +16,7 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
 def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor):
     eredmeny = dict()
 
+    eredmeny["BJ_id"] = bolygojegyben_id(bolygok)
     eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
     eredmeny["pontoskor"] = pontos_kor_szamitas(pontos_kor)
     eredmeny["eletciklus"] = eletciklus(pontos_kor, adatok.neme)

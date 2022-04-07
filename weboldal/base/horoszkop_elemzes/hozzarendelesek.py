@@ -2,6 +2,33 @@ from .kisegito import hanyadik_jegy_asctol
 from ..default_parameters import *
 
 
+
+def ekezetnelkul(szo: str):
+    szo =szo.replace("á", "a")
+    szo =szo.replace("ű", "u")
+    szo =szo.replace("ú", "u")
+    szo =szo.replace("ó", "o")
+    szo =szo.replace("ö", "o")
+    szo =szo.replace("ő", "o")
+    szo =szo.replace("é", "e")
+    szo =szo.replace("í", "i")
+    szo =szo.replace(" ", "_")
+    szo.replace("á", "a")
+    return szo
+
+def bolygojegyben_id(bolygok):
+
+    bolygojegyben_id_dict= dict()
+
+    for adat in bolygok:
+        print(adat["bolygo"].nevID, adat["hazszam"]["haz"].nevID, )
+        bolygojegyben_id_dict[ekezetnelkul(adat["bolygo"].nevID)] = \
+            {"value": ekezetnelkul( adat["hazszam"]["haz"].nevID),
+            "name": str(adat["hazszam"]["haz"].nevID) + " - " + str(adat["bolygo"].nevID) }
+
+    return bolygojegyben_id_dict
+
+
 def hazhoz_bolygok_rendelese(hazak, bolygok):
     for haz in hazak:
         haz["bolygok"] = []

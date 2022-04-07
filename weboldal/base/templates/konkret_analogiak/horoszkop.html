@@ -1,282 +1,297 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<head>
-    <style>
-        * {
-            box-sizing: border-box;
-            color: #3f4156;
-        }
-
-        body {
-            padding: 10px;
-            background: #f1f1f1;
-        }
-
-        .halvany {
-            color: #8b8b8b;
-        }
-
-        /* Header/Blog Title */
-        .header {
-            padding: 30px;
-            text-align: center;
-            background: white;
-        }
-
-        .header h1 {
-            font-size: 50px;
-            color: #3f4156;
-        }
-
-        /* Style the top navigation bar */
-        .topnav {
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        /* Style the topnav links */
-        .topnav a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .rightcolumn {
-            float: left;
-            width: 25%;
-            background-color: #f1f1f1;
-            padding-left: 20px;
-            text-align: center;
-        }
-
-        .rightcolumn a {
-            display: block;
-            color: #3f4156;
-
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .rightcolumn a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .leftcolumn {
-            float: left;
-            width: 100%;
-            background-color: #f1f1f1;
-            padding-right: 20px;
-            text-align: center;
-        }
-
-        .leftcolumn a {
-            display: block;
-            color: #3f4156;
-
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .leftcolumn a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        /* Change color on hover */
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        /* Create two unequal columns that floats next to each other */
-        /* Left column */
-        .leftcolumnsmall {
-            float: left;
-            width: 75%;
-        }
-
-        /* Right column */
-
-
-        /* Fake image */
-        .fakeimg {
-            background-color: #aaa;
-            width: 100%;
-            padding: 20px;
-        }
-
-        /* Add a card effect for articles */
-        .card {
-            background-color: white;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 20px;
-            text-align: center;
-            background: #ddd;
-            margin-top: 20px;
-        }
-
-        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 800px) {
-            .leftcolumn, .rightcolumn {
-                width: 100%;
-                padding: 0;
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+                color: #3f4156;
             }
-        }
 
-        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-        @media screen and (max-width: 400px) {
+            body {
+                padding: 10px;
+                background: #f1f1f1;
+            }
+
+            .halvany {
+                color: #8b8b8b;
+            }
+
+            /* Header/Blog Title */
+            .header {
+                padding: 30px;
+                text-align: center;
+                background: white;
+            }
+
+            .header h1 {
+                font-size: 50px;
+                color: #3f4156;
+            }
+
+            /* Style the top navigation bar */
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            /* Style the topnav links */
             .topnav a {
-                float: none;
-                width: 100%;
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
             }
-        }
-    </style>
-</head>
 
-<body>
+            .rightcolumn {
+                float: left;
+                width: 25%;
+                background-color: #f1f1f1;
+                padding-left: 20px;
+                text-align: center;
+            }
 
-<div class="header">
-    <h1>{{analogia}}</h1>
-    <div class="halvany"><p>horoszkóp adatok</p></div>
-</div>
+            .rightcolumn a {
+                display: block;
+                color: #3f4156;
 
-<div class="topnav">
-<!--    <a href="#">Link</a>-->
-<!--    <a href="#">Link</a>-->
-<!--    <a href="#">Link</a>-->
-<!--    <a href="#" style="float:right">Link</a>-->
-</div>
+                padding: 14px 16px;
+                text-decoration: none;
+            }
 
-<div class="row">
-    <div class="leftcolumnsmall">
-        <div class="card">
-            <h2>Horoszkóp leírás</h2>
-            <h5>Születési idő: {{analogia.idopont}}</h5>
-            <p>{{analogia.leiras}}</p>
-            Neme: {{analogia.neme}}
-            <hr>
-<h3>Munkái:</h3>
-                {{analogia.munka}}
-            <hr>
+            .rightcolumn a:hover {
+                background-color: #ddd;
+                color: black;
+            }
 
-            <h3>Felosztások</h3>
-            {% for szempont, eredmenyek in elemzes.alapszamolasok.items %}
+            .leftcolumn {
+                float: left;
+                width: 100%;
+                background-color: #f1f1f1;
+                padding-right: 20px;
+                text-align: center;
+            }
 
-                <h4>{{ szempont }}</h4>
-                {% for analogia, ertek in eredmenyek.items %}
-                {{analogia}} : {{ertek}} pont <br>
+            .leftcolumn a {
+                display: block;
+                color: #3f4156;
 
-            {% endfor %}
+                padding: 14px 16px;
+                text-decoration: none;
+            }
 
-            {% endfor %}
-            <hr>
+            .leftcolumn a:hover {
+                background-color: #ddd;
+                color: black;
+            }
 
-            <h3>Pontos életkor</h3>
-            {{ elemzes.pontoskor }}
-            <hr>
+            /* Change color on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
 
-            <h3>Életciklus</h3>
-            {{ elemzes.eletciklus }}
-            <hr>
+            /* Create two unequal columns that floats next to each other */
+            /* Left column */
+            .leftcolumnsmall {
+                float: left;
+                width: 75%;
+            }
 
-            <h3>Sorstípus</h3>
-            {{ elemzes.sorstipus }}
-            <hr>
+            /* Right column */
 
-            <h3>Sérült-e a Nap/Hold</h3>
-            {{ elemzes.serult_e_nap }} <p></p>
-            {{ elemzes.serult_e_hold }}
-            <hr>
-            <h3>Hyleg</h3>
-            {{ elemzes.hyleg }} <p></p>
-            <hr>
 
-            <h3>Anaréta</h3>
-            {{ elemzes.anareta }} <p></p>
-            <hr>
+            /* Fake image */
+            .fakeimg {
+                background-color: #aaa;
+                width: 100%;
+                padding: 20px;
+            }
 
-            <h3>Házak Urai</h3>
+            /* Add a card effect for articles */
+            .card {
+                background-color: white;
+                padding: 20px;
+                margin-top: 20px;
+            }
 
-            {% for hazurahazban in elemzes.hazakurai %}
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
 
-                {% for hazuranev, analogiak in hazurahazban.items %}
-                <h4>{{ hazuranev }}</h4>
+            /* Footer */
+            .footer {
+                padding: 20px;
+                text-align: center;
+                background: #ddd;
+                margin-top: 20px;
+            }
 
-                 <p>{{ analogiak.analogiak }}</p>
+            /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 800px) {
+                .leftcolumn, .rightcolumn {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
 
+            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+            @media screen and (max-width: 400px) {
+                .topnav a {
+                    float: none;
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+    <div class="header">
+        <h1>{{ analogia }}</h1>
+        <div class="halvany"><p>horoszkóp adatok</p></div>
+    </div>
+
+    <div class="topnav">
+        <!--    <a href="#">Link</a>-->
+        <!--    <a href="#">Link</a>-->
+        <!--    <a href="#">Link</a>-->
+        <!--    <a href="#" style="float:right">Link</a>-->
+    </div>
+
+    <div class="row">
+        <div class="leftcolumnsmall">
+            <div class="card">
+                <h2>Horoszkóp leírás</h2>
+                <h5>Születési idő: {{ analogia.idopont }}</h5>
+                <p>{{ analogia.leiras }}</p>
+                Neme: {{ analogia.neme }}
+                <hr>
+                <h3>Munkái:</h3>
+                {{ analogia.munka }}
+                <hr>
+
+                <h3>Felosztások</h3>
+                {% for szempont, eredmenyek in elemzes.alapszamolasok.items %}
+
+                    <h4>{{ szempont }}</h4>
+                    {% for analogia, ertek in eredmenyek.items %}
+                        {{ analogia }} : {{ ertek }} pont <br>
+
+                    {% endfor %}
+
+                {% endfor %}
+                <hr>
+
+                <h3>Pontos életkor</h3>
+                {{ elemzes.pontoskor }}
+                <hr>
+
+                <h3>Életciklus</h3>
+                {{ elemzes.eletciklus }}
+                <hr>
+
+                <h3>Sorstípus</h3>
+                {{ elemzes.sorstipus }}
+                <hr>
+
+                <h3>Sérült-e a Nap/Hold</h3>
+                {{ elemzes.serult_e_nap }} <p></p>
+                {{ elemzes.serult_e_hold }}
+                <hr>
+                <h3>Hyleg</h3>
+                {{ elemzes.hyleg }} <p></p>
+                <hr>
+
+                <h3>Anaréta</h3>
+                {{ elemzes.anareta }} <p></p>
+                <hr>
+
+                <h3>Házak Urai</h3>
+
+                {% for hazurahazban in elemzes.hazakurai %}
+
+                    {% for hazuranev, analogiak in hazurahazban.items %}
+                        <h4>{{ hazuranev }}</h4>
+
+                        <p>{{ analogiak.analogiak }}</p>
+
+
+                    {% endfor %}
 
                 {% endfor %}
 
-            {% endfor %}
+                <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
 
-            <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
+            </div>
 
         </div>
 
-    </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>Bolygók a házakban</h2>
+                <hr>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.nap.value %}">{{ elemzes.BJ_id.nap.name}}</a></p>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.hold.value %}">{{ elemzes.BJ_id.hold.name }}</a></p>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.merkur.value %}">{{ elemzes.BJ_id.merkur.name }}</a></p>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.venusz.value %}">{{ elemzes.BJ_id.venusz.name }}</a></p>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.mars.value %}">{{ elemzes.BJ_id.mars.name }}</a></p>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.jupiter.value %}">{{ elemzes.BJ_id.jupiter.name }}</a></p>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.szaturnusz.value %}">{{ elemzes.BJ_id.szaturnusz.name }}</a></p>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.uranusz.value %}">{{ elemzes.BJ_id.uranusz.name }}</a></p>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.neptun.value %}">{{ elemzes.BJ_id.neptun.name }}</a></p>
+                <p><a href="{% url 'bolygoHazban' elemzes.BJ_id.pluto.value %}">{{ elemzes.BJ_id.pluto.name }}</a></p>
 
-    <div class="rightcolumn">
-        <div class="card">
-            <h2>Bolygók jegyekben</h2>
-            <hr>
-            <p><a href="{% url 'bolygoJegyben' analogia.nap.id %}">{{analogia.nap}}</a></p>
-            <p><a href="{% url 'bolygoJegyben' analogia.hold.id %}">{{analogia.hold}}</a></p>
-            <p><a href="{% url 'bolygoJegyben' analogia.merkur.id %}">{{analogia.merkur}}</a></p>
-            <p><a href="{% url 'bolygoJegyben' analogia.venusz.id %}">{{analogia.venusz}}</a></p>
-            <p><a href="{% url 'bolygoJegyben' analogia.mars.id %}">{{analogia.mars}}</a></p>
-            <p><a href="{% url 'bolygoJegyben' analogia.jupiter.id %}">{{analogia.jupiter}}</a></p>
-            <p><a href="{% url 'bolygoJegyben' analogia.szaturnusz.id %}">{{analogia.szaturnusz}}</a></p>
-            <p><a href="{% url 'bolygoJegyben' analogia.uranusz.id %}">{{analogia.uranusz}}</a></p>
-            <p><a href="{% url 'bolygoJegyben' analogia.neptun.id %}">{{analogia.neptun}}</a></p>
-            <p><a href="{% url 'bolygoJegyben' analogia.pluto.id %}">{{analogia.pluto}}</a></p>
-            <hr>
-        </div>
 
-        <div class="leftcolumn">
+                <hr>
+            </div>
+            <div class="card">
+                <h2>Bolygók a jegyekben</h2>
+                <hr>
+                <p><a href="{% url 'bolygoJegyben' analogia.nap.id %}">{{ analogia.nap }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.hold.id %}">{{ analogia.hold }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.merkur.id %}">{{ analogia.merkur }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.venusz.id %}">{{ analogia.venusz }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.mars.id %}">{{ analogia.mars }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.jupiter.id %}">{{ analogia.jupiter }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.szaturnusz.id %}">{{ analogia.szaturnusz }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.uranusz.id %}">{{ analogia.uranusz }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.neptun.id %}">{{ analogia.neptun }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.pluto.id %}">{{ analogia.pluto }}</a></p>
+                <hr>
+            </div>
+
             <div class="card">
                 <h2>Házak Jegyekben</h2>
                 <hr>
-                <p><a href="{% url 'hazJegyben' analogia.haz_1.id %}">{{analogia.haz_1}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_2.id %}">{{analogia.haz_2}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_3.id %}">{{analogia.haz_3}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_4.id %}">{{analogia.haz_4}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_5.id %}">{{analogia.haz_5}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_6.id %}">{{analogia.haz_6}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_7.id %}">{{analogia.haz_7}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_8.id %}">{{analogia.haz_8}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_9.id %}">{{analogia.haz_9}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_10.id %}">{{analogia.haz_10}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_11.id %}">{{analogia.haz_11}}</a></p>
-                <p><a href="{% url 'hazJegyben' analogia.haz_12.id %}">{{analogia.haz_12}}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_1.id %}">{{ analogia.haz_1 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_2.id %}">{{ analogia.haz_2 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_3.id %}">{{ analogia.haz_3 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_4.id %}">{{ analogia.haz_4 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_5.id %}">{{ analogia.haz_5 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_6.id %}">{{ analogia.haz_6 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_7.id %}">{{ analogia.haz_7 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_8.id %}">{{ analogia.haz_8 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_9.id %}">{{ analogia.haz_9 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_10.id %}">{{ analogia.haz_10 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_11.id %}">{{ analogia.haz_11 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_12.id %}">{{ analogia.haz_12 }}</a></p>
                 <hr>
             </div>
         </div>
     </div>
-</div>
 
-<div class="footer">
-    <h2>A programot készítette: Molnár Ádám</h2>
-    <email>molnaradam8466@gmail.com</email>
-</div>
+    <div class="footer">
+        <h2>A programot készítette: Molnár Ádám</h2>
+        <email>molnaradam8466@gmail.com</email>
+    </div>
 
-</body>
+    </body>
 
 
 {% endblock content %}
