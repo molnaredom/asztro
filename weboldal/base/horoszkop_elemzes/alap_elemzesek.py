@@ -14,8 +14,8 @@ def pontos_kor_szamitas(pontoskor: datetime):
 
 def alapszamolasok(adatok, osszesjegy):
     eredmeny = {}
-    bolygok = [adatok.nap, adatok.hold, adatok.merkur, adatok.venusz, adatok.mars, adatok.jupiter, adatok.szaturnusz,
-               adatok.uranusz, adatok.neptun, adatok.pluto]
+    bolygok = [adatok.nap, adatok.hold_j, adatok.merkur_j, adatok.venusz_j, adatok.mars_j, adatok.jupiter_j, adatok.szaturnusz_j,
+               adatok.uranusz_j, adatok.neptun_j, adatok.pluto_j]
     # hazak = [adatok.haz_1, adatok.haz_2, adatok.haz_3, adatok.haz_4, adatok.haz_5, adatok.haz_6, adatok.haz_7
     #     , adatok.haz_8, adatok.haz_9, adatok.haz_10, adatok.haz_11, adatok.haz_12]
 

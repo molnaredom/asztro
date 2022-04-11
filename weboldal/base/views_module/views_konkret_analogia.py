@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from ..models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2, BolygoHazban2, BolygoJegyben2, HazJegyben2, \
-    Horoszkop2, HazUraHazban
+from ..models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2, BolygoHazban2, BolygoJegyben2, HazJegyben2, HazUraHazban
 import random
 
 

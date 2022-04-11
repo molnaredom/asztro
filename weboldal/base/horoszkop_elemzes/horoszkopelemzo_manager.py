@@ -10,7 +10,7 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban):
     bolygok, hazak, pontos_kor = uj_alapanalogiak_hozzarendelese(adatok)
     # [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
 
-    return eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor)
+    return None # eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor)
 
 
 def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor):

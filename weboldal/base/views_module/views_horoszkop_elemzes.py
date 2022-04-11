@@ -6,20 +6,21 @@ from ..models import Horoszkop2, Jegy2, HazUraHazban
 
 
 def horoszkop(request, id):
-    analogia = Horoszkop2.objects.get(id=id)
+    horoszkop_obj = Horoszkop2.objects.get(id=id)
     hazakUraHazakban = HazUraHazban.objects.all()
     osszesjegy = Jegy2.objects.all()
+
     if not request.user.is_superuser:
-        analogia.tulajdonos_neve = nevet_privatra(analogia.tulajdonos_neve)
+        horoszkop_obj.tulajdonos_neve = nevet_privatra(horoszkop_obj.tulajdonos_neve)
 
     # print(analogia.fokszamok)
-    if "analogiak" not in analogia.fokszamok:
-        analogia.fokszamok = eval(dict(analogia.fokszamok)["analogiak"])  # eval strbol dictet csinal
+    if "analogiak" not in horoszkop_obj.fokszamok:
+        horoszkop_obj.fokszamok = eval(dict(horoszkop_obj.fokszamok)["analogiak"])  # eval strbol dictet csinal
     else:
-        analogia.fokszamok = analogia.fokszamok["analogiak"]
+        horoszkop_obj.fokszamok = horoszkop_obj.fokszamok["analogiak"]
 
-    elemzes_adat = _elemzes(analogia, osszesjegy, hazakUraHazakban)
-    context = {"analogia": analogia, "elemzes": elemzes_adat}  # ez egy objektum
+    elemzes_adat = _elemzes(horoszkop_obj, osszesjegy, hazakUraHazakban)
+    context = {"analogia": horoszkop_obj, "elemzes": elemzes_adat}  # ez egy objektum
 
     return render(request, "konkret_analogiak/horoszkop.html", context)
 

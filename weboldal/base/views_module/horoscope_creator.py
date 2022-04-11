@@ -18,14 +18,15 @@ def createHoroszkopGyors(request):
             obj = form.save(commit=False)
 
             obj = set_bolygo_es_haz_objektumok(obj)
+            print(f'{obj.haz_1_id=}')
 
-            obj.save()
+            if 'ujabb_fevitel' in request.POST:
+                obj.save()
+                return redirect(f"create-horoszkop")
 
-        if 'ujabb_fevitel' in request.POST:
-            return redirect(f"create-horoszkop")
-
-        elif "mentes_es_foolal" in request.POST:
-            return redirect(f"horoszkop_gyujtemeny")
+            elif "mentes_es_foolal" in request.POST:
+                obj.save()
+                return redirect(f"horoszkop_gyujtemeny")
 
     context = {'form': form}
     return render(request, "create_templates/analogia_form.html", context)
@@ -46,6 +47,7 @@ def set_bolygo_es_haz_objektumok(obj):
 
     bolygok = ["nap", "hold", "merkur", "venusz", "mars", "jupiter", "szaturnusz", "uranusz", "neptun", "pluto"]
 
+    #haz jegyben
     obj.haz_1_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][1]["jegy"], haz=str(1))
     obj.haz_2_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][2]["jegy"], haz=str(2))
     obj.haz_3_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][3]["jegy"], haz=str(3))
@@ -59,34 +61,30 @@ def set_bolygo_es_haz_objektumok(obj):
     obj.haz_11_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][11]["jegy"], haz=str(11))
     obj.haz_12_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][12]["jegy"], haz=str(12))
 
-    obj.nap_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[0]]["jegy"], bolygo=bolygok[0])
-    obj.hold_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[1]]["jegy"], bolygo=bolygok[1])
-    obj.merkur_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[2]]["jegy"], bolygo=bolygok[2])
-    obj.venusz_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[3]]["jegy"], bolygo=bolygok[3])
-    obj.mars_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[4]]["jegy"], bolygo=bolygok[4])
-    obj.jupiter_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[5]]["jegy"], bolygo=bolygok[5])
-    obj.szaturnusz_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[6]]["jegy"],
-                                                    bolygo=bolygok[6])
-    obj.uranusz_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[7]]["jegy"], bolygo=bolygok[7])
-    obj.neptun_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[8]]["jegy"], bolygo=bolygok[8])
-    obj.pluto_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[9]]["jegy"], bolygo=bolygok[9])
+    # bolygo jegyben
+    obj.nap_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[0]]["jegy"], bolygo=bolygok[0])
+    obj.hold_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[1]]["jegy"], bolygo=bolygok[1])
+    obj.merkur_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[2]]["jegy"], bolygo=bolygok[2])
+    obj.venusz_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[3]]["jegy"], bolygo=bolygok[3])
+    obj.mars_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[4]]["jegy"], bolygo=bolygok[4])
+    obj.jupiter_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[5]]["jegy"], bolygo=bolygok[5])
+    obj.szaturnusz_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[6]]["jegy"],bolygo=bolygok[6])
+    obj.uranusz_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[7]]["jegy"], bolygo=bolygok[7])
+    obj.neptun_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[8]]["jegy"], bolygo=bolygok[8])
+    obj.pluto_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygok[9]]["jegy"], bolygo=bolygok[9])
 
-    # for i,objektum in enumerate([obj.haz_1_id,obj.haz_2_id,obj.haz_3_id,obj.haz_4_id, obj.haz_5_id,obj.haz_6_id,
-    #                            obj.haz_7_id,obj.haz_8_id,obj.haz_9_id,obj.haz_10_id,obj.haz_11_id,obj.haz_12_id],1):
-    #     print(objektum)
-    #     print(obj.haz_1_id)
-    #     objektum = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][i]["jegy"], haz=str(i))
-    #     print(objektum)
-    #     print(obj.haz_1_id)
-    # for objektum0_bolygonev1 in zip([obj.nap_id, obj.hold_id, obj.merkur_id, obj.venusz_id, obj.mars_id,obj.jupiter_id,
-    #                         obj.szaturnusz_id, obj.uranusz_id, obj.neptun_id, obj.pluto_id],
-    #                        ["nap", "hold", "merkur", "venusz", "mars", "jupiter", "szaturnusz", "uranusz", "neptun", "pluto"]
-    #                        ):
-    #     objektum0_bolygonev1= list(objektum0_bolygonev1)
-    #     objektum0_bolygonev1[0] = get_id_to_horoszkopalapadat(
-    #         jegy=horoszkop_alap["bolygok"][objektum0_bolygonev1[1]]["jegy"],
-    #         bolygo=objektum0_bolygonev1[1])
-    # obj.hazzal is baj van
+    # bolygo hazban
+    obj.nap_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[0]]["jegy"], bolygo=bolygok[0])
+    obj.hold_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[1]]["jegy"], bolygo=bolygok[1])
+    obj.merkur_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[2]]["jegy"], bolygo=bolygok[2])
+    obj.venusz_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[3]]["jegy"], bolygo=bolygok[3])
+    obj.mars_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[4]]["jegy"], bolygo=bolygok[4])
+    obj.jupiter_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[5]]["jegy"], bolygo=bolygok[5])
+    obj.szaturnusz_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[6]]["jegy"], bolygo=bolygok[6])
+    obj.uranusz_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[7]]["jegy"], bolygo=bolygok[7])
+    obj.neptun_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[8]]["jegy"], bolygo=bolygok[8])
+    obj.pluto_h_id = get_id_to_horoszkopalapadat(haz=horoszkop_alap["bolygok"][bolygok[9]]["jegy"], bolygo=bolygok[9])
+
     obj.fokszamok = {"analogiak": get_fokszamok(horoszkop_alap)}
 
     return obj
@@ -96,10 +94,12 @@ def get_id_to_horoszkopalapadat(jegy=None, bolygo=None, haz=None):
     # bolygojegyben
     print("haz= ", haz, " jegy= ", jegy, " bolygo= ", bolygo)
 
-    if haz is None:
+    if haz is None: # bolygo jegyben
         return str(jegy_to_num(jegy) + (bolygo_to_num(bolygo) - 1) * 12)
-    elif bolygo is None:
+    elif bolygo is None: # haz jegyben
         return str(jegy_to_num(jegy) + (int(haz) - 1) * 12)
+    elif jegy is None: # bolygo hazban
+        return str((bolygo_to_num(bolygo) - 1) * 12 + ((int(haz) - 1) * 12))
     else:
         raise Exception
 
@@ -227,21 +227,23 @@ def init_api(obj):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     result = sock.connect_ex(('127.0.0.1', 3000))
     if result == 0:
-        print ("Port is open")
+        print("Port is open : 3000")
         adat = requests.get(
             f'http://127.0.0.1:3000/'
-            f'horoscope?time={ev}-{honap}-{nap}T{ora}:{perc}:{mp}%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+            f'horoscope?time='
+            f'{char2(datumido.year)}-{char2(datumido.month)}-{char2(datumido.day)}T'
+            f'{char2(datumido.hour)}:{char2(datumido.minute)}:{char2(datumido.second)}'
+            f'%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
     else:
-        print("Port is not open")
+        print("Port is not open --> web api")
         adat = requests.get(
             f'https://dev-astrology-api.herokuapp.com/'
-        f'horoscope?time='
-        f'{char2(datumido.year)}-{char2(datumido.month)}-{char2(datumido.day)}T'
-        f'{char2(datumido.hour)}:{char2(datumido.minute)}:{char2(datumido.second)}'
-        f'%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+            f'horoscope?time='
+            f'{char2(datumido.year)}-{char2(datumido.month)}-{char2(datumido.day)}T'
+            f'{char2(datumido.hour)}:{char2(datumido.minute)}:{char2(datumido.second)}'
+            f'%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
 
     sock.close()
-
 
     end = datetime.datetime.now()
     print("API Futásidő: ", end - start)

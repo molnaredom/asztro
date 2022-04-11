@@ -1,5 +1,6 @@
 import datetime
 import os
+import django.utils.timezone as django_timezone
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -140,28 +141,37 @@ class HoroszkopAdatok(models.Model):
 
 class Horoszkop2(models.Model):
     tulajdonos_neve = models.CharField(max_length=30)
-    idopont = models.DateTimeField(default=datetime.datetime.now())
+    idopont = models.DateTimeField(default=django_timezone.now())
     hely = models.CharField(max_length=80, blank=True)
     tipus = models.CharField(max_length=30, blank=True)
     neme = models.CharField(max_length=10, blank=True, default="")
-
 
     kepletkep = models.ImageField(upload_to='images/', default= os.getcwd()+'weboldal/static/images/hold.jpg')
     leirasok = models.JSONField(default=dict, blank=True)
     fokszamok = models.JSONField(default=dict, blank=True)
     munka = models.JSONField(default=dict, blank=True)
 
+    nap = models.ForeignKey(BolygoJegyben2, related_name='napj', on_delete=models.CASCADE)
+    hold_j = models.ForeignKey(BolygoJegyben2, related_name='holdj', on_delete=models.CASCADE)
+    merkur_j = models.ForeignKey(BolygoJegyben2, related_name='merkurj', on_delete=models.CASCADE)
+    venusz_j = models.ForeignKey(BolygoJegyben2, related_name='venuszj', on_delete=models.CASCADE)
+    mars_j = models.ForeignKey(BolygoJegyben2, related_name='marsj', on_delete=models.CASCADE)
+    jupiter_j = models.ForeignKey(BolygoJegyben2, related_name='jupiterj', on_delete=models.CASCADE)
+    szaturnusz_j = models.ForeignKey(BolygoJegyben2, related_name='szaturnuszj', on_delete=models.CASCADE)
+    uranusz_j = models.ForeignKey(BolygoJegyben2, related_name='uranuszj', on_delete=models.CASCADE)
+    neptun_j = models.ForeignKey(BolygoJegyben2, related_name='neptunj', on_delete=models.CASCADE)
+    pluto_j = models.ForeignKey(BolygoJegyben2, related_name='plutoj', on_delete=models.CASCADE)
 
-    nap = models.ForeignKey(BolygoJegyben2, related_name='nap+', on_delete=models.CASCADE)
-    hold = models.ForeignKey(BolygoJegyben2, related_name='hold+', on_delete=models.CASCADE)
-    merkur = models.ForeignKey(BolygoJegyben2, related_name='merkur+', on_delete=models.CASCADE)
-    venusz = models.ForeignKey(BolygoJegyben2, related_name='venusz+', on_delete=models.CASCADE)
-    mars = models.ForeignKey(BolygoJegyben2, related_name='mars+', on_delete=models.CASCADE)
-    jupiter = models.ForeignKey(BolygoJegyben2, related_name='jupiter+', on_delete=models.CASCADE)
-    szaturnusz = models.ForeignKey(BolygoJegyben2, related_name='szaturnusz+', on_delete=models.CASCADE)
-    uranusz = models.ForeignKey(BolygoJegyben2, related_name='uranusz+', on_delete=models.CASCADE)
-    neptun = models.ForeignKey(BolygoJegyben2, related_name='neptun+', on_delete=models.CASCADE)
-    pluto = models.ForeignKey(BolygoJegyben2, related_name='pluto+', on_delete=models.CASCADE)
+    nap_h = models.ForeignKey(BolygoHazban2, related_name='naph', on_delete=models.CASCADE)
+    hold_h = models.ForeignKey(BolygoHazban2, related_name='holdh', on_delete=models.CASCADE)
+    merkur_h = models.ForeignKey(BolygoHazban2, related_name='merkurh', on_delete=models.CASCADE)
+    venusz_h = models.ForeignKey(BolygoHazban2, related_name='venuszh', on_delete=models.CASCADE)
+    mars_h = models.ForeignKey(BolygoHazban2, related_name='marsh', on_delete=models.CASCADE)
+    jupiter_h = models.ForeignKey(BolygoHazban2, related_name='jupiterh', on_delete=models.CASCADE)
+    szaturnusz_h = models.ForeignKey(BolygoHazban2, related_name='szaturnuszh', on_delete=models.CASCADE)
+    uranusz_h = models.ForeignKey(BolygoHazban2, related_name='uranuszh', on_delete=models.CASCADE)
+    neptun_h = models.ForeignKey(BolygoHazban2, related_name='neptunh', on_delete=models.CASCADE)
+    pluto_h = models.ForeignKey(BolygoHazban2, related_name='plutoh', on_delete=models.CASCADE)
 
     haz_1 = models.ForeignKey(HazJegyben2, related_name='1+', on_delete=models.CASCADE)
     haz_2 = models.ForeignKey(HazJegyben2, related_name='2+', on_delete=models.CASCADE)

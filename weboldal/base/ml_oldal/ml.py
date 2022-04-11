@@ -156,6 +156,9 @@ def uj_alapanalogiak_hozzarendelese(adatok):
 
 
 def csv_keszites(kinyert_adatok):
+    if not kinyert_adatok:
+        return
+
     with open("kinyert_adatok.csv", "w") as f:
         jellemzovektorok = [k for k in kinyert_adatok[0].keys()]
         f.write(";".join(jellemzovektorok) + "\n")

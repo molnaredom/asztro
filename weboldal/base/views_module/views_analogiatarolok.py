@@ -157,25 +157,25 @@ def bolygo_alapjan_lekeres(bolygoNev, jegyNev):
     # printd(Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev).query, problema=fgv_nev)
     jegy_alapjan_lekeres = None
     if bolygoNev == "nap":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(nap_j__egy__nevID=jegyNev)
     elif bolygoNev == "hold":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(hold__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(hold_j__egy__nevID=jegyNev)
     elif bolygoNev == "merkur":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(merkur__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(merkur_j__egy__nevID=jegyNev)
     elif bolygoNev == "mars":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(mars__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(mars_j__egy__nevID=jegyNev)
     elif bolygoNev == "vénusz":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(venusz__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(venusz_j__egy__nevID=jegyNev)
     elif bolygoNev == "jupiter":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(jupiter__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(jupiter_j__egy__nevID=jegyNev)
     elif bolygoNev == "szaturnusz":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(szaturnusz__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(szaturnusz_j__egy__nevID=jegyNev)
     elif bolygoNev == "uránusz":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(uranusz__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(uranusz_j__egy__nevID=jegyNev)
     elif bolygoNev == "neptun":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(neptun__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(neptun_j__egy__nevID=jegyNev)
     elif bolygoNev == "plúto":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(pluto__jegy__nevID=jegyNev)
+        jegy_alapjan_lekeres = Horoszkop2.objects.filter(pluto_j__egy__nevID=jegyNev)
 
     return jegy_alapjan_lekeres
 
