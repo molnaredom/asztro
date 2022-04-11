@@ -53,7 +53,9 @@
   - Pl: Valakinek vizesedik a térde - mozágprobléma kapcsolati feszültségre utal
     - A probléma megoldódott, de a férje összecsomagolt és elköltözött
 - Egy betegség elfogadása nem megoldás, hanem elfolytás. Később negyobb bajt fog okozni.
-- 
+- Minden egészségügyi probléma magával hoz olyan élethelyzetet amit meg kell oldani
+  - Kivezetés kell egy probláménak, más élethelyzetre való terelés
+- Tiszta szimbólum nem létezik, lényeg hogy 1 analógiája legyen benne pl egy narancsnak a nap
 
 [//]: # ()
 [//]: # (### 3-mas elv)

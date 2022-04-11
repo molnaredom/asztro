@@ -220,14 +220,48 @@
   "hold": {
     "1": {
       "általános": [
+        "nagyon erős érzelmi megközelítés",
+        "nagyon erős intuíció",
+        "erős romantika",
+        "hullámzó kedélyállapot",
+        "család nagyon fontos neki",
+        "több gyermek, nagy család",
+        "alapvetően fontos a gondoskodás",
+        "nem jó neki a nyilvánosság előtti szereplés"
+      ],
+      "nő" : [
+        "törekszik az érzelmekre, az alárendelődésre"
+      ],
+      "férfi": [
+        "pozitív ha csak a gondoskodás szintjéig megy el",
+        "alárendeltéget, érzelmi kötődést, befogadást jobb ha átadja a nőnek"
+      ],
+      "hivatás": [
+        "orvos", "vendéglátás", "pszichológus", "erős ezoterikus, spirituális adottságok",
+        "óvónő","ápolónő","művészetek"
       ]
     },
     "2": {
       "általános": [
+        "anyagiak, folyamatos anyagi változások, nincs stabilitás",
+        "gyerekekről való gondoskodás",
+        "hízásra hajlamos (főleg gyermek születése után)",
+      ],
+      "nő": [
+        "befogadóvá válik az anyagiak területén",
+        "ideális ha valaki eltartja"
+      ],
+      "férfi": [
+        "gondoskodik a családról, gondoskodik az anyagiakról",
+        "az anyagiakat nem a saját élvezetére kapja, mégis sokszor erre használja"
+      ],
+      "hivatás": [
+        "orvos", "vendéglátás", "mérnök", "fodrász"
       ]
     },
     "3": {
       "általános": [
+        "több "
       ]
     },
     "4": {
@@ -252,6 +286,18 @@
     },
     "9": {
       "általános": [
+        "hitrendszerben változékonyság",
+        "család, művészet, érzelmek meghatározóak",
+        "külföldön való élet",
+        "külföldön család",
+        "külföldi házasság",
+        "külföldi munka",
+        "közszereplés",
+        "tanulmányok, amiket nem fejez be",
+        "jogi tanulányok",
+        "vallási, hitéleti tevékenység",
+        "több unoka",
+        "csak csaádban, házasságban tud elképzelni gyermekvállalást"
       ]
     },
     "10": {
@@ -260,6 +306,9 @@
     },
     "11": {
       "általános": [
+        "vágyaid akkor teljesülnek, ha alárendelődsz, befogadóvá válasz",
+        "sok barát, akikkel erős az érzelmi kötődés",
+        "te gondoskodsz a barátaidról"
       ]
     },
     "12": {
