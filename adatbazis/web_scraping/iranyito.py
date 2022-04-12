@@ -170,7 +170,6 @@ def process(mode="", bolygojegyben_feltoltes_=False, hazjegyben_feltoltes_=False
             "bolygojegyben" : bolygojegyben_beolvas()
         }
 
-
         analogiagyakorlo_feltoltes(web, domain, feltoltendo_adatok)
 
     # running modes

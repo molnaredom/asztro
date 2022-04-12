@@ -3,6 +3,7 @@ import time
 from selenium.webdriver.support.select import Select
 
 from adatbazis.web_scraping.kisegito_modulok.feltoltes_kisegito_modul import feltoltes
+from weboldal.base.kisegito import kisegito
 
 
 def bolygojegyben_feltoltes(web,feltoltendo, kezdobolygoszam, kezdojegyszam , domain):
@@ -24,12 +25,10 @@ def bolygojegyben_feltoltes(web,feltoltendo, kezdobolygoszam, kezdojegyszam , do
         jsonban_analogia= str(jsonban_analogia).replace("'", '"')
         hely_xpath.send_keys(jsonban_analogia)
 
-    time.sleep(2)
+    time.sleep(1)
 
-    bolygok = ["nap", "hold", "merkúr", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun",
-                       "pluto"]
-    jegyek = ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
-                         "vízöntő", "halak"]
+    bolygok = kisegito.get_bolygo_nevek()
+    jegyek = kisegito.get_jegy_nevek()
 
     for bolygoszam, bolygonev in enumerate(bolygok, kezdobolygoszam):
         for jegyszam, jegynev in enumerate(jegyek,kezdojegyszam):

@@ -1,14 +1,11 @@
-import random
-
 from django.shortcuts import render
-from django.db.models import Count, Max
 from ..models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2, HazUraHazban
-from ..default_parameters import *
 
 
-
-# több oldalt tartalmazo,analógiatároló felület
 def jegyek_oldal(request):
+    """
+    több oldalt tartalmazo, analógiatároló felület
+    """
     jegyek = Jegy2.objects.all()
     # jegy_minoseg_lekerdezes = {}
     # if request.method == "POST":
@@ -25,7 +22,6 @@ def bolygok_oldal(request):
     if request.method == "POST":
         tipusnev = request.POST.get('bolygotipus')
         bolygotipus_lekerdezes = Bolygo2.objects.filter(tipus=tipusnev)
-    printd("hejj", bolygok,problema="bolygok_oldal")
     context = {'adatok': bolygok, "bolygotipus_lekerdezes": bolygotipus_lekerdezes}
     return render(request, 'analogiatarolok/bolygok.html', context)
 
@@ -46,173 +42,164 @@ def bolygokJegyekben(request):
         jegyNev = request.POST.get('jegyNev')
         jegy_alapjan_lekeres = BolygoJegyben2.objects.filter(jegy__nevID=jegyNev)
 
-    jegyek = BolygoJegyben2.objects.all()
-    context = {'adatok': jegyek, "jegy_alapjan_lekeres": jegy_alapjan_lekeres}
+    context = {'adatok': BolygoJegyben2.objects.all(),
+               "jegy_alapjan_lekeres": jegy_alapjan_lekeres
+               }
     return render(request, 'analogiatarolok/bolygokJegyekben.html', context)
 
 
 def bolygokHazakban(request):
-    bolygokhazban = BolygoHazban2.objects.all()
-
-    context = {'adatok': bolygokhazban}
-    return render(request, 'analogiatarolok/bolygokHazakban.html', context)
+    return render(request,
+                  'analogiatarolok/bolygokHazakban.html',
+                  {'adatok': BolygoHazban2.objects.all()})
 
 
 def hazakJegyekben(request):
-    hazjegyben = HazJegyben2.objects.all()
-    context = {'adatok': hazjegyben}
-    return render(request, 'analogiatarolok/hazakJegyekben.html', context)
+    return render(request,
+                  'analogiatarolok/hazakJegyekben.html',
+                  {'adatok': HazJegyben2.objects.all()})
 
 
 def hazakUraHazakban(request):
-    hazUraHazban = HazUraHazban.objects.all()
-    context = {'adatok': hazUraHazban}
-    return render(request, 'analogiatarolok/hazakUraHazakban.html', context)
+    return render(request,
+                  'analogiatarolok/hazakUraHazakban.html',
+                  {'adatok': HazUraHazban.objects.all()})
 
 
 def horoszkop_gyujtemeny(request):
-    fgv_nev = "horoszkop_gyujtemeny"
-    bolygo_es_jegy_lekerdezes, bolygo_es_haz_lekerdezes, haz_es_jegy_lekerdezes,\
+    bolygo_es_jegy_lekerdezes, bolygo_es_haz_lekerdezes, haz_es_jegy_lekerdezes, \
     leker_1, leker_2, leker_3 = {}, {}, {}, {}, {}, {}
 
-    def nevet_privatra(nev):
-        nev = str(nev)
-        if len(nev.split()) == 1:
-            return nev[0] + (len(nev.split()[0])-1) * "*"
-        elif len(nev.split()) >= 1:
-            return nev[0] + (len(nev.split()[0])-1) * "*"+ " " + len(nev.split()[1]) * "*"
+    bolygo_nevek = ["nap", "hold", "merkúr", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun",
+                    "pluto"]
+
+    def get_privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes,  request):
+        if not request.user.is_superuser:
+            for horoszkop in haz_es_jegy_lekerdezes:
+                nev = str(horoszkop.tulajdonos_neve)
+                if len(nev.split()) == 1:
+                    horoszkop.tulajdonos_neve = nev[0] + (len(nev.split()[0]) - 1) * "*"
+                elif len(nev.split()) >= 1:
+                    horoszkop.tulajdonos_neve = nev[0] + (len(nev.split()[0]) - 1) * "*" + " " + len(nev.split()[1]) * "*"
 
     if request.method == "POST":
         if 'bolygo_es_jegy_lekerdezes' in request.POST:
-            jegyNev = request.POST.get('jegyNev')
-            bolygoNev = request.POST.get('bolygoNev')
-            bolygo_es_jegy_lekerdezes = bolygo_alapjan_lekeres(bolygoNev, jegyNev)
-
-            if not request.user.is_superuser:
-                for horoszkop in bolygo_es_jegy_lekerdezes:
-                    horoszkop.tulajdonos_neve = nevet_privatra(horoszkop.tulajdonos_neve)
+            bolygo_es_jegy_lekerdezes = bolygo_alapjan_lekeres(
+                bolygoNev=request.POST.get('bolygoNev'),
+                jegyNev=request.POST.get('jegyNev'),
+                bolygo_nevek=bolygo_nevek
+            )
+            get_privat_nev_ha_nem_superuser(bolygo_es_jegy_lekerdezes, request)
 
         elif "haz_es_jegy_lekerdezes" in request.POST:
-            jegyNev = request.POST.get('jegyNev')
-            hazNev = request.POST.get('hazNev')
-            haz_es_jegy_lekerdezes = haz_alapjan_lekeres(hazNev, jegyNev)
-
-            if not request.user.is_superuser:
-                for horoszkop in haz_es_jegy_lekerdezes:
-                    horoszkop.tulajdonos_neve = nevet_privatra(horoszkop.tulajdonos_neve)
+            haz_es_jegy_lekerdezes = haz_alapjan_lekeres(
+                hazNev=request.POST.get('hazNev'),
+                jegyNev=request.POST.get('jegyNev')
+            )
+            get_privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes, request)
 
         elif "bolygo_es_haz_lekerdezes" in request.POST:
-            bolygoNev = request.POST.get('bolygoNev')
-            hazNev = request.POST.get('hazNev')
-            bolygo_es_haz_lekerdezes = bolygo_hazban_alapjan_lekeres(bolygoNev, hazNev)
-
-            if not request.user.is_superuser:
-                for horoszkop in haz_es_jegy_lekerdezes:
-                    horoszkop.tulajdonos_neve = nevet_privatra(horoszkop.tulajdonos_neve)
-
+            bolygo_es_haz_lekerdezes = bolygo_hazban_alapjan_lekeres(
+                bolygoNev=request.POST.get('bolygoNev'),
+                hazNev=request.POST.get('hazNev'),
+                bolygo_nevek=bolygo_nevek
+            )
+            get_privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes, request)
 
     hpok = Horoszkop2.objects.all()
-    for h in hpok:
-        print(f'{h=}')
+
     context = {}
     if request.user.is_superuser:
-        printd("superuser",problema=fgv_nev)
-        context = {'adatok': hpok,
-               "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
-               "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
-                }
-    else:
-        for horoszkop in hpok:
-            horoszkop.tulajdonos_neve = nevet_privatra(horoszkop.tulajdonos_neve)
         context = {'adatok': hpok,
                    "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
                    "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
-                   "bolygo_es_haz_lekerdezes": bolygo_es_haz_lekerdezes,
                    }
+    else:
+        for horoszkop in hpok:
+            horoszkop.tulajdonos_neve = nevet_privatra(horoszkop.tulajdonos_neve)
+
+        context = {
+            'adatok': hpok,
+            "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
+            "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
+            "bolygo_es_haz_lekerdezes": bolygo_es_haz_lekerdezes,
+        }
 
     return render(request, 'analogiatarolok/horoszkop_gyujtemeny.html', context)
 
 
-def bolygo_alapjan_lekeres(bolygoNev, jegyNev):
-    # fgv_nev = "bolygo_alapjan_lekeres"
-    # printd(Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev).query, problema=fgv_nev)
-    jegy_alapjan_lekeres = None
-    if bolygoNev == "nap":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev)
-    elif bolygoNev == "hold":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(hold_j__jegy__nevID=jegyNev)
-    elif bolygoNev == "merkur":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(merkur_j__jegy__nevID=jegyNev)
-    elif bolygoNev == "mars":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(mars_j__jegy__nevID=jegyNev)
-    elif bolygoNev == "vénusz":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(venusz_j__jegy__nevID=jegyNev)
-    elif bolygoNev == "jupiter":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(jupiter_j__jegy__nevID=jegyNev)
-    elif bolygoNev == "szaturnusz":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(szaturnusz_j__jegy__nevID=jegyNev)
-    elif bolygoNev == "uránusz":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(uranusz_j__jegy__nevID=jegyNev)
-    elif bolygoNev == "neptun":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(neptun_j__jegy__nevID=jegyNev)
-    elif bolygoNev == "plúto":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(pluto_j__jegy__nevID=jegyNev)
-
-    return jegy_alapjan_lekeres
+def bolygo_alapjan_lekeres(bolygoNev, jegyNev, bolygo_nevek):
+    if bolygoNev == bolygo_nevek[0]:
+        return Horoszkop2.objects.filter(nap__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[1]:
+        return Horoszkop2.objects.filter(hold_j__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[2]:
+        return Horoszkop2.objects.filter(merkur_j__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[3]:
+        return Horoszkop2.objects.filter(mars_j__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[4]:
+        return Horoszkop2.objects.filter(venusz_j__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[5]:
+        return Horoszkop2.objects.filter(jupiter_j__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[6]:
+        return Horoszkop2.objects.filter(szaturnusz_j__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[7]:
+        return Horoszkop2.objects.filter(uranusz_j__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[8]:
+        return Horoszkop2.objects.filter(neptun_j__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[9]:
+        return Horoszkop2.objects.filter(pluto_j__jegy__nevID=jegyNev)
 
 
-def bolygo_hazban_alapjan_lekeres(bolygoNev, hazNev):
+def bolygo_hazban_alapjan_lekeres(bolygoNev, hazNev, bolygo_nevek):
+    if bolygoNev == bolygo_nevek[0]:
+        return Horoszkop2.objects.filter(nap_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[1]:
+        return Horoszkop2.objects.filter(hold_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[2]:
+        return Horoszkop2.objects.filter(merkur_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[3]:
+        return Horoszkop2.objects.filter(mars_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[4]:
+        return Horoszkop2.objects.filter(venusz_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[5]:
+        return Horoszkop2.objects.filter(jupiter_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[6]:
+        return Horoszkop2.objects.filter(szaturnusz_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[7]:
+        return Horoszkop2.objects.filter(uranusz_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[8]:
+        return Horoszkop2.objects.filter(neptun_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[9]:
+        return Horoszkop2.objects.filter(pluto_h__haz__nevID=hazNev)
 
-    jegy_alapjan_lekeres = None
-    if bolygoNev == "nap":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(nap_h__haz__nevID=hazNev)
-    elif bolygoNev == "hold":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(hold_h__haz__nevID=hazNev)
-    elif bolygoNev == "merkur":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(merkur_h__haz__nevID=hazNev)
-    elif bolygoNev == "mars":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(mars_h__haz__nevID=hazNev)
-    elif bolygoNev == "vénusz":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(venusz_h__haz__nevID=hazNev)
-    elif bolygoNev == "jupiter":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(jupiter_h__haz__nevID=hazNev)
-    elif bolygoNev == "szaturnusz":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(szaturnusz_h__haz__nevID=hazNev)
-    elif bolygoNev == "uránusz":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(uranusz_h__haz__nevID=hazNev)
-    elif bolygoNev == "neptun":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(neptun_h__haz__nevID=hazNev)
-    elif bolygoNev == "plúto":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(pluto_h__haz__nevID=hazNev)
-
-    # [printd("hiiii",i) for i in jegy_alapjan_lekeres]
     return jegy_alapjan_lekeres
 
 
 def haz_alapjan_lekeres(hazNev, jegyNev):
-    jegy_alapjan_lekeres = None
     if hazNev == "1":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_1__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_1__jegy__nevID=jegyNev)
     elif hazNev == "2":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_2__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_2__jegy__nevID=jegyNev)
     elif hazNev == "3":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_3__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_3__jegy__nevID=jegyNev)
     elif hazNev == "4":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_4__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_4__jegy__nevID=jegyNev)
     elif hazNev == "5":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_5__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_5__jegy__nevID=jegyNev)
     elif hazNev == "6":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_6__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_6__jegy__nevID=jegyNev)
     elif hazNev == "7":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_7__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_7__jegy__nevID=jegyNev)
     elif hazNev == "8":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_8__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_8__jegy__nevID=jegyNev)
     elif hazNev == "9":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_9__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_9__jegy__nevID=jegyNev)
     elif hazNev == "10":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_10__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_10__jegy__nevID=jegyNev)
     elif hazNev == "11":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_11__jegy__nevID=jegyNev)
+        return Horoszkop2.objects.filter(haz_11__jegy__nevID=jegyNev)
     elif hazNev == "12":
-        jegy_alapjan_lekeres = Horoszkop2.objects.filter(haz_12__jegy__nevID=jegyNev)
-    return jegy_alapjan_lekeres
+        return Horoszkop2.objects.filter(haz_12__jegy__nevID=jegyNev)
+    else:
+        raise Error

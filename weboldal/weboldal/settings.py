@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'base',
     # 'home',
     'base.views_module',
+    'base.kisegito',
     # 'base.views_module.creators',
     'home.apps.HomeConfig',
     # 'crispy_forms',
