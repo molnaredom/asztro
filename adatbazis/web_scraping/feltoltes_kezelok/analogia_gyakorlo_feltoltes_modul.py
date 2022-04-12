@@ -21,8 +21,6 @@ def analogiagyakorlo_feltoltes(web, domain, feltoltendo_adatok):
                "idő": "400",
                "kviz_value": "3"
                },
-
-
               ]
 
     bejelentkezes_adminkent(web, domain)
