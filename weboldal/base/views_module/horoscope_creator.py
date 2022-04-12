@@ -18,14 +18,12 @@ def createHoroszkopGyors(request):
             obj = form.save(commit=False)
 
             obj = set_bolygo_es_haz_objektumok(obj)
-            print(f'{obj.haz_1_id=}')
-
+            print(f'ASC-{obj.haz_1_id=}')
+            obj.save()
             if 'ujabb_fevitel' in request.POST:
-                obj.save()
                 return redirect(f"create-horoszkop")
 
             elif "mentes_es_foolal" in request.POST:
-                obj.save()
                 return redirect(f"horoszkop_gyujtemeny")
 
     context = {'form': form}
@@ -54,7 +52,6 @@ def fokszamhozzarendeles(obj,horoszkop_alap):
             {"jegy": horoszkop_alap["bolygok"][analogia[0]]["jegy"],
              "bolygo": analogia[0],
              "fokszam": obj.fokszamok[analogia[0]]})
-
 
     for analogia in list(
             zip(['haz1', 'haz2', 'haz3', 'haz4', 'haz5', 'haz6', 'haz7', 'haz8', 'haz9', 'haz10', 'haz11', 'haz12'],
@@ -148,7 +145,7 @@ def set_bolygo_es_haz_objektumok(obj):
     obj.haz_12_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][12]["jegy"], haz=str(12))
 
     # bolygo jegyben
-    obj.nap_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[0]]["jegy"], bolygo=bolygo_nevek[0])
+    obj.nap_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[0]]["jegy"], bolygo=bolygo_nevek[0])
     obj.hold_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[1]]["jegy"], bolygo=bolygo_nevek[1])
     obj.merkur_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[2]]["jegy"], bolygo=bolygo_nevek[2])
     obj.venusz_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[3]]["jegy"], bolygo=bolygo_nevek[3])
@@ -164,7 +161,7 @@ def set_bolygo_es_haz_objektumok(obj):
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
 
     bolygok, hazak = bolygohoz_haz_rendeles(bolygok, hazak)
-    print(f"{str(hazak[0]['haz'])}")
+    # print(f"{str(hazak[0]['haz'])}")
     obj.nap_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[0]["haz"]), bolygo=bolygo_nevek[0])
     obj.hold_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[1]["haz"]), bolygo=bolygo_nevek[1])
     obj.merkur_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[2]["haz"]), bolygo=bolygo_nevek[2])
@@ -176,19 +173,21 @@ def set_bolygo_es_haz_objektumok(obj):
     obj.neptun_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[8]["haz"]), bolygo=bolygo_nevek[8])
     obj.pluto_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[9]["haz"]), bolygo=bolygo_nevek[9])
 
+    print(obj)
     return obj
 
 
 def get_id_to_horoszkopalapadat(jegy=None, bolygo=None, haz=None):
     # bolygojegyben
-    print("haz= ", haz, " jegy= ", jegy, " bolygo= ", bolygo)
+    # print("haz= ", haz, " jegy= ", jegy, " bolygo= ", bolygo)
 
     if haz is None: # bolygo jegyben
         return str(jegy_to_num(jegy) + (bolygo_to_num(bolygo) - 1) * 12)
     elif bolygo is None: # haz jegyben
         return str(jegy_to_num(jegy) + (int(haz) - 1) * 12)
     elif jegy is None: # bolygo hazban
-        return str((bolygo_to_num(bolygo) - 1) * 12 + ((int(haz) - 1) * 12))
+        print(str((bolygo_to_num(bolygo) - 1) * 12 + (int(haz) - 1)))
+        return str((bolygo_to_num(bolygo) - 1) * 12 + int(haz))
     else:
         raise Exception
 

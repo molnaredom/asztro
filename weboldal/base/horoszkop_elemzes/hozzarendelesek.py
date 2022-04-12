@@ -118,8 +118,8 @@ def hazura_melyik_hazaban(hazak, bolygok):
             printd(bolygo["bolygo"].nevID, hazura_nev, problema=hazura_melyik_hazaban.__name__)
             if bolygo["bolygo"].nevID == hazura_nev:
                 return bolygo
-        else:
-            raise Exception
+        # else:
+        #     raise Exception
 
     def jegyvaltas(hazura_bolygo):
         konjukciok = hazura_bolygo["fenyszogek"]["konjukcio"]

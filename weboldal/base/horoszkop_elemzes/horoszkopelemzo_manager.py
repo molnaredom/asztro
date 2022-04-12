@@ -8,15 +8,15 @@ from .hozzarendelesek import *
 def _elemzes(adatok, osszesjegy, hazakUraHazakban):
 
     bolygok, hazak, pontos_kor = uj_alapanalogiak_hozzarendelese(adatok)
-    # [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
+    [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
 
-    return None # eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor)
+    return eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor)
 
 
 def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor):
     eredmeny = dict()
 
-    eredmeny["BJ_id"] = bolygojegyben_id(bolygok)
+    # eredmeny["BJ_id"] = bolygojegyben_id(bolygok)
     eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
     eredmeny["pontoskor"] = pontos_kor_szamitas(pontos_kor)
     eredmeny["eletciklus"] = eletciklus(pontos_kor, adatok.neme)

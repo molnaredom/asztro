@@ -1,6 +1,6 @@
 def get_basic_parameters():
     return {
-        "logging_level": "error"
+        "logging_level": "debug"
     }
 
 

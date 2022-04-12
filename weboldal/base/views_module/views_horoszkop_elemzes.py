@@ -15,9 +15,10 @@ def horoszkop(request, id):
 
     # print(analogia.fokszamok)
     if "analogiak" not in horoszkop_obj.fokszamok:
-        horoszkop_obj.fokszamok = eval(dict(horoszkop_obj.fokszamok)["analogiak"])  # eval strbol dictet csinal
+
+        horoszkop_obj.fokszamok = horoszkop_obj.fokszamok  # eval strbol dictet csinal
     else:
-        horoszkop_obj.fokszamok = horoszkop_obj.fokszamok["analogiak"]
+        horoszkop_obj.fokszamok = horoszkop_obj.fokszamok
 
     elemzes_adat = _elemzes(horoszkop_obj, osszesjegy, hazakUraHazakban)
     context = {"analogia": horoszkop_obj, "elemzes": elemzes_adat}  # ez egy objektum
