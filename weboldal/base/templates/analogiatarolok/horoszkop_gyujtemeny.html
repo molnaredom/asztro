@@ -20,19 +20,19 @@
                                 <label> Válassz egy házat és egy bolygót a listázáshoz: </label><br>
 
                                 <label>
-                                    <select name="jegyNev" class="form-select">
-                                        <option value="kos">kos</option>
-                                        <option value="bika">bika</option>
-                                        <option value="ikrek">ikrek</option>
-                                        <option value="rák">rák</option>
-                                        <option value="oroszlán">oroszlán</option>
-                                        <option value="szűz">szűz</option>
-                                        <option value="mérleg">mérleg</option>
-                                        <option value="skorpió">skorpió</option>
-                                        <option value="nyilas">nyilas</option>
-                                        <option value="bak">bak</option>
-                                        <option value="vízöntő">vízöntő</option>
-                                        <option value="halak">halak</option>
+                                    <select name="hazNev" class="form-select">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
                                     </select>
                                 </label>
 
@@ -50,8 +50,7 @@
                                         <option value="plúto">plúto</option>
                                     </select>
                                 </label>
-                                <button type="submit" name="bolygo_es_jegy_lekerdezes" class="btn btn-success ">Bolygó
-                                    Jegyben listázás
+                                <button type="submit" name="bolygo_es_haz_lekerdezes" class="btn btn-success ">Listázás
                                 </button>
 
                             </form>
@@ -96,8 +95,7 @@
                                         <option value="plúto">plúto</option>
                                     </select>
                                 </label>
-                                <button type="submit" name="bolygo_es_jegy_lekerdezes" class="btn btn-success ">Bolygó
-                                    Jegyben listázás
+                                <button type="submit" name="bolygo_es_jegy_lekerdezes" class="btn btn-success ">Listázás
                                 </button>
 
                             </form>
@@ -145,8 +143,7 @@
                                         <option value="12">12</option>
                                     </select>
                                 </label>
-                                <button type="submit" name="haz_es_jegy_lekerdezes" class="btn btn-success ">Ház Jegyben
-                                    listázás
+                                <button type="submit" name="haz_es_jegy_lekerdezes" class="btn btn-success ">Listázás
                                 </button>
                             </form>
                         </div>
@@ -216,6 +213,38 @@
                             <tbody>
 
                             {% for adat in bolygo_es_jegy_lekerdezes %}
+
+
+                                <tr>
+                                    <td><a href="{% url 'horoszkop' adat.id %}">{{ adat }}</a></td>
+                                    <td>{{ adat.tipus }}</td>
+                                    <td>{{ adat.idopont }}</td>
+                                    <td><a href="{% url 'delete-horoszkop' adat.id %}">Törlés</a></td>
+                                    <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+
+                {% if bolygo_es_haz_lekerdezes %}
+                    <h2>Válogatott horoszkópok</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm table-hover">
+                            <thead>
+                            <tr class="table-danger">
+                                <th scope="col">Név</th>
+                                <th scope="col">Képlettípus</th>
+                                <th scope="col">Dátum \ Idő</th>
+                                <th scope="col">Törlés</th>
+                                <th scope="col">Módosítás</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+
+                            {% for adat in bolygo_es_haz_lekerdezes %}
 
 
                                 <tr>
