@@ -11,6 +11,52 @@
                         <h3>Szűrés</h3>
                         <div class="g-col-12 p-3 border bg-light">
 
+                            <a class="nav-link active" aria-current="page" href="{% url 'bolygokHazakban' %}">
+                                <span data-feather="home"></span>
+                                Bolygók Házakban
+                            </a>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <label> Válassz egy házat és egy bolygót a listázáshoz: </label><br>
+
+                                <label>
+                                    <select name="jegyNev" class="form-select">
+                                        <option value="kos">kos</option>
+                                        <option value="bika">bika</option>
+                                        <option value="ikrek">ikrek</option>
+                                        <option value="rák">rák</option>
+                                        <option value="oroszlán">oroszlán</option>
+                                        <option value="szűz">szűz</option>
+                                        <option value="mérleg">mérleg</option>
+                                        <option value="skorpió">skorpió</option>
+                                        <option value="nyilas">nyilas</option>
+                                        <option value="bak">bak</option>
+                                        <option value="vízöntő">vízöntő</option>
+                                        <option value="halak">halak</option>
+                                    </select>
+                                </label>
+
+                                <label>
+                                    <select name="bolygoNev" class="form-select">
+                                        <option value="nap">nap</option>
+                                        <option value="hold">hold</option>
+                                        <option value="merkur">merkúr</option>
+                                        <option value="mars">mars</option>
+                                        <option value="vénusz">vénusz</option>
+                                        <option value="jupiter">jupiter</option>
+                                        <option value="szaturnusz">szaturnusz</option>
+                                        <option value="uránusz">uránusz</option>
+                                        <option value="neptun">neptun</option>
+                                        <option value="plúto">plúto</option>
+                                    </select>
+                                </label>
+                                <button type="submit" name="bolygo_es_jegy_lekerdezes" class="btn btn-success ">Bolygó
+                                    Jegyben listázás
+                                </button>
+
+                            </form>
+                        </div><div class="g-col-12 p-3 border bg-light">
+
                             <a class="nav-link active" aria-current="page" href="{% url 'bolygokJegyekben' %}">
                                 <span data-feather="home"></span>
                                 Bolygók Jegyekben

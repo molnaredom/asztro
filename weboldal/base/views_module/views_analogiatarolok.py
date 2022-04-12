@@ -102,7 +102,8 @@ def horoszkop_gyujtemeny(request):
 
 
     hpok = Horoszkop2.objects.all()
-
+    for h in hpok:
+        print(f'{h=}')
     context = {}
     if request.user.is_superuser:
         printd("superuser",problema=fgv_nev)
