@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -17,7 +16,7 @@
                             </a>
                             <form method="POST">
                                 {% csrf_token %}
-                                <label> Válassz egy házat és egy bolygót a listázáshoz: </label><br>
+                                {#                                <label> Válassz egy házat és egy bolygót a listázáshoz: </label><br>#}
 
                                 <label>
                                     <select name="hazNev" class="form-select">
@@ -54,7 +53,8 @@
                                 </button>
 
                             </form>
-                        </div><div class="g-col-12 p-3 border bg-light">
+                        </div>
+                        <div class="g-col-12 p-3 border bg-light">
 
                             <a class="nav-link active" aria-current="page" href="{% url 'bolygokJegyekben' %}">
                                 <span data-feather="home"></span>
@@ -62,7 +62,7 @@
                             </a>
                             <form method="POST">
                                 {% csrf_token %}
-                                <label> Válassz egy jegyet és egy bolygót a listázáshoz: </label><br>
+                                {#                                <label> Válassz egy jegyet és egy bolygót a listázáshoz: </label><br>#}
 
                                 <label>
                                     <select name="jegyNev" class="form-select">
@@ -107,7 +107,7 @@
                             </a>
                             <form method="POST">
                                 {% csrf_token %}
-                                <label> Válassz egy házat és jegyet a listázáshoz: </label><br>
+                                {#                                <label> Válassz egy házat és jegyet a listázáshoz: </label><br>#}
 
                                 <label>
                                     <label>
@@ -170,8 +170,10 @@
                                 <th scope="col">Név</th>
                                 <th scope="col">Képlettípus</th>
                                 <th scope="col">Dátum \ Idő</th>
-                                <th scope="col">Törlés</th>
-                                <th scope="col">Módosítás</th>
+                                {% if request.user.is_superuser %}
+                                    <th scope="col">Törlés</th>
+                                    <th scope="col">Módosítás</th>
+                                {% endif %}
                             </tr>
                             </thead>
 
@@ -183,8 +185,10 @@
                                         <td><a href="{% url 'horoszkop' adat.id %}">{{ adat }}</a></td>
                                         <td>{{ adat.tipus }}</td>
                                         <td>{{ adat.idopont }}</td>
-                                        <td><a href="{% url 'delete-horoszkop' adat.id %}">Törlés</a></td>
-                                        <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
+                                        {% if request.user.is_superuser %}
+                                            <td><a href="{% url 'delete-horoszkop' adat.id %}">Törlés</a></td>
+                                            <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
+                                        {% endif %}
                                     </tr>
                                 {% endfor %}
                             {% endif %}
@@ -219,8 +223,10 @@
                                     <td><a href="{% url 'horoszkop' adat.id %}">{{ adat }}</a></td>
                                     <td>{{ adat.tipus }}</td>
                                     <td>{{ adat.idopont }}</td>
+                                    {% if request.user.is_superuser %}
                                     <td><a href="{% url 'delete-horoszkop' adat.id %}">Törlés</a></td>
                                     <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
+                                {% endif %}
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -246,13 +252,14 @@
 
                             {% for adat in bolygo_es_haz_lekerdezes %}
 
-
                                 <tr>
                                     <td><a href="{% url 'horoszkop' adat.id %}">{{ adat }}</a></td>
                                     <td>{{ adat.tipus }}</td>
                                     <td>{{ adat.idopont }}</td>
+                                    {% if request.user.is_superuser %}
                                     <td><a href="{% url 'delete-horoszkop' adat.id %}">Törlés</a></td>
                                     <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
+                                {% endif %}
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -269,19 +276,24 @@
                             <th scope="col">Név</th>
                             <th scope="col">Képlettípus</th>
                             <th scope="col">Dátum \ Idő</th>
-                            <th scope="col">Törlés</th>
-                            <th scope="col">Módosítás</th>
+                            {% if request.user.is_superuser %}
+
+                                <th scope="col">Törlés</th>
+                                <th scope="col">Módosítás</th>
+                            {% endif %}
                         </tr>
                         </thead>
-
                         <tbody>
                         {% for adat in adatok %}
                             <tr>
                                 <td><a href="{% url 'horoszkop' adat.id %}">{{ adat }}</a></td>
                                 <td>{{ adat.tipus }}</td>
                                 <td>{{ adat.idopont }}</td>
-                                <td><a href="{% url 'delete-horoszkop' adat.id %}">Törlés</a></td>
-                                <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
+                                {% if request.user.is_superuser %}
+
+                                    <td><a href="{% url 'delete-horoszkop' adat.id %}">Törlés</a></td>
+                                    <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
+                                {% endif %}
 
                             </tr>
                         {% endfor %}

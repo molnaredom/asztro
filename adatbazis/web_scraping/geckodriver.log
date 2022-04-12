@@ -9575,3 +9575,15 @@ JavaScript error: , line 0: NotFoundError: Could not move source file(C:\Users\f
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 1649737471525	Marionette	INFO	Stopped listening on port 58186
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1649779105211	geckodriver	INFO	Listening on 127.0.0.1:65297
+1649779108284	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65298" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilenVORdS"
+1649779108794	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilenVORdS\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:65298/devtools/browser/2807b44c-f522-48df-94f5-03787b174efe
+1649779111553	Marionette	INFO	Listening on port 65303
+1649779111987	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1649779170556	Marionette	INFO	Stopped listening on port 65303
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

@@ -146,6 +146,7 @@ def set_bolygo_es_haz_objektumok(obj):
     obj.haz_12_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][12]["jegy"], haz=str(12))
 
     # bolygo jegyben
+    print("-------",horoszkop_alap["bolygok"][bolygo_nevek[0]]["jegy"])
     obj.nap_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[0]]["jegy"], bolygo=bolygo_nevek[0])
     obj.hold_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[1]]["jegy"], bolygo=bolygo_nevek[1])
     obj.merkur_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[2]]["jegy"], bolygo=bolygo_nevek[2])
@@ -186,7 +187,7 @@ def get_id_to_horoszkopalapadat(jegy=None, bolygo=None, haz=None):
     elif bolygo is None: # haz jegyben
         return str(jegy_to_num(jegy) + (int(haz) - 1) * 12)
     elif jegy is None: # bolygo hazban
-        print(str((bolygo_to_num(bolygo) - 1) * 12 + (int(haz) - 1)))
+        # print(str((bolygo_to_num(bolygo) - 1) * 12 + (int(haz) - 1)))
         return str((bolygo_to_num(bolygo) - 1) * 12 + int(haz))
     else:
         raise Exception
