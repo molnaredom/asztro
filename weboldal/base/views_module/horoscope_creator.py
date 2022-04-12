@@ -130,6 +130,7 @@ def set_bolygo_es_haz_objektumok(obj):
 
     obj.fokszamok = get_fokszamok(horoszkop_alap)
 
+
     #haz jegyben
     obj.haz_1_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][1]["jegy"], haz=str(1))
     obj.haz_2_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][2]["jegy"], haz=str(2))
@@ -161,19 +162,18 @@ def set_bolygo_es_haz_objektumok(obj):
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
 
     bolygok, hazak = bolygohoz_haz_rendeles(bolygok, hazak)
-    # print(f"{str(hazak[0]['haz'])}")
-    obj.nap_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[0]["haz"]), bolygo=bolygo_nevek[0])
-    obj.hold_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[1]["haz"]), bolygo=bolygo_nevek[1])
-    obj.merkur_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[2]["haz"]), bolygo=bolygo_nevek[2])
-    obj.venusz_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[3]["haz"]), bolygo=bolygo_nevek[3])
-    obj.mars_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[4]["haz"]), bolygo=bolygo_nevek[4])
-    obj.jupiter_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[5]["haz"]), bolygo=bolygo_nevek[5])
-    obj.szaturnusz_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[6]["haz"]), bolygo=bolygo_nevek[6])
-    obj.uranusz_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[7]["haz"]), bolygo=bolygo_nevek[7])
-    obj.neptun_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[8]["haz"]), bolygo=bolygo_nevek[8])
-    obj.pluto_h_id = get_id_to_horoszkopalapadat(haz=str(hazak[9]["haz"]), bolygo=bolygo_nevek[9])
+    print(f"{str(hazak[0]['haz'])}")
+    obj.nap_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[0]["hazszam"]["haz"]), bolygo=bolygo_nevek[0])
+    obj.hold_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[1]["hazszam"]["haz"]), bolygo=bolygo_nevek[1])
+    obj.merkur_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[2]["hazszam"]["haz"]), bolygo=bolygo_nevek[2])
+    obj.venusz_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[3]["hazszam"]["haz"]), bolygo=bolygo_nevek[3])
+    obj.mars_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[4]["hazszam"]["haz"]), bolygo=bolygo_nevek[4])
+    obj.jupiter_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[5]["hazszam"]["haz"]), bolygo=bolygo_nevek[5])
+    obj.szaturnusz_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[6]["hazszam"]["haz"]), bolygo=bolygo_nevek[6])
+    obj.uranusz_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[7]["hazszam"]["haz"]), bolygo=bolygo_nevek[7])
+    obj.neptun_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[8]["hazszam"]["haz"]), bolygo=bolygo_nevek[8])
+    obj.pluto_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[9]["hazszam"]["haz"]), bolygo=bolygo_nevek[9])
 
-    print(obj)
     return obj
 
 
