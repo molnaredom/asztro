@@ -5,6 +5,7 @@ from django.shortcuts import redirect, render
 
 from ..forms import HoroszkopFormGyors
 from ..kisegito import kisegito
+import socket
 
 
 def createHoroszkopGyors(request):
@@ -34,9 +35,9 @@ def createHoroszkopGyors(request):
 def get_fokszamok(bolygo_es_haz_adatok):
     res = dict()
     for k, v in bolygo_es_haz_adatok["bolygok"].items():
-        res[ekezetnelkul(str(k))] = v["fokszam"]
+        res[kisegito.ekezetnelkul(str(k))] = v["fokszam"]
     for k, v in bolygo_es_haz_adatok["hazak"].items():
-        res[ekezetnelkul(str(k))] = v["fokszam"]
+        res[kisegito.ekezetnelkul(str(k))] = v["fokszam"]
 
     return res
 
@@ -125,7 +126,7 @@ def osszfokszam_hozzarendeles(bolygok, hazak):
 def set_bolygo_es_haz_objektumok(obj):
     horoszkop_alap = ryuphi_api_adatlehivo_manager(obj)
 
-    bolygo_nevek = kisegito.ekezetnelkul(kisegito.get_bolygo_nevek())
+    bolygo_nevek = [kisegito.ekezetnelkul(i) for i in kisegito.get_bolygo_nevek()]
 
     obj.fokszamok = get_fokszamok(horoszkop_alap)
 
@@ -182,12 +183,12 @@ def get_id_to_horoszkopalapadat(jegy=None, bolygo=None, haz=None):
     # print("haz= ", haz, " jegy= ", jegy, " bolygo= ", bolygo)
 
     if haz is None: # bolygo jegyben
-        return str(jegy_to_num(jegy) + (bolygo_to_num(bolygo) - 1) * 12)
+        return str(kisegito.jegy_to_num(jegy) + (kisegito.bolygo_to_num(bolygo) - 1) * 12)
     elif bolygo is None: # haz jegyben
-        return str(jegy_to_num(jegy) + (int(haz) - 1) * 12)
+        return str(kisegito.jegy_to_num(jegy) + (int(haz) - 1) * 12)
     elif jegy is None: # bolygo hazban
         # print(str((bolygo_to_num(bolygo) - 1) * 12 + (int(haz) - 1)))
-        return str((bolygo_to_num(bolygo) - 1) * 12 + int(haz))
+        return str((kisegito.bolygo_to_num(bolygo) - 1) * 12 + int(haz))
     else:
         raise Exception
 
@@ -208,11 +209,10 @@ def char2(char):
 def init_api(obj):
     datumido = obj.idopont
 
-    szelesseg, hosszusag = varos_poz(varosnev=ekezetnelkul(str(obj.hely).lower()))
+    szelesseg, hosszusag = kisegito.varos_poz(varosnev=kisegito.ekezetnelkul(str(obj.hely).lower()))
 
     start = datetime.datetime.now()
 
-    import socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     result = sock.connect_ex(('127.0.0.1', 3000))
     if result == 0:
@@ -248,7 +248,7 @@ def get_bolygok(chart):
         # print(key, value, )
         if key == "chiron":
             break
-        bolygok[bolygo_to_hun(key)] = {"jegy": jegy_num_to_hun(str(value["sign"])),
+        bolygok[kisegito.bolygo_to_hun(key)] = {"jegy": kisegito.jegy_num_to_hun(str(value["sign"])),
                                        "fokszam": get_fokszam(value["position"]),
                                        "retográd": value["retrograde"],
                                        "gyorsaság": value["speed"]
@@ -266,7 +266,7 @@ def get_hazak(chart):
 
     hazakiter = chart["data"]["houses"]
     for i, value in enumerate(hazakiter, 1):
-        hazak[i] = {"jegy": jegy_num_to_hun(str(value["sign"])),
+        hazak[i] = {"jegy": kisegito.jegy_num_to_hun(str(value["sign"])),
                     "fokszam": get_fokszam(value["position"])}
 
     # [print(i) for i in hazak.items()]

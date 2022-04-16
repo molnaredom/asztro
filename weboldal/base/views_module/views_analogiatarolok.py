@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from ..models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2, HazUraHazban
-
+from ..kisegito import kisegito
 
 def jegyek_oldal(request):
     """
@@ -73,9 +73,9 @@ def horoszkop_gyujtemeny(request):
     bolygo_nevek = ["nap", "hold", "merkúr", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun",
                     "pluto"]
 
-    def get_privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes,  request):
+    def privat_nev_ha_nem_superuser(lekerdezes,  request):
         if not request.user.is_superuser:
-            for horoszkop in haz_es_jegy_lekerdezes:
+            for horoszkop in lekerdezes:
                 nev = str(horoszkop.tulajdonos_neve)
                 if len(nev.split()) == 1:
                     horoszkop.tulajdonos_neve = nev[0] + (len(nev.split()[0]) - 1) * "*"
@@ -89,14 +89,14 @@ def horoszkop_gyujtemeny(request):
                 jegyNev=request.POST.get('jegyNev'),
                 bolygo_nevek=bolygo_nevek
             )
-            get_privat_nev_ha_nem_superuser(bolygo_es_jegy_lekerdezes, request)
+            privat_nev_ha_nem_superuser(bolygo_es_jegy_lekerdezes, request)
 
         elif "haz_es_jegy_lekerdezes" in request.POST:
             haz_es_jegy_lekerdezes = haz_alapjan_lekeres(
                 hazNev=request.POST.get('hazNev'),
                 jegyNev=request.POST.get('jegyNev')
             )
-            get_privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes, request)
+            privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes, request)
 
         elif "bolygo_es_haz_lekerdezes" in request.POST:
             bolygo_es_haz_lekerdezes = bolygo_hazban_alapjan_lekeres(
@@ -104,7 +104,7 @@ def horoszkop_gyujtemeny(request):
                 hazNev=request.POST.get('hazNev'),
                 bolygo_nevek=bolygo_nevek
             )
-            get_privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes, request)
+            privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes, request)
 
     hpok = Horoszkop2.objects.all()
 
@@ -115,8 +115,7 @@ def horoszkop_gyujtemeny(request):
                    "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
                    }
     else:
-        for horoszkop in hpok:
-            horoszkop.tulajdonos_neve = nevet_privatra(horoszkop.tulajdonos_neve)
+        privat_nev_ha_nem_superuser(hpok,request)
 
         context = {
             'adatok': hpok,

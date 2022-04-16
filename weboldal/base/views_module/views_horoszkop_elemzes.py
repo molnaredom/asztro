@@ -13,12 +13,16 @@ def horoszkop(request, id):
     if not request.user.is_superuser:
         horoszkop_obj.tulajdonos_neve = nevet_privatra(horoszkop_obj.tulajdonos_neve)
 
-    # print(analogia.fokszamok)
-    if "analogiak" not in horoszkop_obj.fokszamok:
+    for i in hazakUraHazakban:
+        i.tulajdonsagok = i.tulajdonsagok["analogiak"][2:-2].split("', '")
 
-        horoszkop_obj.fokszamok = horoszkop_obj.fokszamok  # eval strbol dictet csinal
-    else:
-        horoszkop_obj.fokszamok = horoszkop_obj.fokszamok
+        print(type(i.tulajdonsagok), i.tulajdonsagok)
+    #
+    # # print(analogia.fokszamok)
+    # if "analogiak" not in horoszkop_obj.fokszamok:
+    #     horoszkop_obj.fokszamok = horoszkop_obj.fokszamok  # eval strbol dictet csinal
+    # else:
+    #     horoszkop_obj.fokszamok = horoszkop_obj.fokszamok
 
     elemzes_adat = _elemzes(horoszkop_obj, osszesjegy, hazakUraHazakban)
     context = {"analogia": horoszkop_obj, "elemzes": elemzes_adat}  # ez egy objektum

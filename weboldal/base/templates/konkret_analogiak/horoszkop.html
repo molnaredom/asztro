@@ -215,15 +215,16 @@
                 <h3>Házak Urai</h3>
 
                 {% for hazurahazban in elemzes.hazakurai %}
+                    {% for hazuranev, hazura_value in hazurahazban.items %}
 
-                    {% for hazuranev, analogiak in hazurahazban.items %}
                         <h4>{{ hazuranev }}</h4>
-
-                        <p>{{ analogiak.analogiak }}</p>
-
+                        <ul>
+                            {% for haz_ura_analogia in hazura_value %}
+                                <li> {{ haz_ura_analogia }}</li>
+                            {% endfor %}
+                        </ul>
 
                     {% endfor %}
-
                 {% endfor %}
 
                 <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
@@ -236,7 +237,7 @@
             <div class="card">
                 <h2>Bolygók a házakban</h2>
                 <hr>
-                <p><a href="{% url 'bolygoHazban' analogia.nap_h.id %}">{{ analogia.nap_h}} </a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.nap_h.id %}">{{ analogia.nap_h }} </a></p>
                 <p><a href="{% url 'bolygoHazban' analogia.hold_h.id %}">{{ analogia.hold_h }}</a></p>
                 <p><a href="{% url 'bolygoHazban' analogia.merkur_h.id %}">{{ analogia.merkur_h }}</a></p>
                 <p><a href="{% url 'bolygoHazban' analogia.venusz_h.id %}">{{ analogia.venusz_h }}</a></p>

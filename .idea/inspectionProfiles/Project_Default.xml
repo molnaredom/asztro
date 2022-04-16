@@ -32,6 +32,7 @@
           <option value="weboldal.base.views.*" />
           <option value="weboldal.base.models.Room.*" />
           <option value="weboldal.base.models.Room.objects" />
+          <option value="str.__getitem__" />
         </list>
       </option>
     </inspection_tool>
