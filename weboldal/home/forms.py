@@ -14,3 +14,9 @@ class QuestionForm(forms.ModelForm):
         model = Question
         fields = ('content', 'quiz')
 
+
+class AnswerForm(forms.ModelForm):
+    class Meta:
+        model = Answer
+        fields = ("content", 'question', 'correct')
+

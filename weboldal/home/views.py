@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .forms import QuizForm, QuestionForm
+from .forms import QuizForm, QuestionForm, AnswerForm
 from django.forms import inlineformset_factory
 
 
@@ -22,19 +22,18 @@ def quiz(request, myid):
 
 def quiz_data_view(request, myid):
     quiz = Quiz.objects.get(id=myid)
+    print(quiz_data_view.__name__, f"{quiz=}")
     questions = []
-    for q in quiz.get_questions():
+    for q in quiz.get_questions():  # a kviz objektumnak van egy get questions metodusa
         answers = []
         for a in q.get_answers():
             answers.append(a.content)
         questions.append({str(q): answers})
+
     return JsonResponse({
         'data': questions,
         'time': quiz.time,
     })
-
-
-from django.shortcuts import HttpResponse
 
 
 def is_ajax(request):
@@ -42,17 +41,18 @@ def is_ajax(request):
 
 
 def save_quiz_view(request, myid):
+    print(save_quiz_view.__name__, f"{myid=}")
 
     if is_ajax(request):
         questions = []
         data = request.POST
         data_ = dict(data.lists())
-        print(data_)
+        # print(data_)
 
         data_.pop('csrfmiddlewaretoken')
 
-        for i,k in enumerate(data_.keys()):
-            print(f'{i}key: ', k)
+        for i, k in enumerate(data_.keys()):
+            # print(f'{i}key: ', k)
             question = Question.objects.filter(content=k)[0]
             questions.append(question)
 
@@ -82,60 +82,24 @@ def save_quiz_view(request, myid):
                 marks.append({str(q): 'not answered'})
 
         Marks_Of_User.objects.create(quiz=quiz, user=user, score=score)
-
         return JsonResponse({'passed': True, 'score': score, 'marks': marks})
 
-
-def Signup(request):
-    if request.user.is_authenticated:
-        return redirect('/')
-    if request.method == "POST":
-        username = request.POST['username']
-        email = request.POST['email']
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        password = request.POST['password1']
-        confirm_password = request.POST['password2']
-
-        if password != confirm_password:
-            return redirect('/register')
-
-        user = User.objects.create_user(username, email, password)
-        user.first_name = first_name
-        user.last_name = last_name
-        user.save()
-        return render(request, 'login.html')
-    return render(request, "signup.html")
-
-
-def Login(request):
-    if request.user.is_authenticated:
-        return redirect('/')
-    if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-
-        user = authenticate(username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            return redirect("/")
-        else:
-            return render(request, "login.html")
-    return render(request, "login.html")
-
-
-def Logout(request):
-    logout(request)
-    return redirect('/')
-
+def kvizbank_keszito():
+    # kvizbank  todo
+    pass
 
 def add_quiz(request):
     if request.method == "POST":
+        kvizkeszito(
+            ido=20,
+            kerdesszam=3,
+            kviznev="proba5",
+            leiras="jo kviz lesz"
+        )
         form = QuizForm(data=request.POST)
         if form.is_valid():
-            quiz = form.save(commit=False)
-            quiz.save()
+            # quiz = form.save(commit=False)
+            # quiz.save()
             obj = form.instance
             return render(request, "index.html", {'obj': obj})
     else:
@@ -143,18 +107,94 @@ def add_quiz(request):
     return render(request, "add_quiz.html", {'form': form})
 
 
+def kvizkeszito(ido, kerdesszam, kviznev, leiras):
+    form = QuizForm()
+    quiz = form.save(commit=False)
+    quiz.time = ido
+    quiz.number_of_questions = kerdesszam
+    quiz.name = kviznev
+    quiz.desc = leiras
+    quiz.save()
+    print("KVIZ ELMENTVE")
+
+    kerdes_szoveg = "ez egy kérdés lenne?"
+    kerdes_hozzaadas(
+        kerdes_szoveg=kerdes_szoveg,
+        kviz= quiz)
+
+
+
+def kerdes_hozzaadas(kerdes_szoveg, kviz):
+
+    form = QuestionForm()
+    # if form.is_valid():
+    question = form.save(commit=False)
+    question.content = kerdes_szoveg
+    question.quiz = kviz
+
+    question.save()
+    print("KÉRDÉS HOZZAADVA")
+
+    valasz_lehetoseg_hozzaadas(valasz_szoveg="1",igazsagertek=True, kerdes_obj=question)
+    valasz_lehetoseg_hozzaadas(valasz_szoveg="2",igazsagertek=False, kerdes_obj=question)
+    valasz_lehetoseg_hozzaadas(valasz_szoveg="3",igazsagertek=False, kerdes_obj=question)
+    valasz_lehetoseg_hozzaadas(valasz_szoveg="4",igazsagertek=False, kerdes_obj=question)
+    print("VALASZ HOZZAADVA")
+
+
 def add_question(request):
     questions = Question.objects.all()
     questions = Question.objects.filter().order_by('-id')
+    #
+    # for q in questions:
+    #     print("question: ",q),
+    #     for a in q.get_answers():
+    #         a.content= "2"
+    #         a.correct= True
+    #
+    # for q in questions:
+    #     print("question: ",q),
+    #     for a in q.get_answers():
+    #         print(a)
+
     if request.method == "POST":
         form = QuestionForm(request.POST)
         if form.is_valid():
-            form.save()
+            question = form.save(commit=False)
+            # if question.quiz == 1:
+            #     question.content = 1 # todo
+            question.save()
+
             return render(request, "add_question.html")
     else:
         form = QuestionForm()
+        print("add_question", {'form': form, 'questions': questions})
     return render(request, "add_question.html", {'form': form, 'questions': questions})
 
+
+#
+# def add_answers(request,):
+#     form = HoroszkopFormGyors()
+#
+#     if "megse" in request.POST:
+#         return redirect(f"horoszkop_gyujtemeny")
+#
+#     if request.method == "POST":
+#         form = HoroszkopFormGyors(request.POST)
+#         if form.is_valid():
+#             obj = form.save(commit=False)
+#
+#             obj = set_bolygo_es_haz_objektumok(obj)
+#             print(f'ASC-{obj.haz_1_id=}')
+#             obj.save()
+#             if 'ujabb_fevitel' in request.POST:
+#                 return redirect(f"create-horoszkop")
+#
+#             elif "mentes_es_foolal" in request.POST:
+#                 return redirect(f"horoszkop_gyujtemeny")
+#
+#     context = {'form': form}
+#     return render(request, "create_templates/analogia_form.html", context)
 
 def delete_question(request, myid):
     question = Question.objects.get(id=myid)
@@ -165,17 +205,77 @@ def delete_question(request, myid):
 
 
 def add_options(request, myid):
-    question = Question.objects.get(id=myid)
+    kerdes = Question.objects.get(id=myid)
+    # print("------------", question, question.quiz)
     QuestionFormSet = inlineformset_factory(Question, Answer, fields=('content', 'question'), extra=2)
     if request.method == "POST":
-        formset = QuestionFormSet(request.POST, instance=question)
+        formset = QuestionFormSet(request.POST, instance=kerdes)
         if formset.is_valid():
-            formset.save()
+
+            adatok = [
+                {"szöveg": "szöveg1",
+                 "igazságérték": False
+                },
+                {"szöveg": "szöveg2",
+                     "igazságérték": False
+                },
+                {"szöveg": "szöveg3",
+                         "igazságérték": False
+                },
+            ]
+
+            for valasz in adatok:
+                valasz_lehetoseg_hozzaadas(valasz_szoveg=valasz["szöveg"],
+                                           igazsagertek=valasz["igazságérték"],
+                                           kerdes_obj=kerdes)
+
             alert = True
+            formset.save()
             return render(request, "add_options.html", {'alert': alert})
     else:
-        formset = QuestionFormSet(instance=question)
-    return render(request, "add_options.html", {'formset': formset, 'question': question})
+        formset = QuestionFormSet(instance=kerdes)
+        # print("add_options", {'formset': [i for i in formset], 'question': kerdes})
+    return render(request, "add_options.html", {'formset': formset, 'question': kerdes})
+
+
+# def add_options(request, myid):
+#     kerdes = Question.objects.get(id=myid)
+#     # print("------------", question, question.quiz)
+#     QuestionFormSet = inlineformset_factory(Question, Answer, fields=('content', 'question'), extra=2)
+#     if request.method == "POST":
+#         formset = QuestionFormSet(request.POST, instance=kerdes)
+#         if formset.is_valid():
+#
+#             adatok = [
+#                 {"szöveg": "szöveg1",
+#                  "igazságérték": False
+#                  },{"szöveg": "szöveg2",
+#                  "igazságérték": False
+#                  },{"szöveg": "szöveg3",
+#                  "igazságérték": False
+#                  },
+#             ]
+#
+#             for valasz in adatok:
+#                 valasz_lehetoseg_hozzaadas(valasz_szoveg=valasz["szöveg"],
+#                                            igazsagertek=valasz["igazságérték"],
+#                                            kerdes_obj=kerdes)
+#
+#             alert = True
+#             formset.save()
+#             return render(request, "add_options.html", {'alert': alert})
+#     else:
+#         formset = QuestionFormSet(instance=kerdes)
+#         # print("add_options", {'formset': [i for i in formset], 'question': kerdes})
+#     return render(request, "add_options.html", {'formset': formset, 'question': kerdes})
+
+
+def valasz_lehetoseg_hozzaadas(valasz_szoveg, igazsagertek, kerdes_obj):
+    Answer.objects.create(
+        content=valasz_szoveg,
+        correct=igazsagertek,
+        question=kerdes_obj
+    ).save()
 
 
 def results(request):
