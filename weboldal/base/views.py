@@ -83,10 +83,7 @@ def save_quiz_view(request, myid):
 
         Marks_Of_User.objects.create(quiz=quiz, user=user, score=score)
         return JsonResponse({'passed': True, 'score': score, 'marks': marks})
-
-def kvizbank_keszito():
-    # kvizbank  todo
-    pass
+#
 
 def add_quiz(request):
     if request.method == "POST":
@@ -121,7 +118,6 @@ def kvizkeszito(ido, kerdesszam, kviznev, leiras):
     kerdes_hozzaadas(
         kerdes_szoveg=kerdes_szoveg,
         kviz= quiz)
-
 
 
 def kerdes_hozzaadas(kerdes_szoveg, kviz):

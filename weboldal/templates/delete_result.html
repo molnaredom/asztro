@@ -5,10 +5,10 @@
 <div class="container mt-4">
     <h4>Szeretnéd törölni {{marks.user}} felhasználó eredményét, akinek pontszáma: {{marks.score}} ebben a kvízben: {{marks.quiz}} ?</h4>
     <br>
-    <form action="/home/delete_result/{{marks.id}}/" method="POST">
+    <form action="/delete_result/{{marks.id}}/" method="POST">
 
         {% csrf_token %}
-        <a class="btn btn-warning" href="/home/results/">Mégse</a>
+        <a class="btn btn-warning" href="/results/">Mégse</a>
 
         <input class="btn btn-danger" type="submit" value="Törlés">
     </form>

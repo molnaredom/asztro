@@ -5,10 +5,10 @@
 <div class="container mt-4">
     <h4>Biztosan törölni szeretnéd ezt a kérdést : {{question.content}} ?</h4>
     <br>
-    <form action="/home/delete_question/{{question.id}}/" method="POST">
+    <form action="/delete_question/{{question.id}}/" method="POST">
 
         {% csrf_token %}
-        <a class="btn btn-warning" href="/home/add_question/">Cancel</a>
+        <a class="btn btn-warning" href="/add_question/">Cancel</a>
 
         <input class="btn btn-danger" type="submit" value="Delete">
     </form>

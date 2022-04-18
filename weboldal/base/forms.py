@@ -82,3 +82,27 @@ class Horoszkop_Csillagjegyszures(ModelForm):
     class Meta:
         model = Horoszkop2
         fields = ["nap"]
+
+from django import forms
+from .models import Quiz, Question, Answer
+from django.contrib import admin
+
+
+class QuizForm(forms.ModelForm):
+    class Meta:
+        model = Quiz
+        fields = ('name', 'desc', 'number_of_questions', 'time')
+
+
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Question
+        fields = ('content', 'quiz')
+
+
+class AnswerForm(forms.ModelForm):
+    class Meta:
+        model = Answer
+        fields = ("content", 'question', 'correct')
+
+

@@ -3,7 +3,7 @@
 
 {% block body %}
 <div class="container mt-4">
-  <form action="/home/add_question/" method="POST"> {% csrf_token %}
+  <form action="/add_question/" method="POST"> {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-info">Kvíz hozzáadás</button>
   </form>
@@ -18,9 +18,9 @@
     </thead>
     {% for question in questions %}
     <tr>
-      <td><a href="/home/add_options/{{question.id}}/">{{question.content}}</a></td>
+      <td><a href="/add_options/{{question.id}}/">{{question.content}}</a></td>
       <td>{{question.quiz}}</td>
-      <td><a href="/home/delete_question/{{question.id}}/" class="btn btn-danger">Delete</a></td>
+      <td><a href="/delete_question/{{question.id}}/" class="btn btn-danger">Delete</a></td>
     </tr>
     {% endfor %}
   </table>
