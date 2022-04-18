@@ -10220,3 +10220,4 @@ DevTools listening on ws://localhost:50182/devtools/browser/08529fd2-5fc4-4728-a
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 1650124852012	Marionette	INFO	Stopped listening on port 50187
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1650300459143	geckodriver	INFO	Listening on 127.0.0.1:51962
