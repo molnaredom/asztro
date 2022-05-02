@@ -20,24 +20,23 @@ https://asztro.herokuapp.com/horoszkop_gyujtemeny
 ## Megvalósítandó mérföldkövek, funkciók
 - [x] horoszkóp szerkezetének implementálása, adatbázisban kezelhetővé tétele ~ 12 hét - 100% KÉSZ
   -  A további adatok feldolgozásához, szükség van egy struktúrára, amiben könnyen kezelhetőek az adatok
-- [ ] Adatbázis feltöltése ~ 20 hét - 45% KÉSZ
+- [ ] Adatbázis feltöltése ~ 20 hét - 55% KÉSZ
   - Emberek adatainak beszerzése, strukturált tárolása (~ 400-1000 ember)
   - Analógiák feltöltése: Bolygók, Jegyek, Házak és kombinációik (562 oldal)
 - [ ] Pályaválasztás segítő program ~ 15 hét - 35% KÉSZ
   - Neuronhálók segítségével valószínűségi értékek szabása a különböző munkaterületekre a felhasználónak
   - Ez az asztrológia validálására is lehetőséget biztosít 
-- [ ] Analógia gyakorló ~ 5 hét - 80% KÉSZ
+- [ ] Analógia gyakorló ~ 6 hét - 80% KÉSZ
   - Játékos módon lehessen az egymással analóg személyiségjellemzőket, tárgyakat, színeket, stb. dolgokat párosítani.
-- [ ] Általános elemzés ~ 6 hét - 80% KÉSZ
+- [x] Általános elemzés ~ 10 hét - 100% KÉSZ
   - Sorstípus: független/kiszolgáltatott/önfeláldozó/áldozat
   - Felosztások: Évszak- Minőség- Elemek- szerinti felosztás
   - Rejtett aszcendens
   - Célkijelölő vagy Megvalósító
-  - "Asztro cikk-cakk"
   - Hyleg/Anaréta meghatározása
   - Sérült minta Nap/Hold
  
-- [ ] Születési idő pontosítás ~ 15 hét (ha gyorsabban haladnék a vártnál) - 10% - KÉSZ
+- [ ] Születési idő pontosítás ~ 12 hét (ha gyorsabban haladnék a vártnál) - 25% - KÉSZ
   - Ha egy embernek nem tudjuk pontosan mikor született, de történtek már kardinális események az életében. Vissza lehet számolni, pontosan hány óra hány perckor született.
 
       
@@ -75,20 +74,9 @@ python3 adatbazis\webscraping\iranyito.py -m alapadatok
 - molnaradam8466@gmail.com 
 
 ## Pár szó magamról: 
-- 3.féléves programtervező informatikus szakra járok.
+- 4.féléves programtervező informatikus szakra járok.
 - Szegeden a TTIK-n a Szoftverfejlesztő tanszéken dolgozok. Itt adatok kinyerésével és feldolgozásával foglalkozunk.
 - Régebb óta érdekelnek spirituális, pszichológiai dolgok, köztük gyereknevelés, oktatás, absztrakt/elvont gondolkodásmódok, lelki segítségnyújtás, tanulási technikák, tudatalatti, tudatosság. És még ezen kívül sok más. 
-
-### A terv fejlődési pontjai:
-- 1.0.0 2021 marc.30
-- 1.1.0 2021 maj.31
-- 1.1.1 2021. jun 2.
-- 1.1.2 2021 jun 6.
-- 2.0.0 2021 okt. 26.
-- 2.0.1 2021 okt.28.
-- 2.1.0 2022 jan.8.
-- 2.1.1 2022 jan.12.
-- - 2.1.1 2022 jan.14.
 
 
 #### Hosszútávú tervek:
