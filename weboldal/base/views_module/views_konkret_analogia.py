@@ -13,6 +13,9 @@ def jegy(request, nevID):
 
 def bolygo(request, nevID):
     analogia = Bolygo2.objects.get(nevID=nevID)
+    # print(analogia.leiras["analogiak"])
+    analogia.leiras = eval(analogia.leiras["analogiak"])
+    print(analogia.leiras, type(analogia.leiras))
 
     context = {"analogia": analogia}  # ez egy objektum
 

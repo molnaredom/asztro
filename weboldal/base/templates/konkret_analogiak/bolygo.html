@@ -5,6 +5,10 @@
 <p>Pontérték: {{analogia.pontertek}}</p>
 <p>Típus: {{analogia.tipus}}</p>
 
+<h3>Leírás:</h3>
+{% for i in analogia.leiras %}
+        <p> {{ i }} </p>
+    {% endfor %}
 
 {% endblock content %}
 
