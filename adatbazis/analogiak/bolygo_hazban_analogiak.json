@@ -29,7 +29,6 @@
     },
     "2": {
       "általános": [
-
         "anyagiak jelennek meg elsősorban",
         "olyan plyafutás, aho anyagiakkal foglalkozik",
         "bróker, bankár, földekkel való foglalkozás",
@@ -111,7 +110,7 @@
         "betegségek: szív, agy, gerinc, szem, idegrendszer , életmód: gyógyítható betegségek",
         "állatokon keresztül nappá válni: pl állattenyésztés/ állatorvos"
       ],
-      "nők":[
+      "nők": [
         "a férjnek szeretője van",
         "mutathatja a pár betegségeit"
       ]
@@ -209,7 +208,6 @@
         "szeretőtől lehet gyereke",
         "nyugdíjasként végzett munka",
         "kórházakban, zárt intézetekben dolgozhat, érhetel sikert",
-
         "írói alkalmatosság",
         "ezoterikus, spirituális tevékenység",
         "törvénnyle való összeütközés",
@@ -229,7 +227,7 @@
         "alapvetően fontos a gondoskodás",
         "nem jó neki a nyilvánosság előtti szereplés"
       ],
-      "nő" : [
+      "nő": [
         "törekszik az érzelmekre, az alárendelődésre"
       ],
       "férfi": [
@@ -237,8 +235,13 @@
         "alárendeltéget, érzelmi kötődést, befogadást jobb ha átadja a nőnek"
       ],
       "hivatás": [
-        "orvos", "vendéglátás", "pszichológus", "erős ezoterikus, spirituális adottságok",
-        "óvónő","ápolónő","művészetek"
+        "orvos",
+        "vendéglátás",
+        "pszichológus",
+        "erős ezoterikus, spirituális adottságok",
+        "óvónő",
+        "ápolónő",
+        "művészetek"
       ]
     },
     "2": {
@@ -256,7 +259,10 @@
         "az anyagiakat nem a saját élvezetére kapja, mégis sokszor erre használja"
       ],
       "hivatás": [
-        "orvos", "vendéglátás", "mérnök", "fodrász"
+        "orvos",
+        "vendéglátás",
+        "mérnök",
+        "fodrász"
       ]
     },
     "3": {
@@ -319,7 +325,6 @@
   "merkúr": {
     "1": {
       "általános": [
-
       ]
     },
     "2": {
@@ -520,10 +525,20 @@
   "szaturnusz": {
     "1": {
       "általános": [
+        "egóról való lemondás a feladata"
       ]
     },
     "2": {
       "általános": [
+        "sosincs elég pénze, szegénységtudat",
+        "lehet, hogy sok pénze volt, de elvesztette/vagy el fogja, lehet, hogy gazdag, mégis szegénynek érzi magát",
+        "nem hajlandó élvezni az életet - Harpagon típus - ",
+        "lehet hogy korlátozva van az anyagiak szerzése",
+        "lehet, hogy sok van neki de csak egy ideig",
+        "lehet, hogy csak mindig attól fél hogy kevés pénze lesz",
+        "hajlamosak az önbüntetésre, böjt/fogyókúra még élvezet is lehet neki",
+        "minden felesleges dologra irányuló helyzetet, külsőséget, igyekeznek elhagyni",
+        ""
       ]
     },
     "3": {
@@ -532,14 +547,39 @@
     },
     "4": {
       "általános": [
+        "az egyik legneheebb szaturnusz mivel az elgóról elmodnmás területe"
       ]
     },
     "5": {
       "általános": [
+        "nincs gyerek nem akar megfoganni",
+        "problémás gyerek, állandóan a baj van vele",
+        "gyerekvesztés, abortusz, vetélés, nehezített terhesség",
+        "gyakori a császár, nem tágul mert szűk, nem tudja kiengedni a gyereket",
+        "szerelemben problémái vannak -> érdek kapcsolatok",
+        "vállalkozás elvesztése",
+        "sikertelenség, vagy nagy siker utáni bukás",
+        "nagy korkülönbségű szerelem"
+      ],
+      "munka": [
+        "ellenőr",
+        "rendőr",
+        "tanár"
       ]
     },
     "6": {
       "általános": [
+        "munkamánia, célként jelenik meg a munka",
+        "munkahelyi problémák feszültségek, nehézségek",
+        "egyedül végzett munka",
+        "állandó feszültség, problémák a munkatársakkal",
+        "olyan munkakör ahol felelősséged van, neked kell fontos döntéseket meghozni",
+        "munkahelyi balesetek",
+        "gyógyítható betegségek, életmódváltással meg lehet oldani a problémát",
+        "pár szeretőjével nehézségek adódnak --> megcsalás amit nagyon nehezen fogad el vagy old meg"
+      ],
+      "javaslat": [
+        "nem szabad felmondani munkahelyen semilyen esetben se, ha akarnak rúgjanak ki"
       ]
     },
     "7": {

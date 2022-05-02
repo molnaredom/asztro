@@ -191,6 +191,24 @@
       "leírás": [
         "b"
       ]
+    },
+    "asc": {
+      "típus": "főtengely",
+      "pontérték": 0,
+      "leírás": [
+        "Az aszcendens valójában megfelel az 1-es háznak",
+        "Ez egy különleges ház, mivel bizonyos esetekben bolygóként is tud viselkedni, de semmiképp se mondható bolygónak",
+        "Például fényszögeket vethetnek rá bolygók. Ezzel a tulajdonsággal csak a főtengelyek csúcsai rendelkeznek a házak közül"
+      ]
+    },
+    "mc": {
+      "típus": "főtengely",
+      "pontérték": 0,
+      "leírás": [
+        "Az aszcendens valójában megfelel az 1-es háznak",
+        "Ez egy különleges ház, mivel bizonyos esetekben bolygóként is tud viselkedni, de semmiképp se mondható bolygónak",
+        "Például fényszögeket vethetnek rá bolygók. Ezzel a tulajdonsággal csak a főtengelyek csúcsai rendelkeznek a házak közül"
+      ]
     }
   },
   "hazak": {
@@ -199,6 +217,9 @@
       "mundán jegye" : "kos",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "ego", "akarat"
       ]
     },
     "2": {
@@ -206,6 +227,9 @@
       "mundán jegye" : "bika",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "pénz", "anyagiak"
       ]
     },
     "3": {
@@ -213,6 +237,9 @@
       "mundán jegye" : "ikrek",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "közlekedés", "testvér"
       ]
     },
     "4": {
@@ -220,6 +247,9 @@
       "mundán jegye" : "rák",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "család", "otthon"
       ]
     },
     "5": {
@@ -227,6 +257,9 @@
       "mundán jegye" : "oroszlán",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "1. gyermek", "vállalkozás"
       ]
     },
     "6": {
@@ -234,6 +267,9 @@
       "mundán jegye" : "szűz",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "munka", "alárendelődés"
       ]
     },
     "7": {
@@ -241,6 +277,9 @@
       "mundán jegye" : "mérleg",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "párkapcsolat", "külvilág"
       ]
     },
     "8": {
@@ -248,6 +287,9 @@
       "mundán jegye" : "skorpió",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "szexulalitás", "halállal kapcsolatod dolgok"
       ]
     },
     "9": {
@@ -255,6 +297,9 @@
       "mundán jegye" : "nyilas",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "egyetem", "külföld"
       ]
     },
     "10": {
@@ -262,6 +307,8 @@
       "mundán jegye" : "bak",
       "leírás": [
         "c"
+      ],"analógiák": [
+        "célok", "anya"
       ]
     },
     "11": {
@@ -269,6 +316,9 @@
       "mundán jegye" : "vízöntő",
       "leírás": [
         "c"
+      ],
+      "analógiák": [
+        "barátok", "hobbik"
       ]
     },
     "12": {
@@ -276,6 +326,8 @@
       "mundán jegye" : "halak",
       "leírás": [
         "c"
+      ],"analógiák": [
+        "egóról való elmondás", "vizsgák"
       ]
     }
   }

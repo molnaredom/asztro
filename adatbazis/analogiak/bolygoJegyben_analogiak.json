@@ -31,7 +31,6 @@
           "az apa a vállalkozásával foglalkozik"
         ],
         "férfi": [
-          "",
           "a párja felnéz rá",
           "a párja azt éli, hogy erős férfi van mellette",
           "tevékenyen részt vesz az életben",
@@ -2468,9 +2467,90 @@
       "halak": {
         "általános": []
       }
+    },
+    "asc": {
+      "bolygo_leiras": [],
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
+    },
+    "mc": {
+      "bolygo_leiras": [],
+      "szempontok": [],
+      "kos": {
+        "általános": []
+      },
+      "bika": {
+        "általános": []
+      },
+      "ikrek": {
+        "általános": []
+      },
+      "rák": {
+        "általános": []
+      },
+      "oroszlán": {
+        "általános": []
+      },
+      "szűz": {
+        "általános": []
+      },
+      "mérleg": {
+        "általános": []
+      },
+      "skorpió": {
+        "általános": []
+      },
+      "nyilas": {
+        "általános": []
+      },
+      "bak": {
+        "általános": []
+      },
+      "vízöntő": {
+        "általános": []
+      },
+      "halak": {
+        "általános": []
+      }
     }
   }
 }
+
 
 
 

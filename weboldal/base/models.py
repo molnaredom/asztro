@@ -161,6 +161,8 @@ class Horoszkop2(models.Model):
     uranusz_j = models.ForeignKey(BolygoJegyben2, related_name='uranuszj', on_delete=models.CASCADE)
     neptun_j = models.ForeignKey(BolygoJegyben2, related_name='neptunj', on_delete=models.CASCADE)
     pluto_j = models.ForeignKey(BolygoJegyben2, related_name='plutoj', on_delete=models.CASCADE)
+    asc_j = models.ForeignKey(BolygoJegyben2, related_name='ascj', on_delete=models.CASCADE)
+    mc_j = models.ForeignKey(BolygoJegyben2, related_name='mcj', on_delete=models.CASCADE)
 
     nap_h = models.ForeignKey(BolygoHazban2, related_name='naph', on_delete=models.CASCADE)
     hold_h = models.ForeignKey(BolygoHazban2, related_name='holdh', on_delete=models.CASCADE)
