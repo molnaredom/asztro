@@ -2,6 +2,7 @@ from django.shortcuts import render
 from ..models import Jegy2, Bolygo2, Haz2, BolygoHazban2, BolygoJegyben2, HazJegyben2, Horoszkop2, HazUraHazban
 from ..kisegito import kisegito
 
+
 def jegyek_oldal(request):
     """
     több oldalt tartalmazo, analógiatároló felület
@@ -67,62 +68,62 @@ def hazakUraHazakban(request):
 
 
 def horoszkop_gyujtemeny(request):
-    bolygo_es_jegy_lekerdezes, bolygo_es_haz_lekerdezes, haz_es_jegy_lekerdezes, \
-    leker_1, leker_2, leker_3 = {}, {}, {}, {}, {}, {}
-
+    bolygo_es_jegy_lekerdezes, bolygo_es_haz_lekerdezes, haz_es_jegy_lekerdezes = {}, {}, {}
+    lekerdezes_neve = None
     bolygo_nevek = ["nap", "hold", "merkúr", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun",
                     "pluto"]
 
-    def privat_nev_ha_nem_superuser(lekerdezes,  request):
+    def privat_nev_ha_nem_superuser(lekerdezes, request):
         if not request.user.is_superuser:
             for horoszkop in lekerdezes:
                 nev = str(horoszkop.tulajdonos_neve)
                 if len(nev.split()) == 1:
                     horoszkop.tulajdonos_neve = nev[0] + (len(nev.split()[0]) - 1) * "*"
                 elif len(nev.split()) >= 1:
-                    horoszkop.tulajdonos_neve = nev[0] + (len(nev.split()[0]) - 1) * "*" + " " + len(nev.split()[1]) * "*"
+                    horoszkop.tulajdonos_neve = nev[0] + (len(nev.split()[0]) - 1) * "*" + " " + len(
+                        nev.split()[1]) * "*"
 
     if request.method == "POST":
         if 'bolygo_es_jegy_lekerdezes' in request.POST:
+            bolygoNev = request.POST.get('bolygoNev')
+            jegyNev = request.POST.get('jegyNev')
+
             bolygo_es_jegy_lekerdezes = bolygo_alapjan_lekeres(
-                bolygoNev=request.POST.get('bolygoNev'),
-                jegyNev=request.POST.get('jegyNev'),
-                bolygo_nevek=bolygo_nevek
+                bolygoNev, jegyNev, bolygo_nevek
             )
+            lekerdezes_neve = f"Jegy: {jegyNev} --  Bolgyó: {bolygoNev}"
             privat_nev_ha_nem_superuser(bolygo_es_jegy_lekerdezes, request)
 
         elif "haz_es_jegy_lekerdezes" in request.POST:
-            haz_es_jegy_lekerdezes = haz_alapjan_lekeres(
-                hazNev=request.POST.get('hazNev'),
-                jegyNev=request.POST.get('jegyNev')
-            )
+            hazNev = request.POST.get('hazNev')
+            jegyNev = request.POST.get('jegyNev')
+
+            haz_es_jegy_lekerdezes = haz_alapjan_lekeres(hazNev, jegyNev)
+            print(haz_es_jegy_lekerdezes, ".............")
+
+            lekerdezes_neve = f"Jegy: {jegyNev}  --  Ház: {hazNev}"
             privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes, request)
 
         elif "bolygo_es_haz_lekerdezes" in request.POST:
-            bolygo_es_haz_lekerdezes = bolygo_hazban_alapjan_lekeres(
-                bolygoNev=request.POST.get('bolygoNev'),
-                hazNev=request.POST.get('hazNev'),
-                bolygo_nevek=bolygo_nevek
-            )
-            privat_nev_ha_nem_superuser(haz_es_jegy_lekerdezes, request)
+            bolygoNev = request.POST.get('bolygoNev')
+            hazNev = request.POST.get('hazNev')
+
+            bolygo_es_haz_lekerdezes = bolygo_hazban_alapjan_lekeres(bolygoNev, hazNev, bolygo_nevek)
+
+            lekerdezes_neve = f"Ház: {hazNev} --  Bolygó: {bolygoNev}"
+            privat_nev_ha_nem_superuser(bolygo_es_haz_lekerdezes, request)
+            print([i for i in bolygo_es_haz_lekerdezes])
 
     hpok = Horoszkop2.objects.all()
+    privat_nev_ha_nem_superuser(hpok, request)
+    print(haz_es_jegy_lekerdezes, ".............")
 
-    context = {}
-    if request.user.is_superuser:
-        context = {'adatok': hpok,
-                   "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
-                   "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
-                   }
-    else:
-        privat_nev_ha_nem_superuser(hpok,request)
-
-        context = {
-            'adatok': hpok,
-            "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
-            "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
-            "bolygo_es_haz_lekerdezes": bolygo_es_haz_lekerdezes,
-        }
+    context = {'adatok': hpok,
+               "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
+               "haz_es_jegy_lekerdezes": haz_es_jegy_lekerdezes,
+               "bolygo_es_haz_lekerdezes": bolygo_es_haz_lekerdezes,
+               "lekerdezes_neve": lekerdezes_neve
+               }
 
     return render(request, 'analogiatarolok/horoszkop_gyujtemeny.html', context)
 
@@ -171,8 +172,6 @@ def bolygo_hazban_alapjan_lekeres(bolygoNev, hazNev, bolygo_nevek):
         return Horoszkop2.objects.filter(neptun_h__haz__nevID=hazNev)
     elif bolygoNev == bolygo_nevek[9]:
         return Horoszkop2.objects.filter(pluto_h__haz__nevID=hazNev)
-
-    return jegy_alapjan_lekeres
 
 
 def haz_alapjan_lekeres(hazNev, jegyNev):

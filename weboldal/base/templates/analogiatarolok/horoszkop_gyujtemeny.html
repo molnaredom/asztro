@@ -16,7 +16,7 @@
                             </a>
                             <form method="POST">
                                 {% csrf_token %}
-                                {#                                <label> Válassz egy házat és egy bolygót a listázáshoz: </label><br>#}
+                                {# <label> Válassz egy házat és egy bolygót a listázáshoz: </label><br>#}
 
                                 <label>
                                     <select name="hazNev" class="form-select">
@@ -39,14 +39,14 @@
                                     <select name="bolygoNev" class="form-select">
                                         <option value="nap">nap</option>
                                         <option value="hold">hold</option>
-                                        <option value="merkur">merkúr</option>
+                                        <option value="merkúr">merkúr</option>
                                         <option value="mars">mars</option>
                                         <option value="vénusz">vénusz</option>
                                         <option value="jupiter">jupiter</option>
                                         <option value="szaturnusz">szaturnusz</option>
                                         <option value="uránusz">uránusz</option>
                                         <option value="neptun">neptun</option>
-                                        <option value="plúto">plúto</option>
+                                        <option value="pluto">pluto</option>
                                     </select>
                                 </label>
                                 <button type="submit" name="bolygo_es_haz_lekerdezes" class="btn btn-success ">Listázás
@@ -85,7 +85,7 @@
                                     <select name="bolygoNev" class="form-select">
                                         <option value="nap">nap</option>
                                         <option value="hold">hold</option>
-                                        <option value="merkur">merkúr</option>
+                                        <option value="merkúr">merkúr</option>
                                         <option value="mars">mars</option>
                                         <option value="vénusz">vénusz</option>
                                         <option value="jupiter">jupiter</option>
@@ -162,7 +162,9 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 {% if haz_es_jegy_lekerdezes %}
-                    <h2>Válogatott horoszkópok</h2>
+                    <br>
+                    <h3><b>Válogatott horoszkópok</b></h3>
+                    <h3>{{ lekerdezes_neve }}</h3>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm table-hover">
                             <thead>
@@ -178,9 +180,8 @@
                             </thead>
 
                             <tbody>
-                            {% if request.user.is_superuser %}
+
                                 {% for adat in haz_es_jegy_lekerdezes %}
-                                    helo
                                     <tr>
                                         <td><a href="{% url 'horoszkop' adat.id %}">{{ adat }}</a></td>
                                         <td>{{ adat.tipus }}</td>
@@ -191,7 +192,6 @@
                                         {% endif %}
                                     </tr>
                                 {% endfor %}
-                            {% endif %}
 
 
                             </tbody>
@@ -201,7 +201,9 @@
                 {% endif %}
 
                 {% if bolygo_es_jegy_lekerdezes %}
-                    <h2>Válogatott horoszkópok</h2>
+                    <br>
+                    <h3><b>Válogatott horoszkópok</b></h3>
+                    <h3>{{ lekerdezes_neve }}</h3>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm table-hover">
                             <thead>
@@ -209,8 +211,10 @@
                                 <th scope="col">Név</th>
                                 <th scope="col">Képlettípus</th>
                                 <th scope="col">Dátum \ Idő</th>
-                                <th scope="col">Törlés</th>
-                                <th scope="col">Módosítás</th>
+                                {% if request.user.is_superuser %}
+                                    <th scope="col">Törlés</th>
+                                    <th scope="col">Módosítás</th>
+                                {% endif %}
                             </tr>
                             </thead>
 
@@ -226,7 +230,7 @@
                                     {% if request.user.is_superuser %}
                                     <td><a href="{% url 'delete-horoszkop' adat.id %}">Törlés</a></td>
                                     <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
-                                {% endif %}
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -235,7 +239,9 @@
                 {% endif %}
 
                 {% if bolygo_es_haz_lekerdezes %}
-                    <h2>Válogatott horoszkópok</h2>
+                    <br>
+                    <h3><b>Válogatott horoszkópok</b></h3>
+                    <h3>{{ lekerdezes_neve }}</h3>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm table-hover">
                             <thead>
@@ -243,9 +249,10 @@
                                 <th scope="col">Név</th>
                                 <th scope="col">Képlettípus</th>
                                 <th scope="col">Dátum \ Idő</th>
-                                <th scope="col">Törlés</th>
-                                <th scope="col">Módosítás</th>
-                            </tr>
+                            {% if request.user.is_superuser %}
+                                    <th scope="col">Törlés</th>
+                                    <th scope="col">Módosítás</th>
+                                {% endif %}
                             </thead>
 
                             <tbody>
@@ -259,7 +266,7 @@
                                     {% if request.user.is_superuser %}
                                     <td><a href="{% url 'delete-horoszkop' adat.id %}">Törlés</a></td>
                                     <td><a href="{% url 'update-horoszkop' adat.id %}">Módosítás</a></td>
-                                {% endif %}
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
                             </tbody>
