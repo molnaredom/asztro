@@ -154,3 +154,54 @@ def hyleg(bolygok):
         return "hold"
     else:
         return "ASC"
+
+
+def megval_vagy_celkij(bolygok, hazak):
+    celkujelolo_pont = 0
+    megvalosito_pont = 0
+
+    asc_b = bolygok[10]
+    mc_b = bolygok[11]
+
+    asc_h = hazak[0]
+    mc_h = hazak[9]
+
+    # ha az ASC tamava van oppozicioval vagy kvadrattal
+    if len([i for i in asc_b["fenyszogek"]["oppozicio"]]) > 0 or \
+        len([i for i in asc_b["fenyszogek"]["kvadrat"]]) > 0:
+        print("ASC támadva")
+        celkujelolo_pont += 1
+
+    # ha az MC tamava van oppozicioval vagy kvadrattal
+    if len([i for i in mc_b["fenyszogek"]["oppozicio"]]) > 0 or \
+        len([i for i in mc_b["fenyszogek"]["kvadrat"]]) > 0:
+        print("MC támadva")
+        megvalosito_pont += 1
+
+    if asc_h["hazura"] != "nincs hazur": # asc nek van ura
+        megvalosito_pont += 1
+        print("ASC-nke van ura")
+
+    if mc_h["hazura"] != "nincs hazur": # mc nek van ura
+        celkujelolo_pont += 1
+        print("MC-nek van ura")
+
+    print(f"{celkujelolo_pont=}, {megvalosito_pont=}")
+
+    if celkujelolo_pont > megvalosito_pont:
+        return "célkijelölő"
+    elif megvalosito_pont > celkujelolo_pont:
+        return "megvalósitó"
+
+    mars = bolygok[4]
+
+    if len([i for i in mars["fenyszogek"]["oppozicio"]]) > 0 or \
+        len([i for i in mars["fenyszogek"]["kvadrat"]]) > 0:
+        print("Mars támadva")
+        return "célkijelölő"
+    else:
+        return "megvalósító"
+
+
+
+

@@ -35,6 +35,8 @@ def hazhoz_bolygok_rendelese(hazak, bolygok):
 
     for haz in hazak:
         for bolygo in bolygok:
+            # if bolygo["bolygo"].nevID == "asc" or "mc":
+            #     continue
             if haz["haz"] == bolygo["hazszam"]["haz"]:
                 haz["bolygok"].append(bolygo)
 
@@ -46,6 +48,9 @@ def bolygohoz_haz_rendeles(hazak, bolygok):
     hazak.append(ujhaz)
 
     for bolygo in bolygok:
+        # if bolygo["bolygo"].nevID == "asc" or "mc":
+        #     continue todo
+
         for hazszam, haz in enumerate(hazak):
             # todo ellenorizni mi van akkor ha a 12. hazbol atmegy az 1 es hazba
             if haz["haz"].tipus == "sarok" and bolygo["osszfokszam"] + 5 < hazak[hazszam + 1]["osszfokszam"]:
@@ -66,28 +71,33 @@ def bolygohoz_haz_rendeles(hazak, bolygok):
 
 def fokszamhozzarendeles(adatok):
     bolygojegyben_adatok = [adatok.nap, adatok.hold_j, adatok.merkur_j, adatok.venusz_j, adatok.mars_j, adatok.jupiter_j,
-                            adatok.szaturnusz_j,
-                            adatok.uranusz_j, adatok.neptun_j, adatok.pluto_j]
+                            adatok.szaturnusz_j,adatok.uranusz_j, adatok.neptun_j, adatok.pluto_j,
+                            adatok.asc_j, adatok.mc_j
+                            ]
 
     hazjegyben_adatok = [adatok.haz_1, adatok.haz_2, adatok.haz_3, adatok.haz_4, adatok.haz_5, adatok.haz_6,
                          adatok.haz_7,
                          adatok.haz_8, adatok.haz_9, adatok.haz_10, adatok.haz_11, adatok.haz_12]
-
+    print("..............", adatok.fokszamok)
     # bolygok, hazak = {}, {} # egy regi otlet
     bolygok, hazak = [], []
-    printd(bolygojegyben_adatok, problema=fokszamhozzarendeles.__name__)
-    printd(adatok.fokszamok, problema=fokszamhozzarendeles.__name__)
-    for analogia in list(
-            zip(['nap', 'hold', 'merkur', 'venusz', 'mars', 'jupiter', 'szaturnusz', 'uranusz', 'neptun', 'pluto'],
-                bolygojegyben_adatok)):
-        printd(analogia[1].jegy, problema=fokszamhozzarendeles.__name__)
-        printd(analogia[1].bolygo, problema=fokszamhozzarendeles.__name__)
-        # print("fokszamok", adatok.fokszamok)
-        # print("fokszamok", analogia[0])
-        # print(adatok.fokszamok[analogia[0]])
+    # printd(bolygojegyben_adatok, problema=fokszamhozzarendeles.__name__)
+    # printd(adatok.fokszamok, problema=fokszamhozzarendeles.__name__)
 
-        bolygok.append(
-            {"jegy": analogia[1].jegy, "bolygo": analogia[1].bolygo, "fokszam": adatok.fokszamok[analogia[0]]})
+    for bolygonev, bj_obj in zip(['nap', 'hold', 'merkur', 'venusz', 'mars', 'jupiter', 'szaturnusz',
+                 'uranusz', 'neptun', 'pluto', "asc", "mc"], bolygojegyben_adatok):
+        # printd(bj_obj.jegy, problema=fokszamhozzarendeles.__name__)
+        # printd(bj_obj.bolygo, problema=fokszamhozzarendeles.__name__)
+        # print("fokszamok", adatok.fokszamok)
+        if bolygonev == "asc":
+            bolygok.append(
+                {"jegy": bj_obj.jegy, "bolygo": bj_obj.bolygo, "fokszam": adatok.fokszamok["1"]})
+        elif bolygonev == "mc":
+            bolygok.append(
+                {"jegy": bj_obj.jegy, "bolygo": bj_obj.bolygo, "fokszam": adatok.fokszamok["10"]})
+        else:
+            bolygok.append(
+                {"jegy": bj_obj.jegy, "bolygo": bj_obj.bolygo, "fokszam": adatok.fokszamok[bolygonev]})
 
     for analogia in list(
             zip(['haz1', 'haz2', 'haz3', 'haz4', 'haz5', 'haz6', 'haz7', 'haz8', 'haz9', 'haz10', 'haz11', 'haz12'],

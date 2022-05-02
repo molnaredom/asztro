@@ -16,7 +16,7 @@ def horoszkop(request, id):
     for i in hazakUraHazakban:
         i.tulajdonsagok = i.tulajdonsagok["analogiak"][2:-2].split("', '")
 
-        print(type(i.tulajdonsagok), i.tulajdonsagok)
+        # print(type(i.tulajdonsagok), i.tulajdonsagok)
     #
     # # print(analogia.fokszamok)
     # if "analogiak" not in horoszkop_obj.fokszamok:

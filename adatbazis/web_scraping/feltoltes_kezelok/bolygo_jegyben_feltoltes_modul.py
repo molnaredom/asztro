@@ -27,7 +27,7 @@ def bolygojegyben_feltoltes(web,feltoltendo, kezdobolygoszam, kezdojegyszam , do
 
     time.sleep(1)
 
-    bolygok = kisegito.get_bolygo_nevek()
+    bolygok = kisegito.get_bolygo_nevek(fotengelyekkel=True)
     jegyek = kisegito.get_jegy_nevek()
 
     for bolygoszam, bolygonev in enumerate(bolygok, kezdobolygoszam):

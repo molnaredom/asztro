@@ -6,9 +6,9 @@ from .hozzarendelesek import *
 
 
 def _elemzes(adatok, osszesjegy, hazakUraHazakban):
-
+    # print(111)
     bolygok, hazak, pontos_kor = uj_alapanalogiak_hozzarendelese(adatok)
-    [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
+    # [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
 
     return eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor)
 
@@ -27,6 +27,8 @@ def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy,
     hyleg_res = hyleg(bolygok)
     eredmeny["hyleg"] = hyleg_res
     eredmeny["anareta"] = anareta(hyleg_res, bolygok)
+    eredmeny["megval_vagy_celkij"] = megval_vagy_celkij(bolygok, hazak)
+
 
     return eredmeny
 
@@ -36,6 +38,8 @@ def uj_alapanalogiak_hozzarendelese(adatok):
     bolygok, hazak = fokszamhozzarendeles(adatok)
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
     bolygok = bolygohoz_haz_rendeles(hazak, bolygok)  # megmondja egy bolygo milyen hazban van
+    # todo asc hez és mchez nem kell hazat randelni
+    # todo rekurziot kivenni
     bolygok = hazhoz_bolygok_rendelese(hazak, bolygok)  # megmondja egy_egy hazban milyen bolygok vannak
     bolygok = fenyszog_hozzarendeles(bolygok)
     hazura_melyik_hazaban(hazak, bolygok)

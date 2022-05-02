@@ -18,7 +18,7 @@ def createHoroszkopGyors(request):
         form = HoroszkopFormGyors(request.POST)
         if form.is_valid():
             obj = form.save(commit=False)
-
+            # print(1)
             obj = set_bolygo_es_haz_objektumok(obj)
             print(f'ASC-{obj.haz_1_id=}')
             obj.save()
@@ -130,7 +130,6 @@ def set_bolygo_es_haz_objektumok(obj):
 
     obj.fokszamok = get_fokszamok(horoszkop_alap)
 
-
     #haz jegyben
     obj.haz_1_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][1]["jegy"], haz=str(1))
     obj.haz_2_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][2]["jegy"], haz=str(2))
@@ -144,9 +143,9 @@ def set_bolygo_es_haz_objektumok(obj):
     obj.haz_10_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][10]["jegy"], haz=str(10))
     obj.haz_11_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][11]["jegy"], haz=str(11))
     obj.haz_12_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][12]["jegy"], haz=str(12))
-
-    # bolygo jegyben
-    print("-------",horoszkop_alap["bolygok"][bolygo_nevek[0]]["jegy"])
+    # bolygo
+    # jegyben
+    # print("-------",horoszkop_alap["bolygok"][bolygo_nevek[0]]["jegy"])
     obj.nap_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[0]]["jegy"], bolygo=bolygo_nevek[0])
     obj.hold_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[1]]["jegy"], bolygo=bolygo_nevek[1])
     obj.merkur_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[2]]["jegy"], bolygo=bolygo_nevek[2])
@@ -157,13 +156,15 @@ def set_bolygo_es_haz_objektumok(obj):
     obj.uranusz_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[7]]["jegy"], bolygo=bolygo_nevek[7])
     obj.neptun_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[8]]["jegy"], bolygo=bolygo_nevek[8])
     obj.pluto_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[9]]["jegy"], bolygo=bolygo_nevek[9])
-
+    # főtengelyek bolygóként
+    obj.asc_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][1]["jegy"], bolygo="asc")
+    obj.mc_j_id = get_id_to_horoszkopalapadat(jegy=horoszkop_alap["hazak"][10]["jegy"], bolygo="mc")
     # bolygo hazban
     bolygok, hazak = fokszamhozzarendeles(obj,horoszkop_alap)
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
 
     bolygok, hazak = bolygohoz_haz_rendeles(bolygok, hazak)
-    print(f"{str(hazak[0]['haz'])}")
+    # print(f"{str(hazak[0]['haz'])}")
     obj.nap_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[0]["hazszam"]["haz"]), bolygo=bolygo_nevek[0])
     obj.hold_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[1]["hazszam"]["haz"]), bolygo=bolygo_nevek[1])
     obj.merkur_h_id = get_id_to_horoszkopalapadat(haz=str(bolygok[2]["hazszam"]["haz"]), bolygo=bolygo_nevek[2])

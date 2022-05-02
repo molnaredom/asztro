@@ -1,6 +1,12 @@
 
-def get_bolygo_nevek():
-    return ["nap", "hold", "merkúr", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun", "pluto"]
+def get_bolygo_nevek(fotengelyekkel = False):
+
+    if fotengelyekkel:
+        return ["nap", "hold", "merkúr", "vénusz", "mars",
+                "jupiter", "szaturnusz", "uránusz", "neptun", "pluto",
+                "asc", "mc"]
+    else:  # főtengelyek nélkül a bolygók
+        return ["nap", "hold", "merkúr", "vénusz", "mars", "jupiter", "szaturnusz", "uránusz", "neptun", "pluto"]
 
 
 def get_jegy_nevek():
@@ -29,6 +35,12 @@ def bolygo_to_num(bolygo):
         return 9
     elif bolygo == "pluto":
         return 10
+    # főtengelyek
+    elif bolygo == "asc":
+        return 11
+    elif bolygo == "mc":
+        return 12
+
     else:
         raise Exception
 
