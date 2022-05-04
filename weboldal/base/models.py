@@ -201,12 +201,13 @@ class Quiz(models.Model):
     desc = models.CharField(max_length=500)
     number_of_questions = models.IntegerField(default=1)
     time = models.IntegerField(help_text="A kvíz hossza másodpercben", default="1")
+    valaszlehetosegek_szama = models.IntegerField( default=2)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     def get_questions(self):
-        print(Quiz.__name__, f"{self.question_set.all()=}")
+        print(Quiz.__name__)
         return self.question_set.all()
 
 

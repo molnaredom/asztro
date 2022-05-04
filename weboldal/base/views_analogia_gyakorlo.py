@@ -12,10 +12,19 @@ def index(request):
     Quiz.objects.all().delete()
 
     kvizkeszito(
-        ido=30,
+        ido=60,
         kerdesszam=3,
-        kviznev="Mindig csak ez az 1 kviz van",
-        leiras="jo kviz lesz"
+        kviznev="Könnyű Bolygó a Jegyben gyakorló teszt",
+        leiras="Válaszd ki az analógiához tartozó Bolgó Jegyben analógiát",
+        valaszlehetosegek_szama=3
+    )
+
+    kvizkeszito(
+        ido=60,
+        kerdesszam=6,
+        kviznev="Nehéz Bolygó a Jegyben gyakorló teszt",
+        leiras="Válaszd ki az analógiához tartozó Bolgó Jegyben analógiátjo kviz lesz",
+        valaszlehetosegek_szama=4
     )
 
     para = {'quiz': Quiz.objects.all()}
@@ -29,15 +38,19 @@ def quiz(request, myid):
 
 
 def quiz_data_view(request, myid):
-    quiz = Quiz.objects.get(id=myid)
+    start = datetime.datetime.now()
 
+    quiz = Quiz.objects.get(id=myid)
     # korabbi kerdesek torlese
     for q in quiz.get_questions():
         q.delete()
 
     print(quiz_data_view.__name__, f"{quiz=}")
 
-    kerdesek_hozzaadasa(kerdesszam=3, quiz=quiz)
+    kerdesek_hozzaadasa(kerdesszam=quiz.number_of_questions,
+                        quiz=quiz,
+                        valasz_lehetosegek_szama_per_kerdes=quiz.valaszlehetosegek_szama)
+
 
     questions = []
     for q in quiz.get_questions():  # a kviz objektumnak van egy get questions metodusa
@@ -46,6 +59,8 @@ def quiz_data_view(request, myid):
             answers.append(a.content)
         questions.append({str(q): answers})
 
+    end = datetime.datetime.now()
+    print("DURATION:::", end - start)
     return JsonResponse({
         'data': questions,
         'time': quiz.time,
@@ -139,7 +154,7 @@ def kerdesbank_keszito(bolygojegyben=False, bolygohazban=False, hazurahazban=Fal
     return kerdesbank
 
 
-def kvizkeszito(ido=10, kerdesszam=0, kviznev="", leiras=""):
+def kvizkeszito(ido=10, kerdesszam=0, kviznev="", leiras="", valaszlehetosegek_szama=2):
 
     form = QuizForm()
     quiz = form.save(commit=False)
@@ -147,23 +162,26 @@ def kvizkeszito(ido=10, kerdesszam=0, kviznev="", leiras=""):
     quiz.number_of_questions = kerdesszam
     quiz.name = kviznev
     quiz.desc = leiras
+    quiz.valaszlehetosegek_szama = valaszlehetosegek_szama
     quiz.save()
     print("KVIZ ELMENTVE")
 
 
-
-def kerdesek_hozzaadasa(kerdesszam, quiz):
-    valasz_lehetosegek_szama_per_kerdes = 3
+def kerdesek_hozzaadasa(kerdesszam, quiz, valasz_lehetosegek_szama_per_kerdes):
     kerdesbank = kerdesbank_keszito(bolygojegyben=True)
+    start = datetime.datetime.now()
     for _ in range(kerdesszam):
+
         kerdes_szoveg, valaszlehetosegek = random_kerdes_generalas(kerdesbank, valasz_lehetosegek_szama_per_kerdes)
+
 
         kerdes_hozzaadas(
             kerdes_szoveg=kerdes_szoveg,
             kviz=quiz,
             valaszlehetosegek=valaszlehetosegek
         )
-
+        end = datetime.datetime.now()
+    print("1 kérdés ideje=", end-start)
 
 def random_kerdes_generalas(kerdesbank,valasz_lehetosegek_szama_per_kerdes):
     """
@@ -173,9 +191,11 @@ def random_kerdes_generalas(kerdesbank,valasz_lehetosegek_szama_per_kerdes):
     def randomszam(mennyi):
         return random.randint(0, mennyi)
 
-    print("összes bolygó jegyben analógia: ", len(kerdesbank))
+    # print("összes bolygó jegyben analógia: ", len(kerdesbank))
     osszes_valaszlehetoseg = set()
     uj_kerdesbank = []
+
+    #todo nagyon nagy teljesitmenyido, nem tudjuk megvarni
     for i in kerdesbank:
         for bj_nev,bj_tul_ok in i.items():
             if sum([len(k) for k in bj_tul_ok.values()]) >= 1:
@@ -184,19 +204,19 @@ def random_kerdes_generalas(kerdesbank,valasz_lehetosegek_szama_per_kerdes):
                     for tulajdonsag_kerdes in tul_leiras_ok:
                         uj_kerdesbank.append({f"{szempont}: {tulajdonsag_kerdes}": bj_nev})
 
-    print("\nfennmaradó bj analógia: ",len(uj_kerdesbank))
+    # print("\nfennmaradó bj analógia: ",len(uj_kerdesbank))
     osszes_valaszlehetoseg= list(osszes_valaszlehetoseg)
-    print(len(osszes_valaszlehetoseg), osszes_valaszlehetoseg)
+    # print(len(osszes_valaszlehetoseg), osszes_valaszlehetoseg)
 
     feltett_kerdes_alapanyag = uj_kerdesbank[randomszam(len(uj_kerdesbank))]
 
-    kerdes_szoveg = str(feltett_kerdes_alapanyag)
+    kerdes_szoveg = str(list(feltett_kerdes_alapanyag.keys())[0])
 
     valaszlehetosegek = valaszlehetosegek_hozzaadasa(osszes_valaszlehetoseg, feltett_kerdes_alapanyag, randomszam,
                                  valasz_lehetosegek_szama_per_kerdes)
 
-    print("talajdonsagok:", kerdes_szoveg)
-    print("/////",valaszlehetosegek)
+    # print("talajdonsagok:", kerdes_szoveg)
+    # print("/////",valaszlehetosegek)
 
     return kerdes_szoveg, valaszlehetosegek
 
@@ -204,15 +224,17 @@ def random_kerdes_generalas(kerdesbank,valasz_lehetosegek_szama_per_kerdes):
 def valaszlehetosegek_hozzaadasa(osszes_valaszlehetoseg, random_analogia, randomszam,
                                  valasz_lehetosegek_szama_per_kerdes):
     # helyes válasz
-    valaszlehetosegek = [{"szoveg": str(random_analogia.values().__str__()), "igazsagertek": True}]
-
+    valaszlehetosegek = [{"szoveg": str(list(random_analogia.values())[0]), "igazsagertek": True}]
     # helytelen válaszok
+    osszes_valaszlehetoseg.remove(valaszlehetosegek[0]["szoveg"])
     while len(valaszlehetosegek) < valasz_lehetosegek_szama_per_kerdes:
-        rossz_valasz = osszes_valaszlehetoseg[randomszam(len(osszes_valaszlehetoseg))]
-
+        print(len(osszes_valaszlehetoseg))
+        rossz_valasz = osszes_valaszlehetoseg[randomszam(len(osszes_valaszlehetoseg)-1)]
         # ha a rossz valasz != jó válasz
-        if rossz_valasz not in valaszlehetosegek:
-            valaszlehetosegek.append({"szoveg": rossz_valasz, "igazsagertek": False})
+        osszes_valaszlehetoseg.remove(rossz_valasz)
+        valaszlehetosegek.append({"szoveg": rossz_valasz, "igazsagertek": False})
+
+    random.shuffle(valaszlehetosegek)
 
     return valaszlehetosegek
 
