@@ -96,9 +96,9 @@ felhasznalokezeles = [
 
 gyakorlo = [
     path("gyakorlo/", views_analogia_gyakorlo.index, name="index"),
-    path("<int:myid>/", views_analogia_gyakorlo.quiz, name="quiz"),
-    path('<int:myid>/data/', views_analogia_gyakorlo.quiz_data_view, name='quiz-data'),
-    path('<int:myid>/save/', views_analogia_gyakorlo.save_quiz_view, name='quiz-save'),
+    path("gyakorlo/<int:myid>/", views_analogia_gyakorlo.quiz, name="quiz"),
+    path('gyakorlo/<int:myid>/data/', views_analogia_gyakorlo.quiz_data_view, name='quiz-data'),
+    path('gyakorlo/<int:myid>/save/', views_analogia_gyakorlo.save_quiz_view, name='quiz-save'),
 
     path('add_quiz/', views_analogia_gyakorlo.add_quiz, name='add_quiz'),
     path('add_question/', views_analogia_gyakorlo.add_question, name='add_question'),
