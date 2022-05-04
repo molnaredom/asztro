@@ -1,9 +1,11 @@
-# ez az apphoz van
 from django.urls import path
 
-from .views_module import horoscope_creator, views_deleters, views, views_creators, views_analogiatarolok, \
-    views_horoszkop_elemzes, views_konkret_analogia, views_updaters
+from .views_module import horoscope_creator, views_deleters, views, views_creators, views, \
+    views_horoszkop_elemzes, views_konkret_analogia, views_updaters, views_analogiatarolok
+from . import views_analogia_gyakorlo
 from .ml_oldal import ml
+
+
 
 egyedi_oldalak = [
     path("titkos-szoba/", views.titkosSzoba, name="titkos-szoba"),
@@ -91,21 +93,31 @@ felhasznalokezeles = [
     path("register", views.registerPage, name="register"),
 ]
 
-from django.urls import path
-from . import views
 
 gyakorlo = [
-    path("gyakorlo/", views.index, name="index"),
-    path("<int:myid>/", views.quiz, name="quiz"),
-    path('<int:myid>/data/', views.quiz_data_view, name='quiz-data'),
-    path('<int:myid>/save/', views.save_quiz_view, name='quiz-save'),
+    path("gyakorlo/", views_analogia_gyakorlo.index, name="index"),
+    path("<int:myid>/", views_analogia_gyakorlo.quiz, name="quiz"),
+    path('<int:myid>/data/', views_analogia_gyakorlo.quiz_data_view, name='quiz-data'),
+    path('<int:myid>/save/', views_analogia_gyakorlo.save_quiz_view, name='quiz-save'),
 
-    path('add_quiz/', views.add_quiz, name='add_quiz'),
-    path('add_question/', views.add_question, name='add_question'),
-    path('add_options/<int:myid>/', views.add_options, name='add_options'),
-    path('results/', views.results, name='results'),
-    path('delete_question/<int:myid>/', views.delete_question, name='delete_question'),
-    path('delete_result/<int:myid>/', views.delete_result, name='delete_result'),
+    path('add_quiz/', views_analogia_gyakorlo.add_quiz, name='add_quiz'),
+    path('add_question/', views_analogia_gyakorlo.add_question, name='add_question'),
+    path('add_options/<int:myid>/', views_analogia_gyakorlo.add_options, name='add_options'),
+    path('results/', views_analogia_gyakorlo.results, name='results'),
+    path('delete_question/<int:myid>/', views_analogia_gyakorlo.delete_question, name='delete_question'),
+    path('delete_result/<int:myid>/', views_analogia_gyakorlo.delete_result, name='delete_result'),
+]
+
+fogalmak = [
+    path('fogalmak/sorstipus/', views.sorstipus, name='sorstipus'),
+    path('fogalmak/hazak_urai/', views.hazak_urai, name='hazak_urai'),
+    path('fogalmak/anareta/', views.anareta, name='anareta'),
+    path('fogalmak/eletciklusok/', views.eletciklusok, name='eletciklusok'),
+    path('fogalmak/celkij_vagy_megval/', views.celkij_vagy_megval, name='celkij_vagy_megval'),
+    path('fogalmak/felosztasok/', views.felosztasok, name='felosztasok'),
+    path('fogalmak/serulte_naphold/', views.serulte_naphold, name='serulte_naphold'),
+    path('fogalmak/hyleg/', views.hyleg, name='hyleg'),
+
 ]
 
 urlpatterns = []
@@ -120,6 +132,7 @@ urlpatterns += updaterek
 urlpatterns += machine_learning
 urlpatterns += egyedi_oldalak
 urlpatterns += gyakorlo
+urlpatterns += fogalmak
 
 
 

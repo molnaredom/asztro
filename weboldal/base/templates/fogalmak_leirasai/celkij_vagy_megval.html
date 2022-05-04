@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Célkijelölő vagy megvalósító</h1>
+
+<h3>Kiszámítása</h3>
+
+<p>
+    Pontozási rendszer alapján:
+    Célkijelölő +1 pont ha  az ASC támava van oppozicióval vagy kvadráttal
+    Célkijelölő +1 pont ha az ASC-nek van ura
+
+    Megvalósító +1 pont ha az MC támava van oppozicióval vagy kvadráttal
+    Megvalósító +1 pont ha az ASC-nek van ura
+
+    Amennyiben egyenlő a pontszám, a Mars fog dönteni:
+    - Ha a mars támadva van oppozícióval vagy kvadráttal Célkijelölő lesz
+</p>
+{% endblock content %}

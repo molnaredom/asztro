@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from ..models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2 ,BolygoHazban2, BolygoJegyben2, HazJegyben2
+from ..models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2, BolygoHazban2, BolygoJegyben2, HazJegyben2
 from django.contrib.auth.models import User
 from ..forms import RoomForm, AnalogiaForm
 from django.contrib.auth import authenticate, login, logout
@@ -13,29 +13,61 @@ def home(request):
     return render(request, 'base/kezdolap.html', {})
 
 
+def sorstipus(request):
+    return render(request, 'fogalmak_leirasai/sorstipus.html', {})
+
+
+def anareta(request):
+    return render(request, 'fogalmak_leirasai/anareta.html', {})
+
+
+def celkij_vagy_megval(request):
+    return render(request, 'fogalmak_leirasai/celkij_vagy_megval.html', {})
+
+
+def eletciklusok(request):
+    return render(request, 'fogalmak_leirasai/eletciklusok.html', {})
+
+
+def felosztasok(request):
+    return render(request, 'fogalmak_leirasai/felosztasok.html', {})
+
+
+def hazak_urai(request):
+    return render(request, 'fogalmak_leirasai/hazak_urai.html', {})
+
+
+def serulte_naphold(request):
+    return render(request, 'fogalmak_leirasai/serulte_nap_hold.html', {})
+
+
+def hyleg(request):
+    return render(request, 'fogalmak_leirasai/hyleg.html', {})
+
+
 def room(request, pk):
     room = Room2.objects.get(id=pk)
-    room_messages = room.message_set.all().order_by('-created') # give us a set of messages that are related specific rooms
+    room_messages = room.message_set.all().order_by(
+        '-created')  # give us a set of messages that are related specific rooms
     participants = room.participants.all()
 
     if request.method == 'POST':
         message = Message2.objects.create(
-            user = request.user,
-            room = room,
-            body = request.POST.get("body"),
+            user=request.user,
+            room=room,
+            body=request.POST.get("body"),
         )
         room.participants.add(request.user)
 
         return redirect('room', pk=room.id)
 
     context = {"room": room, "messages": room_messages, 'participants': participants}
-    return render(request, "base/room.html",context)
-
+    return render(request, "base/room.html", context)
 
 
 @login_required(login_url="login")
-def updateRoom( request, pk):
-    room = Room2.objects.get(id= pk)
+def updateRoom(request, pk):
+    room = Room2.objects.get(id=pk)
     form = RoomForm(instance=room)
 
     if request.user != room.host:
@@ -51,10 +83,7 @@ def updateRoom( request, pk):
     return render(request, "base/room_form.html", context)
 
 
-
-
 def loginPage(request):
-
     page = 'login'
 
     if request.user.is_authenticated:
@@ -66,9 +95,9 @@ def loginPage(request):
         try:
             user = User.objects.get(username=username)
         except:
-            messages.error(request , "HIBA: A felhsználó még nem létezik")
+            messages.error(request, "HIBA: A felhsználó még nem létezik")
 
-        user = authenticate(request, username= username, password= password) # hitelesito adatok
+        user = authenticate(request, username=username, password=password)  # hitelesito adatok
 
         if user is not None:
             login(request, user)
@@ -103,7 +132,6 @@ def registerPage(request):
 
 
 def analogia_adatbazis(request):
-
     context = {}
     return render(request, 'base/analogia_adatbazis.html', context)
 
@@ -118,6 +146,3 @@ def rolunk(request):
 
 def fejlesztes_alatt(request):
     return render(request, "base/fejlesztes_alatt.html", {})
-
-
-

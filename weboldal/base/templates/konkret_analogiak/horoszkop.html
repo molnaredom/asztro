@@ -158,7 +158,7 @@
     </div>
 
     <div class="topnav">
-        <!--    <a href="#">Link</a>-->
+        <a href="/fejlesztes_alatt">Szolár elemzés</a>
         <!--    <a href="#">Link</a>-->
         <!--    <a href="#">Link</a>-->
         <!--    <a href="#" style="float:right">Link</a>-->
@@ -167,56 +167,47 @@
     <div class="row">
         <div class="leftcolumnsmall">
             <div class="card">
-                <h2>Horoszkóp leírás</h2>
+                <h2>Horoszkóp elemzés</h2>
                 <h5>Születési idő: {{ analogia.idopont }}</h5>
                 <p>{{ analogia.leiras }}</p>
                 Neme: {{ analogia.neme }}
                 <hr>
                 <h3>Munkái:</h3>
-                {{ analogia.munka }}
+                {% for i in analogia.munka %}
+                <li>{{ i }}</li>
+                 {% endfor %}
                 <hr>
 
-                <h3>Felosztások</h3>
-                {% for szempont, eredmenyek in elemzes.alapszamolasok.items %}
-
-                    <h4>{{ szempont }}</h4>
-                    {% for analogia, ertek in eredmenyek.items %}
-                        {{ analogia }} : {{ ertek }} pont <br>
-
-                    {% endfor %}
-
-                {% endfor %}
-                <hr>
 
                 <h3>Pontos életkor</h3>
                 {{ elemzes.pontoskor }}
                 <hr>
 
-                <h3>Életciklus</h3>
+                <h3><a href="{% url 'eletciklusok' %}">Életciklus</a></h3>
                 {{ elemzes.eletciklus }}
                 <hr>
 
-                <h3>Sorstípus</h3>
+                <h3><a href="{% url 'sorstipus' %}">Sorstípus</a> </h3>
                 {{ elemzes.sorstipus }}
                 <hr>
 
-                <h3>Célkijelölő vagy megvalósító</h3>
+                <h3><a href="{% url 'celkij_vagy_megval' %}">Célkijelölő vagy megvalósító</a></h3>
                 {{ elemzes.megval_vagy_celkij }}
                 <hr>
 
-                <h3>Sérült-e a Nap/Hold</h3>
+                <h3><a href="{% url 'serulte_naphold' %}">Sérült-e a Nap/Hold</a></h3>
                 {{ elemzes.serult_e_nap }} <p></p>
                 {{ elemzes.serult_e_hold }}
                 <hr>
-                <h3>Hyleg</h3>
+                <h3><a href="{% url 'hyleg' %}">Hyleg</a></h3>
                 {{ elemzes.hyleg }} <p></p>
                 <hr>
 
-                <h3>Anaréta</h3>
+                <h3><a href="{% url 'anareta' %}">Anaréta</a></h3>
                 {{ elemzes.anareta }} <p></p>
                 <hr>
 
-                <h3>Házak Urai</h3>
+                <h3><a href="{% url 'hazak_urai' %}">Házak urai Házakban</a></h3>
 
                 {% for hazurahazban in elemzes.hazakurai %}
                     {% for hazuranev, hazura_value in hazurahazban.items %}
@@ -231,6 +222,17 @@
                     {% endfor %}
                 {% endfor %}
 
+                <h3><a href="{% url 'felosztasok' %}">Felosztások</a></h3>
+                {% for szempont, eredmenyek in elemzes.alapszamolasok.items %}
+
+                    <h4>{{ szempont }}</h4>
+                    {% for analogia, ertek in eredmenyek.items %}
+                        {{ analogia }} : {{ ertek }} pont <br>
+
+                    {% endfor %}
+
+                {% endfor %}
+                <hr>
                 <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
 
             </div>
@@ -251,8 +253,6 @@
                 <p><a href="{% url 'bolygoHazban' analogia.uranusz_h.id %}">{{ analogia.uranusz_h }}</a></p>
                 <p><a href="{% url 'bolygoHazban' analogia.neptun_h.id %}">{{ analogia.neptun_h }}</a></p>
                 <p><a href="{% url 'bolygoHazban' analogia.pluto_h.id %}">{{ analogia.pluto_h }}</a></p>
-
-
                 <hr>
             </div>
             <div class="card">
@@ -265,9 +265,9 @@
                 <p><a href="{% url 'bolygoJegyben' analogia.mars_j.id %}">{{ analogia.mars_j }}</a></p>
                 <p><a href="{% url 'bolygoJegyben' analogia.jupiter_j.id %}">{{ analogia.jupiter_j }}</a></p>
                 <p><a href="{% url 'bolygoJegyben' analogia.szaturnusz_j.id %}">{{ analogia.szaturnusz_j }}</a></p>
-                <p><a href="{% url 'bolygoJegyben' analogia.uranusz_j.id %}">{{ analogia.uranusz_j }}</a></p>
-                <p><a href="{% url 'bolygoJegyben' analogia.neptun_j.id %}">{{ analogia.neptun_j }}</a></p>
-                <p><a href="{% url 'bolygoJegyben' analogia.pluto_j.id %}">{{ analogia.pluto_j }}</a></p>
+                {#                <p><a href="{% url 'bolygoJegyben' analogia.uranusz_j.id %}">{{ analogia.uranusz_j }}</a></p>#}
+                {#                <p><a href="{% url 'bolygoJegyben' analogia.neptun_j.id %}">{{ analogia.neptun_j }}</a></p>#}
+                {#                <p><a href="{% url 'bolygoJegyben' analogia.pluto_j.id %}">{{ analogia.pluto_j }}</a></p>#}
                 <hr>
             </div>
 
