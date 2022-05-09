@@ -1,5 +1,4 @@
-# Asztroprogram 2.3.0 Szakdolgozat 1. félév
-https://asztro.herokuapp.com/horoszkop_gyujtemeny
+# Asztroprogram 2.3.1 Szakdolgozat 1. félév
 
 ## Mi az asztrológia?
 - Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, amire különböző szimbólumokat helyezve, különböző következtetésekre juthatunk.
@@ -53,9 +52,18 @@ https://asztro.herokuapp.com/horoszkop_gyujtemeny
   - Majd ezeket a halmazokat összegezve különböző munkákra mondanánk valószínűségi esélyeket
   - Ugyanúgy ellenőrizni lehetne mennyire értékel jól a program egy n+1 emberen
 
-### Program indítása
+## Program indítása
+
+### Dockerrel:
+- Docker repository: 
+`https://hub.docker.com/repository/docker/edom8466/asztro`
+- Parancs: 
+``docker run --name asztro_local -d -p http://127.0.0.1:8006:8000 asztro:latest``
+- Indítás:
+  - Böngészőbe másolni: `http://127.0.0.1:8006`
+### Githubról:
 ```
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 cd .\weboldal\
 python3 .\manage.py makemigrations base
 python3 .\manage.py migrate
