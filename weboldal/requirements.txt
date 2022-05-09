@@ -7,4 +7,3 @@ setuptools
 six
 certifi
 urllib3
-django-crispy-forms
