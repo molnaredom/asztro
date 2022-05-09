@@ -21,7 +21,7 @@ def index(request):
 
     kvizkeszito(
         ido=60,
-        kerdesszam=6,
+        kerdesszam=5,
         kviznev="Nehéz Bolygó a Jegyben gyakorló teszt",
         leiras="Válaszd ki az analógiához tartozó Bolgó Jegyben analógiátjo kviz lesz",
         valaszlehetosegek_szama=4
@@ -169,19 +169,19 @@ def kvizkeszito(ido=10, kerdesszam=0, kviznev="", leiras="", valaszlehetosegek_s
 
 def kerdesek_hozzaadasa(kerdesszam, quiz, valasz_lehetosegek_szama_per_kerdes):
     kerdesbank = kerdesbank_keszito(bolygojegyben=True)
-    start = datetime.datetime.now()
-    for _ in range(kerdesszam):
 
+    for _ in range(kerdesszam):
+        start = datetime.datetime.now()
         kerdes_szoveg, valaszlehetosegek = random_kerdes_generalas(kerdesbank, valasz_lehetosegek_szama_per_kerdes)
 
-
+        start = datetime.datetime.now()
         kerdes_hozzaadas(
             kerdes_szoveg=kerdes_szoveg,
             kviz=quiz,
             valaszlehetosegek=valaszlehetosegek
         )
         end = datetime.datetime.now()
-    print("1 kérdés ideje=", end-start)
+        print("---ido: ", end - start)
 
 def random_kerdes_generalas(kerdesbank,valasz_lehetosegek_szama_per_kerdes):
     """
@@ -194,8 +194,6 @@ def random_kerdes_generalas(kerdesbank,valasz_lehetosegek_szama_per_kerdes):
     # print("összes bolygó jegyben analógia: ", len(kerdesbank))
     osszes_valaszlehetoseg = set()
     uj_kerdesbank = []
-
-    #todo nagyon nagy teljesitmenyido, nem tudjuk megvarni
     for i in kerdesbank:
         for bj_nev,bj_tul_ok in i.items():
             if sum([len(k) for k in bj_tul_ok.values()]) >= 1:
@@ -203,6 +201,7 @@ def random_kerdes_generalas(kerdesbank,valasz_lehetosegek_szama_per_kerdes):
                 for szempont,tul_leiras_ok in bj_tul_ok.items():
                     for tulajdonsag_kerdes in tul_leiras_ok:
                         uj_kerdesbank.append({f"{szempont}: {tulajdonsag_kerdes}": bj_nev})
+
 
     # print("\nfennmaradó bj analógia: ",len(uj_kerdesbank))
     osszes_valaszlehetoseg= list(osszes_valaszlehetoseg)

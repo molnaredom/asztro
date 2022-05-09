@@ -28,19 +28,25 @@
 
 <body>
 
-
     <div class="container">
         <button type="button" class="start btn btn-outline-primary btn-lg start-button mt-3">Kattints ide a kvíz kezdéséhez</button>
-        <h1 class="text-danger mt-3">{{quiz.name}} <span class="badge bg-dark timer" id="hide-time">Seconds Left : <span
-                    id="time-left">{{quiz.time}}</span></span> </h1>
+        <h1 class="text-danger mt-3">{{quiz.name}}
+            <span class="badge bg-dark timer" id="hide-time">Maradék idő : <span
+                    id="time-left">{{quiz.time}}</span> mp</span> </h1>
 
         <hr class="nice" style="display: none;">
+        <div style="alignment: left" >
+            Indítás előtt mindig várj 2 másodpercet
+        </div>
         <div>
 
             <form id="quiz-form" class="mt-3 mb-3">
                 {% csrf_token %}
                 <div id="quiz-box"></div>
                 <button type="submit" style="display: none;" id="button1" class="btn btn-success mt-3">Kész vagyok</button>
+                <div style="display: none;">
+                    <p  id="button2" >Ha végeztél tekerj lentebb az eredmények megtekintéséhez</p>
+                </div>
 
             </form>
             <button class="badge bg-dark total" id="total" style="display: none;"></button>
@@ -202,6 +208,7 @@ quizForm.addEventListener('submit', e=>{
         });
         $("#button1").click(function () {
             $(".total").show();
+            $("#button2").show();
             $("#hide-time").hide();
         });
     });
