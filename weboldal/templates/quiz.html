@@ -156,7 +156,7 @@ const sendData = () => {
             quizForm.classList.add('not-visible')
             totalScore.innerHTML = `<h4>Az eredményed : ${response.score} / {{quiz.number_of_questions}} pont
             ${100* (response.score / {{quiz.number_of_questions}})}%
-            </h4>`
+            </h4> Görgess lentebb`
 
 
             marks.forEach(res=>{
@@ -177,10 +177,10 @@ const sendData = () => {
 
                         if (answer == correct) {
                             resDiv.classList.add('bg-success')
-                            resDiv.innerHTML += ` Helyes!: ${answer}`
+                            resDiv.innerHTML += ` | ✅  | Helyes!: ${answer}`
                         } else {
                             resDiv.classList.add('bg-danger')
-                            resDiv.innerHTML += ` | A helyes válasz: ${correct}`
+                            resDiv.innerHTML += ` | ✘ | A helyes válasz: ${correct}`
                             resDiv.innerHTML += ` | De te ezt jelölted: ${answer}`
                         }
                     }
