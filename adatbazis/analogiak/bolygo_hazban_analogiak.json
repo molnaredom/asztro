@@ -29,6 +29,7 @@
     },
     "2": {
       "általános": [
+
         "anyagiak jelennek meg elsősorban",
         "olyan plyafutás, aho anyagiakkal foglalkozik",
         "bróker, bankár, földekkel való foglalkozás",
@@ -110,7 +111,7 @@
         "betegségek: szív, agy, gerinc, szem, idegrendszer , életmód: gyógyítható betegségek",
         "állatokon keresztül nappá válni: pl állattenyésztés/ állatorvos"
       ],
-      "nők": [
+      "nők":[
         "a férjnek szeretője van",
         "mutathatja a pár betegségeit"
       ]
@@ -208,6 +209,7 @@
         "szeretőtől lehet gyereke",
         "nyugdíjasként végzett munka",
         "kórházakban, zárt intézetekben dolgozhat, érhetel sikert",
+
         "írói alkalmatosság",
         "ezoterikus, spirituális tevékenység",
         "törvénnyle való összeütközés",
@@ -227,7 +229,7 @@
         "alapvetően fontos a gondoskodás",
         "nem jó neki a nyilvánosság előtti szereplés"
       ],
-      "nő": [
+      "nő" : [
         "törekszik az érzelmekre, az alárendelődésre"
       ],
       "férfi": [
@@ -235,13 +237,8 @@
         "alárendeltéget, érzelmi kötődést, befogadást jobb ha átadja a nőnek"
       ],
       "hivatás": [
-        "orvos",
-        "vendéglátás",
-        "pszichológus",
-        "erős ezoterikus, spirituális adottságok",
-        "óvónő",
-        "ápolónő",
-        "művészetek"
+        "orvos", "vendéglátás", "pszichológus", "erős ezoterikus, spirituális adottságok",
+        "óvónő","ápolónő","művészetek"
       ]
     },
     "2": {
@@ -259,35 +256,135 @@
         "az anyagiakat nem a saját élvezetére kapja, mégis sokszor erre használja"
       ],
       "hivatás": [
-        "orvos",
-        "vendéglátás",
-        "mérnök",
-        "fodrász"
+        "orvos", "vendéglátás", "mérnök", "fodrász"
       ]
     },
     "3": {
       "általános": [
-        "több "
+        "több testvér, sok testvér",
+        "idősebb lány testvérek",
+        "gondoskodás a testvérekről",
+        "ő gondoskodik a környezetéről, alárendelődik a környezetében",
+        "külföldre való kitelepülés",
+        "sok utazás",
+        "bizonytalanság a közlekedésben",
+        "gyakori balesetek",
+        "tehetség a kommunikációban",
+        "médiával nyilvánossággal való kapcsolat",
+        "érdemes mozgás, és érzékszervekben károsodott emberekkel foglalkozni"
+      ],
+      "munka": [
+        "művészet", "orvos", "mérnök", "vendéglátás", " ápolónő",
+        "tanító, tanár"
       ]
     },
     "4": {
       "általános": [
+        "gyermekkorban nagy család",
+        "többgenerációs otthon",
+        "erős kötődés az apához",
+        "érzelmileg kötődik az otthonához",
+        "korán saját ingatlanra szeretne szert tenni",
+        "sokszor cserélődnek a szerepek, az apám az anyám, az anyám az apám",
+        "több ingatlan birtoklása",
+        "idős korban gondoskodni kell róla"
+      ],
+      "nő": [
+        "a férfi lesz női szerepben, alárendelődik, befogadővá válik"
+      ],
+      "férfi": [
+        "ingatlanipari vállalkozás -> akkor jó ha benne is lakik (hogy érzelmileg kapcsolódjon), költözzön be úgy adja el"
+      ],
+      "munka": [
+        "ingatlanügynök", "mérnök"
+      ],
+      "betegségek": [
+        "nőgyógyászati terüetek", "étrendszer", "tüdő", "izületek(rehuma(folyadék hiányzik))"
       ]
     },
     "5": {
       "általános": [
+        "sok gyerek",
+        "felerősíti a szexualitást",
+        "érzelmileg kötődnek a szerelemben",
+        "szeretik kényeztetni a párjukat ( alkazlmazkodóképes és képes befogadó is lenni érzelmekre)",
+        "művészeti tehetség",
+        "hajlamos illúziók építésére",
+        "vágyhat csládra, otthonra, ingatlanra"
+      ],
+      "férfi": [
+        "idősebb lány pár"
+      ],
+      "nő": [
+        "fiatalabb fiú pár",
+        "legtermékenyebb jelölés - minimum 3 gyerek",
+        "jó szerető",
+        "28 éves kor utáni szülés",
+        "lehet hogy egyedül szüli a gyereket (házasságon, párkapcsolaton kívül)"
+      ],
+      "munka": [
+        "vállalkozási tehetség, ideális ha társul valakivel"
       ]
     },
     "6": {
       "általános": [
+        "megjelenhet munkájában a művészet",
+        "fontos a munkájában, hogy nélkülözhetelennek érezhesse magát",
+        "munkában alárendeltként dolgozik",
+        "munkamániás",
+        "kötődik a munkahelyézez",
+        "a családot szolgálja, alárendelődik nekik",
+        "nem szívesen változtat a dolgokon",
+        "gyógyítható betegségek jelennek meg, amiket sokszor nehezen ismerünk fel",
+        "hipohandria, bebeszél magának betegésgeket",
+        "fonotsak lehetnek neki az állatok, családként bánik az állataival",
+        "munkahelyén kialakulhat neki szeretője"
+      ],
+      "férfi": [
+        "a párjának szeretője van"
       ]
     },
     "7": {
       "általános": [
+        "a pár alárendelt, vagy érzelmileg kötődik",
+        "művészetekkel, művészi adottságokkal kerülsz a nyilvánosság elé",
+        "társulást mutat, ezekben kötődés",
+        "üzleti társulásban te vagy az irányító, a vezető",
+        "lehetnek balesetek",
+        "jogi problémák tyúkperek -> neki nem érdemes pereskedni, mert könnyen veszíthet"
+      ],
+      "férfi": [
+        "neki tökéletes, mivel a párja tökéletesen alá tud rendelődni neki, nő tud lenni mellette",
+        "a nő gyermeket hoz a kapcsolatba",
+        "a párja idősebb lesz"
+      ],
+      "nő": [
+        "a párja fiatalabb lesz",
+        "a párjának már volt párkapcsolata vagy van már családja",
+        "olyan férfit keres, aki gondoskodik róla, ami könnyen korlátozásba mehet át"
       ]
     },
     "8": {
       "általános": [
+        "válás lehetőséege",
+        "otthon vesztése, család vesztés, anya vesztés",
+        "anya minta hárítása, édesanya nem elfogadása",
+        "felerősíti a szexulitást",
+        "sors azért adta, hogy csak akkor feküdj le valakivel ha gyereket akarsz",
+        "a párod gondoskodik rólad anyagiakban",
+        "halál elfogadása",
+        "alvászavar",
+        "problémák az elengedéssel"
+      ],
+      "nő": [
+        "tanácsos nem védekeznie, mert vesztést hoz ha igen"
+      ],
+      "férfi": [
+        "érzelmek hárítása jelenik meg, fél hogy az érzelmek gyengévé teszik"
+      ],
+      "munka": [
+        "ollyan befektetői vállalkozás ahol mások pénzével kerül kapcsolatba", "orvos",
+        "ápolónő", "tűzoltó", "rendőr", "hivatások ahol mások vagyonára vigyázol"
       ]
     },
     "9": {
@@ -308,31 +405,108 @@
     },
     "10": {
       "általános": [
+        "fontos az anyaság, feleség szerep az érzelmek, célként is megjelennek",
+        "gyakran a karrier jelölője",
+        "tehetség a karrierben, a hivatásban",
+        "célokban befogadó tud lenni",
+        "erős kapcsolatot jelöl az anyával",
+        "anya sokszor birtoklóan, érzelmileg zsarolóan viselkedik vele",
+        "az anya művész vagy vagy családból jön",
+        "az anyának kell rólad gondoskodni"
+      ],
+      "nő": [
+        "célom, hogy anya legyek",
+        "nehezített anyaságot jelent, pl egyedül neveli a gyerekét",
+        "lehet, hogy nehéz neki a gyerek nevelés"
+      ],
+      "férfi": [
+        "az anya rácuppanhat -> nehéz a leválás az anyáról",
+        "erős ragaszkodás az anyához"
       ]
     },
     "11": {
       "általános": [
         "vágyaid akkor teljesülnek, ha alárendelődsz, befogadóvá válasz",
         "sok barát, akikkel erős az érzelmi kötődés",
-        "te gondoskodsz a barátaidról"
+        "te gondoskodsz a barátaidról",
+        "fontosak a közösségek pl lakóközösségek, együtt élni másokkal",
+        "édesanya anyagilag gondoskodik róla",
+        "a pár gyereket, hoz a pérkapcsolatotokba",
+        "szerelmi házasság",
+        "hobbik ahol megjelenik: gondoskodás, gyerekek, vizi sportok,  művészeti tevékenységek"
+      ],
+      "nő": [
+        "idősebb női barátok",
+        "fiatalabb férfi kapcsolat",
+        "különleges módon létrejövő anyaság, pl: császár, vagy házasságon kívüli szülés"
+      ],
+      "férfi": [
+        "idősebb női kapcsolatok"
       ]
     },
     "12": {
       "általános": [
+        "le kell mondani az anyaságról, csak mások által lehet anya",
+        "anyaminta hárítása -> az ellenkezőjét teszi, mint amit az anjától látott",
+        "nem akarhat anya, vagy feleség lenni, mert lemondatja a sors róla",
+        "visszavonultan végzett munka (nyugdíjas munka)",
+        "zárt intézetben végzett gondoskodó, elárendelődött munka",
+        "sok betegség",
+        "gyakori kórház látogatás",
+        "gyermek halála"
+      ],
+      "nő" : [
+        "szeretői kapcsolat",
+        "szeretőtől gyerek",
+        "krónikus nőgyógyászati problémák",
+        "abortusz",
+        "vetélés"
+      ],
+      "munka": [
+        "kórházban ápolónő",
+        "takarítónő börtönben",
+        "öregek otthonában ápolónő",
+        "gyerekek közt óvónő, dadus"
       ]
     }
   },
   "merkúr": {
     "1": {
       "általános": [
+
       ]
     },
     "2": {
       "általános": [
+        "sosem lesz anyagi gindja, ha elszórja azért, mert aki elszórja annak ez nem probléma ,ha pedig beosztó, akkor meg azért"
+      ],
+      "ikrek oldal": [
+        "kevésbé koncentrál az anyagiakra, inkább figyelmetlen, elszója"
+      ],
+      "szűz oldal": [
+        "addig nyújtózkodj, ameddig a takaród ér"
       ]
     },
     "3": {
       "általános": [
+        "több testvére lehet, akik gyakran fiatalabbak nála",
+        "jó kapcsolat a testvérekkel",
+        "tehetség tanításra, tanulsára",
+        "környezetükben káosz uralkodik, nem tudnak rendszert hozni a mindennapokba",
+        "nagyon sokszor változik a környezete, a körülötte lévő hely, emberek",
+        "sok költözés, vagy csak sokszor rendezik újra az otthonát",
+        "gyakori utazások",
+        "jó kommunikációs készség",
+        "idegennyelvi tehetség",
+        "lehet írói tehetség",
+        "sok iskolai barát, kapcsolat",
+        "könnyen lehetnek problémái a mozgással, látással, hallással, beszéddel",
+        "utalhat sok apró balesetre",
+        "hajlamos a szélhámosságra",
+        "szereti túlbeszélni, kibeszélni a dolgokat"
+      ],
+      "munka": [
+        "olyan munka ami sok utazással jár együtt"
       ]
     },
     "4": {
@@ -349,10 +523,39 @@
     },
     "7": {
       "általános": [
+        "sok változás párkapcsolatban",
+        "nagyon erős intellaktuális elvárás a pártól",
+        "fontos neki, hogy a pár ne legyen unalmas",
+        "az üzleti társulások folyamatosan változnak",
+        "a párkapcsolatban állandó vita zajlik, mindig meg akarják egymást győzni"
+      ],
+      "munka": [
+        "jogász","tanár","színész"
+      ],
+      "betegségek": [
+        "kisebb balesetek, végtag sérülések, mozgásszervi sérülések"
       ]
     },
     "8": {
       "általános": [
+        "kapcsolatokról való lemondás",
+        "állandóan vitába keveredik, olyan emberekkel kerül kapcsolatba akik képtelenek kommunikálni(pl nem szeret beszélgetni)",
+        "szexuális zavar szexuális probléma, nem lehetetlenné teszi a szexet, hanem pl nem lépes elengedni magát",
+        "változtatja a pratneretit, mert nem tudja a szexet egy partnerben megélni",
+        "alvászavarral kapcsolatos problémák",
+        "a sors úgy alakítja az életed, hogy befele figyeljél",
+        "sok csak látszólagos, nem valódi kapcsolat"
+      ],
+      "munka": [
+        "pszichológus", "traumatológus", "aneszteziológus",
+        "bankár", "biztosítási ügynök","pénzügyi tevékenység"
+      ],
+      "betegségek": [
+        "pszichés problémák",
+        "mozgásszervi problémák",
+        "légúti betegségek",
+        "idegrendszeri betegségek",
+        "emésztőszervi zavarok"
       ]
     },
     "9": {
@@ -399,6 +602,27 @@
     },
     "7": {
       "általános": [
+        "nagyon fontos a párkapcsolat stabilitása, állandósága, legfőbb oka a birtoklási vágy",
+        "általában fiatalabb partnert választ",
+        "olyan párt választ, akinke jók az anyagi kilátásai",
+        "nagyon fontos a külvilágban való megjelentés, fontos, hogy elfogadhassa magát, milyennek látnak",
+        "művészetével kikerülhet a nagyvilág elé",
+        "képzőművészet, tánc, zene",
+        "lehet hogy a párja a művész",
+        "társulásoknak fontos az anyagi vonzata",
+        "sikeres társulások, anyagi gazdagulás ebből",
+        "ragaszkodás a társhoz ésvagy a párod is szeretne birtokolni téged",
+        "külvilág általi anyagi veszteség, becsapások, kihasználások, baleseti anyagi veszteség",
+        "anyagiak miatt pereskedés --> nyert perek",
+        "második gyerekhez való kötődés"
+      ],
+      "férfi": [
+        "szép nőre vágyik fontos neki a párjának a külseje",
+        "gazdagabbnak szereti mutatni magát mint amilyen valójában"
+      ],
+      "nő": [
+        "a férfi nem a jó anyát keresi benne, hanem a szépséget",
+        "szeretik kiemelni magukat különböző szépészeti dolgokkaé, szeretnke feltűnősködni"
       ]
     },
     "8": {
@@ -407,6 +631,20 @@
     },
     "9": {
       "általános": [
+        "pénzt akar keresni külföldön, feláldozva a biztonságot, a stabilitást az anyagiakért",
+        "szereti a szépet, szeret utazni, szereti élvezni a dolgokat",
+        "nehezen válnak el, nehezen válnak le",
+        "boldog második házasságot mutathat",
+        "fontos a magasabb tanulmányok ,pl egyetem, vagy művészetek",
+        "hitrendszerben sokszor dogmák jelennek meg -> megrögzöttség",
+        "unokához való kötődés ragaszkodás",
+        "3. gyerekhez való kötődés"
+      ],
+      "munka": [
+        "érzék a joghoz, ügyvédséghez"
+      ],
+      "nő": [
+        "fontosabb a szépség mint az anyaság -> probléma lehet, hogy emiatt, nem lesz se pár se gyerek"
       ]
     },
     "10": {
@@ -429,14 +667,51 @@
     },
     "2": {
       "általános": [
+        "harcol az anyagiakért, mert fontos neki, de nem értni, hogy miért sikertelen benne",
+        "felerősíti a vágyakat, kissé hedonista, szereti az élvezeteket",
+        "lehetnek szépészeti műtétei",
+        "megjelenik a fiús kinézet: férfias, fiús, izmos, ez lányos esetében nem mindig pozitív"
+      ],
+      "munka": [
+        "fodrász", "katona",
+        "szövőnő", "sebész", "tűzoltó"
       ]
     },
     "3": {
       "általános": [
+        "mindig neki van igaza, a többieknek pedig utána",
+        "kapcsolatokban irányítói képesség",
+        "mutathat fiútestvért, vagy erőszakos, kötözködő, csatározó testvért",
+        "tanulhat sporiskolában, katonai iskolában",
+        "mutathat sok utazást, amit te akarsz",
+        "gondolkodásában mindent akarattal mindent erővel szeretne megoldani",
+        "jó vitakészség",
+        "otthoni balesetek, közlekedési balesetek",
+        "olyan emberekkel foglalkozhat, akiknek valami érzékszervük sérült"
       ]
     },
     "4": {
       "általános": [
+        "agresszív apára utal, vagy olyan apa aki katona, vagy tűzoltó, vagy sebész",
+        "domináns a saját otthonában, ő mondja meg mi legyen, nem nagyon lehet ellentmondani neki",
+        "otthonában gyermekkorban lehetnek balesetek, problémák",
+        "támadás a család ellen",
+        "lehetnek betörések, otthon kigyulladás",
+        "édesapa elvárása, hogy erős legyél, határozott, kitartó",
+        "lehet párkapcsolaton belüli erőszak",
+        "otthonban történő balesetek, ütöm, vágom, szúrom, égetem analógiák"
+      ],
+      "férfi": [
+        "a nő irányít az otthonában",
+        "sokszor megjelenik a testi agresszió"
+      ],
+      "nő": [
+        " a férfi irányít az otthonában"
+      ],
+      "betegségei" : [
+        "izületi problémák",
+        "vastagbél problémák",
+        "gyulladások"
       ]
     },
     "5": {
@@ -449,6 +724,16 @@
     },
     "7": {
       "általános": [
+        "erőszakos, kemény, határozott, akaratérvényesítő pár",
+        "a pár sokat vitatkozik, sokat veszekedik, sokkal erősebb az akarata",
+        "párodnak alá kell magadat rendelni, nem érvényesíthatad akaratodat",
+        "olyan vállalkozás, ahol az üzlettársi kapcsolatot, az üzlettárs irányítja",
+        "vesztett perek",
+        "belesetek, külvilágtól jövő agresszió",
+        "támadások a külvilágtól pl nyílvános helyeken"
+      ],
+      "munka": [
+        "külvilágban, nyilvánosan végzett munka"
       ]
     },
     "8": {
@@ -465,10 +750,42 @@
     },
     "11": {
       "általános": [
+        "beteljesült vágyak háza, önmagadnak akarod beteljesíteni a vágyaid",
+        "minden célért és eredményért küzdenek és hajtanak",
+        "fontos, hogy szababad legyen, nehezen viselnek el bármilyen akadályt",
+        "olyan közösséget keres, barátokat, akik erősek",
+        "nem szeretik, ha valaki nem képes önmagáért harcoloni",
+        "egyesületekből vadászat, vagy olyan hely ahol az ő akarata teljesülhet",
+        "barátok általi támadások, barátok ellenséggé válhatnak",
+        "családban az anya teremti az anyagiakat, és ő is irányít ezen a téren",
+        "a párod nagyon szeretne gyermeket, fontos neki a szerelem és a szexualitás",
+        "a párod gyerekével harcolnod kell(nem a közös gyerek) -> nem szabad olyan párkapcsolatba belemenni, ahol hoznak gyerekret"
+      ],
+      "nő": [
+        "több fiú barát, haver"
+      ],
+      "férfi": [
+        "nála fiatalabb barátok"
       ]
     },
     "12": {
       "általános": [
+        "csak azt akarhatod, amit a másik akar, saját akaratodról lemondasz, vagy lesz valaki aki az akaratodt segíti erősiti",
+        "lehet börtön (a társadalom lemondatja az aakratáról)",
+        "mutathat szeretőket",
+        "hátad mögött támadások érnek, nem szemtől szembe, váratlanul",
+        "méltatlan küzdelmek átélése, belesodródik harcokba, de nem is érti miért kell harcolnia"
+      ],
+      "munka": [
+        "lehet titkos szervezetekben, vagy titkos katonati szervezetekben való részvétel",
+        "kém",
+        "zárt intézetben végzett munka ahol megjelenik az agresszió",
+        "börtönőr", "elmegyógyintézet"
+      ],
+      "betegségek": [
+        "krónikus évekig eltartó betegségek",
+        "vérnyomás problémák",
+        "vérképző szervek betegségei"
       ]
     }
   },
@@ -479,6 +796,17 @@
     },
     "2": {
       "általános": [
+        "gazdagság -> jobban jársz ha elfogadod, hogy gazdag leszel, mintha ahrcolsz elelne, a sors támogatni fog",
+        "nagyon szereti költeni a pénzt -> sokszor hedonistává válnak(csak az élet élvezetét keresi csak a mának él)",
+        "boldogan keresd a pénzt",
+        "szép test, vagy telt test, azonosulni tud a testével, kinézetével",
+        "ha azt csinálod amit szeretsz, nem lesz gond az anyagiakkal"
+      ],
+      "megsértés módja": [
+        "úgy keresel pénzt, hogy nem is élvezed, csak belekényszeríted magad"
+      ],
+      "megsértés következménye": [
+        ""
       ]
     },
     "3": {
@@ -487,22 +815,89 @@
     },
     "4": {
       "általános": [
+        "otthon és a család boldogsága",
+        "fonots neki, hogy az apa elfogadjon és szeressen",
+        "már korán saját otthonra szeretnének szert tenni, ingatlant venni",
+        "nagy birtokon, nagy földön élés",
+        "boldog házasság, boldog család, több gyerek , nagy család",
+        "idős korban lesznek mellette, nem lesz egyedül, boldog életvég"
+      ],
+      "megsértés következménye": [
+        "lehetséges betegségek emiatt: máj, hasnyálmirigy, emésztőrendszer, hólyagok"
       ]
     },
     "5": {
       "általános": [
+        "nagyon erős kötődés, ragaszkodás a gyerek irányába, boldog lehet vele nagyon",
+        "a gyerek születése megváltoztathatja pozitív módon az életét",
+        "könnyű megfogannia a magzatnak",
+        "boldog várandóság, könnyű szülés ( nem az számít mi történik a szülésen, hanem hogy te hogy éled meg)",
+        "sikeres vállalkozás, ebben kiteljesedés, előrejutás",
+        "fontos a szerelem, sok életöröm, élvezet imádás",
+        "lehet hogy az apa gazdag és az apa teremti meg a gazdagságot"
+      ],
+      "munka": [
+        "tehetség jogi pályán",
+        "tehetség művészetekben"
       ]
     },
     "6": {
       "általános": [
+       "örömöt hoz a munka, siker, kiteljesedést",
+        "a munka mindig alárendeltséggel jár",
+        "jó kapcsolat a munkabeli kollégákkal",
+        "lehet munkamániás, mert szereti a munkáját",
+        "váratlan előléptetés, váratlan munakbeli siekrek",
+        "betegségek váratlanul jöhetnek és váratlanul meg is gyógyulhatnak",
+        "olyan betegségek amiket ha elfogadsz, hogy van el is múlik(nem tudod megváltoztatni)",
+        "alkoholprobléma, függőség"
+      ],
+      "munka": [
+        "tanítás", "politikai pálya", "vallással akpcsolatos páyla", "jogggal kapcsolatos pálya"
       ]
     },
     "7": {
       "általános": [
-      ]
+        "boldog sikeres párkapcsolat,nem szabad elválni",
+        "érezze a pár, hogy te érte vagy, ekkor lesz boldog a párkapcsolat",
+        "nyílvánosság előtti sikerek, vágyik a külvilág elismerésére",
+        "sikeres társulások",
+        "nem lehet negatív találkozás a külvilággal",
+        "sikeres perek, abban az esetben ha nem te perelsz",
+        "Elv: Ha én függővé teszem magamtól a másikat, a másik nem tud mást csinálni, mint azonosulni azzal amit én nyújtani tudok"
+      ],
+      "megsértés módja": [
+        "ha te kezdeményezed a válást",
+        "ha te kezdeményezel pereket mások ellen"
+      ],
+      "megsértés következménye":
+              [
+                "balesetek",
+                "negatív találkozás a külvilággal",
+                "párkapcsolati problémák"
+              ]
     },
     "8": {
       "általános": [
+        "nagyon erős szexualitás, nem csak az a része ami örömet okoz, hanem a negatív része is létrejöhet",
+        "kielégíthetetlan szexuális vágy, nem találja a határait",
+        "lehet hogy pont nem működik a szexualitás, vagy pont hogy nagyon működik",
+        "hozhat veszteséget, főleg anyagit, érezheti szerencsételennek magát az ember, hogy a sors ellenük van, pedig csak a lemondást kell megtanulni",
+        "fontos, hogy el tudd fogadni, a párod anyagi teremtését",
+        "hozhat sok örökséget",
+        "törvénnyel kapcsolatos problémák, akár válás, vagy börtönbe kerülés",
+        ""
+      ],
+      "nő": [
+        "az a legjobb, ha a párja teremti az anyagiakat, mert akkor a párja gazdag lesz"
+      ],
+      "megsértés": [
+        "nem tudja elfogadni, hogy a párja sok anyagi javat termel"
+      ],
+      "munka": [
+        "halállal kapcsolatos munkák",
+        "műtős", "anestiológus", "pszichológus", "vagyonvesztéssel foglalkozás", "tűzoltó","mások pénzével foglalkozás",
+        "befektetési tanácsadó"
       ]
     },
     "9": {
@@ -511,6 +906,8 @@
     },
     "10": {
       "általános": [
+        "nagyon fontos, hogy a hivatásban sikereket érjen el és jól is megy ez neki",
+        "karrierista"
       ]
     },
     "11": {
@@ -525,7 +922,6 @@
   "szaturnusz": {
     "1": {
       "általános": [
-        "egóról való lemondás a feladata"
       ]
     },
     "2": {
@@ -547,39 +943,17 @@
     },
     "4": {
       "általános": [
-        "az egyik legneheebb szaturnusz mivel az elgóról elmodnmás területe"
+        "családvesztés, gyermekvesztés, férj/feleség vesztés, apa vesztés",
+        "minden amihez érzelmileg kötődik elveszti, kevés analógia van ezért bármit elveszteni nagyon fáj",
+        "válás(család felbomlása) akár gyermekkorban sját szülők, akár felnőtt korban saját férj/feleséggel"
       ]
     },
     "5": {
       "általános": [
-        "nincs gyerek nem akar megfoganni",
-        "problémás gyerek, állandóan a baj van vele",
-        "gyerekvesztés, abortusz, vetélés, nehezített terhesség",
-        "gyakori a császár, nem tágul mert szűk, nem tudja kiengedni a gyereket",
-        "szerelemben problémái vannak -> érdek kapcsolatok",
-        "vállalkozás elvesztése",
-        "sikertelenség, vagy nagy siker utáni bukás",
-        "nagy korkülönbségű szerelem"
-      ],
-      "munka": [
-        "ellenőr",
-        "rendőr",
-        "tanár"
       ]
     },
     "6": {
       "általános": [
-        "munkamánia, célként jelenik meg a munka",
-        "munkahelyi problémák feszültségek, nehézségek",
-        "egyedül végzett munka",
-        "állandó feszültség, problémák a munkatársakkal",
-        "olyan munkakör ahol felelősséged van, neked kell fontos döntéseket meghozni",
-        "munkahelyi balesetek",
-        "gyógyítható betegségek, életmódváltással meg lehet oldani a problémát",
-        "pár szeretőjével nehézségek adódnak --> megcsalás amit nagyon nehezen fogad el vagy old meg"
-      ],
-      "javaslat": [
-        "nem szabad felmondani munkahelyen semilyen esetben se, ha akarnak rúgjanak ki"
       ]
     },
     "7": {
