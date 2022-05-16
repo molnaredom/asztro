@@ -8,7 +8,8 @@ Fontos, hogy kikötéseket tegyünk, a konkrét munkalehetőségekre:
 
 Sok módon lehet osztályozni a különböző munkákat:
 - hely
-- kültéri/beltéri
+- irodai
+- kulteri belteri
 - fizetés
 - egyéni/csoportos(csapatmunka)
 - alkalmazott/főnök típus

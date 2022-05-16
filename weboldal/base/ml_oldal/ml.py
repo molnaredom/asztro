@@ -21,19 +21,12 @@ def generalt_adatok(request):
     kinyert_adatok = []
 
     for i, horoszkop in enumerate(horoszkopok, 1):
-        if "analogiak" not in horoszkop.fokszamok:
-            horoszkop.fokszamok = eval(dict(horoszkop.fokszamok)["analogiak"])  # eval strbol dictet csinal
-        else:
-            horoszkop.fokszamok = horoszkop.fokszamok["analogiak"]
 
         elemzes_adat = _elemzes(horoszkop, osszesjegy, hazakUraHazakban, sorszam=i)
-
         kinyert_adatok.append(elemzes_adat)
 
     csv_keszites(kinyert_adatok)
-
     context = {"analogia": kinyert_adatok}  # ez egy objektum
-
     return render(request, "ml_oldalak/generalt_adatok.html", context)
 
 
@@ -47,11 +40,12 @@ def _elemzes(adatok, osszesjegy, hazakUraHazakban, sorszam):
 def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor, sorszam, hyleg_res):
     eredmeny = dict()
     print(type(hazak))
-    # print(["-------------------------"+str(i) for i in hazak])
 
     # eredmeny["nev"] = str(adatok.tulajdonos_neve)
     eredmeny["Sorszám"] = str(sorszam)
-    eredmeny["Munka"] = str(adatok.munka)
+    print(type(adatok.munka),adatok.munka)
+
+    eredmeny["Munka"] = get_munka(adatok.munka)
     eredmeny["Neme"] = str(adatok.neme)
     # eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
     eredmeny["Életkor"] = pontos_kor[0]
@@ -69,6 +63,13 @@ def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy,
     eredmeny = bolygok_fenyszogkapcsolatai__jellemzovektorok_hozzaadasa(eredmeny, bolygok)
 
     return eredmeny
+
+
+def get_munka(munka):
+    if munka != {}:
+        return eval(str(munka["analogiak"]))
+    else:
+        return []
 
 
 def bolygo_melyik_jegyben__jellemzovektorok_hozzaadasa(eredmeny, bolygok):
