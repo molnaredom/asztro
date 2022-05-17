@@ -72,14 +72,14 @@ categorical_features = ohe.fit_transform(features.select_dtypes(include=['object
 neme = ohe.fit_transform(features[["Neme"]])
 
 
-print(neme.toarray())
-print("shape:", neme.shape)
+# print(neme.toarray())
+print("shape neme:", neme.shape)
 
 import scipy.sparse
 numeric_features = scipy.sparse.csr_matrix(features.select_dtypes(exclude=['object'])) # numerikus jellemzők ritka mátrixként
 
 ohe_features = scipy.sparse.hstack((categorical_features, numeric_features)) # ritka mátrixok horizontális konkatenálása
-print(ohe_features.toarray())
+# print(ohe_features.toarray())
 
 with open("k.txt", "w") as f:
     for i in ohe_features.toarray():
@@ -89,10 +89,19 @@ with open("k.txt", "w") as f:
 features = ohe_features
 print("shape:", categorical_features.shape)
 
-dt = tree.DecisionTreeClassifier(min_samples_leaf=20, max_depth=5) # legfeljebb 3 mély fát építhet
-dt.fit(ohe_features, labels)
 
-fig = plt.figure(figsize=(25,20))
-_ = tree.plot_tree(dt,filled=True)
-fig.savefig("decistion_tree.png")
+from sklearn.linear_model import SGDClassifier
 
+cls = SGDClassifier()
+
+# a features a tanító adatbázis egyedeinek jellemzőreprezentációja, ami ugyanolyan hosszú, mint a címkevektor (a célváltozó ami a tanító példa)
+model = cls.fit(features, labels)
+
+from sklearn.metrics import accuracy_score, classification_report
+
+prediction = model.predict(features)
+print(prediction) # a predikció eredménye egy lista az egyedekre predikált címkékkel
+
+acc =accuracy_score(y_true=labels, y_pred=prediction)
+print(acc)
+print(classification_report(y_true=labels, y_pred=prediction))

@@ -10,3 +10,4 @@ def munka_osztalyozas(irodai=False):
                 munka_tarolo[munka[0]] = int(munka[1])
 
     return munka_tarolo
+
