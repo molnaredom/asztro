@@ -5,13 +5,12 @@ from .views_module import horoscope_creator, views_deleters, views, views_creato
 from . import views_analogia_gyakorlo
 from .ml_oldal import ml
 
-
-
 egyedi_oldalak = [
     path("titkos-szoba/", views.titkosSzoba, name="titkos-szoba"),
     path("", views.home, name="home"),
     path("rolunk", views.rolunk, name="rolunk"),
     path("fejlesztes_alatt", views.fejlesztes_alatt, name="fejlesztes_alatt"),
+    path("admin_panel", views.admin_panel, name="admin_panel")
 ]
 
 analogia_tarolok = [

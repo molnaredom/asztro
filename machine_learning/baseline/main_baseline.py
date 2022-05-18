@@ -31,5 +31,6 @@ def main():
     print(pontossagok)
     print("Átlag teljesítmény:",numpy.mean(pontossagok))
 
+
 if __name__ == '__main__':
     main()

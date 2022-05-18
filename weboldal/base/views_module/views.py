@@ -146,3 +146,7 @@ def rolunk(request):
 
 def fejlesztes_alatt(request):
     return render(request, "base/fejlesztes_alatt.html", {})
+
+
+def admin_panel(request):
+    return render(request, "base/admin_panel.html", {})

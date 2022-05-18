@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if request.user.is_superuser %}
+        <button>Horoszkópok adatbázis újrtöltése</button>
+
+
+    {% else %}
+        <br><br><br><br>
+        <h1>Ehhez az oldalhoz nincs jogosultsáod</h1>
+    {% endif %}
+
+
+{% endblock content %}
