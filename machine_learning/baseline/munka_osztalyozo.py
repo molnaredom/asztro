@@ -1,4 +1,4 @@
-def munka_osztalyozas(irodai=False):
+def munka_osztalyozas(oszatlozas_alap):
     munka_tarolo = {}
 
 
@@ -6,7 +6,7 @@ def munka_osztalyozas(irodai=False):
         munkatabla.readline()
         for munka in munkatabla:
             munka = munka.strip().split(";")
-            if irodai:
+            if oszatlozas_alap== "irodai":
                 munka_tarolo[munka[0]] = int(munka[1])
 
     return munka_tarolo

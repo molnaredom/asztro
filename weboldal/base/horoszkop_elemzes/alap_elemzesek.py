@@ -83,7 +83,7 @@ def eletciklus(pontos_kor, neme):
         eletciklus = "szaturnusz"
     elif yearsInt >= 56:
         eletciklus = "jupiter-szaturnusz"
-    elif yearsInt >= 56:
+    elif yearsInt >= 49:
         eletciklus = "jupiter"
     elif yearsInt >= 42:
         eletciklus = "nap-mars"
