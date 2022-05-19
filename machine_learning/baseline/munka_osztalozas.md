@@ -1,0 +1,2 @@
+- irodai munka
+    - 1 , amikor asztalnál végzel papír, vagy számítógépes munkát

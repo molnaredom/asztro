@@ -23,9 +23,11 @@ def adat_tisztito(df:pandas.DataFrame, osztalyozas_tipus):
     # ezáltal várhatóan nőni fog az adathalmaz
 
     tmp_df = pd.DataFrame()
-    for idx, row in df.iterrows():
-        for munka in eval(row["Munka"]):
-            row["Munka"] = munka
+    for idx, row in df.iterrows():  # egyes embereken cégigiterál
+        # print(idx)
+        for munka in eval(row["Munka"]):  # emberek munkáin végigiterál
+            row["Munka"] = munka.lower().strip()
+            # print("   ",row["Munka"] )
             tmp_df = tmp_df.append(row, ignore_index = True)
     df = tmp_df
     print(f"Munkákhoz rendelt horoszkópok száma {len(df)}")
@@ -33,14 +35,16 @@ def adat_tisztito(df:pandas.DataFrame, osztalyozas_tipus):
     # munkák osztályozása egy megadott szempont szerint
     # minden munkához egy egy számértéket rendelünk
     osztalyozo = munka_osztalyozas(oszatlozas_alap=osztalyozas_tipus)
+    [print(i) for i in df['Munka'].iteritems()]
     df['Munka'] = df['Munka'].map(osztalyozo)
+    print("....................")
+    [print(i) for i in df['Munka'].iteritems()]
     df.dropna(inplace=True) # inplace nelkul nem mukodik
 
     print(f"Osztályozott munkákhoz rendelt horoszkópok száma {len(df)}")
 
     class_labels = df.pop("Munka")
     features = df
-
 
     ohe = preprocessing.OneHotEncoder()  # one hot encoding
     # vessszük az összes adatot, ami nem float/int, vagyis object (categorical) változó

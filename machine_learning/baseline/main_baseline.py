@@ -8,8 +8,6 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-# parser.add_argument("-o", "--Output",
-#                     help="Show Output")
 parser.add_argument("-m", "--mode", default="SGD",
                     help="Set running mode, SGD, DT")
 
@@ -24,12 +22,12 @@ def main():
 
     if "SGD" in args.mode:
 
-        for i in range(20):
+        for i in range(10):
             acc = sgd_classifier(features, class_labels)
             pontossagok.append(acc)
 
     print(pontossagok)
-    print("Átlag teljesítmény:",numpy.mean(pontossagok))
+    print("Átlag teljesítmény: ",round(float(numpy.mean(pontossagok)*100),3) , "%", sep="")
 
 
 if __name__ == '__main__':

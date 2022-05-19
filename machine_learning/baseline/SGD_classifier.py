@@ -14,6 +14,6 @@ def sgd_classifier(features, labels):
 
     acc = accuracy_score(y_true=labels, y_pred=prediction)
     print(acc)
-    print(classification_report(y_true=labels, y_pred=prediction))
-    return acc
+    # print(classification_report(y_true=labels, y_pred=prediction))
+    return round(acc, 3)
 
