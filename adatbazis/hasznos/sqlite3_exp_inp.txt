@@ -1,0 +1,9 @@
+export
+python manage.py dumpdata base --indent=1 > material.json
+
+import
+python manage.py loaddata material.json
+
+
+https://stackoverflow.com/questions/18865353/export-data-from-django-database
+

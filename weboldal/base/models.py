@@ -139,6 +139,16 @@ class HoroszkopAdatok(models.Model):
     munka = models.JSONField(default=dict, blank=True)
 
 
+class HoroszkopAlapadat(models. Model):
+    tulajdonos_neve = models.CharField(max_length=40)
+    idopont = models.DateTimeField(default=django_timezone.now())
+    hely = models.CharField(max_length=80, blank=True)
+    tipus = models.CharField(max_length=30, blank=True)
+    neme = models.CharField(max_length=10, blank=True, default="")
+    leirasok = models.JSONField(default=dict, blank=True)
+    munka = models.JSONField(default=dict, blank=True)
+
+
 class Horoszkop2(models.Model):
     tulajdonos_neve = models.CharField(max_length=30)
     idopont = models.DateTimeField(default=django_timezone.now())

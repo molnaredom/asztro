@@ -66,6 +66,13 @@ class HoroszkopFormGyors(ModelForm):
         fields = ["tulajdonos_neve","idopont","hely","tipus","neme","leirasok","munka",]
 
 
+class HoroszkopFormAutomatic(ModelForm):
+    class Meta:
+        model = Horoszkop2
+        # fields = "__all__"
+        fields = []
+
+
 class HoroszkopAdatokForm(ModelForm):
     class Meta:
         model = HoroszkopAdatok

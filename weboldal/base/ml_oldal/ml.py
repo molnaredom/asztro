@@ -67,7 +67,7 @@ def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy,
 
 def get_munka(munka):
     if munka != {}:
-        return eval(str(munka["analogiak"]))
+        return str(munka["munkak"])
     else:
         return []
 

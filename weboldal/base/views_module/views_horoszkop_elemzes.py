@@ -9,7 +9,7 @@ def horoszkop(request, id):
     horoszkop_obj = Horoszkop2.objects.get(id=id)
     hazakUraHazakban = HazUraHazban.objects.all()
     osszesjegy = Jegy2.objects.all()
-    horoszkop_obj.munka = eval(horoszkop_obj.munka["analogiak"])
+    horoszkop_obj.munka = horoszkop_obj.munka["munkak"]
 
     if not request.user.is_superuser:
         horoszkop_obj.tulajdonos_neve = nevet_privatra(horoszkop_obj.tulajdonos_neve)

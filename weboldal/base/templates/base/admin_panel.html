@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
     {% if request.user.is_superuser %}
-        <button>Horoszkópok adatbázis újrtöltése</button>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <button
+                    type="submit" name="osszeshoroszkopujra" class="btn btn-success"> Összes horoszkóp újra generálás
+            </button>
+        </form>
+
+
+
+
+
 
 
     {% else %}

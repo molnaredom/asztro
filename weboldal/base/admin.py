@@ -15,6 +15,7 @@ admin.site.register(HazJegyben2)
 admin.site.register(Haz2)
 admin.site.register(Horoszkop2)
 admin.site.register(HazUraHazban)
+admin.site.register(HoroszkopAlapadat)
 
 from django.contrib import admin
 

@@ -75,23 +75,23 @@ def createHazUraHazban(request):
     return _analogiafeltoltes(request, HazUraHazbanForm, "hazakUraHazakban")
 
 
-def createHoroszkop(request):
-    form = HoroszkopForm()
-    if request.method == "POST":
-
-        if "megse" in request.POST:
-            return redirect(f"horoszkop_gyujtemeny")
-
-        form = HoroszkopForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-        if 'ujabb_fevitel' in request.POST:
-            return redirect(f"create-horoszkop")
-
-        elif "mentes_es_foolal" in request.POST:
-            return redirect(f"horoszkop_gyujtemeny")
-
-    context = {'form': form}
-    return render(request, "create_templates/analogia_form.html", context)
+# def createHoroszkop(request):
+#     form = HoroszkopForm()
+#     if request.method == "POST":
+#
+#         if "megse" in request.POST:
+#             return redirect(f"horoszkop_gyujtemeny")
+#
+#         form = HoroszkopForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#
+#         if 'ujabb_fevitel' in request.POST:
+#             return redirect(f"create-horoszkop")
+#
+#         elif "mentes_es_foolal" in request.POST:
+#             return redirect(f"horoszkop_gyujtemeny")
+#
+#     context = {'form': form}
+#     return render(request, "create_templates/analogia_form.html", context)
 

@@ -117,6 +117,10 @@ def varos_poz(varosnev):
     if varosnev == "esztergom": return "47.785", "18.74"
     if varosnev == "szekesfehervar" or varosnev == "fehervar": return "47.188", "18.413"
     if varosnev == "mezotur": return "47.0041296", "20.6161"
+    else:
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"*5)
+        print("PLACE NOT FOUND")
+        return "47.0041296", "20.6161"
 
 
 def jegy_num_to_hun(eng_jegy):

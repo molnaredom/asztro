@@ -3,10 +3,11 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from ..models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2, BolygoHazban2, BolygoJegyben2, HazJegyben2
+from ..models import Room2, Message2, Horoszkop2, HoroszkopAlapadat
 from django.contrib.auth.models import User
-from ..forms import RoomForm, AnalogiaForm
+from ..forms import RoomForm, HoroszkopFormAutomatic
 from django.contrib.auth import authenticate, login, logout
+from .horoscope_creator import set_bolygo_es_haz_objektumok
 
 
 def home(request):
@@ -149,4 +150,34 @@ def fejlesztes_alatt(request):
 
 
 def admin_panel(request):
+
+    if request.method == "POST":
+        if 'osszeshoroszkopujra' in request.POST:
+            sure = input("Biztosan törölni szeretnéd az összes horoszkópot és újratölteni? (yes/no)")
+            if sure == "yes" or sure == "y":
+                Horoszkop2.objects.all().delete()
+
+                horoszkop_alapadatok = HoroszkopAlapadat.objects.all()
+                for hp_alap in horoszkop_alapadatok:
+                    print(hp_alap)
+                    form = HoroszkopFormAutomatic()
+                    obj = form.save(commit=False)
+                    obj.tulajdonos_neve = hp_alap.tulajdonos_neve
+                    obj.idopont = hp_alap.idopont
+                    obj.hely = hp_alap.hely
+                    obj.tipus = hp_alap.tipus
+                    obj.neme = hp_alap.neme
+                    obj.leirasok = hp_alap.leirasok
+                    obj.munka = hp_alap.munka
+
+                    obj = set_bolygo_es_haz_objektumok(obj)
+
+                    obj.save()
+
+
+                return redirect(f"horoszkop_gyujtemeny")
+
+        elif "mentes_es_foolal" in request.POST:
+            return redirect(f"horoszkop_gyujtemeny")
+
     return render(request, "base/admin_panel.html", {})
