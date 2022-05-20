@@ -8,6 +8,6 @@ def munka_osztalyozas(oszatlozas_alap):
             if oszatlozas_alap == "irodai":
                 if munka[1].isdigit():
                     munka_tarolo[munka[0]] = int(munka[1])
-    print("----",munka_tarolo)
+    # print("----",munka_tarolo)
     return munka_tarolo
 

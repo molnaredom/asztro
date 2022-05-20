@@ -35,10 +35,9 @@ def adat_tisztito(df:pandas.DataFrame, osztalyozas_tipus):
     # munkák osztályozása egy megadott szempont szerint
     # minden munkához egy egy számértéket rendelünk
     osztalyozo = munka_osztalyozas(oszatlozas_alap=osztalyozas_tipus)
-    [print(i) for i in df['Munka'].iteritems()]
+    # [print(i) for i in df['Munka'].iteritems()]
     df['Munka'] = df['Munka'].map(osztalyozo)
-    print("....................")
-    [print(i) for i in df['Munka'].iteritems()]
+    # [print(i) for i in df['Munka'].iteritems()]
     df.dropna(inplace=True) # inplace nelkul nem mukodik
 
     print(f"Osztályozott munkákhoz rendelt horoszkópok száma {len(df)}")
