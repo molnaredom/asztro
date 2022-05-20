@@ -7,11 +7,12 @@ from machine_learning.baseline.adat_tisztitas import *
 import argparse
 
 from machine_learning.baseline.decision_tree import decision_tree
+from machine_learning.baseline.k_fold_cross_validation import kfold
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument("-m", "--mode", default="SGD",
-                    help="Set running mode, SGD, DT")
+                    help="Set running mode: SGD, DT, KFOLD")
 
 args = parser.parse_args()
 
@@ -33,6 +34,11 @@ def main():
         for i in range(1):
             acc = decision_tree(features, class_labels,i)
             pontossagok.append(acc)
+
+    if "KFOLD" in args.mode:
+        print("K-Fold cross validation started")
+        acc = kfold(features, class_labels)
+        pontossagok.append(acc)
 
     print(pontossagok)
     print("Átlag teljesítmény: ",round(float(numpy.mean(pontossagok)*100),3) , "%", sep="")
