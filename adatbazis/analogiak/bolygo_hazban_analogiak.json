@@ -792,6 +792,30 @@
   "jupiter": {
     "1": {
       "általános": [
+        "nagyon tud lelkesedni tele van ambícióval, elképzeléssel",
+        "nagyon fontos a törvényesség neki",
+        "akkor kaphatod meg amit akarsz, ha el is tudod fogadni",
+        "egóval való azonosulás"
+      ],
+      "megsértés módja" : [
+        "törvények be nem tartása",
+        "válás kezdeményezése"
+      ],
+      "megsértés következménye": [
+        "negatív kilátások az egóra"
+      ],
+      "munka" : [
+        "törvénnyel kapcsolatos",
+        "jogi páyla",
+        "olyan hivatások ahol másokat lelekesíthet, támogathat",
+        "tanítás: pl edző",
+        "fával való munka"
+      ],
+      "betegségek": [
+        "cukorbetegség",
+        "emésztőmirigy megbetegedése",
+        "artériás betegségek",
+        "daganatok(jóindultú)"
       ]
     },
     "2": {
@@ -806,11 +830,27 @@
         "úgy keresel pénzt, hogy nem is élvezed, csak belekényszeríted magad"
       ],
       "megsértés következménye": [
-        ""
+
       ]
     },
     "3": {
       "általános": [
+        "szeretnek tanulni, tanítani",
+        "több testvér",
+        "jó kapcsolat a testvérrel/testvérekkel",
+        "sok utazás",
+        "sok baleset, szerencsés kimenetelekkel",
+        "saját otthonodat, harmonikussá, boldoggá tudod tenni",
+        "fontos a név, a rang"
+      ],
+      "munka": [
+        "tanítás", "írás", "kommunikációs pálya", "jogi tanulmányok", "hitrendszeri tanulmányok"
+      ],
+      "megsértés módja": [
+        "név változtatás"
+      ],
+      "betegségek": [
+        "mozgásszervek", "hallás", "látás"
       ]
     },
     "4": {

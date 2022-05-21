@@ -63,4 +63,17 @@ def adat_tisztito(df:pandas.DataFrame, osztalyozas_tipus):
     features = ohe_features
     print("One hot encode-olt adattábla alakja (sor, oszlop):", categorical_features.shape)
 
-    return class_labels, features
+    from sklearn.model_selection import train_test_split
+    train_features, valid_features, train_classlabels, valid_classlabels = train_test_split(features, class_labels,
+                                                                                            test_size=0.25,
+                                                                                            random_state=42)
+
+    class_labels.hist()
+
+
+    from matplotlib import pyplot as plt
+    import numpy as np
+    # A dataset of 10 students
+    plt.show()
+
+    return train_features, valid_features, train_classlabels, valid_classlabels
