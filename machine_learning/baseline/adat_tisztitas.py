@@ -74,6 +74,6 @@ def adat_tisztito(df:pandas.DataFrame, osztalyozas_tipus):
     from matplotlib import pyplot as plt
     import numpy as np
     # A dataset of 10 students
-    plt.show()
+    # plt.show()
 
     return train_features, valid_features, train_classlabels, valid_classlabels

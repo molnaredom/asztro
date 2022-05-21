@@ -8,11 +8,12 @@ import argparse
 
 from machine_learning.baseline.decision_tree import decision_tree
 from machine_learning.baseline.k_fold_cross_validation import kfold
+from machine_learning.baseline.logistic_regression import logreg
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument("-m", "--mode", default="SGD",
-                    help="Set running mode: SGD, DT, KFOLD")
+                    help="Set running mode: SGD, DT, KFOLD, LOGREG")
 
 args = parser.parse_args()
 
@@ -32,6 +33,10 @@ def main():
     if "KFOLD" in args.mode:
         print("K-Fold cross validation started")
         kfold(train_features, valid_features, train_classlabels, valid_classlabels)
+
+    if "LOGREG" in args.mode:
+        print("Logistic Regression started")
+        logreg(train_features, valid_features, train_classlabels, valid_classlabels)
 
     # print("Átlag teljesítmény: ",round(float(numpy.mean(pontossagok)*100),3) , "%", sep="")
 
