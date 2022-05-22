@@ -49,6 +49,7 @@ def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy,
     eredmeny["Neme"] = str(adatok.neme)
     # eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
     eredmeny["Életkor"] = pontos_kor[0]
+    eredmeny["Megvalósító vagy célkijelölő"] = megval_vagy_celkij(bolygok, hazak)
     eredmeny["Életciklus"] = eletciklus(pontos_kor, adatok.neme)
     eredmeny["Sorstípus"] = sorstipus(bolygok, hazak)["sorstipus"]
     eredmeny["Sérult-e Nap"] = serult_e_nap(bolygok, adatok)

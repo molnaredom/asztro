@@ -1,8 +1,9 @@
 import datetime
+import json
 import sqlite3
 
 
-def beolvasas():
+def beolvasas_csv():
     adatok = []
     with open("Asztrológia hivatás adatok - Munkalap1.tsv") as f:
         f.readline()
@@ -25,7 +26,7 @@ def beolvasas():
                 row["hely"] = a[1]
                 row["nev"] = a[3]
                 row["munka"] = {"munkak": [i for i in a[2].split(",")]}
-                if a[3].lower() == "nő" or a[3].lower() == "férfi":
+                if a[3].lower().strip() == "nő" or a[3].lower().strip() == "férfi":
                     row["neme"] = a[3]
                     row["nev"] = "-"
                 else:
@@ -37,26 +38,50 @@ def beolvasas():
     return adatok
 
 
+def beolvasas_json(json_file_name):
+    adatok = []
+
+    with open(json_file_name) as json_file:
+        adatbazis = json.load(json_file)
+
+        print(adatbazis)
+        for row in adatbazis["horoszkopok"]:
+            uj_adatosor = {}
+            print(row)
+            uj_adatosor["datumido"] = datetime.datetime(year=int(row["ev"]),
+                                                        month=int(row["honap"]),
+                                                        day=int(row["nap"]),
+                                                        hour=int(row["ora"]),
+                                                        minute=int(row["perc"]),
+                                                        second=int(row["mp"]))
+            uj_adatosor["hely"] = row["hely"]
+            uj_adatosor["nev"] = row["nev"]
+            uj_adatosor["munka"] = {"munkak": row["munka"]}
+            uj_adatosor["neme"] = row["neme"]
+
+            adatok.append(uj_adatosor)
+    print(adatok)
+    return adatok
+
+
 def main():
     conn = sqlite3.connect("../../weboldal/db2.sqlite3")
     c = conn.cursor()
     eltolas = 1
 
-    # records or rows in a list
+    alapadatok_from_csv = beolvasas_csv()
+    alapadatok_from_json = beolvasas_json("horoszkopok.json")
+    alapadatok = alapadatok_from_json + alapadatok_from_csv
 
-    alapadatok = beolvasas()
+
     records = []
     for i, adat in enumerate(alapadatok, eltolas):
-        records.append((i,adat["nev"], adat["datumido"], adat["hely"],
+        print(alapadatok)
+        records.append((i, adat["nev"], adat["datumido"], adat["hely"],
                         "radix", adat["neme"], "{}",
-                        str(adat["munka"]).replace("'", "$").replace('"', "'").replace("$",'"')))
+                        str(adat["munka"]).replace("'", "$").replace('"', "'").replace("$", '"')))
 
     print(records)
-    # records = [(4, 'Abraham Lincoln', datetime.datetime(1809, 2, 12, 18, 37), "Hotgenville", "radix",
-    #             "férfi", '{"helo": "hi"}', '{"munkak": ["Elnök"]}')]
-    # records = [(5, 'M. Ádám', datetime.datetime(2001, 8, 19, 16, 54, 23), 'Szolnok', 'radix',
-    #             '-', '{"hello": "s"}', '{"munka": ["informatika(programozó)", " vendéglátás(pénztáros)"]}')]
-
     # insert multiple records in a single query
     c.executemany('INSERT INTO base_horoszkopalapadat VALUES(?,?,?,?,?,?,?,?);', records);
     # k= c.execute('select * from base_horoszkopalapadat;')
@@ -72,4 +97,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-# main()
+    # beolvasas_json("horoszkopok.json")

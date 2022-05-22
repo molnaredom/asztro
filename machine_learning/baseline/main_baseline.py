@@ -1,6 +1,3 @@
-import numpy
-import pandas
-
 from machine_learning.baseline.SGD_classifier import sgd_classifier
 from machine_learning.baseline.adat_tisztitas import *
 
