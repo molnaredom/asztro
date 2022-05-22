@@ -1,2 +1,4 @@
 sklearn
 pydotplus
+scikit-optimize #skopt
+seaborn

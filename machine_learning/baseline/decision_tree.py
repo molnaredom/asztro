@@ -3,7 +3,7 @@ import pandas
 from pydotplus import graphviz
 from sklearn import tree
 import pydotplus
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, classification_report
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier

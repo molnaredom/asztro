@@ -3,6 +3,7 @@ import pandas
 from machine_learning.baseline.munka_osztalyozo import munka_osztalyozas
 from sklearn import preprocessing
 import scipy.sparse
+from sklearn.model_selection import train_test_split
 
 def adat_tisztito(df:pandas.DataFrame, osztalyozas_tipus):
 
@@ -63,12 +64,12 @@ def adat_tisztito(df:pandas.DataFrame, osztalyozas_tipus):
     features = ohe_features
     print("One hot encode-olt adattábla alakja (sor, oszlop):", categorical_features.shape)
 
-    from sklearn.model_selection import train_test_split
     train_features, valid_features, train_classlabels, valid_classlabels = train_test_split(features, class_labels,
                                                                                             test_size=0.25,
                                                                                             random_state=42)
 
-    class_labels.hist()
+    print(f"\n{train_features=}\n, {valid_features=}\n, {train_classlabels=}\n, {valid_classlabels=}")
+    # class_labels.hist()
 
 
     from matplotlib import pyplot as plt

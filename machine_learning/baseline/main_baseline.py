@@ -6,6 +6,7 @@ from machine_learning.baseline.adat_tisztitas import *
 
 import argparse
 
+from machine_learning.baseline.compare import compare
 from machine_learning.baseline.decision_tree import decision_tree
 from machine_learning.baseline.k_fold_cross_validation import kfold
 from machine_learning.baseline.logistic_regression import logreg
@@ -38,7 +39,9 @@ def main():
         print("Logistic Regression started")
         logreg(train_features, valid_features, train_classlabels, valid_classlabels)
 
-    # print("Átlag teljesítmény: ",round(float(numpy.mean(pontossagok)*100),3) , "%", sep="")
+    if "COMPARE" in args.mode:
+        print("Logistic Regression started")
+        compare(train_features, valid_features, train_classlabels, valid_classlabels)
 
 
 if __name__ == '__main__':
