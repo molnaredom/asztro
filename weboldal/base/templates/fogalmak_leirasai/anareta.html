@@ -1,10 +1,14 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Anaréta</h1>
+
+{% extends 'konkret_analogia.html' %}
+{% block header %}
+   <a href="{% url 'anareta' %}">Anaréta</a>
+{% endblock %}
+
+{% block body %}
 
     <h3>Értelmezése</h3>
     <p>
-    Amenniyben van egy horoszkópnak anarétája, ez a bolygó lesz ami a legtöbb életenergiát elszívja az egyéntől.
+    Amennyiben van egy horoszkópnak anarétája, ez a bolygó lesz ami a legtöbb életenergiát elszívja az egyéntől.
     </p>
     <p>
     Ha nincs anaréta, akkor ilyen veszély nem fenyeget, ezt a tulajdonságot nem szükséges elemezni.
@@ -15,4 +19,4 @@
 <p>
     Az a Nap vagy Hold, ami a legerősebb negatív fényszöggel támadja a hyleget, ha nincs ilyen akkor az ASC
 </p>
-{% endblock content %}
+{% endblock %}

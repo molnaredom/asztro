@@ -1,7 +1,9 @@
-{% extends 'base.html' %}
-{% block content %}
-    <h1>Életciklusok</h1>
+{% extends 'konkret_analogia.html' %}
+{% block header %}
+   <a href="{% url 'eletciklusok' %}">Életciklusok</a>
+{% endblock %}
 
+{% block body %}
     <h3>Értelmezése</h3>
     <p>
         Az asztrológiában 7 éves ciklusokra oszthatunk egy élettartamot.
@@ -24,4 +26,4 @@
         <li>56-63 év -- jupiter-szaturnusz</li>
         <li>63+ év -- szaturnusz</li>
     </table>
-{% endblock content %}
+{% endblock %}

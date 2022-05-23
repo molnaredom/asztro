@@ -1,6 +1,10 @@
-{% extends 'base.html' %}
-{% block content %}
-    <h1>Sérült-e a Nap vagy a Hold</h1>
+{% extends 'konkret_analogia.html' %}
+
+{% block header %}
+   <a href="{% url 'serulte_naphold' %}">Sérült-e a Nap vagy a Hold</a>
+{% endblock %}
+
+{% block body %}
 
     <p>A sérült Nap és Hold analógiák az apa és az anya mintákra mutatnak rá.</p>
 
@@ -21,4 +25,4 @@
         </ul>
     </ul>
 
-{% endblock content %}
+{% endblock %}

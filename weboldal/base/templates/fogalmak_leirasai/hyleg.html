@@ -1,6 +1,9 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Anaréta</h1>
+{% extends 'konkret_analogia.html' %}
+{% block header %}
+   <a href="{% url 'hyleg' %}">Hyleg</a>
+{% endblock %}
+
+{% block body %}
 
 <h3>Kiszámítása</h3>
 
@@ -9,4 +12,4 @@
     Ha egyiksem áll itt, akkor az ASC a hyleg.
     Ha mindkettő akkor, a Nap lesz a hyleg.
 </p>
-{% endblock content %}
+{% endblock %}

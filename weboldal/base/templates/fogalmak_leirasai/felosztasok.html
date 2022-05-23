@@ -1,9 +1,13 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Felosztások</h1>
+{% extends 'konkret_analogia.html' %}
+
+{% block header %}
+   <a href="{% url 'felosztasok' %}">Felosztások</a>
+{% endblock %}
+
+{% block body %}
 
 <p>
 Tanulmányozásával a személyiségi jellemzőket ismerhetjük meg jobban
 </p>
 
-{% endblock content %}
+{% endblock %}

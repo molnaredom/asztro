@@ -1,6 +1,9 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Ház ura Házban</h1>
+{% extends 'konkret_analogia.html' %}
+{% block header %}
+   <a href="{% url 'hazak_urai' %}">Ház ura Házban</a>
+{% endblock %}
+
+{% block body %}
 
 <h3>Kiszámítása</h3>
 
@@ -24,4 +27,4 @@
 
     </ul>
 
-{% endblock content %}
+{% endblock %}

@@ -1,6 +1,10 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Sorstípus</h1>
+{% extends 'konkret_analogia.html' %}
+
+{% block header %}
+   <a href="{% url 'sorstipus' %}">Sorstípus</a>
+{% endblock %}
+
+{% block body %}
 
 <h3>Tulajdoságok</h3>
 <p>
@@ -12,4 +16,4 @@
 <p>
     A sorstípusok elemzését egy maximum 5, minimum 1 lépéses algoritmussal tudjuk megvizsgálni
 </p>
-{% endblock content %}
+{% endblock %}
