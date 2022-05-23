@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Sérült-e a Nap vagy a Hold</h1>
+    <h1>Sérült-e a Nap vagy a Hold</h1>
+
+    <p>A sérült Nap és Hold analógiák az apa és az anya mintákra mutatnak rá.</p>
+
+    <h3>Kiszámítása</h3>
+    <p>Vegyük figyemebe a következő <b>sötét</b> házakat: 4,8,12</p>
+    <p>Vegyük figyemebe a következő <b>világos</b> házakat: 1,5,9,10,11</p>
+    <h4>A kiszámítás a következő képpen történik</h4>
+    <ul>
+        <li><b>Nő</b></li>
+        <ul>
+            <li>A nap bolygója világos házban van ---> Plusz Napos</li>
+            <li>A hold bolygója sötét házban van ---> Minusz Holdas</li>
+        </ul>
+        <li><b>Férfi</b></li>
+        <ul>
+            <li>A nap bolygója sötét házban van ---> Minusz Napos</li>
+            <li>A hold bolygója világos házban van ---> Plusz Holdas</li>
+        </ul>
+    </ul>
 
 {% endblock content %}

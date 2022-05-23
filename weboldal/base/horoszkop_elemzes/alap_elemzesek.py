@@ -117,9 +117,7 @@ def serult_e_nap(bolygok, adatok):
     kiemelt_sotet_hazak = [4,8,12]
 
     nap = bolygok[0]
-    # print(nap)
     neme = adatok.neme
-    # print(neme, int(nap["hazszam"]["haz"].nevID))
 
     if neme == "férfi" and int(nap["hazszam"]["haz"].nevID) in kiemelt_sotet_hazak:
         return "- nap"

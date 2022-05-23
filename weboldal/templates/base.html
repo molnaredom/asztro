@@ -56,6 +56,9 @@
                 <li><a href="{% url 'analogia_adatbazis' %}" class="nav-link px-2 text-white">Analógia adatbázis</a></li>
                 <li><a href="{% url 'ml_fooldal' %}" class="nav-link px-2 text-white">ML oldal</a></li>
                 <li><a href="/gyakorlo" class="nav-link px-2 text-white">Analógia gyakorló</a></li>
+                {% if request.user.is_superuser %}
+                    <li><a href="{% url 'admin_panel' %}" class="nav-link px-2 text-white">Admin</a></li>
+                {% endif %}
             </ul>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
