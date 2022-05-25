@@ -15,9 +15,10 @@ def bolygo(request, nevID):
     analogia = Bolygo2.objects.get(nevID=nevID)
     # print(analogia.leiras["analogiak"])
     analogia.leiras = eval(analogia.leiras["analogiak"])
-    print(analogia.leiras, type(analogia.leiras))
+    randomszam = random.randint(0, 12)
+    print(randomszam)
 
-    context = {"analogia": analogia}  # ez egy objektum
+    context = {"analogia": analogia, }  # ez egy objektum
 
     return render(request, "konkret_analogiak/bolygo.html", context)
 
@@ -42,7 +43,9 @@ def bolygoJegyben(request, id):
 def bolygoHazban(request, id):
     analogia = BolygoHazban2.objects.get(id=id)
 
-    context = {"analogia": analogia}  # ez egy objektum
+    random_analogia = random.randint(1,len(BolygoHazban2.objects.all()))
+
+    context = {"analogia": analogia, "random_analogia": str(random_analogia)}  # ez egy objektum
 
     return render(request, "konkret_analogiak/bolygoHazban.html", context)
 
