@@ -1,7 +1,11 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'konkret_analogia.html' %}
 
-<h1>{{analogia.nevID}}</h1>
+{% block header %}
+       <a href="{% url 'bolygo' analogia.nevID %}">{{ analogia.nevID }}</a>
+{% endblock %}
+
+{% block body %}
+
 <p>Pontérték: {{analogia.pontertek}}</p>
 <p>Típus: {{analogia.tipus}}</p>
 
@@ -10,6 +14,4 @@
         <p> {{ i }} </p>
     {% endfor %}
 
-{% endblock content %}
-
-<a href="">Teljes adatbázis generálása/megjelenítése</a>
+{% endblock %}

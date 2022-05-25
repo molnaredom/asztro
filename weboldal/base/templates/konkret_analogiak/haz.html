@@ -1,8 +1,17 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'konkret_analogia.html' %}
 
-<h1>{{analogia.nevID}} ház</h1>
-<p>Típus: {{analogia.tipus}}</p>
+{% block header %}
+       <a href="{% url 'haz' analogia.nevID %}">{{ analogia.nevID }}</a>
+{% endblock %}
+
+{% block body %}
+
+<p>Típus: {{analogia.tipus}} ház</p>
 <p>Mundán jegye: <a href="{% url 'jegy' analogia.mundan_jegye %}">{{analogia.mundan_jegye}}</a></p>
 
-{% endblock content %}
+<h3>Leírás:</h3>
+{% for i in analogia.leiras %}
+        <p> {{ i }} </p>
+    {% endfor %}
+
+{% endblock %}

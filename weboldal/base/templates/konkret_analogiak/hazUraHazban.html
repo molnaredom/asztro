@@ -1,45 +1,11 @@
 {% extends 'base.html' %}
-{% block content %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Blog Template · Bootstrap v5.1</title>
+    {% block header %}
+            <a href="{% url 'haz' analogia.alap_haz.nevID %}">{{analogia.alap_haz.nevID}}. </a>ház ura
+            <a href="{% url 'haz' analogia.ura_melyik_hazban.nevID %}">{{analogia.ura_melyik_hazban.nevID}}. </a>
+        {% endblock %}
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/blog/">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
-</head>
-
-
-<body>
-
-<div class="container">
-
-    <hr>
-</div>
+{% block body %}
 
 <main class="container">
     <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
@@ -98,14 +64,5 @@
 
 </main>
 
-<footer class="blog-footer">
-<!--    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.-->
-<!--    </p>-->
-<!--    <p>-->
-<!--        <a href="#">Back to top</a>-->
-<!--    </p>-->
-</footer>
 
-</body>
-
-{% endblock content %}
+{% endblock %}
