@@ -1,8 +1,6 @@
 import datetime
-
 import requests
 from django.shortcuts import redirect, render
-
 from ..forms import HoroszkopFormGyors
 from ..kisegito import kisegito
 import socket

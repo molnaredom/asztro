@@ -1,17 +1,34 @@
 {% extends 'konkret_analogia.html' %}
 
 {% block header %}
-       <a href="{% url 'bolygo' analogia.nevID %}">{{ analogia.nevID }}</a>
+    <a href="{% url 'bolygo' analogia.nevID %}">{{ analogia.nevID }}</a>
 {% endblock %}
 
 {% block body %}
 
-<p>Pontérték: {{analogia.pontertek}}</p>
-<p>Típus: {{analogia.tipus}}</p>
+    <p>Pontérték: {{ analogia.pontertek }}</p>
+    <p>Típus: {{ analogia.tipus }}</p>
 
-<h3>Leírás:</h3>
-{% for i in analogia.leiras %}
+    <h3>Leírás:</h3>
+    {% for i in analogia.leiras %}
         <p> {{ i }} </p>
     {% endfor %}
+
+    <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="fst-italic">Az oldalról</h4>
+                <p class="mb-0">Itt megismerheted az analógiáit ennek a bolygó Házban analógiának.</p>
+            </div>
+
+            <div class="p-4">
+                <ol class="list-unstyled mb-0">
+                    <li><a href="{% url 'bolygo' random_analogia %}"> Véletlenszerű Bolygó analógia</a>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
 
 {% endblock %}
