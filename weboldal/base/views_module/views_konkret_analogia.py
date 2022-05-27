@@ -2,6 +2,15 @@ from django.shortcuts import render
 from ..models import Room2, Topic2, Jegy2, Bolygo2, Haz2, Message2, BolygoHazban2, BolygoJegyben2, HazJegyben2, HazUraHazban
 import random
 
+def altalanos_osszetett_analogia(Objektum, html_path, request, id):
+    analogia = Objektum.objects.get(id=id)
+
+    random_analogia = random.randint(1,len(Objektum.objects.all()))
+
+    context = {"analogia": analogia, "random_analogia": str(random_analogia)}  # ez egy objektum
+
+    return render(request, f"{html_path}", context)
+
 
 # konkrét oldalak( a fa levelei)
 def jegy(request, nevID):
@@ -32,22 +41,11 @@ def haz(request, nevID):
 
 
 def bolygoJegyben(request, id):
-    analogia = BolygoJegyben2.objects.get(id=id)
-    randomszamok = random.randint(1, 50)
-
-    context = {"analogia": analogia, "randomszamok": randomszamok}  # ez egy objektum
-
-    return render(request, "konkret_analogiak/bolygoJegyben.html", context)
+    return altalanos_osszetett_analogia(BolygoJegyben2,"konkret_analogiak/bolygoJegyben.html",request, id )
 
 
 def bolygoHazban(request, id):
-    analogia = BolygoHazban2.objects.get(id=id)
-
-    random_analogia = random.randint(1,len(BolygoHazban2.objects.all()))
-
-    context = {"analogia": analogia, "random_analogia": str(random_analogia)}  # ez egy objektum
-
-    return render(request, "konkret_analogiak/bolygoHazban.html", context)
+    return altalanos_osszetett_analogia(BolygoHazban2,"konkret_analogiak/bolygoHazban.html",request, id)
 
 
 def hazJegyben(request, id):

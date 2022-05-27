@@ -116,7 +116,7 @@ def horoszkop_gyujtemeny(request):
 
     hpok = Horoszkop2.objects.all()
     privat_nev_ha_nem_superuser(hpok, request)
-    print(haz_es_jegy_lekerdezes, ".............")
+
 
     context = {'adatok': hpok,
                "bolygo_es_jegy_lekerdezes": bolygo_es_jegy_lekerdezes,
@@ -159,9 +159,9 @@ def bolygo_hazban_alapjan_lekeres(bolygoNev, hazNev, bolygo_nevek):
     elif bolygoNev == bolygo_nevek[2]:
         return Horoszkop2.objects.filter(merkur_h__haz__nevID=hazNev)
     elif bolygoNev == bolygo_nevek[3]:
-        return Horoszkop2.objects.filter(mars_h__haz__nevID=hazNev)
-    elif bolygoNev == bolygo_nevek[4]:
         return Horoszkop2.objects.filter(venusz_h__haz__nevID=hazNev)
+    elif bolygoNev == bolygo_nevek[4]:
+        return Horoszkop2.objects.filter(mars_h__haz__nevID=hazNev)
     elif bolygoNev == bolygo_nevek[5]:
         return Horoszkop2.objects.filter(jupiter_h__haz__nevID=hazNev)
     elif bolygoNev == bolygo_nevek[6]:
