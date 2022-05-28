@@ -5,7 +5,7 @@ from .osszetett_elemzesek import anareta, sorstipus
 from .hozzarendelesek import *
 
 
-def _elemzes(adatok, osszesjegy, hazakUraHazakban):
+def elemzes(adatok, osszesjegy, hazakUraHazakban):
     # print(111)
     bolygok, hazak, pontos_kor = uj_alapanalogiak_hozzarendelese(adatok)
     # [print(i["haz"].nevID, [j["bolygo"] for j in i["bolygok"]]) for i in hazak]
@@ -24,9 +24,8 @@ def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy,
     eredmeny["hazakurai"] = hazura_kiiratas(hazak, hazakUraHazakban)
     eredmeny["serult_e_nap"] = serult_e_nap(bolygok, adatok)
     eredmeny["serult_e_hold"] = serult_e_hold(bolygok, adatok)
-    hyleg_res = hyleg(bolygok)
-    eredmeny["hyleg"] = hyleg_res
-    eredmeny["anareta"] = anareta(hyleg_res, bolygok)
+    eredmeny["hyleg"] = hyleg(bolygok)
+    eredmeny["anareta"] = anareta(hyleg=eredmeny["hyleg"], bolygok=bolygok)
     eredmeny["megval_vagy_celkij"] = megval_vagy_celkij(bolygok, hazak)
 
 

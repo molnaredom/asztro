@@ -1,6 +1,8 @@
 import datetime
 import os
 import django.utils.timezone as django_timezone
+from django.contrib.auth.models import User
+from django.db import models
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -158,6 +160,7 @@ class Horoszkop2(models.Model):
 
     kepletkep = models.ImageField(upload_to='images/', default= os.getcwd()+'weboldal/static/images/hold.jpg')
     leirasok = models.JSONField(default=dict, blank=True)
+    elemzes_adat = models.JSONField(default=dict, blank=True)
     fokszamok = models.JSONField(default=dict, blank=True)
     munka = models.JSONField(default=dict, blank=True)
 
@@ -200,10 +203,6 @@ class Horoszkop2(models.Model):
 
     def __str__(self):
         return str(self.tulajdonos_neve)[0].upper() + str(self.tulajdonos_neve)[1:]
-
-from django.db import models
-from django.contrib.auth.models import User
-import random
 
 
 class Quiz(models.Model):

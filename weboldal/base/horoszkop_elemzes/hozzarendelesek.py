@@ -78,7 +78,6 @@ def fokszamhozzarendeles(adatok):
     hazjegyben_adatok = [adatok.haz_1, adatok.haz_2, adatok.haz_3, adatok.haz_4, adatok.haz_5, adatok.haz_6,
                          adatok.haz_7,
                          adatok.haz_8, adatok.haz_9, adatok.haz_10, adatok.haz_11, adatok.haz_12]
-    print("..............", adatok.fokszamok)
     # bolygok, hazak = {}, {} # egy regi otlet
     bolygok, hazak = [], []
     # printd(bolygojegyben_adatok, problema=fokszamhozzarendeles.__name__)

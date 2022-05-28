@@ -3,7 +3,9 @@ import requests
 from django.shortcuts import redirect, render
 from ..forms import HoroszkopFormGyors
 from ..kisegito import kisegito
+from ..horoszkop_elemzes import horoszkopelemzo_manager
 import socket
+from ..models import Jegy2, HazUraHazban
 
 
 def createHoroszkopGyors(request):
@@ -120,74 +122,54 @@ def osszfokszam_hozzarendeles(bolygok, hazak):
     return bolygok, hazak
 
 
-def set_bolygo_es_haz_objektumok(obj):
-    horoszkop_alap = ryuphi_api_adatlehivo_manager(obj)
-
-    bolygo_nevek = [kisegito.ekezetnelkul(i) for i in kisegito.get_bolygo_nevek()]
-
-    obj.fokszamok = get_fokszamok(horoszkop_alap)
-
-    # haz jegyben
-    obj.haz_1_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][1]["jegy"], haz=str(1))
-    obj.haz_2_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][2]["jegy"], haz=str(2))
-    obj.haz_3_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][3]["jegy"], haz=str(3))
-    obj.haz_4_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][4]["jegy"], haz=str(4))
-    obj.haz_5_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][5]["jegy"], haz=str(5))
-    obj.haz_6_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][6]["jegy"], haz=str(6))
-    obj.haz_7_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][7]["jegy"], haz=str(7))
-    obj.haz_8_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][8]["jegy"], haz=str(8))
-    obj.haz_9_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][9]["jegy"], haz=str(9))
-    obj.haz_10_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][10]["jegy"], haz=str(10))
-    obj.haz_11_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][11]["jegy"], haz=str(11))
-    obj.haz_12_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][12]["jegy"], haz=str(12))
-    # bolygo
-    # jegyben
-    # print("-------",horoszkop_alap["bolygok"][bolygo_nevek[0]]["jegy"])
-    obj.nap_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[0]]["jegy"],
-                                       bolygo=bolygo_nevek[0])
-    obj.hold_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[1]]["jegy"],
-                                          bolygo=bolygo_nevek[1])
-    obj.merkur_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[2]]["jegy"],
-                                            bolygo=bolygo_nevek[2])
-    obj.venusz_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[3]]["jegy"],
-                                            bolygo=bolygo_nevek[3])
-    obj.mars_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[4]]["jegy"],
-                                          bolygo=bolygo_nevek[4])
-    obj.jupiter_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[5]]["jegy"],
-                                             bolygo=bolygo_nevek[5])
-    obj.szaturnusz_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[6]]["jegy"],
-                                                bolygo=bolygo_nevek[6])
-    obj.uranusz_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[7]]["jegy"],
-                                             bolygo=bolygo_nevek[7])
-    obj.neptun_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[8]]["jegy"],
-                                            bolygo=bolygo_nevek[8])
-    obj.pluto_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["bolygok"][bolygo_nevek[9]]["jegy"],
-                                           bolygo=bolygo_nevek[9])
-    # főtengelyek bolygóként
-    obj.asc_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][1]["jegy"], bolygo="asc")
-    obj.mc_j_id = get_id_to_hp_alapadat(jegy=horoszkop_alap["hazak"][10]["jegy"], bolygo="mc")
-
-    # bolygo hazban
-    bolygok, hazak = fokszamhozzarendeles(obj, horoszkop_alap)
+def bolygo_hazban_hozzarendelesek(b_nevek, hp_alap, obj):
+    bolygok, hazak = fokszamhozzarendeles(obj, hp_alap)
     bolygok, hazak = osszfokszam_hozzarendeles(bolygok, hazak)
-
     bolygok, hazak = bolygohoz_haz_rendeles(bolygok, hazak)
-
-    obj.nap_h_id = get_id_to_hp_alapadat(haz=str(bolygok[0]["hazszam"]["haz"]), bolygo=bolygo_nevek[0])
-    obj.hold_h_id = get_id_to_hp_alapadat(haz=str(bolygok[1]["hazszam"]["haz"]), bolygo=bolygo_nevek[1])
-    obj.merkur_h_id = get_id_to_hp_alapadat(haz=str(bolygok[2]["hazszam"]["haz"]), bolygo=bolygo_nevek[2])
-    obj.venusz_h_id = get_id_to_hp_alapadat(haz=str(bolygok[3]["hazszam"]["haz"]), bolygo=bolygo_nevek[3])
-    obj.mars_h_id = get_id_to_hp_alapadat(haz=str(bolygok[4]["hazszam"]["haz"]), bolygo=bolygo_nevek[4])
-    obj.jupiter_h_id = get_id_to_hp_alapadat(haz=str(bolygok[5]["hazszam"]["haz"]), bolygo=bolygo_nevek[5])
-    obj.szaturnusz_h_id = get_id_to_hp_alapadat(haz=str(bolygok[6]["hazszam"]["haz"]), bolygo=bolygo_nevek[6])
-    obj.uranusz_h_id = get_id_to_hp_alapadat(haz=str(bolygok[7]["hazszam"]["haz"]), bolygo=bolygo_nevek[7])
-    obj.neptun_h_id = get_id_to_hp_alapadat(haz=str(bolygok[8]["hazszam"]["haz"]), bolygo=bolygo_nevek[8])
-    obj.pluto_h_id = get_id_to_hp_alapadat(haz=str(bolygok[9]["hazszam"]["haz"]), bolygo=bolygo_nevek[9])
-
-    return obj
+    obj.nap_h_id = get_id_hp_alapadat(haz=str(bolygok[0]["hazszam"]["haz"]), bolygo=b_nevek[0])
+    obj.hold_h_id = get_id_hp_alapadat(haz=str(bolygok[1]["hazszam"]["haz"]), bolygo=b_nevek[1])
+    obj.merkur_h_id = get_id_hp_alapadat(haz=str(bolygok[2]["hazszam"]["haz"]), bolygo=b_nevek[2])
+    obj.venusz_h_id = get_id_hp_alapadat(haz=str(bolygok[3]["hazszam"]["haz"]), bolygo=b_nevek[3])
+    obj.mars_h_id = get_id_hp_alapadat(haz=str(bolygok[4]["hazszam"]["haz"]), bolygo=b_nevek[4])
+    obj.jupiter_h_id = get_id_hp_alapadat(haz=str(bolygok[5]["hazszam"]["haz"]), bolygo=b_nevek[5])
+    obj.szaturnusz_h_id = get_id_hp_alapadat(haz=str(bolygok[6]["hazszam"]["haz"]), bolygo=b_nevek[6])
+    obj.uranusz_h_id = get_id_hp_alapadat(haz=str(bolygok[7]["hazszam"]["haz"]), bolygo=b_nevek[7])
+    obj.neptun_h_id = get_id_hp_alapadat(haz=str(bolygok[8]["hazszam"]["haz"]), bolygo=b_nevek[8])
+    obj.pluto_h_id = get_id_hp_alapadat(haz=str(bolygok[9]["hazszam"]["haz"]), bolygo=b_nevek[9])
 
 
-def get_id_to_hp_alapadat(jegy=None, bolygo=None, haz=None):
+def bolygo_jegyben_hozzarendelesek(b_nevek, hp_alap, obj):
+    obj.nap_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[0]]["jegy"], bolygo=b_nevek[0])
+    obj.hold_j_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[1]]["jegy"], bolygo=b_nevek[1])
+    obj.merkur_j_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[2]]["jegy"], bolygo=b_nevek[2])
+    obj.venusz_j_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[3]]["jegy"], bolygo=b_nevek[3])
+    obj.mars_j_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[4]]["jegy"], bolygo=b_nevek[4])
+    obj.jupiter_j_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[5]]["jegy"], bolygo=b_nevek[5])
+    obj.szaturnusz_j_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[6]]["jegy"], bolygo=b_nevek[6])
+    obj.uranusz_j_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[7]]["jegy"], bolygo=b_nevek[7])
+    obj.neptun_j_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[8]]["jegy"], bolygo=b_nevek[8])
+    obj.pluto_j_id = get_id_hp_alapadat(jegy=hp_alap["bolygok"][b_nevek[9]]["jegy"], bolygo=b_nevek[9])
+    # # főtengelyek bolygóként
+    obj.asc_j_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][1]["jegy"], bolygo="asc")
+    obj.mc_j_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][10]["jegy"], bolygo="mc")
+
+
+def haz_jegyben_hozzarendelesek(hp_alap, obj):
+    obj.haz_1_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][1]["jegy"], haz=str(1))
+    obj.haz_2_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][2]["jegy"], haz=str(2))
+    obj.haz_3_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][3]["jegy"], haz=str(3))
+    obj.haz_4_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][4]["jegy"], haz=str(4))
+    obj.haz_5_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][5]["jegy"], haz=str(5))
+    obj.haz_6_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][6]["jegy"], haz=str(6))
+    obj.haz_7_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][7]["jegy"], haz=str(7))
+    obj.haz_8_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][8]["jegy"], haz=str(8))
+    obj.haz_9_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][9]["jegy"], haz=str(9))
+    obj.haz_10_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][10]["jegy"], haz=str(10))
+    obj.haz_11_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][11]["jegy"], haz=str(11))
+    obj.haz_12_id = get_id_hp_alapadat(jegy=hp_alap["hazak"][12]["jegy"], haz=str(12))
+
+
+def get_id_hp_alapadat(jegy=None, bolygo=None, haz=None):
     if haz is None:  # bolygo jegyben
         return str(kisegito.jegy_to_num(jegy) + (kisegito.bolygo_to_num(bolygo) - 1) * 12)
     elif bolygo is None:  # haz jegyben
@@ -199,9 +181,7 @@ def get_id_to_hp_alapadat(jegy=None, bolygo=None, haz=None):
 
 
 def ryuphi_api_adatlehivo_manager(tulajdonso_adatok):
-    # print("tulajdonos adatok",tulajdonso_adatok)
     kinyert_adatok = init_api(tulajdonso_adatok)
-    # print("kinyert adatok",kinyert_adatok)
     return {"bolygok": get_bolygok(kinyert_adatok), "hazak": get_hazak(kinyert_adatok)}
 
 
@@ -278,3 +258,26 @@ def get_hazak(chart):
 
     # [print(i) for i in hazak.items()]
     return hazak
+
+
+def set_bolygo_es_haz_objektumok(obj):
+    hp_alap = ryuphi_api_adatlehivo_manager(obj)
+
+    b_nevek = [kisegito.ekezetnelkul(i) for i in kisegito.get_bolygo_nevek()]
+
+    obj.fokszamok = get_fokszamok(hp_alap)
+
+    haz_jegyben_hozzarendelesek(hp_alap, obj)
+    bolygo_jegyben_hozzarendelesek(b_nevek, hp_alap, obj)
+    bolygo_hazban_hozzarendelesek(b_nevek, hp_alap, obj)
+
+    hazakUraHazakban = HazUraHazban.objects.all()
+    for i in hazakUraHazakban:
+        i.tulajdonsagok =  i.tulajdonsagok["analogiak"][2:-2].split("', '")
+
+    obj.elemzes_adat = horoszkopelemzo_manager.elemzes(obj,
+                                                       hazakUraHazakban=hazakUraHazakban,
+                                                       osszesjegy = Jegy2.objects.all()
+                                                       )
+
+    return obj
