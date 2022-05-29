@@ -7,4 +7,9 @@ assignees: ''
 
 ---
 
-# The question
+**Kérdés témája:**
+-
+
+**Kérés leírása**
+-
+
