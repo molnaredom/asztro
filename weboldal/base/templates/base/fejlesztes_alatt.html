@@ -1,17 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<html lang="en" class="h-100">
+    <html lang="en" class="h-100">
     <main class="px-3 bg-dark d-flex d-flex h-100 text-center text-white bg-dark">
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <h1>
-            Ez az oldal még nem létezik :(
-        </h1>
-        <p class="lead">Dolgozunk, hogy hamarosan ezt a funkciót is elérhesd.</p>
-        <p class="lead">
-            <a href="{{request.META.HTTP_REFERER}}" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Visszalépés az előző oldalra</a>
-        </p>
-</div>
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <h1>
+                Ez az oldal még nem létezik :(
+            </h1>
+            <p class="lead">Dolgozunk, hogy hamarosan ezt a funkciót is elérhesd.</p>
+            <p class="lead">
+                <a href="{{ request.META.HTTP_REFERER }}"
+                   class="btn btn-lg btn-secondary fw-bold border-white bg-black">Visszalépés az előző oldalra</a>
+            </p>
+
+            <p>
+                <a href="https://github.com/molnaredom/asztro/issues/new?assignees=&labels=bug&template=bug_report.md&title=">Hiba
+                    bejelentés</a>
+            </p>
+            <p>
+                <a href="https://github.com/molnaredom/asztro/issues/new?assignees=&labels=feature+request&template=feature_request.md&title=">Fejlesztési
+                    kérelem</a>
+            </p>
+            <p>
+                <a href="https://github.com/molnaredom/asztro/issues/new?assignees=&labels=question&template=question.md&title=">Kérdés
+                    feltevés</a>
+            </p>
+
+        </div>
+
     </main>
-</html>
+    </html>
 {% endblock content %}
