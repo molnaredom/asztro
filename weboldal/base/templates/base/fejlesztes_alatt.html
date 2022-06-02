@@ -2,13 +2,13 @@
 {% block content %}
 
     <html lang="en" class="h-100">
-    <main class="px-3 bg-dark d-flex d-flex h-100 text-center text-white bg-dark">
-        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-            <h1>
+    <main class="px-4 bg-dark d-flex d-flex h-100 text-center text-white bg-dark py-4">
+        <div class="cover-container d-flex w-100 h-100 p-4 mx-auto flex-column">
+            <h1 class="py-3">
                 Ez az oldal még nem létezik :(
             </h1>
-            <p class="lead">Dolgozunk, hogy hamarosan ezt a funkciót is elérhesd.</p>
-            <p class="lead">
+            <i class="lead py-2 ">Dolgozunk, hogy hamarosan ezt a funkciót is elérhesd.</i>
+            <p class="lead py-5">
                 <a href="{{ request.META.HTTP_REFERER }}"
                    class="btn btn-lg btn-secondary fw-bold border-white bg-black">Visszalépés az előző oldalra</a>
             </p>
@@ -27,6 +27,7 @@
             </p>
 
         </div>
+
 
     </main>
     </html>

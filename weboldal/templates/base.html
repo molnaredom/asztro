@@ -1,9 +1,8 @@
 <!doctype html>
 
 {% load static %}
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="hu">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,25 +14,49 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'hold.ico' %}"/>
 
     <title>Asztroldal</title>
 
     {% block css %}
         <style>
-
-
-            .head1 {
-                color: #FBAD30;
-                font-size: 2rem;
-                font-weight: bold;
-                height: 50px;
+            .navbar {
+                background: darkcyan;
             }
 
-            .head2 {
-                color: #EF4926;
-                font-size: 2rem;
-                font-weight: bold;
+            .nav-item::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                background: lightseagreen;
+                transition: 0.4s
+            }
+
+            .nav-item:hover::after {
+                width: 100%
+            }
+
+            .navbar-dark .navbar-nav .active > .nav-link,
+            .navbar-dark .navbar-nav .nav-link.active,
+            .navbar-dark .navbar-nav .nav-link.show,
+            .navbar-dark .navbar-nav .show > .nav-link,
+            .navbar-dark .navbar-nav .nav-link:focus,
+            .navbar-dark .navbar-nav .nav-link:hover {
+                color: #fec400
+            }
+
+            button {
+                border-width: 0;
+            }
+
+            .nav-link {
+                padding: 25px 5px;
+                transition: 0.2s
+            }
+
+            body {
+                background-color: white;
             }
         </style>
     {% endblock %}
@@ -42,47 +65,77 @@
     {% endblock %}
 </head>
 
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="table" viewBox="0 0 16 16">
-        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
-    </symbol>
-</svg>
-
-<div class="b-example-divider"></div>
-
+<body>
 <header class="p-3 text-white" style="background-color: darkcyan">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <nav class="navbar navbar-expand-sm ">
+        {#        <button class="navbar-toggler" type="button" data-target="#navigation">#}
+        {#            <span class="navbar-toggler-icon"></span>#}
+        {#        </button>#}
 
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/" class="nav-link px-2 text-white">Kezdőlap</a></li>
-                <li><a href="{% url 'horoszkop_gyujtemeny' %}" class="nav-link px-2 text-white">Horoszkópok</a></li>
-                <li><a href="{% url 'analogia_adatbazis' %}" class="nav-link px-2 text-white">Analógia adatbázis</a>
-                </li>
-                <li><a href="{% url 'ml_fooldal' %}" class="nav-link px-2 text-white">ML oldal</a></li>
-                <li><a href="/gyakorlo" class="nav-link px-2 text-white">Analógia gyakorló</a></li>
-                {% if request.user.is_superuser %}
-                    <li><a href="{% url 'admin_panel' %}" class="nav-link px-2 text-white">Admin</a></li>
-                {% endif %}
-            </ul>
 
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                {{ request.user }}
-            </ul>
+        <div class="container">
 
-            <div class="text-end">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-                {% if request.user.is_authenticated %}
-                    <a href="{% url 'logout' %}" class="btn btn-outline-light me-2">Kilépés</a>
-                {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-outline-light me-2">Belépés</a>
-                    <a href="{% url 'register' %}" class="btn btn-warning">Regisztráció</a>
-                {% endif %}
+                <ul class="navbar-nav col-12 col-lg-auto me-lg-auto  justify-content-center">
+                    <li class="nav-item"><a href="/" class="nav-link px-2 text-white">Kezdőlap</a></li>
+                    <li class="nav-item"><a href="{% url 'horoszkop_gyujtemeny' %}"
+                                            class="nav-link px-2 text-white">Horoszkópok</a></li>
+                    <li class="nav-item ">
+                        <div class="btn-group">
+                            <button type="button" style="background-color: darkcyan">
+                                <a href="{% url 'analogia_adatbazis' %}" class="nav-link px-2 text-white">
+                                    Analógia adatbázis</a></button>
+                            <button type="button" class="btn dropdown-toggle dropdown-toggle-split text-white"
+                                    id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false"
+                                    data-bs-reference="parent">
+                                <span class="visually-hidden">Rejtett dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                                <li><a class="dropdown-item" href="{% url 'bolygok' %}">Bolygók</a></li>
+                                <li><a class="dropdown-item" href="{% url 'jegyek' %}">Jegyek</a></li>
+                                <li><a class="dropdown-item" href="{% url 'hazak' %}">Házak</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'bolygokJegyekben' %}">Bolygók Jegyekben</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'bolygokHazakban' %}">Bólygók Házkban</a></li>
+                                <li><a class="dropdown-item" href="{% url 'hazakJegyekben' %}">Házak Jegyekben</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'hazakUraHazakban' %}">Házak ura Házakban</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'fejlesztes_alatt' %}">Nincs ura</a></li>
 
+                            </ul>
+                        </div>
+                    <li class="nav-item"><a href="{% url 'ml_fooldal' %}" class="nav-link px-2 text-white">ML oldal</a>
+                    </li>
+                    <li class="nav-item"><a href="/gyakorlo" class="nav-link px-2 text-white">Analógia gyakorló</a></li>
+                    {% if request.user.is_superuser %}
+                        <li class="nav-item"><a href="{% url 'admin_panel' %}"
+                                                class="nav-link px-2 text-white">Admin</a></li>
+                    {% endif %}
+                </ul>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ">
+                    {{ request.user }}
+                </ul>
+
+                <div class="justify-content">
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url 'logout' %}" class="btn btn-outline-light me-2">Kilépés</a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-outline-light me-2">Belépés</a>
+                        <a href="{% url 'register' %}" class="btn btn-warning">Regisztráció</a>
+                    {% endif %}
+
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
 </header>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -92,42 +145,36 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-<body>
-<div class="container-xxl">
 
+<div class="container-xxl">
     {% block content %}
 
     {% endblock %}
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-
 </div>
 
 
-<footer class="py-5 mb-6" style="background-color: darkcyan">
-    <div class="container">
+<footer class="py-5" style="background-color: darkcyan">
+    <div class="container mb-3">
         <div class="d-flex justify-content-between py-12 my-3 ">
-            <ul class="list-unstyled d-flex">
+            <ul class="list-unstyled d-flex align">
                 <li class="ms-4"><a class="link-dark" href="https://github.com/molnaredom/asztro">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                          class="bi bi-github" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
                     </svg>
                 </a></li>
                 <li class="ms-4"><a class="link-dark"
                                     href="https://www.youtube.com/channel/UCwVDBYw8JhbD2v1ai_g2YMw/videos">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                          class="bi bi-youtube" viewBox="0 0 16 16">
-                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"></path>
                     </svg>
                 </a></li>
                 <li class="ms-4"><a class="link-dark"
                                     href="https://discordapp.com/channels/981204816686620753/981204817127026798">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                          class="bi bi-discord" viewBox="0 0 16 16">
-                        <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+                        <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"></path>
                     </svg>
                 </a></li>
             </ul>
@@ -137,22 +184,23 @@
             <div class="col-2">
                 <h5>Hasznos oldalak:</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Kezdőlap</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Gyakran ismételt
+                    <li class="nav-item mb-2"><a href="{% url 'home' %}" class="nav-link p-0 text-dark">Kezdőlap</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'fejlesztes_alatt' %}" class="nav-link p-0 text-dark">Gyakran ismételt
                         kérdések</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Rólam</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'rolunk' %}" class="nav-link p-0 text-dark">Rólunk</a></li>
                 </ul>
             </div>
-{#            <div class="col-2">#}
-{#                <h5>Elérhetőségek:</h5>#}
-{#                <ul class="nav flex-column">#}
-{#                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Email</a></li>#}
-{#                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Telefon</a></li>#}
-{#                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark ">Rólunk</a></li>#}
-{#                </ul>#}
-{#            </div>#}
+            {#            <div class="col-2">#}
+            {#                <h5>Elérhetőségek:</h5>#}
+            {#                <ul class="nav flex-column">#}
+            {#                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Email</a></li>#}
+            {#                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Telefon</a></li>#}
+            {#                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark ">Rólunk</a></li>#}
+            {#                </ul>#}
+            {#            </div>#}
         </div>
     </div>
+    <br><br><br><br><br><br><br>
 </footer>
 </body>
 
