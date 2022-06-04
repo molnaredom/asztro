@@ -1,5 +1,7 @@
 import datetime
 import os
+
+import django
 import django.utils.timezone as django_timezone
 from django.contrib.auth.models import User
 from django.db import models
@@ -130,7 +132,7 @@ class HazUraHazban(models.Model):
 
 class HoroszkopAdatok(models.Model):
     tulajdonos_neve = models.CharField(max_length=30)
-    idopont = models.DateTimeField(default=datetime.datetime.now())
+    idopont = models.DateTimeField(default=django.utils.timezone.now)
     hely = models.CharField(max_length=80, blank=True)
     tipus = models.CharField(max_length=30, blank=True)
     neme = models.CharField(max_length=10, blank=True, default="")
@@ -143,7 +145,7 @@ class HoroszkopAdatok(models.Model):
 
 class HoroszkopAlapadat(models. Model):
     tulajdonos_neve = models.CharField(max_length=40)
-    idopont = models.DateTimeField(default=django_timezone.now())
+    idopont = models.DateTimeField(default=django.utils.timezone.now)
     hely = models.CharField(max_length=80, blank=True)
     tipus = models.CharField(max_length=30, blank=True)
     neme = models.CharField(max_length=10, blank=True, default="")
@@ -153,7 +155,7 @@ class HoroszkopAlapadat(models. Model):
 
 class Horoszkop2(models.Model):
     tulajdonos_neve = models.CharField(max_length=30)
-    idopont = models.DateTimeField(default=django_timezone.now())
+    idopont = models.DateTimeField(default=django.utils.timezone.now)
     hely = models.CharField(max_length=80, blank=True)
     tipus = models.CharField(max_length=30, blank=True)
     neme = models.CharField(max_length=10, blank=True, default="")
