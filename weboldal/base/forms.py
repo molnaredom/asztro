@@ -1,7 +1,8 @@
 from django.forms import ModelForm
-from django import  forms
+from django import forms
 from .models import Room2, Jegy2, Haz2, Bolygo2, BolygoJegyben2, HazJegyben2, BolygoHazban2, Horoszkop2, HazUraHazban, \
     HoroszkopAdatok
+from django.forms import formset_factory
 
 
 class RoomForm(ModelForm):
@@ -63,7 +64,19 @@ class HoroszkopFormGyors(ModelForm):
     class Meta:
         model = Horoszkop2
         # fields = "__all__"
-        fields = ["tulajdonos_neve","idopont","hely","tipus","neme","leirasok","munka",]
+        fields = ["tulajdonos_neve", "idopont", "hely", "neme", "leirasok", "munka"]
+        widgets = {
+            "tulajdonos_neve": forms.TextInput(
+                attrs={'class': 'form-control', 'placeholder': "Pl.: Kis Miklós"}),
+            "hely": forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Pl.: Győr"}),
+            # "idopont" : forms.DateTimeField(attrs={'class': 'form-control'}),
+            # "tipus" : forms.Select(attrs={'class': 'form-control'}),
+            "neme" : forms.Select(attrs={'class': 'form-control'}),
+            # "leirasok" : forms.Textarea(attrs={'class': 'form-control'}),
+            # "munka" : forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+HoroszkopFormGyors = formset_factory(HoroszkopFormGyors,extra=1)
 
 
 class HoroszkopFormAutomatic(ModelForm):
@@ -85,14 +98,8 @@ class HazUraHazbanForm(ModelForm):
         fields = "__all__"
 
 
-class Horoszkop_Csillagjegyszures(ModelForm):
-    class Meta:
-        model = Horoszkop2
-        fields = ["nap"]
-
 from django import forms
 from .models import Quiz, Question, Answer
-from django.contrib import admin
 
 
 class QuizForm(forms.ModelForm):
@@ -111,5 +118,3 @@ class AnswerForm(forms.ModelForm):
     class Meta:
         model = Answer
         fields = ("content", 'question', 'correct')
-
-

@@ -261,6 +261,8 @@ def get_hazak(chart):
 
 
 def set_bolygo_es_haz_objektumok(obj):
+    obj.tipus = "radix"
+
     hp_alap = ryuphi_api_adatlehivo_manager(obj)
 
     b_nevek = [kisegito.ekezetnelkul(i) for i in kisegito.get_bolygo_nevek()]

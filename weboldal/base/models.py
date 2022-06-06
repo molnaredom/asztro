@@ -154,11 +154,14 @@ class HoroszkopAlapadat(models. Model):
 
 
 class Horoszkop2(models.Model):
+    NEME_CHOICES = (("férfi", "férfi"),
+                    ("nő","nő"))
+
     tulajdonos_neve = models.CharField(max_length=30)
     idopont = models.DateTimeField(default=django.utils.timezone.now)
     hely = models.CharField(max_length=80, blank=True)
     tipus = models.CharField(max_length=30, blank=True)
-    neme = models.CharField(max_length=10, blank=True, default="")
+    neme = models.CharField(max_length=10, choices=NEME_CHOICES)
 
     kepletkep = models.ImageField(upload_to='images/', default= os.getcwd()+'weboldal/static/images/hold.jpg')
     leirasok = models.JSONField(default=dict, blank=True)
