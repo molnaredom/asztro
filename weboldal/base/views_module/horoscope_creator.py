@@ -1,35 +1,55 @@
 import datetime
 import requests
 from django.shortcuts import redirect, render
-from ..forms import HoroszkopFormGyors
+from ..forms import HoroszkopFormGyors, MunkatipusFormset, MunkatipusModelFormset
 from ..kisegito import kisegito
 from ..horoszkop_elemzes import horoszkopelemzo_manager
 import socket
-from ..models import Jegy2, HazUraHazban
+from ..models import Jegy2, HazUraHazban, Munkatipus
 
 
 def createHoroszkopGyors(request):
     form = HoroszkopFormGyors()
+    formset = MunkatipusModelFormset()
+    Munkatipus.objects.all().delete()
 
-    if "megse" in request.POST:
-        return redirect(f"horoszkop_gyujtemeny")
+    if request.method == 'GET':
+        print("*GET")
+        formset = MunkatipusModelFormset(request.GET or None)
 
     if request.method == "POST":
+        print("*POST",request.POST )
+
+        if 'megse' in request.POST:
+            return redirect(f"horoszkop_gyujtemeny")
+
+        formset = MunkatipusModelFormset(request.POST)
+        if formset.is_valid() and 'munkahozzaadas' in request.POST:
+            print("+munka", formset.forms)
+            for form in formset:
+                print("munkanev",munkanev)
+                if form.cleaned_data.get('munkanev'):
+                    form.save()
+                    print('save')
+                return redirect(f"create-horoszkop")
+
         form = HoroszkopFormGyors(request.POST)
-        if form.is_valid():
+        if form.is_valid() and formset.is_valid() and 'munkahozzaadas' not in request.POST:
+            print("+horoszkop")
             obj = form.save(commit=False)
-            # print(1)
+            obj.munka = {"munkak": [i.__getitem__("munkanev").value() for i in formset ]}
+            print(obj.munka)
             obj = set_bolygo_es_haz_objektumok(obj)
-            print(f'ASC-{obj.haz_1_id=}')
             obj.save()
+
             if 'ujabb_fevitel' in request.POST:
                 return redirect(f"create-horoszkop")
 
             elif "mentes_es_foolal" in request.POST:
                 return redirect(f"horoszkop_gyujtemeny")
 
-    context = {'form': form}
-    return render(request, "create_templates/analogia_form.html", context)
+    context = {'form': form, "formset": formset}
+    return render(request, "create_templates/horoszkop_keszito_form.html", context)
 
 
 def get_fokszamok(bolygo_es_haz_adatok):

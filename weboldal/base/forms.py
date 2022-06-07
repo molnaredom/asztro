@@ -1,8 +1,8 @@
 from django.forms import ModelForm
 from django import forms
 from .models import Room2, Jegy2, Haz2, Bolygo2, BolygoJegyben2, HazJegyben2, BolygoHazban2, Horoszkop2, HazUraHazban, \
-    HoroszkopAdatok
-from django.forms import formset_factory
+    HoroszkopAdatok, Munkatipus
+from django.forms import formset_factory, modelformset_factory
 
 
 class RoomForm(ModelForm):
@@ -64,19 +64,40 @@ class HoroszkopFormGyors(ModelForm):
     class Meta:
         model = Horoszkop2
         # fields = "__all__"
-        fields = ["tulajdonos_neve", "idopont", "hely", "neme", "leirasok", "munka"]
+        fields = ["tulajdonos_neve", "idopont", "hely", "neme", "leirasok"]
         widgets = {
             "tulajdonos_neve": forms.TextInput(
                 attrs={'class': 'form-control', 'placeholder': "Pl.: Kis Miklós"}),
             "hely": forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Pl.: Győr"}),
-            # "idopont" : forms.DateTimeField(attrs={'class': 'form-control'}),
-            # "tipus" : forms.Select(attrs={'class': 'form-control'}),
+            "idopont" : forms.DateTimeInput(attrs={'class': 'form-control'}),
             "neme" : forms.Select(attrs={'class': 'form-control'}),
-            # "leirasok" : forms.Textarea(attrs={'class': 'form-control'}),
-            # "munka" : forms.Textarea(attrs={'class': 'form-control'}),
+            "leirasok" : forms.Textarea(attrs={'class': 'form-control'})
         }
 
-HoroszkopFormGyors = formset_factory(HoroszkopFormGyors,extra=1)
+
+class MunkatipusForm(forms.Form):
+    munkanev = forms.CharField(
+        label='Munka',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Add meg egy munkád'
+        })
+    )
+
+
+MunkatipusFormset = formset_factory(MunkatipusForm, extra=1)
+
+
+MunkatipusModelFormset = modelformset_factory(
+    Munkatipus,
+    fields=('munkanev', ),
+    extra=1,
+    widgets={'munkanev': forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Munkanév'
+        })
+    }
+)
 
 
 class HoroszkopFormAutomatic(ModelForm):

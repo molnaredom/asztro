@@ -153,6 +153,18 @@ class HoroszkopAlapadat(models. Model):
     munka = models.JSONField(default=dict, blank=True)
 
 
+class Munkatipus(models. Model):
+    # MUNKA_CHOICES = (("óvónó", "óvónó"),
+    #                 ("informatikus","informatikus"),
+    #                 ("jogász","jogász"))
+
+    munkanev = models.CharField(max_length=30, blank=True)
+
+    def __str__(self):
+        return self.munkanev
+
+
+
 class Horoszkop2(models.Model):
     NEME_CHOICES = (("férfi", "férfi"),
                     ("nő","nő"))
@@ -164,7 +176,7 @@ class Horoszkop2(models.Model):
     neme = models.CharField(max_length=10, choices=NEME_CHOICES)
 
     kepletkep = models.ImageField(upload_to='images/', default= os.getcwd()+'weboldal/static/images/hold.jpg')
-    leirasok = models.JSONField(default=dict, blank=True)
+    leirasok = models.TextField(blank=True)
     elemzes_adat = models.JSONField(default=dict, blank=True)
     fokszamok = models.JSONField(default=dict, blank=True)
     munka = models.JSONField(default=dict, blank=True)
