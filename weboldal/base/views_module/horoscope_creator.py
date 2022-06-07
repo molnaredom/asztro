@@ -259,9 +259,13 @@ def get_bolygok(chart):
     for key, value in bolygo_objektumok.items():
         if key == "chiron":
             break
+        print(kisegito.bolygo_to_hun(key), get_fokszam(value["position"]))
+        fokszam = float(get_fokszam(value["position"]))
+        tizedesresz = (fokszam-int(fokszam))/10*6
+        korrigalt_fokszam = int(fokszam) + tizedesresz
         bolygok[kisegito.bolygo_to_hun(key)] = {
             "jegy": kisegito.jegy_num_to_hun(str(value["sign"])),
-            "fokszam": get_fokszam(value["position"]),
+            "fokszam": korrigalt_fokszam,
             "retográd": value["retrograde"],
             "gyorsaság": value["speed"]
         }
