@@ -5,7 +5,7 @@ from ..forms import HoroszkopFormGyors, MunkatipusFormset, MunkatipusModelFormse
 from ..kisegito import kisegito
 from ..horoszkop_elemzes import horoszkopelemzo_manager
 import socket
-from ..models import Jegy2, HazUraHazban, Munkatipus
+from ..models import Jegy2, HazUraHazban, Munkatipus, Horoszkop2
 
 
 def createHoroszkopGyors(request):
@@ -38,7 +38,7 @@ def createHoroszkopGyors(request):
             print("+horoszkop")
             obj = form.save(commit=False)
             obj.munka = {"munkak": [i.__getitem__("munkanev").value() for i in formset ]}
-            print(obj.munka)
+            # print(obj.munka)
             obj = set_bolygo_es_haz_objektumok(obj)
             obj.save()
 
@@ -47,6 +47,11 @@ def createHoroszkopGyors(request):
 
             elif "mentes_es_foolal" in request.POST:
                 return redirect(f"horoszkop_gyujtemeny")
+
+            elif "horozkop_megnyitas" in request.POST:
+                last_horoscope = Horoszkop2.objects.last()
+                return redirect(f"horoszkop", str(last_horoscope.id))
+
 
     context = {'form': form, "formset": formset}
     return render(request, "create_templates/horoszkop_keszito_form.html", context)
