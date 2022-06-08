@@ -213,121 +213,137 @@
   },
   "hazak": {
     "1": {
-      "típus" : "sarok",
-      "mundán jegye" : "kos",
+      "típus": "sarok",
+      "mundán jegye": "kos",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "ego", "akarat"
+        "ego",
+        "akarat"
       ]
     },
     "2": {
-      "típus" : "követő",
-      "mundán jegye" : "bika",
+      "típus": "követő",
+      "mundán jegye": "bika",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "pénz", "anyagiak"
+        "pénz",
+        "anyagiak"
       ]
     },
     "3": {
-      "típus" : "hanyatló",
-      "mundán jegye" : "ikrek",
+      "típus": "hanyatló",
+      "mundán jegye": "ikrek",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "közlekedés", "testvér"
+        "közlekedés",
+        "testvér"
       ]
     },
     "4": {
-      "típus" : "sarok",
-      "mundán jegye" : "rák",
+      "típus": "sarok",
+      "mundán jegye": "rák",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "család", "otthon"
+        "család",
+        "otthon"
       ]
     },
     "5": {
-      "típus" : "követő",
-      "mundán jegye" : "oroszlán",
+      "típus": "követő",
+      "mundán jegye": "oroszlán",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "1. gyermek", "vállalkozás"
+        "1. gyermek",
+        "vállalkozás"
       ]
     },
     "6": {
-      "típus" : "hanyatló",
-      "mundán jegye" : "szűz",
+      "típus": "hanyatló",
+      "mundán jegye": "szűz",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "munka", "alárendelődés"
+        "munka",
+        "alárendelődés"
       ]
     },
     "7": {
-      "típus" : "sarok",
-      "mundán jegye" : "mérleg",
+      "típus": "sarok",
+      "mundán jegye": "mérleg",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "párkapcsolat", "külvilág"
+        "párkapcsolat",
+        "külvilág"
       ]
     },
     "8": {
-      "típus" : "követő",
-      "mundán jegye" : "skorpió",
+      "típus": "követő",
+      "mundán jegye": "skorpió",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "szexulalitás", "halállal kapcsolatod dolgok"
+        "szexulalitás",
+        "halállal kapcsolatod dolgok"
       ]
     },
     "9": {
-      "típus" : "hanyatló",
-      "mundán jegye" : "nyilas",
+      "típus": "hanyatló",
+      "mundán jegye": "nyilas",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "egyetem", "külföld"
+        "egyetem",
+        "külföld"
       ]
     },
     "10": {
-      "típus" : "sarok",
-      "mundán jegye" : "bak",
-      "leírás": [
-        "c"
-      ],"analógiák": [
-        "célok", "anya"
-      ]
-    },
-    "11": {
-      "típus" : "követő",
-      "mundán jegye" : "vízöntő",
+      "típus": "sarok",
+      "mundán jegye": "bak",
       "leírás": [
         "c"
       ],
       "analógiák": [
-        "barátok", "hobbik"
+        "célok",
+        "anya"
+      ]
+    },
+    "11": {
+      "típus": "követő",
+      "mundán jegye": "vízöntő",
+      "leírás": [
+        "c"
+      ],
+      "analógiák": [
+        "barátok",
+        "hobbik"
       ]
     },
     "12": {
-      "típus" : "hanyatló",
-      "mundán jegye" : "halak",
+      "típus": "hanyatló",
+      "mundán jegye": "halak",
       "leírás": [
-        "c"
-      ],"analógiák": [
-        "egóról való elmondás", "vizsgák"
+        "A sötét házak egyike, általában nehéz minden analógiát megélni itt az egónak",
+        "Viszont ha az egóról való lemondás a célunk, például egy meditációban, még pozitívan is elsülhet az analógia"
+      ],
+      "analógiák": [
+        "egóról való elmondás",
+        "vizsgák",
+        "ilyennek látod magad"
       ]
     }
   }

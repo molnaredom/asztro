@@ -515,6 +515,15 @@
     },
     "5": {
       "általános": [
+        "szexuális problémák - nem tudja megát leengedni",
+        "játékszenvedély",
+        "gyerek racionális alapokon(család tervezés)",
+        "jó kapcsolat a gyerekkel",
+        "az apa segíthet az anyagiakban, de meg akarja mondani mire költsd"
+      ],
+      "munka": [
+        "tehetség: tanítói pályán","tehetség: színésztben","tehetség: kerekedelemben",
+        "vállalkozás: tanítói pályán","vállalkozás: színésztben","vállalkozás: kerekedelemben"
       ]
     },
     "6": {
@@ -720,6 +729,22 @@
     },
     "6": {
       "általános": [
+        "fizikai munkavégzés",
+        "munkában az erőt kell használni",
+        "vezetői pozíció",
+        "állatokkal való problémák: álltai támadások, félelem az állatoktól",
+        "sok baleset (alárendeltség ehlyett, így mondnanak le az akaratukról)"
+      ],
+      "nő": [
+        "férfinak szeretője van(külső kapcsolat lehetősége)"
+      ],
+      "munka": [
+        "rendőr", "fodrász",
+        "varrónő"
+      ],
+      "betegségek": [
+        "gyulladások",
+        "érrendszeri problémák, magas vérnyomás"
       ]
     },
     "7": {
@@ -960,6 +985,14 @@
     }
   },
   "szaturnusz": {
+    "általlános": [
+      "Minden ember ösztönösen a szaturnusz felé indul el",
+      "Racionálisan logikus, hogy célokat kezdünk életünkben kitűzni és azt pont a szaturnusz házára fogjuk kijelölni",
+      "Azonban az Asztrológia egyik legfontosabb eleme a Sorsfeldat, miszerint a szaturnuszt jegyben kell élni, semmiképp sem házban",
+      "Amikor valaki elkezd kijelölni célokat a szaturnusz házában az egész élet megbillen, és pont ott fog vesztést, nehézségeket megélni ahol a legkevésbé szerette volna",
+      "Azonban erre van egy megoldás, amit nagyon nehéz megcsinálni, de ha sikerül a sors nem életi meg velünk az említett nehézésgeket",
+      "Amikor a szaturnuszt jegyben éljük felső szinten, és a házbeli analógiákban nem jelölünk ki célt, automatikusan minden bolygó a helyes életterületen fog megnyilvánulni és nem csak a kérdéses terület lesz rendben, hanem minden más is"
+    ],
     "1": {
       "általános": [
       ]
@@ -979,6 +1012,27 @@
     },
     "3": {
       "általános": [
+        "lehetnek problémák a testvérekkel",
+        "lehet testvér elvesztése",
+        "lehet, hogy nincs testvéred, de nagyon szeretnél",
+        "lehet testvérrel való rossz kapcsolat",
+        "testvérnek lehet súlyos betegésge",
+        "lehetnek nagy korkülönbségű testvérek",
+        "emberi, társas kapcsolatban való nehézégek",
+        "kommunikációs nehézésgek",
+        "otthonban, közvetlen környezetben korlátok megélése",
+        "feladatokat jelent a környezet",
+        "problémák utazások során",
+        "kitelepülés, otthon elhagyás, otthon vesztés",
+        "tanulási nehézésgek",
+        "idgen nyelvak nehezebben mennek",
+        "mozgásproblémák",
+        "kommunkáció, érzékszervi problémák, látás, hallás problémák",
+        "börtön(korlátozva a környezet által)",
+        "közlekedési balesetek"
+      ],
+      "munka": [
+        "tanári páyla"
       ]
     },
     "4": {
