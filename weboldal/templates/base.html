@@ -52,7 +52,8 @@
 
             .nav-link {
                 padding: 15px 5px;
-                transition: 0.2s
+                transition: 0.2s;
+                text-align: center;
             }
 
             body {
@@ -77,16 +78,16 @@
                     <li class="nav-item"><a href="{% url 'horoszkop_gyujtemeny' %}"
                                             class="nav-link px-2 text-white">Horoszkópok</a></li>
                     <li class="nav-item ">
-                        <div class="btn-group">
+                        <div class="dropdown">
                             <button type="button" style="background-color: darkcyan">
-                                <a href="{% url 'analogia_adatbazis' %}" class="nav-link px-2 text-white">
-                                    Analógia adatbázis</a></button>
+                                <a href="{% url 'analogia_adatbazis' %}" class="nav-link px-2 text-white">Analógia adatbázis</a>
+                            </button>
                             <button type="button" class="btn dropdown-toggle dropdown-toggle-split text-white"
-                                    id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false"
+                                    id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"
                                     data-bs-reference="parent">
                                 <span class="visually-hidden">Rejtett dropdown</span>
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                 <li><a class="dropdown-item" href="{% url 'bolygok' %}">Bolygók</a></li>
                                 <li><a class="dropdown-item" href="{% url 'jegyek' %}">Jegyek</a></li>
                                 <li><a class="dropdown-item" href="{% url 'hazak' %}">Házak</a></li>
