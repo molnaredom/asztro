@@ -9,6 +9,7 @@ egyedi_oldalak = [
     path("titkos-szoba/", views.titkosSzoba, name="titkos-szoba"),
     path("", views.home, name="home"),
     path("rolunk", views.rolunk, name="rolunk"),
+    path("szofordito", views.szofordito, name="szofordito"),
     path("fejlesztes_alatt", views.fejlesztes_alatt, name="fejlesztes_alatt"),
     path("admin_panel", views.admin_panel, name="admin_panel")
 ]

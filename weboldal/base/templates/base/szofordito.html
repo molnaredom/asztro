@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    <form class="form-control my-3">
+        {% csrf_token %}
+        <textarea class="form-control" name="input_szo" placeholder="Leave a comment here"
+                  id="floatingTextarea"></textarea>
+        <button class="btn btn-info text-center">Fordítás</button>
+
+    </form>
+        {% if hibauzenet %}
+    <div class="text-danger">
+        <hr>
+    </div>
+        <div class="text-center bg-danger">
+
+        {{ hibauzenet }}
+        </div>
+
+    <div class="text-danger">
+        <hr>
+    </div>
+
+    {% endif %}
+
+    <div class="container my-5" style="word-spacing:20px;">
+        <div class="container text-center">
+            <div class="row fs-4">
+                <div class="col">
+                    {{ szo }}
+                </div>
+                <div class="col-1">
+                    =
+                </div>
+                <div class="col">
+                    {{ forditottszo }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+
+    </div>
+
+
+
+
+{% endblock %}

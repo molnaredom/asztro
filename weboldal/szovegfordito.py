@@ -56,16 +56,16 @@ def szotar(betuparos):
         return f"{vegbetu}{maradekbetu}"
 
 
-szo = "magor"
+szo = "sziasztok adam vagyok nem kell valakinek egy kis tejberízs"
 print(szo)
 vizsgalt_betu = 2
 forditottszo = szotar(f"{szo[0]}{szo[1]}")
 # merkur A
-print(forditottszo)
+# print(forditottszo)
 while True:
     forditottszo += szo[vizsgalt_betu]
     forditottszo = forditottszo[:-2] + szotar(f"{forditottszo[-2]}{forditottszo[-1]}")
-    print(forditottszo)
+    # print(forditottszo)
     vizsgalt_betu += 1
 
     if len(szo) == vizsgalt_betu:
