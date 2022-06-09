@@ -1,4 +1,4 @@
-# Asztroprogram 2.3.1 Szakdolgozat 1. félév
+# Asztroprogram 2.5.0 Szakdolgozat 1. félév
 
 ## Mi az asztrológia?
 - Szimbolikus következtetőrendszer, amiben idő minőségét vizsgáljuk. Tulajdonképpen egy időpillanat elemzéséről van szó, amire különböző szimbólumokat helyezve, különböző következtetésekre juthatunk.
@@ -19,12 +19,12 @@
 ## Megvalósítandó mérföldkövek, funkciók
 - [x] horoszkóp szerkezetének implementálása, adatbázisban kezelhetővé tétele ~ 12 hét - 100% KÉSZ
   -  A további adatok feldolgozásához, szükség van egy struktúrára, amiben könnyen kezelhetőek az adatok
-- [ ] Adatbázis feltöltése ~ 20 hét - 55% KÉSZ
+- [ ] Adatbázis feltöltése ~ 20 hét - 60% KÉSZ
   - Emberek adatainak beszerzése, strukturált tárolása (~ 400-1000 ember)
   - Analógiák feltöltése: Bolygók, Jegyek, Házak és kombinációik (562 oldal)
 - [ ] Pályaválasztás segítő program ~ 15 hét - 35% KÉSZ
   - Neuronhálók segítségével valószínűségi értékek szabása a különböző munkaterületekre a felhasználónak
-  - Ez az asztrológia validálására is lehetőséget biztosít 
+  - Ez az asztrológia validálására is lehetőséget biztosít
 - [ ] Analógia gyakorló ~ 6 hét - 80% KÉSZ
   - Játékos módon lehessen az egymással analóg személyiségjellemzőket, tárgyakat, színeket, stb. dolgokat párosítani.
 - [x] Általános elemzés ~ 10 hét - 100% KÉSZ
@@ -34,18 +34,18 @@
   - Célkijelölő vagy Megvalósító
   - Hyleg/Anaréta meghatározása
   - Sérült minta Nap/Hold
- 
+
 - [ ] Születési idő pontosítás ~ 12 hét (ha gyorsabban haladnék a vártnál) - 25% - KÉSZ
   - Ha egy embernek nem tudjuk pontosan mikor született, de történtek már kardinális események az életében. Vissza lehet számolni, pontosan hány óra hány perckor született.
 
-      
+
 ### Pályaválasztási kiértékelésről részletesen
 1. Gondolat
 - Neuronháló felépítése:
   - Input rétegben megkapja a különböző szempontok analógiáit (6-os ház jegye, Hold jegye, 6-os ház ura, 5-ös ház, 3-mas ház, ...stb).
   Ezeket a születési képletből lehet kiolvasni
   - Output rétegen a különböző munkákra fog predikciót adni a gépünk egy-egy valószínűségi százalék formájában (pl 0.26- cégvezetői munka, 0.80 hogy irodai alkalmazott...stb)
- 2. Gondolat 
+ 2. Gondolat
  - Algoritmikusan kellene felépíteni, halmazok alapján besorolás
   - Minden munkát halmazokba sorolni
   - Az embereket különböző szempontok alapján besorolni munka halmazokba
@@ -55,9 +55,9 @@
 ## Program indítása
 
 ### Dockerrel:
-- Docker repository: 
+- Docker repository:
 `https://hub.docker.com/repository/docker/edom8466/asztro`
-- Parancs: 
+- Parancs:
 ``docker run --name asztro_local -d -p http://127.0.0.1:8006:8000 asztro:latest``
 - Indítás:
   - Böngészőbe másolni: `http://127.0.0.1:8006`
@@ -77,14 +77,14 @@ python3 adatbazis\webscraping\iranyito.py -m alapadatok
 ```
 
 
-### Érdeklődni: 
-- Molnár Ádám 
-- molnaradam8466@gmail.com 
+### Érdeklődni:
+- Molnár Ádám
+- molnaradam8466@gmail.com
 
-## Pár szó magamról: 
+## Pár szó magamról:
 - 4.féléves programtervező informatikus szakra járok.
 - Szegeden a TTIK-n a Szoftverfejlesztő tanszéken dolgozok. Itt adatok kinyerésével és feldolgozásával foglalkozunk.
-- Régebb óta érdekelnek spirituális, pszichológiai dolgok, köztük gyereknevelés, oktatás, absztrakt/elvont gondolkodásmódok, lelki segítségnyújtás, tanulási technikák, tudatalatti, tudatosság. És még ezen kívül sok más. 
+- Régebb óta érdekelnek spirituális, pszichológiai dolgok, köztük gyereknevelés, oktatás, absztrakt/elvont gondolkodásmódok, lelki segítségnyújtás, tanulási technikák, tudatalatti, tudatosság. És még ezen kívül sok más.
 
 
 #### Hosszútávú tervek:

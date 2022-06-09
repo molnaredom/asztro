@@ -29,7 +29,8 @@ ALLOWED_HOSTS = [
 
     'asztroldal.azurewebsites.net',
     '127.0.0.1',
-    'asztro.herokuapp.com'
+    'asztro.herokuapp.com',
+    '0.0.0.0'
 ]
 
 # Application definition
