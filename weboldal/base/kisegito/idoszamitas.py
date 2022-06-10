@@ -1,11 +1,6 @@
-ttps://www;wikiwand;com/u/Ny%C3%A1ri_id%C5%91sz%C3%A1m%C3%ADt%C3%A1s
-DEF:Anyáriidőszámítás(dayligtsavingtime,DST),melybenaelyiidőt1órávalelőreállítjákazadottidőzónaidejéezképest;
-érdekesség:Földterületénekviszonylagkisrészén,nagyjábóla30;és50;szélességköztisávbanvanértelme;
-NémetCsászárságésazOsztrák–MagyarMonarciaterületénvezettekbeelőszörnyáriidőszámítást1916430;án;
-nyáriidőszámításszabályaitazEurópaiUnió1996;banegységesítette,majd2001;benirányelvbenrögzítette
+import datetime
 
-
-1916;4;30;23;1916;10;1;1
+nyari_idoszamitas_csv = """1916;4;30;23;1916;10;1;1
 1917;4;16;3;1917;6;17;2
 1918;4;15;3;1918;9;16;2
 1919;4;15;3;1919;11;24;2
@@ -19,8 +14,8 @@ nyáriidőszámításszabályaitazEurópaiUnió1996;banegységesítette,majd2001
 1949;4;10;2;1949;10;2;3
 1954;5;23;0;1954;10;2;2
 1955;5;22;2;1955;10;2;2
-1956;6;3;2;1956;;9;30;3
-1957;6;2;2;1957;;9;29;3
+1956;6;3;2;1956;9;30;3
+1957;6;2;2;1957;9;29;3
 1980;4;6;0;1980;9;28;0
 1981;3;29;0;1981;9;27;1
 1982;3;28;0;1982;9;26;1
@@ -63,4 +58,27 @@ nyáriidőszámításszabályaitazEurópaiUnió1996;banegységesítette,majd2001
 2019;3;31;2;2019;10;27;3
 2020;3;29;2;2020;10;25;3
 2021;3;28;2;2021;10;31;3
-2022;3;27;2;2022;10;30;3
+2022;3;27;2;2022;10;30;3"""
+
+def idoszamitas(kapott_datumido):
+    # nyari = 2
+    # teli = 1
+    # with open(nyari_idoszamitas_csv) as f:
+
+    for i in nyari_idoszamitas_csv.split("\n"):
+        idoszak = i.strip().split(";")
+        idoszak = ["0" if i == "" else i for i in idoszak]
+        # print(idoszak)
+        idoszak = list(map(int, idoszak))
+        kezdesido = datetime.datetime(idoszak[0], idoszak[1], idoszak[2], idoszak[3]).timestamp()
+        vegido = datetime.datetime(idoszak[4], idoszak[5], idoszak[6], idoszak[7]).timestamp()
+        # print(kezdesido, vegido)
+
+        if kezdesido <= kapott_datumido.timestamp() < vegido:
+            print("nyári időszámítás")
+            return "2"
+    else:
+        print("teli idoszam")
+        return "1"
+
+

@@ -58,7 +58,7 @@
 - Docker repository:
 `https://hub.docker.com/repository/docker/edom8466/asztro`
 - Parancs:
-``docker run --name asztro_local -d -p http://127.0.0.1:8006:8000 asztro:latest``
+`docker run --name asztro_local -d -p http://127.0.0.1:8006:8000 asztro:latest`
 - Indítás:
   - Böngészőbe másolni: `http://127.0.0.1:8006`
 ### Githubról:

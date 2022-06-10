@@ -1308,26 +1308,21 @@
       "elemzes leiras": []
     },
     {
-      "nev": "Órai_anyag_2_30_Balázs",
+      "nev": "Csapó Zétény",
       "horoszkoptipus": "radix",
       "neme": "férfi",
-      "ev": 1977,
-      "honap": 10,
-      "nap": 15,
-      "ora": 11,
-      "perc": 30,
+      "ev": 2000,
+      "honap": 7,
+      "nap": 16,
+      "ora": 21,
+      "perc": 21,
       "mp": 0,
-      "hely": "Mosonmagyaróvár",
+      "hely": "Pécs",
       "kep": "",
       "munka": [
-        "autószerelő"
+        "marketing"
       ],
       "elet_leiras": [
-        "nehezen jött össze az első gyerek",
-        "2 gyerek született",
-        "nagy ház nagy autó, nagy csónak",
-        "cukorbeteg 13 éves kora óta",
-        "sok baleset, sok műtét"
       ],
       "elemzes leiras": []
     }

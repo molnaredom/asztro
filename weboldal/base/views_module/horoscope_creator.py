@@ -2,7 +2,7 @@ import datetime
 import requests
 from django.shortcuts import redirect, render
 from ..forms import HoroszkopFormGyors, MunkatipusFormset, MunkatipusModelFormset
-from ..kisegito import kisegito
+from ..kisegito import kisegito, idoszamitas
 from ..horoszkop_elemzes import horoszkopelemzo_manager
 import socket
 from ..models import Jegy2, HazUraHazban, Munkatipus, Horoszkop2
@@ -14,11 +14,9 @@ def createHoroszkopGyors(request):
     Munkatipus.objects.all().delete()
 
     if request.method == 'GET':
-        print("*GET")
         formset = MunkatipusModelFormset(request.GET or None)
 
     if request.method == "POST":
-        print("*POST",request.POST )
 
         if 'megse' in request.POST:
             return redirect(f"horoszkop_gyujtemeny")
@@ -229,20 +227,22 @@ def init_api(obj):
     datumido_teljes_str = f'{char2(datumido.year)}-{char2(datumido.month)}-{char2(datumido.day)}T' \
                           f'{char2(datumido.hour)}:{char2(datumido.minute)}:{char2(datumido.second)}'
 
+    idozona = idoszamitas.idoszamitas(datumido)
+
     if result == 0:
         print("Port is open : 3000")
         adat = requests.get(
             f'http://127.0.0.1:3000/'
             f'horoscope?time='
             f'{datumido_teljes_str}'
-            f'%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+            f'%2B0{idozona}:00&latitude={szelesseg}&longitude={hosszusag}')
     else:
         print("Port is not open --> web api")
         adat = requests.get(
             f'https://dev-astrology-api.herokuapp.com/'
             f'horoscope?time='
             f'{datumido_teljes_str}'
-            f'%2B02:00&latitude={szelesseg}&longitude={hosszusag}')
+            f'%2B0{idozona}:00&latitude={szelesseg}&longitude={hosszusag}')
 
     sock.close()
 
@@ -259,9 +259,12 @@ def get_bolygok(chart):
     for key, value in bolygo_objektumok.items():
         if key == "chiron":
             break
+
         fokszam = float(get_fokszam(value["position"]))
+        print(key,fokszam)
         tizedesresz = (fokszam-int(fokszam))/10*6
         korrigalt_fokszam = int(fokszam) + tizedesresz
+        print(key,korrigalt_fokszam)
         bolygok[kisegito.bolygo_to_hun(key)] = {
             "jegy": kisegito.jegy_num_to_hun(str(value["sign"])),
             "fokszam": korrigalt_fokszam,
@@ -283,6 +286,7 @@ def get_hazak(chart):
     for i, value in enumerate(hazakiter, 1):
         hazak[i] = {"jegy": kisegito.jegy_num_to_hun(str(value["sign"])),
                     "fokszam": get_fokszam(value["position"])}
+        print(hazak[i])
 
     # [print(i) for i in hazak.items()]
     return hazak
