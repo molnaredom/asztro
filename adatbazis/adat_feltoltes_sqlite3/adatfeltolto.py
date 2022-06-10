@@ -41,7 +41,7 @@ def beolvasas_csv():
 def beolvasas_json(json_file_name):
     adatok = []
 
-    with open(json_file_name) as json_file:
+    with open(json_file_name, encoding="utf-8") as json_file:
         adatbazis = json.load(json_file)
 
         print(adatbazis)
