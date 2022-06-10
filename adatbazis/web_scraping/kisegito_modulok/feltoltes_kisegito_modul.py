@@ -1,3 +1,5 @@
+import time
+
 from adatbazis.web_scraping.kisegito_modulok.alap_webscraper_parancsok import raklikkeles
 from adatbazis.web_scraping.kisegito_modulok.nyelvi_kisegito import *
 
@@ -19,7 +21,7 @@ def szoveggelkitoltes(web,feltoltendo,foanalogia, al_analogia, konkret_analogia 
 
 
 def feltoltes(web):
-    raklikkeles(web, "/html/body/div[2]/form/button[2]" )
+    raklikkeles(web, "/html/body/div/form/button[2]" )
 
 
 
