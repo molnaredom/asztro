@@ -12479,11 +12479,15 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\fuji\AppData\Local\Temp\rust_mozprofilekJK3JW\thumbnails) because it does not exist
-t" "50565" "-no-remote" "-profile" "C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilem6r6Qq"
-1654801463238	Marionette	INFO	Marionette enabled
-WebDriver BiDi listening on ws://localhost:50565
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\fuji\\AppData\\Local\\Temp\\rust_mozprofilem6r6Qq\\search.json.mozlz4", (void 0)))
-1654801465612	Marionette	INFO	Listening on port 50570
+1654832928563	Marionette	INFO	Stopped listening on port 50451
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_InsertNewFocusActionId) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+nette	INFO	Listening on port 50570
 DevTools listening on ws://localhost:50565/devtools/browser/e4af4c49-2292-4932-a7f4-d8a7115c5d88
 1654801465948	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
@@ -13078,3 +13082,11 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://127.0.0.1:8000"
 1654832124302	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, reason: error
 JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\fuji\AppData\Local\Temp\rust_mozprofilem6r6Qq\thumbnails) because it does not exist
+1654832928628	Marionette	INFO	Stopped listening on port 50570
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_InsertNewFocusActionId) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PContent::Msg_DiscardBrowsingContext) Closed channel: cannot send/recv
+
