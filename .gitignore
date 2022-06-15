@@ -2,3 +2,4 @@
 /out/
 *.pyc
 .sqlite3
+.pyc

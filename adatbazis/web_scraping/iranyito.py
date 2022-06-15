@@ -1,3 +1,6 @@
+import argparse
+import platform
+
 from selenium import webdriver
 import warnings
 import json
@@ -10,18 +13,17 @@ from adatbazis.web_scraping.feltoltes_kezelok.haz_jegyben_feltoltes_modul import
 from adatbazis.web_scraping.feltoltes_kezelok.hazurahazban_feltoltes_modul import hazurahazban_feltoltes
 from adatbazis.web_scraping.horoszkop_kezelok.main_horoszkop_keszito import *
 
-warnings.filterwarnings("ignore", category=DeprecationWarning)
+# warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
 def inditas():
     global web
-    rendszer = "win10"
-    rendszer = "linux"
+
     web = ""
-    if rendszer == "win10":
-        web = webdriver.Firefox(executable_path=r'adat_tarolas/geckodriver.exe')
-    elif rendszer == "linux":
-        web = webdriver.Firefox()
+    if platform.system() == "Windows":
+        web = webdriver.Firefox(executable_path='adat_tarolas/geckodriver.exe')
+    elif platform.system() == "Linux":
+        web = webdriver.Firefox(executable_path='adat_tarolas/geckodriver/linux/geckodriver')
 
     return web
 
@@ -51,25 +53,22 @@ def bolygohazban_beolvasas():
         return json.loads(f.read())
 
 
-import argparse
-
-# Initialize parser
-parser = argparse.ArgumentParser()
-
-# Adding optional argument
-parser.add_argument("-o", "--Output",
-                    help="Show Output")
-parser.add_argument("-m", "--mode", default="-",
-                    help="Set running mode, which is api or web ")
-
-# Read arguments from command line
-args = parser.parse_args()
-
-
 def main():
     """
     Use external webpage to gain basic horoscope datas
     """
+
+    # Initialize parser
+    parser = argparse.ArgumentParser()
+
+    # Adding optional argument
+    parser.add_argument("-o", "--Output",
+                        help="Show Output")
+    parser.add_argument("-m", "--mode", default="-",
+                        help="Set running mode, which is api or web ")
+
+    # Read arguments from command line
+    args = parser.parse_args()
 
     if "api" in args.mode:
         print("api mode")
@@ -99,7 +98,8 @@ def main():
 
 def web_mode():
     web = inditas()
-    domain = "https://asztro.herokuapp.com"
+
+
     domain = "http://127.0.0.1:8000"
     print("inditas")
 

@@ -1,0 +1,8 @@
+pip install webdrivermanager
+webdrivermanager -linkpath /usr/local/bin firefox
+
+wget https://github.com/mozilla/geckodriver/releases/download/v0.31.0/geckodriver-v0.31.0-linux64.tar.gz
+kicsomagolas
+export PATH=$PATH:/home/molnar/asztro_22_05_09/adatbazis/web_scraping/adat_tarolas/geckodriver/linux/geckodriver
+
+
