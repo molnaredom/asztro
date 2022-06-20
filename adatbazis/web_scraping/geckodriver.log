@@ -13140,3 +13140,363 @@ JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeEr
 JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
 JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1655305826771	geckodriver	INFO	Listening on 127.0.0.1:55311
+1655305826786	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "58269" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileSf54Gz"
+1655305829896	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSf54Gz/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+DevTools listening on ws://localhost:58269/devtools/browser/d80fe51b-e9d9-4a07-b0e1-f6e849c6cc70
+1655305834910	Marionette	INFO	Listening on port 33799
+1655305835039	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1655305838357	Marionette	INFO	Stopped listening on port 33799
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1655306590454	geckodriver	INFO	Listening on 127.0.0.1:54605
+1655306590475	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "37393" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileyQyv8g"
+1655306593545	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileyQyv8g/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+DevTools listening on ws://localhost:37393/devtools/browser/599e4493-ecd7-4ccd-9a72-73d8159b8d90
+1655306598169	Marionette	INFO	Listening on port 33973
+1655306598280	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1655306603974	Marionette	INFO	Stopped listening on port 33973
+console.error: PushServiceWebSocket: 
+  _beginWSSetup: Not in shutdown state! Current state
+  2
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1655306653760	geckodriver	INFO	Listening on 127.0.0.1:44651
+1655306653780	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "58665" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilegUgoq4"
+1655306657074	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilegUgoq4/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+DevTools listening on ws://localhost:58665/devtools/browser/c0990218-aa06-4867-ad99-79b63c099b29
+1655306662044	Marionette	INFO	Listening on port 44003
+1655306662185	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1655306665389	Marionette	INFO	Stopped listening on port 44003
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1655737462101	geckodriver	INFO	Listening on 127.0.0.1:46965
+1655737462608	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "57803" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile0H7met"
+1655737463509	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile0H7met/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+DevTools listening on ws://localhost:57803/devtools/browser/9aa395b7-53ed-4a37-831c-674de564013d
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+1655737465677	Marionette	INFO	Listening on port 45767
+1655737465757	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1655737653563	geckodriver	INFO	Listening on 127.0.0.1:45935
+1655737653568	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "46919" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileX3Bgro"
+1655737654410	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileX3Bgro/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+DevTools listening on ws://localhost:46919/devtools/browser/97808539-4979-4c65-b800-b1a3d371eb2c
+1655737655857	Marionette	INFO	Listening on port 40685
+1655737655921	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+console.info: MINT: main/search-config update being skipped
+1655737812423	geckodriver	INFO	Listening on 127.0.0.1:38249
+1655737812429	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "42005" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileyzWWzu"
+1655737813249	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileyzWWzu/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:42005/devtools/browser/50d753b0-25d3-42b9-aa1f-7216f85a27cf
+1655737814790	Marionette	INFO	Listening on port 38761
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+console.info: MINT: Loading search-config defaults.
+1655737814909	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.info: MINT: main/search-config update being skipped
+console.info: MINT: main/search-config update being skipped
+1655739140903	geckodriver	INFO	Listening on 127.0.0.1:58291
+1655739140911	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "44275" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilevjE0G7"
+1655739141921	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilevjE0G7/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+DevTools listening on ws://localhost:44275/devtools/browser/21b4d3d1-4190-4df5-a1a3-d19a77243771
+1655739143465	Marionette	INFO	Listening on port 44507
+1655739143540	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1655739198708	geckodriver	INFO	Listening on 127.0.0.1:38703
+1655739198714	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "43699" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilem1PzCO"
+1655739199834	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilem1PzCO/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:43699/devtools/browser/a06a4eab-40ef-47a8-bd9a-de76e94eedc6
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+1655739201571	Marionette	INFO	Listening on port 33929
+1655739201642	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1655739297841	geckodriver	INFO	Listening on 127.0.0.1:47219
+1655739297846	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59321" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileWzQw6J"
+1655739298938	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileWzQw6J/search.json.mozlz4", (void 0)))
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+console.info: MINT: Loading search-config defaults.
+DevTools listening on ws://localhost:59321/devtools/browser/e2916c4d-a8ab-4d66-b40c-77170598a237
+1655739300505	Marionette	INFO	Listening on port 40813
+1655739300570	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1655739372479	geckodriver	INFO	Listening on 127.0.0.1:59991
+1655739372485	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "33631" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile9KxLY1"
+1655739373482	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile9KxLY1/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+DevTools listening on ws://localhost:33631/devtools/browser/87d29468-6026-4ad2-84f4-4dee8d4fe15c
+1655739374958	Marionette	INFO	Listening on port 40573
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+1655739375021	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.info: MINT: main/search-config update being skipped
+console.info: MINT: main/search-config update being skipped
+1655739526161	geckodriver	INFO	Listening on 127.0.0.1:45533
+1655739526167	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "36501" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileSUp7oX"
+1655739527599	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSUp7oX/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:36501/devtools/browser/e8993ed7-709e-4429-8511-0b26f911b680
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+1655739529177	Marionette	INFO	Listening on port 33515
+console.info: MINT: Loading search-config defaults.
+1655739529290	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1655739532274	Marionette	INFO	Stopped listening on port 33515
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+console.info: MINT: main/search-config update being skipped
+1655739604920	geckodriver	INFO	Listening on 127.0.0.1:51843
+1655739604926	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "45013" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile5aVfAU"
+1655739605872	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile5aVfAU/search.json.mozlz4", (void 0)))
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+console.info: MINT: Loading search-config defaults.
+DevTools listening on ws://localhost:45013/devtools/browser/1e9aa0ce-59dd-4728-84c3-3ddc80ef2744
+1655739607395	Marionette	INFO	Listening on port 35039
+1655739607518	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.info: MINT: main/search-config update being skipped
+1655739657714	geckodriver	INFO	Listening on 127.0.0.1:40047
+1655739657722	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59175" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilexrg9lp"
+1655739658665	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexrg9lp/search.json.mozlz4", (void 0)))
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+console.info: MINT: Loading search-config defaults.
+DevTools listening on ws://localhost:59175/devtools/browser/5bf63f14-3887-4708-9b2f-64057e15824b
+1655739660185	Marionette	INFO	Listening on port 44295
+1655739660290	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1655739795002	geckodriver	INFO	Listening on 127.0.0.1:47617
+1655739795512	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "38517" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileZp7zui"
+1655739796770	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileZp7zui/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38517/devtools/browser/53220aab-0703-4b84-8339-b2ec7658c6bd
+1655739798419	Marionette	INFO	Listening on port 40599
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+1655739798544	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.info: MINT: Loading search-config defaults.
+1655739870328	geckodriver	INFO	Listening on 127.0.0.1:42509
+1655739870334	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "52685" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileNTSmXX"
+1655739871254	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileNTSmXX/search.json.mozlz4", (void 0)))
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+DevTools listening on ws://localhost:52685/devtools/browser/01ba0a37-fe4c-448c-8197-cc2a2c0b17dc
+1655739873129	Marionette	INFO	Listening on port 44167
+1655739873158	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.info: MINT: Loading search-config defaults.
+console.info: MINT: main/search-config update being skipped
+1655739882629	geckodriver	INFO	Listening on 127.0.0.1:34415
+1655739882633	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59001" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilefwQMn7"
+1655739883566	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefwQMn7/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59001/devtools/browser/6b6b89cb-fbec-4674-a084-b0591f4f9a50
+1655739886167	Marionette	INFO	Listening on port 40397
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+1655739886264	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.info: MINT: Loading search-config defaults.
+1655739892735	Marionette	INFO	Stopped listening on port 40397
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1655739892978	geckodriver::marionette	ERROR	Failed to close browser connection: Socket not connected (os error 107)
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: Object
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+console.info: MINT: main/search-config update being skipped
+1655740017697	geckodriver	INFO	Listening on 127.0.0.1:57157
+1655740017702	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--remote-debugging-port" "60919" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileqaw3Qv"
+*** You are running in headless mode.
+1655740018416	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqaw3Qv/search.json.mozlz4", (void 0)))
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+DevTools listening on ws://localhost:60919/devtools/browser/7fcbd482-b191-461f-addf-e3fb084c48ea
+1655740019885	Marionette	INFO	Listening on port 45421
+1655740019972	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.info: MINT: Loading search-config defaults.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+console.info: MINT: main/search-config update being skipped
+console.info: MINT: main/search-config update being skipped
+1655740355292	geckodriver	INFO	Listening on 127.0.0.1:44435
+1655740355297	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--remote-debugging-port" "47415" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileKBq4Ez"
+*** You are running in headless mode.
+1655740356241	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileKBq4Ez/search.json.mozlz4", (void 0)))
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+console.info: MINT: Loading search-config defaults.
+DevTools listening on ws://localhost:47415/devtools/browser/ca1bdaef-ecfc-4af4-a7be-f4d457fe5b4a
+1655740357972	Marionette	INFO	Listening on port 44521
+1655740358021	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1655740469586	geckodriver	INFO	Listening on 127.0.0.1:47431
+1655740469593	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--remote-debugging-port" "38609" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileWZpPVH"
+*** You are running in headless mode.
+1655740470284	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileWZpPVH/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38609/devtools/browser/bf281f47-7076-4f0c-a776-286b3609e5e7
+1655740471726	Marionette	INFO	Listening on port 35579
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+1655740471818	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1655740575843	geckodriver	INFO	Listening on 127.0.0.1:41845
+1655740575848	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--remote-debugging-port" "34273" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileDuQvLx"
+*** You are running in headless mode.
+1655740576818	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileDuQvLx/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:34273/devtools/browser/9f936d53-0161-4d9e-8b32-154935080deb
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+1655740578428	Marionette	INFO	Listening on port 33937
+console.info: MINT: Loading search-config defaults.
+1655740578475	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1655740724977	geckodriver	INFO	Listening on 127.0.0.1:43427
+1655740724982	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--remote-debugging-port" "41663" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileWKq0kT"
+*** You are running in headless mode.
+1655740725622	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileWKq0kT/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+DevTools listening on ws://localhost:41663/devtools/browser/0ebcb976-13d0-4398-a154-42f37036343b
+1655740727062	Marionette	INFO	Listening on port 44363
+1655740727125	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1655741084206	geckodriver	INFO	Listening on 127.0.0.1:45577
+1655741084211	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "--remote-debugging-port" "59795" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilecz8hvN"
+*** You are running in headless mode.
+1655741085180	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilecz8hvN/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59795/devtools/browser/83b3ca36-1412-4c2a-81f0-f3c5e259c5b6
+1655741086782	Marionette	INFO	Listening on port 43927
+JavaScript error: resource://services-settings/Attachments.jsm, line 391: TypeError: / is not a valid URL.
+1655741086866	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.

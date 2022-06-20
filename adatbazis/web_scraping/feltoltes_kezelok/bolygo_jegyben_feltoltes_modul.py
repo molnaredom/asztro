@@ -1,6 +1,7 @@
 import time
 
 from selenium.webdriver.support.select import Select
+from tqdm import tqdm
 
 from adatbazis.web_scraping.kisegito_modulok.feltoltes_kisegito_modul import feltoltes
 from weboldal.base.kisegito import kisegito
@@ -30,7 +31,7 @@ def bolygojegyben_feltoltes(web,feltoltendo, kezdobolygoszam, kezdojegyszam , do
     bolygok = kisegito.get_bolygo_nevek(fotengelyekkel=True)
     jegyek = kisegito.get_jegy_nevek()
 
-    for bolygoszam, bolygonev in enumerate(bolygok, kezdobolygoszam):
+    for bolygoszam, bolygonev in enumerate(tqdm(bolygok, kezdobolygoszam, desc="Bolygó Jegyben feltöltése")):
         for jegyszam, jegynev in enumerate(jegyek,kezdojegyszam):
             adat_kitoltes(web, bolygoszam, jegyszam, bolygonev, jegynev, feltoltendo)
             feltoltes(web)

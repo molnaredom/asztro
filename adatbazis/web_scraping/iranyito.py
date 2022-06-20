@@ -1,9 +1,14 @@
+import os
+import socket
 import argparse
 import platform
 
 from selenium import webdriver
 import warnings
 import json
+
+from django.core.management import call_command
+from django.core.wsgi import get_wsgi_application
 
 from adatbazis.web_scraping.feltoltes_kezelok.alapanalogia_feltoltes_modul import alapanalogia_feltoltes
 from adatbazis.web_scraping.feltoltes_kezelok.analogia_gyakorlo_feltoltes_modul import analogiagyakorlo_feltoltes
@@ -13,17 +18,26 @@ from adatbazis.web_scraping.feltoltes_kezelok.haz_jegyben_feltoltes_modul import
 from adatbazis.web_scraping.feltoltes_kezelok.hazurahazban_feltoltes_modul import hazurahazban_feltoltes
 from adatbazis.web_scraping.horoszkop_kezelok.main_horoszkop_keszito import *
 
-# warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
-def inditas():
+def inditas(mode):
+    print("INDITAS")
     global web
+    options = webdriver.FirefoxOptions()
+    if "b" in mode:
+        options.add_argument('--headless')
+        print("   Háttérben futás bekapcsolva")
+    else:
+        print("   A program az előtérben fut")
 
     web = ""
     if platform.system() == "Windows":
-        web = webdriver.Firefox(executable_path='adat_tarolas/geckodriver.exe')
+        print("   Windows platform felismerve")
+        web = webdriver.Firefox(executable_path='adat_tarolas/geckodriver.exe', options=options)
     elif platform.system() == "Linux":
-        web = webdriver.Firefox(executable_path='adat_tarolas/geckodriver/linux/geckodriver')
+        print("   Linux platform felismerve")
+        web = webdriver.Firefox(executable_path='adat_tarolas/geckodriver/linux/geckodriver', options=options)
 
     return web
 
@@ -70,25 +84,28 @@ def main():
     # Read arguments from command line
     args = parser.parse_args()
 
-    if "api" in args.mode:
+    mode = args.mode
+    print(f"MODE: [{mode}]", end=" ")
+
+    if "api" in mode:
         print("api mode")
-        api_mode()
+        api_mode(mode)
 
-    elif "web" in args.mode:
+    elif "web" in mode:
         print("web mode")
-        web_mode()
+        web_mode(mode)
 
-    elif "alapadat" in args.mode:
+    elif "alapadat" in mode:
         print("alapadatok feltöltése mód")
-        alapadat_feltoltes("alapadat")
+        alapadat_feltoltes(mode=args.mode)
 
-    elif "egyeni" in args.mode:
+    elif "egyeni" in mode:
         print("egyeni feltöltése mód")
-        egyeni_feltoltes("egyeni")
+        egyeni_feltoltes(mode)
 
-    elif "gyakorlo" in args.mode:
+    elif "gyakorlo" in mode:
         print("gyakorló feltöltés mód")
-        gyakorlo_feltoltes(mode= "gyakorlo")
+        gyakorlo_feltoltes(mode= mode)
 
     elif args.mode == "-":
         print("Nem adtál meg semilyen argumentumot, így nem lehet futtatni")
@@ -96,15 +113,33 @@ def main():
     print("KÉÉSZ")
 
 
-def web_mode():
-    web = inditas()
+def set_domain():
+    print("SET DOMAIN")
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    vizsgalt_port = 8000
+    is_port_exists = sock.connect_ex(('127.0.0.1', vizsgalt_port))
+    if is_port_exists != 0:
+        # toto set server
+        print(f"   Port {vizsgalt_port} szabad, django server futtatása")
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "server.settings")
+
+        application = get_wsgi_application()
+        call_command('runserver', '127.0.0.1:8000')
+    else:
+        print(f"   port {vizsgalt_port} foglalt: feltételezzük a django szerver futását")
+
+    sock.close()
+
+    return "http://127.0.0.1:8000"
 
 
-    domain = "http://127.0.0.1:8000"
-    print("inditas")
+
+def web_mode(mode):
+    web = inditas(mode)
+
+    domain = set_domain()
 
     hazurahazban_feltoltes = False
-    #
     uj_horoszkop_keszites_ = True
     bolygojegyben_feltoltes_ = False
     hazjegyben_feltoltes_ = False
@@ -115,10 +150,9 @@ def web_mode():
 
 
 def alapadat_feltoltes(mode):
-    web = inditas()
-    domain = "https://asztro.herokuapp.com"
-    domain = "http://127.0.0.1:8000"
-    print("inditas")
+
+    web = inditas(mode)
+    domain = set_domain()
 
     process(mode, web=web, domain=domain, bolygojegyben_feltoltes_=True,
             hazjegyben_feltoltes_=True, alapanalogia_feltoltes_=True,
@@ -126,25 +160,22 @@ def alapadat_feltoltes(mode):
 
 
 def egyeni_feltoltes(mode):
-    web = inditas()
-    domain = "https://asztro.herokuapp.com"
-    domain = "http://127.0.0.1:8000"
-    print("inditas")
+    web = inditas(mode)
+    domain = set_domain()
 
-    process(mode, web=web, domain=domain, bolygo_hazban_feltoltes_ = True)
+    process(mode, web=web, domain=domain, bolygo_hazban_feltoltes_=True)
 
 
 def gyakorlo_feltoltes(mode):
-    web = inditas()
-    print("inditas")
-    domain = "http://127.0.0.1:8000"
+    web = inditas(mode)
+    domain = set_domain()
 
     process(mode, domain=domain, web=web, gyakorlo_feltoltes_=True)
 
 
-def api_mode():
-    web = inditas()
-    domain = "http://127.0.0.1:8000"
+def api_mode(mode):
+    web = inditas(mode)
+    domain = set_domain()
     process(mode="kulsoapi", uj_horoszkop_keszites_=True, web=web, domain=domain)
 
 

@@ -1,6 +1,7 @@
 import time
 
 from selenium.webdriver.support.select import Select
+from tqdm import tqdm
 
 from adatbazis.web_scraping.kisegito_modulok.feltoltes_kisegito_modul import feltoltes
 
@@ -31,7 +32,7 @@ def hazjegyben_kitoltes(web, feltoltendo, kezdojegyszam, kezdohazszam, domain):
     jegyek = ["kos", "bika", "ikrek", "rák", "oroszlán", "szűz", "mérleg", "skorpió", "nyilas", "bak",
               "vízöntő", "halak"]
 
-    for hazszam, haznev in enumerate(hazak, kezdohazszam):
+    for hazszam, haznev in enumerate(tqdm(hazak, desc="Ház Jegyben feltöltése"), kezdohazszam):
         for jegyszam, jegynev in enumerate(jegyek, kezdojegyszam):
             adat_kitoltes(web, hazszam, jegyszam, haznev, jegynev, feltoltendo)
             feltoltes(web)

@@ -1,5 +1,7 @@
 import time
 
+from tqdm import tqdm
+
 from adatbazis.web_scraping.adat_tarolas import tulajdonos_adat_tarolo
 from adatbazis.web_scraping.horoszkop_kezelok.ryuphi_astro_api import ryuphi_api_adatlehivo_manager
 from adatbazis.web_scraping.horoszkop_kezelok.kulso_adatgyujto import kulso_weboldalra_tulajdonosadatok_feltoltese, \
@@ -68,5 +70,5 @@ def get_analogiak_horoszkopkitolteshez(tulajodonosi_adatok, kinyert_kulso_bolygo
 
 
 def horoszkopok_feltoltese(web, kezdobolygojegyben, kezdohazjegyben, domain, mode):
-    for tulajodonosi_adatok in tulajdonos_adat_tarolo.horoszkop_tarolo:
+    for tulajodonosi_adatok in tqdm(tulajdonos_adat_tarolo.horoszkop_tarolo, desc="Horoszkópok feltöltése"):
         egy_horoszkop_feltoltese(tulajodonosi_adatok, web, kezdobolygojegyben, kezdohazjegyben, domain, mode)
