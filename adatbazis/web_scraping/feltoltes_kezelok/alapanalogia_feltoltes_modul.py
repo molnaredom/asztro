@@ -1,7 +1,5 @@
 import time
-
 from tqdm import tqdm
-
 from adatbazis.web_scraping.kisegito_modulok.feltoltes_kisegito_modul import szoveggelkitoltes, feltoltes
 
 

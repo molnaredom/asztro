@@ -31,7 +31,7 @@ def bolygojegyben_feltoltes(web,feltoltendo, kezdobolygoszam, kezdojegyszam , do
     bolygok = kisegito.get_bolygo_nevek(fotengelyekkel=True)
     jegyek = kisegito.get_jegy_nevek()
 
-    for bolygoszam, bolygonev in enumerate(tqdm(bolygok, kezdobolygoszam, desc="Bolygó Jegyben feltöltése")):
+    for bolygoszam, bolygonev in enumerate(tqdm(bolygok, desc="Bolygó Jegyben feltöltése"), kezdobolygoszam):
         for jegyszam, jegynev in enumerate(jegyek,kezdojegyszam):
             adat_kitoltes(web, bolygoszam, jegyszam, bolygonev, jegynev, feltoltendo)
             feltoltes(web)
