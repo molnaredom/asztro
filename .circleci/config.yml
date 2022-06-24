@@ -19,9 +19,7 @@ jobs:
           command: . venv/bin/activate
       - run:
           name: Run tests
-          command: |
-          . venv/bin/activate
-          python manage.py test base.tests
+          command: python manage.py test base.tests
 
 workflows:
   backend-tesztek:
