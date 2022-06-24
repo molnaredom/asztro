@@ -16,7 +16,9 @@ jobs:
           pip-dependency-file: weboldal/requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
       - run:
           name: Run tests
-          command: python manage.py test base.tests
+          command: |
+          . venv/bin/activate
+          python manage.py test base.tests
 
 workflows:
   backend-tesztek:
