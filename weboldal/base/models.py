@@ -222,6 +222,9 @@ class Horoszkop2(models.Model):
         return str(self.tulajdonos_neve)[0].upper() + str(self.tulajdonos_neve)[1:]
 
 
+import random  # !!! VALAMI MIATT ENÉLKÜL NEM MŰKÖDIK
+
+
 class Quiz(models.Model):
     name = models.CharField(max_length=50)
     desc = models.CharField(max_length=500)
