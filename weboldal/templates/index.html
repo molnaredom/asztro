@@ -6,15 +6,7 @@
             --gradient: linear-gradient(to left top, #000000 10%, darkgreen 40%) !important;
         }
 
-        .card {
-            background: darkseagreen;
-            border: black;
-            color: black;
-
-            margin-bottom: 3rem;
-        }
-
-        #btn {
+        #btn-konnyu {
             border: 5px solid;
             border-image-slice: 1;
             background: var(--gradient) !important;
@@ -22,16 +14,54 @@
             -webkit-text-fill-color: transparent !important;
             border-image-source: var(--gradient) !important;
             text-decoration: none;
-            position: relative;
             left: 80px;
         }
 
-        #btn:hover,
-        #btn:focus {
+        #btn-konnyu:hover,
+        #btn-konnyu:focus {
             background: var(--gradient) !important;
             -webkit-text-fill-color: #fff !important;
             border: 5px solid #fff !important;
             box-shadow: #222 1px 0 10px;
+            text-decoration: yellow;
+        }
+        #btn-kozepes {
+            border: 5px solid;
+            border-image-slice: 1;
+            background: black !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            border-image-source: var(--gradient) !important;
+            text-decoration: none;
+            left: 80px;
+        }
+
+        #btn-kozepes:hover,
+        #btn-kozepes:focus {
+            background: darkgoldenrod !important;
+            -webkit-text-fill-color: #fff !important;
+            border: 5px solid #fff !important;
+            box-shadow: #222 1px 0 10px;
+            text-decoration: yellow;
+        }
+
+        #btn-nehez {
+            border: 5px solid;
+            border-image-slice: 1;
+            background: var(--gradient) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            border-image-source: var(--gradient) !important;
+            text-decoration: none;
+            left: 80px;
+        }
+
+        #btn-nehez:hover,
+        #btn-nehez:focus {
+            background: red !important;
+            -webkit-text-fill-color: #fff !important;
+            border: 5px solid darkred !important;
+            box-shadow: darkmagenta 3px 0 50px;
             text-decoration: yellow;
         }
 
@@ -42,8 +72,8 @@
 {% block content %}
     {% if user.is_superuser %}
 
-{#        <li><a class="dropdown-item" href="/add_quiz/">Kvíz hozzáadás</a></li>#}
-{#        <li><a class="dropdown-item" href="/add_question/">Kérdés hozzáadás</a></li>#}
+        {#        <li><a class="dropdown-item" href="/add_quiz/">Kvíz hozzáadás</a></li>#}
+        {#        <li><a class="dropdown-item" href="/add_question/">Kérdés hozzáadás</a></li>#}
 
     {% endif %}
 
@@ -69,7 +99,7 @@
                     <div class="modal-body">
                         <h3>Ha játszani szeretnél először be kell jelentkezned.</h3>
                         <p>Ha nem szeretnél regisztrálni be tudsz lépni a következő felhasználóval.</p>
-                        <p>Felhasználónév: jatekos <br>  Jelszó: Asztro123 </p>
+                        <p>Felhasználónév: jatekos <br> Jelszó: Asztro123 </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
@@ -80,32 +110,113 @@
     </div>
     <br><br><br>
 
-    <!-- cards -->
-    <div class="container">
-        <div class="container mx-auto mt-2">
-            <div class="row">
-
-                {% for i in quiz %}
-                    <div class="col-md-4">
-                        <div class="card" style="width: 21rem;">
-                            <div class="card-body">
-                                <h5 class="card-title" style="text-align: center;">{{ i.name }}</h5>
-                                <br>
-                                <p class="card-text">{{ i.desc }}</p>
-                                <br>
-                                <button data-bs-target="#exampleModal" data-bs-toggle="modal" data-time="{{ i.time }}"
-                                        data-questions="{{ i.number_of_questions }}" data-name="{{ i.name }}"
-                                        data-id="{{ i.id }}" id="btn"
-                                        style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
-                                        class="fas fa-link"></i>Kvíz kitöltése
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+    <table class="table table-hover table-bordered table-responsive ">
+        <thead>
+        <tr>
+            <th scope="col">Teszt Neve</th>
+            <th scope="col">Könnyű</th>
+            <th scope="col">Közepes</th>
+            <th scope="col">Nehéz</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Bolygó Jegyben gyakorló</th>
+            <td>
+                <button
+                        data-bs-target="#exampleModal"
+                        data-bs-toggle="modal"
+                        data-time="{{ quiz.0.time }}"
+                        data-questions="{{ quiz.0.number_of_questions }}"
+                        data-name="{{ quiz.0.name }}"
+                        data-id="{{ quiz.0.id }}"
+                        id="btn-konnyu"
+                        class="attempt btn mr-2 modal-button"><i
+                        class="fas fa-link"></i>Kitöltés!
+                </button>
+            </td>
+            <td>
+                <button data-bs-target="#exampleModal" data-bs-toggle="modal"
+                        data-time="{{ quiz.1.time }}"
+                        data-questions="{{ quiz.1.number_of_questions }}" data-name="{{ quiz.1.name }}"
+                        data-id="{{ quiz.1.id }}" id="btn-kozepes"
+                        style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
+                        class="fas fa-link"></i>Kitöltés!
+                </button>
+            </td>
+            <td>
+                <button data-bs-target="#exampleModal" data-bs-toggle="modal"
+                        data-time="{{ quiz.2.time }}"
+                        data-questions="{{ quiz.2.number_of_questions }}" data-name="{{ quiz.2.name }}"
+                        data-id="{{ quiz.2.id }}" id="btn-nehez"
+                        style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
+                        class="fas fa-link"></i>Kitöltés!
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Bolygó Házban gyakorló</th>
+            <td>
+                <button data-bs-target="#exampleModal" data-bs-toggle="modal"
+                        data-time="{{ quiz.3.time }}"
+                        data-questions="{{ quiz.3.number_of_questions }}" data-name="{{ quiz.3.name }}"
+                        data-id="{{ quiz.3.id }}" id="btn-konnyu"
+                        style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
+                        class="fas fa-link"></i>Kitöltés!
+                </button>
+            </td>
+            <td>
+                <button
+                        data-bs-target="#exampleModal" data-bs-toggle="modal"
+                        data-time="{{ quiz.4.time }}"
+                        data-questions="{{ quiz.4.number_of_questions }}" data-name="{{ quiz.4.name }}"
+                        data-id="{{ quiz.4.id }}" id="btn-kozepes"
+                        style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
+                        class="fas fa-link"></i>Kitöltés!
+                </button>
+            </td>
+            <td>
+                <button data-bs-target="#exampleModal" data-bs-toggle="modal"
+                        data-time="{{ quiz.5.time }}"
+                        data-questions="{{ quiz.5.number_of_questions }}" data-name="{{ quiz.5.name }}"
+                        data-id="{{ quiz.5.id }}" id="btn-nehez"
+                        style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
+                        class="fas fa-link"></i>Kitöltés!
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Ház ura házban gyakorló</th>
+            <td>
+                <button data-bs-target="#exampleModal" data-bs-toggle="modal"
+                        data-time="{{ quiz.6.time }}"
+                        data-questions="{{ quiz.6.number_of_questions }}" data-name="{{ quiz.6.name }}"
+                        data-id="{{ quiz.6.id }}" id="btn-konnyu"
+                        style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
+                        class="fas fa-link"></i>Kitöltés!
+                </button>
+            </td>
+            <td>
+                <button data-bs-target="#exampleModal" data-bs-toggle="modal"
+                        data-time="{{ quiz.7.time }}"
+                        data-questions="{{ quiz.7.number_of_questions }}" data-name="{{ quiz.7.name }}"
+                        data-id="{{ quiz.7.id }}" id="btn-kozepes"
+                        style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
+                        class="fas fa-link"></i>Kitöltés!
+                </button>
+            </td>
+            <td>
+                <button data-bs-target="#exampleModal" data-bs-toggle="modal"
+                        data-time="{{ quiz.8.time }}"
+                        data-questions="{{ quiz.8.number_of_questions }}" data-name="{{ quiz.8.name }}"
+                        data-id="{{ quiz.8.id }}" id="btn-nehez"
+                        style="justify-content: center;" class="attempt btn mr-2 modal-button"><i
+                        class="fas fa-link"></i>Kitöltés!
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
 {% endblock %}
 
