@@ -227,6 +227,7 @@ import random  # !!! VALAMI MIATT ENÉLKÜL NEM MŰKÖDIK
 
 class Quiz(models.Model):
     name = models.CharField(max_length=50)
+    tipus = models.CharField(max_length=50)
     desc = models.CharField(max_length=500)
     number_of_questions = models.IntegerField(default=1)
     time = models.IntegerField(help_text="A kvíz hossza másodpercben", default="1")

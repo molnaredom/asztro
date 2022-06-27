@@ -6,32 +6,69 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import QuizForm, QuestionForm, AnswerForm
 from django.forms import inlineformset_factory
+from .default_parameters import UresAnalogiaAdatbazisError
 
 
 def index(request):
     Quiz.objects.all().delete()
 
+    # Bolygó Jegyben quiz
     kvizkeszito(
         ido=60,
         kerdesszam=3,
+        tipus="bolygojegyben",
         kviznev="Könnyű Bolygó a Jegyben gyakorló teszt",
-        leiras="Válaszd ki az analógiához tartozó Bolgó Jegyben analógiát",
+        leiras="Válaszd ki az analógiához tartozó Bolygó Jegyben analógiát",
         valaszlehetosegek_szama=3
     )
-
     kvizkeszito(
-        ido=60,
+        ido=90,
+        tipus="bolygojegyben",
+        kerdesszam=5,
+        kviznev="Közepes Bolygó a Jegyben gyakorló teszt",
+        leiras="Válaszd ki az analógiához tartozó Bolygó Jegyben analógiát",
+        valaszlehetosegek_szama=4
+    )
+    kvizkeszito(
+        ido=120,
+        tipus="bolygojegyben",
         kerdesszam=5,
         kviznev="Nehéz Bolygó a Jegyben gyakorló teszt",
-        leiras="Válaszd ki az analógiához tartozó Bolgó Jegyben analógiátjo kviz lesz",
+        leiras="Válaszd ki az analógiához tartozó Bolygó Jegyben analógiát",
+        valaszlehetosegek_szama=5
+    )
+
+    # Bolygó Házban Kvíz
+    kvizkeszito(
+        ido=60,
+        tipus="bolygohazban",
+        kerdesszam=3,
+        kviznev="Könnyű Bolygó a Házban gyakorló teszt",
+        leiras="Válaszd ki az analógiához tartozó Bolygó Házban analógiát",
+        valaszlehetosegek_szama=3
+    )
+    kvizkeszito(
+        ido=90,
+        tipus="bolygohazban",
+        kerdesszam=5,
+        kviznev="Közepes Bolygó a Házban gyakorló teszt",
+        leiras="Válaszd ki az analógiához tartozó Bolygó Házban analógiát",
         valaszlehetosegek_szama=4
+    )
+    kvizkeszito(
+        ido=120,
+        tipus="bolygohazban",
+        kerdesszam=5,
+        kviznev="Nehéz Bolygó a Házban gyakorló teszt",
+        leiras="Válaszd ki az analógiához tartozó Bolygó Házban analógiát",
+        valaszlehetosegek_szama=5
     )
 
     para = {'quiz': Quiz.objects.all()}
     return render(request, "index.html", para)
 
 
-@login_required(login_url='/login')
+# @login_required(login_url='/login')
 def quiz(request, myid):
     quiz = Quiz.objects.get(id=myid)
     return render(request, "quiz.html", {'quiz': quiz})
@@ -154,7 +191,7 @@ def kerdesbank_keszito(bolygojegyben=False, bolygohazban=False, hazurahazban=Fal
     return kerdesbank
 
 
-def kvizkeszito(ido=10, kerdesszam=0, kviznev="", leiras="", valaszlehetosegek_szama=2):
+def kvizkeszito(ido,tipus, kerdesszam, kviznev, leiras, valaszlehetosegek_szama):
 
     form = QuizForm()
     quiz = form.save(commit=False)
@@ -163,18 +200,20 @@ def kvizkeszito(ido=10, kerdesszam=0, kviznev="", leiras="", valaszlehetosegek_s
     quiz.name = kviznev
     quiz.desc = leiras
     quiz.valaszlehetosegek_szama = valaszlehetosegek_szama
+    quiz.tipus = tipus
     quiz.save()
     print("KVIZ ELMENTVE")
 
 
 def kerdesek_hozzaadasa(kerdesszam, quiz, valasz_lehetosegek_szama_per_kerdes):
     kerdesbank = kerdesbank_keszito(bolygojegyben=True)
+    if not kerdesbank:
+        raise UresAnalogiaAdatbazisError
 
     for _ in range(kerdesszam):
         start = datetime.datetime.now()
         kerdes_szoveg, valaszlehetosegek = random_kerdes_generalas(kerdesbank, valasz_lehetosegek_szama_per_kerdes)
 
-        start = datetime.datetime.now()
         kerdes_hozzaadas(
             kerdes_szoveg=kerdes_szoveg,
             kviz=quiz,
@@ -182,6 +221,7 @@ def kerdesek_hozzaadasa(kerdesszam, quiz, valasz_lehetosegek_szama_per_kerdes):
         )
         end = datetime.datetime.now()
         print("---ido: ", end - start)
+
 
 def random_kerdes_generalas(kerdesbank,valasz_lehetosegek_szama_per_kerdes):
     """
@@ -279,7 +319,6 @@ def kerdes_generator(feltoltendo_adatok, kviz_adatok):
     return kerdesek
 
 
-
 def kerdes_hozzaadas(kerdes_szoveg, kviz, valaszlehetosegek):
     form = QuestionForm()
     # if form.is_valid():
@@ -291,10 +330,11 @@ def kerdes_hozzaadas(kerdes_szoveg, kviz, valaszlehetosegek):
     print("KÉRDÉS HOZZAADVA")
     for valaszlehetoseg in valaszlehetosegek:
 
-        valasz_lehetoseg_hozzaadas(
-            valasz_szoveg=valaszlehetoseg["szoveg"],
-            igazsagertek=valaszlehetoseg["igazsagertek"],
-            kerdes_obj=question)
+        Answer.objects.create(
+            content=valaszlehetoseg["szoveg"],          # valasz_szoveg
+            correct=valaszlehetoseg["igazsagertek"],    # igazsagertek
+            question=question                           # kerdes_obj
+        ).save()
 
     print("VALASZ HOZZAADVA")
 
@@ -425,14 +465,6 @@ def add_options(request, myid):
 #         formset = QuestionFormSet(instance=kerdes)
 #         # print("add_options", {'formset': [i for i in formset], 'question': kerdes})
 #     return render(request, "add_options.html", {'formset': formset, 'question': kerdes})
-
-
-def valasz_lehetoseg_hozzaadas(valasz_szoveg, igazsagertek, kerdes_obj):
-    Answer.objects.create(
-        content=valasz_szoveg,
-        correct=igazsagertek,
-        question=kerdes_obj
-    ).save()
 
 
 def results(request):

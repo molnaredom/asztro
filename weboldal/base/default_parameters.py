@@ -1,3 +1,7 @@
+class UresAnalogiaAdatbazisError(Exception):
+    print("Üres az analógia adatbázis")
+
+
 def get_basic_parameters():
     return {
         "logging_level": "error"
