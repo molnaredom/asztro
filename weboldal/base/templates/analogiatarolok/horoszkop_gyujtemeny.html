@@ -156,15 +156,17 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class=" p-3 border bg-light">
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <a id="create" href="{% url 'create-horoszkop' %}">
-                        <button class="btn btn-primary d-grid gap-2 " type="button">Új Horoszkóp</button>
-                    </a>
-                    </div>
-
-
-
+                        <a id="create" class="d-grid gap-2 col-6 mx-auto" href="{% url 'create-horoszkop' %}">
+                            <button class="btn btn-primary d-grid gap-2 " type="button">Új Horoszkóp</button>
+                        </a>
                 </div>
+
+                {% if not request.user.is_superuser %}
+                    <div class=" p-3 border bg-light">
+                        <p class="d-grid gap-2 col-6 mx-auto">Csak rendszergazdai jogosultsággal láthatod mások neveit</p
+                </div>
+                {% endif %}
+
                 {% if haz_es_jegy_lekerdezes %}
                     <br>
                     <h3><b>Válogatott horoszkópok</b></h3>
