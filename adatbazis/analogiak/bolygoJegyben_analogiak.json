@@ -2064,24 +2064,57 @@
         "általános": [
         ],
         "akarata": [
+          "makacs",
+          "erősen küzd azért amit meg akar tartani",
+          "nem feltétlenül aktív, de amit meg akar valóístani azt meg fogja",
+          "nem gyors, nem agresszív, de amit fejébe vesz abban elhatározott és megvalósítja",
+          "nem gyors, de nagyióon kitartó",
+          "nem fogja mutatni, mit is akar valójában, sokszor elfogadja mások akaratát",
+          "ha egyszer akar valamit, nem tudod meggyőzni, hogy ne akarja"
         ],
         "tetteiben": [
+          "lassú, körülményes, körültekintő, megfontolt",
+          "háromszor átgondolják mielőtt tesznek valamit",
+          "szeret 4 lábbal állni a földön, ha egyiket megemeli, neki már kockázat van benne",
+          "nem gondol arra, hogy mindenáron, neki tennie kell valamit",
+          "olyan helyzetekben pozityv lennie, ahol kitartónak tenni kell valamit"
         ],
         "vágyaiban": [
+          "erős vágyérzet, élvezkedős típus",
+          "vágyai fontosak neki: étel, ital, nők, dolgok élvezete",
+          "azt nem szereti csinálni amiben nem nyerélvezetet"
         ],
         "mint férfi": [
+          "kezdetben nagyon bejön a nőknek",
+          "mindennel elhalmozzák a nőket (ez baj, lehet, hogy azt hiszik meg kell mindenkit venni)",
+          "birtokláson, és anyagiakon keresztül akarják megfogni a nőt",
+          "később ellustulnak a párkapcsolatban, elfeletkeznek az udvarlásról, odaadásról"
         ],
         "szexualitása": [
+          "jó az ágyban, csak sokat kell vele ott lenni, élvezkedős típus",
+          "várja, hogy kényeztessék, emiatt, hosszútávon, lehet megúnják őt a kapcsolatban",
+          "ameddig szerelmes, addig nagyon oda van a párjáért, jó partner"
         ],
         "sportja": [
+          "minél statikusabb anál jobb",
+          "birkózás, súlylökés, súlyemelés",
+          "3 perc mozgás 1 óra pihenés"
         ],
         "életereje": [
+          "nincs túl nagy éltereje, be kell osztania az erőt",
+          "nem szabad azt gondolnia, hogy neki pörögnie kellne, neki pont, hogy nem kell pörögnie"
+        ],
+        "munka": [
+          "biztonsági őr"
         ]
       },
       "ikrek": {
         "általános": [
+          "egész lénye a pörgés",
+          "olyan élethelyzetbe kell kerülni, ahol állandóan váltooznak a dolgok"
         ],
         "akarata": [
+          "nem ragaszkodik egy dologhoz"
         ],
         "tetteiben": [
         ],
@@ -2092,6 +2125,8 @@
         "szexualitása": [
         ],
         "sportja": [
+          "minden sport ami játék, társas játékok",
+          "tenisz, foci, kézilabda, futás"
         ],
         "életereje": [
         ]
@@ -2110,6 +2145,9 @@
         "szexualitása": [
         ],
         "sportja": [
+          "vizi sportok az ideálisak",
+          "evezés, úszás (különösen hát) (hátra felé haladás)",
+          "jó ha van valaki aki megmondja, mit hogy csináljon"
         ],
         "életereje": [
         ]
@@ -2128,6 +2166,8 @@
         "szexualitása": [
         ],
         "sportja": [
+          "olyan sport amiben felnéznek rá, gazdagok sportjai",
+          "golf, vitorlázás, tenisz, lovaglás"
         ],
         "életereje": [
         ]
@@ -2146,6 +2186,9 @@
         "szexualitása": [
         ],
         "sportja": [
+          "stratégia és taktika",
+          "biztos nemm egyéni sport, általában csapatjáték, ahol stratégia és taktika kell",
+          "nem szereti az erős, erőszakos sportokat, inkább fontos, hogy logika legyn benne"
         ],
         "életereje": [
         ]
@@ -2164,6 +2207,7 @@
         "szexualitása": [
         ],
         "sportja": [
+          "vívás, tánc (egyet előre kettőt hátra)"
         ],
         "életereje": [
         ]
@@ -2182,6 +2226,9 @@
         "szexualitása": [
         ],
         "sportja": [
+          "olyan sportok amibe bele lehet halni",
+          "hegymászás, búvárkodás, távolkeleti, önvédelmi sportok (védekezve támdad)",
+          "mindig magának akar bizonyítani, ami önbüntetés is"
         ],
         "életereje": [
         ]
@@ -2200,6 +2247,7 @@
         "szexualitása": [
         ],
         "sportja": [
+          "lovaglás, íjászat, lövészet"
         ],
         "életereje": [
         ]
@@ -2218,6 +2266,9 @@
         "szexualitása": [
         ],
         "sportja": [
+          "mindegy mi, csak jó nehéz legyen, ne lehessen élvezni",
+          "marathon, iron man, futás, úszás, bicikli, túra hegymászás",
+          "minden ami nagy igénybevétel, ami monoton"
         ],
         "életereje": [
         ]
@@ -2236,6 +2287,9 @@
         "szexualitása": [
         ],
         "sportja": [
+          "minden őrült sport",
+          "ejtőernyő, motor - autóversenyzés, Hibaláján biciklivel",
+          "Minden extrém sport, nem a kockázat a lényeg, hanem a különlegesség"
         ],
         "életereje": [
         ]
@@ -2254,6 +2308,7 @@
         "szexualitása": [
         ],
         "sportja": [
+          "vitorlázás, úszás, vizilabda (ha lehet ne egyedül)"
         ],
         "életereje": [
         ]

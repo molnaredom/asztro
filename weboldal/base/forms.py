@@ -64,14 +64,29 @@ class HoroszkopFormGyors(ModelForm):
     class Meta:
         model = Horoszkop2
         # fields = "__all__"
-        fields = ["tulajdonos_neve", "idopont", "hely", "neme", "leirasok"]
+        fields = ["tulajdonos_neve", "idopont","pontossag", "hely", "neme", "leirasok"]
         widgets = {
             "tulajdonos_neve": forms.TextInput(
                 attrs={'class': 'form-control', 'placeholder': "Pl.: Kis Miklós"}),
             "hely": forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Pl.: Győr"}),
             "idopont" : forms.DateTimeInput(attrs={'class': 'form-control'}),
             "neme" : forms.Select(attrs={'class': 'form-control'}),
+            "pontossag" : forms.Select(attrs={'class': 'form-control'}),
             "leirasok" : forms.Textarea(attrs={'class': 'form-control'})
+        }
+
+
+class HoroszkopFormGyorsPontositas(ModelForm):
+    class Meta:
+        model = Horoszkop2
+        fields = ["tulajdonos_neve", "idopont","pontossag", "hely", "neme"]
+        widgets = {
+            "tulajdonos_neve": forms.TextInput(
+                attrs={'class': 'form-control', 'placeholder': "Pl.: Kis Miklós"}),
+            "hely": forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Pl.: Győr"}),
+            "idopont" : forms.DateTimeInput(attrs={'class': 'form-control'} ),
+            "neme" : forms.Select(attrs={'class': 'form-control'}),
+            "pontossag" : forms.Select(attrs={'class': 'form-control'})
         }
 
 

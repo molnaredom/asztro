@@ -1,58 +1,72 @@
 import datetime
 import requests
 from django.shortcuts import redirect, render
-from ..forms import HoroszkopFormGyors, MunkatipusFormset, MunkatipusModelFormset
+from ..forms import HoroszkopFormGyorsPontositas
 from ..kisegito import kisegito, idoszamitas
 from ..horoszkop_elemzes import horoszkopelemzo_manager
 import socket
 from ..models import Jegy2, HazUraHazban, Munkatipus, Horoszkop2
 
-
-def pontositas(request):
-    form = HoroszkopFormGyors()
-    formset = MunkatipusModelFormset()
-    Munkatipus.objects.all().delete()
-
-    if request.method == 'GET':
-        formset = MunkatipusModelFormset(request.GET or None)
+def pontositas_kerdoiv(request):
+    form = HoroszkopFormGyorsPontositas()
 
     if request.method == "POST":
 
         if 'megse' in request.POST:
             return redirect(f"horoszkop_gyujtemeny")
 
-        formset = MunkatipusModelFormset(request.POST)
-        if formset.is_valid() and 'munkahozzaadas' in request.POST:
-            print("+munka", formset.forms)
-            for form in formset:
-                print("munkanev",munkanev)
-                if form.cleaned_data.get('munkanev'):
-                    form.save()
-                    print('save')
-                return redirect(f"create-horoszkop")
-
-        form = HoroszkopFormGyors(request.POST)
-        if form.is_valid() and formset.is_valid() and 'munkahozzaadas' not in request.POST:
-            print("+horoszkop")
+        form = HoroszkopFormGyorsPontositas(request.POST)
+        if form.is_valid():
+            print("+ horoszkop pontosítás")
             obj = form.save(commit=False)
-            obj.munka = {"munkak": [i.__getitem__("munkanev").value() for i in formset ]}
             # print(obj.munka)
             obj = set_bolygo_es_haz_objektumok(obj)
             obj.save()
 
-            if 'ujabb_fevitel' in request.POST:
+            if 'tovabb1' in request.POST:
                 return redirect(f"create-horoszkop")
 
-            elif "mentes_es_foolal" in request.POST:
-                return redirect(f"horoszkop_gyujtemeny")
-
-            elif "horozkop_megnyitas" in request.POST:
-                last_horoscope = Horoszkop2.objects.last()
-                return redirect(f"horoszkop", str(last_horoscope.id))
+            last_horoscope = Horoszkop2.objects.last()
 
 
-    context = {'form': form, "formset": formset}
-    return render(request, "base/pontositas.html", context)
+    context = {'form': form}
+    return render(request, "pontositas/pontositas_kerdoiv.html", context)
+
+
+def pontositas_adatfelvitel(request):
+    form = HoroszkopFormGyorsPontositas()
+
+    if request.method == "POST":
+
+        if 'megse' in request.POST:
+            return redirect(f"horoszkop_gyujtemeny")
+
+        form = HoroszkopFormGyorsPontositas(request.POST)
+        if form.is_valid():
+            print("+ horoszkop pontosítás")
+            # obj = form.save(commit=False)
+            # # print(obj.munka)
+            # obj = set_bolygo_es_haz_objektumok(obj)
+            # obj.save()
+
+            if 'tovabb1' in request.POST:
+                print(request.POST.get("pontossag"))
+                if request.POST.get("pontossag") == "nem meghatározott":
+                    # todo
+                    pass
+
+                    return redirect(f"pontositas_kerdoiv")
+                if request.POST.get("pontossag") == "pontosított":
+                    # todo
+                    pass
+
+                    return redirect(f"pontositas_kerdoiv")
+
+            last_horoscope = Horoszkop2.objects.last()
+
+
+    context = {'form': form}
+    return render(request, "pontositas/pontositas_adatfelvitel.html", context)
 
 
 def get_fokszamok(bolygo_es_haz_adatok):

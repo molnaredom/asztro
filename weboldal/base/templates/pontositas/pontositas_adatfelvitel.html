@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-center p-4">
+        <h1>Születési idő pontosítás</h1>
+        <p><i>Adatok kitöltése</i></p>
+    </div>
+
+    <form class="form-horizontal px-5 mx-5" method="POST" action="">
+        {% csrf_token %}
+        {{ formset.management_form }}
+        {{ form.as_p }}
+
+        <div class="row spacer">
+            <div class="py-4 d-grid gap-2 col-6 mx-auto">
+                <button name="tovabb1" class="btn btn-success">Tovább</button>
+                <button name="megse" class="btn btn-danger">Mégse</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

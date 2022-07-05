@@ -12,7 +12,8 @@ egyedi_oldalak = [
     path("szofordito", views.szofordito, name="szofordito"),
     path("fejlesztes_alatt", views.fejlesztes_alatt, name="fejlesztes_alatt"),
     path("admin_panel", views.admin_panel, name="admin_panel"),
-    path("pontositas", view_pontositas.pontositas, name="pontositas"),
+    path("pontositas_adatfelvitel", view_pontositas.pontositas_adatfelvitel, name="pontositas_adatfelvitel"),
+    path("pontositas_kerdoiv", view_pontositas.pontositas_kerdoiv, name="pontositas_kerdoiv"),
 ]
 
 analogia_tarolok = [
