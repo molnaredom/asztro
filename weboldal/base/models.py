@@ -98,7 +98,7 @@ class BolygoJegyben2(OsszetettAnalogia2):
     bolygo = models.ForeignKey(Bolygo2, on_delete=models.CASCADE)
     jegy = models.ForeignKey(Jegy2, on_delete=models.CASCADE)
 
-    adatok = models.JSONField(default= dict, blank=True)
+    adatok = models.JSONField(default=dict, blank=True)
 
     def __str__(self):
         return str(self.jegy) + " - " + str(self.bolygo)
@@ -127,7 +127,7 @@ class HazUraHazban(models.Model):
 
     def __str__(self):
         return str(self.alap_haz) + ". ház ura " + str(self.ura_melyik_hazban) + ". ház"
-        #todo magyarosítás
+        # todo magyarosítás
 
 
 class HoroszkopAdatok(models.Model):
@@ -137,13 +137,13 @@ class HoroszkopAdatok(models.Model):
     tipus = models.CharField(max_length=30, blank=True)
     neme = models.CharField(max_length=10, blank=True, default="")
 
-    kepletkep = models.ImageField(upload_to='images/', default= os.getcwd()+'weboldal/static/images/hold.jpg')
+    kepletkep = models.ImageField(upload_to='images/', default=os.getcwd() + 'weboldal/static/images/hold.jpg')
     leirasok = models.JSONField(default=dict, blank=True)
     fokszamok = models.JSONField(default=dict, blank=True)
     munka = models.JSONField(default=dict, blank=True)
 
 
-class HoroszkopAlapadat(models. Model):
+class HoroszkopAlapadat(models.Model):
     tulajdonos_neve = models.CharField(max_length=40)
     idopont = models.DateTimeField(default=django.utils.timezone.now)
     hely = models.CharField(max_length=80, blank=True)
@@ -153,7 +153,7 @@ class HoroszkopAlapadat(models. Model):
     munka = models.JSONField(default=dict, blank=True)
 
 
-class Munkatipus(models. Model):
+class Munkatipus(models.Model):
     # MUNKA_CHOICES = (("óvónó", "óvónó"),
     #                 ("informatikus","informatikus"),
     #                 ("jogász","jogász"))
@@ -164,18 +164,33 @@ class Munkatipus(models. Model):
         return self.munkanev
 
 
-
 class Horoszkop2(models.Model):
     NEME_CHOICES = (("férfi", "férfi"),
-                    ("nő","nő"))
+                    ("nő", "nő"))
+    PONTOSSAG_CHOICES = (("pontosított", "pontosított"),
+                         ("nem meghatározott", "nem meghatározott"),
+                         ("kórházi pontosság", "kórházi pontosság"),
+                         ("kb. 30 perc tévedés lehet", "kb. 30 perc tévedés lehet"),
+                         ("kb. 2 óra tévedés lehet", "kb. 2 óra tévedés lehet"),
+                         ("csak a napszak biztos", "csak a napszak biztos"),
+                         ("csak a nap biztos", "csak a nap biztos")
+                         )
+    # TIPUS_CHOICES = (("Radix", "Radix"),
+    #                  ("Szolár", "Szolár"),
+    #                  ("Lunár", "Lunár"))
+
+    # HELY_CHOICES = (("Radix", "Radix"),
+    #                  ("Szolár", "Szolár"), todo
+    #                  ("Lunár", "Lunár"))
 
     tulajdonos_neve = models.CharField(max_length=30)
     idopont = models.DateTimeField(default=django.utils.timezone.now)
     hely = models.CharField(max_length=80, blank=True)
-    tipus = models.CharField(max_length=30, blank=True)
+    tipus = models.CharField(max_length=30, blank=True) # choices=TIPUS_CHOICES
     neme = models.CharField(max_length=10, choices=NEME_CHOICES)
+    pontossag = models.CharField(max_length=50, choices=PONTOSSAG_CHOICES)
 
-    kepletkep = models.ImageField(upload_to='images/', default= os.getcwd()+'weboldal/static/images/hold.jpg')
+    kepletkep = models.ImageField(upload_to='images/', default=os.getcwd() + 'weboldal/static/images/hold.jpg')
     leirasok = models.TextField(blank=True)
     elemzes_adat = models.JSONField(default=dict, blank=True)
     fokszamok = models.JSONField(default=dict, blank=True)
@@ -231,7 +246,7 @@ class Quiz(models.Model):
     desc = models.CharField(max_length=500)
     number_of_questions = models.IntegerField(default=1)
     time = models.IntegerField(help_text="A kvíz hossza másodpercben", default="1")
-    valaszlehetosegek_szama = models.IntegerField( default=2)
+    valaszlehetosegek_szama = models.IntegerField(default=2)
 
     def __str__(self):
         return str(self.name)
@@ -268,4 +283,3 @@ class Marks_Of_User(models.Model):
 
     def __str__(self):
         return str(self.quiz)
-

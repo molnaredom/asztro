@@ -14,10 +14,6 @@ def home(request):
     return render(request, 'base/kezdolap.html', {})
 
 
-def pontositas(request):
-    return render(request, 'base/pontositas.html', {})
-
-
 def sorstipus(request):
     return render(request, 'fogalmak_leirasai/sorstipus.html', {})
 

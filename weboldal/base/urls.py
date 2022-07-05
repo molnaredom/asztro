@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .views_module import horoscope_creator, views_deleters, views, views_creators, views, \
-    views_horoszkop_elemzes, views_konkret_analogia, views_updaters, views_analogiatarolok
+    views_horoszkop_elemzes, views_konkret_analogia, views_updaters, views_analogiatarolok, view_pontositas
 from . import views_analogia_gyakorlo
 from .ml_oldal import ml
 
@@ -12,7 +12,7 @@ egyedi_oldalak = [
     path("szofordito", views.szofordito, name="szofordito"),
     path("fejlesztes_alatt", views.fejlesztes_alatt, name="fejlesztes_alatt"),
     path("admin_panel", views.admin_panel, name="admin_panel"),
-    path("pontositas", views.pontositas, name="pontositas"),
+    path("pontositas", view_pontositas.pontositas, name="pontositas"),
 ]
 
 analogia_tarolok = [
