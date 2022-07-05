@@ -136,9 +136,9 @@ def bolygo_alapjan_lekeres(bolygoNev, jegyNev, bolygo_nevek):
     elif bolygoNev == bolygo_nevek[2]:
         return Horoszkop2.objects.filter(merkur_j__jegy__nevID=jegyNev)
     elif bolygoNev == bolygo_nevek[3]:
-        return Horoszkop2.objects.filter(mars_j__jegy__nevID=jegyNev)
-    elif bolygoNev == bolygo_nevek[4]:
         return Horoszkop2.objects.filter(venusz_j__jegy__nevID=jegyNev)
+    elif bolygoNev == bolygo_nevek[4]:
+        return Horoszkop2.objects.filter(mars_j__jegy__nevID=jegyNev)
     elif bolygoNev == bolygo_nevek[5]:
         return Horoszkop2.objects.filter(jupiter_j__jegy__nevID=jegyNev)
     elif bolygoNev == bolygo_nevek[6]:

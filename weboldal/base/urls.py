@@ -11,7 +11,8 @@ egyedi_oldalak = [
     path("rolunk", views.rolunk, name="rolunk"),
     path("szofordito", views.szofordito, name="szofordito"),
     path("fejlesztes_alatt", views.fejlesztes_alatt, name="fejlesztes_alatt"),
-    path("admin_panel", views.admin_panel, name="admin_panel")
+    path("admin_panel", views.admin_panel, name="admin_panel"),
+    path("pontositas", views.pontositas, name="pontositas"),
 ]
 
 analogia_tarolok = [
@@ -117,7 +118,6 @@ fogalmak = [
     path('fogalmak/felosztasok/', views.felosztasok, name='felosztasok'),
     path('fogalmak/serulte_naphold/', views.serulte_naphold, name='serulte_naphold'),
     path('fogalmak/hyleg/', views.hyleg, name='hyleg'),
-
 ]
 
 urlpatterns = []

@@ -159,6 +159,10 @@
                         <a id="create" class="d-grid gap-2 col-6 mx-auto" href="{% url 'create-horoszkop' %}">
                             <button class="btn btn-primary d-grid gap-2 " type="button">Új Horoszkóp</button>
                         </a>
+                    <br>
+                        <a id="create" class="d-grid gap-2 col-6 mx-auto" href="{% url 'pontositas' %}">
+                            <button class="btn btn-primary d-grid gap-2 " type="button">Születési idő pontosítás</button>
+                        </a>
                 </div>
 
                 {% if not request.user.is_superuser %}
