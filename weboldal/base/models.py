@@ -8,7 +8,7 @@ from django.db import models
 
 from django.db import models
 from django.contrib.auth.models import User
-
+from .kisegito.kisegito import varosnevek
 
 class Topic2(models.Model):
     name = models.CharField(max_length=200)
@@ -175,18 +175,16 @@ class Horoszkop2(models.Model):
                          ("csak a napszak biztos", "csak a napszak biztos"),
                          ("csak a nap biztos", "csak a nap biztos")
                          )
-    # TIPUS_CHOICES = (("Radix", "Radix"),
-    #                  ("Szolár", "Szolár"),
-    #                  ("Lunár", "Lunár"))
+    TIPUS_CHOICES = (("radix", "radix"),
+                     ("szolár", "szolár"),
+                     ("lunár", "lunár"))
 
-    # HELY_CHOICES = (("Radix", "Radix"),
-    #                  ("Szolár", "Szolár"), todo
-    #                  ("Lunár", "Lunár"))
+    HELY_CHOICES = varosnevek(choices=True)
 
     tulajdonos_neve = models.CharField(max_length=30)
     idopont = models.DateTimeField(default=django.utils.timezone.now)
-    hely = models.CharField(max_length=80, blank=True)
-    tipus = models.CharField(max_length=30, blank=True) # choices=TIPUS_CHOICES
+    hely = models.CharField(max_length=80, choices=HELY_CHOICES)
+    tipus = models.CharField(max_length=30, choices=TIPUS_CHOICES)
     neme = models.CharField(max_length=10, choices=NEME_CHOICES)
     pontossag = models.CharField(max_length=50, choices=PONTOSSAG_CHOICES)
 

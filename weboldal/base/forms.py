@@ -68,7 +68,7 @@ class HoroszkopFormGyors(ModelForm):
         widgets = {
             "tulajdonos_neve": forms.TextInput(
                 attrs={'class': 'form-control', 'placeholder': "Pl.: Kis Miklós"}),
-            "hely": forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Pl.: Győr"}),
+            "hely": forms.Select(attrs={'class': 'form-control', 'placeholder': "Pl.: Győr"}),
             "idopont" : forms.DateTimeInput(attrs={'class': 'form-control'}),
             "neme" : forms.Select(attrs={'class': 'form-control'}),
             "pontossag" : forms.Select(attrs={'class': 'form-control'}),
@@ -83,7 +83,7 @@ class HoroszkopFormGyorsPontositas(ModelForm):
         widgets = {
             "tulajdonos_neve": forms.TextInput(
                 attrs={'class': 'form-control', 'placeholder': "Pl.: Kis Miklós"}),
-            "hely": forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Pl.: Győr"}),
+            "hely": forms.Select(attrs={'class': 'form-control', 'placeholder': "Pl.: Győr"}),
             "idopont" : forms.DateTimeInput(attrs={'class': 'form-control'} ),
             "neme" : forms.Select(attrs={'class': 'form-control'}),
             "pontossag" : forms.Select(attrs={'class': 'form-control'})

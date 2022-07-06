@@ -1,6 +1,4 @@
-
-def get_bolygo_nevek(fotengelyekkel = False):
-
+def get_bolygo_nevek(fotengelyekkel=False):
     if fotengelyekkel:
         return ["nap", "hold", "merkúr", "vénusz", "mars",
                 "jupiter", "szaturnusz", "uránusz", "neptun", "pluto",
@@ -116,11 +114,23 @@ def varos_poz(varosnev):
     if varosnev == "papa": return "47.326", "17.469"
     if varosnev == "esztergom": return "47.785", "18.74"
     if varosnev == "szekesfehervar" or varosnev == "fehervar": return "47.188", "18.413"
-    if varosnev == "mezotur": return "47.0041296", "20.6161"
+    if varosnev == "mezotur":
+        return "47.0041296", "20.6161"
     else:
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"*5)
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" * 5)
         print("PLACE NOT FOUND")
         return "47.0041296", "20.6161"
+
+
+def varosnevek(choices=False):
+    varosnevektomb = ["szolnok", "vac", "budapest", "siofok", "szeged", "pecs", "debrecen", "sopron", "keszthely", "kecskemet",
+            "oroshaza", "eger", "veszprem", "gyor", "hodmezovasarhely", "bekescsaba", "nyiregyhaza", "kaposvar",
+            "paks", "szombathely", "zalaegerszeg", "nagykanizsa", "mosonmagyarovar", "cegled", "tatabanya",
+            "dunaujvaros", "papa", "esztergom", "szekesfehervar", "mezotur"]
+    if choices:
+        return ((i,i) for i in varosnevektomb)
+    else:
+        return varosnevektomb
 
 
 def jegy_num_to_hun(eng_jegy):

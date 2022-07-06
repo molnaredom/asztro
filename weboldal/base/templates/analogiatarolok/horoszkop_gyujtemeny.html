@@ -158,14 +158,14 @@
                             <button class="btn btn-primary d-grid gap-2 " type="button">Új Horoszkóp</button>
                         </a>
                     <br>
-                        <a id="create" class="d-grid gap-2 col-6 mx-auto" href="{% url 'pontositas' %}">
+                        <a id="create" class="d-grid gap-2 col-6 mx-auto" href="{% url 'pontositas_adatfelvitel' %}">
                             <button class="btn btn-primary d-grid gap-2 " type="button">Születési idő pontosítás</button>
                         </a>
                 </div>
 
                 {% if not request.user.is_superuser %}
                     <div class=" p-3 border bg-light">
-                        <p class="d-grid gap-2 col-6 mx-auto">Csak rendszergazdai jogosultsággal láthatod mások neveit</p
+                        <p class="d-grid gap-2 col-6 mx-auto">Csak rendszergazdai jogosultsággal láthatod mások neveit</p>
                 </div>
                 {% endif %}
 
