@@ -51,16 +51,46 @@ def pontositas_adatfelvitel(request):
 
             if 'tovabb1' in request.POST:
                 print(request.POST.get("pontossag"))
-                if request.POST.get("pontossag") == "nem meghatározott":
-                    # todo
-                    pass
-
-                    return redirect(f"pontositas_kerdoiv")
                 if request.POST.get("pontossag") == "pontosított":
-                    # todo
-                    pass
 
-                    return redirect(f"pontositas_kerdoiv")
+                    # todo
+
+                    context = {"cim": "Pontosított horoszkóp újra pontosítása"}
+                    return render(request, "pontositas/pontositas_kerdoiv.html", context)
+
+                if request.POST.get("pontossag") == "kórházi pontosság":
+
+                    # todo
+
+                    context = {"cim": "Kórházi pontosságú horoszkóp pontosítása"}
+                    return render(request, "pontositas/pontositas_kerdoiv.html", context)
+
+                if request.POST.get("pontossag") == "kb. 30 perc tévedés lehet":
+
+                    # todo
+
+                    context = {"cim": "Nagyjából 30 perc tévedéssel renelkező horoszkóp pontosítása"}
+                    return render(request, "pontositas/pontositas_kerdoiv.html", context)
+
+                if request.POST.get("pontossag") == "kb. 2 óra tévedés lehet":
+
+                    # todo
+
+                    context = {"cim": "Nagyjából 2 óra tévedéssel renelkező horoszkóp pontosítása"}
+                    return render(request, "pontositas/pontositas_kerdoiv.html", context)
+
+                if request.POST.get("pontossag") == "csak a napszak biztos":
+                    # todo
+
+                    context = {"cim": "Csak a napszakkal renelkező horoszkóp pontosítása"}
+                    return render(request, "pontositas/pontositas_kerdoiv.html", context)
+
+                if request.POST.get("pontossag") == "csak a nap biztos":
+
+                    # todo
+
+                    context = {"cim": "24 órás bizonytalanságban lévő horoszkóp újra pontosítása"}
+                    return render(request, "pontositas/pontositas_kerdoiv.html", context)
 
             last_horoscope = Horoszkop2.objects.last()
 
