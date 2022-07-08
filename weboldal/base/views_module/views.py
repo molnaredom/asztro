@@ -183,7 +183,7 @@ def admin_panel(request):
     return render(request, "base/admin_panel.html", {})
 
 
-def szofordito(request):
+def szofordito2(request):
 
     def szotar(betuparos):
         # 2 betu
@@ -300,6 +300,51 @@ def szofordito(request):
 
     forditottszo = forditottszo.replace(" ","   ")
     print(forditottszo)
-    context = {"forditottszo": forditottszo, "szo": szo}
+
+
+
+
+    context = {"forditottszo": forditottszo, "szo": szo, "atalagitott_f_sz": atalakitott_fsz}
     return render(request, 'base/szofordito.html', context)
 
+def szofordito(request):
+    def atalakitas(szo):
+        betuparosok =(
+                         ("□♀", "♂"),("☍♀", "♂"),("□♂", "♀"),("☍♂", "♀"),
+                         ("□☽", "☉"),("☍☽", "☉"),("□☉", "☽"),("☍☉", "☽"),
+                            ("□☿", "♃"),("☍☿", "♃"),("□♃", "☿"),("☍♃", "☿")
+        )
+
+        for paros in betuparosok:
+            szo = szo.replace(paros[0], paros[1])
+
+        return szo
+
+    eredeti_szo = request.GET.get('input_szo')
+    forditottszo = str(eredeti_szo).lower()
+    print("ford1", forditottszo)
+    betuparosok = (("sz", "☿"),("cs", "♆"),("zs", "♆"),("a", "□"),("á", "□"),("b", "♀"),("c", "☽"),
+     ("d", "♃"),("e", "☍"),("é", "⚻"),("f", "☿"),("g", "☿"),("h", "☽"),("i", "△"),
+     ("í", "△"),("j", "☉"),("k", "☿"),("l", "☉"),("m", "☽"),("n", "☽"),("o", "☌"),("ó", "⚺"),
+     ("ö", "☌"),("ő", "⚺"),  ("p", "♇"),("r", "♂"),("s", "♂"),("t", "♄"),("u", "⚹"),
+     ("ú", "⚺") ,("ü", "⚹"),("ű", "⚺") , ("v", "♂"),("z", "♂"),("q", "?"),("x", "☽"),
+     ("y", "♀"),("w", "♇"))
+
+    for paros in betuparosok:
+        forditottszo = forditottszo.replace(paros[0], paros[1])
+
+
+    atalakitott_szo = atalakitas(forditottszo)
+    megforditott_eredeti_szo = eredeti_szo[::-1]
+    megforditott_forditott_szo = forditottszo[::-1]
+    atalakitott_megforditott_szo = atalakitas(megforditott_forditott_szo)
+
+    context = {"eredeti_szo": eredeti_szo,
+               "forditottszo": forditottszo,
+               "atalakitott_szo": atalakitott_szo,
+               "megforditott_eredeti_szo": megforditott_eredeti_szo,
+               "megforditott_forditott_szo": megforditott_forditott_szo,
+               "atalakitott_megforditott_szo": atalakitott_megforditott_szo
+               }
+
+    return render(request, 'base/szofordito.html', context)
