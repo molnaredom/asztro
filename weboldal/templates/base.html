@@ -18,11 +18,29 @@
 
     <title>Asztroldal</title>
 
+    <style>
+        footer {
+                background: linear-gradient(to bottom, rgba(255, 83, 88, 0.05) 0%, rgba(255, 83, 88, 0.8) 100%);
+        }
+        header {
+                background: linear-gradient(to bottom, rgba(37, 43, 211, 0.62) 0%, rgba(37, 43, 211, 0.02) 100%);
+
+        }
+
+    </style>
+
     {% block css %}
         <style>
-            .navbar {
-                background: darkcyan;
+
+            body {
+                background-image: url("{% static 'zenad-nabil-jeNlxmCD96Y-unsplash.jpg' %}");
+                {#background-repeat: repeat;#}
+                background-size: cover;
             }
+
+            {#.navbar {#}
+            {#    background: rgba(255, 83, 88, 0.71);#}
+
 
             .nav-item::after {
                 content: '';
@@ -55,10 +73,6 @@
                 transition: 0.2s;
                 text-align: center;
             }
-
-            body {
-                background-color: white;
-            }
         </style>
     {% endblock %}
 
@@ -66,20 +80,23 @@
 </head>
 
 <body>
-<header class="p-3 text-white" style="background-color: darkcyan">
+<header class="p-3 text-white">
     <nav class="navbar navbar-expand-sm ">
         <div class="container">
 
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
                 <ul class="navbar-nav col-12 col-lg-auto me-lg-auto  justify-content-center">
-                    <li class="nav-item"><a href="/" class="nav-link px-2 text-white">Kezdőlap</a></li>
-                    <li class="nav-item"><a href="{% url 'horoszkop_gyujtemeny' %}"
-                                            class="nav-link px-2 text-white">Horoszkópok</a></li>
-                    <li class="nav-item ">
-                        <div class="dropdown">
-                            <button type="button" style="background-color: darkcyan">
-                                <a href="{% url 'analogia_adatbazis' %}" class="nav-link px-2 text-white">Analógia adatbázis</a>
+                    <li class="nav-item"><a href="/" class="nav-link px-2 text-white">Kezdőlap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'horoszkop_gyujtemeny' %}" class="nav-link px-2 text-white">Horoszkópok</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                            <button type="button" style="background-color: transparent">
+                                <a href="{% url 'analogia_adatbazis' %}" class="nav-link px-2 text-white">
+                                    Analógia adatbázis
+                                </a>
                             </button>
                             <button type="button" class="btn dropdown-toggle dropdown-toggle-split text-white"
                                     id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"
@@ -105,13 +122,14 @@
                                 <li><a class="dropdown-item" href="{% url 'fejlesztes_alatt' %}">Nincs ura</a></li>
 
                             </ul>
-                        </div>
-                    <li class="nav-item"><a href="{% url 'ml_fooldal' %}" class="nav-link px-2 text-white">ML oldal</a>
+                    <li class="nav-item">
+                        <a href="{% url 'ml_fooldal' %}" class="nav-link px-2 text-white">ML oldal</a>
                     </li>
                     <li class="nav-item"><a href="/gyakorlo" class="nav-link px-2 text-white">Analógia gyakorló</a></li>
                     {% if request.user.is_superuser %}
-                        <li class="nav-item"><a href="{% url 'admin_panel' %}"
-                                                class="nav-link px-2 text-white">Admin</a></li>
+                        <li class="nav-item">
+                            <a href="{% url 'admin_panel' %}" class="nav-link px-2 text-white">Admin</a>
+                        </li>
                     {% endif %}
                 </ul>
 
@@ -148,7 +166,7 @@
 </div>
 
 
-<footer class="py-5" style="background-color: darkcyan">
+<footer class="py-5">
     <div class="container mb-3">
         <div class="d-flex justify-content-between py-12 my-3 ">
             <ul class="list-unstyled d-flex align">
@@ -179,10 +197,13 @@
             <div class="col-2">
                 <h5>Hasznos oldalak:</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="{% url 'home' %}" class="nav-link p-0 text-dark">Kezdőlap</a></li>
-                    <li class="nav-item mb-2"><a href="{% url 'fejlesztes_alatt' %}" class="nav-link p-0 text-dark">Gyakran ismételt
+                    <li class="nav-item mb-2"><a href="{% url 'home' %}" class="nav-link p-0 text-dark">Kezdőlap</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="{% url 'fejlesztes_alatt' %}" class="nav-link p-0 text-dark">Gyakran
+                        ismételt
                         kérdések</a></li>
-                    <li class="nav-item mb-2"><a href="{% url 'rolunk' %}" class="nav-link p-0 text-dark">Rólunk</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'rolunk' %}" class="nav-link p-0 text-dark">Rólunk</a>
+                    </li>
                 </ul>
             </div>
             {#            <div class="col-2">#}
@@ -195,7 +216,6 @@
             {#            </div>#}
         </div>
     </div>
-    <br><br><br><br><br><br><br>
 </footer>
 </body>
 {% block js %}
