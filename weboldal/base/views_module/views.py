@@ -321,6 +321,8 @@ def szofordito(request):
         return szo
 
     eredeti_szo = request.GET.get('input_szo')
+    if eredeti_szo == None:
+        eredeti_szo = "Példa szöveg"
     forditottszo = str(eredeti_szo).lower()
     print("ford1", forditottszo)
     betuparosok = (("sz", "☿"),("cs", "♆"),("zs", "♆"),("a", "□"),("á", "□"),("b", "♀"),("c", "☽"),

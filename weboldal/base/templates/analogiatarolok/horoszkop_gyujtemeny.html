@@ -4,11 +4,11 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background-color: rgba(255, 85, 56, 0.30)">
+                <div class="position-sticky pt-3" >
                     <ul class="nav flex-column">
                         <h3>Szűrés</h3>
-                        <div class="g-col-12 p-3 border bg-light">
+                        <div class="g-col-12 p-3 border">
 
                             <a class="nav-link active" aria-current="page" href="{% url 'bolygokHazakban' %}">
                                 <span data-feather="home"></span>
@@ -54,7 +54,7 @@
 
                             </form>
                         </div>
-                        <div class="g-col-12 p-3 border bg-light">
+                        <div class="g-col-12 p-3 border">
 
                             <a class="nav-link active" aria-current="page" href="{% url 'bolygokJegyekben' %}">
                                 <span data-feather="home"></span>
@@ -100,7 +100,7 @@
 
                             </form>
                         </div>
-                        <div class="g-col-12 p-3 border bg-light">
+                        <div class="g-col-12 p-3 border ">
                             <a class="nav-link active" aria-current="page" href="{% url 'hazakJegyekben' %}">
                                 <span data-feather="home"></span>
                                 Házak Jegyekben
@@ -152,8 +152,8 @@
             </nav>
 
 
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class=" p-3 border bg-light">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" >
+                <div class=" p-3" style="background-color: rgba(255, 85, 56, 0.30)">
                         <a id="create" class="d-grid gap-2 col-6 mx-auto" href="{% url 'create-horoszkop' %}">
                             <button class="btn btn-primary d-grid gap-2 " type="button">Új Horoszkóp</button>
                         </a>
@@ -164,7 +164,7 @@
                 </div>
 
                 {% if not request.user.is_superuser %}
-                    <div class=" p-3 border bg-light">
+                    <div class=" p-3 border ">
                         <p class="d-grid gap-2 col-6 mx-auto">Csak rendszergazdai jogosultsággal láthatod mások neveit</p>
                 </div>
                 {% endif %}

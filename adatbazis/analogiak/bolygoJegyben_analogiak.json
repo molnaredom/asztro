@@ -1638,7 +1638,7 @@
           "ha érzelmileg kötődünk, sokkal nehezebben változtatnuk"
         ],
         "anyához való viszonya": [
-          "érzelmileg közelíti meg a dolgokat, mindig az a döntő, hogy mit szeretek, mennyire kötősöm hozzá",
+          "érzelmileg közelíti meg a dolgokat, mindig az a döntő, hogy mit szeretek, mennyire kötődöm hozzá",
           "ők, akik, gyűjtik a gyerekek dolgait fényképeket stb, minden dolgot ami a kötődést segíti",
           "nem mond le semmi olyan dologról, ami érzelmileg megfogja őt"
         ],
@@ -1648,7 +1648,7 @@
           "nem túl jók, a dolgok elengedésében"
         ],
         "stabilitás igénye": [
-          "amiben érzelmei,vannak ott stabilitásra vágyik",
+          "amiben érzelmei, vannak ott stabilitásra vágyik",
           "család, otthon érzelmi tárgyak stabilitására vágyik",
           "akkor tud változtatni, ha az érzelmei is változnak"
         ],
@@ -1682,7 +1682,7 @@
       },
       "oroszlán": {
         "általános": [
-          "hisz magában , tudja magáról ,hogy jó nő és a nőiességével igenis elismerést válthat ki",
+          "hisz magában , tudja magáról, hogy jó nő és a nőiességével igenis elismerést válthat ki",
           "a külvilágnak nagyon zavaró lehet, főleg akiknek problémája van az önelfogadással",
           "ezt kell megtanulnia, hogy ő királylány, azért kapta, hogy átélje , hogy én vagyo valaki"
         ],
@@ -2135,10 +2135,17 @@
         "általános": [
         ],
         "akarata": [
+          "visszafogott indirekt, egyenesen nem szeret ütközni, mert fél, hogy nem fogadják el",
+          "szüksége van, hogy legyen valaki, vagy valakik akik az ő akaratát elfogadnák",
+          "előjöhet zsarolása, vagy nem tiszte eszközök használata, nezezen viseli, ha ütköznie kell"
         ],
         "tetteiben": [
+          "nem nagyon kezdeményező, várja, hogy legyen valaki aki utat mutat",
+          "nem szeret felelősséget vállalni, inkább osztaj a felelősséget, hogy vállalj te is részt belőle"
         ],
         "vágyaiban": [
+          "amihez érzelmileg közelít arra nagyon vágyik, szeretet az érzelmek fontosak számára",
+          "a vágyak sokszor illúziókban torkollanak, ha nem lehetséges vagy nem tduja megvalósítani"
         ],
         "mint férfi": [
         ],
@@ -2235,35 +2242,73 @@
       },
       "nyilas": {
         "általános": [
+          "Tanács: újra és újra célokat jelöljön ki",
+          "Tanács: ne ragadjon bele, ne harcoljon, ne küzdjön olyan célokért amit majd esetleg később fel kell adnia"
         ],
         "akarata": [
+          "nagyon optimista, nagyon be tud lelkesedni",
+          "ha valamit akar, nagy erővel veti bele magát, aztán amikor látja, hogy ez nem megy, feladja",
+          "nem egy küzdő típus, ameddig van esély megoldja, ha nehézségekbe ötközik a megvalósulás fontosság alábbhagy",
+          "megpróbálja a másik felett érvényesíteni az akaratét, de ha nem megy akkor nem megy, nem fog mindenáron",
+          "nem áll le cstázni minden áron, inkább ránt egyet a vállán és megy tovább, majd akar mást",
+          "mindig a kisebb ellenállás felé megy, nem kell komolyan venni, ha ő valamit mindenáron meg akar valósítani"
         ],
         "tetteiben": [
+          "kampányol",
+          "rövid távon nagyon nagy energia",
+          "nagy tanfolyam járók, de hogy a végére jutnak-e egynek is az már egy jó kérdés, inkább többe belekezdenek",
+          "sok dologba belefognak sok dolog érdekli őket, színes személyiség, de ne várjuk, hogy véghezvisznek dolgokat"
         ],
         "vágyaiban": [
+          "nagyon tud vágyni és nagyon tud lelkesedni",
+          "feladata a célok kijelölése és nem a megvalósítása",
+          "bele tudnak menni dolgokba aztán kifulladnak",
+          "van önbizalma, optimista, vágyaival az eget veri, de ez rendben van"
         ],
         "mint férfi": [
+          "nagyon férfiasak, a lányok szeretik őket, mert tele vannak optimizmussal, szórakoztató személyiségek",
+          "jól tudnak udvarolni, a szerelem lehetősége hamar fellángolat"
         ],
         "szexualitása": [
+          "az egyik legjobb szerető",
+          "benne a helyzetben nagyon szerelmes tud lenni, nem egy unalmas tipus"
         ],
         "sportja": [
           "lovaglás, íjászat, lövészet"
         ],
         "életereje": [
+          "nagy életereje van, de hihetetlenül tudja pazarolni is az életenergiát"
+        ],
+        "munka": [
+          "politikus"
         ]
       },
       "bak": {
         "általános": [
+          "sokkal nehézkesebb, keményebben tud harcolni, mindenáron meg akarja valósítani a célokat, nem lehet kibillenteni"
         ],
         "akarata": [
+          "nem feltétlenülküzd veled, hagyja hogy érvényesüljön az akaratod, de ha egyszer akar valamit, nem tudod lebeszélni"
         ],
         "tetteiben": [
+                    "mindig a legyegyszerűbb dologkat próbálja meg használni, nem egy kreatív típus",
+          "ha azt mondják erre menj akkor ő arra megy akkor is ha nem sok értelme van",
+          "szereti ha megmondják, mi merre és meddig, szabálykövető típus",
+          "nagyon makacsul hajtja végre amit akar, nem adja fel túl könnyen",
+          "mindegy az ha 10x annyi energiába kerül, ha fejébe vette, akkor úgy lesz"
         ],
         "vágyaiban": [
+          "túl sok vágya nincs, inkább csinálja mint álmodozik, ami van vágy az inkább cél",
+          "úgy gondolja arra érdemes vágyni amit ő meg tud valósítani, nem álmodozó típus"
         ],
         "mint férfi": [
+          "nem udvarló típus, lányokkal kissé ridegen bánik",
+          "megbízható, stabil, hűséges partner, de nem az élvezetekről fog szólni a kapcsolat",
+          "kitartó az udvarlásban és a párkapcsolatokban is, de nem egy érzelmes típus"
         ],
         "szexualitása": [
+          "nem szereti a meglepetéseket, a spontaneitást, vagy a kényelmetlen helyzeteket",
+          "legtobben unalmasnak tartják őket az ágyban, mert hajlamos feladatként tekinteni erre"
         ],
         "sportja": [
           "mindegy mi, csak jó nehéz legyen, ne lehessen élvezni",
@@ -2271,6 +2316,7 @@
           "minden ami nagy igénybevétel, ami monoton"
         ],
         "életereje": [
+          "nagyon szívós, nagy energiát tud egy pontra tenni, nagy küzdő is"
         ]
       },
       "vízöntő": {
@@ -2296,8 +2342,13 @@
       },
       "halak": {
         "általános": [
+          "Olyan élethelyzetbe pozitív kerülnie ahol alárendelődik egy gyengébb akaratnak",
+          "Elvileg azt kell tennie amit mséok akarnak"
         ],
         "akarata": [
+          "minden sikerül amit nem ő akar, csak az nem amit éppen ő akar",
+          "minél inkább akar valamit annál biztosabb a lemondás",
+          ""
         ],
         "tetteiben": [
         ],

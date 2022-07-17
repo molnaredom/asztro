@@ -13617,3 +13617,73 @@ console.error: services.settings:
 console.error: services.settings: 
   Message: TypeError: NetworkError when attempting to fetch resource.
 1656326867047	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, reason: timeout
+1657108915703	geckodriver	INFO	Listening on 127.0.0.1:36925
+1657108916204	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59075" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilewEWBOX"
+1657108917288	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilewEWBOX/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+DevTools listening on ws://localhost:59075/devtools/browser/112f2912-a700-4921-831d-438ce7cb0367
+1657108920062	Marionette	INFO	Listening on port 39555
+1657108920152	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1657109889667	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, reason: error
+1657110488110	Marionette	INFO	Stopped listening on port 39555
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1657111079315	geckodriver	INFO	Listening on 127.0.0.1:59719
+1657111079319	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "60059" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileyloHmO"
+1657111080504	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileyloHmO/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60059/devtools/browser/046767a9-9f4f-4927-8564-333ae3b61a22
+1657111081803	Marionette	INFO	Listening on port 40327
+1657111081855	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.info: MINT: Loading search-config defaults.
+1657111084871	Marionette	INFO	Stopped listening on port 40327
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1657111557433	geckodriver	INFO	Listening on 127.0.0.1:40581
+1657111557437	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "38335" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileYpR7Ll"
+1657111558418	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileYpR7Ll/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38335/devtools/browser/2d60a721-9cc6-4ff2-833e-fde8ee41ea12
+console.info: MINT: Loading search-config defaults.
+1657111560107	Marionette	INFO	Listening on port 40925
+1657111560160	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1657111626584	geckodriver	INFO	Listening on 127.0.0.1:45507
+1657111626588	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47293" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilevGx4oX"
+1657111627490	Marionette	INFO	Marionette enabled
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is US
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilevGx4oX/search.json.mozlz4", (void 0)))
+console.info: MINT: Loading search-config defaults.
+DevTools listening on ws://localhost:47293/devtools/browser/f5c09096-4777-4704-a425-b852b677ed11
+1657111628841	Marionette	INFO	Listening on port 44633
+1657111628921	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1657111629476	Marionette	INFO	Stopped listening on port 44633
+JavaScript error: resource:///modules/Interactions.jsm, line 201: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]

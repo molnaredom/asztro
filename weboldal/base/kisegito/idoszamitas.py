@@ -60,10 +60,12 @@ nyari_idoszamitas_csv = """1916;4;30;23;1916;10;1;1
 2021;3;28;2;2021;10;31;3
 2022;3;27;2;2022;10;30;3"""
 
+
 def idoszamitas(kapott_datumido):
-    # nyari = 2
-    # teli = 1
-    # with open(nyari_idoszamitas_csv) as f:
+    """
+    # nyari = 2 (str)
+    # teli = 1 (str)
+    """
 
     for i in nyari_idoszamitas_csv.split("\n"):
         idoszak = i.strip().split(";")
@@ -75,10 +77,10 @@ def idoszamitas(kapott_datumido):
         # print(kezdesido, vegido)
 
         if kezdesido <= kapott_datumido.timestamp() < vegido:
-            print("nyári időszámítás")
+            print("nyári időszámítás [return 2]")
             return "2"
     else:
-        print("teli idoszam")
+        print("teli idoszamitas [return 1]")
         return "1"
 
 

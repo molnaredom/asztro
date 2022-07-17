@@ -1,16 +1,73 @@
 {
+  "általános":
+          [
+            "legtöbbször csak a tünetre tudunk adni megoldást, de az lenne a legjobb, ha a problémát is tdunánk, mert rengeteg féle dologt jelenthet egy tünet, de ha tudjuk a hátterét lelkileg, akkor pontosabban lehet rá szimbólumot adni"
+            "egy betegségnek mindig több szimbólum az okozója",
+            "mindig tudni kell mi a fő szimbólum",
+            "nincs betegésg csak aktuális feladat",
+            "télen ösztön szinten vissze kellene húzódnia az embernek kapcsolatokból",
+            "nyáron kellne"
+          ],
   "nap": {
     "általános": [
       "sokszor éljük meg betegségként, mivel manapság kevés helyzetben lehet megélni"
     ],
     "szerepbel névő emberek problémái": [
-
       "gerin"
-
     ],
     "férfi": {
       "általonos": [
       ]
     }
+  },
+  "merkur": {
+    "általános": [
+      "legtöbb betegségért és problémáért ő a felelős",
+      "a merkúr kibillenésénél mindig a jupiter merkúr kibillenéséről van szó",
+      ""
+    ],
+    "alap analógiák": [
+      "kapcsolatok",
+      "kapcsolódások",
+      "mozgás",
+      "mozgásszervek",
+      "légzőszervek",
+      "apró kicsi dolgok"
+    ],
+    "összetett analogiak":
+            [
+              ["légzőszervek","hold jupiter",""],
+              ["mozgásszervek","mars szaturnusz",""],
+              ["lélekzet","hold jupiter merkur","kapcsolat érzelmi problémái"],
+              ["","merkúr hold jupiter plútó","nátha"],
+              ["váladék","plútó",""],
+              ["izületi gyulladás", "merkúr hold szaturnusz mars", "érzelmeket meg szeretné élni de nem tudja"],
+              ["izületi gyulladás", "merkúr hold szaturnusz mars", "olyan kapcsolatban él ahol nem tudja elfogadni az érzelmeket"],
+              ["izület","merkúr",""],
+              ["csont","szaturnusz",""],
+              ["izületi folyadék","hold",""],
+              ["gyulladás","mars",""],
+              ["fáj a csípő","",""],
+              ["vizsga előtti pánik","","zsebbe tenni szotyolát"],
+              ["szotyola","merkúr",""],
+              ["vizsga","jupiter",""],
+              ["eladó egy boltban","merkúr",""],
+              ["változtatási képesség","merkúr",""],
+              ["alkalmazkodó képesség","merkúr",""],
+              ["valaki állandóan beszél és nem képes hallgatni(csak az aktív kommunikációt tudja élni)","merkúr",""],
+              ["valaki csak hallgat és nem tud megszólalni (csak a passzív kommunikációt tudja élni)","merkúr",""],
+              ["munkahelyi problémák = alárendeltségi probléma","merkúr",""],
+              ["maximalizmus = nem tudja elfogadni, hogy lehet valamit máshogy is tenni","merkúr(szűz)",""],
+              ["tikkelés","","önelfogadási probléma"],
+              ["","",""],
+              ["","",""],
+              ["","",""],
+              ["","",""],
+              ["","",""],
+              ["","",""]
+
+
+
+            ]
   }
 }

@@ -34,6 +34,7 @@
           <option value="weboldal.base.models.Room.objects" />
           <option value="str.__getitem__" />
           <option value="object.predict" />
+          <option value="pyswisseph" />
         </list>
       </option>
     </inspection_tool>

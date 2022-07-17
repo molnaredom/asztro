@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %} Kvíz {% endblock %}
 {% block css %}
     <style>
+
         .attempt {
             --gradient: linear-gradient(to left top, #000000 10%, darkgreen 40%) !important;
         }
@@ -67,7 +69,6 @@
 
     </style>
 {% endblock %}
-{% load static %}
 
 {% block content %}
     {% if user.is_superuser %}
@@ -77,9 +78,11 @@
 
     {% endif %}
 
-    <li><a class="dropdown-item" href="{% url 'fejlesztes_alatt' %}">Eredmény táblázatok</a></li>
+    <li>
+        <a class="dropdown-item" href="{% url 'fejlesztes_alatt' %}">Eredmény táblázatok</a>
+    </li>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" style="background-color: transparent" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

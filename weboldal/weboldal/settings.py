@@ -14,7 +14,6 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-(xyj-rlf*-!8wb8w9u4os0*ir0jod4pwo08tafkqm*gr)89xu9
 DEBUG = True
 
 ALLOWED_HOSTS = [
-
     'asztroldal.azurewebsites.net',
     '127.0.0.1',
     'asztro.herokuapp.com',

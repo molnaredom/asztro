@@ -30,6 +30,7 @@ analogia_tarolok = [
 
 konkret_analogiak = [
     path("horoszkop/<str:id>/", views_horoszkop_elemzes.horoszkop, name="horoszkop"),
+    path("horoszkop/<str:id>/<str:ev>", views_horoszkop_elemzes.szolar, name="szolar"),
     path("bolygoJegyben/<str:id>/", views_konkret_analogia.bolygoJegyben, name="bolygoJegyben"),  # ~room
     path("bolygoHazban/<str:id>/", views_konkret_analogia.bolygoHazban, name="bolygoHazban"),  # ~room
     path("hazJegyben/<str:id>/", views_konkret_analogia.hazJegyben, name="hazJegyben"),  # ~room
@@ -37,6 +38,7 @@ konkret_analogiak = [
     path("jegy/<str:nevID>/", views_konkret_analogia.jegy, name="jegy"),
     path("haz/<str:nevID>/", views_konkret_analogia.haz, name="haz"),
     path("bolygo/<str:nevID>/", views_konkret_analogia.bolygo, name="bolygo"),
+    # path("bolygo/<str:nevID>/", views_konkret_analogia.bolygo, name="bolygo"),
 ]
 
 updaterek = [

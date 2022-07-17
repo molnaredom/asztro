@@ -1,14 +1,19 @@
-import datetime
-import requests
 from django.shortcuts import redirect, render
-from ..forms import HoroszkopFormGyors, MunkatipusFormset, MunkatipusModelFormset
+
+from .ryuphi_api import ryuphi_api_adatlehivo_manager
+from .flatlib_api import get_solar
+from ..forms import HoroszkopFormGyors, MunkatipusModelFormset
 from ..kisegito import kisegito, idoszamitas
 from ..horoszkop_elemzes import horoszkopelemzo_manager
-import socket
 from ..models import Jegy2, HazUraHazban, Munkatipus, Horoszkop2
+from datetime import datetime
+import re
 
 
 def createHoroszkopGyors(request):
+    """
+    :return:  RADIX hp
+    """
     form = HoroszkopFormGyors()
     formset = MunkatipusModelFormset()
     Munkatipus.objects.all().delete()
@@ -37,6 +42,7 @@ def createHoroszkopGyors(request):
             obj = form.save(commit=False)
             obj.munka = {"munkak": [i.__getitem__("munkanev").value() for i in formset ]}
             # print(obj.munka)
+            obj.tipus = "radix"
             obj = set_bolygo_es_haz_objektumok(obj)
             obj.save()
 
@@ -53,6 +59,55 @@ def createHoroszkopGyors(request):
 
     context = {'form': form, "formset": formset}
     return render(request, "create_templates/horoszkop_keszito_form.html", context)
+
+
+def createHoroszkopSolar(radix_hp, visszateresi_ev):
+    form = HoroszkopFormGyors()
+
+    radix_idopont_str = str(radix_hp.idopont)[:-6]
+    print("radix_idopont_str", radix_idopont_str)
+    ri_dashsplit = radix_idopont_str.split("-")
+    ri_colonsplit = radix_idopont_str.split(":")
+    # print(ri_colonsplit[0],ri_colonsplit[0][-2:])
+    datum = ri_dashsplit[0] + "/" +ri_dashsplit[1] + "/" +ri_dashsplit[2][:2]
+    ido = ri_colonsplit[0][-2:] + ":" +ri_colonsplit[1] + ":" +ri_colonsplit[2]
+    print("datum, ido", datum, ido)
+
+    datumido_ = datetime.strptime(radix_idopont_str, "%Y-%m-%d %H:%M:%S")
+    idozona = idoszamitas.idoszamitas(datumido_)
+
+    geopos_lat, geopos_lon = kisegito.varos_poz(radix_hp.hely)
+
+    geopos_lat = geopos_lat.split(".")[0]+"n"+str(int(float("0."+geopos_lat.split(".")[1])*600))[-2:]
+    geopos_lon = geopos_lon.split(".")[0]+"e"+str(int(float("0."+geopos_lon.split(".")[1])*600))[-2:]
+
+    idopont = get_solar(
+        visszateresi_ev=visszateresi_ev,
+        datum=datum,
+        ido=ido,
+        idozona=idozona,
+        geopos_lat=geopos_lat,
+        geopos_lon=geopos_lon
+    )
+
+    idopont = str(idopont).replace(' ', ":")
+    ip_split = re.split("/|:",str(idopont))
+
+    form.idopont = f"{ip_split[0][1:]}-{ip_split[1]}-{ip_split[2]} {ip_split[3]}:{ip_split[4]}:{ip_split[5]}"
+    print("form idp ", form.idopont)
+    form.hely = radix_hp.hely # todo beallithato szolar hp hely
+    form.neme = radix_hp.neme
+    form.pontossag = radix_hp.pontossag
+    form.tulajdonos_neve = radix_hp.tulajdonos_neve
+
+    obj = form.save(commit=False)
+    obj.tipus = "szolár"
+    obj.munka = {"munkak": []}
+
+    obj = set_bolygo_es_haz_objektumok(obj)
+    obj.save()
+
+    return obj
 
 
 def get_fokszamok(bolygo_es_haz_adatok):
@@ -203,99 +258,16 @@ def get_id_hp_alapadat(jegy=None, bolygo=None, haz=None):
         raise Exception
 
 
-def ryuphi_api_adatlehivo_manager(tulajdonso_adatok):
-    kinyert_adatok = init_api(tulajdonso_adatok)
-    return {"bolygok": get_bolygok(kinyert_adatok), "hazak": get_hazak(kinyert_adatok)}
-
-
-def char2(char):
-    if len(str(char)) == 1:
-        return "0" + str(char)
-    return char
-
-
-def init_api(obj):
-    datumido = obj.idopont
-
-    szelesseg, hosszusag = kisegito.varos_poz(varosnev=kisegito.ekezetnelkul(str(obj.hely).lower()))
-
-    start = datetime.datetime.now()
-
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    result = sock.connect_ex(('127.0.0.1', 3000))
-
-    datumido_teljes_str = f'{char2(datumido.year)}-{char2(datumido.month)}-{char2(datumido.day)}T' \
-                          f'{char2(datumido.hour)}:{char2(datumido.minute)}:{char2(datumido.second)}'
-
-    idozona = idoszamitas.idoszamitas(datumido)
-
-    if result == 0:
-        print("Port is open : 3000")
-        adat = requests.get(
-            f'http://127.0.0.1:3000/'
-            f'horoscope?time='
-            f'{datumido_teljes_str}'
-            f'%2B0{idozona}:00&latitude={szelesseg}&longitude={hosszusag}')
-    else:
-        print("Port is not open --> web api")
-        adat = requests.get(
-            f'https://dev-astrology-api.herokuapp.com/'
-            f'horoscope?time='
-            f'{datumido_teljes_str}'
-            f'%2B0{idozona}:00&latitude={szelesseg}&longitude={hosszusag}')
-
-    sock.close()
-
-    end = datetime.datetime.now()
-    print("API Futásidő: ", end - start)
-
-    return adat.json()
-
-
-def get_bolygok(chart):
-    bolygok = dict()
-
-    bolygo_objektumok = chart["data"]["astros"]
-    for key, value in bolygo_objektumok.items():
-        if key == "chiron":
-            break
-
-        fokszam = float(get_fokszam(value["position"]))
-        print(key,fokszam)
-        tizedesresz = (fokszam-int(fokszam))/10*6
-        korrigalt_fokszam = int(fokszam) + tizedesresz
-        print(key,korrigalt_fokszam)
-        bolygok[kisegito.bolygo_to_hun(key)] = {
-            "jegy": kisegito.jegy_num_to_hun(str(value["sign"])),
-            "fokszam": korrigalt_fokszam,
-            "retográd": value["retrograde"],
-            "gyorsaság": value["speed"]
-        }
-    # [print(i) for i in bolygok.items()]
-    return bolygok
-
-
-def get_fokszam(position):
-    return str(float(position["longitude"]) % 30)
-
-
-def get_hazak(chart):
-    hazak = dict()
-
-    hazakiter = chart["data"]["houses"]
-    for i, value in enumerate(hazakiter, 1):
-        hazak[i] = {"jegy": kisegito.jegy_num_to_hun(str(value["sign"])),
-                    "fokszam": get_fokszam(value["position"])}
-        print(hazak[i])
-
-    # [print(i) for i in hazak.items()]
-    return hazak
-
-
 def set_bolygo_es_haz_objektumok(obj):
-    obj.tipus = "radix"
 
-    hp_alap = ryuphi_api_adatlehivo_manager(obj)
+    api_mode = "ryuphi"
+    hp_alap = None
+
+    if api_mode == "flatlib":
+        # hp_alap = flatlib_api_adatlehivo_manager(obj)
+        pass
+    elif api_mode == "ryuphi":
+        hp_alap = ryuphi_api_adatlehivo_manager(obj)
 
     b_nevek = [kisegito.ekezetnelkul(i) for i in kisegito.get_bolygo_nevek()]
 

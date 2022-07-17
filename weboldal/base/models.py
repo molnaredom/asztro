@@ -232,7 +232,10 @@ class Horoszkop2(models.Model):
     haz_12 = models.ForeignKey(HazJegyben2, related_name='12+', on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.tulajdonos_neve)[0].upper() + str(self.tulajdonos_neve)[1:]
+        if len(self.tulajdonos_neve) < 1:
+            return "×"
+        else:
+            return str(self.tulajdonos_neve)[0].upper() + str(self.tulajdonos_neve)[1:]
 
 
 import random  # !!! VALAMI MIATT ENÉLKÜL NEM MŰKÖDIK
