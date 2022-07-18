@@ -80,7 +80,7 @@ def createHoroszkopSolar(radix_hp, visszateresi_ev):
 
     geopos_lat = geopos_lat.split(".")[0]+"n"+str(int(float("0."+geopos_lat.split(".")[1])*600))[-2:]
     geopos_lon = geopos_lon.split(".")[0]+"e"+str(int(float("0."+geopos_lon.split(".")[1])*600))[-2:]
-
+    print("[1]", datum, ido)
     idopont = get_solar(
         visszateresi_ev=visszateresi_ev,
         datum=datum,
@@ -92,18 +92,20 @@ def createHoroszkopSolar(radix_hp, visszateresi_ev):
 
     idopont = str(idopont).replace(' ', ":")
     ip_split = re.split("/|:",str(idopont))
-
+    print("[2]", ip_split)
     form.idopont = f"{ip_split[0][1:]}-{ip_split[1]}-{ip_split[2]} {ip_split[3]}:{ip_split[4]}:{ip_split[5]}"
     print("form idp ", form.idopont)
     form.hely = radix_hp.hely # todo beallithato szolar hp hely
     form.neme = radix_hp.neme
+    print("[3]", form.idopont)
     form.pontossag = radix_hp.pontossag
     form.tulajdonos_neve = radix_hp.tulajdonos_neve
 
     obj = form.save(commit=False)
     obj.tipus = "szolár"
     obj.munka = {"munkak": []}
-
+    obj.idopont = datetime.strptime(form.idopont, "%Y-%m-%d %H:%M:%S")
+    print("[4]", obj.idopont)
     obj = set_bolygo_es_haz_objektumok(obj)
     obj.save()
 

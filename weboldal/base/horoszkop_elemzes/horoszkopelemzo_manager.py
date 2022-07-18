@@ -3,6 +3,7 @@ from .kiiratas_formatumvalto import hazura_kiiratas
 from .kisegito import szuletesi_datumido
 from .osszetett_elemzesek import anareta, sorstipus
 from .hozzarendelesek import *
+from .szolar_elemzes import *
 
 
 def elemzes(adatok, osszesjegy, hazakUraHazakban):
@@ -15,19 +16,20 @@ def elemzes(adatok, osszesjegy, hazakUraHazakban):
 
 def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy, pontos_kor):
     eredmeny = dict()
-
-    # eredmeny["BJ_id"] = bolygojegyben_id(bolygok)
-    eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
-    eredmeny["pontoskor"] = pontos_kor_szamitas(pontos_kor)
-    eredmeny["eletciklus"] = eletciklus(pontos_kor, adatok.neme)
-    eredmeny["sorstipus"] = sorstipus(bolygok, hazak)
-    eredmeny["hazakurai"] = hazura_kiiratas(hazak, hazakUraHazakban)
-    eredmeny["serult_e_nap"] = serult_e_nap(bolygok, adatok)
-    eredmeny["serult_e_hold"] = serult_e_hold(bolygok, adatok)
-    eredmeny["hyleg"] = hyleg(bolygok)
-    eredmeny["anareta"] = anareta(hyleg=eredmeny["hyleg"], bolygok=bolygok)
-    eredmeny["megval_vagy_celkij"] = megval_vagy_celkij(bolygok, hazak)
-
+    if adatok.tipus == "radix":
+        # eredmeny["BJ_id"] = bolygojegyben_id(bolygok)
+        eredmeny["alapszamolasok"] = alapszamolasok(adatok, osszesjegy)
+        eredmeny["pontoskor"] = pontos_kor_szamitas(pontos_kor)
+        eredmeny["eletciklus"] = eletciklus(pontos_kor, adatok.neme)
+        eredmeny["sorstipus"] = sorstipus(bolygok, hazak)
+        eredmeny["hazakurai"] = hazura_kiiratas(hazak, hazakUraHazakban)
+        eredmeny["serult_e_nap"] = serult_e_nap(bolygok, adatok)
+        eredmeny["serult_e_hold"] = serult_e_hold(bolygok, adatok)
+        eredmeny["hyleg"] = hyleg(bolygok)
+        eredmeny["anareta"] = anareta(hyleg=eredmeny["hyleg"], bolygok=bolygok)
+        eredmeny["megval_vagy_celkij"] = megval_vagy_celkij(bolygok, hazak)
+    elif adatok.tipus == "szolár":
+        eredmeny["naptigon"] = naptrigon(adatok)
 
     return eredmeny
 

@@ -1,4 +1,281 @@
-{{ analogia.idopont }}
-{{ analogia.neme }}
-{{ analogia.idopont }}
-{{ analogia.idopont }}
+{% extends 'base.html' %}
+{% block content %}
+
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+                color: #3f4156;
+            }
+
+            body {
+                padding: 10px;
+                background: #f1f1f1;
+            }
+
+            .halvany {
+                color: #8b8b8b;
+            }
+
+            /* Header/Blog Title */
+            .header {
+                padding: 30px;
+                text-align: center;
+                background: white;
+            }
+
+            .header h1 {
+                font-size: 50px;
+                color: #3f4156;
+            }
+
+            /* Style the top navigation bar */
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            /* Style the topnav links */
+            .topnav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .rightcolumn {
+                float: left;
+                width: 25%;
+                background-color: #f1f1f1;
+                padding-left: 20px;
+                text-align: center;
+            }
+
+            .rightcolumn a {
+                display: block;
+                color: #3f4156;
+
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .rightcolumn a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .leftcolumn {
+                float: left;
+                width: 100%;
+                background-color: #f1f1f1;
+                padding-right: 20px;
+                text-align: center;
+            }
+
+            .leftcolumn a {
+                display: block;
+                color: #3f4156;
+
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .leftcolumn a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Change color on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Create two unequal columns that floats next to each other */
+            /* Left column */
+            .leftcolumnsmall {
+                float: left;
+                width: 75%;
+            }
+
+            /* Right column */
+
+
+            /* Fake image */
+            .fakeimg {
+                background-color: #aaa;
+                width: 100%;
+                padding: 20px;
+            }
+
+            /* Add a card effect for articles */
+            .card {
+                background-color: white;
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 20px;
+                text-align: center;
+                background: #ddd;
+                margin-top: 20px;
+            }
+
+            .szolar {
+                text-align: center;
+                color: white;
+            }
+
+            /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 800px) {
+                .leftcolumn, .rightcolumn {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
+
+            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+            @media screen and (max-width: 400px) {
+                .topnav a {
+                    float: none;
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+    <div class="header">
+        <h1>{{ analogia }}</h1>
+        <div class="halvany"><p>horoszkóp adatok</p></div>
+    </div>
+    <div class="topnav">
+        <h3 class="szolar">Szolár Elemzések</h3>
+        <a href="2010">2010</a>
+        <a href="2011">2011</a>
+        <a href="2012">2012</a>
+        <a href="2013">2013</a>
+        <a href="2014">2014</a>
+        <a href="2015">2015</a>
+        <a href="2016">2016</a>
+        <a href="2017">2017</a>
+        <a href="2018">2018</a>
+        <a href="2019">2019</a>
+        <a href="2020">2020</a>
+        <a href="2021">2021</a>
+        <a href="2022">2022</a>
+        <a href="2023">2023</a>
+        <a href="2024">2024</a>
+        <a href="2025">2025</a>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumnsmall">
+            <div class="card">
+            <div class="p-4" style="text-align: center">
+                <h2>Szolár horoszkóp elemzés</h2>
+            </div>
+                <h5>Nap visszatérésének ideje: {{ analogia.idopont }}</h5>
+                <p>{{ analogia.leiras }}</p>
+{#                {{ elemzes }}#}
+{#                Neme: {{ analogia.neme }}#}
+                <hr>
+
+
+                <h3><a href="{% url 'hazak_urai' %}">Házak urai Házakban</a></h3>
+
+                {% for hazurahazban in elemzes.hazakurai %}
+                    {% for hazuranev, hazura_value in hazurahazban.items %}
+
+                        <h4>{{ hazuranev }}</h4>
+                        <ul>
+                            {% for haz_ura_analogia in hazura_value %}
+                                <li> {{ haz_ura_analogia }}</li>
+                            {% endfor %}
+                        </ul>
+
+                    {% endfor %}
+                {% endfor %}
+
+                <h3>A nap trigonális házai</h3>
+
+
+                <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
+
+            </div>
+
+        </div>
+
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>Bolygók a házakban</h2>
+                <hr>
+                <p><a href="{% url 'bolygoHazban' analogia.nap_h.id %}">{{ analogia.nap_h }} </a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.hold_h.id %}">{{ analogia.hold_h }}</a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.merkur_h.id %}">{{ analogia.merkur_h }}</a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.venusz_h.id %}">{{ analogia.venusz_h }}</a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.mars_h.id %}">{{ analogia.mars_h }}</a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.jupiter_h.id %}">{{ analogia.jupiter_h }}</a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.szaturnusz_h.id %}">{{ analogia.szaturnusz_h }}</a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.uranusz_h.id %}">{{ analogia.uranusz_h }}</a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.neptun_h.id %}">{{ analogia.neptun_h }}</a></p>
+                <p><a href="{% url 'bolygoHazban' analogia.pluto_h.id %}">{{ analogia.pluto_h }}</a></p>
+                <hr>
+            </div>
+            <div class="card">
+                <h2>Bolygók a jegyekben</h2>
+                <hr>
+                <p><a href="{% url 'bolygoJegyben' analogia.nap.id %}">{{ analogia.nap }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.hold_j.id %}">{{ analogia.hold_j }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.merkur_j.id %}">{{ analogia.merkur_j }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.venusz_j.id %}">{{ analogia.venusz_j }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.mars_j.id %}">{{ analogia.mars_j }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.jupiter_j.id %}">{{ analogia.jupiter_j }}</a></p>
+                <p><a href="{% url 'bolygoJegyben' analogia.szaturnusz_j.id %}">{{ analogia.szaturnusz_j }}</a></p>
+                {#                <p><a href="{% url 'bolygoJegyben' analogia.uranusz_j.id %}">{{ analogia.uranusz_j }}</a></p>#}
+                {#                <p><a href="{% url 'bolygoJegyben' analogia.neptun_j.id %}">{{ analogia.neptun_j }}</a></p>#}
+                {#                <p><a href="{% url 'bolygoJegyben' analogia.pluto_j.id %}">{{ analogia.pluto_j }}</a></p>#}
+                <hr>
+            </div>
+
+            <div class="card">
+                <h2>Házak Jegyekben</h2>
+                <hr>
+                <p><a href="{% url 'hazJegyben' analogia.haz_1.id %}">{{ analogia.haz_1 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_2.id %}">{{ analogia.haz_2 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_3.id %}">{{ analogia.haz_3 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_4.id %}">{{ analogia.haz_4 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_5.id %}">{{ analogia.haz_5 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_6.id %}">{{ analogia.haz_6 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_7.id %}">{{ analogia.haz_7 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_8.id %}">{{ analogia.haz_8 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_9.id %}">{{ analogia.haz_9 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_10.id %}">{{ analogia.haz_10 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_11.id %}">{{ analogia.haz_11 }}</a></p>
+                <p><a href="{% url 'hazJegyben' analogia.haz_12.id %}">{{ analogia.haz_12 }}</a></p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>A programot készítette: Molnár Ádám</h2>
+        <email>molnaradam8466@gmail.com</email>
+    </div>
+
+    </body>
+
+
+{% endblock content %}
