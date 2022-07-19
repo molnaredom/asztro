@@ -2,6 +2,7 @@ from ..default_parameters import *
 
 basic_parameters = get_basic_parameters()
 
+
 def anareta(hyleg, bolygok):
     fgv_nev = "anaréta"
 

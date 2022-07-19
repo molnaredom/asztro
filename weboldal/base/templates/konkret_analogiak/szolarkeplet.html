@@ -188,22 +188,57 @@
                     <h2>Szolár horoszkóp elemzés</h2>
                 </div>
                 <h5>Nap visszatérésének ideje: {{ analogia.idopont }}</h5>
+                <p> A napnak azon analógiái fognak megjelenni, amelyek tettekhez kapcsolódnak, nem velünk való
+                    történésekhez.</p>
                 <p>{{ analogia.leiras }}</p>
                 <hr>
                 <h3>A Nap trigonális házai</h3>
                 <div class="row">
                     {% for trigonhaz in elemzes.naptrigon %}
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ trigonhaz }}. ház</h5>
-                                <a href="{% url 'bolygoHazban' trigonhaz %}" class="btn btn-primary">Megtekintés</a>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ trigonhaz }}. ház</h5>
+                                    <a href="{% url 'bolygoHazban' trigonhaz %}" class="btn btn-primary">Megtekintés</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     {% endfor %}
                 </div>
-
+                <h3 class="p-5">Transzcendens bolygók támadottsága</h3>
+                <div class="row">
+                    {% for key_bolygonev, value_tamadasok in elemzes.transzcenens_bolygok_tamadottak_e.items %}
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ key_bolygonev }}</h5>
+                                    {% if value_tamadasok %}
+                                        <h6>Bolygó támadások</h6>
+                                        <ul class="list-group list-group-flush">
+                                            {% for bolygotamadas in value_tamadasok %}
+                                                <li class="list-group-item"> {{ bolygotamadas }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <p>Nem támadott</p>
+                                    {% endif %}
+{#                                    <div class="card-body">#}
+{#                                        <h5 class="card-title">{{ trigonhaz }}. ház</h5>#}
+{#                                        <a href="{% url 'haz' analogia.nap_h.id %}"#}
+{#                                           class="btn btn-primary">Megtekintés</a>#}
+{#                                    </div>#}
+                                    {#                                <a href="{% url 'bolygoHazban' trigonhaz %}" class="btn btn-primary">Megtekintés</a>#}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <h3>Szaturnusz és Jupiter a szolárban</h3>
+                ...
+                <h3>Aszcendens a szolárban</h3>
+                ...
+                <h3>Periódikus szolár Nap lánc</h3>
+                ...
                 <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
 
             </div>
@@ -262,10 +297,6 @@
         </div>
     </div>
 
-    <div class="footer">
-        <h2>A programot készítette: Molnár Ádám</h2>
-        <email>molnaradam8466@gmail.com</email>
-    </div>
 
     </body>
 
