@@ -184,33 +184,25 @@
     <div class="row">
         <div class="leftcolumnsmall">
             <div class="card">
-            <div class="p-4" style="text-align: center">
-                <h2>Szolár horoszkóp elemzés</h2>
-            </div>
+                <div class="p-4" style="text-align: center">
+                    <h2>Szolár horoszkóp elemzés</h2>
+                </div>
                 <h5>Nap visszatérésének ideje: {{ analogia.idopont }}</h5>
                 <p>{{ analogia.leiras }}</p>
-{#                {{ elemzes }}#}
-{#                Neme: {{ analogia.neme }}#}
                 <hr>
-
-
-                <h3><a href="{% url 'hazak_urai' %}">Házak urai Házakban</a></h3>
-
-                {% for hazurahazban in elemzes.hazakurai %}
-                    {% for hazuranev, hazura_value in hazurahazban.items %}
-
-                        <h4>{{ hazuranev }}</h4>
-                        <ul>
-                            {% for haz_ura_analogia in hazura_value %}
-                                <li> {{ haz_ura_analogia }}</li>
-                            {% endfor %}
-                        </ul>
-
+                <h3>A Nap trigonális házai</h3>
+                <div class="row">
+                    {% for trigonhaz in elemzes.naptrigon %}
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ trigonhaz }}. ház</h5>
+                                <a href="{% url 'bolygoHazban' trigonhaz %}" class="btn btn-primary">Megtekintés</a>
+                            </div>
+                        </div>
+                    </div>
                     {% endfor %}
-                {% endfor %}
-
-                <h3>A nap trigonális házai</h3>
-
+                </div>
 
                 <div class="fakeimg" style="height:200px;">KÉPLET KÉPE IDE JÖN</div>
 

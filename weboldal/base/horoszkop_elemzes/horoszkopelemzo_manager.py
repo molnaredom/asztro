@@ -29,7 +29,7 @@ def eredmenyek_kiszamitasa(adatok, bolygok, hazak, hazakUraHazakban, osszesjegy,
         eredmeny["anareta"] = anareta(hyleg=eredmeny["hyleg"], bolygok=bolygok)
         eredmeny["megval_vagy_celkij"] = megval_vagy_celkij(bolygok, hazak)
     elif adatok.tipus == "szolár":
-        eredmeny["naptigon"] = naptrigon(adatok)
+        eredmeny["naptrigon"] = naptrigon(adatok)
 
     return eredmeny
 
