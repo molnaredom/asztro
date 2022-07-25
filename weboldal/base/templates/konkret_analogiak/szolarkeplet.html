@@ -222,11 +222,11 @@
                                     {% else %}
                                         <p>Nem támadott</p>
                                     {% endif %}
-{#                                    <div class="card-body">#}
-{#                                        <h5 class="card-title">{{ trigonhaz }}. ház</h5>#}
-{#                                        <a href="{% url 'haz' analogia.nap_h.id %}"#}
-{#                                           class="btn btn-primary">Megtekintés</a>#}
-{#                                    </div>#}
+                                    {#                                    <div class="card-body">#}
+                                    {#                                        <h5 class="card-title">{{ trigonhaz }}. ház</h5>#}
+                                    {#                                        <a href="{% url 'haz' analogia.nap_h.id %}"#}
+                                    {#                                           class="btn btn-primary">Megtekintés</a>#}
+                                    {#                                    </div>#}
                                     {#                                <a href="{% url 'bolygoHazban' trigonhaz %}" class="btn btn-primary">Megtekintés</a>#}
                                 </div>
                             </div>
@@ -234,7 +234,32 @@
                     {% endfor %}
                 </div>
                 <h3>Szaturnusz és Jupiter a szolárban</h3>
-                ...
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Szaturnusz</h5>
+                                <p>
+                                    A szaturnusz háza jelöli, ebben az életévben melyik életterület fog változni
+                                </p>
+                                <a href="{% url 'haz' analogia.szaturnusz_h.haz.nevID %}" class="btn btn-primary">Megtekintés</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Jupiter</h5>
+                                <p>
+                                    A jupiter háza jelöli, ebben az életévben melyik életterülettel tud leginkább azonosulni,
+                                    a horoszkóp tulajdonosa
+                                </p>
+                                <a href="{% url 'haz' analogia.jupiter_h.haz.nevID %}" class="btn btn-primary">Megtekintés</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <h3>Aszcendens a szolárban</h3>
                 ...
                 <h3>Periódikus szolár Nap lánc</h3>
