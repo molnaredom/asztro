@@ -2415,7 +2415,13 @@
         "általános": []
       },
       "ikrek": {
-        "általános": []
+        "általános": [
+          "hitelesség"
+        ],
+        "elrontás": [
+          "válással - ő nem válhat mert nem tudna a párjához hiteles lenni, hiszen megígérte, hogy vele lesz élete végéig",
+          "pálya elhagyása - hiteltelen leszel, ha valami mellett elköteleződsz de másra cseréled"
+        ]
       },
       "rák": {
         "általános": []
