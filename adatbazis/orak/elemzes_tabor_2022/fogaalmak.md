@@ -6,7 +6,7 @@
 
 ### Lemondás
 
-- amiről magadtól meg rudsz tenni az nem lemondás - az a lomtalanítás
+- amiről magadtól meg tudsz tenni az nem lemondás - az a lomtalanítás
     amről le akarsz mondani az nem lemondás, mert azt akarod
     az a lemondás amit akarsz de nem az lesz, mert úgy döntesz
     amit akarsz az sosem lemonás

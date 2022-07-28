@@ -282,7 +282,6 @@
       "típus": "sarok",
       "mundán jegye": "mérleg",
       "leírás": [
-        "c"
       ],
       "analógiák": [
         "párkapcsolat",
@@ -293,11 +292,11 @@
       "típus": "követő",
       "mundán jegye": "skorpió",
       "leírás": [
-        "c"
       ],
       "analógiák": [
         "szexulalitás",
-        "halállal kapcsolatod dolgok"
+        "halállal kapcsolatos dolgok",
+        "műtét"
       ]
     },
     "9": {

@@ -1,4 +1,9 @@
 válás - 9,7,4
+munka - 10,6,2
+állat vásárlása - 6,2,9
+abortusz - 5,8,12
+vállalkozás - 5,8,2
+
 
 
 

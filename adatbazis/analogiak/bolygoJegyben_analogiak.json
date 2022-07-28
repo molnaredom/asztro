@@ -2375,7 +2375,9 @@
         "általános": []
       },
       "ikrek": {
-        "általános": []
+        "általános": [
+          "folyamatosan változtatni akar az életén"
+        ]
       },
       "rák": {
         "általános": []
@@ -2427,7 +2429,10 @@
         "általános": []
       },
       "oroszlán": {
-        "általános": []
+        "általános": [],
+        "feladat": [
+          "legyek valaki"
+        ]
       },
       "szűz": {
         "általános": []
@@ -2445,7 +2450,11 @@
         "általános": []
       },
       "vízöntő": {
-        "általános": []
+        "általános": [],
+        "feladata": [
+          "bármit teszek csak másokért tehetem",
+          "Kérdést fel kell tennie mindig magában, ha valamit döntök másokért teszem-e vagy magamért?"
+        ]
       },
       "halak": {
         "általános": []
@@ -2519,7 +2528,9 @@
         "általános": []
       },
       "nyilas": {
-        "általános": []
+        "általános": [
+          "azt érzi, hogy nem becsülik"
+        ]
       },
       "bak": {
         "általános": []
@@ -2553,7 +2564,9 @@
         "általános": []
       },
       "mérleg": {
-        "általános": []
+        "általános": [
+          "vagy a külvilágot vagy a párkapcsolatot zárja le a sors"
+        ]
       },
       "skorpió": {
         "általános": []

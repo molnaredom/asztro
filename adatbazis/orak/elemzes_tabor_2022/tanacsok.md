@@ -16,4 +16,5 @@ Kiszolgaltatott horoszkopnal, mindig másnak kell hagyni hogy dontson a sorsomba
 - legyen kiszolgáltatott az orvoson keresztul, nehogy testi kiszolgáltatottsagra essen vissza
 - ha megis az ego akar donteni, akkor abban nem tudunk kiszolgáltatottsagot elni
 
-
+A rossz döntéseket nem tudod megváltoztatni(nincs bocsánat)
+Annyit tudsz tenni, hogyha innentől tudatosan döntesz, akkor nem fog negatív válaszokat kapni

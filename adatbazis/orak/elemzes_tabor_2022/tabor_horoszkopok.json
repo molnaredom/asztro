@@ -91,5 +91,62 @@
       "szexelni csak akkor lehet ha gyereket akar, magyarul nem védekezhet",
       "azért vált el mert "
     ]
+  },{
+    "nev": "Tábor_4_Timi",
+    "horoszkoptipus": "radix",
+    "neme": "nő",
+    "ev": 1976,
+    "honap": 9,
+    "nap": 25,
+    "ora": 6,
+    "perc": 30,
+    "mp": 0,
+    "hely": "Vác",
+    "kep": "",
+    "munka": [
+    ],
+    "elet_leiras": [
+      "szétszórt, agresszív, hisztis",
+      "parkapcsolati problemak"
+    ],
+    "adatok": {
+      "férjhez ment": null,
+      "elvalt": null,
+      "gyerekek": 0,
+      "komoly betegségek": [
+      ]
+    },
+    "elemzes leiras": [
+      "minden élethelyzetben le kell mondani valamiről",
+      "szexelni csak akkor lehet ha gyereket akar, magyarul nem védekezhet",
+      "azért vált el mert "
+    ]
+  },{
+    "nev": "Tábor_?_?",
+    "horoszkoptipus": "radix",
+    "neme": "nő",
+    "ev": 0,
+    "honap": 0,
+    "nap": 0,
+    "ora": 0,
+    "perc": 0,
+    "mp": 0,
+    "hely": "",
+    "kep": "",
+    "munka": [
+
+    ],
+    "elet_leiras": [
+
+    ],
+    "adatok": {
+      "férjhez ment": null,
+      "elvalt": null,
+      "gyerekek": null,
+      "komoly betegségek": [
+      ]
+    },
+    "elemzes leiras": [
+    ]
   }
 ]
